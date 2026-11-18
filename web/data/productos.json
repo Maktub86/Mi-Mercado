@@ -1,0 +1,433 @@
+{
+  "lista": "Reyes 2027",
+  "fecha_lista": "2026-11-12",
+  "productos": [
+    {
+      "id": "tocador-princesas-disney",
+      "nombre": "Tocador Princesas Disney",
+      "para": "Alba",
+      "estado": "comprado",
+      "nota": "Tachado en la lista",
+      "precio_lista": 64.99,
+      "tienda_lista": "El Corte Inglés",
+      "busqueda": "Tocador Princesas Disney con taburete",
+      "enlaces": []
+    },
+    {
+      "id": "monster-high-moonspell",
+      "nombre": "Muñeca Monster High Moonspell Magic",
+      "para": "Alba",
+      "estado": "pendiente",
+      "nota": "Este lo pide mucho. Modelos: Claire Clairvoy, Carina Love, Layla Crystal o Willow Nature",
+      "precio_lista": 28.95,
+      "tienda_lista": "El Corte Inglés",
+      "busqueda": "Monster High Moonspell Magic muñeca",
+      "enlaces": [
+        {"tienda": "El Corte Inglés (Willow)", "url": "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/"},
+        {"tienda": "El Corte Inglés (Layla)", "url": "https://www.elcorteingles.es/juguetes/A200825479-muneca-moonspell-magic-layla-crystal-monster-high-mattel/"}
+      ]
+    },
+    {
+      "id": "disfraz-cenicienta",
+      "nombre": "Disfraz de Cenicienta con tiara",
+      "para": "Alba",
+      "estado": "comprado",
+      "nota": "Tachado en la lista",
+      "precio_lista": null,
+      "busqueda": "Disfraz Cenicienta niña Disney",
+      "enlaces": []
+    },
+    {
+      "id": "bolso-peluche-hello-kitty",
+      "nombre": "Bolso de peluche Hello Kitty reversible con muñeca",
+      "para": "Alba",
+      "estado": "pendiente",
+      "nota": "Este lo pide también. Solo en El Corte Inglés, modelos surtidos",
+      "precio_lista": 34.99,
+      "tienda_lista": "El Corte Inglés",
+      "busqueda": "bolso peluche Hello Kitty reversible muñeca incluida",
+      "enlaces": []
+    },
+    {
+      "id": "playmobil-bolso-concha",
+      "nombre": "Playmobil Bolso de Concha con sirena",
+      "para": "Alba",
+      "estado": "comprado",
+      "comprado_por": "Abuela Mari Luz",
+      "nota": "Comprado por la abuela Mari Luz",
+      "precio_lista": 19.99,
+      "tienda_lista": "Amazon",
+      "busqueda": "Playmobil bolso de concha sirena Princess Magic",
+      "enlaces": []
+    },
+    {
+      "id": "dreamon-zapatos-princesa",
+      "nombre": "Zapatos de princesa y abalorios (Dreamon o similar)",
+      "para": "Alba",
+      "estado": "pendiente",
+      "nota": "Es un ejemplo: vale cualquier set de tacones y abalorios",
+      "precio_lista": 39.99,
+      "tienda_lista": "Amazon",
+      "busqueda": "Dreamon zapatos princesa niñas tacones",
+      "enlaces": []
+    },
+    {
+      "id": "vtech-kidisecrets-locker",
+      "nombre": "VTech KidiSecrets Locker (morado)",
+      "para": "Alba",
+      "estado": "pendiente",
+      "nota": "",
+      "precio_lista": 44.99,
+      "tienda_lista": "Amazon",
+      "busqueda": "VTech KidiSecrets Locker taquilla secreta",
+      "enlaces": [
+        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0CWVNM2RD"}
+      ]
+    },
+    {
+      "id": "dreamon-heladeria",
+      "nombre": "Dreamon Heladería – Carrito de helados",
+      "para": "Alba",
+      "estado": "pendiente",
+      "nota": "También lo pide mucho. Elegir el modelo \"Carrito de helados\"",
+      "precio_lista": 39.99,
+      "tienda_lista": "Amazon",
+      "busqueda": "Dreamon heladeria carrito de helados",
+      "enlaces": [
+        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0CF1TN1WV"}
+      ]
+    },
+    {
+      "id": "playmobil-71613-abuelos",
+      "nombre": "Playmobil My Life 71613 Abuelos con bebé",
+      "para": "Alba",
+      "estado": "pendiente",
+      "nota": "",
+      "precio_lista": 11.23,
+      "tienda_lista": "Amazon",
+      "busqueda": "Playmobil 71613 abuelos con bebé",
+      "enlaces": [
+        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0D353J66T"}
+      ]
+    },
+    {
+      "id": "carro-limpieza",
+      "nombre": "Carro de limpieza de juguete",
+      "para": "Alba",
+      "estado": "pendiente",
+      "nota": "",
+      "precio_lista": 27.29,
+      "tienda_lista": "Amazon",
+      "busqueda": "carro de limpieza juguete Vileda Theo Klein",
+      "enlaces": [
+        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B00IL3SW2Y"}
+      ]
+    },
+    {
+      "id": "barbie-boda-chelsea",
+      "nombre": "Barbie Conjunto de Boda con Ken, Stacie y Chelsea",
+      "para": "Alba",
+      "estado": "pendiente",
+      "nota": "",
+      "precio_lista": 61.90,
+      "tienda_lista": "Amazon",
+      "busqueda": "Barbie conjunto de boda Chelsea Stacie DRJ88",
+      "enlaces": [
+        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B01FKUVX64"}
+      ]
+    },
+    {
+      "id": "maleta-portamaquillaje",
+      "nombre": "Maleta portamaquillaje Tiny Beauty",
+      "para": "Lucía",
+      "estado": "comprado",
+      "nota": "Tachado en la lista",
+      "precio_lista": 48.99,
+      "tienda_lista": "El Corte Inglés",
+      "busqueda": "Tiny Beauty maleta portamaquillaje",
+      "enlaces": []
+    },
+    {
+      "id": "omg-music-festival",
+      "nombre": "L.O.L. O.M.G. Music Festival (Jennie, Rosalía o Tayla)",
+      "para": "Lucía",
+      "estado": "comprado",
+      "comprado_por": "Abuela Mari Luz",
+      "nota": "Comprado por la abuela Mari Luz",
+      "precio_lista": 34.99,
+      "tienda_lista": "El Corte Inglés",
+      "busqueda": "LOL OMG Music Festival muñeca",
+      "enlaces": []
+    },
+    {
+      "id": "pulseras-tiny-beauty",
+      "nombre": "Pulseras Tiny Beauty",
+      "para": "Lucía",
+      "estado": "comprado",
+      "nota": "Tachado en la lista",
+      "precio_lista": 14.99,
+      "tienda_lista": "El Corte Inglés",
+      "busqueda": "Tiny Beauty pulseras",
+      "enlaces": []
+    },
+    {
+      "id": "charm-tiny-beauty",
+      "nombre": "Charm Tiny Beauty",
+      "para": "Lucía",
+      "estado": "comprado",
+      "nota": "Tachado en la lista",
+      "precio_lista": 10.99,
+      "tienda_lista": "El Corte Inglés",
+      "busqueda": "Tiny Beauty charm",
+      "enlaces": []
+    },
+    {
+      "id": "mami-elefante-pets-alive",
+      "nombre": "Pets Alive Mami Elefante y bebés",
+      "para": "Lucía",
+      "estado": "comprado",
+      "nota": "Tachado en la lista",
+      "precio_lista": 49.99,
+      "tienda_lista": "El Corte Inglés",
+      "busqueda": "Pets Alive mami elefante",
+      "enlaces": []
+    },
+    {
+      "id": "mirrormi-fashion",
+      "nombre": "Muñecas Mirrormi Fashion",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "nota": "Lo pide mucho. Dos de las muñecas están tachadas en la lista (Akiko, Amora, Blaze, Luna, Shai o Suki)",
+      "precio_lista": 34.99,
+      "tienda_lista": "El Corte Inglés",
+      "busqueda": "Mirrormi Fashion muñeca",
+      "enlaces": []
+    },
+    {
+      "id": "peluche-maiz",
+      "nombre": "Peluche de fruta: Maíz",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "nota": "El de maíz, de la colección \"Mis peluches\"",
+      "precio_lista": 9.95,
+      "tienda_lista": "El Corte Inglés",
+      "busqueda": "peluche maíz El Corte Inglés",
+      "enlaces": []
+    },
+    {
+      "id": "clementoni-nail-art",
+      "nombre": "Clementoni Crazy Chic Nail Art Studio (18730)",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "nota": "",
+      "precio_lista": 27.29,
+      "tienda_lista": "Amazon",
+      "busqueda": "Clementoni Crazy Chic Nail Art Studio 18730",
+      "enlaces": [
+        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0B4KQMTVM"}
+      ]
+    },
+    {
+      "id": "cherry-pets-confetti-tree",
+      "nombre": "Cherry Pets Confetti Tree",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "nota": "",
+      "precio_lista": 19.49,
+      "tienda_lista": "Amazon",
+      "busqueda": "Cherry Pets Confetti Tree",
+      "enlaces": [
+        {"tienda": "Carrefour", "url": "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p"}
+      ]
+    },
+    {
+      "id": "educa-magnetics-61",
+      "nombre": "Educa Magnetics 61 piezas",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "nota": "Lo pidió el último, pero nunca lo había pedido antes",
+      "precio_lista": 32.96,
+      "tienda_lista": "Amazon",
+      "busqueda": "Educa Magnetics 61 piezas 20024",
+      "enlaces": [
+        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0CSPQ6MSQ"}
+      ]
+    },
+    {
+      "id": "peekimo",
+      "nombre": "Peekimo (Lulu, Penny o Boo)",
+      "para": "Lucía",
+      "estado": "comprado",
+      "nota": "Tachado en la lista",
+      "precio_lista": 29.99,
+      "tienda_lista": "El Corte Inglés",
+      "busqueda": "Peekimo mascota electrónica",
+      "enlaces": []
+    },
+    {
+      "id": "barbie-deluxe-style-15",
+      "nombre": "Barbie Deluxe Style n.º 15",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "nota": "",
+      "precio_lista": 15.59,
+      "tienda_lista": "Amazon",
+      "busqueda": "Barbie Deluxe Style 15 JJN73",
+      "enlaces": [
+        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0G43VCRD4"}
+      ]
+    },
+    {
+      "id": "barbie-coche-radiocontrol",
+      "nombre": "Mondo Motors Barbie coche radiocontrol 2 plazas",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "nota": "Lo quiere mucho",
+      "precio_lista": 44.99,
+      "tienda_lista": "Amazon",
+      "busqueda": "Mondo Motors Barbie coche radiocontrol 63698",
+      "enlaces": [
+        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B08JLD278H"}
+      ]
+    },
+    {
+      "id": "barbie-cascanueces-trineo",
+      "nombre": "Barbie en El Cascanueces – Caballo y trineo",
+      "para": "Las dos",
+      "estado": "pendiente",
+      "nota": "",
+      "precio_lista": 40.37,
+      "tienda_lista": "Amazon",
+      "busqueda": "Barbie Cascanueces caballo trineo JRF15",
+      "enlaces": [
+        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0G42LDBDW"}
+      ]
+    },
+    {
+      "id": "stitch-despertador-3d",
+      "nombre": "Lexibook Stitch reloj despertador 3D",
+      "para": "Las dos",
+      "estado": "comprado",
+      "comprado_por": "Abuela Mari Luz",
+      "nota": "Comprado por la abuela Mari Luz",
+      "precio_lista": 37.38,
+      "tienda_lista": "Amazon",
+      "busqueda": "Lexibook Stitch despertador 3D luz sonidos",
+      "enlaces": [
+        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0H4MK9TFD"}
+      ]
+    },
+    {
+      "id": "stitch-walkie-talkies",
+      "nombre": "Lexibook Stitch walkie-talkies con vídeo",
+      "para": "Las dos",
+      "estado": "pendiente",
+      "nota": "Lo quieren mucho",
+      "precio_lista": null,
+      "tienda_lista": "Amazon",
+      "busqueda": "Lexibook Stitch walkie talkies video",
+      "enlaces": [
+        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0HKRX9BZ1"}
+      ]
+    },
+    {
+      "id": "barbie-cascanueces-bailarina",
+      "nombre": "Barbie en El Cascanueces – Muñeca bailarina con tutú sorpresa",
+      "para": "Las dos",
+      "estado": "pendiente",
+      "nota": "",
+      "precio_lista": 27.29,
+      "tienda_lista": "Amazon",
+      "busqueda": "Barbie Cascanueces muñeca tutú sorpresa JLW53",
+      "enlaces": []
+    },
+    {
+      "id": "holawatch-k-fun",
+      "nombre": "Reloj inteligente HolaWatch K-Fun",
+      "para": "Las dos",
+      "estado": "pendiente",
+      "nota": "Negro o blanco y rosa",
+      "precio_lista": 39.99,
+      "tienda_lista": "El Corte Inglés",
+      "busqueda": "HolaWatch K-Fun reloj niños",
+      "enlaces": []
+    },
+    {
+      "id": "monster-high-cleo",
+      "nombre": "Muñeca Monster High Cleo De Nile",
+      "para": "Alba",
+      "estado": "pendiente",
+      "fuera_de_carta": true,
+      "nota": "Fuera de carta",
+      "precio_lista": null,
+      "busqueda": "Monster High Cleo De Nile muñeca",
+      "enlaces": []
+    },
+    {
+      "id": "monster-high-frankie",
+      "nombre": "Muñeca Monster High Frankie Stein",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "fuera_de_carta": true,
+      "nota": "Fuera de carta",
+      "precio_lista": null,
+      "busqueda": "Monster High Frankie Stein muñeca",
+      "enlaces": []
+    },
+    {
+      "id": "libros-escuela-monstruos",
+      "nombre": "Libros de Escuela de Monstruos",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "fuera_de_carta": true,
+      "nota": "Fuera de carta",
+      "precio_lista": null,
+      "busqueda": "libros Escuela de Monstruos",
+      "enlaces": []
+    },
+    {
+      "id": "camiseta-betis",
+      "nombre": "Camiseta del Betis",
+      "para": "Las dos",
+      "estado": "pendiente",
+      "fuera_de_carta": true,
+      "nota": "Fuera de carta",
+      "precio_lista": null,
+      "busqueda": "camiseta Real Betis niña",
+      "enlaces": []
+    },
+    {
+      "id": "juego-rol-restaurante-agustin",
+      "nombre": "Juego de rol El pequeño restaurante de Agustín",
+      "para": "Las dos",
+      "estado": "pendiente",
+      "fuera_de_carta": true,
+      "nota": "Fuera de carta",
+      "precio_lista": 24.90,
+      "busqueda": "El pequeño restaurante de Agustín juego de rol",
+      "enlaces": []
+    },
+    {
+      "id": "boligrafos-magicos",
+      "nombre": "Bolígrafos mágicos",
+      "para": "Las dos",
+      "estado": "pendiente",
+      "fuera_de_carta": true,
+      "nota": "Fuera de carta",
+      "precio_lista": null,
+      "busqueda": "bolígrafos mágicos niños",
+      "enlaces": []
+    },
+    {
+      "id": "puzzle",
+      "nombre": "Puzzle",
+      "para": "Las dos",
+      "estado": "pendiente",
+      "fuera_de_carta": true,
+      "nota": "Fuera de carta",
+      "precio_lista": null,
+      "busqueda": "puzzle infantil",
+      "enlaces": []
+    }
+  ]
+}

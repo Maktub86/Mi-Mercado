@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi Mercado</title>
+  <meta name="description" content="Seguimiento de precios de la lista de Reyes">
+  <meta name="theme-color" content="#1f2a44">
+  <link rel="icon" href="icono.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor">
+      <p class="antetitulo" id="antetitulo">Lista de Reyes</p>
+      <h1>Mi Mercado</h1>
+      <p class="actualizado" id="actualizado">Cargando precios…</p>
+      <div class="resumen" id="resumen"></div>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <section class="filtros" aria-label="Filtros">
+      <div class="chips" id="chips-persona" role="tablist"></div>
+      <div class="controles">
+        <input type="search" id="buscar" placeholder="Buscar juguete…" aria-label="Buscar juguete">
+        <select id="orden" aria-label="Ordenar">
+          <option value="lista">Orden de la lista</option>
+          <option value="bajada">Mayor bajada primero</option>
+          <option value="barato">Más barato primero</option>
+          <option value="caro">Más caro primero</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="pendientes" class="rejilla" aria-label="Pendientes"></section>
+    <p class="vacio" id="vacio" hidden>No hay juguetes que coincidan.</p>
+
+    <details class="comprados" id="bloque-comprados">
+      <summary id="titulo-comprados">Ya comprados</summary>
+      <ul id="lista-comprados"></ul>
+    </details>
+
+    <footer class="pie">
+      <p>Los precios se revisan solos dos veces al día. Algunas tiendas bloquean la lectura automática: en ese caso se muestra el último precio conocido y el de la lista.</p>
+      <p><a id="editar" href="#" target="_blank" rel="noopener">Añadir o cambiar productos</a></p>
+    </footer>
+  </main>
+
+  <template id="plantilla-tarjeta">
+    <article class="tarjeta">
+      <div class="tarjeta-cabeza">
+        <span class="persona"></span>
+        <span class="etiqueta-fuera" hidden>Fuera de carta</span>
+      </div>
+      <h2 class="nombre"></h2>
+      <p class="nota"></p>
+      <div class="precio-bloque">
+        <div>
+          <p class="precio"></p>
+          <p class="precio-detalle"></p>
+        </div>
+        <span class="variacion" hidden></span>
+      </div>
+      <svg class="grafica" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true" hidden></svg>
+      <ul class="tiendas"></ul>
+      <div class="acciones">
+        <a class="boton buscar-amazon" target="_blank" rel="noopener">Buscar en Amazon</a>
+        <a class="boton comparar" target="_blank" rel="noopener">Comparar tiendas</a>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
