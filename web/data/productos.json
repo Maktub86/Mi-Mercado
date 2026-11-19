@@ -77,11 +77,29 @@
       "id": "disfraz-cenicienta",
       "nombre": "Disfraz de Cenicienta con tiara",
       "para": "Alba",
-      "estado": "comprado",
-      "nota": "Tachado en la lista",
+      "estado": "pendiente",
+      "nota": "",
       "precio_lista": null,
       "busqueda": "Disfraz Cenicienta niña Disney",
-      "enlaces": [],
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Disfraz Cenicienta niña"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Disfraz Cenicienta niña"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Disfraz Cenicienta niña"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Disfraz Cenicienta niña"
+        }
+      ],
       "categoria": "reyes"
     },
     {
@@ -118,13 +136,30 @@
       "id": "playmobil-bolso-concha",
       "nombre": "Playmobil Bolso de Concha con sirena",
       "para": "Alba",
-      "estado": "comprado",
-      "comprado_por": "Abuela Mari Luz",
-      "nota": "Comprado por la abuela Mari Luz",
+      "estado": "pendiente",
+      "nota": "",
       "precio_lista": 19.99,
       "tienda_lista": "Amazon",
       "busqueda": "Playmobil bolso de concha sirena Princess Magic",
-      "enlaces": [],
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Playmobil bolso concha sirena"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Playmobil bolso concha sirena"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Playmobil bolso concha sirena"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Playmobil bolso concha sirena"
+        }
+      ],
       "categoria": "reyes"
     },
     {
@@ -310,61 +345,150 @@
       "id": "maleta-portamaquillaje",
       "nombre": "Maleta portamaquillaje Tiny Beauty",
       "para": "Lucía",
-      "estado": "comprado",
-      "nota": "Tachado en la lista",
+      "estado": "pendiente",
+      "nota": "",
       "precio_lista": 48.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Tiny Beauty maleta portamaquillaje",
-      "enlaces": [],
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Tiny Beauty maleta"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Tiny Beauty maleta"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Tiny Beauty maleta"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Tiny Beauty maleta"
+        }
+      ],
       "categoria": "reyes"
     },
     {
       "id": "omg-music-festival",
       "nombre": "L.O.L. O.M.G. Music Festival (Jennie, Rosalía o Tayla)",
       "para": "Lucía",
-      "estado": "comprado",
-      "comprado_por": "Abuela Mari Luz",
-      "nota": "Comprado por la abuela Mari Luz",
+      "estado": "pendiente",
+      "nota": "",
       "precio_lista": 34.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "LOL OMG Music Festival muñeca",
-      "enlaces": [],
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "OMG Music Festival"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "OMG Music Festival"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "OMG Music Festival"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "OMG Music Festival"
+        }
+      ],
       "categoria": "reyes"
     },
     {
       "id": "pulseras-tiny-beauty",
       "nombre": "Pulseras Tiny Beauty",
       "para": "Lucía",
-      "estado": "comprado",
-      "nota": "Tachado en la lista",
+      "estado": "pendiente",
+      "nota": "",
       "precio_lista": 14.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Tiny Beauty pulseras",
-      "enlaces": [],
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Tiny Beauty pulseras"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Tiny Beauty pulseras"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Tiny Beauty pulseras"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Tiny Beauty pulseras"
+        }
+      ],
       "categoria": "reyes"
     },
     {
       "id": "charm-tiny-beauty",
       "nombre": "Charm Tiny Beauty",
       "para": "Lucía",
-      "estado": "comprado",
-      "nota": "Tachado en la lista",
+      "estado": "pendiente",
+      "nota": "",
       "precio_lista": 10.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Tiny Beauty charm",
-      "enlaces": [],
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Tiny Beauty charm"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Tiny Beauty charm"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Tiny Beauty charm"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Tiny Beauty charm"
+        }
+      ],
       "categoria": "reyes"
     },
     {
       "id": "mami-elefante-pets-alive",
       "nombre": "Pets Alive Mami Elefante y bebés",
       "para": "Lucía",
-      "estado": "comprado",
-      "nota": "Tachado en la lista",
+      "estado": "pendiente",
+      "nota": "",
       "precio_lista": 49.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Pets Alive mami elefante",
-      "enlaces": [],
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Pets Alive elefante"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Pets Alive elefante"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Pets Alive elefante"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Pets Alive elefante"
+        }
+      ],
       "categoria": "reyes"
     },
     {
@@ -514,12 +638,30 @@
       "id": "peekimo",
       "nombre": "Peekimo (Lulu, Penny o Boo)",
       "para": "Lucía",
-      "estado": "comprado",
-      "nota": "Tachado en la lista",
+      "estado": "pendiente",
+      "nota": "",
       "precio_lista": 29.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Peekimo mascota electrónica",
-      "enlaces": [],
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Peekimo"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Peekimo"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Peekimo"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Peekimo"
+        }
+      ],
       "categoria": "reyes"
     },
     {
@@ -606,9 +748,8 @@
       "id": "stitch-despertador-3d",
       "nombre": "Lexibook Stitch reloj despertador 3D",
       "para": "Las dos",
-      "estado": "comprado",
-      "comprado_por": "Abuela Mari Luz",
-      "nota": "Comprado por la abuela Mari Luz",
+      "estado": "pendiente",
+      "nota": "",
       "precio_lista": 37.38,
       "tienda_lista": "Amazon",
       "busqueda": "Lexibook Stitch despertador 3D luz sonidos",
@@ -616,6 +757,19 @@
         {
           "tienda": "Amazon",
           "url": "https://www.amazon.es/dp/B0H4MK9TFD"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Lexibook Stitch despertador"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Lexibook Stitch despertador"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Lexibook Stitch despertador"
         }
       ],
       "categoria": "reyes"
