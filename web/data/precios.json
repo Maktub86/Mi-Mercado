@@ -456,21 +456,6 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "LookupError: no está en el catálogo de la tienda"
-      },
-      "comparador:Barbie boda#OnBuy (AMI VENTURES INC.)": {
-        "tienda": "OnBuy (AMI VENTURES INC.)",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 159.65,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/a8f651abbf53cb6cf22bb5ae9cc2b971?exp=1795123410&sig=e7ace07e3243562a3ef1a3bce878b7ad1c3e0f017c94445afe3a39a2400dc834",
-        "via": "Globerada",
-        "producto_tienda": "Barbie Set de Regalo Fiesta de Boda Edición Especial con Muñecas Stacie y Todd (1994)",
-        "imagen": "https://cdn.onbuy.com/product/a2dcfb1b45ae42eaa20002c270cdf44a/990-990/pymrbbx.jpg"
       }
     },
     "clementoni-nail-art": {
@@ -612,66 +597,6 @@
         "titulo": "Cherry Pets Confetti Tree Koala Twins Playset con 2 Figuras Exclusivas",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAB94IN10_1.png?v=1784705409",
         "url": "https://www.toyplanet.com/products/cherry-pets-confetti-tree-koala-twins-playset-con-2-figuras-exclusivas"
-      },
-      "comparador:Cherry Pets#Amazon": {
-        "tienda": "Amazon",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 9.94,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/7424999f499cfea9b24dbb0d206d3730?exp=1795123478&sig=f2f512b9becaa5f025e684ce4fbdf3814a920a276beda3c900e171512e6d6d14",
-        "via": "Globerada",
-        "producto_tienda": "Cherry Pets – Smoothie Fun Park Kitten Twins. Casita con Parque de Atracciones en Forma de Smoothie: Incluye 1 Smoothie,",
-        "imagen": "https://m.media-amazon.com/images/I/51Fs+JSiMvL._SL500_.jpg"
-      },
-      "comparador:Cherry Pets#Ferretería Ibermadrid": {
-        "tienda": "Ferretería Ibermadrid",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 14.44,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/72c1a699dd727ad5f2e56a5120fe39ed?exp=1795123478&sig=416567697273bac2587ded744c176372b8932a03c35fec289eacffd0017e14af",
-        "via": "Globerada",
-        "producto_tienda": "Cherry Pets - Smoothie Fun Parks - Kitten Twins",
-        "imagen": "https://m.media-amazon.com/images/I/51Fs+JSiMvL._SL500_.jpg"
-      },
-      "comparador:Cherry Pets#Fnac": {
-        "tienda": "Fnac",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 16.99,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/14a62dd2374d377abd1db111f3e691c7?exp=1795123478&sig=bb45ee69c54ef9b9135e9a36be47713b1ffc1a7d84d33708147533f286e02a7d",
-        "via": "Globerada",
-        "producto_tienda": "Cherry Pets - Smoothie Fun Parks - Kitten Twins",
-        "imagen": "https://m.media-amazon.com/images/I/51Fs+JSiMvL._SL500_.jpg"
-      },
-      "comparador:Cherry Pets#Juguettos": {
-        "tienda": "Juguettos",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 16.99,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/dcc00d77f3868958ce4917393d04ff5e?exp=1795123478&sig=01e4d8389d96848bc26d35b98a6e10a2ecab277a8443273b96164f94807dcaa4",
-        "via": "Globerada",
-        "producto_tienda": "Cherry Pets Smoothie Fun Park Kitten Twins Varios Modelos - ",
-        "imagen": "https://m.media-amazon.com/images/I/51Fs+JSiMvL._SL500_.jpg"
       }
     },
     "educa-magnetics-61": {
@@ -750,156 +675,6 @@
         },
         "opiniones_url": "https://www.amazon.es/product-reviews/B0G43VCRD4",
         "url": "https://www.amazon.es/dp/B0G43VCRD4"
-      },
-      "comparador:Barbie Deluxe Style#Amazon Marketplace (Humbi Toys)": {
-        "tienda": "Amazon Marketplace (Humbi Toys)",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 10.88,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/66151619f8037812772b35f955005604?exp=1795123511&sig=9301c77b2027ef3df1e70bc86707cdf1248f0bf926ea08f63a71e49c38f761fb",
-        "via": "Globerada",
-        "producto_tienda": "Barbie Deluxe Style Muñeca n. 4 con conjunto de moda Barbiecore rosa claro de pantalón y top con cuello de piel, pelo tr",
-        "imagen": "https://m.media-amazon.com/images/I/61tRNyaisbL.jpg"
-      },
-      "comparador:Barbie Deluxe Style#Raijuguetes": {
-        "tienda": "Raijuguetes",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 15.37,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/9d0ce18565ba23254c2afc16455e05a0?exp=1795123511&sig=11b1eb7ff52ffadc199071b041c312d1abda0e38fb06ab793acd2feb0c965db5",
-        "via": "Globerada",
-        "producto_tienda": "Barbie modelo deluxe - Vestido con rosa",
-        "imagen": "https://m.media-amazon.com/images/I/61tRNyaisbL.jpg"
-      },
-      "comparador:Barbie Deluxe Style#Amazon Marketplace (Toys for Fun ES)": {
-        "tienda": "Amazon Marketplace (Toys for Fun ES)",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 16.55,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/e8b8a4be68f77cf219fc32db3bada692?exp=1795123511&sig=a17d3ed5c46bf8e032cef31f6aa9a0af2526cb18c6177ba880b8629a563773d7",
-        "via": "Globerada",
-        "producto_tienda": "Barbie Deluxe Style Muñeca n.7 con top y falda de color azul metalizado, pelo castaño ondulado y accesorios como joyas p",
-        "imagen": "https://m.media-amazon.com/images/I/61tRNyaisbL.jpg"
-      },
-      "comparador:Barbie Deluxe Style#Amazon Marketplace (CENTRO JUGUETE)": {
-        "tienda": "Amazon Marketplace (CENTRO JUGUETE)",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 16.99,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/9c89bd04218b58902eece1ddbf07b9f5?exp=1795123511&sig=815a99f421145cb8231d8c2eea547c992cd0e3aebd163c7ace1eb59f50490d2f",
-        "via": "Globerada",
-        "producto_tienda": "Barbie, Juguete, JFP41 | Con dobladillo de burbujas, pelo negro en cola de caballo, accesorios como gafas de sol, joyas ",
-        "imagen": "https://m.media-amazon.com/images/I/61tRNyaisbL.jpg"
-      },
-      "comparador:Barbie Deluxe Style#Amazon Marketplace (NEA PRIME)": {
-        "tienda": "Amazon Marketplace (NEA PRIME)",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 17.79,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/18a442abacb76306aa9bbb53a58d0418?exp=1795123511&sig=fda2d38461973beada8c91599de242257928a208238119a173b3cd44f1acc70a",
-        "via": "Globerada",
-        "producto_tienda": "Barbie Deluxe Style Muñeca n.8 con top morado metalizado y pantalones cortos brillantes, pelo negro recogido en una tren",
-        "imagen": "https://m.media-amazon.com/images/I/61tRNyaisbL.jpg"
-      },
-      "comparador:Barbie Deluxe Style#Amazon Marketplace (Freizeitprofis)": {
-        "tienda": "Amazon Marketplace (Freizeitprofis)",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 17.95,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/dbf992e9f8e901a8f62b25964d7a9678?exp=1795123511&sig=d875e7efd6eebbb1b793fd4f0ba4beda85b2ac39d2b1abac5a5d89d4f712bc10",
-        "via": "Globerada",
-        "producto_tienda": "Barbie, Juguete, JFP40",
-        "imagen": "https://m.media-amazon.com/images/I/61tRNyaisbL.jpg"
-      },
-      "comparador:Barbie Deluxe Style#Amazon": {
-        "tienda": "Amazon",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 17.99,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/78999d246d8e18c57c159bb02eb5083c?exp=1795123511&sig=a5d708736aaf8d1cbbdea50deaa3bb9df0471634a978cd47df51f64636f9d078",
-        "via": "Globerada",
-        "producto_tienda": "Barbie Muñeca Deluxe Style n.º 11 con Vestido Vaquero Rosa | Muñeca de moda con conjunto a juego y accesorios como bolso",
-        "imagen": "https://m.media-amazon.com/images/I/61tRNyaisbL.jpg"
-      },
-      "comparador:Barbie Deluxe Style#Amazon Marketplace (PuntoEcom)": {
-        "tienda": "Amazon Marketplace (PuntoEcom)",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 17.99,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/cdbdb63b09d56c186c3280906b08b9a2?exp=1795123511&sig=8caa79882c6ba301fdcf60fd85a72904a419552b87f85d44b07585143ac1a336",
-        "via": "Globerada",
-        "producto_tienda": "Barbie Deluxe Style Muñeca n.º 9 Rubia con Conjunto Vaquero Rosa | Con chaqueta y falda a juego, más accesorios como bol",
-        "imagen": "https://m.media-amazon.com/images/I/61tRNyaisbL.jpg"
-      },
-      "comparador:Barbie Deluxe Style#Amazon Marketplace (H&C-Market)": {
-        "tienda": "Amazon Marketplace (H&C-Market)",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 20.0,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/7f66bd82690db7bfd4f9f8bc1ec2121f?exp=1795123511&sig=55ae8cc611cca0a39f10c7085498b2930d6cb7d1011ccbdc086a118ffc39b17c",
-        "via": "Globerada",
-        "producto_tienda": "Barbie Deluxe Style Muñeca con look Barbiecore n.º 3 | Muñeca rubia de moda con vestido rosa pastel y accesorios, +3 año",
-        "imagen": "https://m.media-amazon.com/images/I/61tRNyaisbL.jpg"
-      },
-      "comparador:Barbie Deluxe Style#Amazon Marketplace (Alaris Home)": {
-        "tienda": "Amazon Marketplace (Alaris Home)",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 20.09,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/7f023f6baaf660bc2f32333c25e8ea7f?exp=1795123511&sig=8bedcbeb6b98286772873d212c03fe4f58c9e4849edd43aba219d4b07c77adc4",
-        "via": "Globerada",
-        "producto_tienda": "Barbie Deluxe Style Muñeca n.1 con pelo rosa y conjunto de moda Barbiecore con vestido rosa brillante, guantes de tercio",
-        "imagen": "https://m.media-amazon.com/images/I/61tRNyaisbL.jpg"
       }
     },
     "barbie-coche-radiocontrol": {
@@ -987,36 +762,6 @@
         "titulo": "Lexibook Stitch y Angel Walkie Talkies con Vídeo Recargables",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPVLV0WV15D_1.png?v=1787879630",
         "url": "https://www.toyplanet.com/products/lexibook-stitch-y-angel-walkie-talkies-con-video-recargables"
-      },
-      "comparador:Lexibook Stitch walkie#MediaMarkt": {
-        "tienda": "MediaMarkt",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 24.71,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/2e0330df419da6dc2774c46f0dba3ff9?exp=1795123560&sig=cdaa93e61dd832655bc43df526226057fe898b054876917d42ecd1a8db55a52c",
-        "via": "Globerada",
-        "producto_tienda": "Walkie Talkie - Lexibook Stitch & Angel, 2 canales, Clip para cinturón, Multicolor",
-        "imagen": "https://m.media-amazon.com/images/I/41DfjZMwWNL._SL500_.jpg"
-      },
-      "comparador:Lexibook Stitch walkie#Amazon": {
-        "tienda": "Amazon",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 29.4,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/0d691ac5813e20a6f2e31d57d641f996?exp=1795123560&sig=56b033180d953fae64a0717a81def999e24fc241af765875e0f309fdba3fd782",
-        "via": "Globerada",
-        "producto_tienda": "LEXIBOOK, Stitch y Angel, Walkie-Talkies 3D, TW18D1 | Alcance 500m, 2 canales, clip cinturón, azul/rosa",
-        "imagen": "https://m.media-amazon.com/images/I/41DfjZMwWNL._SL500_.jpg"
       }
     },
     "mirrormi-fashion": {
@@ -1193,21 +938,6 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "LookupError: no está en el catálogo de la tienda"
-      },
-      "comparador:Hello Kitty bolso peluche#Amazon": {
-        "tienda": "Amazon",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 13.87,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/9db3f14c40c387f72c751947e257839e?exp=1795123320&sig=02de87166c83ec3b92093fe851ce0cc0b76c702b0573ca526c1e76cdfde3bc10",
-        "via": "Globerada",
-        "producto_tienda": "Joy Toy - Hello Kitty Corazón Peluche 14 cm en Bolso de cartón",
-        "imagen": "https://m.media-amazon.com/images/I/31KZmgT5gRL._SL500_.jpg"
       }
     },
     "dreamon-zapatos-princesa": {
@@ -1331,51 +1061,6 @@
         "titulo": "Monster High Dawn of the Dance Frankie Stein",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JKM46_1.png?v=1790903521",
         "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-frankie-stein"
-      },
-      "comparador:Monster High Frankie#Raijuguetes": {
-        "tienda": "Raijuguetes",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 32.1,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/42ca83465c958195505ba73173e7739e?exp=1795123607&sig=a84accb8ee2f16bc2f2ad074d7770449843b2f4e3b9b3f0e091ba68c6ed32824",
-        "via": "Globerada",
-        "producto_tienda": "Mattel Monster High Skulltimate secretos Frankie Stein",
-        "imagen": "https://images-rajhraciek-cdn.rshop.sk/product-feeds/products/d71157edaa36cdc887c5a145c088d4e6.jpg"
-      },
-      "comparador:Monster High Frankie#Juguettos": {
-        "tienda": "Juguettos",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 35.99,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/1ee372679bcb7ee89afab836f5f27b77?exp=1795123607&sig=938edf9021230346f28d4bed3cad938260fb598f5805d6ba21ba395e0a30f0d3",
-        "via": "Globerada",
-        "producto_tienda": "Monster High Conjunto de Juego de Frankie Stein de Skulltimate Secrets Hauntlywood Mysteries - ",
-        "imagen": "https://images-rajhraciek-cdn.rshop.sk/product-feeds/products/d71157edaa36cdc887c5a145c088d4e6.jpg"
-      },
-      "comparador:Monster High Frankie#OnBuy (AMI VENTURES INC.)": {
-        "tienda": "OnBuy (AMI VENTURES INC.)",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 99.81,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/1e8b2f13a69d72add27abe0dbe5f6d45?exp=1795123607&sig=252be84db2df8e98763c91319ab9654f97051ccfb235714236307a1c3ce2d018",
-        "via": "Globerada",
-        "producto_tienda": "Mattel MONSTER HIGH SKULLTIMATES: La Sorpresa de Frankie, serie Hauntlywood (JBG81)",
-        "imagen": "https://images-rajhraciek-cdn.rshop.sk/product-feeds/products/d71157edaa36cdc887c5a145c088d4e6.jpg"
       }
     },
     "juego-rol-restaurante-agustin": {
@@ -1386,100 +1071,8 @@
         "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       }
     },
-    "peluche-maiz": {
-      "comparador:peluche maíz#Amazon Marketplace (DL-Comercio)": {
-        "tienda": "Amazon Marketplace (DL-Comercio)",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 13.57,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/5f7de4da0a708dc37a8245e8b4594a9b?exp=1795123444&sig=3f94e2cf09418d8ce69329d2799489df6ff5c6571ff47c8aa6f9e34ed815e5ec",
-        "via": "Globerada",
-        "producto_tienda": "AURORA 33845 Palm Pals Butters Palomitas de maíz de 5 Pulgadas, Peluche, Multicolor",
-        "imagen": "https://m.media-amazon.com/images/I/61gOFTJuNbL.jpg"
-      }
-    },
-    "libros-escuela-monstruos": {
-      "comparador:Escuela de Monstruos#Abacus": {
-        "tienda": "Abacus",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 15.96,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/5ef5ec08c2c7b81c68328f144e2012d8?exp=1795123615&sig=83fb244851317c9ebd888524b9e7ea9a2df0fac4e42475ac9651f0f9e0870a86",
-        "via": "Globerada",
-        "producto_tienda": "Escuela de Monstruos",
-        "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw4125cf6b/images/large/1537059.08.jpg"
-      },
-      "comparador:Escuela de Monstruos#Juegos de la Mesa Redonda": {
-        "tienda": "Juegos de la Mesa Redonda",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 17.96,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/cc68e0473a2699957e879bbd2f5981b6?exp=1795123615&sig=81a5b37f2a43d3e32beae6b5d979ac23f33eb18b9ad94b07839f4342487d68a2",
-        "via": "Globerada",
-        "producto_tienda": "Escuela de Monstruos: el Juego de Mesa",
-        "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw4125cf6b/images/large/1537059.08.jpg"
-      },
-      "comparador:Escuela de Monstruos#Amazon Marketplace (DrMugCollection)": {
-        "tienda": "Amazon Marketplace (DrMugCollection)",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 19.8,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/7d2bac7d9b04110c34da1c4d32a05973?exp=1795123615&sig=6dd6f93ef6db063c706acaea1f13ea2e6b7e15dcfba730d6ebd0a4141919f2dd",
-        "via": "Globerada",
-        "producto_tienda": "Escuela DE Monstruos. EL Juego DE Mesa",
-        "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw4125cf6b/images/large/1537059.08.jpg"
-      },
-      "comparador:Escuela de Monstruos#Juguettos": {
-        "tienda": "Juguettos",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 19.99,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/705776b25c56eef88117b412f8530b6e?exp=1795123615&sig=dea0c86a08cd04a267426d17748d1d67b8dbc325abf601e007557970091d23bd",
-        "via": "Globerada",
-        "producto_tienda": "Escuela de Monstruos Juego de Mesa - ",
-        "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw4125cf6b/images/large/1537059.08.jpg"
-      },
-      "comparador:Escuela de Monstruos#Imosver": {
-        "tienda": "Imosver",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 24.99,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/f43e80f05a1ae3b5c5fd616ece487ffe?exp=1795123615&sig=217438ddcb9d581fadb265f959016965ed0544ced69044a956b622352eb097c8",
-        "via": "Globerada",
-        "producto_tienda": "Escuela De Monstruos",
-        "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw4125cf6b/images/large/1537059.08.jpg"
-      }
-    },
+    "peluche-maiz": {},
+    "libros-escuela-monstruos": {},
     "camiseta-betis": {
       "comparador:camiseta Betis#Futbol Emotion": {
         "tienda": "Futbol Emotion",

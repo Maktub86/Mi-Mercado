@@ -72,7 +72,7 @@
         },
         {
           "tienda": "Globerada",
-          "comparador_buscar": "Hello Kitty bolso peluche"
+          "comparador_buscar": "Hello Kitty bolso reversible"
         }
       ]
     },
@@ -229,7 +229,7 @@
         },
         {
           "tienda": "Globerada",
-          "comparador_buscar": "Barbie boda"
+          "comparador_buscar": "Barbie boda Chelsea"
         }
       ]
     },
@@ -326,12 +326,7 @@
       "precio_lista": 9.95,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "peluche maíz El Corte Inglés",
-      "enlaces": [
-        {
-          "tienda": "Globerada",
-          "comparador_buscar": "peluche maíz"
-        }
-      ]
+      "enlaces": []
     },
     {
       "id": "clementoni-nail-art",
@@ -379,7 +374,7 @@
         },
         {
           "tienda": "Globerada",
-          "comparador_buscar": "Cherry Pets"
+          "comparador_buscar": "Cherry Pets Confetti Tree"
         }
       ]
     },
@@ -431,10 +426,6 @@
         {
           "tienda": "Amazon",
           "url": "https://www.amazon.es/dp/B0G43VCRD4"
-        },
-        {
-          "tienda": "Globerada",
-          "comparador_buscar": "Barbie Deluxe Style"
         }
       ]
     },
@@ -525,7 +516,7 @@
         },
         {
           "tienda": "Globerada",
-          "comparador_buscar": "Lexibook Stitch walkie"
+          "comparador_buscar": "Stitch walkie vídeo"
         }
       ]
     },
@@ -613,7 +604,7 @@
         },
         {
           "tienda": "Globerada",
-          "comparador_buscar": "Monster High Frankie"
+          "comparador_buscar": "Monster High Doll With Pet Frankie"
         }
       ]
     },
@@ -629,7 +620,7 @@
       "enlaces": [
         {
           "tienda": "Globerada",
-          "comparador_buscar": "Escuela de Monstruos"
+          "comparador_buscar": "Escuela de Monstruos libro"
         }
       ]
     },
