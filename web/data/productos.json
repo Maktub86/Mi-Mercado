@@ -38,6 +38,10 @@
         {
           "tienda": "Toy Planet (Rae)",
           "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Monster High Moonspell"
         }
       ]
     },
@@ -65,6 +69,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Hello Kitty bolso peluche"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Hello Kitty bolso peluche"
         }
       ]
     },
@@ -94,6 +102,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Dreamon zapatos"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Dreamon zapatos"
         }
       ]
     },
@@ -114,6 +126,10 @@
         {
           "tienda": "Toy Planet",
           "url": "https://www.toyplanet.com/products/vtech-kidisecrets-locker-taquilla-secreta-morada"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador": "https://www.globerada.com/precios/vtech-kidisecrets-locker-taquilla-secreta.html"
         }
       ]
     },
@@ -135,6 +151,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Dreamon heladería"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Dreamon heladería"
         }
       ]
     },
@@ -156,6 +176,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Playmobil abuelos bebé"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Playmobil 71613"
         }
       ]
     },
@@ -177,6 +201,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "carrito limpieza Vileda"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador": "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html"
         }
       ]
     },
@@ -198,6 +226,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Barbie boda"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Barbie boda"
         }
       ]
     },
@@ -278,6 +310,10 @@
         {
           "tienda": "Toy Planet (Suki)",
           "url": "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Mirrormi"
         }
       ]
     },
@@ -290,7 +326,12 @@
       "precio_lista": 9.95,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "peluche maíz El Corte Inglés",
-      "enlaces": []
+      "enlaces": [
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "peluche maíz"
+        }
+      ]
     },
     {
       "id": "clementoni-nail-art",
@@ -310,6 +351,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Crazy Chic Nail Art Studio"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Clementoni Nail Art Studio"
         }
       ]
     },
@@ -331,6 +376,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Cherry Pets Confetti Tree"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Cherry Pets"
         }
       ]
     },
@@ -351,6 +400,10 @@
         {
           "tienda": "Toy Planet",
           "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Educa Magnetics 61"
         }
       ]
     },
@@ -378,6 +431,10 @@
         {
           "tienda": "Amazon",
           "url": "https://www.amazon.es/dp/B0G43VCRD4"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Barbie Deluxe Style"
         }
       ]
     },
@@ -394,6 +451,10 @@
         {
           "tienda": "Amazon",
           "url": "https://www.amazon.es/dp/B0BJLD278H"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Mondo Barbie City Car"
         }
       ]
     },
@@ -419,6 +480,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Cascanueces caballo trineo"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Barbie Cascanueces trineo"
         }
       ]
     },
@@ -457,6 +522,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Stitch walkie vídeo"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Lexibook Stitch walkie"
         }
       ]
     },
@@ -478,6 +547,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Cascanueces Clara tutú transformable"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Barbie Cascanueces Clara"
         }
       ]
     },
@@ -495,6 +568,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "HolaWatch K-Fun"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "HolaWatch K-Fun"
         }
       ]
     },
@@ -512,6 +589,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Monster High Cleo"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Monster High Cleo"
         }
       ]
     },
@@ -529,6 +610,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Monster High Frankie"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Monster High Frankie"
         }
       ]
     },
@@ -541,7 +626,12 @@
       "nota": "Fuera de carta",
       "precio_lista": null,
       "busqueda": "libros Escuela de Monstruos",
-      "enlaces": []
+      "enlaces": [
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Escuela de Monstruos"
+        }
+      ]
     },
     {
       "id": "camiseta-betis",
@@ -552,7 +642,12 @@
       "nota": "Fuera de carta",
       "precio_lista": null,
       "busqueda": "camiseta Real Betis niña",
-      "enlaces": []
+      "enlaces": [
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "camiseta Betis"
+        }
+      ]
     },
     {
       "id": "juego-rol-restaurante-agustin",
@@ -568,6 +663,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "restaurante Agustín"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "restaurante Agustín"
         }
       ]
     },

@@ -56,17 +56,13 @@ function preparar(lista, precios) {
   const historial = precios.productos || {};
   return lista.productos.map((p, indice) => {
     const datos = historial[p.id] || {};
-    const tiendas = (p.enlaces || []).map((enlace) => {
-      const clave = enlace.url || `buscar:${enlace.dominio}:${enlace.buscar}`;
-      const info = datos[clave] || {};
-      const url = enlace.url || info.url || `https://${enlace.dominio}/search?q=${encodeURIComponent(enlace.buscar)}`;
+    const aTienda = (enlace, info, url) => {
       const serie = info.historial || [];
-      const ultimo = serie[serie.length - 1] || null;
       return {
         ...enlace,
         url,
         serie,
-        ultimo,
+        ultimo: serie[serie.length - 1] || null,
         tendencia: tendenciaDe(serie),
         error: info.ultimo_error || null,
         comprobado: info.ultima_comprobacion || null,
@@ -74,13 +70,38 @@ function preparar(lista, precios) {
         valoracion: info.valoracion || null,
         resumen: info.resumen_opiniones || null,
         opinionesUrl: info.opiniones_url || url,
+        via: info.via || null,
       };
+    };
+    const todas = [];
+    (p.enlaces || []).forEach((enlace) => {
+      if (enlace.comparador || enlace.comparador_buscar) {
+        // Un comparador aporta varias tiendas: se guardan como "clave#Tienda".
+        const clave = enlace.comparador || `comparador:${enlace.comparador_buscar}`;
+        Object.entries(datos)
+          .filter(([k, info]) => k.startsWith(`${clave}#`) && info.ultimo_error !== "ya no aparece en el comparador")
+          .forEach(([k, info]) => todas.push(aTienda({ tienda: info.tienda || k.split("#")[1] }, info, info.url || enlace.comparador)));
+        return;
+      }
+      const clave = enlace.url || `buscar:${enlace.dominio}:${enlace.buscar}`;
+      const info = datos[clave] || {};
+      const url = enlace.url || info.url || `https://${enlace.dominio}/search?q=${encodeURIComponent(enlace.buscar)}`;
+      todas.push(aTienda(enlace, info, url));
     });
 
-    const visibles = tiendas.filter((t) => t.url && !(t.buscar && !t.ultimo && t.error))
+    // Si una tienda aparece por dos caminos (p. ej. Amazon directo y vía comparador), nos quedamos
+    // con la lectura más reciente y más barata.
+    const porNombre = new Map();
+    todas.forEach((t) => {
+      const nombre = normalizar(t.tienda);
+      const previa = porNombre.get(nombre);
+      const mejorQue = (x, y) => !y || (x.ultimo && (!y.ultimo || x.ultimo.fecha > y.ultimo.fecha
+        || (x.ultimo.fecha === y.ultimo.fecha && x.ultimo.precio < y.ultimo.precio)));
+      if (mejorQue(t, previa)) porNombre.set(nombre, previa && !t.imagen ? { ...t, imagen: previa.imagen, valoracion: t.valoracion || previa.valoracion, resumen: t.resumen || previa.resumen } : t);
+    });
+    const tiendas = [...porNombre.values()]
+      .filter((t) => t.url && !(t.buscar && !t.ultimo && t.error))
       .sort((a, b) => (a.ultimo ? a.ultimo.precio : Infinity) - (b.ultimo ? b.ultimo.precio : Infinity));
-    tiendas.length = 0;
-    tiendas.push(...visibles);
     const conPrecio = tiendas.filter((t) => t.ultimo);
     const mejor = conPrecio.length
       ? conPrecio.reduce((a, b) => (b.ultimo.precio < a.ultimo.precio ? b : a))
@@ -225,7 +246,7 @@ function pintarPanel(panel, p, t) {
 function motivo(error) {
   if (error.startsWith("bloqueado")) return "la tienda no deja leer el precio automáticamente";
   if (/404/.test(error)) return "el enlace ya no existe";
-  if (/catálogo/.test(error)) return "esta tienda no lo tiene ahora mismo";
+  if (/catálogo|comparador/.test(error)) return "esta tienda no lo tiene ahora mismo";
   return "no se encontró el precio en la página";
 }
 
@@ -281,90 +302,86 @@ function tarjeta(p) {
 
   const pestanas = nodo.querySelector(".pestanas");
   const panel = nodo.querySelector(".panel");
+  const conPrecio = p.tiendas.filter((t) => t.ultimo);
   if (p.tiendas.length) {
-    const inicial = p.mejor || p.tiendas[0];
-    p.tiendas.forEach((t, i) => {
+    const seleccionar = (boton, pintar) => {
+      pestanas.querySelectorAll(".pestana").forEach((b) => b.setAttribute("aria-selected", "false"));
+      boton.setAttribute("aria-selected", "true");
+      pintar();
+    };
+    const comparar = document.createElement("button");
+    comparar.type = "button";
+    comparar.className = "pestana pestana-comparar";
+    comparar.setAttribute("role", "tab");
+    comparar.setAttribute("aria-selected", "true");
+    comparar.innerHTML = `Comparar<small>${conPrecio.length} ${conPrecio.length === 1 ? "tienda" : "tiendas"}</small>`;
+    comparar.addEventListener("click", () => seleccionar(comparar, () => pintarComparador(panel, p)));
+    pestanas.append(comparar);
+
+    conPrecio.forEach((t) => {
       const boton = document.createElement("button");
       boton.type = "button";
       boton.className = "pestana";
       boton.setAttribute("role", "tab");
-      boton.setAttribute("aria-selected", String(t === inicial));
-      const valor = t.ultimo ? euros.format(t.ultimo.precio) : "—";
+      boton.setAttribute("aria-selected", "false");
       const tipo = t.tendencia && t.tendencia.tipo;
       const marca = tipo === "baja" ? ' <span class="flecha-baja">▼</span>' : tipo === "sube" ? ' <span class="flecha-sube">▲</span>' : "";
-      const esMejor = t === p.mejor && p.tiendas.filter((x) => x.ultimo).length > 1;
-      boton.innerHTML = `${escapar(t.tienda)}<small class="${esMejor ? "mejor" : ""}">${valor}${marca}</small>`;
-      boton.addEventListener("click", () => {
-        pestanas.querySelectorAll(".pestana").forEach((b) => b.setAttribute("aria-selected", "false"));
-        boton.setAttribute("aria-selected", "true");
-        pintarPanel(panel, p, t);
-      });
-      boton.dataset.indice = i;
+      const esMejor = t === p.mejor && conPrecio.length > 1;
+      boton.innerHTML = `${escapar(t.tienda)}<small class="${esMejor ? "mejor" : ""}">${euros.format(t.ultimo.precio)}${marca}</small>`;
+      boton.addEventListener("click", () => seleccionar(boton, () => pintarPanel(panel, p, t)));
       pestanas.append(boton);
     });
-    pintarPanel(panel, p, inicial);
+    pintarComparador(panel, p);
   } else {
     pestanas.remove();
-    panel.innerHTML = '<p class="panel-aviso">Todavía no hay tiendas para este juguete. Usa los botones de abajo para buscarlo.</p>';
+    panel.innerHTML = '<p class="panel-aviso">Todavía no hay tiendas para este juguete. El robot lo seguirá buscando en cada revisión.</p>';
   }
 
   const consulta = encodeURIComponent(p.busqueda || p.nombre);
   nodo.querySelector(".buscar-amazon").href = `https://www.amazon.es/s?k=${consulta}`;
-  nodo.querySelector(".comparar").addEventListener("click", () => abrirComparador(p));
   return nodo;
 }
 
-function abrirComparador(p) {
-  const dialogo = $("#comparador");
-  $("#comparador-titulo").textContent = p.nombre;
+function pintarComparador(panel, p) {
   const conPrecio = p.tiendas.filter((t) => t.ultimo).sort((a, b) => a.ultimo.precio - b.ultimo.precio);
   const sinPrecio = p.tiendas.filter((t) => !t.ultimo);
   const mejor = conPrecio[0];
+  const partes = [];
 
-  const resumen = $("#comparador-resumen");
-  if (conPrecio.length > 1) {
-    const ahorro = conPrecio[conPrecio.length - 1].ultimo.precio - mejor.ultimo.precio;
-    resumen.innerHTML = `${conPrecio.length} tiendas con precio. Lo más barato está en <strong>${escapar(mejor.tienda)}</strong>`
-      + (ahorro >= 0.01 ? `, ${euros.format(ahorro)} menos que la más cara.` : ".");
-  } else if (conPrecio.length === 1) {
-    resumen.textContent = `De momento solo hay precio de ${mejor.tienda}.`;
+  if (!conPrecio.length) {
+    partes.push('<p class="panel-aviso">Todavía no se ha podido leer el precio en ninguna tienda.</p>');
   } else {
-    resumen.textContent = "Todavía no se ha podido leer el precio en ninguna tienda.";
+    let resumen = conPrecio.length > 1
+      ? `Lo más barato está en <strong>${escapar(mejor.tienda)}</strong>.`
+      : `De momento solo hay precio de ${escapar(mejor.tienda)}.`;
+    if (conPrecio.length > 1) {
+      const ahorro = conPrecio[conPrecio.length - 1].ultimo.precio - mejor.ultimo.precio;
+      if (ahorro >= 0.01) resumen += ` Ahorras hasta ${euros.format(ahorro)}.`;
+    }
+    partes.push(`<p class="comparador-resumen">${resumen}</p>`);
+    partes.push(`<ol class="comparador-lista">${conPrecio.map((t, i) => {
+      const dif = t.ultimo.precio - mejor.ultimo.precio;
+      const tend = textoTendencia(t);
+      const info = [];
+      if (t.ultimo.disponible === false) info.push("<b>agotado</b>");
+      if (tend && tend.clase !== "igual") info.push(`<span class="${tend.clase === "baja" ? "flecha-baja" : "flecha-sube"}">${tend.texto}</span>`);
+      if (t.valoracion) info.push(`★ ${t.valoracion.media.toLocaleString("es-ES")}`);
+      info.push(fechaCorta.format(leerFecha(t.ultimo.fecha)));
+      return `<li class="fila-tienda${i === 0 ? " ganadora" : ""}">
+        <span class="puesto">${i + 1}</span>
+        <span class="fila-texto"><span class="fila-nombre">${escapar(t.tienda)}</span>
+          <span class="fila-info">${info.join(" · ")}</span></span>
+        <span class="fila-precio">${euros.format(t.ultimo.precio)}${i > 0 && dif >= 0.01 ? `<small>+${euros.format(dif)}</small>` : ""}</span>
+        <a class="fila-ir" href="${escapar(t.url)}" target="_blank" rel="noopener" aria-label="Ir a ${escapar(t.tienda)}">Ir ↗</a>
+      </li>`;
+    }).join("")}</ol>`);
   }
-  if (p.precio_lista != null && mejor) {
-    const dif = mejor.ultimo.precio - p.precio_lista;
-    const frase = Math.abs(dif) < 0.01 ? "igual que en tu lista"
-      : dif < 0 ? `${euros.format(-dif)} menos que en tu lista (${euros.format(p.precio_lista)})`
-      : `${euros.format(dif)} más que en tu lista (${euros.format(p.precio_lista)})`;
-    resumen.innerHTML += ` El mejor precio está ${frase}.`;
+  if (sinPrecio.length) {
+    partes.push(`<p class="sin-precio-titulo">Sin precio automático</p>
+      <ul class="sin-precio">${sinPrecio.map((t) => `<li><a href="${escapar(t.url)}" target="_blank" rel="noopener">${escapar(t.tienda)} ↗</a>
+        <span>${t.error ? escapar(motivo(t.error)) : "pendiente de revisar"}</span></li>`).join("")}</ul>`);
   }
-
-  $("#comparador-lista").innerHTML = conPrecio.map((t, i) => {
-    const tend = textoTendencia(t);
-    const dif = t.ultimo.precio - mejor.ultimo.precio;
-    const info = [`leído el ${fechaCorta.format(leerFecha(t.ultimo.fecha))}`];
-    if (t.ultimo.disponible === false) info.unshift("<b>agotado</b>");
-    if (t.valoracion) info.push(`★ ${t.valoracion.media.toLocaleString("es-ES")}${t.valoracion.total ? ` (${t.valoracion.total.toLocaleString("es-ES")})` : ""}`);
-    return `<li class="fila-tienda${i === 0 ? " ganadora" : ""}">
-      <span class="puesto">${i + 1}</span>
-      <span class="fila-nombre">${escapar(t.tienda)}</span>
-      <div class="fila-derecha">
-        <span class="fila-precio">${euros.format(t.ultimo.precio)}</span>
-        ${i > 0 && dif >= 0.01 ? `<span class="fila-dif">+${euros.format(dif)}</span>` : ""}
-        <a class="boton principal" href="${escapar(t.url)}" target="_blank" rel="noopener">Ir</a>
-      </div>
-      <span class="fila-info">${tend && tend.texto !== "primera lectura" ? `<span class="tendencia ${tend.clase}">${tend.texto}</span>` : ""}${info.join(" · ")}</span>
-    </li>`;
-  }).join("");
-
-  $("#comparador-sin-precio").innerHTML = sinPrecio.length ? `
-    <p class="sin-precio-titulo">Sin precio automático</p>
-    <ul class="sin-precio">${sinPrecio.map((t) => `<li>${escapar(t.tienda)}
-      <span>${t.error ? escapar(motivo(t.error)) : "pendiente de revisar"}</span>
-      <a href="${escapar(t.url)}" target="_blank" rel="noopener">Ver ↗</a></li>`).join("")}</ul>` : "";
-
-  $("#comparador-pie").innerHTML = "Precios recogidos por el robot de Mi Mercado. Pueden haber cambiado desde la última revisión.";
-  dialogo.showModal();
+  panel.innerHTML = partes.join("");
 }
 
 function pintarLista() {
@@ -405,9 +422,6 @@ function enlazarEventos() {
   });
   $("#buscar").addEventListener("input", (e) => { estado.texto = e.target.value; pintarLista(); });
   $("#orden").addEventListener("change", (e) => { estado.orden = e.target.value; pintarLista(); });
-  const dialogo = $("#comparador");
-  dialogo.querySelector(".cerrar").addEventListener("click", () => dialogo.close());
-  dialogo.addEventListener("click", (e) => { if (e.target === dialogo) dialogo.close(); });
   $("#editar").href = `https://github.com/${REPO}/edit/main/web/data/productos.json`;
 }
 

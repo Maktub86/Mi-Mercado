@@ -170,5 +170,38 @@ class BusquedaTest(unittest.TestCase):
         self.assertIn("10,00", pagina)
 
 
+class ComparadorTest(unittest.TestCase):
+    PAGINA = """<table><tr><th>Tienda</th><th>Producto</th><th>Precio</th></tr>
+    <tr><td><a href="/out/aaa?sig=1"><img src="x.png" alt="Abacus"></a></td><td>Carrito de limpieza</td>
+        <td>23,99€ <small>26,98€ e.i.</small></td><td><a href="/out/aaa?sig=1">Comprar en Abacus</a> <a href="/out/aaa?sig=1">Ver oferta</a></td></tr>
+    <tr><td>Theo Klein Vileda Carrito</td><td>29,66€ Precio total más barato: 29,66€ e.i.</td>
+        <td><a href="https://www.globerada.com/out/bbb">Comprar en Amazon Marketplace Vendido por Amazon</a></td></tr>
+    <tr><td>Carro Limpieza Vileda</td><td>39,43€</td><td>Comprar en Fnac Marketplace Vendido por Electro MGD</td>
+        <td><a href="/out/ccc">Ver oferta</a></td></tr>
+    <tr><td>Carrito de limpieza Klein Vileda</td><td>25,96€ 31,95€ e.i.</td><td>Raijuguetes</td><td><a href="/out/ddd">Ver oferta</a></td></tr>
+    </table>"""
+
+    def test_lee_ofertas(self):
+        ofertas = ap.ofertas_comparador("https://www.globerada.com/precios/x.html", self.PAGINA)
+        self.assertEqual([(o["tienda"], o["precio"]) for o in ofertas],
+                         [("Abacus", 23.99), ("Raijuguetes", 25.96), ("Amazon", 29.66),
+                          ("Fnac (Electro MGD)", 39.43)])
+        self.assertEqual(ofertas[0]["url"], "https://www.globerada.com/out/aaa?sig=1")
+
+    def test_revisar_comparador_guarda_cada_tienda(self):
+        original = ap.descargar
+        ap.descargar = lambda url, timeout=25, extra=None: self.PAGINA
+        hist = {}
+        try:
+            fila = ap.revisar_comparador(hist, {"id": "p"}, {"tienda": "Globerada",
+                                         "comparador": "https://www.globerada.com/precios/x.html"}, "2026-11-19")
+        finally:
+            ap.descargar = original
+        self.assertEqual(len(fila["ofertas"]), 4)
+        clave = "https://www.globerada.com/precios/x.html#Abacus"
+        self.assertEqual(hist["p"][clave]["historial"][-1]["precio"], 23.99)
+        self.assertEqual(hist["p"][clave]["via"], "Globerada")
+
+
 if __name__ == "__main__":
     unittest.main()

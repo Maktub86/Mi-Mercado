@@ -262,7 +262,7 @@ NAVEGADORES = [
 ]
 
 
-def descargar_amazon(url: str, intentos: int = 3) -> str:
+def descargar_amazon(url: str, intentos: int = 2) -> str:
     """Amazon pide captcha a muchas visitas de robots; probamos varias veces,
     con pausas y distintos navegadores, antes de rendirnos."""
     asin = asin_de(url)
@@ -392,10 +392,84 @@ def buscar_shopify(dominio: str, consulta: str) -> str | None:
     return None
 
 
+# ---------------------------------------------------------------- comparadores (Globerada)
+
+PRECIO_EUROS = re.compile(r"(\d{1,4}(?:\.\d{3})*,\d{2})\s*€")
+
+
+def ofertas_comparador(url: str, pagina: str) -> list[dict]:
+    """Lee la tabla de ofertas de una página de comparador de precios.
+    Cada fila tiene tienda, nombre del producto, precio y un enlace 'Ver oferta'."""
+    partes = urllib.parse.urlsplit(url)
+    base = f"{partes.scheme}://{partes.netloc}"
+    ofertas: dict[str, dict] = {}
+    for fila in re.findall(r"<tr\b.*?</tr>", pagina, flags=re.S | re.I):
+        texto = texto_plano(fila)
+        precio = PRECIO_EUROS.search(texto)
+        if not precio:
+            continue
+        tienda = re.search(r"Comprar en\s+(.+?)(?:\s+Marketplace\b|\s+Vendido por\b|\s+Ver oferta\b|$)", texto)
+        nombre_tienda = tienda.group(1).strip() if tienda else None
+        if not nombre_tienda:
+            alt = re.search(r'<img[^>]+alt="([^"]{2,40})"', fila)
+            nombre_tienda = html_lib.unescape(alt.group(1)).strip() if alt else None
+        if not nombre_tienda:
+            resto = texto[precio.end():]
+            resto = re.sub(r"(Precio total más barato:|gastos envío posibles|e\.i\.|Cupón\S*|Quedan\s+[\d:]+|[\d.,]+\s*€)", " ", resto)
+            candidato = re.sub(r"\s+Ver oferta.*$", "", resto).strip()
+            nombre_tienda = candidato[:40] if 1 < len(candidato) <= 40 else None
+        if not nombre_tienda:
+            continue
+        vendedor = re.search(r"Vendido por\s+(.+?)(?:\s+Ver oferta\b|$)", texto)
+        if vendedor and nombre_tienda.lower().startswith(("amazon", "miravia", "fnac")) and \
+                vendedor.group(1).strip().lower() not in ("amazon", "amazon.es", "fnac"):
+            nombre_tienda = f"{nombre_tienda} ({vendedor.group(1).strip()})"
+        enlace = re.search(r'href="([^"]*/out/[^"]+)"', fila) or re.search(r'href="(https?://[^"]+)"', fila)
+        destino = html_lib.unescape(enlace.group(1)) if enlace else url
+        if destino.startswith("/"):
+            destino = base + destino
+        valor = a_numero(precio.group(1))
+        if not valor:
+            continue
+        actual = ofertas.get(nombre_tienda)
+        if not actual or valor < actual["precio"]:
+            ofertas[nombre_tienda] = {"tienda": nombre_tienda, "precio": valor, "url": destino,
+                                      "producto": texto[:precio.start()].strip()[:120]}
+    return sorted(ofertas.values(), key=lambda o: o["precio"])
+
+
+BUSCADORES_GLOBERADA = (
+    "https://www.globerada.com/buscar/?q={q}",
+    "https://www.globerada.com/search?q={q}",
+    "https://www.globerada.com/?s={q}",
+)
+
+
+def buscar_globerada(consulta: str) -> str | None:
+    """Busca la ficha de un producto en Globerada y devuelve su página de precios
+    si el título contiene todas las palabras buscadas."""
+    buscadas = _palabras(consulta)
+    for patron in BUSCADORES_GLOBERADA:
+        try:
+            pagina = descargar(patron.format(q=urllib.parse.quote_plus(consulta)))
+        except Exception:  # noqa: BLE001 - probamos el siguiente formato
+            continue
+        for ruta, texto in re.findall(r'href="((?:https://www\.globerada\.com)?/precios/[^"#?]+\.html)"[^>]*>(.*?)</a>',
+                                      pagina, flags=re.S):
+            titulo = texto_plano(texto) or ruta.rsplit("/", 1)[-1].replace("-", " ")
+            if buscadas <= _palabras(titulo + " " + ruta.replace("-", " ")):
+                return ruta if ruta.startswith("http") else "https://www.globerada.com" + ruta
+    return None
+
+
 def clave_enlace(enlace: dict) -> str:
     """Identificador estable de un enlace en el historial."""
     if enlace.get("url"):
         return enlace["url"]
+    if enlace.get("comparador"):
+        return enlace["comparador"]
+    if enlace.get("comparador_buscar"):
+        return f"comparador:{enlace['comparador_buscar']}"
     return f"buscar:{enlace['dominio']}:{enlace['buscar']}"
 
 
@@ -493,6 +567,43 @@ def registrar(historial: dict, producto_id: str, enlace: dict, hoy: str,
         serie.append(entrada)
 
 
+def revisar_comparador(historial: dict, producto: dict, enlace: dict, hoy: str) -> dict:
+    """Guarda cada oferta del comparador como una tienda más ('url#Tienda')."""
+    url = enlace["comparador"]
+    base_clave = clave_enlace({k: v for k, v in enlace.items() if k != "comparador"}) \
+        if enlace.get("comparador_buscar") else url
+    prod = historial.setdefault(producto["id"], {})
+    fila = {"producto": producto["id"], "tienda": enlace["tienda"], "url": url, "metodo": "comparador"}
+    try:
+        pagina = descargar(url)
+        ofertas = ofertas_comparador(url, pagina)
+        ficha = ficha_generica(pagina)
+    except Bloqueado as err:
+        ofertas, ficha, fila["error"] = [], {}, f"bloqueado: {err}"
+    except Exception as err:  # noqa: BLE001
+        ofertas, ficha, fila["error"] = [], {}, f"{type(err).__name__}: {err}"
+    else:
+        if not ofertas:
+            fila["error"] = "no se encontraron ofertas en la página"
+            fila["pistas"] = diagnosticar(pagina)
+    vistas = set()
+    for oferta in ofertas:
+        clave = f"{base_clave}#{oferta['tienda']}"
+        vistas.add(clave)
+        registrar(historial, producto["id"], {"tienda": oferta["tienda"], "url": clave}, hoy,
+                  oferta["precio"], True, None,
+                  {"url": oferta["url"], "via": enlace["tienda"], "producto_tienda": oferta["producto"],
+                   "imagen": ficha.get("imagen") if ficha.get("imagen") else None})
+    if not fila.get("error"):
+        for clave, datos in prod.items():
+            if clave.startswith(f"{base_clave}#") and clave not in vistas:
+                datos["ultimo_error"] = "ya no aparece en el comparador"
+                datos["ultima_comprobacion"] = hoy
+    fila["pagina"] = url
+    fila["ofertas"] = [{"tienda": o["tienda"], "precio": o["precio"]} for o in ofertas]
+    return fila
+
+
 def main() -> int:
     productos = cargar_json(PRODUCTOS, {"productos": []})["productos"]
     estado = cargar_json(PRECIOS, {"actualizado": None, "productos": {}})
@@ -505,7 +616,8 @@ def main() -> int:
         del historial[viejo]
     for producto in productos:
         urls = {clave_enlace(e) for e in producto.get("enlaces", [])}
-        for url in [u for u in historial.get(producto["id"], {}) if u not in urls]:
+        for url in [u for u in historial.get(producto["id"], {})
+                    if u not in urls and u.split("#")[0] not in urls]:
             del historial[producto["id"]][url]
 
     leidos = fallos = 0
@@ -513,6 +625,26 @@ def main() -> int:
         if producto.get("estado") == "comprado":
             continue
         for enlace in producto.get("enlaces", []):
+            if enlace.get("comparador_buscar") and not enlace.get("comparador"):
+                try:
+                    encontrado = buscar_globerada(enlace["comparador_buscar"])
+                except Exception:  # noqa: BLE001
+                    encontrado = None
+                if not encontrado:
+                    informe.append({"producto": producto["id"], "tienda": enlace["tienda"],
+                                    "url": clave_enlace(enlace), "error": "no encontrado en el comparador"})
+                    print(f"  ✗ {producto['nombre']} [{enlace['tienda']}]: no encontrado")
+                    continue
+                enlace = {**enlace, "comparador": encontrado}
+            if enlace.get("comparador"):
+                fila = revisar_comparador(historial, producto, enlace, hoy)
+                informe.append(fila)
+                leidos += len(fila.get("ofertas", []))
+                fallos += 0 if fila.get("ofertas") else 1
+                print(f"  {'✓' if fila.get('ofertas') else '✗'} {producto['nombre']} [{enlace['tienda']}]: "
+                      f"{len(fila.get('ofertas', []))} ofertas {fila.get('error') or ''}")
+                time.sleep(random.uniform(2.0, 5.0))
+                continue
             clave = clave_enlace(enlace)
             url = enlace.get("url")
             resultado: dict = {}
