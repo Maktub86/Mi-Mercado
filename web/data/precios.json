@@ -1289,26 +1289,6 @@
         "via": "Globerada",
         "producto_tienda": "Mattel Monster High muñeca monstruo, FRANKIE, JHK31",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
-      },
-      "amazon:Monster High Frankie Stein": {
-        "tienda": "Amazon",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 5.99,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "titulo": "Playmobil x Monster High Frankie Stein™",
-        "imagen": "https://m.media-amazon.com/images/I/61hZGOl6sYL._AC_SL1232_.jpg",
-        "valoracion": {
-          "media": 4.7,
-          "total": 133,
-          "maximo": 5
-        },
-        "opiniones_url": "https://www.amazon.es/product-reviews/B0FJ8NBM4T",
-        "url": "https://www.amazon.es/dp/B0FJ8NBM4T"
       }
     },
     "juego-rol-restaurante-agustin": {

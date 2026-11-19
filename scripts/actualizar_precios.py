@@ -66,7 +66,7 @@ class Bloqueado(Exception):
 
 # ---------------------------------------------------------------- descarga
 
-def descargar(url: str, timeout: int = 25, extra: dict | None = None) -> str:
+def descargar(url: str, timeout: int = 25, extra: dict | None = None, reintentos: int = 2) -> str:
     peticion = urllib.request.Request(url, headers={**CABECERAS, **(extra or {})})
     try:
         with urllib.request.urlopen(peticion, timeout=timeout) as resp:
@@ -74,6 +74,11 @@ def descargar(url: str, timeout: int = 25, extra: dict | None = None) -> str:
             codificacion = resp.headers.get("Content-Encoding", "")
             juego = resp.headers.get_content_charset() or "utf-8"
     except urllib.error.HTTPError as err:
+        if err.code == 429 and reintentos > 0:
+            # "Demasiadas peticiones": esperamos lo que pida la tienda (o 30 s) y repetimos.
+            espera = err.headers.get("Retry-After", "")
+            time.sleep(min(int(espera), 90) if espera.isdigit() else 30)
+            return descargar(url, timeout, extra, reintentos - 1)
         if err.code in (403, 429, 503):
             raise Bloqueado(f"la tienda respondió {err.code}") from err
         raise
@@ -613,6 +618,21 @@ def registrar(historial: dict, producto_id: str, enlace: dict, hoy: str,
         serie.append(entrada)
 
 
+def referencia_producto(producto: dict, historial: dict, excluir: str) -> float | None:
+    """Precio de referencia: el de la lista o, si no hay, la mediana de las otras tiendas."""
+    if producto.get("precio_lista"):
+        return float(producto["precio_lista"])
+    ultimos = sorted(datos["historial"][-1]["precio"] for clave, datos in historial.get(producto["id"], {}).items()
+                     if clave != excluir and datos.get("historial") and not datos.get("ultimo_error"))
+    return ultimos[len(ultimos) // 2] if len(ultimos) >= 2 else None
+
+
+def precio_dudoso(precio: float, referencia: float | None) -> bool:
+    """Un precio encontrado por búsqueda que es menos de la mitad o más del doble
+    de la referencia suele ser otro producto (un accesorio, un pack...)."""
+    return bool(referencia) and (precio < referencia * 0.45 or precio > referencia * 2.2)
+
+
 def revisar_comparador(historial: dict, producto: dict, enlace: dict, hoy: str) -> dict:
     """Guarda cada oferta del comparador como una tienda más ('url#Tienda')."""
     url = enlace["comparador"]
@@ -718,12 +738,19 @@ def main() -> int:
                     if not url:
                         raise LookupError("no está en el catálogo de la tienda")
                 resultado = analizar(url)
-                resultado.setdefault("ficha", {})["url"] = url
+                if not enlace.get("url"):
+                    resultado.setdefault("ficha", {})["url"] = url
             except Bloqueado as err:
                 error = f"bloqueado: {err}"
             except Exception as err:  # noqa: BLE001 - seguimos con el resto
                 error = f"{type(err).__name__}: {err}"
             precio = resultado.get("precio")
+            if precio and (enlace.get("amazon_buscar") or enlace.get("buscar")) and \
+                    precio_dudoso(precio, referencia_producto(producto, historial, clave)):
+                error = f"precio dudoso ({precio:.2f} €): posible producto equivocado"
+                precio = None
+                resultado["ficha"] = {}
+                historial.get(producto["id"], {}).get(clave, {}).pop("url", None)
             registrar(historial, producto["id"], {**enlace, "url": clave}, hoy, precio,
                       resultado.get("disponible"), error, resultado.get("ficha"))
             fila = {"producto": producto["id"], "tienda": enlace["tienda"], "url": url or clave,
