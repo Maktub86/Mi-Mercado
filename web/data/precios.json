@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-19T15:18:46+00:00",
+  "actualizado": "2026-11-19T15:33:10+00:00",
   "productos": {
     "monster-high-moonspell": {
       "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/": {
@@ -13,6 +13,32 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "bloqueado: la tienda respondió 403"
+      },
+      "https://www.toyplanet.com/products/monster-high-moonspell-magic-claire-de-luna": {
+        "tienda": "Toy Planet (Claire)",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 28.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Monster High Moonspell Magic Claire De Luna",
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JMB89_1.png?v=1782436555"
+      },
+      "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina": {
+        "tienda": "Toy Planet (Rae)",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 28.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Monster High Moonspell Magic Rae Lumina",
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JMB91_1.png?v=1782436548"
       }
     },
     "vtech-kidisecrets-locker": {
@@ -25,7 +51,8 @@
             "disponible": true
           }
         ],
-        "ultima_comprobacion": "2026-11-19"
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "bloqueado: Amazon pidió un captcha"
       }
     },
     "dreamon-heladeria": {
@@ -33,7 +60,7 @@
         "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "no se encontró el precio en la página"
+        "ultimo_error": "bloqueado: Amazon pidió un captcha"
       }
     },
     "playmobil-71613-abuelos": {
@@ -41,15 +68,23 @@
         "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "no se encontró el precio en la página"
+        "ultimo_error": "bloqueado: Amazon pidió un captcha"
       }
     },
     "carro-limpieza": {
-      "https://www.amazon.es/dp/B00IL3SW2Y": {
+      "https://www.amazon.es/dp/B00IL35W2Y": {
         "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "HTTPError: HTTP Error 404: Not Found"
+        "titulo": "Theo Klein Vileda Carrito de limpieza, juguete de rol a partir de 3 años",
+        "imagen": "https://m.media-amazon.com/images/I/71F6QASe9-L._AC_SL1500_.jpg",
+        "valoracion": {
+          "media": 4.6,
+          "total": 6580,
+          "maximo": 5
+        },
+        "opiniones_url": "https://www.amazon.es/product-reviews/B00IL35W2Y",
+        "ultimo_error": "no se encontró el precio en la página"
       }
     },
     "barbie-boda-chelsea": {
@@ -57,7 +92,7 @@
         "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "no se encontró el precio en la página"
+        "ultimo_error": "bloqueado: Amazon pidió un captcha"
       }
     },
     "clementoni-nail-art": {
@@ -70,7 +105,8 @@
             "disponible": true
           }
         ],
-        "ultima_comprobacion": "2026-11-19"
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "bloqueado: Amazon pidió un captcha"
       }
     },
     "cherry-pets-confetti-tree": {
@@ -86,7 +122,7 @@
         "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "no se encontró el precio en la página"
+        "ultimo_error": "bloqueado: Amazon pidió un captcha"
       }
     },
     "barbie-deluxe-style-15": {
@@ -94,15 +130,15 @@
         "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "no se encontró el precio en la página"
+        "ultimo_error": "bloqueado: Amazon pidió un captcha"
       }
     },
     "barbie-coche-radiocontrol": {
-      "https://www.amazon.es/dp/B08JLD278H": {
+      "https://www.amazon.es/dp/B0BJLD278H": {
         "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "HTTPError: HTTP Error 404: Not Found"
+        "ultimo_error": "bloqueado: Amazon pidió un captcha"
       }
     },
     "barbie-cascanueces-trineo": {
@@ -110,7 +146,13 @@
         "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "no se encontró el precio en la página"
+        "ultimo_error": "bloqueado: Amazon pidió un captcha"
+      },
+      "https://www.toysrus.es/Barbie-El-Cascanueces-Caballo-y-Trineo-del-Reino-de-los-Dulces/p/K1105772": {
+        "tienda": "Toys R Us",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons"
       }
     },
     "stitch-walkie-talkies": {
@@ -118,7 +160,68 @@
         "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "no se encontró el precio en la página"
+        "ultimo_error": "bloqueado: Amazon pidió un captcha"
+      }
+    },
+    "mirrormi-fashion": {
+      "https://www.amazon.es/dp/B0GKND16BN": {
+        "tienda": "Amazon (Shai)",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 28.5,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Mirror Mi Shai Meadows Fashion Doll - Muñeca de Moda Soft n Sweet, con más de 15 Puntos articulados",
+        "imagen": "https://m.media-amazon.com/images/I/81EPa981fhL._AC_SL1500_.jpg",
+        "valoracion": {
+          "media": 4.7,
+          "total": 608,
+          "maximo": 5
+        },
+        "opiniones_url": "https://www.amazon.es/product-reviews/B0GKND16BN"
+      },
+      "https://www.amazon.es/dp/B0GKNCH9X9": {
+        "tienda": "Amazon (Suki)",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 28.92,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Mirror Mi Suki Goldpetal Fashion Doll - Muñeca de Moda Headphones On, con más de 15 Puntos articulados",
+        "imagen": "https://m.media-amazon.com/images/I/81GE1tx-egL._AC_SL1500_.jpg",
+        "valoracion": {
+          "media": 4.7,
+          "total": 608,
+          "maximo": 5
+        },
+        "opiniones_url": "https://www.amazon.es/product-reviews/B0GKNCH9X9"
+      },
+      "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm": {
+        "tienda": "Toy Planet (Suki)",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 34.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "MirrorMi Academy Muñeca Fashion Suki Goldpetal Fragile de 26,5 cm",
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMGV055253_9_Copy.webp?v=1788339955"
+      }
+    },
+    "barbie-cascanueces-bailarina": {
+      "https://www.toysrus.es/Barbie-en-el-Cascanueces-Clara-con-tut%C3%BA/p/K1105770": {
+        "tienda": "Toys R Us",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons"
       }
     }
   }

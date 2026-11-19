@@ -1,0 +1,203 @@
+{
+  "fecha": "2026-11-19T15:33:10+00:00",
+  "leidos": 5,
+  "fallos": 16,
+  "enlaces": [
+    {
+      "producto": "monster-high-moonspell",
+      "tienda": "El Corte Inglés (Willow)",
+      "url": "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 403",
+      "pistas": {}
+    },
+    {
+      "producto": "monster-high-moonspell",
+      "tienda": "El Corte Inglés (Layla)",
+      "url": "https://www.elcorteingles.es/juguetes/A200825479-muneca-moonspell-magic-layla-crystal-monster-high-mattel/",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 403",
+      "pistas": {}
+    },
+    {
+      "producto": "monster-high-moonspell",
+      "tienda": "Toy Planet (Claire)",
+      "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-claire-de-luna",
+      "precio": 28.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
+      "producto": "monster-high-moonspell",
+      "tienda": "Toy Planet (Rae)",
+      "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina",
+      "precio": 28.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
+      "producto": "vtech-kidisecrets-locker",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0CWVNM2RD",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
+    },
+    {
+      "producto": "dreamon-heladeria",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0CF1TN1WV",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
+    },
+    {
+      "producto": "playmobil-71613-abuelos",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0D353J66T",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
+    },
+    {
+      "producto": "carro-limpieza",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B00IL35W2Y",
+      "precio": null,
+      "metodo": "amazon-ofertas",
+      "error": null,
+      "pistas": {
+        "bytes": 555497,
+        "titulo": "Theo Klein Vileda Carrito de limpieza, juguete de rol a partir de 3 años | Con fregona, cubo, escoba, juego de barrido, ",
+        "captcha": false,
+        "json_ld": 0,
+        "marcas": [
+          "corePrice",
+          "apex_",
+          "availability",
+          "buybox",
+          "Ver todas las opciones de compra"
+        ]
+      }
+    },
+    {
+      "producto": "barbie-boda-chelsea",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B01FKUVX64",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
+    },
+    {
+      "producto": "mirrormi-fashion",
+      "tienda": "Amazon (Shai)",
+      "url": "https://www.amazon.es/dp/B0GKND16BN",
+      "precio": 28.5,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "mirrormi-fashion",
+      "tienda": "Amazon (Suki)",
+      "url": "https://www.amazon.es/dp/B0GKNCH9X9",
+      "precio": 28.92,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "mirrormi-fashion",
+      "tienda": "Toy Planet (Suki)",
+      "url": "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm",
+      "precio": 34.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
+      "producto": "clementoni-nail-art",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0B4KQMTVM",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
+    },
+    {
+      "producto": "cherry-pets-confetti-tree",
+      "tienda": "Carrefour",
+      "url": "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 403",
+      "pistas": {}
+    },
+    {
+      "producto": "educa-magnetics-61",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0CSPQ6MSQ",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
+    },
+    {
+      "producto": "barbie-deluxe-style-15",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0G43VCRD4",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
+    },
+    {
+      "producto": "barbie-coche-radiocontrol",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0BJLD278H",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
+    },
+    {
+      "producto": "barbie-cascanueces-trineo",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0G42LDBDW",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
+    },
+    {
+      "producto": "barbie-cascanueces-trineo",
+      "tienda": "Toys R Us",
+      "url": "https://www.toysrus.es/Barbie-El-Cascanueces-Caballo-y-Trineo-del-Reino-de-los-Dulces/p/K1105772",
+      "precio": null,
+      "metodo": null,
+      "error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons",
+      "pistas": {}
+    },
+    {
+      "producto": "stitch-walkie-talkies",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0HKRX9BZ1",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
+    },
+    {
+      "producto": "barbie-cascanueces-bailarina",
+      "tienda": "Toys R Us",
+      "url": "https://www.toysrus.es/Barbie-en-el-Cascanueces-Clara-con-tut%C3%BA/p/K1105770",
+      "precio": null,
+      "metodo": null,
+      "error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons",
+      "pistas": {}
+    }
+  ]
+}
