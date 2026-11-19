@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-19T21:35:21+00:00",
-  "leidos": 88,
+  "fecha": "2026-11-19T23:00:15+00:00",
+  "leidos": 91,
   "fallos": 21,
   "enlaces": [
     {
@@ -67,12 +67,12 @@
       "pagina": "https://www.globerada.com/precios/monster-high-claire-de-luna-moonspell-magic-muneca-con-sorpresa-en-caldero-y-accesorios-jmb89.html",
       "ofertas": [
         {
-          "tienda": "Abacus",
-          "precio": 27.99
+          "tienda": "Amazon",
+          "precio": 24.67
         },
         {
-          "tienda": "Amazon",
-          "precio": 28.95
+          "tienda": "Abacus",
+          "precio": 27.99
         },
         {
           "tienda": "Juguettos",
@@ -93,7 +93,7 @@
       "ofertas": [
         {
           "tienda": "Amazon Marketplace (Funidelia España)",
-          "precio": 22.26
+          "precio": 22.39
         }
       ]
     },
@@ -202,11 +202,11 @@
       "pagina": "https://www.globerada.com/precios/playmobil-my-life-abuelos-y-bebe-71613.html",
       "ofertas": [
         {
-          "tienda": "Amazon Marketplace (Imosver)",
+          "tienda": "Imosver",
           "precio": 11.23
         },
         {
-          "tienda": "Imosver",
+          "tienda": "Amazon Marketplace (Imosver)",
           "precio": 11.23
         },
         {
@@ -254,6 +254,10 @@
         {
           "tienda": "Fnac (Electro MGD)",
           "precio": 39.43
+        },
+        {
+          "tienda": "PcComponentes (Leasi-es)",
+          "precio": 58.97
         }
       ]
     },
@@ -295,12 +299,12 @@
       "pagina": "https://www.globerada.com/precios/lol-surprise-omg-music-festival-jennie-muneca-de-moda-coleccionable-249696.html",
       "ofertas": [
         {
-          "tienda": "Raijuguetes",
-          "precio": 28.92
+          "tienda": "Amazon",
+          "precio": 25.89
         },
         {
-          "tienda": "Amazon",
-          "precio": 34.99
+          "tienda": "Raijuguetes",
+          "precio": 28.92
         },
         {
           "tienda": "Electropolis",
@@ -424,6 +428,10 @@
           "precio": 31.95
         },
         {
+          "tienda": "Miravia (Juguetes Abracadabra)",
+          "precio": 34.94
+        },
+        {
           "tienda": "Aliexpress ES (Shop1104124762 Store)",
           "precio": 39.99
         }
@@ -448,10 +456,14 @@
     {
       "producto": "cherry-pets-confetti-tree",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/cherry-pets-confetti-tree-koala-twin.html",
+      "url": "https://www.globerada.com/precios/cherry-pets-confetti-tree-casa-arbol-juguete-con-confeti-y-figuras-gemelas-perladas-playset-con-tobogan-columpio-y-accesorios-snack-time.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/cherry-pets-confetti-tree-koala-twin.html",
+      "pagina": "https://www.globerada.com/precios/cherry-pets-confetti-tree-casa-arbol-juguete-con-confeti-y-figuras-gemelas-perladas-playset-con-tobogan-columpio-y-accesorios-snack-time.html",
       "ofertas": [
+        {
+          "tienda": "Amazon",
+          "precio": 24.99
+        },
         {
           "tienda": "Juguettos",
           "precio": 24.99
@@ -491,16 +503,16 @@
       "pagina": "https://www.globerada.com/precios/spin-master-peekimo.html",
       "ofertas": [
         {
+          "tienda": "Amazon",
+          "precio": 20.99
+        },
+        {
           "tienda": "Electropolis",
           "precio": 27.51
         },
         {
           "tienda": "Aliexpress ES (Shop1104118748 Store)",
           "precio": 27.99
-        },
-        {
-          "tienda": "Amazon",
-          "precio": 29.99
         },
         {
           "tienda": "Juguettos",
@@ -553,7 +565,7 @@
       "ofertas": [
         {
           "tienda": "Amazon",
-          "precio": 49.74
+          "precio": 37.94
         }
       ]
     },
@@ -618,7 +630,7 @@
       "ofertas": [
         {
           "tienda": "Amazon",
-          "precio": 28.49
+          "precio": 23.43
         },
         {
           "tienda": "Raijuguetes",
@@ -659,11 +671,11 @@
           "precio": 39.64
         },
         {
-          "tienda": "Miravia (ielectro)",
+          "tienda": "Amazon Marketplace (ielectro)",
           "precio": 39.95
         },
         {
-          "tienda": "Amazon Marketplace (ielectro)",
+          "tienda": "Miravia (ielectro)",
           "precio": 39.95
         },
         {
@@ -698,11 +710,11 @@
       "pagina": "https://www.globerada.com/precios/haba-2013336004-bichos-juego-infantil-de-mesa-de-memoria-y-calculo-mental-sumas-hasta-10.-mas-6-anos.html",
       "ofertas": [
         {
-          "tienda": "Ferretería Ibermadrid",
+          "tienda": "Abacus",
           "precio": 7.19
         },
         {
-          "tienda": "Abacus",
+          "tienda": "Ferretería Ibermadrid",
           "precio": 7.19
         },
         {
@@ -890,13 +902,13 @@
     {
       "producto": "monster-high-cleo",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-cleo-de-nile-hxh74.html",
+      "url": "https://www.globerada.com/precios/monster-high-dawn-of-the-dance-cleo-muneca-143116216.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-cleo-de-nile-hxh74.html",
+      "pagina": "https://www.globerada.com/precios/monster-high-dawn-of-the-dance-cleo-muneca-143116216.html",
       "ofertas": [
         {
-          "tienda": "Amazon Marketplace (NEA PRIME)",
-          "precio": 29.95
+          "tienda": "Amazon",
+          "precio": 33.99
         }
       ]
     },
@@ -917,7 +929,7 @@
       "ofertas": [
         {
           "tienda": "Amazon",
-          "precio": 27.89
+          "precio": 19.04
         },
         {
           "tienda": "Electropolis",
