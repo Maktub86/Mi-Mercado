@@ -11,7 +11,8 @@
       "precio_lista": 64.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Tocador Princesas Disney con taburete",
-      "enlaces": []
+      "enlaces": [],
+      "categoria": "reyes"
     },
     {
       "id": "monster-high-moonspell",
@@ -47,7 +48,8 @@
           "tienda": "Amazon",
           "amazon_buscar": "Monster High Moonspell"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "disfraz-cenicienta",
@@ -57,7 +59,8 @@
       "nota": "Tachado en la lista",
       "precio_lista": null,
       "busqueda": "Disfraz Cenicienta niña Disney",
-      "enlaces": []
+      "enlaces": [],
+      "categoria": "reyes"
     },
     {
       "id": "bolso-peluche-hello-kitty",
@@ -82,7 +85,8 @@
           "tienda": "Amazon",
           "amazon_buscar": "Hello Kitty bolso peluche reversible"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "playmobil-bolso-concha",
@@ -94,7 +98,8 @@
       "precio_lista": 19.99,
       "tienda_lista": "Amazon",
       "busqueda": "Playmobil bolso de concha sirena Princess Magic",
-      "enlaces": []
+      "enlaces": [],
+      "categoria": "reyes"
     },
     {
       "id": "dreamon-zapatos-princesa",
@@ -119,7 +124,8 @@
           "tienda": "Amazon",
           "amazon_buscar": "Dreamon zapatos princesa"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "vtech-kidisecrets-locker",
@@ -143,7 +149,8 @@
           "tienda": "Globerada",
           "comparador": "https://www.globerada.com/precios/vtech-kidisecrets-locker-taquilla-secreta.html"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "dreamon-heladeria",
@@ -168,7 +175,8 @@
           "tienda": "Globerada",
           "comparador_buscar": "Dreamon heladería"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "playmobil-71613-abuelos",
@@ -193,7 +201,8 @@
           "tienda": "Globerada",
           "comparador_buscar": "Playmobil 71613"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "carro-limpieza",
@@ -218,7 +227,8 @@
           "tienda": "Globerada",
           "comparador": "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "barbie-boda-chelsea",
@@ -243,7 +253,8 @@
           "tienda": "Globerada",
           "comparador_buscar": "Barbie boda Chelsea"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "maleta-portamaquillaje",
@@ -254,7 +265,8 @@
       "precio_lista": 48.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Tiny Beauty maleta portamaquillaje",
-      "enlaces": []
+      "enlaces": [],
+      "categoria": "reyes"
     },
     {
       "id": "omg-music-festival",
@@ -266,7 +278,8 @@
       "precio_lista": 34.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "LOL OMG Music Festival muñeca",
-      "enlaces": []
+      "enlaces": [],
+      "categoria": "reyes"
     },
     {
       "id": "pulseras-tiny-beauty",
@@ -277,7 +290,8 @@
       "precio_lista": 14.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Tiny Beauty pulseras",
-      "enlaces": []
+      "enlaces": [],
+      "categoria": "reyes"
     },
     {
       "id": "charm-tiny-beauty",
@@ -288,7 +302,8 @@
       "precio_lista": 10.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Tiny Beauty charm",
-      "enlaces": []
+      "enlaces": [],
+      "categoria": "reyes"
     },
     {
       "id": "mami-elefante-pets-alive",
@@ -299,7 +314,8 @@
       "precio_lista": 49.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Pets Alive mami elefante",
-      "enlaces": []
+      "enlaces": [],
+      "categoria": "reyes"
     },
     {
       "id": "mirrormi-fashion",
@@ -327,7 +343,8 @@
           "tienda": "Globerada",
           "comparador_buscar": "Mirrormi"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "peluche-maiz",
@@ -338,7 +355,8 @@
       "precio_lista": 9.95,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "peluche maíz El Corte Inglés",
-      "enlaces": []
+      "enlaces": [],
+      "categoria": "reyes"
     },
     {
       "id": "clementoni-nail-art",
@@ -363,7 +381,8 @@
           "tienda": "Globerada",
           "comparador_buscar": "Clementoni Nail Art Studio"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "cherry-pets-confetti-tree",
@@ -392,7 +411,8 @@
           "tienda": "Amazon",
           "amazon_buscar": "Cherry Pets Confetti Tree"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "educa-magnetics-61",
@@ -416,7 +436,8 @@
           "tienda": "Globerada",
           "comparador_buscar": "Educa Magnetics 61"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "peekimo",
@@ -427,7 +448,8 @@
       "precio_lista": 29.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Peekimo mascota electrónica",
-      "enlaces": []
+      "enlaces": [],
+      "categoria": "reyes"
     },
     {
       "id": "barbie-deluxe-style-15",
@@ -443,7 +465,8 @@
           "tienda": "Amazon",
           "url": "https://www.amazon.es/dp/B0G43VCRD4"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "barbie-coche-radiocontrol",
@@ -463,7 +486,8 @@
           "tienda": "Globerada",
           "comparador_buscar": "Mondo Barbie City Car"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "barbie-cascanueces-trineo",
@@ -492,7 +516,8 @@
           "tienda": "Globerada",
           "comparador_buscar": "Barbie Cascanueces trineo"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "stitch-despertador-3d",
@@ -509,7 +534,8 @@
           "tienda": "Amazon",
           "url": "https://www.amazon.es/dp/B0H4MK9TFD"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "stitch-walkie-talkies",
@@ -534,7 +560,8 @@
           "tienda": "Globerada",
           "comparador_buscar": "Stitch walkie vídeo"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "barbie-cascanueces-bailarina",
@@ -563,7 +590,8 @@
           "tienda": "Amazon",
           "amazon_buscar": "Barbie Cascanueces Clara tutú"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "holawatch-k-fun",
@@ -587,6 +615,100 @@
         {
           "tienda": "Amazon",
           "amazon_buscar": "Holawatch K-Fun"
+        }
+      ],
+      "categoria": "reyes"
+    },
+    {
+      "id": "botas-agua-esfera",
+      "nombre": "Botas de agua niña (Esfera) – talla 5 años",
+      "para": "Alba",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "Talla de 5 años (aprox. 27-28)",
+      "precio_lista": null,
+      "busqueda": "botas de agua niña esfera",
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "botas agua niña esfera"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "botas agua esfera"
+        }
+      ]
+    },
+    {
+      "id": "poquer-de-bichos",
+      "nombre": "Juego de cartas Póquer de Bichos (Devir)",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "Juego de cartas de bichos",
+      "precio_lista": null,
+      "busqueda": "Póquer de bichos Devir juego de cartas",
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Póquer de bichos"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Póquer de Bichos"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Póquer de Bichos"
+        }
+      ]
+    },
+    {
+      "id": "libro-consolar-ardilla",
+      "nombre": "Libro Cómo consolar a una ardilla (La pandilla de la ardilla 3)",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "De Begoña Oro, Ediciones SM",
+      "precio_lista": null,
+      "busqueda": "Cómo consolar a una ardilla Begoña Oro",
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/8467578122"
+        },
+        {
+          "tienda": "Amazon (lectura fácil)",
+          "url": "https://www.amazon.es/dp/849107273X"
+        },
+        {
+          "tienda": "Casa del Libro",
+          "url": "https://www.casadellibro.com/libro-la-pandilla-de-la-ardilla-3-como-consolar-a-una-ardilla/9788467578126/2597851"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "consolar ardilla"
+        }
+      ]
+    },
+    {
+      "id": "libro-disney-gran-libro",
+      "nombre": "Libro Disney – Gran libro de la película (el más barato)",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "Cualquiera de la colección: sale el que esté más barato",
+      "precio_lista": null,
+      "busqueda": "Disney Gran libro de la película",
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Gran libro de la película Disney"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Gran libro de la película"
         }
       ]
     },
@@ -613,7 +735,8 @@
           "tienda": "Amazon",
           "amazon_buscar": "Monster High Cleo De Nile"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "monster-high-frankie",
@@ -638,7 +761,8 @@
           "tienda": "Amazon",
           "amazon_buscar": "Monster High Frankie Stein"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "libros-escuela-monstruos",
@@ -658,7 +782,8 @@
           "tienda": "Amazon",
           "amazon_buscar": "Escuela de Monstruos libro"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "camiseta-betis",
@@ -678,7 +803,8 @@
           "tienda": "Amazon",
           "amazon_buscar": "camiseta Betis niña"
         }
-      ]
+      ],
+      "categoria": "reyes"
     },
     {
       "id": "juego-rol-restaurante-agustin",
@@ -708,7 +834,8 @@
           "amazon_buscar": "Djeco restaurante Agustín"
         }
       ],
-      "imagen": "https://multimedia.dideco.es/img/juego/EAN_3070900055247-5.jpg"
+      "imagen": "https://multimedia.dideco.es/img/juego/EAN_3070900055247-5.jpg",
+      "categoria": "reyes"
     },
     {
       "id": "boligrafos-magicos",
@@ -719,7 +846,8 @@
       "nota": "Fuera de carta",
       "precio_lista": null,
       "busqueda": "bolígrafos mágicos niños",
-      "enlaces": []
+      "enlaces": [],
+      "categoria": "reyes"
     },
     {
       "id": "puzzle",
@@ -730,7 +858,21 @@
       "nota": "Fuera de carta",
       "precio_lista": null,
       "busqueda": "puzzle infantil",
-      "enlaces": []
+      "enlaces": [],
+      "categoria": "reyes"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "reyes",
+      "nombre": "Reyes 2027",
+      "personas": [
+        "Alba",
+        "Lucía",
+        "Las dos",
+        "Alejandro",
+        "Rocío"
+      ]
     }
   ]
 }

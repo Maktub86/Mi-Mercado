@@ -1,12 +1,8 @@
 "use strict";
 
 const REPO = "Maktub86/Mi-Mercado";
-const PERSONAS = [
-  { id: "todas", nombre: "Todas" },
-  { id: "Alba", nombre: "Alba", clase: "alba" },
-  { id: "Lucía", nombre: "Lucía", clase: "lucia" },
-  { id: "Las dos", nombre: "Las dos", clase: "dos" },
-];
+const CLASES = { "Alba": "alba", "Lucía": "lucia", "Las dos": "dos", "Alejandro": "alejandro", "Rocío": "rocio" };
+let categorias = [];
 
 const euros = new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" });
 const fechaCorta = new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "short" });
@@ -14,7 +10,13 @@ const fechaLarga = new Intl.DateTimeFormat("es-ES", {
   weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit",
 });
 
-const estado = { persona: "todas", texto: "", orden: "lista" };
+const estado = { categoria: null, persona: "todas", texto: "", orden: "lista", soloElegidos: false };
+const CLAVE_ELEGIDOS = "mi-mercado-elegidos";
+let elegidos = new Set();
+try { elegidos = new Set(JSON.parse(localStorage.getItem(CLAVE_ELEGIDOS) || "[]")); } catch (e) { /* sin almacenamiento */ }
+function guardarElegidos() {
+  try { localStorage.setItem(CLAVE_ELEGIDOS, JSON.stringify([...elegidos])); } catch (e) { /* sin almacenamiento */ }
+}
 let productos = [];
 
 const $ = (sel) => document.querySelector(sel);
@@ -25,7 +27,7 @@ function leerFecha(iso) {
 }
 
 function claseDe(para) {
-  return (PERSONAS.find((p) => p.id === para) || {}).clase || "dos";
+  return CLASES[para] || "dos";
 }
 
 function normalizar(texto) {
@@ -133,31 +135,46 @@ function preparar(lista, precios) {
   });
 }
 
-function pintarResumen(actualizado) {
-  const pendientes = productos.filter((p) => p.estado !== "comprado");
-  const conValor = pendientes.filter((p) => p.referencia != null);
-  const total = conValor.reduce((s, p) => s + p.referencia, 0);
-  const bajadas = pendientes.filter((p) => p.variacion != null && p.variacion < -0.009);
-  const ahorro = bajadas.reduce((s, p) => s - p.variacion, 0);
-  const comprados = productos.length - pendientes.length;
-
-  $("#resumen").innerHTML = `
-    <div class="dato"><strong>${pendientes.length}</strong><span>por comprar</span></div>
-    <div class="dato"><strong>${euros.format(total)}</strong><span>coste estimado (${conValor.length} con precio)</span></div>
-    <div class="dato"><strong>${bajadas.length}</strong><span>más baratos que en la lista${ahorro ? ` · −${euros.format(ahorro)}` : ""}</span></div>
-    <div class="dato"><strong>${comprados}</strong><span>ya comprados</span></div>`;
-
+function pintarActualizado(actualizado) {
   $("#actualizado").textContent = actualizado
-    ? `Precios revisados el ${fechaLarga.format(new Date(actualizado))}`
-    : "Todavía no se han revisado los precios: se muestran los de la lista.";
+    ? `Precios revisados el ${fechaLarga.format(new Date(actualizado))}.`
+    : "Todavía no se han revisado los precios.";
+}
+
+function deCategoria() {
+  return productos.filter((p) => (p.categoria || "reyes") === estado.categoria);
+}
+
+function pintarCategorias() {
+  $("#categorias").innerHTML = categorias.map((c) =>
+    `<button type="button" class="categoria" data-categoria="${c.id}" aria-pressed="${c.id === estado.categoria}">${escapar(c.nombre)}</button>`).join("");
+}
+
+function pintarEleccion() {
+  const lista = productos.filter((p) => elegidos.has(p.id));
+  const barra = $("#barra-eleccion");
+  barra.hidden = lista.length === 0;
+  document.body.classList.toggle("con-barra", lista.length > 0);
+  if (!lista.length) { estado.soloElegidos = false; return; }
+  const total = lista.reduce((s, p) => s + (p.referencia || 0), 0);
+  const sinPrecio = lista.filter((p) => p.referencia == null).length;
+  const porPersona = {};
+  lista.forEach((p) => { porPersona[p.para] = (porPersona[p.para] || 0) + (p.referencia || 0); });
+  $("#eleccion-total").textContent = euros.format(total);
+  $("#eleccion-detalle").textContent = `${lista.length} ${lista.length === 1 ? "regalo elegido" : "regalos elegidos"}`
+    + (Object.keys(porPersona).length > 1 ? " · " + Object.entries(porPersona).map(([n, v]) => `${n} ${euros.format(v)}`).join(" · ") : "")
+    + (sinPrecio ? ` · ${sinPrecio} sin precio` : "");
+  $("#ver-elegidos").textContent = estado.soloElegidos ? "Ver todos" : "Ver solo elegidos";
 }
 
 function pintarChips() {
-  const pendientes = productos.filter((p) => p.estado !== "comprado");
-  $("#chips-persona").innerHTML = PERSONAS.map((p) => {
+  const categoria = categorias.find((c) => c.id === estado.categoria) || { personas: [] };
+  const pendientes = deCategoria().filter((p) => p.estado !== "comprado");
+  const opciones = [{ id: "todas", nombre: "Todos" }, ...categoria.personas.map((n) => ({ id: n, nombre: n }))];
+  $("#chips-persona").innerHTML = opciones.map((p) => {
     const n = p.id === "todas" ? pendientes.length : pendientes.filter((x) => x.para === p.id).length;
-    return `<button class="chip" role="tab" data-persona="${p.id}" aria-selected="${estado.persona === p.id}">
-      ${p.nombre}<span class="cuenta">${n}</span></button>`;
+    return `<button class="chip ${CLASES[p.id] || ""}" role="tab" data-persona="${escapar(p.id)}" aria-selected="${estado.persona === p.id}">
+      ${escapar(p.nombre)}<span class="cuenta">${n}</span></button>`;
   }).join("");
 }
 
@@ -211,9 +228,7 @@ function motivo(error) {
 
 const PESTANAS = [
   { id: "comparar", titulo: "Comparar precios" },
-  { id: "opiniones", titulo: "Opiniones" },
   { id: "historial", titulo: "Historial" },
-  { id: "nota", titulo: "Nota" },
 ];
 
 function hojaComparar(p) {
@@ -304,6 +319,22 @@ function tarjeta(p) {
   persona.classList.add(claseDe(p.para));
   if (p.fuera_de_carta) nodo.querySelector(".etiqueta-fuera").hidden = false;
 
+  const elegir = nodo.querySelector(".elegir");
+  const marcar = () => {
+    const si = elegidos.has(p.id);
+    elegir.setAttribute("aria-pressed", String(si));
+    elegir.title = si ? "Quitar de elegidos" : "Elegir este regalo";
+    nodo.classList.toggle("elegida", si);
+  };
+  elegir.addEventListener("click", () => {
+    if (elegidos.has(p.id)) elegidos.delete(p.id); else elegidos.add(p.id);
+    guardarElegidos();
+    marcar();
+    pintarEleccion();
+    if (estado.soloElegidos) pintarLista();
+  });
+  marcar();
+
   const img = nodo.querySelector(".foto img");
   const fotos = p.fotos.slice();
   const siguienteFoto = () => {
@@ -365,7 +396,8 @@ function tarjeta(p) {
 
 function pintarLista() {
   const texto = normalizar(estado.texto.trim());
-  let lista = productos.filter((p) => p.estado !== "comprado")
+  let lista = deCategoria().filter((p) => p.estado !== "comprado")
+    .filter((p) => !estado.soloElegidos || elegidos.has(p.id))
     .filter((p) => estado.persona === "todas" || p.para === estado.persona)
     .filter((p) => !texto || normalizar(`${p.nombre} ${p.nota || ""}`).includes(texto));
 
@@ -381,8 +413,11 @@ function pintarLista() {
   const contenedor = $("#pendientes");
   contenedor.replaceChildren(...lista.map(tarjeta));
   $("#vacio").hidden = lista.length > 0;
+  $("#vacio").textContent = estado.soloElegidos ? "No hay regalos elegidos aquí."
+    : estado.texto ? "No hay nada que coincida con la búsqueda."
+    : estado.persona !== "todas" ? `Todavía no hay regalos para ${estado.persona}.` : "Todavía no hay regalos en esta categoría.";
 
-  const comprados = productos.filter((p) => p.estado === "comprado")
+  const comprados = deCategoria().filter((p) => p.estado === "comprado")
     .filter((p) => estado.persona === "todas" || p.para === estado.persona);
   $("#titulo-comprados").textContent = `Ya comprados (${comprados.length})`;
   $("#bloque-comprados").hidden = comprados.length === 0;
@@ -399,6 +434,23 @@ function enlazarEventos() {
     pintarChips();
     pintarLista();
   });
+  $("#categorias").addEventListener("click", (e) => {
+    const boton = e.target.closest("[data-categoria]");
+    if (!boton) return;
+    estado.categoria = boton.dataset.categoria;
+    estado.persona = "todas";
+    pintarCategorias(); pintarChips(); pintarLista();
+  });
+  $("#ver-elegidos").addEventListener("click", () => {
+    estado.soloElegidos = !estado.soloElegidos;
+    pintarEleccion(); pintarLista();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  $("#quitar-eleccion").addEventListener("click", () => {
+    elegidos.clear(); guardarElegidos();
+    estado.soloElegidos = false;
+    pintarEleccion(); pintarLista();
+  });
   $("#buscar").addEventListener("input", (e) => { estado.texto = e.target.value; pintarLista(); });
   $("#orden").addEventListener("change", (e) => { estado.orden = e.target.value; pintarLista(); });
   $("#editar").href = `https://github.com/${REPO}/edit/main/web/data/productos.json`;
@@ -411,10 +463,15 @@ async function iniciar() {
       cargar("data/productos.json"),
       cargar("data/precios.json").catch(() => ({ productos: {} })),
     ]);
-    $("#antetitulo").textContent = `Lista de ${lista.lista || "regalos"} · Alba y Lucía`;
+    categorias = lista.categorias || [{ id: "reyes", nombre: lista.lista || "Reyes", personas: ["Alba", "Lucía", "Las dos"] }];
+    estado.categoria = categorias[0].id;
     productos = preparar(lista, precios);
-    pintarResumen(precios.actualizado);
+    const ids = new Set(productos.map((p) => p.id));
+    elegidos = new Set([...elegidos].filter((id) => ids.has(id)));
+    pintarActualizado(precios.actualizado);
+    pintarCategorias();
     pintarChips();
+    pintarEleccion();
     pintarLista();
   } catch (err) {
     $("#actualizado").textContent = `No se pudo cargar la lista (${err.message}).`;

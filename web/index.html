@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mi Mercado</title>
-  <meta name="description" content="Seguimiento de precios de la lista de Reyes">
+  <meta name="description" content="Seguimiento de precios">
   <meta name="theme-color" content="#1f2a44">
   <link rel="icon" href="icono.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,10 +15,8 @@
 <body>
   <header class="cabecera">
     <div class="contenedor">
-      <p class="antetitulo" id="antetitulo">Lista de Reyes</p>
       <h1>Mi Mercado</h1>
-      <p class="actualizado" id="actualizado">Cargando precios…</p>
-      <div class="resumen" id="resumen"></div>
+      <nav class="categorias" id="categorias" aria-label="Categorías"></nav>
     </div>
   </header>
 
@@ -26,7 +24,7 @@
     <section class="filtros" aria-label="Filtros">
       <div class="chips" id="chips-persona" role="tablist"></div>
       <div class="controles">
-        <input type="search" id="buscar" placeholder="Buscar juguete…" aria-label="Buscar juguete">
+        <input type="search" id="buscar" placeholder="Buscar…" aria-label="Buscar">
         <select id="orden" aria-label="Ordenar">
           <option value="lista">Orden de la lista</option>
           <option value="bajada">Mayor bajada primero</option>
@@ -45,14 +43,29 @@
     </details>
 
     <footer class="pie">
+      <p id="actualizado">Cargando precios…</p>
       <p>Los precios se revisan solos dos veces al día en Amazon, Toy Planet, Carrefour y todas las tiendas del comparador Globerada (Abacus, Juguettos, Fnac, Miravia, Raijuguetes…). Solo se muestran las tiendas de las que se ha podido leer el precio.</p>
       <p><a id="editar" href="#" target="_blank" rel="noopener">Añadir o cambiar productos</a></p>
     </footer>
   </main>
 
+  <div class="barra-eleccion" id="barra-eleccion" hidden>
+    <div class="contenedor barra-dentro">
+      <div class="barra-texto">
+        <strong id="eleccion-total">0,00 €</strong>
+        <span id="eleccion-detalle">0 regalos elegidos</span>
+      </div>
+      <div class="barra-acciones">
+        <button type="button" class="boton-barra" id="ver-elegidos">Ver solo elegidos</button>
+        <button type="button" class="boton-barra suave" id="quitar-eleccion">Quitar todo</button>
+      </div>
+    </div>
+  </div>
+
   <template id="plantilla-tarjeta">
     <article class="tarjeta">
       <div class="foto">
+        <button type="button" class="elegir" aria-pressed="false" title="Elegir este regalo"><span aria-hidden="true">✓</span></button>
         <img alt="" loading="lazy" referrerpolicy="no-referrer" hidden>
         <span class="foto-vacia" aria-hidden="true">🎁</span>
         <div class="foto-etiquetas">

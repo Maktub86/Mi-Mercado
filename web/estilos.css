@@ -437,3 +437,56 @@ button.boton { font: inherit; font-size: 13px; font-weight: 600; color: var(--ti
 .tabla-historial small { color: var(--tinta-suave); }
 .nombre { min-height: 2.5em; }
 @media (max-width: 400px) { .rejilla { grid-template-columns: 1fr; } }
+
+/* ---------- cabecera sencilla y categorías */
+.cabecera { padding: 26px 0 0; }
+.cabecera h1 { margin: 0 0 16px; }
+.categorias { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.categoria {
+  font: inherit; font-weight: 600; font-size: 14px;
+  color: #c9cfdb; background: rgba(255, 255, 255, .07);
+  border: 0; border-radius: 12px 12px 0 0;
+  padding: 10px 18px; cursor: pointer; white-space: nowrap;
+}
+.categoria[aria-pressed="true"] { background: var(--fondo); color: var(--tinta); }
+.chip.alejandro[aria-selected="false"] { color: #2f7d55; }
+.chip.rocio[aria-selected="false"] { color: #b4442f; }
+.persona.alejandro { background: #e2f1e8; color: #2f7d55; }
+.persona.rocio { background: #f8e3de; color: #b4442f; }
+
+/* ---------- círculo para elegir */
+.elegir {
+  position: absolute; top: 10px; right: 10px; z-index: 2;
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 2px solid var(--linea); background: #fff;
+  display: grid; place-items: center; cursor: pointer;
+  box-shadow: 0 1px 4px rgba(31, 42, 68, .15);
+  transition: background .15s, border-color .15s, transform .1s;
+}
+.elegir span { font-size: 17px; font-weight: 700; color: transparent; line-height: 1; }
+.elegir:hover { border-color: var(--baja); }
+.elegir:hover span { color: #b9d9c7; }
+.elegir:active { transform: scale(.92); }
+.elegir[aria-pressed="true"] { background: var(--baja); border-color: var(--baja); }
+.elegir[aria-pressed="true"] span { color: #fff; }
+.tarjeta.elegida { border-color: var(--baja); box-shadow: 0 0 0 2px var(--baja), var(--sombra); }
+
+/* ---------- barra con el total elegido */
+.barra-eleccion {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  background: var(--tinta); color: #fff;
+  box-shadow: 0 -6px 24px rgba(31, 42, 68, .25);
+  padding: 12px 0 calc(12px + env(safe-area-inset-bottom));
+}
+.barra-dentro { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.barra-texto { display: flex; flex-direction: column; }
+.barra-texto strong { font-family: Fraunces, Georgia, serif; font-size: 26px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.barra-texto span { font-size: 13px; color: #c9cfdb; }
+.barra-acciones { display: flex; gap: 8px; }
+.boton-barra {
+  font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+  border: 0; border-radius: 10px; padding: 9px 14px;
+  background: #d9a441; color: var(--tinta);
+}
+.boton-barra.suave { background: rgba(255, 255, 255, .12); color: #fff; }
+body.con-barra main { padding-bottom: 90px; }
