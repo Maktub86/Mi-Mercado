@@ -4,6 +4,7 @@ MI MERCADO - REVISAR PRECIOS DESDE TU ORDENADOR
 Con esto, tu ordenador revisa los precios cada día a las 22:00 (Amazon,
 El Corte Inglés, Toys R Us y el resto de tiendas) y los sube a la web.
 Si a esa hora está apagado, lo hace en cuanto lo enciendas.
+La revisión se hace en segundo plano, sin abrir ninguna ventana.
 
 
 PASO 1. CREAR LA CLAVE DE GITHUB (solo una vez, 2 minutos)

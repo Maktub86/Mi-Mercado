@@ -32,6 +32,7 @@ ARCHIVOS = {
     "web/data/productos.json": "lectura",
     "web/data/precios.json": "escritura",
     "scripts/actualizar_precios.py": "lectura",
+    "windows/sincronizar.py": "lectura",
 }
 
 
@@ -111,7 +112,16 @@ def main() -> int:
 
         entorno = {**os.environ, "MI_MERCADO_RAIZ": str(raiz), "MI_MERCADO_INFORME": "revision_casa.json",
                    "PYTHONIOENCODING": "utf-8"}
-        proceso = subprocess.run([sys.executable, "-I", str(raiz / "scripts" / "actualizar_precios.py")],
+        # Se actualiza a sí mismo para la próxima vez si en GitHub hay una versión nueva.
+        nuevo = (raiz / "windows" / "sincronizar.py").read_bytes()
+        if nuevo and nuevo != Path(__file__).read_bytes():
+            try:
+                Path(__file__).write_bytes(nuevo)
+                print("Programa de casa actualizado a la última versión.")
+            except OSError:
+                pass
+
+        proceso = subprocess.run([sys.executable, "-u", "-I", str(raiz / "scripts" / "actualizar_precios.py")],
                                  env=entorno, check=False)
         if proceso.returncode != 0:
             print("El robot terminó con un error; no se sube nada.")

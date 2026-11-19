@@ -9,6 +9,7 @@ set "DEST=%LOCALAPPDATA%\MiMercado"
 if not exist "%DEST%" mkdir "%DEST%"
 copy /y "%~dp0sincronizar.py" "%DEST%\" >nul
 copy /y "%~dp0actualizar.bat" "%DEST%\" >nul
+copy /y "%~dp0ejecutar_oculto.vbs" "%DEST%\" >nul
 
 rem --- 1. Buscar Python
 set "PY="
