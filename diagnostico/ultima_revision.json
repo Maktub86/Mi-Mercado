@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-19T21:00:51+00:00",
-  "leidos": 57,
-  "fallos": 12,
+  "fecha": "2026-11-19T21:09:31+00:00",
+  "leidos": 63,
+  "fallos": 14,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -454,6 +454,89 @@
         {
           "tienda": "Electropolis",
           "precio": 41.66
+        }
+      ]
+    },
+    {
+      "producto": "botas-agua-esfera",
+      "tienda": "Globerada",
+      "url": "comparador:botas agua esfera",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "poquer-de-bichos",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/devir-poquer-de-bichos-juego-de-mesa-rapido-y-divertido-de-cartas-creadores-de-la-polilla-tramposa-con-ninos-o-adultos-party-game-bgpobitr.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/devir-poquer-de-bichos-juego-de-mesa-rapido-y-divertido-de-cartas-creadores-de-la-polilla-tramposa-con-ninos-o-adultos-party-game-bgpobitr.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon",
+          "precio": 13.6
+        },
+        {
+          "tienda": "Ferretería Ibermadrid",
+          "precio": 13.6
+        },
+        {
+          "tienda": "Fnac",
+          "precio": 16.0
+        }
+      ]
+    },
+    {
+      "producto": "poquer-de-bichos",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Póquer de Bichos",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "libro-consolar-ardilla",
+      "tienda": "Casa del Libro",
+      "url": "https://www.casadellibro.com/libro-la-pandilla-de-la-ardilla-3-como-consolar-a-una-ardilla/9788467578126/2597851",
+      "precio": null,
+      "metodo": "generico",
+      "error": null,
+      "pistas": {
+        "bytes": 637342,
+        "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
+        "captcha": false,
+        "json_ld": 1,
+        "marcas": [
+          "availability"
+        ]
+      }
+    },
+    {
+      "producto": "libro-consolar-ardilla",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/como-consolar-a-una-ardilla.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/como-consolar-a-una-ardilla.html",
+      "ofertas": [
+        {
+          "tienda": "Abacus",
+          "precio": 9.02
+        },
+        {
+          "tienda": "Imosver",
+          "precio": 9.03
+        }
+      ]
+    },
+    {
+      "producto": "libro-disney-gran-libro",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/red.-gran-libro-de-la-pelicula.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/red.-gran-libro-de-la-pelicula.html",
+      "ofertas": [
+        {
+          "tienda": "Abacus",
+          "precio": 2.37
         }
       ]
     },
