@@ -10,6 +10,8 @@ on:
     paths:
       - "web/data/productos.json"
       - "scripts/**"
+      - "tests/**"
+      - ".github/workflows/**"
 
 permissions:
   contents: write
