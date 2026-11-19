@@ -746,6 +746,8 @@ def main() -> int:
         if producto.get("estado") == "comprado":
             continue
         for enlace in producto.get("enlaces", []):
+            if enlace.get("tienda") == "Idealo" and os.environ.get("GITHUB_ACTIONS") == "true":
+                continue  # Idealo bloquea a los servidores de GitHub (403); lo lee el ordenador de casa
             if enlace.get("comparador_buscar") and not enlace.get("comparador"):
                 buscador = buscar_idealo if enlace["tienda"] == "Idealo" else buscar_globerada
                 try:
