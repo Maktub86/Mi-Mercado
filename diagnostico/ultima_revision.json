@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-19T21:28:32+00:00",
-  "leidos": 71,
-  "fallos": 17,
+  "fecha": "2026-11-19T21:35:21+00:00",
+  "leidos": 88,
+  "fallos": 21,
   "enlaces": [
     {
       "producto": "tocador-princesas-disney",
@@ -85,6 +85,28 @@
       ]
     },
     {
+      "producto": "disfraz-cenicienta",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/disguise-classic-cinderella-128-cm-140499k.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/disguise-classic-cinderella-128-cm-140499k.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon Marketplace (Funidelia España)",
+          "precio": 22.26
+        }
+      ]
+    },
+    {
+      "producto": "disfraz-cenicienta",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Disfraz Cenicienta niña",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
       "producto": "bolso-peluche-hello-kitty",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:Hello Kitty bolso peluche",
@@ -98,6 +120,20 @@
       "tienda": "Globerada",
       "url": "comparador:Hello Kitty bolso reversible",
       "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "playmobil-bolso-concha",
+      "tienda": "Globerada",
+      "url": "comparador:Playmobil bolso concha sirena",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "playmobil-bolso-concha",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/bolso-de-concha-con-sirena-playmobil-fantasy-magic",
+      "precio": 19.99,
+      "metodo": "shopify",
+      "error": null
     },
     {
       "producto": "dreamon-zapatos-princesa",
@@ -237,6 +273,105 @@
       "error": "no encontrado en el comparador"
     },
     {
+      "producto": "maleta-portamaquillaje",
+      "tienda": "Globerada",
+      "url": "comparador:Tiny Beauty maleta",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "maleta-portamaquillaje",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Tiny Beauty maleta",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "omg-music-festival",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/lol-surprise-omg-music-festival-jennie-muneca-de-moda-coleccionable-249696.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/lol-surprise-omg-music-festival-jennie-muneca-de-moda-coleccionable-249696.html",
+      "ofertas": [
+        {
+          "tienda": "Raijuguetes",
+          "precio": 28.92
+        },
+        {
+          "tienda": "Amazon",
+          "precio": 34.99
+        },
+        {
+          "tienda": "Electropolis",
+          "precio": 39.1
+        }
+      ]
+    },
+    {
+      "producto": "omg-music-festival",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/l-o-l-surprise-omg-music-festival-muneca-jennie-k-pop-con-accesorios",
+      "precio": 34.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
+      "producto": "pulseras-tiny-beauty",
+      "tienda": "Globerada",
+      "url": "comparador:Tiny Beauty pulseras",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "pulseras-tiny-beauty",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Tiny Beauty pulseras",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "charm-tiny-beauty",
+      "tienda": "Globerada",
+      "url": "comparador:Tiny Beauty charm",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "charm-tiny-beauty",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Tiny Beauty charm",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "mami-elefante-pets-alive",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/mama-elefante-y-sus-bebes-pets-alive-%C2%A1a-pasear-descubre-cuandos-bebes-tiene-con-sonidos-reales-22x34x27cm.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/mama-elefante-y-sus-bebes-pets-alive-%C2%A1a-pasear-descubre-cuandos-bebes-tiene-con-sonidos-reales-22x34x27cm.html",
+      "ofertas": [
+        {
+          "tienda": "Juguettos",
+          "precio": 49.99
+        },
+        {
+          "tienda": "Carrefour",
+          "precio": 52.52
+        }
+      ]
+    },
+    {
+      "producto": "mami-elefante-pets-alive",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/pets-alive-mommy-elephant-con-bebes-elefante-sorpresa",
+      "precio": 49.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
       "producto": "mirrormi-fashion",
       "tienda": "Toy Planet (Suki)",
       "url": "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm",
@@ -349,6 +484,43 @@
       ]
     },
     {
+      "producto": "peekimo",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/spin-master-peekimo.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/spin-master-peekimo.html",
+      "ofertas": [
+        {
+          "tienda": "Electropolis",
+          "precio": 27.51
+        },
+        {
+          "tienda": "Aliexpress ES (Shop1104118748 Store)",
+          "precio": 27.99
+        },
+        {
+          "tienda": "Amazon",
+          "precio": 29.99
+        },
+        {
+          "tienda": "Juguettos",
+          "precio": 29.99
+        },
+        {
+          "tienda": "Miravia (TOYS&GAMES)",
+          "precio": 30.99
+        }
+      ]
+    },
+    {
+      "producto": "peekimo",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/peekimo-mascota-interactiva-con-mas-de-100-sonidos",
+      "precio": 29.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
       "producto": "barbie-coche-radiocontrol",
       "tienda": "Globerada",
       "url": "comparador:Mondo Barbie City Car",
@@ -384,6 +556,27 @@
           "precio": 49.74
         }
       ]
+    },
+    {
+      "producto": "stitch-despertador-3d",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/lexibook-stitch-reloj-despertador-luz-nocturna-rl800d-sonidos-y-melodias-pantalla-lcd-retroiluminada-luminoso-snooze-azul.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/lexibook-stitch-reloj-despertador-luz-nocturna-rl800d-sonidos-y-melodias-pantalla-lcd-retroiluminada-luminoso-snooze-azul.html",
+      "ofertas": [
+        {
+          "tienda": "Miravia (Paluta Toy Market)",
+          "precio": 34.99
+        }
+      ]
+    },
+    {
+      "producto": "stitch-despertador-3d",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/despertador-con-luz-nocturna-3d-disney-stitch-lexibook",
+      "precio": 31.99,
+      "metodo": "shopify",
+      "error": null
     },
     {
       "producto": "stitch-walkie-talkies",
