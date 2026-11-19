@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-19T20:27:10+00:00",
-  "leidos": 80,
-  "fallos": 20,
+  "fecha": "2026-11-19T20:31:56+00:00",
+  "leidos": 56,
+  "fallos": 25,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -74,15 +74,8 @@
     {
       "producto": "bolso-peluche-hello-kitty",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/joy-toy-hello-kitty-corazon-peluche-14-cm-en-bolso-de-carton.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/joy-toy-hello-kitty-corazon-peluche-14-cm-en-bolso-de-carton.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 13.87
-        }
-      ]
+      "url": "comparador:Hello Kitty bolso reversible",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "dreamon-zapatos-princesa",
@@ -103,9 +96,10 @@
       "producto": "vtech-kidisecrets-locker",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0CWVNM2RD",
-      "precio": 37.18,
-      "metodo": "amazon-pagina",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 503",
+      "pistas": {}
     },
     {
       "producto": "vtech-kidisecrets-locker",
@@ -133,22 +127,9 @@
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0CF1TN1WV",
       "precio": null,
-      "metodo": "amazon-ofertas",
-      "error": null,
-      "pistas": {
-        "bytes": 1856311,
-        "titulo": "Dreamon Heladeria Juguete - 38 Piezas Juguetes Montessori Niños 3 4 Años - Comida de Juguete Madera - Juegos Infantiles ",
-        "captcha": false,
-        "json_ld": 0,
-        "cerca_de_a_price": "0-913f-bfb14384a7e1&pf_rd_p=b3ea2317-6e69-4110-913f-bfb14384a7e1&pf_rd_r=SYYS3VZ2KCHY6CQBM324&pd_rd_wg=z2U50&pd_rd_r=96c9ec6f-5ff7-4523-8a8e-2b8090686233\"> 20,67€ 20,67 € <a",
-        "marcas": [
-          "corePrice",
-          "apex_",
-          "availability",
-          "buybox",
-          "outOfStock"
-        ]
-      }
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 503",
+      "pistas": {}
     },
     {
       "producto": "dreamon-heladeria",
@@ -169,9 +150,10 @@
       "producto": "playmobil-71613-abuelos",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0D353J66T",
-      "precio": 10.95,
-      "metodo": "amazon-ofertas",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
     },
     {
       "producto": "playmobil-71613-abuelos",
@@ -215,22 +197,9 @@
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B00IL35W2Y",
       "precio": null,
-      "metodo": "amazon-ofertas",
-      "error": null,
-      "pistas": {
-        "bytes": 2030536,
-        "titulo": "Theo Klein Vileda Carrito de limpieza, juguete de rol a partir de 3 años | Con fregona, cubo, escoba, juego de barrido, ",
-        "captcha": false,
-        "json_ld": 0,
-        "cerca_de_a_price": "=amzn1.sym.9fe158e3-5d23-4639-9d5f-75211109f38f&pf_rd_p=9fe158e3-5d23-4639-9d5f-75211109f38f&pf_rd_r=MNXQHBMGV360EEPK9XCT&pd_rd_wg=n8yUn&pd_rd_r=83bb213f-c548-4878-93f1-a61464dc9999&pd_rd_i=B07C9YRXG6&psc=1\" role=\"link\"> 5 ofertas desde 1611€ 16 11 € <span data-csa-c-type=\"item\" data-csa-c-item-type",
-        "marcas": [
-          "corePrice",
-          "apex_",
-          "availability",
-          "buybox",
-          "Ver todas las opciones de compra"
-        ]
-      }
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 503",
+      "pistas": {}
     },
     {
       "producto": "carro-limpieza",
@@ -271,21 +240,9 @@
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B01FKUVX64",
       "precio": null,
-      "metodo": "amazon-ofertas",
-      "error": null,
-      "pistas": {
-        "bytes": 1501262,
-        "titulo": "Amazon.es: Barbie Conjunto de Boda con muñecos Novios, Stacie, Chelsea y Accesorios (Mattel DRJ88): Juguetes y juegos",
-        "captcha": false,
-        "json_ld": 0,
-        "marcas": [
-          "corePrice",
-          "apex_",
-          "availability",
-          "buybox",
-          "outOfStock"
-        ]
-      }
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 503",
+      "pistas": {}
     },
     {
       "producto": "barbie-boda-chelsea",
@@ -299,31 +256,26 @@
     {
       "producto": "barbie-boda-chelsea",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/barbie-set-de-regalo-fiesta-de-boda-edicion-especial-con-munecas-stacie-y-todd-1994.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/barbie-set-de-regalo-fiesta-de-boda-edicion-especial-con-munecas-stacie-y-todd-1994.html",
-      "ofertas": [
-        {
-          "tienda": "OnBuy (AMI VENTURES INC.)",
-          "precio": 159.65
-        }
-      ]
+      "url": "comparador:Barbie boda Chelsea",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "mirrormi-fashion",
       "tienda": "Amazon (Shai)",
       "url": "https://www.amazon.es/dp/B0GKND16BN",
-      "precio": 28.5,
-      "metodo": "amazon-pagina",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 503",
+      "pistas": {}
     },
     {
       "producto": "mirrormi-fashion",
       "tienda": "Amazon (Suki)",
       "url": "https://www.amazon.es/dp/B0GKNCH9X9",
-      "precio": 28.92,
-      "metodo": "amazon-pagina",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 503",
+      "pistas": {}
     },
     {
       "producto": "mirrormi-fashion",
@@ -347,25 +299,13 @@
       ]
     },
     {
-      "producto": "peluche-maiz",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/aurora-33845-palm-pals-butters-palomitas-de-maiz-de-5-pulgadas-peluche-multicolor.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/aurora-33845-palm-pals-butters-palomitas-de-maiz-de-5-pulgadas-peluche-multicolor.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon Marketplace (DL-Comercio)",
-          "precio": 13.57
-        }
-      ]
-    },
-    {
       "producto": "clementoni-nail-art",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0B4KQMTVM",
-      "precio": 23.88,
-      "metodo": "amazon-pagina",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 503",
+      "pistas": {}
     },
     {
       "producto": "clementoni-nail-art",
@@ -423,25 +363,13 @@
     {
       "producto": "cherry-pets-confetti-tree",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/cherry-pets-%E2%80%93-smoothie-fun-park-kitten-twins.-casita-con-parque-de-atracciones-en-forma-de-smoothie-incluye-1-smoothie-2-figuras-exclusivas-%E2%80%9Ccolor-reveal%E2%80%9D-y-3-accesorios.html",
+      "url": "https://www.globerada.com/precios/cherry-pets-confetti-tree-koala-twin.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/cherry-pets-%E2%80%93-smoothie-fun-park-kitten-twins.-casita-con-parque-de-atracciones-en-forma-de-smoothie-incluye-1-smoothie-2-figuras-exclusivas-%E2%80%9Ccolor-reveal%E2%80%9D-y-3-accesorios.html",
+      "pagina": "https://www.globerada.com/precios/cherry-pets-confetti-tree-koala-twin.html",
       "ofertas": [
         {
-          "tienda": "Amazon",
-          "precio": 9.94
-        },
-        {
-          "tienda": "Ferretería Ibermadrid",
-          "precio": 14.44
-        },
-        {
-          "tienda": "Fnac",
-          "precio": 16.99
-        },
-        {
           "tienda": "Juguettos",
-          "precio": 16.99
+          "precio": 24.99
         }
       ]
     },
@@ -450,23 +378,9 @@
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0CSPQ6MSQ",
       "precio": null,
-      "metodo": "amazon-ofertas",
-      "error": null,
-      "pistas": {
-        "bytes": 1868817,
-        "titulo": "Educa - Magnetics | Juego Educativo de construcción 3D magnético con 61 Piezas para niños, construye Figuras geométricas",
-        "captcha": false,
-        "json_ld": 0,
-        "cerca_de_a_price": "0-913f-bfb14384a7e1&pf_rd_p=b3ea2317-6e69-4110-913f-bfb14384a7e1&pf_rd_r=NBKJZA4Z0PAB8V37MKG8&pd_rd_wg=MirOr&pd_rd_r=b9811f03-e531-4d14-8738-73bfbec9f002\"> 22,79€ 22,79 € Más bajo: <span class=\"a-price a-",
-        "marcas": [
-          "corePrice",
-          "apex_",
-          "availability",
-          "buybox",
-          "outOfStock",
-          "Ver todas las opciones de compra"
-        ]
-      }
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 503",
+      "pistas": {}
     },
     {
       "producto": "educa-magnetics-61",
@@ -498,93 +412,18 @@
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0G43VCRD4",
       "precio": null,
-      "metodo": "amazon-ofertas",
-      "error": null,
-      "pistas": {
-        "bytes": 1813235,
-        "titulo": "Amazon.es: Barbie Muñeca Deluxe Style n.º 15 con vestido Barbiecore rosa | Luce vestido Barbiecore rosa fucsia, coleta a",
-        "captcha": false,
-        "json_ld": 0,
-        "cerca_de_a_price": "amzn1.sym.b87e1200-f521-4691-91ea-1a71b8f13a96&pf_rd_p=b87e1200-f521-4691-91ea-1a71b8f13a96&pf_rd_r=6GHCWKXHWVCXCZS9K4H6&pd_rd_wg=rl86l&pd_rd_r=d5a2c6de-14e1-4e34-ab1a-acad3afd4e15&pd_rd_i=B0DMW9JBW9&psc=1\" role=\"link\"> 13 ofertas desde 899€ 8 99 € <span data-csa-c-type=\"item\" data-csa-c-item-type=\"",
-        "marcas": [
-          "corePrice",
-          "apex_",
-          "availability",
-          "buybox",
-          "outOfStock",
-          "Ver todas las opciones de compra"
-        ]
-      }
-    },
-    {
-      "producto": "barbie-deluxe-style-15",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/barbie-deluxe-style-doll.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/barbie-deluxe-style-doll.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon Marketplace (Humbi Toys)",
-          "precio": 10.88
-        },
-        {
-          "tienda": "Raijuguetes",
-          "precio": 15.37
-        },
-        {
-          "tienda": "Amazon Marketplace (Toys for Fun ES)",
-          "precio": 16.55
-        },
-        {
-          "tienda": "Amazon Marketplace (CENTRO JUGUETE)",
-          "precio": 16.99
-        },
-        {
-          "tienda": "Amazon Marketplace (NEA PRIME)",
-          "precio": 17.79
-        },
-        {
-          "tienda": "Amazon Marketplace (Freizeitprofis)",
-          "precio": 17.95
-        },
-        {
-          "tienda": "Amazon",
-          "precio": 17.99
-        },
-        {
-          "tienda": "Amazon Marketplace (PuntoEcom)",
-          "precio": 17.99
-        },
-        {
-          "tienda": "Amazon Marketplace (H&C-Market)",
-          "precio": 20.0
-        },
-        {
-          "tienda": "Amazon Marketplace (Alaris Home)",
-          "precio": 20.09
-        }
-      ]
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 503",
+      "pistas": {}
     },
     {
       "producto": "barbie-coche-radiocontrol",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0BJLD278H",
       "precio": null,
-      "metodo": "amazon-ofertas",
-      "error": null,
-      "pistas": {
-        "bytes": 1173357,
-        "titulo": "Amazon.es: MONDO Motors - Mattel Barbie City Car 2.4 GHz - Coche radiocontrol 2 plazas - Detalles realistas - Color Fucs",
-        "captcha": false,
-        "json_ld": 0,
-        "marcas": [
-          "corePrice",
-          "apex_",
-          "availability",
-          "buybox",
-          "outOfStock"
-        ]
-      }
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 503",
+      "pistas": {}
     },
     {
       "producto": "barbie-coche-radiocontrol",
@@ -597,22 +436,9 @@
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0G42LDBDW",
       "precio": null,
-      "metodo": "amazon-ofertas",
-      "error": null,
-      "pistas": {
-        "bytes": 1483731,
-        "titulo": "Amazon.es: Barbie en Cascanueces Mundo de Dulces Caballo y Trineo | Cabello colorido con aroma, peine y accesorios con f",
-        "captcha": false,
-        "json_ld": 0,
-        "cerca_de_a_price": "034036-5060757?pd_rd_w=UtMTu&content-id=amzn1.sym.b87e1200-f521-4691-91ea-1a71b8f13a96&pf_rd_p=b87e1200-f521-4691-91ea-1a71b8f13a96&pf_rd_r=DJEN4KYHQJZ3KSB57P3G&pd_rd_wg=w8Ovr&pd_rd_r=c139107d-30c1-43a8-bf75-668ae3ea19b1&pd_rd_i=B0BMZYNC5H&psc=1\" role=\"link\"> 48,96€ 48 , 96 € <a class=\"a-link-normal",
-        "marcas": [
-          "corePrice",
-          "apex_",
-          "availability",
-          "buybox",
-          "outOfStock"
-        ]
-      }
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
     },
     {
       "producto": "barbie-cascanueces-trineo",
@@ -650,22 +476,9 @@
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0HKRX9BZ1",
       "precio": null,
-      "metodo": "amazon-ofertas",
-      "error": null,
-      "pistas": {
-        "bytes": 1098189,
-        "titulo": "Amazon.es: Lexibook, Stitch, Walkie-talkies de vídeo, Pantalla a color, Rosa, TWV15D | Walkie-talkies de vídeo Stitch re",
-        "captcha": false,
-        "json_ld": 0,
-        "cerca_de_a_price": "d=amzn1.sym.8ad28dd3-2218-4d28-b76b-ab311fe2f4b9&pf_rd_p=8ad28dd3-2218-4d28-b76b-ab311fe2f4b9&pf_rd_r=770PBZT9HDSKQXRE7R0T&pd_rd_wg=CGVj7&pd_rd_r=add7f5e7-ccc6-40c1-a83f-8bee86bc0663&pd_rd_i=B0GF1NKYVP&psc=1\" role=\"link\"> 1 oferta desde 2526€ 25 26 € <span data-csa-c-type=\"item\" data-csa-c-item-type",
-        "marcas": [
-          "corePrice",
-          "apex_",
-          "availability",
-          "buybox",
-          "outOfStock"
-        ]
-      }
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 503",
+      "pistas": {}
     },
     {
       "producto": "stitch-walkie-talkies",
@@ -678,19 +491,8 @@
     {
       "producto": "stitch-walkie-talkies",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/lexibook-walkie-talkies-3d-stitch-angel.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/lexibook-walkie-talkies-3d-stitch-angel.html",
-      "ofertas": [
-        {
-          "tienda": "MediaMarkt",
-          "precio": 24.71
-        },
-        {
-          "tienda": "Amazon",
-          "precio": 29.4
-        }
-      ]
+      "url": "comparador:Stitch walkie vídeo",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "barbie-cascanueces-bailarina",
@@ -804,50 +606,46 @@
     {
       "producto": "monster-high-frankie",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/mattel-monster-high-skulltimate-secrets-hauntlywood-mysteries-doll-frankie-stein-jbg81.html",
+      "url": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-frankie-stein-watzie-jhk31.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/mattel-monster-high-skulltimate-secrets-hauntlywood-mysteries-doll-frankie-stein-jbg81.html",
+      "pagina": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-frankie-stein-watzie-jhk31.html",
       "ofertas": [
         {
-          "tienda": "Raijuguetes",
-          "precio": 32.1
+          "tienda": "Amazon",
+          "precio": 27.89
+        },
+        {
+          "tienda": "Electropolis",
+          "precio": 29.23
         },
         {
           "tienda": "Juguettos",
-          "precio": 35.99
+          "precio": 29.99
         },
         {
-          "tienda": "OnBuy (AMI VENTURES INC.)",
-          "precio": 99.81
+          "tienda": "PcComponentes (La Frikilería)",
+          "precio": 38.17
+        },
+        {
+          "tienda": "Raijuguetes",
+          "precio": 39.33
         }
       ]
     },
     {
       "producto": "libros-escuela-monstruos",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/escuela-de-monstruos.-el-juego-de-mesa.html",
+      "url": "https://www.globerada.com/precios/escuela-de-monstruos-el-libro-de-colorear-megamonstruoso-rippin-sally.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/escuela-de-monstruos.-el-juego-de-mesa.html",
+      "pagina": "https://www.globerada.com/precios/escuela-de-monstruos-el-libro-de-colorear-megamonstruoso-rippin-sally.html",
       "ofertas": [
         {
           "tienda": "Abacus",
-          "precio": 15.96
-        },
-        {
-          "tienda": "Juegos de la Mesa Redonda",
-          "precio": 17.96
-        },
-        {
-          "tienda": "Amazon Marketplace (DrMugCollection)",
-          "precio": 19.8
-        },
-        {
-          "tienda": "Juguettos",
-          "precio": 19.99
+          "precio": 9.45
         },
         {
           "tienda": "Imosver",
-          "precio": 24.99
+          "precio": 9.45
         }
       ]
     },
