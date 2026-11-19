@@ -26,7 +26,7 @@ REPO = "Maktub86/Mi-Mercado"
 RAMA = "main"
 API = f"https://api.github.com/repos/{REPO}/contents"
 CARPETA = Path(__file__).resolve().parent
-TOKEN = (CARPETA / "token.txt").read_text(encoding="utf-8").strip() if (CARPETA / "token.txt").exists() else ""
+TOKEN = (CARPETA / "token.txt").read_text(encoding="utf-8").strip().strip("\"").strip() if (CARPETA / "token.txt").exists() else ""
 
 ARCHIVOS = {
     "web/data/productos.json": "lectura",
