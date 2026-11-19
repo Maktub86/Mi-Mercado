@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-19T15:33:10+00:00",
-  "leidos": 5,
-  "fallos": 16,
+  "fecha": "2026-11-19T19:58:32+00:00",
+  "leidos": 14,
+  "fallos": 25,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -38,6 +38,24 @@
       "error": null
     },
     {
+      "producto": "bolso-peluche-hello-kitty",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Hello Kitty bolso peluche",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "dreamon-zapatos-princesa",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Dreamon zapatos",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
       "producto": "vtech-kidisecrets-locker",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0CWVNM2RD",
@@ -47,12 +65,29 @@
       "pistas": {}
     },
     {
+      "producto": "vtech-kidisecrets-locker",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/vtech-kidisecrets-locker-taquilla-secreta-morada",
+      "precio": 44.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
       "producto": "dreamon-heladeria",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0CF1TN1WV",
       "precio": null,
       "metodo": null,
       "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
+    },
+    {
+      "producto": "dreamon-heladeria",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Dreamon heladería",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
@@ -65,25 +100,30 @@
       "pistas": {}
     },
     {
+      "producto": "playmobil-71613-abuelos",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/playmobil-abuelos-y-bebe",
+      "precio": 9.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
       "producto": "carro-limpieza",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B00IL35W2Y",
       "precio": null,
-      "metodo": "amazon-ofertas",
-      "error": null,
-      "pistas": {
-        "bytes": 555497,
-        "titulo": "Theo Klein Vileda Carrito de limpieza, juguete de rol a partir de 3 años | Con fregona, cubo, escoba, juego de barrido, ",
-        "captcha": false,
-        "json_ld": 0,
-        "marcas": [
-          "corePrice",
-          "apex_",
-          "availability",
-          "buybox",
-          "Ver todas las opciones de compra"
-        ]
-      }
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
+    },
+    {
+      "producto": "carro-limpieza",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:carrito limpieza Vileda",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
     },
     {
       "producto": "barbie-boda-chelsea",
@@ -95,20 +135,31 @@
       "pistas": {}
     },
     {
+      "producto": "barbie-boda-chelsea",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Barbie boda",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
       "producto": "mirrormi-fashion",
       "tienda": "Amazon (Shai)",
       "url": "https://www.amazon.es/dp/B0GKND16BN",
-      "precio": 28.5,
-      "metodo": "amazon-pagina",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
     },
     {
       "producto": "mirrormi-fashion",
       "tienda": "Amazon (Suki)",
       "url": "https://www.amazon.es/dp/B0GKNCH9X9",
-      "precio": 28.92,
-      "metodo": "amazon-pagina",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
     },
     {
       "producto": "mirrormi-fashion",
@@ -128,13 +179,28 @@
       "pistas": {}
     },
     {
+      "producto": "clementoni-nail-art",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/crazy-chic-nail-art-studio-clementoni",
+      "precio": 29.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
       "producto": "cherry-pets-confetti-tree",
       "tienda": "Carrefour",
       "url": "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 403",
-      "pistas": {}
+      "precio": 24.99,
+      "metodo": "generico",
+      "error": null
+    },
+    {
+      "producto": "cherry-pets-confetti-tree",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/cherry-pets-confetti-tree-koala-twins-playset-con-2-figuras-exclusivas",
+      "precio": 24.99,
+      "metodo": "shopify",
+      "error": null
     },
     {
       "producto": "educa-magnetics-61",
@@ -146,6 +212,14 @@
       "pistas": {}
     },
     {
+      "producto": "educa-magnetics-61",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1",
+      "precio": 42.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
       "producto": "barbie-deluxe-style-15",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0G43VCRD4",
@@ -153,6 +227,14 @@
       "metodo": null,
       "error": "bloqueado: Amazon pidió un captcha",
       "pistas": {}
+    },
+    {
+      "producto": "barbie-deluxe-style-15",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/armario-deluxe-style-barbie-con-vestidor-giratorio-y-mas-de-20-accesorios",
+      "precio": 48.99,
+      "metodo": "shopify",
+      "error": null
     },
     {
       "producto": "barbie-coche-radiocontrol",
@@ -182,6 +264,15 @@
       "pistas": {}
     },
     {
+      "producto": "barbie-cascanueces-trineo",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Cascanueces caballo trineo",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
       "producto": "stitch-walkie-talkies",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0HKRX9BZ1",
@@ -191,12 +282,62 @@
       "pistas": {}
     },
     {
+      "producto": "stitch-walkie-talkies",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/lexibook-stitch-y-angel-walkie-talkies-con-video-recargables",
+      "precio": 39.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
       "producto": "barbie-cascanueces-bailarina",
       "tienda": "Toys R Us",
       "url": "https://www.toysrus.es/Barbie-en-el-Cascanueces-Clara-con-tut%C3%BA/p/K1105770",
       "precio": null,
       "metodo": null,
       "error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons",
+      "pistas": {}
+    },
+    {
+      "producto": "barbie-cascanueces-bailarina",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/barbie-el-cascanueces-clara-muneca-bailarina-con-tutu-transformable-3-anos",
+      "precio": 28.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
+      "producto": "holawatch-k-fun",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:HolaWatch K-Fun",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "monster-high-cleo",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-cleo-de-nile-creeproduction",
+      "precio": 44.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
+      "producto": "monster-high-frankie",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-frankie-stein",
+      "precio": 44.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
+      "producto": "juego-rol-restaurante-agustin",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:restaurante Agustín",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     }
   ]

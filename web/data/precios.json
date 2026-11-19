@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-19T15:33:10+00:00",
+  "actualizado": "2026-11-19T19:58:32+00:00",
   "productos": {
     "monster-high-moonspell": {
       "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/": {
@@ -25,7 +25,8 @@
         ],
         "ultima_comprobacion": "2026-11-19",
         "titulo": "Monster High Moonspell Magic Claire De Luna",
-        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JMB89_1.png?v=1782436555"
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JMB89_1.png?v=1782436555",
+        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-claire-de-luna"
       },
       "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina": {
         "tienda": "Toy Planet (Rae)",
@@ -38,7 +39,8 @@
         ],
         "ultima_comprobacion": "2026-11-19",
         "titulo": "Monster High Moonspell Magic Rae Lumina",
-        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JMB91_1.png?v=1782436548"
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JMB91_1.png?v=1782436548",
+        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina"
       }
     },
     "vtech-kidisecrets-locker": {
@@ -53,6 +55,20 @@
         ],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "bloqueado: Amazon pidió un captcha"
+      },
+      "https://www.toyplanet.com/products/vtech-kidisecrets-locker-taquilla-secreta-morada": {
+        "tienda": "Toy Planet",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 44.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "VTech KidiSecrets Locker Taquilla Secreta Morada",
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPVTC054189_1.png?v=1749141145",
+        "url": "https://www.toyplanet.com/products/vtech-kidisecrets-locker-taquilla-secreta-morada"
       }
     },
     "dreamon-heladeria": {
@@ -61,6 +77,12 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "bloqueado: Amazon pidió un captcha"
+      },
+      "buscar:www.toyplanet.com:Dreamon heladería": {
+        "tienda": "Toy Planet",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       }
     },
     "playmobil-71613-abuelos": {
@@ -69,6 +91,20 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "bloqueado: Amazon pidió un captcha"
+      },
+      "buscar:www.toyplanet.com:Playmobil abuelos bebé": {
+        "tienda": "Toy Planet",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 9.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Playmobil Abuelos y bebé",
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPPLY071613_1.png?v=1757435599",
+        "url": "https://www.toyplanet.com/products/playmobil-abuelos-y-bebe"
       }
     },
     "carro-limpieza": {
@@ -84,7 +120,13 @@
           "maximo": 5
         },
         "opiniones_url": "https://www.amazon.es/product-reviews/B00IL35W2Y",
-        "ultimo_error": "no se encontró el precio en la página"
+        "ultimo_error": "bloqueado: Amazon pidió un captcha"
+      },
+      "buscar:www.toyplanet.com:carrito limpieza Vileda": {
+        "tienda": "Toy Planet",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       }
     },
     "barbie-boda-chelsea": {
@@ -93,6 +135,12 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "bloqueado: Amazon pidió un captcha"
+      },
+      "buscar:www.toyplanet.com:Barbie boda": {
+        "tienda": "Toy Planet",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       }
     },
     "clementoni-nail-art": {
@@ -107,14 +155,50 @@
         ],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "bloqueado: Amazon pidió un captcha"
+      },
+      "buscar:www.toyplanet.com:Crazy Chic Nail Art Studio": {
+        "tienda": "Toy Planet",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 29.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Crazy Chic Nail Art Studio Clementoni",
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPCLE018429_1.png?v=1776388341",
+        "url": "https://www.toyplanet.com/products/crazy-chic-nail-art-studio-clementoni"
       }
     },
     "cherry-pets-confetti-tree": {
       "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p": {
         "tienda": "Carrefour",
-        "historial": [],
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 24.99,
+            "disponible": true
+          }
+        ],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "bloqueado: la tienda respondió 403"
+        "titulo": "Cherry Pets Confetti Tree Koala Twins, +3 años",
+        "imagen": "https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/741423_00_1.jpg",
+        "url": "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p"
+      },
+      "buscar:www.toyplanet.com:Cherry Pets Confetti Tree": {
+        "tienda": "Toy Planet",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 24.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Cherry Pets Confetti Tree Koala Twins Playset con 2 Figuras Exclusivas",
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAB94IN10_1.png?v=1784705409",
+        "url": "https://www.toyplanet.com/products/cherry-pets-confetti-tree-koala-twins-playset-con-2-figuras-exclusivas"
       }
     },
     "educa-magnetics-61": {
@@ -123,6 +207,20 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "bloqueado: Amazon pidió un captcha"
+      },
+      "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1": {
+        "tienda": "Toy Planet",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 42.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Educa Juguete de Aprendizaje  Educa Magnetics 61 Piezas",
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPEDU020024_1_ee7bb6ae-f1bd-4812-9993-57574a13ab72.png?v=1749129940",
+        "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1"
       }
     },
     "barbie-deluxe-style-15": {
@@ -131,6 +229,20 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "bloqueado: Amazon pidió un captcha"
+      },
+      "buscar:www.toyplanet.com:Barbie Deluxe Style": {
+        "tienda": "Toy Planet",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 48.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Armario Deluxe Style Barbie con vestidor giratorio y más de 20 accesorios",
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JJP01_1.png?v=1790298916",
+        "url": "https://www.toyplanet.com/products/armario-deluxe-style-barbie-con-vestidor-giratorio-y-mas-de-20-accesorios"
       }
     },
     "barbie-coche-radiocontrol": {
@@ -153,6 +265,12 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons"
+      },
+      "buscar:www.toyplanet.com:Cascanueces caballo trineo": {
+        "tienda": "Toy Planet",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       }
     },
     "stitch-walkie-talkies": {
@@ -161,6 +279,20 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "bloqueado: Amazon pidió un captcha"
+      },
+      "buscar:www.toyplanet.com:Stitch walkie vídeo": {
+        "tienda": "Toy Planet",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 39.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Lexibook Stitch y Angel Walkie Talkies con Vídeo Recargables",
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPVLV0WV15D_1.png?v=1787879630",
+        "url": "https://www.toyplanet.com/products/lexibook-stitch-y-angel-walkie-talkies-con-video-recargables"
       }
     },
     "mirrormi-fashion": {
@@ -181,7 +313,8 @@
           "total": 608,
           "maximo": 5
         },
-        "opiniones_url": "https://www.amazon.es/product-reviews/B0GKND16BN"
+        "opiniones_url": "https://www.amazon.es/product-reviews/B0GKND16BN",
+        "ultimo_error": "bloqueado: Amazon pidió un captcha"
       },
       "https://www.amazon.es/dp/B0GKNCH9X9": {
         "tienda": "Amazon (Suki)",
@@ -200,7 +333,8 @@
           "total": 608,
           "maximo": 5
         },
-        "opiniones_url": "https://www.amazon.es/product-reviews/B0GKNCH9X9"
+        "opiniones_url": "https://www.amazon.es/product-reviews/B0GKNCH9X9",
+        "ultimo_error": "bloqueado: Amazon pidió un captcha"
       },
       "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm": {
         "tienda": "Toy Planet (Suki)",
@@ -213,7 +347,8 @@
         ],
         "ultima_comprobacion": "2026-11-19",
         "titulo": "MirrorMi Academy Muñeca Fashion Suki Goldpetal Fragile de 26,5 cm",
-        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMGV055253_9_Copy.webp?v=1788339955"
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMGV055253_9_Copy.webp?v=1788339955",
+        "url": "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm"
       }
     },
     "barbie-cascanueces-bailarina": {
@@ -222,6 +357,84 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons"
+      },
+      "buscar:www.toyplanet.com:Cascanueces Clara tutú transformable": {
+        "tienda": "Toy Planet",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 28.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Barbie El Cascanueces Clara muñeca bailarina con tutú transformable 3 años",
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JLW53_1.png?v=1784077812",
+        "url": "https://www.toyplanet.com/products/barbie-el-cascanueces-clara-muneca-bailarina-con-tutu-transformable-3-anos"
+      }
+    },
+    "bolso-peluche-hello-kitty": {
+      "buscar:www.toyplanet.com:Hello Kitty bolso peluche": {
+        "tienda": "Toy Planet",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
+      }
+    },
+    "dreamon-zapatos-princesa": {
+      "buscar:www.toyplanet.com:Dreamon zapatos": {
+        "tienda": "Toy Planet",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
+      }
+    },
+    "holawatch-k-fun": {
+      "buscar:www.toyplanet.com:HolaWatch K-Fun": {
+        "tienda": "Toy Planet",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
+      }
+    },
+    "monster-high-cleo": {
+      "buscar:www.toyplanet.com:Monster High Cleo": {
+        "tienda": "Toy Planet",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 44.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Monster High Dawn of the Dance Cleo de Nile Creeproduction",
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JKM47_1.png?v=1790903533",
+        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-cleo-de-nile-creeproduction"
+      }
+    },
+    "monster-high-frankie": {
+      "buscar:www.toyplanet.com:Monster High Frankie": {
+        "tienda": "Toy Planet",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 44.99,
+            "disponible": false
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Monster High Dawn of the Dance Frankie Stein",
+        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JKM46_1.png?v=1790903521",
+        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-frankie-stein"
+      }
+    },
+    "juego-rol-restaurante-agustin": {
+      "buscar:www.toyplanet.com:restaurante Agustín": {
+        "tienda": "Toy Planet",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       }
     }
   }
