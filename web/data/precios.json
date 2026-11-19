@@ -1489,23 +1489,6 @@
         "producto_tienda": "Como Consolar A Una Ardilla",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dwd5e099aa/images/large/1127471.29.jpg"
       }
-    },
-    "libro-disney-gran-libro": {
-      "comparador:Gran libro de la película#Abacus": {
-        "tienda": "Abacus",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 2.37,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/d750a6d6f06adc19f11050841d0ef3a3?exp=1795126720&sig=9e64b75ebad2875f92585d64a682d4ac5354deda2bb87d0df843b4bf95c2d5ce",
-        "via": "Globerada",
-        "producto_tienda": "Red. Gran Libro de la película",
-        "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw9179b598/images/large/1390274.07.jpg"
-      }
     }
   }
 }

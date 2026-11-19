@@ -811,25 +811,121 @@
     },
     {
       "id": "libro-disney-gran-libro",
-      "nombre": "Libro Disney – Gran libro de la película (el más barato)",
+      "nombre": "Libros Disney – Gran libro de la película (varios títulos)",
       "para": "Lucía",
       "estado": "pendiente",
       "categoria": "reyes",
-      "nota": "Cualquiera de la colección: sale el que esté más barato",
+      "nota": "Varios títulos de la colección; en Comparar precios sale cada uno con su tienda",
       "precio_lista": null,
       "busqueda": "Disney Gran libro de la película",
       "enlaces": [
         {
-          "tienda": "Amazon",
-          "amazon_buscar": "Gran libro de la película Disney"
+          "tienda": "Frozen · Amazon",
+          "amazon_buscar": "Frozen Gran libro de la película"
         },
         {
           "tienda": "Globerada",
-          "comparador_buscar": "Gran libro de la película"
+          "etiqueta": "Frozen",
+          "comparador_buscar": "Frozen Gran libro de la película"
         },
         {
-          "tienda": "Idealo",
-          "comparador_buscar": "Gran libro de la película"
+          "tienda": "Frozen 2 · Amazon",
+          "amazon_buscar": "Frozen 2 Gran libro de la película"
+        },
+        {
+          "tienda": "Globerada",
+          "etiqueta": "Frozen 2",
+          "comparador_buscar": "Frozen 2 Gran libro de la película"
+        },
+        {
+          "tienda": "Encanto · Amazon",
+          "amazon_buscar": "Encanto Gran libro de la película"
+        },
+        {
+          "tienda": "Globerada",
+          "etiqueta": "Encanto",
+          "comparador_buscar": "Encanto Gran libro de la película"
+        },
+        {
+          "tienda": "Elemental · Amazon",
+          "amazon_buscar": "Elemental Gran libro de la película"
+        },
+        {
+          "tienda": "Globerada",
+          "etiqueta": "Elemental",
+          "comparador_buscar": "Elemental Gran libro de la película"
+        },
+        {
+          "tienda": "Elio · Amazon",
+          "amazon_buscar": "Elio Gran libro de la película"
+        },
+        {
+          "tienda": "Globerada",
+          "etiqueta": "Elio",
+          "comparador_buscar": "Elio Gran libro de la película"
+        },
+        {
+          "tienda": "Coco · Amazon",
+          "amazon_buscar": "Coco Gran libro de la película"
+        },
+        {
+          "tienda": "Globerada",
+          "etiqueta": "Coco",
+          "comparador_buscar": "Coco Gran libro de la película"
+        },
+        {
+          "tienda": "Red · Amazon",
+          "amazon_buscar": "Red Gran libro de la película"
+        },
+        {
+          "tienda": "Globerada",
+          "etiqueta": "Red",
+          "comparador_buscar": "Red Gran libro de la película"
+        },
+        {
+          "tienda": "Toy Story 4 · Amazon",
+          "amazon_buscar": "Toy Story 4 Gran libro de la película"
+        },
+        {
+          "tienda": "Globerada",
+          "etiqueta": "Toy Story 4",
+          "comparador_buscar": "Toy Story 4 Gran libro de la película"
+        },
+        {
+          "tienda": "Zootrópolis 2 · Amazon",
+          "amazon_buscar": "Zootrópolis 2 Gran libro de la película"
+        },
+        {
+          "tienda": "Globerada",
+          "etiqueta": "Zootrópolis 2",
+          "comparador_buscar": "Zootrópolis 2 Gran libro de la película"
+        },
+        {
+          "tienda": "Los Increíbles 2 · Amazon",
+          "amazon_buscar": "Los Increíbles 2 Gran libro de la película"
+        },
+        {
+          "tienda": "Globerada",
+          "etiqueta": "Los Increíbles 2",
+          "comparador_buscar": "Los Increíbles 2 Gran libro de la película"
+        },
+        {
+          "tienda": "Buscando a Dory · Amazon",
+          "amazon_buscar": "Buscando a Dory Gran libro de la película"
+        },
+        {
+          "tienda": "Globerada",
+          "etiqueta": "Buscando a Dory",
+          "comparador_buscar": "Buscando a Dory Gran libro de la película"
+        },
+        {
+          "tienda": "Big Hero 6 · Amazon",
+          "amazon_buscar": "Big Hero 6 Gran libro de la película"
+        },
+        {
+          "tienda": "Globerada",
+          "etiqueta": "Big Hero 6",
+          "comparador_buscar": "Big Hero 6 Gran libro de la película"
         }
       ]
     },

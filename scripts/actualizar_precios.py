@@ -714,6 +714,8 @@ def revisar_comparador(historial: dict, producto: dict, enlace: dict, hoy: str) 
             fila["error"] = "no se encontraron ofertas en la página"
             fila["pistas"] = diagnosticar(pagina)
     vistas = set()
+    if enlace.get("etiqueta"):
+        ofertas = [{**o, "tienda": f"{enlace['etiqueta']} · {o['tienda']}"} for o in ofertas]
     for oferta in ofertas:
         clave = f"{base_clave}#{oferta['tienda']}"
         vistas.add(clave)
