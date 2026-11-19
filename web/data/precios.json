@@ -1,4 +1,125 @@
 {
-  "actualizado": null,
-  "productos": {}
+  "actualizado": "2026-11-19T15:18:46+00:00",
+  "productos": {
+    "monster-high-moonspell": {
+      "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/": {
+        "tienda": "El Corte Inglés (Willow)",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "bloqueado: la tienda respondió 403"
+      },
+      "https://www.elcorteingles.es/juguetes/A200825479-muneca-moonspell-magic-layla-crystal-monster-high-mattel/": {
+        "tienda": "El Corte Inglés (Layla)",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "bloqueado: la tienda respondió 403"
+      }
+    },
+    "vtech-kidisecrets-locker": {
+      "https://www.amazon.es/dp/B0CWVNM2RD": {
+        "tienda": "Amazon",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 37.18,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19"
+      }
+    },
+    "dreamon-heladeria": {
+      "https://www.amazon.es/dp/B0CF1TN1WV": {
+        "tienda": "Amazon",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "no se encontró el precio en la página"
+      }
+    },
+    "playmobil-71613-abuelos": {
+      "https://www.amazon.es/dp/B0D353J66T": {
+        "tienda": "Amazon",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "no se encontró el precio en la página"
+      }
+    },
+    "carro-limpieza": {
+      "https://www.amazon.es/dp/B00IL3SW2Y": {
+        "tienda": "Amazon",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "HTTPError: HTTP Error 404: Not Found"
+      }
+    },
+    "barbie-boda-chelsea": {
+      "https://www.amazon.es/dp/B01FKUVX64": {
+        "tienda": "Amazon",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "no se encontró el precio en la página"
+      }
+    },
+    "clementoni-nail-art": {
+      "https://www.amazon.es/dp/B0B4KQMTVM": {
+        "tienda": "Amazon",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 23.88,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19"
+      }
+    },
+    "cherry-pets-confetti-tree": {
+      "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p": {
+        "tienda": "Carrefour",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "bloqueado: la tienda respondió 403"
+      }
+    },
+    "educa-magnetics-61": {
+      "https://www.amazon.es/dp/B0CSPQ6MSQ": {
+        "tienda": "Amazon",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "no se encontró el precio en la página"
+      }
+    },
+    "barbie-deluxe-style-15": {
+      "https://www.amazon.es/dp/B0G43VCRD4": {
+        "tienda": "Amazon",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "no se encontró el precio en la página"
+      }
+    },
+    "barbie-coche-radiocontrol": {
+      "https://www.amazon.es/dp/B08JLD278H": {
+        "tienda": "Amazon",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "HTTPError: HTTP Error 404: Not Found"
+      }
+    },
+    "barbie-cascanueces-trineo": {
+      "https://www.amazon.es/dp/B0G42LDBDW": {
+        "tienda": "Amazon",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "no se encontró el precio en la página"
+      }
+    },
+    "stitch-walkie-talkies": {
+      "https://www.amazon.es/dp/B0HKRX9BZ1": {
+        "tienda": "Amazon",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "no se encontró el precio en la página"
+      }
+    }
+  }
 }
