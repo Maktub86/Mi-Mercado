@@ -697,26 +697,36 @@
       "categoria": "reyes"
     },
     {
-      "id": "botas-agua-esfera",
-      "nombre": "Botas de agua niña (Esfera) – talla 5 años",
-      "para": "Alba",
       "estado": "pendiente",
       "categoria": "reyes",
-      "nota": "Talla de 5 años (aprox. 27-28)",
       "precio_lista": null,
-      "busqueda": "botas de agua niña esfera",
+      "id": "botas-agua-sfera-alba",
+      "nombre": "Sfera – Bota de agua carita (nude)",
+      "para": "Alba",
+      "nota": "Talla de 5 años",
+      "busqueda": "Sfera bota agua carita nude niña",
+      "imagen": "https://dam.elcorteingles.es/producto/www-001032068006744-s0.jpg",
       "enlaces": [
         {
-          "tienda": "Amazon",
-          "amazon_buscar": "botas agua niña esfera"
-        },
+          "tienda": "Sfera",
+          "url": "https://www.sfera.com/es/ninos/A200976329-250-nude-pr-bota-agua-carita/"
+        }
+      ]
+    },
+    {
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "precio_lista": null,
+      "id": "botas-agua-sfera-lucia",
+      "nombre": "Sfera – Bota de agua (burdeos)",
+      "para": "Lucía",
+      "nota": "",
+      "busqueda": "Sfera bota agua burdeos niña",
+      "imagen": "https://dam.elcorteingles.es/producto/www-001032089811015-00.jpg",
+      "enlaces": [
         {
-          "tienda": "Globerada",
-          "comparador_buscar": "botas agua esfera"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "botas agua esfera"
+          "tienda": "Sfera",
+          "url": "https://www.sfera.com/es/ninos/A200976328-burdeos-pr-bota-agua/"
         }
       ]
     },

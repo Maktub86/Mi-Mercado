@@ -601,7 +601,18 @@ def analizar(url: str) -> dict:
 
     pagina = descargar(url)
     ficha = ficha_generica(pagina)
-    return {"precio": precio_json_ld(pagina) or precio_meta(pagina),
+    precio = precio_json_ld(pagina) or precio_meta(pagina)
+    if not precio and re.search(r"elcorteingles\.es|sfera\.com", url):
+        # Las tiendas del grupo El Corte Inglés guardan el precio en sus datos de página.
+        for patron in (r'"(?:final|sale_price|price_final|finalPrice)"\s*:\s*"?(\d+[.,]\d{2})',
+                       r'data-price=["\'](\d+[.,]\d{2})', r'"price"\s*:\s*\{[^}]*?"(?:final|f_price)"\s*:\s*"?(\d+[.,]\d{2})'):
+            encontrado = re.search(patron, pagina)
+            if encontrado:
+                precio = a_numero(encontrado.group(1))
+                break
+    if not precio:
+        guardar_muestra(f"sin-precio-{urllib.parse.urlsplit(url).netloc}", pagina)
+    return {"precio": precio,
             "disponible": disponible_generico(pagina), "ficha": ficha, "metodo": "generico",
             "_pagina": pagina}
 
