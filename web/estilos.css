@@ -285,6 +285,7 @@ h1 {
   border: 1px solid var(--linea);
   background: #fbf7ef;
 }
+button.boton { font: inherit; font-size: 13px; font-weight: 600; color: var(--tinta); cursor: pointer; }
 .boton:hover { border-color: var(--oro); background: var(--oro-suave); }
 .boton.principal { background: var(--tinta); border-color: var(--tinta); color: #fff; flex: none; padding: 7px 14px; }
 .boton.principal:hover { background: #2c3a5c; }
@@ -322,4 +323,61 @@ h1 {
 @media (max-width: 640px) {
   .controles, .controles input, .controles select { width: 100%; }
   .filtros { position: static; }
+}
+
+/* ---------- comparador */
+#comparador {
+  width: min(560px, calc(100vw - 24px));
+  max-height: calc(100vh - 40px);
+  border: 0;
+  border-radius: 18px;
+  padding: 22px 22px 18px;
+  background: var(--papel);
+  color: var(--tinta);
+  box-shadow: 0 20px 60px rgba(31, 42, 68, .35);
+}
+#comparador::backdrop { background: rgba(31, 42, 68, .45); }
+.comparador-cabeza { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+.comparador-ante { margin: 0; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--oro); font-weight: 700; }
+#comparador h2 { margin: 2px 0 0; font-family: Fraunces, Georgia, serif; font-size: 21px; line-height: 1.25; }
+.cerrar {
+  border: 1px solid var(--linea); background: #fbf7ef; border-radius: 10px;
+  width: 34px; height: 34px; font-size: 15px; cursor: pointer; color: var(--tinta); flex: none;
+}
+.comparador-resumen { margin: 10px 0 14px; font-size: 14px; color: var(--tinta-suave); }
+.comparador-resumen strong { color: var(--baja); }
+.comparador-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.fila-tienda {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 4px 12px;
+  align-items: center;
+  border: 1px solid var(--linea);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #fff;
+}
+.fila-tienda.ganadora { border-color: var(--baja); box-shadow: 0 0 0 1px var(--baja) inset; background: #f7fbf8; }
+.puesto {
+  width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+  font-size: 13px; font-weight: 700; background: #eee9df; color: var(--tinta-suave);
+}
+.ganadora .puesto { background: var(--baja); color: #fff; }
+.fila-nombre { font-weight: 600; font-size: 15px; }
+.fila-info { grid-column: 2; font-size: 12.5px; color: var(--tinta-suave); display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.fila-info .tendencia { padding: 1px 6px; font-size: 12px; }
+.fila-derecha { grid-column: 3; grid-row: 1 / span 2; text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.fila-precio { font-family: Fraunces, Georgia, serif; font-size: 22px; font-variant-numeric: tabular-nums; line-height: 1; }
+.fila-dif { font-size: 12px; color: var(--sube); font-weight: 600; font-variant-numeric: tabular-nums; }
+.fila-derecha .boton.principal { font-size: 12.5px; padding: 6px 12px; }
+.sin-precio-titulo { margin: 18px 0 8px; font-size: 13px; font-weight: 700; color: var(--tinta-suave); }
+.sin-precio { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.sin-precio li { display: flex; justify-content: space-between; gap: 10px; font-size: 13.5px; padding: 8px 12px; border-radius: 10px; background: #f6f1e7; }
+.sin-precio span { color: var(--tinta-suave); }
+.sin-precio a { font-weight: 600; white-space: nowrap; }
+.comparador-pie { margin: 16px 0 0; font-size: 12.5px; color: var(--tinta-suave); }
+.comparador-pie a { color: var(--tinta); font-weight: 600; }
+@media (max-width: 480px) {
+  #comparador { padding: 18px 14px 14px; }
+  .fila-tienda { grid-template-columns: 24px 1fr auto; padding: 10px; }
 }

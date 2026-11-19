@@ -50,6 +50,20 @@
     </footer>
   </main>
 
+  <dialog id="comparador" aria-labelledby="comparador-titulo">
+    <div class="comparador-cabeza">
+      <div>
+        <p class="comparador-ante">Comparar precios</p>
+        <h2 id="comparador-titulo"></h2>
+      </div>
+      <button type="button" class="cerrar" aria-label="Cerrar">✕</button>
+    </div>
+    <p class="comparador-resumen" id="comparador-resumen"></p>
+    <ol class="comparador-lista" id="comparador-lista"></ol>
+    <div id="comparador-sin-precio"></div>
+    <p class="comparador-pie" id="comparador-pie"></p>
+  </dialog>
+
   <template id="plantilla-tarjeta">
     <article class="tarjeta">
       <div class="foto">
@@ -75,7 +89,7 @@
         <div class="panel" role="tabpanel"></div>
         <div class="acciones">
           <a class="boton buscar-amazon" target="_blank" rel="noopener">Buscar en Amazon</a>
-          <a class="boton comparar" target="_blank" rel="noopener">Comparar tiendas</a>
+          <button type="button" class="boton comparar">Comparar precios</button>
         </div>
       </div>
     </article>

@@ -310,8 +310,61 @@ function tarjeta(p) {
 
   const consulta = encodeURIComponent(p.busqueda || p.nombre);
   nodo.querySelector(".buscar-amazon").href = `https://www.amazon.es/s?k=${consulta}`;
-  nodo.querySelector(".comparar").href = `https://www.google.com/search?tbm=shop&hl=es&gl=es&q=${consulta}`;
+  nodo.querySelector(".comparar").addEventListener("click", () => abrirComparador(p));
   return nodo;
+}
+
+function abrirComparador(p) {
+  const dialogo = $("#comparador");
+  $("#comparador-titulo").textContent = p.nombre;
+  const conPrecio = p.tiendas.filter((t) => t.ultimo).sort((a, b) => a.ultimo.precio - b.ultimo.precio);
+  const sinPrecio = p.tiendas.filter((t) => !t.ultimo);
+  const mejor = conPrecio[0];
+
+  const resumen = $("#comparador-resumen");
+  if (conPrecio.length > 1) {
+    const ahorro = conPrecio[conPrecio.length - 1].ultimo.precio - mejor.ultimo.precio;
+    resumen.innerHTML = `${conPrecio.length} tiendas con precio. Lo más barato está en <strong>${escapar(mejor.tienda)}</strong>`
+      + (ahorro >= 0.01 ? `, ${euros.format(ahorro)} menos que la más cara.` : ".");
+  } else if (conPrecio.length === 1) {
+    resumen.textContent = `De momento solo hay precio de ${mejor.tienda}.`;
+  } else {
+    resumen.textContent = "Todavía no se ha podido leer el precio en ninguna tienda.";
+  }
+  if (p.precio_lista != null && mejor) {
+    const dif = mejor.ultimo.precio - p.precio_lista;
+    const frase = Math.abs(dif) < 0.01 ? "igual que en tu lista"
+      : dif < 0 ? `${euros.format(-dif)} menos que en tu lista (${euros.format(p.precio_lista)})`
+      : `${euros.format(dif)} más que en tu lista (${euros.format(p.precio_lista)})`;
+    resumen.innerHTML += ` El mejor precio está ${frase}.`;
+  }
+
+  $("#comparador-lista").innerHTML = conPrecio.map((t, i) => {
+    const tend = textoTendencia(t);
+    const dif = t.ultimo.precio - mejor.ultimo.precio;
+    const info = [`leído el ${fechaCorta.format(leerFecha(t.ultimo.fecha))}`];
+    if (t.ultimo.disponible === false) info.unshift("<b>agotado</b>");
+    if (t.valoracion) info.push(`★ ${t.valoracion.media.toLocaleString("es-ES")}${t.valoracion.total ? ` (${t.valoracion.total.toLocaleString("es-ES")})` : ""}`);
+    return `<li class="fila-tienda${i === 0 ? " ganadora" : ""}">
+      <span class="puesto">${i + 1}</span>
+      <span class="fila-nombre">${escapar(t.tienda)}</span>
+      <div class="fila-derecha">
+        <span class="fila-precio">${euros.format(t.ultimo.precio)}</span>
+        ${i > 0 && dif >= 0.01 ? `<span class="fila-dif">+${euros.format(dif)}</span>` : ""}
+        <a class="boton principal" href="${escapar(t.url)}" target="_blank" rel="noopener">Ir</a>
+      </div>
+      <span class="fila-info">${tend && tend.texto !== "primera lectura" ? `<span class="tendencia ${tend.clase}">${tend.texto}</span>` : ""}${info.join(" · ")}</span>
+    </li>`;
+  }).join("");
+
+  $("#comparador-sin-precio").innerHTML = sinPrecio.length ? `
+    <p class="sin-precio-titulo">Sin precio automático</p>
+    <ul class="sin-precio">${sinPrecio.map((t) => `<li>${escapar(t.tienda)}
+      <span>${t.error ? escapar(motivo(t.error)) : "pendiente de revisar"}</span>
+      <a href="${escapar(t.url)}" target="_blank" rel="noopener">Ver ↗</a></li>`).join("")}</ul>` : "";
+
+  $("#comparador-pie").innerHTML = "Precios recogidos por el robot de Mi Mercado. Pueden haber cambiado desde la última revisión.";
+  dialogo.showModal();
 }
 
 function pintarLista() {
@@ -352,6 +405,9 @@ function enlazarEventos() {
   });
   $("#buscar").addEventListener("input", (e) => { estado.texto = e.target.value; pintarLista(); });
   $("#orden").addEventListener("change", (e) => { estado.orden = e.target.value; pintarLista(); });
+  const dialogo = $("#comparador");
+  dialogo.querySelector(".cerrar").addEventListener("click", () => dialogo.close());
+  dialogo.addEventListener("click", (e) => { if (e.target === dialogo) dialogo.close(); });
   $("#editar").href = `https://github.com/${REPO}/edit/main/web/data/productos.json`;
 }
 
