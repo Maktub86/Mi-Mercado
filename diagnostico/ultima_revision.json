@@ -1,8 +1,30 @@
 {
-  "fecha": "2026-11-19T21:19:20+00:00",
-  "leidos": 63,
-  "fallos": 14,
+  "fecha": "2026-11-19T21:28:32+00:00",
+  "leidos": 71,
+  "fallos": 17,
   "enlaces": [
+    {
+      "producto": "tocador-princesas-disney",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/smoby-tocador-princesas-disney-con-taburete-hasta-50-kg-espejo-y-10-accesorios-incluidos-juguete-infantil-para-juegos-de-imitacion-creativos-7600320251.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/smoby-tocador-princesas-disney-con-taburete-hasta-50-kg-espejo-y-10-accesorios-incluidos-juguete-infantil-para-juegos-de-imitacion-creativos-7600320251.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon Marketplace (TradeINN)",
+          "precio": 63.99
+        }
+      ]
+    },
+    {
+      "producto": "tocador-princesas-disney",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Tocador Princesas Disney",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
     {
       "producto": "monster-high-moonspell",
       "tienda": "El Corte Inglés (Willow)",
@@ -458,36 +480,52 @@
       ]
     },
     {
-      "producto": "botas-agua-esfera",
-      "tienda": "Globerada",
-      "url": "comparador:botas agua esfera",
-      "error": "no encontrado en el comparador"
+      "producto": "botas-agua-sfera-alba",
+      "tienda": "Sfera",
+      "url": "https://www.sfera.com/es/ninos/A200976329-250-nude-pr-bota-agua-carita/",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 403",
+      "pistas": {}
     },
     {
-      "producto": "poquer-de-bichos",
+      "producto": "botas-agua-sfera-lucia",
+      "tienda": "Sfera",
+      "url": "https://www.sfera.com/es/ninos/A200976328-burdeos-pr-bota-agua/",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 403",
+      "pistas": {}
+    },
+    {
+      "producto": "haba-bichos",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/devir-poquer-de-bichos-juego-de-mesa-rapido-y-divertido-de-cartas-creadores-de-la-polilla-tramposa-con-ninos-o-adultos-party-game-bgpobitr.html",
+      "url": "https://www.globerada.com/precios/haba-2013336004-bichos-juego-infantil-de-mesa-de-memoria-y-calculo-mental-sumas-hasta-10.-mas-6-anos.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/devir-poquer-de-bichos-juego-de-mesa-rapido-y-divertido-de-cartas-creadores-de-la-polilla-tramposa-con-ninos-o-adultos-party-game-bgpobitr.html",
+      "pagina": "https://www.globerada.com/precios/haba-2013336004-bichos-juego-infantil-de-mesa-de-memoria-y-calculo-mental-sumas-hasta-10.-mas-6-anos.html",
       "ofertas": [
         {
-          "tienda": "Amazon",
-          "precio": 13.6
-        },
-        {
           "tienda": "Ferretería Ibermadrid",
-          "precio": 13.6
+          "precio": 7.19
         },
         {
-          "tienda": "Fnac",
-          "precio": 16.0
+          "tienda": "Abacus",
+          "precio": 7.19
+        },
+        {
+          "tienda": "Amazon",
+          "precio": 7.49
+        },
+        {
+          "tienda": "Juegos de la Mesa Redonda",
+          "precio": 8.09
         }
       ]
     },
     {
-      "producto": "poquer-de-bichos",
+      "producto": "haba-bichos",
       "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Póquer de Bichos",
+      "url": "buscar:www.toyplanet.com:HABA Bichos",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
@@ -530,15 +568,123 @@
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/frozen-2.-gran-libro-de-la-pelicula.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/frozen-2.-gran-libro-de-la-pelicula.html",
+      "ofertas": [
+        {
+          "tienda": "Frozen · Abacus",
+          "precio": 5.65
+        }
+      ]
+    },
+    {
+      "producto": "libro-disney-gran-libro",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/frozen-2.-gran-libro-de-la-pelicula.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/frozen-2.-gran-libro-de-la-pelicula.html",
+      "ofertas": [
+        {
+          "tienda": "Frozen 2 · Abacus",
+          "precio": 5.65
+        }
+      ]
+    },
+    {
+      "producto": "libro-disney-gran-libro",
+      "tienda": "Globerada",
+      "url": "comparador:Encanto Gran libro de la película",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "libro-disney-gran-libro",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/elemental.-gran-libro-de-la-pelicula.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/elemental.-gran-libro-de-la-pelicula.html",
+      "ofertas": [
+        {
+          "tienda": "Elemental · Abacus",
+          "precio": 5.65
+        }
+      ]
+    },
+    {
+      "producto": "libro-disney-gran-libro",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/elio.-gran-libro-de-la-pelicula.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/elio.-gran-libro-de-la-pelicula.html",
+      "ofertas": [
+        {
+          "tienda": "Elio · Abacus",
+          "precio": 12.3
+        }
+      ]
+    },
+    {
+      "producto": "libro-disney-gran-libro",
+      "tienda": "Globerada",
+      "url": "comparador:Coco Gran libro de la película",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "libro-disney-gran-libro",
+      "tienda": "Globerada",
       "url": "https://www.globerada.com/precios/red.-gran-libro-de-la-pelicula.html",
       "metodo": "comparador",
       "pagina": "https://www.globerada.com/precios/red.-gran-libro-de-la-pelicula.html",
       "ofertas": [
         {
-          "tienda": "Abacus",
+          "tienda": "Red · Abacus",
           "precio": 2.37
         }
       ]
+    },
+    {
+      "producto": "libro-disney-gran-libro",
+      "tienda": "Globerada",
+      "url": "comparador:Toy Story 4 Gran libro de la película",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "libro-disney-gran-libro",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/zootropolis-2.-gran-libro-de-la-pelicula.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/zootropolis-2.-gran-libro-de-la-pelicula.html",
+      "ofertas": [
+        {
+          "tienda": "Zootrópolis 2 · Abacus",
+          "precio": 12.3
+        }
+      ]
+    },
+    {
+      "producto": "libro-disney-gran-libro",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/los-increibles-2.-gran-libro-de-la-pelicula.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/los-increibles-2.-gran-libro-de-la-pelicula.html",
+      "ofertas": [
+        {
+          "tienda": "Los Increíbles 2 · Abacus",
+          "precio": 11.95
+        }
+      ]
+    },
+    {
+      "producto": "libro-disney-gran-libro",
+      "tienda": "Globerada",
+      "url": "comparador:Buscando a Dory Gran libro de la película",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "libro-disney-gran-libro",
+      "tienda": "Globerada",
+      "url": "comparador:Big Hero 6 Gran libro de la película",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "monster-high-cleo",
