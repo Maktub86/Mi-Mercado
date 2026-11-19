@@ -99,8 +99,10 @@ function preparar(lista, precios) {
         || (x.ultimo.fecha === y.ultimo.fecha && x.ultimo.precio < y.ultimo.precio)));
       if (mejorQue(t, previa)) porNombre.set(nombre, previa && !t.imagen ? { ...t, imagen: previa.imagen, valoracion: t.valoracion || previa.valoracion, resumen: t.resumen || previa.resumen } : t);
     });
+    const conImagen = todas.filter((t) => t.imagen);
+    // Solo se enseñan las tiendas de las que se ha podido leer el precio.
     const tiendas = [...porNombre.values()]
-      .filter((t) => t.url && !(t.buscar && !t.ultimo && t.error))
+      .filter((t) => t.url && t.ultimo)
       .sort((a, b) => (a.ultimo ? a.ultimo.precio : Infinity) - (b.ultimo ? b.ultimo.precio : Infinity));
     const conPrecio = tiendas.filter((t) => t.ultimo);
     const mejor = conPrecio.length
@@ -121,10 +123,11 @@ function preparar(lista, precios) {
     const referencia = actual ?? p.precio_lista;
     const variacion = actual != null && p.precio_lista != null ? actual - p.precio_lista : null;
 
-    const conFoto = tiendas.find((t) => t.imagen && /amazon/i.test(t.tienda)) || tiendas.find((t) => t.imagen);
+    const conFoto = conImagen.find((t) => /amazon/i.test(t.tienda)) || conImagen.find((t) => /toy planet/i.test(t.tienda)) || conImagen[0];
     const imagen = p.imagen || (conFoto ? conFoto.imagen : null);
+    const fotos = [...new Set([p.imagen, conFoto && conFoto.imagen, ...conImagen.map((t) => t.imagen)].filter(Boolean))];
 
-    return { ...p, indice, tiendas, mejor, actual, referencia, variacion, serie, minimo, imagen };
+    return { ...p, indice, tiendas, mejor, actual, referencia, variacion, serie, minimo, imagen, fotos, _fechaLista: lista.fecha_lista };
   });
 }
 
@@ -200,54 +203,96 @@ function textoTendencia(t) {
   return { clase: "igual", texto: "= estable", detalle: `sin cambios desde el ${cuando}` };
 }
 
-function pintarPanel(panel, p, t) {
-  const partes = [];
-  if (t.ultimo) {
-    const tend = textoTendencia(t);
-    const precios = t.serie.map((e) => e.precio);
-    const min = Math.min(...precios);
-    const max = Math.max(...precios);
-    const lineas = [`leído el ${fechaCorta.format(leerFecha(t.ultimo.fecha))}`];
-    if (tend && tend.detalle) lineas.push(tend.detalle);
-    if (t.serie.length > 1 && max - min >= 0.01) lineas.push(`mín. ${euros.format(min)} · máx. ${euros.format(max)}`);
-    if (t.ultimo.disponible === false) lineas.unshift("agotado");
-    partes.push(`<div class="panel-fila">
-        <span class="panel-precio">${euros.format(t.ultimo.precio)}</span>
-        ${tend ? `<span class="tendencia ${tend.clase}">${tend.texto}</span>` : ""}
-      </div>
-      <p class="panel-detalle">${lineas.join(" · ")}</p>
-      <svg class="grafica" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true" hidden></svg>`);
-    if (t.error) partes.push(`<p class="panel-aviso">Hoy no se pudo leer (${escapar(motivo(t.error))}); se muestra la última lectura.</p>`);
-  } else if (t.error) {
-    partes.push(`<p class="panel-aviso">${escapar(motivo(t.error))}. Pulsa “Ir a la tienda” para ver el precio.</p>`);
-  } else {
-    partes.push(`<p class="panel-aviso">Pendiente de la próxima revisión.</p>`);
-  }
-
-  if (t.valoracion || t.resumen) {
-    const v = t.valoracion;
-    partes.push(`<div class="opiniones">
-      ${v ? `<div class="estrellas-fila">${estrellas(v)} <strong>${v.media.toLocaleString("es-ES")}</strong>
-        ${v.total ? `<span class="total">(${v.total.toLocaleString("es-ES")} opiniones)</span>` : ""}</div>` : ""}
-      ${t.resumen ? `<p class="resumen-opiniones"><em>Resumen de ${escapar(t.tienda.replace(/\s*\(.*\)/, ""))}:</em> ${escapar(t.resumen)}</p>` : ""}
-    </div>`);
-  }
-
-  partes.push(`<div class="panel-fila">
-      <a class="enlace-suave" href="${escapar(t.opinionesUrl)}" target="_blank" rel="noopener">Leer opiniones ↗</a>
-      <a class="boton principal" href="${escapar(t.url)}" target="_blank" rel="noopener">Ir a la tienda</a>
-    </div>`);
-
-  panel.innerHTML = partes.join("");
-  const svg = panel.querySelector(".grafica");
-  if (svg) grafica(svg, t.serie.map((e) => e.precio));
+function motivo(error) {
+  return error;
 }
 
-function motivo(error) {
-  if (error.startsWith("bloqueado")) return "la tienda no deja leer el precio automáticamente";
-  if (/404/.test(error)) return "el enlace ya no existe";
-  if (/catálogo|comparador/.test(error)) return "esta tienda no lo tiene ahora mismo";
-  return "no se encontró el precio en la página";
+const PESTANAS = [
+  { id: "comparar", titulo: "Comparar precios" },
+  { id: "opiniones", titulo: "Opiniones" },
+  { id: "historial", titulo: "Historial" },
+  { id: "nota", titulo: "Nota" },
+];
+
+function hojaComparar(p) {
+  const top = p.tiendas.slice(0, 10);
+  if (!top.length) {
+    return '<p class="hoja-vacia">Todavía no hay precios de tiendas para este juguete. El robot lo sigue buscando en cada revisión.</p>';
+  }
+  const mejor = top[0];
+  const peor = p.tiendas[p.tiendas.length - 1];
+  const ahorro = peor.ultimo.precio - mejor.ultimo.precio;
+  const cabecera = p.tiendas.length > 1
+    ? `Top ${top.length} de ${p.tiendas.length} ${p.tiendas.length === 1 ? "tienda" : "tiendas"}${ahorro >= 0.01 ? ` · ahorras hasta <strong>${euros.format(ahorro)}</strong>` : ""}`
+    : "1 tienda con precio";
+  const filas = top.map((t, i) => {
+    const dif = t.ultimo.precio - mejor.ultimo.precio;
+    const tend = textoTendencia(t);
+    const info = [];
+    if (t.ultimo.disponible === false) info.push("<b>agotado</b>");
+    if (tend && tend.clase !== "igual") info.push(`<span class="flecha-${tend.clase}">${tend.texto}</span>`);
+    if (t.valoracion) info.push(`★ ${t.valoracion.media.toLocaleString("es-ES")}`);
+    info.push(fechaCorta.format(leerFecha(t.ultimo.fecha)));
+    return `<li class="fila-tienda${i === 0 ? " ganadora" : ""}">
+      <span class="puesto">${i + 1}</span>
+      <span class="fila-texto"><span class="fila-nombre">${escapar(t.tienda)}</span>
+        <span class="fila-info">${info.join(" · ")}</span></span>
+      <span class="fila-precio">${euros.format(t.ultimo.precio)}${i > 0 && dif >= 0.01 ? `<small>+${euros.format(dif)}</small>` : ""}</span>
+      <a class="fila-ir" href="${escapar(t.url)}" target="_blank" rel="noopener" aria-label="Ir a ${escapar(t.tienda)}">Ir ↗</a>
+    </li>`;
+  }).join("");
+  return `<p class="hoja-cabecera">${cabecera}</p><ol class="comparador-lista">${filas}</ol>`;
+}
+
+function hojaOpiniones(p) {
+  const conNota = p.tiendas.filter((t) => t.valoracion || t.resumen);
+  if (!conNota.length) {
+    const consulta = encodeURIComponent(`${p.busqueda || p.nombre} opiniones`);
+    return `<p class="hoja-vacia">Aún no hay opiniones recogidas de las tiendas.</p>
+      <a class="enlace-suave" href="https://www.google.com/search?q=${consulta}" target="_blank" rel="noopener">Buscar opiniones en internet ↗</a>`;
+  }
+  return conNota.map((t) => {
+    const v = t.valoracion;
+    return `<div class="opinion">
+      <div class="opinion-cabeza"><strong>${escapar(t.tienda)}</strong>
+        ${v ? `<span class="estrellas-fila">${estrellas(v)} <b>${v.media.toLocaleString("es-ES")}</b>
+          ${v.total ? `<span class="total">${v.total.toLocaleString("es-ES")} opiniones</span>` : ""}</span>` : ""}</div>
+      ${t.resumen ? `<p class="resumen-opiniones">${escapar(t.resumen)}</p>` : ""}
+      <a class="enlace-suave" href="${escapar(t.opinionesUrl)}" target="_blank" rel="noopener">Leer las opiniones ↗</a>
+    </div>`;
+  }).join("");
+}
+
+function hojaHistorial(p) {
+  if (!p.serie.length) return '<p class="hoja-vacia">Todavía no hay historial.</p>';
+  const filas = [...p.serie].reverse().slice(0, 8).map(([fecha, precio], i, arr) => {
+    const anterior = arr[i + 1];
+    const dif = anterior ? precio - anterior[1] : 0;
+    const flecha = Math.abs(dif) < 0.01 ? "" : dif < 0 ? `<span class="flecha-baja">▼ ${euros.format(-dif)}</span>` : `<span class="flecha-sube">▲ ${euros.format(dif)}</span>`;
+    const esLista = fecha === p._fechaLista && precio === p.precio_lista && i === arr.length - 1;
+    return `<tr><td>${fechaCorta.format(leerFecha(fecha))}${esLista ? " <small>(lista)</small>" : ""}</td>
+      <td class="num">${euros.format(precio)}</td><td class="num">${flecha}</td></tr>`;
+  }).join("");
+  return `<svg class="grafica grande" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true" hidden></svg>
+    <p class="hoja-cabecera">Mejor precio de cada día</p>
+    <table class="tabla-historial"><tbody>${filas}</tbody></table>`;
+}
+
+function hojaNota(p) {
+  const partes = [];
+  if (p.nota) partes.push(`<p class="nota-texto${/lo pide|lo quiere/i.test(p.nota) ? " destacada" : ""}">${escapar(p.nota.replace(/^Fuera de carta\.?\s*/, "") || "Fuera de carta")}</p>`);
+  if (p.precio_lista != null) partes.push(`<p class="hoja-detalle">Precio en la lista: <strong>${euros.format(p.precio_lista)}</strong>${p.tienda_lista ? ` (${escapar(p.tienda_lista)})` : ""}</p>`);
+  partes.push(`<p class="hoja-detalle">Para: <strong>${escapar(p.para)}</strong></p>`);
+  const consulta = encodeURIComponent(p.busqueda || p.nombre);
+  partes.push(`<a class="enlace-suave" href="https://www.amazon.es/s?k=${consulta}" target="_blank" rel="noopener">Buscarlo en Amazon ↗</a>`);
+  return partes.join("");
+}
+
+function pintarHoja(hoja, p, id) {
+  const html = { comparar: hojaComparar, opiniones: hojaOpiniones, historial: hojaHistorial, nota: hojaNota }[id](p);
+  hoja.innerHTML = html;
+  const svg = hoja.querySelector(".grafica");
+  if (svg) grafica(svg, p.serie.map(([, v]) => v));
 }
 
 function tarjeta(p) {
@@ -258,39 +303,34 @@ function tarjeta(p) {
   if (p.fuera_de_carta) nodo.querySelector(".etiqueta-fuera").hidden = false;
 
   const img = nodo.querySelector(".foto img");
-  if (p.imagen) {
-    img.src = p.imagen;
+  const fotos = p.fotos.slice();
+  const siguienteFoto = () => {
+    const url = fotos.shift();
+    if (!url) { img.hidden = true; return; }
+    img.src = url;
     img.alt = p.nombre;
     img.hidden = false;
-    img.addEventListener("error", () => { img.hidden = true; });
-  }
+  };
+  img.addEventListener("error", siguienteFoto);
+  siguienteFoto();
 
   nodo.querySelector(".nombre").textContent = p.nombre;
-  const nota = nodo.querySelector(".nota");
-  const textoNota = p.fuera_de_carta ? (p.nota || "").replace(/^Fuera de carta\.?\s*/, "") : p.nota || "";
-  nota.textContent = textoNota;
-  if (/lo pide|lo quiere/i.test(textoNota)) nota.classList.add("destacada");
 
   const precio = nodo.querySelector(".precio");
   const detalle = nodo.querySelector(".precio-detalle");
   const titulo = nodo.querySelector(".precio-titulo");
   if (p.actual != null) {
     precio.textContent = euros.format(p.actual);
-    const partes = [`en ${p.mejor.tienda}`];
-    if (p.precio_lista != null) partes.push(`lista: ${euros.format(p.precio_lista)}`);
-    if (p.minimo != null && p.minimo < p.actual) partes.push(`mínimo visto: ${euros.format(p.minimo)}`);
-    detalle.textContent = partes.join(" · ");
+    detalle.textContent = `en ${p.mejor.tienda}`;
   } else if (p.precio_lista != null) {
     titulo.textContent = "Precio de la lista";
     precio.textContent = euros.format(p.precio_lista);
     detalle.textContent = p.tienda_lista ? `visto en ${p.tienda_lista}` : "";
   } else {
     titulo.textContent = "Precio";
-    precio.textContent = "Sin precio todavía";
+    precio.textContent = "Buscando tiendas…";
     precio.classList.add("sin-dato");
-    detalle.textContent = "busca y añade un enlace para seguirlo";
   }
-
   if (p.variacion != null) {
     const v = nodo.querySelector(".variacion");
     const centimos = Math.round(p.variacion * 100);
@@ -301,87 +341,24 @@ function tarjeta(p) {
   }
 
   const pestanas = nodo.querySelector(".pestanas");
-  const panel = nodo.querySelector(".panel");
-  const conPrecio = p.tiendas.filter((t) => t.ultimo);
-  if (p.tiendas.length) {
-    const seleccionar = (boton, pintar) => {
+  const hoja = nodo.querySelector(".hoja");
+  PESTANAS.forEach((pest, i) => {
+    const boton = document.createElement("button");
+    boton.type = "button";
+    boton.className = "pestana";
+    boton.setAttribute("role", "tab");
+    boton.setAttribute("aria-selected", String(i === 0));
+    const cuenta = pest.id === "comparar" && p.tiendas.length ? ` <span class="cuenta">${Math.min(p.tiendas.length, 10)}</span>` : "";
+    boton.innerHTML = `${pest.titulo}${cuenta}`;
+    boton.addEventListener("click", () => {
       pestanas.querySelectorAll(".pestana").forEach((b) => b.setAttribute("aria-selected", "false"));
       boton.setAttribute("aria-selected", "true");
-      pintar();
-    };
-    const comparar = document.createElement("button");
-    comparar.type = "button";
-    comparar.className = "pestana pestana-comparar";
-    comparar.setAttribute("role", "tab");
-    comparar.setAttribute("aria-selected", "true");
-    comparar.innerHTML = `Comparar<small>${conPrecio.length} ${conPrecio.length === 1 ? "tienda" : "tiendas"}</small>`;
-    comparar.addEventListener("click", () => seleccionar(comparar, () => pintarComparador(panel, p)));
-    pestanas.append(comparar);
-
-    conPrecio.forEach((t) => {
-      const boton = document.createElement("button");
-      boton.type = "button";
-      boton.className = "pestana";
-      boton.setAttribute("role", "tab");
-      boton.setAttribute("aria-selected", "false");
-      const tipo = t.tendencia && t.tendencia.tipo;
-      const marca = tipo === "baja" ? ' <span class="flecha-baja">▼</span>' : tipo === "sube" ? ' <span class="flecha-sube">▲</span>' : "";
-      const esMejor = t === p.mejor && conPrecio.length > 1;
-      boton.innerHTML = `${escapar(t.tienda)}<small class="${esMejor ? "mejor" : ""}">${euros.format(t.ultimo.precio)}${marca}</small>`;
-      boton.addEventListener("click", () => seleccionar(boton, () => pintarPanel(panel, p, t)));
-      pestanas.append(boton);
+      pintarHoja(hoja, p, pest.id);
     });
-    pintarComparador(panel, p);
-  } else {
-    pestanas.remove();
-    panel.innerHTML = '<p class="panel-aviso">Todavía no hay tiendas para este juguete. El robot lo seguirá buscando en cada revisión.</p>';
-  }
-
-  const consulta = encodeURIComponent(p.busqueda || p.nombre);
-  nodo.querySelector(".buscar-amazon").href = `https://www.amazon.es/s?k=${consulta}`;
+    pestanas.append(boton);
+  });
+  pintarHoja(hoja, p, "comparar");
   return nodo;
-}
-
-function pintarComparador(panel, p) {
-  const conPrecio = p.tiendas.filter((t) => t.ultimo).sort((a, b) => a.ultimo.precio - b.ultimo.precio);
-  const sinPrecio = p.tiendas.filter((t) => !t.ultimo);
-  const mejor = conPrecio[0];
-  const partes = [];
-
-  if (!conPrecio.length) {
-    partes.push('<p class="panel-aviso">Todavía no se ha podido leer el precio en ninguna tienda.</p>');
-  } else {
-    let resumen = conPrecio.length > 1
-      ? `Lo más barato está en <strong>${escapar(mejor.tienda)}</strong>.`
-      : `De momento solo hay precio de ${escapar(mejor.tienda)}.`;
-    if (conPrecio.length > 1) {
-      const ahorro = conPrecio[conPrecio.length - 1].ultimo.precio - mejor.ultimo.precio;
-      if (ahorro >= 0.01) resumen += ` Ahorras hasta ${euros.format(ahorro)}.`;
-    }
-    partes.push(`<p class="comparador-resumen">${resumen}</p>`);
-    partes.push(`<ol class="comparador-lista">${conPrecio.map((t, i) => {
-      const dif = t.ultimo.precio - mejor.ultimo.precio;
-      const tend = textoTendencia(t);
-      const info = [];
-      if (t.ultimo.disponible === false) info.push("<b>agotado</b>");
-      if (tend && tend.clase !== "igual") info.push(`<span class="${tend.clase === "baja" ? "flecha-baja" : "flecha-sube"}">${tend.texto}</span>`);
-      if (t.valoracion) info.push(`★ ${t.valoracion.media.toLocaleString("es-ES")}`);
-      info.push(fechaCorta.format(leerFecha(t.ultimo.fecha)));
-      return `<li class="fila-tienda${i === 0 ? " ganadora" : ""}">
-        <span class="puesto">${i + 1}</span>
-        <span class="fila-texto"><span class="fila-nombre">${escapar(t.tienda)}</span>
-          <span class="fila-info">${info.join(" · ")}</span></span>
-        <span class="fila-precio">${euros.format(t.ultimo.precio)}${i > 0 && dif >= 0.01 ? `<small>+${euros.format(dif)}</small>` : ""}</span>
-        <a class="fila-ir" href="${escapar(t.url)}" target="_blank" rel="noopener" aria-label="Ir a ${escapar(t.tienda)}">Ir ↗</a>
-      </li>`;
-    }).join("")}</ol>`);
-  }
-  if (sinPrecio.length) {
-    partes.push(`<p class="sin-precio-titulo">Sin precio automático</p>
-      <ul class="sin-precio">${sinPrecio.map((t) => `<li><a href="${escapar(t.url)}" target="_blank" rel="noopener">${escapar(t.tienda)} ↗</a>
-        <span>${t.error ? escapar(motivo(t.error)) : "pendiente de revisar"}</span></li>`).join("")}</ul>`);
-  }
-  panel.innerHTML = partes.join("");
 }
 
 function pintarLista() {

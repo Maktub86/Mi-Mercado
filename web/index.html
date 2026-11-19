@@ -45,7 +45,7 @@
     </details>
 
     <footer class="pie">
-      <p>Los precios se revisan solos dos veces al día en Amazon, Toy Planet, Carrefour y todas las tiendas que aparecen en el comparador Globerada (Abacus, Juguettos, Fnac, Miravia, Raijuguetes…). Algunas tiendas bloquean la lectura automática: en ese caso se muestra el último precio conocido y el de la lista.</p>
+      <p>Los precios se revisan solos dos veces al día en Amazon, Toy Planet, Carrefour y todas las tiendas del comparador Globerada (Abacus, Juguettos, Fnac, Miravia, Raijuguetes…). Solo se muestran las tiendas de las que se ha podido leer el precio.</p>
       <p><a id="editar" href="#" target="_blank" rel="noopener">Añadir o cambiar productos</a></p>
     </footer>
   </main>
@@ -62,7 +62,6 @@
       </div>
       <div class="cuerpo">
         <h2 class="nombre"></h2>
-        <p class="nota"></p>
         <div class="precio-bloque">
           <div>
             <p class="precio-titulo">Mejor precio</p>
@@ -71,10 +70,9 @@
           </div>
           <span class="variacion" hidden></span>
         </div>
-        <div class="pestanas" role="tablist" aria-label="Tiendas"></div>
-        <div class="panel" role="tabpanel"></div>
-        <div class="acciones">
-          <a class="boton buscar-amazon" target="_blank" rel="noopener">Buscar en Amazon</a>
+        <div class="archivador">
+          <div class="pestanas" role="tablist" aria-label="Secciones"></div>
+          <div class="hoja" role="tabpanel"></div>
         </div>
       </div>
     </article>

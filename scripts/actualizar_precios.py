@@ -26,6 +26,17 @@ RAIZ = Path(__file__).resolve().parent.parent
 PRODUCTOS = RAIZ / "web" / "data" / "productos.json"
 PRECIOS = RAIZ / "web" / "data" / "precios.json"
 DIAGNOSTICO = RAIZ / "diagnostico" / "ultima_revision.json"
+MUESTRAS = RAIZ / "diagnostico" / "muestras"
+
+
+def guardar_muestra(nombre: str, pagina: str, limite: int = 150_000) -> None:
+    """Guarda un trozo de la página para poder ajustar el lector con datos reales."""
+    try:
+        MUESTRAS.mkdir(parents=True, exist_ok=True)
+        (MUESTRAS / f"{re.sub(r'[^a-z0-9]+', '-', nombre.lower())[:60]}.html").write_text(
+            pagina[:limite], encoding="utf-8")
+    except OSError:
+        pass
 ZONA = ZoneInfo("Europe/Madrid")
 
 CABECERAS = {
@@ -262,7 +273,7 @@ NAVEGADORES = [
 ]
 
 
-def descargar_amazon(url: str, intentos: int = 2) -> str:
+def descargar_amazon(url: str, intentos: int = 1) -> str:
     """Amazon pide captcha a muchas visitas de robots; probamos varias veces,
     con pausas y distintos navegadores, antes de rendirnos."""
     asin = asin_de(url)
@@ -421,6 +432,11 @@ def ofertas_comparador(url: str, pagina: str) -> list[dict]:
         if not nombre_tienda:
             continue
         vendedor = re.search(r"Vendido por\s+(.+?)(?:\s+Ver oferta\b|$)", texto)
+        if nombre_tienda.startswith(("Marketplace", "Vendido por")) and vendedor:
+            alt = re.search(r'<img[^>]+alt="([^"]{2,40})"', fila)
+            plataforma = html_lib.unescape(alt.group(1)).strip() if alt else "Amazon"
+            plataforma = re.sub(r"(?i)^comprar en\s+|\s*marketplace$", "", plataforma).strip() or "Amazon"
+            nombre_tienda = plataforma
         if vendedor and nombre_tienda.lower().startswith(("amazon", "miravia", "fnac")) and \
                 vendedor.group(1).strip().lower() not in ("amazon", "amazon.es", "fnac"):
             nombre_tienda = f"{nombre_tienda} ({vendedor.group(1).strip()})"
@@ -452,8 +468,10 @@ def buscar_globerada(consulta: str) -> str | None:
     for patron in BUSCADORES_GLOBERADA:
         try:
             pagina = descargar(patron.format(q=urllib.parse.quote_plus(consulta)))
-        except Exception:  # noqa: BLE001 - probamos el siguiente formato
+        except Exception as err:  # noqa: BLE001 - probamos el siguiente formato
+            guardar_muestra(f"busqueda-{BUSCADORES_GLOBERADA.index(patron)}-error", f"{patron}\n{err}")
             continue
+        guardar_muestra(f"busqueda-{BUSCADORES_GLOBERADA.index(patron)}", pagina)
         for ruta, texto in re.findall(r'href="((?:https://www\.globerada\.com)?/precios/[^"#?]+\.html)"[^>]*>(.*?)</a>',
                                       pagina, flags=re.S):
             titulo = texto_plano(texto) or ruta.rsplit("/", 1)[-1].replace("-", " ")
@@ -576,6 +594,7 @@ def revisar_comparador(historial: dict, producto: dict, enlace: dict, hoy: str) 
     fila = {"producto": producto["id"], "tienda": enlace["tienda"], "url": url, "metodo": "comparador"}
     try:
         pagina = descargar(url)
+        guardar_muestra(f"comparador-{producto['id']}", pagina, 400_000)
         ofertas = ofertas_comparador(url, pagina)
         ficha = ficha_generica(pagina)
     except Bloqueado as err:
