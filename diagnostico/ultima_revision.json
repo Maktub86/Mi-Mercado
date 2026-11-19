@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-19T21:09:31+00:00",
+  "fecha": "2026-11-19T21:14:43+00:00",
   "leidos": 63,
   "fallos": 14,
   "enlaces": [
@@ -63,6 +63,12 @@
       ]
     },
     {
+      "producto": "monster-high-moonspell",
+      "tienda": "Idealo",
+      "url": "idealo:Monster High Moonspell",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "bolso-peluche-hello-kitty",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:Hello Kitty bolso peluche",
@@ -78,6 +84,12 @@
       "error": "no encontrado en el comparador"
     },
     {
+      "producto": "bolso-peluche-hello-kitty",
+      "tienda": "Idealo",
+      "url": "idealo:Hello Kitty bolso reversible",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "dreamon-zapatos-princesa",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:Dreamon zapatos",
@@ -90,6 +102,12 @@
       "producto": "dreamon-zapatos-princesa",
       "tienda": "Globerada",
       "url": "comparador:Dreamon zapatos",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "dreamon-zapatos-princesa",
+      "tienda": "Idealo",
+      "url": "idealo:Dreamon zapatos",
       "error": "no encontrado en el comparador"
     },
     {
@@ -114,6 +132,12 @@
       ]
     },
     {
+      "producto": "vtech-kidisecrets-locker",
+      "tienda": "Idealo",
+      "url": "idealo:VTech KidiSecrets Locker taquilla secreta",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "dreamon-heladeria",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:Dreamon heladería",
@@ -126,6 +150,12 @@
       "producto": "dreamon-heladeria",
       "tienda": "Globerada",
       "url": "comparador:Dreamon heladería",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "dreamon-heladeria",
+      "tienda": "Idealo",
+      "url": "idealo:Dreamon heladería",
       "error": "no encontrado en el comparador"
     },
     {
@@ -166,6 +196,12 @@
       ]
     },
     {
+      "producto": "playmobil-71613-abuelos",
+      "tienda": "Idealo",
+      "url": "idealo:Playmobil 71613",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "carro-limpieza",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:carrito limpieza Vileda",
@@ -200,6 +236,12 @@
       ]
     },
     {
+      "producto": "carro-limpieza",
+      "tienda": "Idealo",
+      "url": "idealo:carro de limpieza juguete Vileda Theo Klein",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "barbie-boda-chelsea",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:Barbie boda",
@@ -212,6 +254,12 @@
       "producto": "barbie-boda-chelsea",
       "tienda": "Globerada",
       "url": "comparador:Barbie boda Chelsea",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "barbie-boda-chelsea",
+      "tienda": "Idealo",
+      "url": "idealo:Barbie boda Chelsea",
       "error": "no encontrado en el comparador"
     },
     {
@@ -234,6 +282,18 @@
           "precio": 34.49
         }
       ]
+    },
+    {
+      "producto": "mirrormi-fashion",
+      "tienda": "Idealo",
+      "url": "idealo:Mirrormi",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "peluche-maiz",
+      "tienda": "Idealo",
+      "url": "idealo:peluche maíz El Corte Inglés",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "clementoni-nail-art",
@@ -273,6 +333,12 @@
       ]
     },
     {
+      "producto": "clementoni-nail-art",
+      "tienda": "Idealo",
+      "url": "idealo:Clementoni Nail Art Studio",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "cherry-pets-confetti-tree",
       "tienda": "Carrefour",
       "url": "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p",
@@ -302,6 +368,12 @@
       ]
     },
     {
+      "producto": "cherry-pets-confetti-tree",
+      "tienda": "Idealo",
+      "url": "idealo:Cherry Pets Confetti Tree",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "educa-magnetics-61",
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1",
@@ -327,9 +399,27 @@
       ]
     },
     {
+      "producto": "educa-magnetics-61",
+      "tienda": "Idealo",
+      "url": "idealo:Educa Magnetics 61",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "barbie-deluxe-style-15",
+      "tienda": "Idealo",
+      "url": "idealo:Barbie Deluxe Style 15 JJN73",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "barbie-coche-radiocontrol",
       "tienda": "Globerada",
       "url": "comparador:Mondo Barbie City Car",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "barbie-coche-radiocontrol",
+      "tienda": "Idealo",
+      "url": "idealo:Mondo Barbie City Car",
       "error": "no encontrado en el comparador"
     },
     {
@@ -364,6 +454,12 @@
       ]
     },
     {
+      "producto": "barbie-cascanueces-trineo",
+      "tienda": "Idealo",
+      "url": "idealo:Barbie Cascanueces trineo",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "stitch-walkie-talkies",
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/lexibook-stitch-y-angel-walkie-talkies-con-video-recargables",
@@ -375,6 +471,12 @@
       "producto": "stitch-walkie-talkies",
       "tienda": "Globerada",
       "url": "comparador:Stitch walkie vídeo",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "stitch-walkie-talkies",
+      "tienda": "Idealo",
+      "url": "idealo:Stitch walkie vídeo",
       "error": "no encontrado en el comparador"
     },
     {
@@ -424,6 +526,12 @@
       ]
     },
     {
+      "producto": "barbie-cascanueces-bailarina",
+      "tienda": "Idealo",
+      "url": "idealo:Barbie Cascanueces Clara",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "holawatch-k-fun",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:HolaWatch K-Fun",
@@ -458,9 +566,21 @@
       ]
     },
     {
+      "producto": "holawatch-k-fun",
+      "tienda": "Idealo",
+      "url": "idealo:HolaWatch K-Fun",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "botas-agua-esfera",
       "tienda": "Globerada",
       "url": "comparador:botas agua esfera",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "botas-agua-esfera",
+      "tienda": "Idealo",
+      "url": "idealo:botas agua esfera",
       "error": "no encontrado en el comparador"
     },
     {
@@ -492,6 +612,12 @@
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
+    },
+    {
+      "producto": "poquer-de-bichos",
+      "tienda": "Idealo",
+      "url": "idealo:Póquer de Bichos",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "libro-consolar-ardilla",
@@ -528,6 +654,12 @@
       ]
     },
     {
+      "producto": "libro-consolar-ardilla",
+      "tienda": "Idealo",
+      "url": "idealo:consolar ardilla",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "libro-disney-gran-libro",
       "tienda": "Globerada",
       "url": "https://www.globerada.com/precios/red.-gran-libro-de-la-pelicula.html",
@@ -539,6 +671,12 @@
           "precio": 2.37
         }
       ]
+    },
+    {
+      "producto": "libro-disney-gran-libro",
+      "tienda": "Idealo",
+      "url": "idealo:Gran libro de la película",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "monster-high-cleo",
@@ -560,6 +698,12 @@
           "precio": 29.95
         }
       ]
+    },
+    {
+      "producto": "monster-high-cleo",
+      "tienda": "Idealo",
+      "url": "idealo:Monster High Cleo",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "monster-high-frankie",
@@ -599,6 +743,12 @@
       ]
     },
     {
+      "producto": "monster-high-frankie",
+      "tienda": "Idealo",
+      "url": "idealo:Monster High Doll With Pet Frankie",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "libros-escuela-monstruos",
       "tienda": "Globerada",
       "url": "https://www.globerada.com/precios/escuela-de-monstruos-el-libro-de-colorear-megamonstruoso-rippin-sally.html",
@@ -616,6 +766,12 @@
       ]
     },
     {
+      "producto": "libros-escuela-monstruos",
+      "tienda": "Idealo",
+      "url": "idealo:Escuela de Monstruos libro",
+      "error": "no encontrado en el comparador"
+    },
+    {
       "producto": "camiseta-betis",
       "tienda": "Globerada",
       "url": "https://www.globerada.com/precios/hummel-camiseta-de-manga-corta-tercera-equipacion-real-betis-balompie-2627-l.html",
@@ -631,6 +787,12 @@
           "precio": 92.17
         }
       ]
+    },
+    {
+      "producto": "camiseta-betis",
+      "tienda": "Idealo",
+      "url": "idealo:camiseta Betis",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "juego-rol-restaurante-agustin",
@@ -653,6 +815,12 @@
       "producto": "juego-rol-restaurante-agustin",
       "tienda": "Globerada",
       "url": "comparador:Djeco 05524",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "juego-rol-restaurante-agustin",
+      "tienda": "Idealo",
+      "url": "idealo:Djeco 05524",
       "error": "no encontrado en el comparador"
     }
   ]
