@@ -490,3 +490,79 @@ button.boton { font: inherit; font-size: 13px; font-weight: 600; color: var(--ti
 }
 .boton-barra.suave { background: rgba(255, 255, 255, .12); color: #fff; }
 body.con-barra main { padding-bottom: 90px; }
+
+/* ---------- edición */
+.boton-accion {
+  font: inherit; font-size: 14px; font-weight: 600; cursor: pointer;
+  border: 1px solid var(--tinta); background: var(--tinta); color: #fff;
+  border-radius: 10px; padding: 8px 14px; white-space: nowrap;
+}
+.boton-accion:hover { background: #2c3a5c; }
+.boton-accion.suave { background: var(--papel); color: var(--tinta); border-color: var(--linea); }
+.boton-accion.suave:hover { border-color: var(--oro); background: var(--oro-suave); }
+.boton-accion[aria-pressed="true"] { background: var(--oro); border-color: var(--oro); color: var(--tinta); }
+.boton-accion:disabled { opacity: .6; cursor: wait; }
+
+.solo-edicion { display: none !important; }
+body.editando .solo-edicion { display: inline-flex !important; }
+body.editando .acciones-edicion.solo-edicion { display: flex !important; }
+body.editando .tarjeta { border-style: dashed; }
+
+.acciones-edicion { gap: 8px; padding-top: 4px; }
+.boton-mini {
+  flex: 1; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer;
+  border-radius: 9px; padding: 7px 10px; border: 1px solid var(--baja);
+  background: var(--baja-fondo); color: var(--baja);
+}
+.boton-mini.peligro { flex: none; border-color: #e4c3bb; background: #fff; color: var(--sube); }
+.boton-mini:hover { filter: brightness(.97); }
+
+.fila-tienda:has(.fila-quitar) { grid-template-columns: 22px 1fr auto auto; }
+body.editando .fila-tienda { grid-template-columns: 22px 1fr auto auto 26px; }
+.fila-quitar {
+  width: 26px; height: 26px; border-radius: 50%; border: 1px solid #e4c3bb; background: #fff;
+  color: var(--sube); font-size: 12px; cursor: pointer; align-items: center; justify-content: center;
+}
+.fila-quitar:hover { background: var(--sube-fondo); }
+
+.enlace-boton {
+  font: inherit; font-size: 12.5px; font-weight: 600; color: var(--tinta);
+  background: none; border: 0; text-decoration: underline; cursor: pointer; margin-left: 8px; padding: 0;
+}
+
+.dialogo {
+  width: min(520px, calc(100vw - 24px)); border: 0; border-radius: 18px; padding: 22px;
+  background: var(--papel); color: var(--tinta); box-shadow: 0 20px 60px rgba(31, 42, 68, .35);
+}
+.dialogo.pequeno { width: min(380px, calc(100vw - 24px)); }
+.dialogo::backdrop { background: rgba(31, 42, 68, .45); }
+.dialogo h2 { margin: 0 0 14px; font-family: Fraunces, Georgia, serif; font-size: 22px; }
+.dialogo form { display: flex; flex-direction: column; gap: 12px; }
+.dialogo label { display: flex; flex-direction: column; gap: 5px; font-size: 13.5px; font-weight: 600; }
+.dialogo input, .dialogo select {
+  font: inherit; font-weight: 400; font-size: 15px; color: var(--tinta);
+  border: 1px solid var(--linea); border-radius: 10px; padding: 9px 11px; background: #fff;
+}
+.dialogo input:focus, .dialogo select:focus { outline: 2px solid var(--oro); outline-offset: 0; border-color: var(--oro); }
+.obligatorio { color: var(--sube); }
+.opcional { font-weight: 400; color: var(--tinta-suave); }
+.dos-columnas { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ayuda { margin: 0; font-size: 12.5px; color: var(--tinta-suave); }
+.error-form { margin: 0; font-size: 13px; color: var(--sube); font-weight: 600; min-height: 0; }
+.error-form:empty { display: none; }
+.botones-dialogo { display: flex; justify-content: flex-end; gap: 8px; margin-top: 4px; }
+
+.aviso {
+  position: fixed; left: 50%; bottom: 24px; z-index: 40; transform: translate(-50%, 20px);
+  max-width: min(560px, calc(100vw - 24px)); padding: 11px 16px; border-radius: 12px;
+  background: var(--tinta); color: #fff; font-size: 14px; box-shadow: 0 8px 30px rgba(31, 42, 68, .3);
+  opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s;
+}
+.aviso.visible { opacity: 1; transform: translate(-50%, 0); }
+.aviso.ok { background: var(--baja); }
+.aviso.error { background: var(--sube); }
+body.con-barra .aviso { bottom: 96px; }
+@media (max-width: 640px) { .dos-columnas { grid-template-columns: 1fr; } }
+.dialogo .etiqueta { display: block; }
+.dialogo input, .dialogo select { width: 100%; min-width: 0; box-sizing: border-box; }
+.dos-columnas > label { min-width: 0; }

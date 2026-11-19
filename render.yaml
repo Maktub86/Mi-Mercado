@@ -1,4 +1,5 @@
 services:
+  # La web: página estática, rápida y gratis.
   - type: web
     name: mi-mercado
     runtime: static
@@ -8,3 +9,24 @@ services:
       - path: /data/*
         name: Cache-Control
         value: no-cache
+
+  # El servidor de edición: guarda en GitHub los cambios hechos desde la web.
+  - type: web
+    name: mi-mercado-api
+    runtime: python
+    plan: free
+    buildCommand: python --version
+    startCommand: python api/servidor.py
+    healthCheckPath: /salud
+    buildFilter:
+      paths:
+        - api/**
+    envVars:
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: CLAVE_EDICION
+        sync: false
+      - key: ORIGEN_WEB
+        value: https://mi-mercado-2k48.onrender.com
+      - key: PYTHON_VERSION
+        value: 3.12.7

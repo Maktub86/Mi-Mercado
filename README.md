@@ -18,7 +18,11 @@ Página para seguir los precios de la lista de Reyes de Alba y Lucía (y, más a
 
 Si una tienda no deja leer el precio, `diagnostico/ultima_revision.json` explica qué pasó en cada enlace.
 
-## Añadir o cambiar un producto
+## Editar desde la web
+
+Botón **＋ Añadir** (nombre, para quién, enlaces opcionales) y botón **✎ Editar** (marcar comprado, eliminar, quitar una tienda que no es el producto, devolver a la lista). Los cambios los guarda el servidor `api/servidor.py` (servicio `mi-mercado-api` en Render) en `web/data/productos.json`, con una contraseña (`CLAVE_EDICION`) y una clave de GitHub (`GITHUB_TOKEN`) configuradas en Render. La dirección del servidor está en `web/data/config.json`.
+
+## Añadir o cambiar un producto a mano
 
 Edita `web/data/productos.json` desde GitHub (botón del lápiz). Cada producto tiene este aspecto:
 

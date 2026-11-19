@@ -58,10 +58,11 @@ function preparar(lista, precios) {
   const historial = precios.productos || {};
   return lista.productos.map((p, indice) => {
     const datos = historial[p.id] || {};
-    const aTienda = (enlace, info, url) => {
+    const aTienda = (enlace, info, url, clave) => {
       const serie = info.historial || [];
       return {
         ...enlace,
+        clave,
         url,
         serie,
         ultimo: serie[serie.length - 1] || null,
@@ -82,7 +83,7 @@ function preparar(lista, precios) {
         const clave = enlace.comparador || `${enlace.tienda === "Idealo" ? "idealo" : "comparador"}:${enlace.comparador_buscar}`;
         Object.entries(datos)
           .filter(([k, info]) => k.startsWith(`${clave}#`) && info.ultimo_error !== "ya no aparece en el comparador")
-          .forEach(([k, info]) => todas.push(aTienda({ tienda: info.tienda || k.split("#")[1] }, info, info.url || enlace.comparador)));
+          .forEach(([k, info]) => todas.push(aTienda({ tienda: info.tienda || k.split("#")[1] }, info, info.url || enlace.comparador, k)));
         return;
       }
       const clave = enlace.url || (enlace.amazon_buscar ? `amazon:${enlace.amazon_buscar}` : `buscar:${enlace.dominio}:${enlace.buscar}`);
@@ -90,7 +91,7 @@ function preparar(lista, precios) {
       const url = enlace.url || info.url || (enlace.amazon_buscar
         ? `https://www.amazon.es/s?k=${encodeURIComponent(enlace.amazon_buscar)}`
         : `https://${enlace.dominio}/search?q=${encodeURIComponent(enlace.buscar)}`);
-      todas.push(aTienda(enlace, info, url));
+      todas.push(aTienda(enlace, info, url, clave));
     });
 
     // Si una tienda aparece por dos caminos (p. ej. Amazon directo y vía comparador), nos quedamos
@@ -105,8 +106,9 @@ function preparar(lista, precios) {
     });
     const conImagen = todas.filter((t) => t.imagen);
     // Solo se enseñan las tiendas de las que se ha podido leer el precio.
+    const descartadas = new Set(p.descartadas || []);
     const tiendas = [...porNombre.values()]
-      .filter((t) => t.url && t.ultimo)
+      .filter((t) => t.url && t.ultimo && !descartadas.has(t.clave))
       .sort((a, b) => (a.ultimo ? a.ultimo.precio : Infinity) - (b.ultimo ? b.ultimo.precio : Infinity));
     const conPrecio = tiendas.filter((t) => t.ultimo);
     const mejor = conPrecio.length
@@ -256,6 +258,8 @@ function hojaComparar(p) {
         <span class="fila-info">${info.join(" · ")}</span></span>
       <span class="fila-precio">${euros.format(t.ultimo.precio)}${i > 0 && dif >= 0.01 ? `<small>+${euros.format(dif)}</small>` : ""}</span>
       <a class="fila-ir" href="${escapar(t.url)}" target="_blank" rel="noopener" aria-label="Ir a ${escapar(t.tienda)}">Ir ↗</a>
+      <button type="button" class="fila-quitar solo-edicion" data-descartar="${escapar(t.clave)}" data-tienda="${escapar(t.tienda)}"
+        title="No es este producto: quitar esta tienda" aria-label="Quitar ${escapar(t.tienda)}">✕</button>
     </li>`;
   }).join("");
   return `<p class="hoja-cabecera">${cabecera}</p><ol class="comparador-lista">${filas}</ol>`;
@@ -391,6 +395,16 @@ function tarjeta(p) {
     pestanas.append(boton);
   });
   pintarHoja(hoja, p, "comparar");
+
+  const acciones = document.createElement("div");
+  acciones.className = "acciones-edicion solo-edicion";
+  acciones.innerHTML = `<button type="button" class="boton-mini" data-comprado="${p.id}">✓ Ya está comprado</button>
+    <button type="button" class="boton-mini peligro" data-eliminar="${p.id}">Eliminar</button>`;
+  nodo.querySelector(".cuerpo").append(acciones);
+  hoja.addEventListener("click", (e) => {
+    const boton = e.target.closest("[data-descartar]");
+    if (boton) descartarTienda(p, boton.dataset.descartar, boton.dataset.tienda);
+  });
   return nodo;
 }
 
@@ -422,8 +436,203 @@ function pintarLista() {
   $("#titulo-comprados").textContent = `Ya comprados (${comprados.length})`;
   $("#bloque-comprados").hidden = comprados.length === 0;
   $("#lista-comprados").innerHTML = comprados.map((p) => `
-    <li><span><span class="tachado">${p.nombre}</span> · ${p.para}</span>
-    <span class="quien">${p.comprado_por ? `por ${p.comprado_por}` : "tachado en la lista"}</span></li>`).join("");
+    <li><span><span class="tachado">${escapar(p.nombre)}</span> · ${escapar(p.para)}</span>
+    <span class="quien">${p.comprado_por ? `por ${escapar(p.comprado_por)}` : "comprado"}
+      <button type="button" class="enlace-boton solo-edicion" data-pendiente="${p.id}">Volver a la lista</button></span></li>`).join("");
+}
+
+// ---------------------------------------------------------------- edición
+
+let API = "";
+let datosLista = null;
+let datosPrecios = null;
+const CLAVE_CONTRASENA = "mi-mercado-clave";
+
+function leerContrasena() {
+  try { return localStorage.getItem(CLAVE_CONTRASENA) || ""; } catch (e) { return ""; }
+}
+function guardarContrasena(valor) {
+  try { if (valor) localStorage.setItem(CLAVE_CONTRASENA, valor); else localStorage.removeItem(CLAVE_CONTRASENA); } catch (e) { /* sin almacenamiento */ }
+}
+
+function aviso(texto, tipo = "") {
+  const caja = $("#aviso");
+  caja.textContent = texto;
+  caja.className = `aviso visible ${tipo}`;
+  clearTimeout(aviso.temporizador);
+  if (tipo !== "esperando") aviso.temporizador = setTimeout(() => { caja.className = "aviso"; }, 5000);
+}
+
+async function llamar(metodo, ruta, cuerpo) {
+  if (!API) throw new Error("La edición todavía no está activada en esta web.");
+  let contrasena = leerContrasena();
+  if (!contrasena) contrasena = await pedirContrasena();
+  if (!contrasena) throw new Error("Hace falta la contraseña para guardar cambios.");
+  const despertando = setTimeout(() => aviso("Despertando el servidor… (la primera vez tarda hasta un minuto)", "esperando"), 2500);
+  const control = new AbortController();
+  const limite = setTimeout(() => control.abort(), 90000);
+  try {
+    const resp = await fetch(API + ruta, {
+      method: metodo,
+      headers: { "Content-Type": "application/json", "X-Clave": contrasena },
+      body: cuerpo ? JSON.stringify(cuerpo) : undefined,
+      signal: control.signal,
+    });
+    const datos = await resp.json().catch(() => ({}));
+    if (resp.status === 401) {
+      guardarContrasena("");
+      throw new Error("Contraseña incorrecta. Vuelve a intentarlo.");
+    }
+    if (!resp.ok) throw new Error(datos.error || `El servidor respondió ${resp.status}`);
+    return datos;
+  } catch (err) {
+    if (err.name === "AbortError") throw new Error("El servidor no responde. Prueba otra vez en un minuto.");
+    if (err instanceof TypeError) throw new Error("No se pudo conectar con el servidor.");
+    throw err;
+  } finally {
+    clearTimeout(despertando);
+    clearTimeout(limite);
+  }
+}
+
+function pedirContrasena() {
+  return new Promise((resolver) => {
+    const dialogo = $("#dialogo-clave");
+    const campo = $("#campo-clave");
+    campo.value = "";
+    $("#error-clave").textContent = "";
+    dialogo.showModal();
+    campo.focus();
+    const terminar = (valor) => {
+      dialogo.close();
+      $("#form-clave").onsubmit = null;
+      $("#cancelar-clave").onclick = null;
+      resolver(valor);
+    };
+    $("#form-clave").onsubmit = async (e) => {
+      e.preventDefault();
+      const valor = campo.value.trim();
+      if (!valor) return;
+      guardarContrasena(valor);
+      terminar(valor);
+    };
+    $("#cancelar-clave").onclick = () => terminar("");
+  });
+}
+
+/** Aplica un producto devuelto por el servidor a la lista local y repinta. */
+function aplicarCambio(producto, borrar = false) {
+  const lista = datosLista.productos;
+  const i = lista.findIndex((p) => p.id === producto.id);
+  if (borrar) { if (i !== -1) lista.splice(i, 1); }
+  else if (i === -1) lista.push(producto);
+  else lista[i] = producto;
+  productos = preparar(datosLista, datosPrecios);
+  pintarChips();
+  pintarEleccion();
+  pintarLista();
+}
+
+async function accion(texto, fn) {
+  aviso(texto, "esperando");
+  try {
+    const mensaje = await fn();
+    aviso(mensaje, "ok");
+  } catch (err) {
+    aviso(err.message, "error");
+  }
+}
+
+function descartarTienda(p, clave, tienda) {
+  if (!document.body.classList.contains("editando")) return;
+  accion(`Quitando ${tienda}…`, async () => {
+    const { producto } = await llamar("POST", `/productos/${p.id}/descartar`, { tienda: clave });
+    aplicarCambio(producto);
+    return `${tienda} ya no aparecerá en “${p.nombre}”.`;
+  });
+}
+
+function abrirAnadir() {
+  const categoria = categorias.find((c) => c.id === estado.categoria) || categorias[0];
+  const selector = $("#nuevo-para");
+  selector.innerHTML = categoria.personas.map((n) => `<option value="${escapar(n)}">${escapar(n)}</option>`).join("");
+  if (estado.persona !== "todas") selector.value = estado.persona;
+  $("#form-anadir").reset();
+  if (estado.persona !== "todas") selector.value = estado.persona;
+  $("#error-anadir").textContent = "";
+  $("#titulo-anadir").textContent = `Añadir a ${categoria.nombre}`;
+  $("#dialogo-anadir").showModal();
+  $("#nuevo-nombre").focus();
+}
+
+async function guardarNuevo(e) {
+  e.preventDefault();
+  const boton = $("#guardar-anadir");
+  const cuerpo = {
+    nombre: $("#nuevo-nombre").value.trim(),
+    para: $("#nuevo-para").value,
+    categoria: estado.categoria,
+    enlaces: [$("#nuevo-enlace").value.trim(), $("#nuevo-enlace-2").value.trim()].filter(Boolean),
+    precio_lista: $("#nuevo-precio").value.trim() || null,
+    busqueda: $("#nuevo-busqueda").value.trim(),
+  };
+  boton.disabled = true;
+  $("#error-anadir").textContent = "";
+  try {
+    aviso("Guardando…", "esperando");
+    const { producto } = await llamar("POST", "/productos", cuerpo);
+    $("#dialogo-anadir").close();
+    aplicarCambio(producto);
+    aviso(`“${producto.nombre}” añadido. El robot empieza a buscar precios; aparecerán en unos minutos.`, "ok");
+  } catch (err) {
+    $("#error-anadir").textContent = err.message;
+    $("#aviso").className = "aviso";
+  } finally {
+    boton.disabled = false;
+  }
+}
+
+function enlazarEdicion() {
+  $("#boton-anadir").addEventListener("click", abrirAnadir);
+  $("#form-anadir").addEventListener("submit", guardarNuevo);
+  $("#cancelar-anadir").addEventListener("click", () => $("#dialogo-anadir").close());
+  $("#boton-editar").addEventListener("click", () => {
+    const activo = document.body.classList.toggle("editando");
+    $("#boton-editar").setAttribute("aria-pressed", String(activo));
+    $("#boton-editar").textContent = activo ? "Terminar de editar" : "✎ Editar";
+    if (activo) aviso("Modo edición: marca comprados, elimina regalos o quita tiendas que no son el producto (✕).");
+  });
+  document.addEventListener("click", (e) => {
+    const comprado = e.target.closest("[data-comprado]");
+    const eliminar = e.target.closest("[data-eliminar]");
+    const pendiente = e.target.closest("[data-pendiente]");
+    if (comprado) {
+      const p = productos.find((x) => x.id === comprado.dataset.comprado);
+      accion("Guardando…", async () => {
+        const { producto } = await llamar("POST", `/productos/${p.id}/estado`, { estado: "comprado" });
+        elegidos.delete(p.id); guardarElegidos();
+        aplicarCambio(producto);
+        return `“${p.nombre}” pasa a Ya comprados.`;
+      });
+    } else if (eliminar) {
+      const p = productos.find((x) => x.id === eliminar.dataset.eliminar);
+      if (!window.confirm(`¿Eliminar “${p.nombre}” de la lista?`)) return;
+      accion("Eliminando…", async () => {
+        await llamar("DELETE", `/productos/${p.id}`);
+        elegidos.delete(p.id); guardarElegidos();
+        aplicarCambio(p, true);
+        return `“${p.nombre}” eliminado.`;
+      });
+    } else if (pendiente) {
+      const p = productos.find((x) => x.id === pendiente.dataset.pendiente);
+      accion("Guardando…", async () => {
+        const { producto } = await llamar("POST", `/productos/${p.id}/estado`, { estado: "pendiente" });
+        aplicarCambio(producto);
+        return `“${p.nombre}” vuelve a la lista.`;
+      });
+    }
+  });
+  if (API) fetch(`${API}/salud`).catch(() => {}); // lo despierta mientras miras la lista
 }
 
 function enlazarEventos() {
@@ -453,16 +662,20 @@ function enlazarEventos() {
   });
   $("#buscar").addEventListener("input", (e) => { estado.texto = e.target.value; pintarLista(); });
   $("#orden").addEventListener("change", (e) => { estado.orden = e.target.value; pintarLista(); });
-  $("#editar").href = `https://github.com/${REPO}/edit/main/web/data/productos.json`;
 }
 
 async function iniciar() {
   enlazarEventos();
   try {
-    const [lista, precios] = await Promise.all([
+    const [lista, precios, config] = await Promise.all([
       cargar("data/productos.json"),
       cargar("data/precios.json").catch(() => ({ productos: {} })),
+      cargar("data/config.json").catch(() => ({})),
     ]);
+    datosLista = lista;
+    datosPrecios = precios;
+    API = (config.api || "").replace(/\/$/, "");
+    enlazarEdicion();
     categorias = lista.categorias || [{ id: "reyes", nombre: lista.lista || "Reyes", personas: ["Alba", "Lucía", "Las dos"] }];
     estado.categoria = categorias[0].id;
     productos = preparar(lista, precios);

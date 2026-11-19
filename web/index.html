@@ -24,6 +24,8 @@
     <section class="filtros" aria-label="Filtros">
       <div class="chips" id="chips-persona" role="tablist"></div>
       <div class="controles">
+        <button type="button" class="boton-accion" id="boton-anadir">＋ Añadir</button>
+        <button type="button" class="boton-accion suave" id="boton-editar" aria-pressed="false">✎ Editar</button>
         <input type="search" id="buscar" placeholder="Buscar…" aria-label="Buscar">
         <select id="orden" aria-label="Ordenar">
           <option value="lista">Orden de la lista</option>
@@ -45,9 +47,55 @@
     <footer class="pie">
       <p id="actualizado">Cargando precios…</p>
       <p>Los precios se revisan solos dos veces al día en Amazon, Toy Planet, Carrefour y todas las tiendas del comparador Globerada (Abacus, Juguettos, Fnac, Miravia, Raijuguetes…). Solo se muestran las tiendas de las que se ha podido leer el precio.</p>
-      <p><a id="editar" href="#" target="_blank" rel="noopener">Añadir o cambiar productos</a></p>
     </footer>
   </main>
+
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+  <dialog id="dialogo-anadir" class="dialogo" aria-labelledby="titulo-anadir">
+    <form id="form-anadir" method="dialog">
+      <h2 id="titulo-anadir">Añadir</h2>
+      <label><span class="etiqueta">Nombre del regalo <span class="obligatorio">*</span></span>
+        <input id="nuevo-nombre" required maxlength="120" placeholder="Ej.: Playmobil casa de muñecas 70205">
+      </label>
+      <label><span class="etiqueta">Para <span class="obligatorio">*</span></span>
+        <select id="nuevo-para" required></select>
+      </label>
+      <label><span class="etiqueta">Enlace de una tienda <span class="opcional">(opcional, pero ayuda mucho)</span></span>
+        <input id="nuevo-enlace" type="url" inputmode="url" placeholder="https://www.amazon.es/…">
+      </label>
+      <label><span class="etiqueta">Otro enlace <span class="opcional">(opcional)</span></span>
+        <input id="nuevo-enlace-2" type="url" inputmode="url" placeholder="https://…">
+      </label>
+      <div class="dos-columnas">
+        <label><span class="etiqueta">Precio que has visto <span class="opcional">(opcional)</span></span>
+          <input id="nuevo-precio" inputmode="decimal" placeholder="29,99">
+        </label>
+        <label><span class="etiqueta">Buscarlo como <span class="opcional">(opcional)</span></span>
+          <input id="nuevo-busqueda" maxlength="120" placeholder="Por defecto, el nombre">
+        </label>
+      </div>
+      <p class="ayuda">Además del enlace, el robot lo buscará solo en Amazon, Globerada, Idealo y Toy Planet. Los precios aparecen en unos minutos.</p>
+      <p class="error-form" id="error-anadir" role="alert"></p>
+      <div class="botones-dialogo">
+        <button type="button" class="boton-accion suave" id="cancelar-anadir">Cancelar</button>
+        <button type="submit" class="boton-accion" id="guardar-anadir">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="dialogo-clave" class="dialogo pequeno" aria-labelledby="titulo-clave">
+    <form id="form-clave" method="dialog">
+      <h2 id="titulo-clave">Contraseña para editar</h2>
+      <p class="ayuda">Solo se pide una vez en cada dispositivo.</p>
+      <input id="campo-clave" type="password" autocomplete="current-password" required>
+      <p class="error-form" id="error-clave" role="alert"></p>
+      <div class="botones-dialogo">
+        <button type="button" class="boton-accion suave" id="cancelar-clave">Cancelar</button>
+        <button type="submit" class="boton-accion">Aceptar</button>
+      </div>
+    </form>
+  </dialog>
 
   <div class="barra-eleccion" id="barra-eleccion" hidden>
     <div class="contenedor barra-dentro">
