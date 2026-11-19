@@ -409,55 +409,58 @@ PRECIO_EUROS = re.compile(r"(\d{1,4}(?:\.\d{3})*,\d{2})\s*€")
 
 
 def ofertas_comparador(url: str, pagina: str) -> list[dict]:
-    """Lee la tabla de ofertas de una página de comparador de precios.
-    Cada fila tiene tienda, nombre del producto, precio y un enlace 'Ver oferta'."""
+    """Lee la tabla de ofertas de una página de Globerada.
+    Cada fila <tr> lleva el precio en un enlace con data-merchant='Tienda'."""
     partes = urllib.parse.urlsplit(url)
     base = f"{partes.scheme}://{partes.netloc}"
     ofertas: dict[str, dict] = {}
-    for fila in re.findall(r"<tr\b.*?</tr>", pagina, flags=re.S | re.I):
+    cuerpo = pagina
+    inicio = pagina.find("table_prices_body")
+    if inicio != -1:
+        cuerpo = pagina[inicio:]
+    for fila in re.findall(r"<tr\b.*?</tr>", cuerpo, flags=re.S | re.I):
+        tienda = re.search(r"""data-merchant=['"]([^'"]+)['"]""", fila)
+        if not tienda:
+            alt = re.search(r"""alt=['"]Comprar en ([^'"]+)['"]""", fila)
+            texto_tienda = re.search(r"""class=['"]pt_pr_mtext['"][^>]*>(.*?)</td>""", fila, flags=re.S)
+            tienda = alt or texto_tienda
+        if not tienda:
+            continue
+        nombre_tienda = texto_plano(html_lib.unescape(tienda.group(1))).strip()
+        if not nombre_tienda:
+            continue
+        precio_html = re.search(r"""data-merchant=['"][^'"]+['"][^>]*>\s*([^<]+)<""", fila)
         texto = texto_plano(fila)
-        precio = PRECIO_EUROS.search(texto)
+        precio = a_numero(precio_html.group(1)) if precio_html else None
+        if not precio:
+            encontrado = PRECIO_EUROS.search(texto)
+            precio = a_numero(encontrado.group(1)) if encontrado else None
         if not precio:
             continue
-        tienda = re.search(r"Comprar en\s+(.+?)(?:\s+Marketplace\b|\s+Vendido por\b|\s+Ver oferta\b|$)", texto)
-        nombre_tienda = tienda.group(1).strip() if tienda else None
-        if not nombre_tienda:
-            alt = re.search(r'<img[^>]+alt="([^"]{2,40})"', fila)
-            nombre_tienda = html_lib.unescape(alt.group(1)).strip() if alt else None
-        if not nombre_tienda:
-            resto = texto[precio.end():]
-            resto = re.sub(r"(Precio total más barato:|gastos envío posibles|e\.i\.|Cupón\S*|Quedan\s+[\d:]+|[\d.,]+\s*€)", " ", resto)
-            candidato = re.sub(r"\s+Ver oferta.*$", "", resto).strip()
-            nombre_tienda = candidato[:40] if 1 < len(candidato) <= 40 else None
-        if not nombre_tienda:
-            continue
         vendedor = re.search(r"Vendido por\s+(.+?)(?:\s+Ver oferta\b|$)", texto)
-        if nombre_tienda.startswith(("Marketplace", "Vendido por")) and vendedor:
-            alt = re.search(r'<img[^>]+alt="([^"]{2,40})"', fila)
-            plataforma = html_lib.unescape(alt.group(1)).strip() if alt else "Amazon"
-            plataforma = re.sub(r"(?i)^comprar en\s+|\s*marketplace$", "", plataforma).strip() or "Amazon"
-            nombre_tienda = plataforma
-        if vendedor and nombre_tienda.lower().startswith(("amazon", "miravia", "fnac")) and \
-                vendedor.group(1).strip().lower() not in ("amazon", "amazon.es", "fnac"):
-            nombre_tienda = f"{nombre_tienda} ({vendedor.group(1).strip()})"
-        enlace = re.search(r'href="([^"]*/out/[^"]+)"', fila) or re.search(r'href="(https?://[^"]+)"', fila)
+        if vendedor:
+            quien = vendedor.group(1).strip()
+            if quien and normalizar_tienda(quien) != normalizar_tienda(nombre_tienda) \
+                    and not normalizar_tienda(quien).startswith(normalizar_tienda(nombre_tienda)):
+                nombre_tienda = f"{nombre_tienda} ({quien})"
+        enlace = re.search(r"""href=['"]([^'"]*/out/[^'"]+)['"]""", fila)
         destino = html_lib.unescape(enlace.group(1)) if enlace else url
         if destino.startswith("/"):
             destino = base + destino
-        valor = a_numero(precio.group(1))
-        if not valor:
-            continue
+        producto = re.search(r"""class=['"]pt_pr_name['"].*?title=['"]([^'"]+)['"]""", fila, flags=re.S)
         actual = ofertas.get(nombre_tienda)
-        if not actual or valor < actual["precio"]:
-            ofertas[nombre_tienda] = {"tienda": nombre_tienda, "precio": valor, "url": destino,
-                                      "producto": texto[:precio.start()].strip()[:120]}
+        if not actual or precio < actual["precio"]:
+            ofertas[nombre_tienda] = {"tienda": nombre_tienda, "precio": precio, "url": destino,
+                                      "producto": html_lib.unescape(producto.group(1))[:120] if producto else ""}
     return sorted(ofertas.values(), key=lambda o: o["precio"])
 
 
+def normalizar_tienda(nombre: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", nombre.lower().replace(".es", ""))
+
+
 BUSCADORES_GLOBERADA = (
-    "https://www.globerada.com/buscar/?q={q}",
-    "https://www.globerada.com/search?q={q}",
-    "https://www.globerada.com/?s={q}",
+    "https://www.globerada.com/search.php?q={q}",
 )
 
 
@@ -469,14 +472,17 @@ def buscar_globerada(consulta: str) -> str | None:
         try:
             pagina = descargar(patron.format(q=urllib.parse.quote_plus(consulta)))
         except Exception as err:  # noqa: BLE001 - probamos el siguiente formato
-            guardar_muestra(f"busqueda-{BUSCADORES_GLOBERADA.index(patron)}-error", f"{patron}\n{err}")
+            guardar_muestra("busqueda-error", f"{patron}\n{err}")
             continue
-        guardar_muestra(f"busqueda-{BUSCADORES_GLOBERADA.index(patron)}", pagina)
-        for ruta, texto in re.findall(r'href="((?:https://www\.globerada\.com)?/precios/[^"#?]+\.html)"[^>]*>(.*?)</a>',
-                                      pagina, flags=re.S):
-            titulo = texto_plano(texto) or ruta.rsplit("/", 1)[-1].replace("-", " ")
-            if buscadas <= _palabras(titulo + " " + ruta.replace("-", " ")):
+        for etiqueta, ruta, texto in re.findall(
+                r"""(<a\b[^>]*href=['"]((?:https://www\.globerada\.com)?/precios/[^'"#?]+\.html)['"][^>]*>)(.*?)</a>""",
+                pagina, flags=re.S):
+            titulo_attr = re.search(r"""title=['"]([^'"]+)['"]""", etiqueta)
+            titulo = " ".join(filter(None, [titulo_attr.group(1) if titulo_attr else "", texto_plano(texto),
+                                            ruta.rsplit("/", 1)[-1][:-5].replace("-", " ")]))
+            if buscadas <= _palabras(titulo):
                 return ruta if ruta.startswith("http") else "https://www.globerada.com" + ruta
+        guardar_muestra(f"busqueda-{consulta}", pagina)
     return None
 
 
@@ -594,8 +600,9 @@ def revisar_comparador(historial: dict, producto: dict, enlace: dict, hoy: str) 
     fila = {"producto": producto["id"], "tienda": enlace["tienda"], "url": url, "metodo": "comparador"}
     try:
         pagina = descargar(url)
-        guardar_muestra(f"comparador-{producto['id']}", pagina, 400_000)
         ofertas = ofertas_comparador(url, pagina)
+        if not ofertas:
+            guardar_muestra(f"comparador-{producto['id']}", pagina, 400_000)
         ficha = ficha_generica(pagina)
     except Bloqueado as err:
         ofertas, ficha, fila["error"] = [], {}, f"bloqueado: {err}"

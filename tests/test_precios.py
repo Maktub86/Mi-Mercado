@@ -171,15 +171,22 @@ class BusquedaTest(unittest.TestCase):
 
 
 class ComparadorTest(unittest.TestCase):
-    PAGINA = """<table><tr><th>Tienda</th><th>Producto</th><th>Precio</th></tr>
-    <tr><td><a href="/out/aaa?sig=1"><img src="x.png" alt="Abacus"></a></td><td>Carrito de limpieza</td>
-        <td>23,99€ <small>26,98€ e.i.</small></td><td><a href="/out/aaa?sig=1">Comprar en Abacus</a> <a href="/out/aaa?sig=1">Ver oferta</a></td></tr>
-    <tr><td>Theo Klein Vileda Carrito</td><td>29,66€ Precio total más barato: 29,66€ e.i.</td>
-        <td><a href="https://www.globerada.com/out/bbb">Comprar en Amazon Marketplace Vendido por Amazon</a></td></tr>
-    <tr><td>Carro Limpieza Vileda</td><td>39,43€</td><td>Comprar en Fnac Marketplace Vendido por Electro MGD</td>
-        <td><a href="/out/ccc">Ver oferta</a></td></tr>
-    <tr><td>Carrito de limpieza Klein Vileda</td><td>25,96€ 31,95€ e.i.</td><td>Raijuguetes</td><td><a href="/out/ddd">Ver oferta</a></td></tr>
-    </table>"""
+    PAGINA = """<table><thead><tr><th>Tienda</th></tr></thead><tbody id="table_prices_body">
+    <tr data-condition="new"><td class='pt_pr_name'><h3><a title="Carrito de limpieza" href='/out/aaa?sig=1'>Carrito</a></h3></td>
+      <td class='pt_pr_price'><div><a data-merchant='Abacus' href='/out/aaa?sig=1'>23,99€</a></div>
+      <div class="shipping"><div class="best-total-price">Precio total más barato: <div>26,98€ e.i.</div></div></div></td>
+      <td class='pt_pr_mlogo'><a href='/out/aaa?sig=1'><img title='Ver oferta en Abacus' alt='Comprar en Abacus' src='/logos/Abacus.png' /></a></td>
+      <td class='pt_pr_visit'><a href='/out/aaa?sig=1'>Ver oferta</a></td></tr>
+    <tr><td class='pt_pr_name'><h3><a title="Theo Klein Vileda" href='/out/bbb'>x</a></h3></td>
+      <td class='pt_pr_price'><a data-merchant='Amazon' href='/out/bbb'>29,66€</a><div class="row shipping">29,66€ e.i.</div></td>
+      <td class='pt_pr_mlogo'><img alt='Comprar en Amazon'><div class="label">Marketplace</div><div class="pt_fp_from">Vendido por Amazon</div></td></tr>
+    <tr><td class='pt_pr_name'><h3><a title="Carro Vileda" href='/out/ccc'>x</a></h3></td>
+      <td class='pt_pr_price'><a data-merchant='Fnac' href='/out/ccc'>39,43€</a></td>
+      <td class='pt_pr_mlogo'><div class="label">Marketplace</div><div class="pt_fp_from">Vendido por Electro MGD</div></td></tr>
+    <tr><td class='pt_pr_name'><h3><a title="Carrito Klein" href='/out/ddd'>x</a></h3></td>
+      <td class='pt_pr_price'><a data-merchant='Raijuguetes' href='/out/ddd'>25,96€</a><div class="row shipping">31,95€ e.i.</div></td>
+      <td class='pt_pr_mtext'><a href='/out/ddd'>Raijuguetes</a></td></tr>
+    </tbody></table>"""
 
     def test_lee_ofertas(self):
         ofertas = ap.ofertas_comparador("https://www.globerada.com/precios/x.html", self.PAGINA)
@@ -187,6 +194,14 @@ class ComparadorTest(unittest.TestCase):
                          [("Abacus", 23.99), ("Raijuguetes", 25.96), ("Amazon", 29.66),
                           ("Fnac (Electro MGD)", 39.43)])
         self.assertEqual(ofertas[0]["url"], "https://www.globerada.com/out/aaa?sig=1")
+
+    def test_muestra_real_si_existe(self):
+        ruta = Path(__file__).resolve().parent.parent / "diagnostico" / "muestras" / "comparador-carro-limpieza.html"
+        if not ruta.exists():
+            self.skipTest("sin muestra")
+        ofertas = ap.ofertas_comparador("https://www.globerada.com/precios/x.html", ruta.read_text(encoding="utf-8"))
+        self.assertGreaterEqual(len(ofertas), 3)
+        self.assertTrue(all(not o["tienda"].startswith("Marketplace") for o in ofertas))
 
     def test_revisar_comparador_guarda_cada_tienda(self):
         original = ap.descargar
