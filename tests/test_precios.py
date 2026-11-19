@@ -1,3 +1,4 @@
+import json
 import sys
 import unittest
 from pathlib import Path
@@ -136,6 +137,37 @@ class FichaTest(unittest.TestCase):
         ap.registrar(hist, "p", enlace, "2026-11-19", None, None, "bloqueado", {"imagen": "i.jpg"})
         self.assertEqual(hist["p"]["u"]["imagen"], "i.jpg")
         self.assertEqual(hist["p"]["u"]["historial"], [])
+
+
+class BusquedaTest(unittest.TestCase):
+    def test_buscar_shopify_exige_todas_las_palabras(self):
+        original = ap.descargar
+        ap.descargar = lambda url, timeout=25, extra=None: json.dumps({"resources": {"results": {"products": [
+            {"title": "Crazy Chic Taller de Velas", "url": "/products/velas?_pos=1"},
+            {"title": "Crazy Chic Nail Art Studio Clementoni", "url": "/products/nail-art?_pos=2"}]}}})
+        try:
+            self.assertEqual(ap.buscar_shopify("www.toyplanet.com", "Crazy Chic Nail Art Studio"),
+                             "https://www.toyplanet.com/products/nail-art")
+            self.assertIsNone(ap.buscar_shopify("www.toyplanet.com", "Nail Art Barbie"))
+            self.assertEqual(ap.buscar_shopify("www.toyplanet.com", "Crazy Chic vélas"),
+                             "https://www.toyplanet.com/products/velas")
+        finally:
+            ap.descargar = original
+
+    def test_clave_enlace(self):
+        self.assertEqual(ap.clave_enlace({"url": "https://a"}), "https://a")
+        self.assertEqual(ap.clave_enlace({"dominio": "t.com", "buscar": "x y"}), "buscar:t.com:x y")
+
+    def test_amazon_reintenta_tras_captcha(self):
+        original_d, original_s = ap.descargar, ap.time.sleep
+        respuestas = ['<form action="/errors/validateCaptcha">', '<div id="corePrice_feature_div"><span class="a-offscreen">10,00 €</span></div>']
+        ap.descargar = lambda url, timeout=25, extra=None: respuestas.pop(0)
+        ap.time.sleep = lambda s: None
+        try:
+            pagina = ap.descargar_amazon("https://www.amazon.es/dp/B0BJLD278H")
+        finally:
+            ap.descargar, ap.time.sleep = original_d, original_s
+        self.assertIn("10,00", pagina)
 
 
 if __name__ == "__main__":

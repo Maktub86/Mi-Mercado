@@ -254,6 +254,34 @@ def precio_amazon(pagina: str) -> float | None:
     return None
 
 
+NAVEGADORES = [
+    CABECERAS["User-Agent"],
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0",
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 17_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Mobile/15E148 Safari/604.1",
+]
+
+
+def descargar_amazon(url: str, intentos: int = 3) -> str:
+    """Amazon pide captcha a muchas visitas de robots; probamos varias veces,
+    con pausas y distintos navegadores, antes de rendirnos."""
+    asin = asin_de(url)
+    destino = f"https://www.amazon.es/dp/{asin}?th=1&psc=1" if asin else url
+    ultimo = None
+    for intento in range(intentos):
+        try:
+            pagina = descargar(destino, extra={"User-Agent": NAVEGADORES[intento % len(NAVEGADORES)]})
+        except Bloqueado as err:
+            ultimo = err
+        else:
+            if not es_captcha_amazon(pagina):
+                return pagina
+            ultimo = Bloqueado("Amazon pidió un captcha")
+        if intento < intentos - 1:
+            time.sleep(random.uniform(12, 25))
+    raise ultimo or Bloqueado("Amazon no respondió")
+
+
 def precio_amazon_ofertas(asin: str) -> float | None:
     """Pide a Amazon la lista de vendedores (la ventana 'Ver todas las opciones de compra')."""
     url = f"https://www.amazon.es/gp/product/ajax/aodAjaxMain/ref=dp_aod_ALL_mbc?asin={asin}&pc=dp&experienceId=aodAjaxMain"
@@ -338,6 +366,39 @@ def leer_shopify(url: str) -> dict | None:
     }
 
 
+PALABRAS_VACIAS = {"de", "la", "el", "los", "las", "con", "y", "en", "para", "un", "una", "del", "al", "a"}
+
+
+def _palabras(texto: str) -> set:
+    texto = texto.lower()
+    for a, b in (("á", "a"), ("é", "e"), ("í", "i"), ("ó", "o"), ("ú", "u"), ("ñ", "n")):
+        texto = texto.replace(a, b)
+    return {p for p in re.findall(r"[a-z0-9]+", texto) if p not in PALABRAS_VACIAS and len(p) > 1}
+
+
+def buscar_shopify(dominio: str, consulta: str) -> str | None:
+    """Busca en una tienda Shopify y devuelve la dirección del producto que contiene
+    todas las palabras de la consulta (o None si no hay ninguno claro)."""
+    url = (f"https://{dominio}/search/suggest.json?q={urllib.parse.quote(consulta)}"
+           "&resources[type]=product&resources[limit]=10")
+    datos = json.loads(descargar(url, extra={"Accept": "application/json"}))
+    productos = (datos.get("resources", {}).get("results", {}) or {}).get("products", []) or []
+    buscadas = _palabras(consulta)
+    for producto in productos:
+        if buscadas <= _palabras(producto.get("title", "")):
+            ruta = producto.get("url", "").split("?")[0]
+            if ruta:
+                return f"https://{dominio}{ruta}"
+    return None
+
+
+def clave_enlace(enlace: dict) -> str:
+    """Identificador estable de un enlace en el historial."""
+    if enlace.get("url"):
+        return enlace["url"]
+    return f"buscar:{enlace['dominio']}:{enlace['buscar']}"
+
+
 # ---------------------------------------------------------------- lectura de un enlace
 
 def analizar(url: str) -> dict:
@@ -347,8 +408,8 @@ def analizar(url: str) -> dict:
         if resultado and resultado["precio"]:
             return resultado
 
-    pagina = descargar(url)
     if "amazon." in url:
+        pagina = descargar_amazon(url)
         ficha = ficha_amazon(url, pagina)
         precio = precio_amazon(pagina)
         metodo = "amazon-pagina"
@@ -365,6 +426,7 @@ def analizar(url: str) -> dict:
         return {"precio": precio, "disponible": en_stock, "ficha": ficha, "metodo": metodo,
                 "_pagina": pagina}
 
+    pagina = descargar(url)
     ficha = ficha_generica(pagina)
     return {"precio": precio_json_ld(pagina) or precio_meta(pagina),
             "disponible": disponible_generico(pagina), "ficha": ficha, "metodo": "generico",
@@ -442,7 +504,7 @@ def main() -> int:
     for viejo in [i for i in historial if i not in ids_validos]:
         del historial[viejo]
     for producto in productos:
-        urls = {e["url"] for e in producto.get("enlaces", [])}
+        urls = {clave_enlace(e) for e in producto.get("enlaces", [])}
         for url in [u for u in historial.get(producto["id"], {}) if u not in urls]:
             del historial[producto["id"]][url]
 
@@ -451,19 +513,26 @@ def main() -> int:
         if producto.get("estado") == "comprado":
             continue
         for enlace in producto.get("enlaces", []):
-            url = enlace["url"]
+            clave = clave_enlace(enlace)
+            url = enlace.get("url")
             resultado: dict = {}
             error = None
             try:
+                if not url:
+                    anterior = historial.get(producto["id"], {}).get(clave, {}).get("url")
+                    url = anterior or buscar_shopify(enlace["dominio"], enlace["buscar"])
+                    if not url:
+                        raise LookupError("no está en el catálogo de la tienda")
                 resultado = analizar(url)
+                resultado.setdefault("ficha", {})["url"] = url
             except Bloqueado as err:
                 error = f"bloqueado: {err}"
             except Exception as err:  # noqa: BLE001 - seguimos con el resto
                 error = f"{type(err).__name__}: {err}"
             precio = resultado.get("precio")
-            registrar(historial, producto["id"], enlace, hoy, precio,
+            registrar(historial, producto["id"], {**enlace, "url": clave}, hoy, precio,
                       resultado.get("disponible"), error, resultado.get("ficha"))
-            fila = {"producto": producto["id"], "tienda": enlace["tienda"], "url": url,
+            fila = {"producto": producto["id"], "tienda": enlace["tienda"], "url": url or clave,
                     "precio": precio, "metodo": resultado.get("metodo"), "error": error}
             if precio is None:
                 fallos += 1

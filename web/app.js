@@ -57,11 +57,14 @@ function preparar(lista, precios) {
   return lista.productos.map((p, indice) => {
     const datos = historial[p.id] || {};
     const tiendas = (p.enlaces || []).map((enlace) => {
-      const info = datos[enlace.url] || {};
+      const clave = enlace.url || `buscar:${enlace.dominio}:${enlace.buscar}`;
+      const info = datos[clave] || {};
+      const url = enlace.url || info.url || `https://${enlace.dominio}/search?q=${encodeURIComponent(enlace.buscar)}`;
       const serie = info.historial || [];
       const ultimo = serie[serie.length - 1] || null;
       return {
         ...enlace,
+        url,
         serie,
         ultimo,
         tendencia: tendenciaDe(serie),
@@ -70,10 +73,14 @@ function preparar(lista, precios) {
         imagen: info.imagen || null,
         valoracion: info.valoracion || null,
         resumen: info.resumen_opiniones || null,
-        opinionesUrl: info.opiniones_url || enlace.url,
+        opinionesUrl: info.opiniones_url || url,
       };
     });
 
+    const visibles = tiendas.filter((t) => t.url && !(t.buscar && !t.ultimo && t.error))
+      .sort((a, b) => (a.ultimo ? a.ultimo.precio : Infinity) - (b.ultimo ? b.ultimo.precio : Infinity));
+    tiendas.length = 0;
+    tiendas.push(...visibles);
     const conPrecio = tiendas.filter((t) => t.ultimo);
     const mejor = conPrecio.length
       ? conPrecio.reduce((a, b) => (b.ultimo.precio < a.ultimo.precio ? b : a))
@@ -86,7 +93,8 @@ function preparar(lista, precios) {
       porDia.set(fecha, Math.min(precio, porDia.has(fecha) ? porDia.get(fecha) : Infinity));
     }));
     const serie = [...porDia.entries()].sort(([a], [b]) => a.localeCompare(b));
-    const minimo = serie.length ? Math.min(...serie.map(([, v]) => v)) : null;
+    const lecturas = tiendas.flatMap((t) => t.serie.map((e) => e.precio));
+    const minimo = lecturas.length ? Math.min(...lecturas) : null;
 
     const actual = mejor ? mejor.ultimo.precio : null;
     const referencia = actual ?? p.precio_lista;
@@ -217,6 +225,7 @@ function pintarPanel(panel, p, t) {
 function motivo(error) {
   if (error.startsWith("bloqueado")) return "la tienda no deja leer el precio automáticamente";
   if (/404/.test(error)) return "el enlace ya no existe";
+  if (/catálogo/.test(error)) return "esta tienda no lo tiene ahora mismo";
   return "no se encontró el precio en la página";
 }
 
