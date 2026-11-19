@@ -1,0 +1,50 @@
+MI MERCADO - REVISAR PRECIOS DESDE TU ORDENADOR
+================================================
+
+Con esto, tu ordenador revisa los precios cada día a las 22:00 (Amazon,
+El Corte Inglés, Toys R Us y el resto de tiendas) y los sube a la web.
+Si a esa hora está apagado, lo hace en cuanto lo enciendas.
+
+
+PASO 1. CREAR LA CLAVE DE GITHUB (solo una vez, 2 minutos)
+-----------------------------------------------------------
+La clave deja que tu ordenador guarde los precios en el repositorio
+Mi-Mercado, y en ningún otro.
+
+ 1. Entra en: https://github.com/settings/personal-access-tokens/new
+ 2. "Token name": escribe  Mi Mercado casa
+ 3. "Expiration": elige la fecha más lejana que te deje (o "No expiration"
+    si aparece).
+ 4. "Repository access": marca "Only select repositories" y elige
+    Maktub86/Mi-Mercado.
+ 5. "Permissions" > "Repository permissions" > "Contents": elige
+    "Read and write".
+ 6. Abajo del todo, pulsa "Generate token" y luego copia la clave que
+    aparece (empieza por github_pat_...). Solo se ve una vez.
+
+
+PASO 2. INSTALAR
+----------------
+ 1. Descomprime esta carpeta donde quieras (por ejemplo, en el Escritorio).
+ 2. Haz doble clic en  instalar.bat
+    - Si Windows avisa de "Windows protegió su PC", pulsa
+      "Más información" y luego "Ejecutar de todas formas".
+ 3. Cuando lo pida, pega la clave (clic derecho dentro de la ventana) y
+    pulsa Enter.
+ 4. Hará una primera revisión (unos 5 minutos) y te enseñará el resultado.
+
+Después puedes borrar la carpeta descomprimida: todo queda guardado en
+%LOCALAPPDATA%\MiMercado.
+
+En el Escritorio aparecerá "Mi Mercado - revisar precios ahora.bat" por si
+quieres revisar los precios en otro momento.
+
+
+SI ALGO FALLA
+-------------
+- El registro de cada revisión está en %LOCALAPPDATA%\MiMercado\registro.txt
+  (pega esa ruta en la barra del Explorador de archivos).
+- Si dice que GitHub no acepta la clave, crea otra (paso 1) y vuelve a abrir
+  instalar.bat; te preguntará si quieres cambiarla (escribe S).
+- Para quitarlo: abre "Programador de tareas", busca
+  "Mi Mercado - revisar precios" y elimínalo.

@@ -56,3 +56,7 @@ Amazon y El Corte Inglés a veces bloquean a los robots. Cuando pasa, la web lo 
 ```bash
 python -m unittest discover -s tests
 ```
+
+## Revisar precios desde un ordenador con Windows
+
+Desde los servidores de GitHub, Amazon pide captcha y El Corte Inglés o Toys R Us bloquean. La carpeta `windows/` instala una tarea programada que, cada día a las 22:00, descarga la lista y el robot desde GitHub, revisa las tiendas desde el ordenador de casa y sube `precios.json`. Instrucciones en `windows/LEEME.txt`. El robot de GitHub sigue revisando el resto de tiendas a las 08:00 y a las 20:00 (sin Amazon).

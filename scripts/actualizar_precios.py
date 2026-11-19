@@ -20,12 +20,13 @@ import urllib.request
 import zlib
 from datetime import datetime, timezone
 from pathlib import Path
-from zoneinfo import ZoneInfo
+import os
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
-RAIZ = Path(__file__).resolve().parent.parent
+RAIZ = Path(os.environ.get("MI_MERCADO_RAIZ") or Path(__file__).resolve().parent.parent)
 PRODUCTOS = RAIZ / "web" / "data" / "productos.json"
 PRECIOS = RAIZ / "web" / "data" / "precios.json"
-DIAGNOSTICO = RAIZ / "diagnostico" / "ultima_revision.json"
+DIAGNOSTICO = RAIZ / "diagnostico" / (os.environ.get("MI_MERCADO_INFORME") or "ultima_revision.json")
 MUESTRAS = RAIZ / "diagnostico" / "muestras"
 
 
@@ -37,7 +38,14 @@ def guardar_muestra(nombre: str, pagina: str, limite: int = 150_000) -> None:
             pagina[:limite], encoding="utf-8")
     except OSError:
         pass
-ZONA = ZoneInfo("Europe/Madrid")
+try:
+    ZONA = ZoneInfo("Europe/Madrid")
+except ZoneInfoNotFoundError:  # Windows sin el paquete tzdata: usamos la hora del propio ordenador
+    ZONA = None
+
+
+def ahora_local() -> datetime:
+    return datetime.now(ZONA) if ZONA else datetime.now().astimezone()
 
 CABECERAS = {
     "User-Agent": (
@@ -293,6 +301,18 @@ def descargar_amazon(url: str, intentos: int = 1) -> str:
     raise ultimo or Bloqueado("Amazon no respondió")
 
 
+def buscar_amazon(consulta: str) -> str | None:
+    """Busca en Amazon y devuelve la ficha del primer resultado cuyo título
+    contiene todas las palabras de la consulta."""
+    pagina = descargar_amazon(f"https://www.amazon.es/s?k={urllib.parse.quote_plus(consulta)}")
+    buscadas = _palabras(consulta)
+    for asin, bloque in re.findall(r'data-asin="([A-Z0-9]{10})"(.*?)(?=data-asin="[A-Z0-9]{10}"|$)', pagina, flags=re.S):
+        titulo = re.search(r"<h2[^>]*>(.*?)</h2>", bloque, flags=re.S)
+        if titulo and buscadas <= _palabras(texto_plano(titulo.group(1))):
+            return f"https://www.amazon.es/dp/{asin}"
+    return None
+
+
 def precio_amazon_ofertas(asin: str) -> float | None:
     """Pide a Amazon la lista de vendedores (la ventana 'Ver todas las opciones de compra')."""
     url = f"https://www.amazon.es/gp/product/ajax/aodAjaxMain/ref=dp_aod_ALL_mbc?asin={asin}&pc=dp&experienceId=aodAjaxMain"
@@ -494,6 +514,8 @@ def clave_enlace(enlace: dict) -> str:
         return enlace["comparador"]
     if enlace.get("comparador_buscar"):
         return f"comparador:{enlace['comparador_buscar']}"
+    if enlace.get("amazon_buscar"):
+        return f"amazon:{enlace['amazon_buscar']}"
     return f"buscar:{enlace['dominio']}:{enlace['buscar']}"
 
 
@@ -631,10 +653,15 @@ def revisar_comparador(historial: dict, producto: dict, enlace: dict, hoy: str) 
 
 
 def main() -> int:
+    for flujo in (sys.stdout, sys.stderr):
+        try:
+            flujo.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass
     productos = cargar_json(PRODUCTOS, {"productos": []})["productos"]
     estado = cargar_json(PRECIOS, {"actualizado": None, "productos": {}})
     historial = estado.setdefault("productos", {})
-    hoy = datetime.now(ZONA).date().isoformat()
+    hoy = ahora_local().date().isoformat()
     informe = []
 
     ids_validos = {p["id"] for p in productos}
@@ -673,12 +700,21 @@ def main() -> int:
                 continue
             clave = clave_enlace(enlace)
             url = enlace.get("url")
+            es_amazon = enlace.get("amazon_buscar") or "amazon." in (url or "")
+            if es_amazon and os.environ.get("GITHUB_ACTIONS") == "true":
+                # Desde los servidores de GitHub Amazon siempre pide captcha; lo lee el ordenador de casa.
+                continue
             resultado: dict = {}
             error = None
             try:
                 if not url:
                     anterior = historial.get(producto["id"], {}).get(clave, {}).get("url")
-                    url = anterior or buscar_shopify(enlace["dominio"], enlace["buscar"])
+                    if anterior:
+                        url = anterior
+                    elif enlace.get("amazon_buscar"):
+                        url = buscar_amazon(enlace["amazon_buscar"])
+                    else:
+                        url = buscar_shopify(enlace["dominio"], enlace["buscar"])
                     if not url:
                         raise LookupError("no está en el catálogo de la tienda")
                 resultado = analizar(url)

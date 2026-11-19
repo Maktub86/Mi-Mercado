@@ -42,6 +42,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "Monster High Moonspell"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Monster High Moonspell"
         }
       ]
     },
@@ -73,6 +77,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "Hello Kitty bolso reversible"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Hello Kitty bolso peluche reversible"
         }
       ]
     },
@@ -106,6 +114,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "Dreamon zapatos"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Dreamon zapatos princesa"
         }
       ]
     },
@@ -375,6 +387,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "Cherry Pets Confetti Tree"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Cherry Pets Confetti Tree"
         }
       ]
     },
@@ -542,6 +558,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "Barbie Cascanueces Clara"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Barbie Cascanueces Clara tutú"
         }
       ]
     },
@@ -563,6 +583,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "HolaWatch K-Fun"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Holawatch K-Fun"
         }
       ]
     },
@@ -584,6 +608,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "Monster High Cleo"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Monster High Cleo De Nile"
         }
       ]
     },
@@ -605,6 +633,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "Monster High Doll With Pet Frankie"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Monster High Frankie Stein"
         }
       ]
     },
@@ -621,6 +653,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "Escuela de Monstruos libro"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Escuela de Monstruos libro"
         }
       ]
     },
@@ -637,6 +673,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "camiseta Betis"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "camiseta Betis niña"
         }
       ]
     },
@@ -658,6 +698,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "restaurante Agustín"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "restaurante Agustín juego"
         }
       ]
     },
