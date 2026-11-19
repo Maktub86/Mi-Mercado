@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-19T20:55:31+00:00",
-  "leidos": 56,
+  "fecha": "2026-11-19T21:00:51+00:00",
+  "leidos": 57,
   "fallos": 12,
   "enlaces": [
     {
@@ -551,8 +551,16 @@
     },
     {
       "producto": "juego-rol-restaurante-agustin",
+      "tienda": "Dideco",
+      "url": "https://www.dideco.es/juguetes/juego-de-rol-el-pequeno-restaurante-de-agustin-3070900055247",
+      "precio": 24.9,
+      "metodo": "generico",
+      "error": null
+    },
+    {
+      "producto": "juego-rol-restaurante-agustin",
       "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:restaurante Agustín",
+      "url": "buscar:www.toyplanet.com:Djeco restaurante Agustín",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
@@ -561,7 +569,7 @@
     {
       "producto": "juego-rol-restaurante-agustin",
       "tienda": "Globerada",
-      "url": "comparador:restaurante Agustín",
+      "url": "comparador:Djeco 05524",
       "error": "no encontrado en el comparador"
     }
   ]
