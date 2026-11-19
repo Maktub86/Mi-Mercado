@@ -164,7 +164,7 @@ class BusquedaTest(unittest.TestCase):
         ap.descargar = lambda url, timeout=25, extra=None: respuestas.pop(0)
         ap.time.sleep = lambda s: None
         try:
-            pagina = ap.descargar_amazon("https://www.amazon.es/dp/B0BJLD278H")
+            pagina = ap.descargar_amazon("https://www.amazon.es/dp/B0BJLD278H", intentos=2)
         finally:
             ap.descargar, ap.time.sleep = original_d, original_s
         self.assertIn("10,00", pagina)
