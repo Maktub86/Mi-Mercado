@@ -47,6 +47,10 @@
         {
           "tienda": "Amazon",
           "amazon_buscar": "Monster High Moonspell"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Monster High Moonspell"
         }
       ],
       "categoria": "reyes"
@@ -84,6 +88,10 @@
         {
           "tienda": "Amazon",
           "amazon_buscar": "Hello Kitty bolso peluche reversible"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Hello Kitty bolso reversible"
         }
       ],
       "categoria": "reyes"
@@ -123,6 +131,10 @@
         {
           "tienda": "Amazon",
           "amazon_buscar": "Dreamon zapatos princesa"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Dreamon zapatos"
         }
       ],
       "categoria": "reyes"
@@ -148,6 +160,10 @@
         {
           "tienda": "Globerada",
           "comparador": "https://www.globerada.com/precios/vtech-kidisecrets-locker-taquilla-secreta.html"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "VTech KidiSecrets Locker taquilla secreta"
         }
       ],
       "categoria": "reyes"
@@ -173,6 +189,10 @@
         },
         {
           "tienda": "Globerada",
+          "comparador_buscar": "Dreamon heladería"
+        },
+        {
+          "tienda": "Idealo",
           "comparador_buscar": "Dreamon heladería"
         }
       ],
@@ -200,6 +220,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "Playmobil 71613"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Playmobil 71613"
         }
       ],
       "categoria": "reyes"
@@ -226,6 +250,10 @@
         {
           "tienda": "Globerada",
           "comparador": "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "carro de limpieza juguete Vileda Theo Klein"
         }
       ],
       "categoria": "reyes"
@@ -251,6 +279,10 @@
         },
         {
           "tienda": "Globerada",
+          "comparador_buscar": "Barbie boda Chelsea"
+        },
+        {
+          "tienda": "Idealo",
           "comparador_buscar": "Barbie boda Chelsea"
         }
       ],
@@ -342,6 +374,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "Mirrormi"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Mirrormi"
         }
       ],
       "categoria": "reyes"
@@ -355,7 +391,12 @@
       "precio_lista": 9.95,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "peluche maíz El Corte Inglés",
-      "enlaces": [],
+      "enlaces": [
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "peluche maíz El Corte Inglés"
+        }
+      ],
       "categoria": "reyes"
     },
     {
@@ -379,6 +420,10 @@
         },
         {
           "tienda": "Globerada",
+          "comparador_buscar": "Clementoni Nail Art Studio"
+        },
+        {
+          "tienda": "Idealo",
           "comparador_buscar": "Clementoni Nail Art Studio"
         }
       ],
@@ -410,6 +455,10 @@
         {
           "tienda": "Amazon",
           "amazon_buscar": "Cherry Pets Confetti Tree"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Cherry Pets Confetti Tree"
         }
       ],
       "categoria": "reyes"
@@ -434,6 +483,10 @@
         },
         {
           "tienda": "Globerada",
+          "comparador_buscar": "Educa Magnetics 61"
+        },
+        {
+          "tienda": "Idealo",
           "comparador_buscar": "Educa Magnetics 61"
         }
       ],
@@ -464,6 +517,10 @@
         {
           "tienda": "Amazon",
           "url": "https://www.amazon.es/dp/B0G43VCRD4"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Barbie Deluxe Style 15 JJN73"
         }
       ],
       "categoria": "reyes"
@@ -484,6 +541,10 @@
         },
         {
           "tienda": "Globerada",
+          "comparador_buscar": "Mondo Barbie City Car"
+        },
+        {
+          "tienda": "Idealo",
           "comparador_buscar": "Mondo Barbie City Car"
         }
       ],
@@ -514,6 +575,10 @@
         },
         {
           "tienda": "Globerada",
+          "comparador_buscar": "Barbie Cascanueces trineo"
+        },
+        {
+          "tienda": "Idealo",
           "comparador_buscar": "Barbie Cascanueces trineo"
         }
       ],
@@ -559,6 +624,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "Stitch walkie vídeo"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Stitch walkie vídeo"
         }
       ],
       "categoria": "reyes"
@@ -589,6 +658,10 @@
         {
           "tienda": "Amazon",
           "amazon_buscar": "Barbie Cascanueces Clara tutú"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Barbie Cascanueces Clara"
         }
       ],
       "categoria": "reyes"
@@ -615,6 +688,10 @@
         {
           "tienda": "Amazon",
           "amazon_buscar": "Holawatch K-Fun"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "HolaWatch K-Fun"
         }
       ],
       "categoria": "reyes"
@@ -635,6 +712,10 @@
         },
         {
           "tienda": "Globerada",
+          "comparador_buscar": "botas agua esfera"
+        },
+        {
+          "tienda": "Idealo",
           "comparador_buscar": "botas agua esfera"
         }
       ]
@@ -661,6 +742,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Póquer de Bichos"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Póquer de Bichos"
         }
       ]
     },
@@ -689,6 +774,10 @@
         {
           "tienda": "Globerada",
           "comparador_buscar": "consolar ardilla"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "consolar ardilla"
         }
       ]
     },
@@ -708,6 +797,10 @@
         },
         {
           "tienda": "Globerada",
+          "comparador_buscar": "Gran libro de la película"
+        },
+        {
+          "tienda": "Idealo",
           "comparador_buscar": "Gran libro de la película"
         }
       ]
@@ -734,6 +827,10 @@
         {
           "tienda": "Amazon",
           "amazon_buscar": "Monster High Cleo De Nile"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Monster High Cleo"
         }
       ],
       "categoria": "reyes"
@@ -760,6 +857,10 @@
         {
           "tienda": "Amazon",
           "amazon_buscar": "Monster High Frankie Stein"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Monster High Doll With Pet Frankie"
         }
       ],
       "categoria": "reyes"
@@ -781,6 +882,10 @@
         {
           "tienda": "Amazon",
           "amazon_buscar": "Escuela de Monstruos libro"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Escuela de Monstruos libro"
         }
       ],
       "categoria": "reyes"
@@ -802,6 +907,10 @@
         {
           "tienda": "Amazon",
           "amazon_buscar": "camiseta Betis niña"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "camiseta Betis"
         }
       ],
       "categoria": "reyes"
@@ -832,6 +941,10 @@
         {
           "tienda": "Amazon",
           "amazon_buscar": "Djeco restaurante Agustín"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Djeco 05524"
         }
       ],
       "imagen": "https://multimedia.dideco.es/img/juego/EAN_3070900055247-5.jpg",

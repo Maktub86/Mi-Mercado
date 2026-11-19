@@ -79,7 +79,7 @@ function preparar(lista, precios) {
     (p.enlaces || []).forEach((enlace) => {
       if (enlace.comparador || enlace.comparador_buscar) {
         // Un comparador aporta varias tiendas: se guardan como "clave#Tienda".
-        const clave = enlace.comparador || `comparador:${enlace.comparador_buscar}`;
+        const clave = enlace.comparador || `${enlace.tienda === "Idealo" ? "idealo" : "comparador"}:${enlace.comparador_buscar}`;
         Object.entries(datos)
           .filter(([k, info]) => k.startsWith(`${clave}#`) && info.ultimo_error !== "ya no aparece en el comparador")
           .forEach(([k, info]) => todas.push(aTienda({ tienda: info.tienda || k.split("#")[1] }, info, info.url || enlace.comparador)));

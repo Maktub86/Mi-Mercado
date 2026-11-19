@@ -511,6 +511,53 @@ def buscar_globerada(consulta: str) -> str | None:
     return None
 
 
+# ---------------------------------------------------------------- Idealo
+
+def buscar_idealo(consulta: str) -> str | None:
+    """Busca en Idealo y devuelve la ficha del primer producto cuyo título contiene todas las palabras."""
+    url = f"https://www.idealo.es/precios/MainSearchProductCategory.html?q={urllib.parse.quote_plus(consulta)}"
+    pagina = descargar(url)
+    buscadas = _palabras(consulta)
+    for etiqueta, ruta, texto in re.findall(
+            r"""(<a\b[^>]*href=['"]((?:https://www\.idealo\.es)?/precios/\d+/[^'"#?]+\.html)['"][^>]*>)(.*?)</a>""",
+            pagina, flags=re.S):
+        titulo_attr = re.search(r"""(?:title|aria-label)=['"]([^'"]+)['"]""", etiqueta)
+        titulo = " ".join(filter(None, [titulo_attr.group(1) if titulo_attr else "", texto_plano(texto),
+                                        ruta.rsplit("/", 1)[-1][:-5].replace("-", " ")]))
+        if buscadas <= _palabras(titulo):
+            return ruta if ruta.startswith("http") else "https://www.idealo.es" + ruta
+    guardar_muestra(f"idealo-busqueda-{consulta}", pagina)
+    return None
+
+
+def ofertas_idealo(url: str, pagina: str) -> list[dict]:
+    """Ofertas de una ficha de Idealo: cada oferta lleva el nombre de la tienda y su precio."""
+    ofertas: dict[str, dict] = {}
+    bloques = re.split(r"""(?=<(?:li|div)[^>]+class=['"][^'"]*productOffers-listItem\b)""", pagina)[1:]
+    for bloque in bloques:
+        bloque = bloque[:8000]
+        tienda = (re.search(r"""data-shop-name=['"]([^'"]+)['"]""", bloque)
+                  or re.search(r"""alt=['"]([^'"]{2,50})['"][^>]*class=['"][^'"]*shop""", bloque)
+                  or re.search(r"""class=['"][^'"]*shop[^'"]*['"][^>]*alt=['"]([^'"]{2,50})['"]""", bloque))
+        precio = re.search(r"""productOffers-listItemOfferPrice[^>]*>\s*([^<]+)<""", bloque) or PRECIO_EUROS.search(texto_plano(bloque))
+        if not tienda or not precio:
+            continue
+        nombre = re.sub(r"(?i)\s*-\s*opiniones.*$", "", html_lib.unescape(tienda.group(1))).strip()
+        valor = a_numero(precio.group(1))
+        enlace = re.search(r"""href=['"]([^'"]*/relocator/[^'"]+)['"]""", bloque) or re.search(r"""href=['"](https?://[^'"]+)['"]""", bloque)
+        destino = html_lib.unescape(enlace.group(1)) if enlace else url
+        if destino.startswith("/"):
+            destino = "https://www.idealo.es" + destino
+        if valor and (nombre not in ofertas or valor < ofertas[nombre]["precio"]):
+            ofertas[nombre] = {"tienda": nombre, "precio": valor, "url": destino, "producto": ""}
+    if not ofertas:
+        # Al menos el precio más bajo que Idealo declara en sus datos estructurados.
+        minimo = precio_json_ld(pagina)
+        if minimo:
+            ofertas["Idealo (mejor precio)"] = {"tienda": "Idealo (mejor precio)", "precio": minimo, "url": url, "producto": ""}
+    return sorted(ofertas.values(), key=lambda o: o["precio"])
+
+
 def clave_enlace(enlace: dict) -> str:
     """Identificador estable de un enlace en el historial."""
     if enlace.get("url"):
@@ -518,7 +565,8 @@ def clave_enlace(enlace: dict) -> str:
     if enlace.get("comparador"):
         return enlace["comparador"]
     if enlace.get("comparador_buscar"):
-        return f"comparador:{enlace['comparador_buscar']}"
+        prefijo = "idealo" if enlace.get("tienda") == "Idealo" else "comparador"
+        return f"{prefijo}:{enlace['comparador_buscar']}"
     if enlace.get("amazon_buscar"):
         return f"amazon:{enlace['amazon_buscar']}"
     return f"buscar:{enlace['dominio']}:{enlace['buscar']}"
@@ -642,9 +690,9 @@ def revisar_comparador(historial: dict, producto: dict, enlace: dict, hoy: str) 
     fila = {"producto": producto["id"], "tienda": enlace["tienda"], "url": url, "metodo": "comparador"}
     try:
         pagina = descargar(url)
-        ofertas = ofertas_comparador(url, pagina)
-        if not ofertas:
-            guardar_muestra(f"comparador-{producto['id']}", pagina, 400_000)
+        ofertas = ofertas_idealo(url, pagina) if "idealo." in url else ofertas_comparador(url, pagina)
+        if not ofertas or ("idealo." in url and len(ofertas) == 1):
+            guardar_muestra(f"comparador-{enlace['tienda']}-{producto['id']}", pagina, 400_000)
         ficha = ficha_generica(pagina)
     except Bloqueado as err:
         ofertas, ficha, fila["error"] = [], {}, f"bloqueado: {err}"
@@ -699,8 +747,12 @@ def main() -> int:
             continue
         for enlace in producto.get("enlaces", []):
             if enlace.get("comparador_buscar") and not enlace.get("comparador"):
+                buscador = buscar_idealo if enlace["tienda"] == "Idealo" else buscar_globerada
                 try:
-                    encontrado = buscar_globerada(enlace["comparador_buscar"])
+                    encontrado = buscador(enlace["comparador_buscar"])
+                except Bloqueado as err:
+                    encontrado = None
+                    guardar_muestra(f"bloqueo-{enlace['tienda']}", str(err))
                 except Exception:  # noqa: BLE001
                     encontrado = None
                 if not encontrado:
