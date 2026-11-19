@@ -1,0 +1,804 @@
+{
+  "fecha": "2026-11-19T20:48:13+00:00",
+  "leidos": 62,
+  "fallos": 30,
+  "enlaces": [
+    {
+      "producto": "monster-high-moonspell",
+      "tienda": "El Corte Inglés (Willow)",
+      "url": "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 403",
+      "pistas": {}
+    },
+    {
+      "producto": "monster-high-moonspell",
+      "tienda": "El Corte Inglés (Layla)",
+      "url": "https://www.elcorteingles.es/juguetes/A200825479-muneca-moonspell-magic-layla-crystal-monster-high-mattel/",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 403",
+      "pistas": {}
+    },
+    {
+      "producto": "monster-high-moonspell",
+      "tienda": "Toy Planet (Claire)",
+      "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-claire-de-luna",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
+    },
+    {
+      "producto": "monster-high-moonspell",
+      "tienda": "Toy Planet (Rae)",
+      "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
+    },
+    {
+      "producto": "monster-high-moonspell",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/monster-high-claire-de-luna-moonspell-magic-muneca-con-sorpresa-en-caldero-y-accesorios-jmb89.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/monster-high-claire-de-luna-moonspell-magic-muneca-con-sorpresa-en-caldero-y-accesorios-jmb89.html",
+      "ofertas": [
+        {
+          "tienda": "Abacus",
+          "precio": 27.99
+        },
+        {
+          "tienda": "Amazon",
+          "precio": 28.95
+        },
+        {
+          "tienda": "Juguettos",
+          "precio": 29.99
+        },
+        {
+          "tienda": "Ferretería Ibermadrid",
+          "precio": 34.15
+        }
+      ]
+    },
+    {
+      "producto": "monster-high-moonspell",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0G43TFK86",
+      "precio": 24.67,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "bolso-peluche-hello-kitty",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Hello Kitty bolso peluche",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "bolso-peluche-hello-kitty",
+      "tienda": "Globerada",
+      "url": "comparador:Hello Kitty bolso reversible",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "bolso-peluche-hello-kitty",
+      "tienda": "Amazon",
+      "url": "amazon:Hello Kitty bolso peluche reversible",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "dreamon-zapatos-princesa",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Dreamon zapatos",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "dreamon-zapatos-princesa",
+      "tienda": "Globerada",
+      "url": "comparador:Dreamon zapatos",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "dreamon-zapatos-princesa",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0DSZN5N34",
+      "precio": 30.67,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "vtech-kidisecrets-locker",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0CWVNM2RD",
+      "precio": 44.99,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "vtech-kidisecrets-locker",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/vtech-kidisecrets-locker-taquilla-secreta-morada",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
+    },
+    {
+      "producto": "vtech-kidisecrets-locker",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/vtech-kidisecrets-locker-taquilla-secreta.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/vtech-kidisecrets-locker-taquilla-secreta.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon",
+          "precio": 44.99
+        }
+      ]
+    },
+    {
+      "producto": "dreamon-heladeria",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0CF1TN1WV",
+      "precio": 21.82,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "dreamon-heladeria",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Dreamon heladería",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "dreamon-heladeria",
+      "tienda": "Globerada",
+      "url": "comparador:Dreamon heladería",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "playmobil-71613-abuelos",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0D353J66T",
+      "precio": 10.95,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "playmobil-71613-abuelos",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/playmobil-abuelos-y-bebe",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
+    },
+    {
+      "producto": "playmobil-71613-abuelos",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/playmobil-my-life-abuelos-y-bebe-71613.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/playmobil-my-life-abuelos-y-bebe-71613.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon Marketplace (Imosver)",
+          "precio": 11.23
+        },
+        {
+          "tienda": "Imosver",
+          "precio": 11.23
+        },
+        {
+          "tienda": "Miravia (The Box of Toys)",
+          "precio": 13.71
+        },
+        {
+          "tienda": "Pixmania",
+          "precio": 14.51
+        },
+        {
+          "tienda": "OnBuy (AMI VENTURES INC.)",
+          "precio": 66.78
+        }
+      ]
+    },
+    {
+      "producto": "carro-limpieza",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B00IL35W2Y",
+      "precio": 29.66,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "carro-limpieza",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:carrito limpieza Vileda",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "carro-limpieza",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html",
+      "ofertas": [
+        {
+          "tienda": "Abacus",
+          "precio": 23.99
+        },
+        {
+          "tienda": "Raijuguetes",
+          "precio": 25.96
+        },
+        {
+          "tienda": "Amazon",
+          "precio": 29.66
+        },
+        {
+          "tienda": "Fnac (Electro MGD)",
+          "precio": 39.43
+        }
+      ]
+    },
+    {
+      "producto": "barbie-boda-chelsea",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B01FKUVX64",
+      "precio": 63.03,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "barbie-boda-chelsea",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Barbie boda",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "barbie-boda-chelsea",
+      "tienda": "Globerada",
+      "url": "comparador:Barbie boda Chelsea",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "mirrormi-fashion",
+      "tienda": "Amazon (Shai)",
+      "url": "https://www.amazon.es/dp/B0GKND16BN",
+      "precio": 34.49,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "mirrormi-fashion",
+      "tienda": "Amazon (Suki)",
+      "url": "https://www.amazon.es/dp/B0GKNCH9X9",
+      "precio": 34.99,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "mirrormi-fashion",
+      "tienda": "Toy Planet (Suki)",
+      "url": "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
+    },
+    {
+      "producto": "mirrormi-fashion",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/minimi-mirrormi-muneca-de-moda-shai-meadows-sheepish.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/minimi-mirrormi-muneca-de-moda-shai-meadows-sheepish.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon",
+          "precio": 34.49
+        }
+      ]
+    },
+    {
+      "producto": "clementoni-nail-art",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0B4KQMTVM",
+      "precio": 28.9,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "clementoni-nail-art",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/crazy-chic-nail-art-studio-clementoni",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
+    },
+    {
+      "producto": "clementoni-nail-art",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/clementoni-nail-art-studio.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/clementoni-nail-art-studio.html",
+      "ofertas": [
+        {
+          "tienda": "Abacus",
+          "precio": 24.74
+        },
+        {
+          "tienda": "Amazon",
+          "precio": 28.9
+        },
+        {
+          "tienda": "Fnac",
+          "precio": 29.99
+        },
+        {
+          "tienda": "Miravia (Juguetería Express)",
+          "precio": 31.95
+        },
+        {
+          "tienda": "Aliexpress ES (Shop1104124762 Store)",
+          "precio": 39.99
+        }
+      ]
+    },
+    {
+      "producto": "cherry-pets-confetti-tree",
+      "tienda": "Carrefour",
+      "url": "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p",
+      "precio": 24.99,
+      "metodo": "generico",
+      "error": null
+    },
+    {
+      "producto": "cherry-pets-confetti-tree",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/cherry-pets-confetti-tree-koala-twins-playset-con-2-figuras-exclusivas",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
+    },
+    {
+      "producto": "cherry-pets-confetti-tree",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/cherry-pets-confetti-tree-koala-twin.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/cherry-pets-confetti-tree-koala-twin.html",
+      "ofertas": [
+        {
+          "tienda": "Juguettos",
+          "precio": 24.99
+        }
+      ]
+    },
+    {
+      "producto": "cherry-pets-confetti-tree",
+      "tienda": "Amazon",
+      "url": "amazon:Cherry Pets Confetti Tree",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "educa-magnetics-61",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0CSPQ6MSQ",
+      "precio": 34.99,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "educa-magnetics-61",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
+    },
+    {
+      "producto": "educa-magnetics-61",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/educa-borras-magnetics-3d-61-pcs..html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/educa-borras-magnetics-3d-61-pcs..html",
+      "ofertas": [
+        {
+          "tienda": "Amazon",
+          "precio": 34.99
+        },
+        {
+          "tienda": "Imosver",
+          "precio": 39.89
+        }
+      ]
+    },
+    {
+      "producto": "barbie-deluxe-style-15",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0G43VCRD4",
+      "precio": 14.65,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "barbie-coche-radiocontrol",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0BJLD278H",
+      "precio": null,
+      "metodo": "amazon-ofertas",
+      "error": null,
+      "pistas": {
+        "bytes": 1732679,
+        "titulo": "Amazon.es: MONDO Motors - Mattel Barbie City Car 2.4 GHz - Coche radiocontrol 2 plazas - Detalles realistas - Color Fucs",
+        "captcha": false,
+        "json_ld": 0,
+        "cerca_de_a_price": "position:relative}._Y2VyY_afProductImageOverlay_3GIWS{background-color:#0f1111;background-color:var(--aok-sfs-color-page-inverse-normal-bg,#0f1111);height:100%;left:0;opacity:.03;position:absolute;top:0;width:100%;z-index:1} ._Y2VyY_afPricingPricePerUnit_3RKnk,._Y2VyY_afPricingPricePerUnit_3RKnk[dat",
+        "marcas": [
+          "corePrice",
+          "apex_",
+          "availability",
+          "buybox",
+          "Ver todas las opciones de compra"
+        ]
+      }
+    },
+    {
+      "producto": "barbie-coche-radiocontrol",
+      "tienda": "Globerada",
+      "url": "comparador:Mondo Barbie City Car",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "barbie-cascanueces-trineo",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0G42LDBDW",
+      "precio": 37.94,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "barbie-cascanueces-trineo",
+      "tienda": "Toys R Us",
+      "url": "https://www.toysrus.es/Barbie-El-Cascanueces-Caballo-y-Trineo-del-Reino-de-los-Dulces/p/K1105772",
+      "precio": 49.99,
+      "metodo": "generico",
+      "error": null
+    },
+    {
+      "producto": "barbie-cascanueces-trineo",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Cascanueces caballo trineo",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "barbie-cascanueces-trineo",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/barbie-cascanueces-reino-de-los-dulces-caballo-y-trineo-jrf15.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/barbie-cascanueces-reino-de-los-dulces-caballo-y-trineo-jrf15.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon",
+          "precio": 49.74
+        }
+      ]
+    },
+    {
+      "producto": "stitch-walkie-talkies",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0HKRX9BZ1",
+      "precio": null,
+      "metodo": "amazon-ofertas",
+      "error": null,
+      "pistas": {
+        "bytes": 1504777,
+        "titulo": "Amazon.es: Lexibook, Stitch, Walkie-talkies de vídeo, Pantalla a color, Rosa, TWV15D | Walkie-talkies de vídeo Stitch re",
+        "captcha": false,
+        "json_ld": 0,
+        "cerca_de_a_price": "973949-6298012?pd_rd_w=eJvq8&content-id=amzn1.sym.8ad28dd3-2218-4d28-b76b-ab311fe2f4b9&pf_rd_p=8ad28dd3-2218-4d28-b76b-ab311fe2f4b9&pf_rd_r=7WRKHJ9MT4ZWFWFAJT0V&pd_rd_wg=vjc83&pd_rd_r=64588593-182e-448f-8c6d-776485769db5&pd_rd_i=B0GF1NKYVP&psc=1\" role=\"link\"> 25,26€ 25 , 26 € Oferta Black F",
+        "marcas": [
+          "corePrice",
+          "apex_",
+          "availability",
+          "buybox",
+          "Ver todas las opciones de compra"
+        ]
+      }
+    },
+    {
+      "producto": "stitch-walkie-talkies",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/lexibook-stitch-y-angel-walkie-talkies-con-video-recargables",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
+    },
+    {
+      "producto": "stitch-walkie-talkies",
+      "tienda": "Globerada",
+      "url": "comparador:Stitch walkie vídeo",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "barbie-cascanueces-bailarina",
+      "tienda": "Toys R Us",
+      "url": "https://www.toysrus.es/Barbie-en-el-Cascanueces-Clara-con-tut%C3%BA/p/K1105770",
+      "precio": 34.99,
+      "metodo": "generico",
+      "error": null
+    },
+    {
+      "producto": "barbie-cascanueces-bailarina",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/barbie-el-cascanueces-clara-muneca-bailarina-con-tutu-transformable-3-anos",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
+    },
+    {
+      "producto": "barbie-cascanueces-bailarina",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/barbie-clara-en-el-cascanueces-muneca-con-efecto-cambio-de-tutu-y-medallon-corazon-jlw53.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/barbie-clara-en-el-cascanueces-muneca-con-efecto-cambio-de-tutu-y-medallon-corazon-jlw53.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon",
+          "precio": 28.49
+        },
+        {
+          "tienda": "Raijuguetes",
+          "precio": 29.5
+        },
+        {
+          "tienda": "Juguettos",
+          "precio": 29.99
+        },
+        {
+          "tienda": "Ferretería Ibermadrid",
+          "precio": 34.15
+        },
+        {
+          "tienda": "Pixmania",
+          "precio": 40.48
+        }
+      ]
+    },
+    {
+      "producto": "barbie-cascanueces-bailarina",
+      "tienda": "Amazon",
+      "url": "amazon:Barbie Cascanueces Clara tutú",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "holawatch-k-fun",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:HolaWatch K-Fun",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "holawatch-k-fun",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/cefa-toys-reloj-inteligente-holawatch-k-fun-negro-con-localizacion-lbs.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/cefa-toys-reloj-inteligente-holawatch-k-fun-negro-con-localizacion-lbs.html",
+      "ofertas": [
+        {
+          "tienda": "Miravia (The Box of Toys)",
+          "precio": 39.64
+        },
+        {
+          "tienda": "Miravia (ielectro)",
+          "precio": 39.95
+        },
+        {
+          "tienda": "Amazon Marketplace (ielectro)",
+          "precio": 39.95
+        },
+        {
+          "tienda": "Electropolis",
+          "precio": 41.66
+        }
+      ]
+    },
+    {
+      "producto": "holawatch-k-fun",
+      "tienda": "Amazon",
+      "url": "amazon:Holawatch K-Fun",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "monster-high-cleo",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-cleo-de-nile-creeproduction",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
+    },
+    {
+      "producto": "monster-high-cleo",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-cleo-de-nile-hxh74.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-cleo-de-nile-hxh74.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon Marketplace (NEA PRIME)",
+          "precio": 29.95
+        }
+      ]
+    },
+    {
+      "producto": "monster-high-cleo",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0CMGXG262",
+      "precio": 32.0,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "monster-high-frankie",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-frankie-stein",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
+    },
+    {
+      "producto": "monster-high-frankie",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-frankie-stein-watzie-jhk31.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-frankie-stein-watzie-jhk31.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon",
+          "precio": 27.89
+        },
+        {
+          "tienda": "Electropolis",
+          "precio": 29.23
+        },
+        {
+          "tienda": "Juguettos",
+          "precio": 29.99
+        },
+        {
+          "tienda": "PcComponentes (La Frikilería)",
+          "precio": 38.17
+        },
+        {
+          "tienda": "Raijuguetes",
+          "precio": 39.33
+        }
+      ]
+    },
+    {
+      "producto": "monster-high-frankie",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B0FJ8NBM4T",
+      "precio": 5.99,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "libros-escuela-monstruos",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/escuela-de-monstruos-el-libro-de-colorear-megamonstruoso-rippin-sally.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/escuela-de-monstruos-el-libro-de-colorear-megamonstruoso-rippin-sally.html",
+      "ofertas": [
+        {
+          "tienda": "Abacus",
+          "precio": 9.45
+        },
+        {
+          "tienda": "Imosver",
+          "precio": 9.45
+        }
+      ]
+    },
+    {
+      "producto": "libros-escuela-monstruos",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/8410396262",
+      "precio": 9.45,
+      "metodo": "amazon-pagina",
+      "error": null
+    },
+    {
+      "producto": "camiseta-betis",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/hummel-camiseta-de-manga-corta-tercera-equipacion-real-betis-balompie-2627-l.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/hummel-camiseta-de-manga-corta-tercera-equipacion-real-betis-balompie-2627-l.html",
+      "ofertas": [
+        {
+          "tienda": "Futbol Emotion",
+          "precio": 84.95
+        },
+        {
+          "tienda": "Amazon Marketplace (DEPORTE79 (solo productos originales))",
+          "precio": 92.17
+        }
+      ]
+    },
+    {
+      "producto": "camiseta-betis",
+      "tienda": "Amazon",
+      "url": "amazon:camiseta Betis niña",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "juego-rol-restaurante-agustin",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:restaurante Agustín",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "juego-rol-restaurante-agustin",
+      "tienda": "Globerada",
+      "url": "comparador:restaurante Agustín",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "juego-rol-restaurante-agustin",
+      "tienda": "Amazon",
+      "url": "amazon:restaurante Agustín juego",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    }
+  ]
+}
