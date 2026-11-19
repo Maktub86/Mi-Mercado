@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-19T19:58:32+00:00",
+  "actualizado": "2026-11-19T20:14:55+00:00",
   "productos": {
     "monster-high-moonspell": {
       "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/": {
@@ -54,7 +54,15 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "bloqueado: Amazon pidió un captcha"
+        "titulo": "VTech - KidiSecrets Locker Taquilla Secreta, Caja Fuerte con código Secreto, Joyero niños, Personalizable, Pantalla LCD, Música, Alarma, Juguetes Electrónicos, Color Morado, Versión ESP",
+        "imagen": "https://m.media-amazon.com/images/I/71mDzxnRSRL._AC_SL1500_.jpg",
+        "valoracion": {
+          "media": 4.6,
+          "total": 162,
+          "maximo": 5
+        },
+        "opiniones_url": "https://www.amazon.es/product-reviews/B0CWVNM2RD",
+        "url": "https://www.amazon.es/dp/B0CWVNM2RD"
       },
       "https://www.toyplanet.com/products/vtech-kidisecrets-locker-taquilla-secreta-morada": {
         "tienda": "Toy Planet",
@@ -69,6 +77,21 @@
         "titulo": "VTech KidiSecrets Locker Taquilla Secreta Morada",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPVTC054189_1.png?v=1749141145",
         "url": "https://www.toyplanet.com/products/vtech-kidisecrets-locker-taquilla-secreta-morada"
+      },
+      "https://www.globerada.com/precios/vtech-kidisecrets-locker-taquilla-secreta.html#Marketplace Vendido por Amazon": {
+        "tienda": "Marketplace Vendido por Amazon",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 44.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "url": "https://www.globerada.com/precios/vtech-kidisecrets-locker-taquilla-secreta.html",
+        "via": "Globerada",
+        "producto_tienda": "VTech - KidiSecrets Locker Taquilla Secreta, Caja Fuerte con código Secreto, Joyero niños, Personalizable,... Morado/Ros",
+        "imagen": "https://m.media-amazon.com/images/I/412rbssSeuL._SL500_.jpg"
       }
     },
     "dreamon-heladeria": {
@@ -127,6 +150,51 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "LookupError: no está en el catálogo de la tienda"
+      },
+      "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html#Raijuguetes": {
+        "tienda": "Raijuguetes",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 25.96,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "url": "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html",
+        "via": "Globerada",
+        "producto_tienda": "Carrito de limpieza Klein Vileda",
+        "imagen": "https://m.media-amazon.com/images/I/41BMonsynGL._SL500_.jpg"
+      },
+      "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html#Marketplace Vendido por Amazon": {
+        "tienda": "Marketplace Vendido por Amazon",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 29.66,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "url": "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html",
+        "via": "Globerada",
+        "producto_tienda": "Theo Klein Vileda Carrito de limpieza, juguete de rol a partir de 3 años | Con fregona, cubo, escoba,... Multicolor",
+        "imagen": "https://m.media-amazon.com/images/I/41BMonsynGL._SL500_.jpg"
+      },
+      "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html#Marketplace Vendido por Electro MGD": {
+        "tienda": "Marketplace Vendido por Electro MGD",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 39.43,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "url": "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html",
+        "via": "Globerada",
+        "producto_tienda": "Carro Limpieza Vileda",
+        "imagen": "https://m.media-amazon.com/images/I/41BMonsynGL._SL500_.jpg"
       }
     },
     "barbie-boda-chelsea": {
@@ -229,20 +297,6 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "bloqueado: Amazon pidió un captcha"
-      },
-      "buscar:www.toyplanet.com:Barbie Deluxe Style": {
-        "tienda": "Toy Planet",
-        "historial": [
-          {
-            "fecha": "2026-11-19",
-            "precio": 48.99,
-            "disponible": true
-          }
-        ],
-        "ultima_comprobacion": "2026-11-19",
-        "titulo": "Armario Deluxe Style Barbie con vestidor giratorio y más de 20 accesorios",
-        "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JJP01_1.png?v=1790298916",
-        "url": "https://www.toyplanet.com/products/armario-deluxe-style-barbie-con-vestidor-giratorio-y-mas-de-20-accesorios"
       }
     },
     "barbie-coche-radiocontrol": {
@@ -250,7 +304,16 @@
         "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "bloqueado: Amazon pidió un captcha"
+        "ultimo_error": "no se encontró el precio en la página",
+        "titulo": "MONDO Motors - Mattel Barbie City Car 2.4 GHz - Coche radiocontrol 2 plazas - Detalles realistas - Color Fucsia - 63698",
+        "imagen": "https://m.media-amazon.com/images/I/61rPONQqxcL._AC_SL1500_.jpg",
+        "valoracion": {
+          "media": 4.6,
+          "total": 19,
+          "maximo": 5
+        },
+        "opiniones_url": "https://www.amazon.es/product-reviews/B0BJLD278H",
+        "url": "https://www.amazon.es/dp/B0BJLD278H"
       }
     },
     "barbie-cascanueces-trineo": {
@@ -258,7 +321,16 @@
         "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "bloqueado: Amazon pidió un captcha"
+        "ultimo_error": "no se encontró el precio en la página",
+        "titulo": "Barbie en Cascanueces Mundo de Dulces Caballo y Trineo",
+        "imagen": "https://m.media-amazon.com/images/I/71WWnzLoD9L._AC_SL1500_.jpg",
+        "valoracion": {
+          "media": 4.8,
+          "total": 76,
+          "maximo": 5
+        },
+        "opiniones_url": "https://www.amazon.es/product-reviews/B0G42LDBDW",
+        "url": "https://www.amazon.es/dp/B0G42LDBDW"
       },
       "https://www.toysrus.es/Barbie-El-Cascanueces-Caballo-y-Trineo-del-Reino-de-los-Dulces/p/K1105772": {
         "tienda": "Toys R Us",
