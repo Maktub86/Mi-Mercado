@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-19T20:39:59+00:00",
+  "actualizado": "2026-11-19T20:48:13+00:00",
   "productos": {
     "monster-high-moonspell": {
       "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/": {
@@ -26,7 +26,8 @@
         "ultima_comprobacion": "2026-11-19",
         "titulo": "Monster High Moonspell Magic Claire De Luna",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JMB89_1.png?v=1782436555",
-        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-claire-de-luna"
+        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-claire-de-luna",
+        "ultimo_error": "bloqueado: la tienda respondió 429"
       },
       "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina": {
         "tienda": "Toy Planet (Rae)",
@@ -40,7 +41,8 @@
         "ultima_comprobacion": "2026-11-19",
         "titulo": "Monster High Moonspell Magic Rae Lumina",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JMB91_1.png?v=1782436548",
-        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina"
+        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina",
+        "ultimo_error": "bloqueado: la tienda respondió 429"
       },
       "comparador:Monster High Moonspell#Abacus": {
         "tienda": "Abacus",
@@ -52,7 +54,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/b7265b5f7fa7b4d61f611a4fcfb5d4ee?exp=1795124259&sig=4a898a0bab4c419cc7ee9b235c3df33df5cc7b1e2276a30c3911d1ebae6ae40a",
+        "url": "https://www.globerada.com/out/b7265b5f7fa7b4d61f611a4fcfb5d4ee?exp=1795124625&sig=c053f940d9f8b3e42e5d20d13e1be70bb41e171006cfb79ecdb696f30fb2a474",
         "via": "Globerada",
         "producto_tienda": "Muñeca Monster High Moonspell Magic Claire",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw357184ea/images/large/1611190.94.jpg"
@@ -67,7 +69,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/a41b906fd8bd3782e0705805f5141fe2?exp=1795124259&sig=b63363fcc1f821bd35ec476c0e61817539a193db9aa8eafbc2e7193b6e7d30fa",
+        "url": "https://www.globerada.com/out/a41b906fd8bd3782e0705805f5141fe2?exp=1795124625&sig=8b632d4dec6bf656793f7002b18eadd7683c22a9e73b4bc501eed2cfc49071eb",
         "via": "Globerada",
         "producto_tienda": "Monster High Moonspell Magic, Claire de Luna Muñeca Colección | Bruja clarividente con ropa azul, caldero sorpresa y acc",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw357184ea/images/large/1611190.94.jpg"
@@ -82,7 +84,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/cb6130f11d9df21144d0605b7fdcc462?exp=1795124259&sig=40b46833bccce4f3c45e0007f8d6e9006b098912044cf47efbb76d3cf510e7a4",
+        "url": "https://www.globerada.com/out/cb6130f11d9df21144d0605b7fdcc462?exp=1795124625&sig=be9c35732cfda2f9b8125f7ebe6a0a402c5f01c086c85d083a7fe7b5cba513a8",
         "via": "Globerada",
         "producto_tienda": "Monster High Moonspell Magic Muñeca Claire de Luna - ",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw357184ea/images/large/1611190.94.jpg"
@@ -97,10 +99,30 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/aaa9cd11ee7945fd2322141f133434bd?exp=1795124259&sig=f2c8913b7addc959898e88463a87b3666e972fa713527f6ccf4b140038d78237",
+        "url": "https://www.globerada.com/out/aaa9cd11ee7945fd2322141f133434bd?exp=1795124625&sig=69851bb9ed2a81e81e87a382ff5c02a4fe23a6f0daa9964d90bbbf38ff40929d",
         "via": "Globerada",
         "producto_tienda": "Muñeca Claire Clairvoyant Moonspell Magic Monster High",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw357184ea/images/large/1611190.94.jpg"
+      },
+      "amazon:Monster High Moonspell": {
+        "tienda": "Amazon",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 24.67,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Monster High Moonspell Magic, Claire de Luna Muñeca Colección",
+        "imagen": "https://m.media-amazon.com/images/I/810bti5zX0L._AC_SL1500_.jpg",
+        "valoracion": {
+          "media": 4.8,
+          "total": 874,
+          "maximo": 5
+        },
+        "opiniones_url": "https://www.amazon.es/product-reviews/B0G43TFK86",
+        "url": "https://www.amazon.es/dp/B0G43TFK86"
       }
     },
     "vtech-kidisecrets-locker": {
@@ -109,7 +131,7 @@
         "historial": [
           {
             "fecha": "2026-11-19",
-            "precio": 37.18,
+            "precio": 44.99,
             "disponible": true
           }
         ],
@@ -122,8 +144,7 @@
           "maximo": 5
         },
         "opiniones_url": "https://www.amazon.es/product-reviews/B0CWVNM2RD",
-        "url": "https://www.amazon.es/dp/B0CWVNM2RD",
-        "ultimo_error": "bloqueado: la tienda respondió 503"
+        "url": "https://www.amazon.es/dp/B0CWVNM2RD"
       },
       "https://www.toyplanet.com/products/vtech-kidisecrets-locker-taquilla-secreta-morada": {
         "tienda": "Toy Planet",
@@ -137,7 +158,8 @@
         "ultima_comprobacion": "2026-11-19",
         "titulo": "VTech KidiSecrets Locker Taquilla Secreta Morada",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPVTC054189_1.png?v=1749141145",
-        "url": "https://www.toyplanet.com/products/vtech-kidisecrets-locker-taquilla-secreta-morada"
+        "url": "https://www.toyplanet.com/products/vtech-kidisecrets-locker-taquilla-secreta-morada",
+        "ultimo_error": "bloqueado: la tienda respondió 429"
       },
       "https://www.globerada.com/precios/vtech-kidisecrets-locker-taquilla-secreta.html#Marketplace Vendido por Amazon": {
         "tienda": "Marketplace Vendido por Amazon",
@@ -165,7 +187,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/fa3178c7bbf0941c237c721a0cdf36d5?exp=1795124276&sig=06ebcf4a3d0cfe34d390dde9f7068af83c75417e78cb2b32fe3b4b82ad3c0a38",
+        "url": "https://www.globerada.com/out/fa3178c7bbf0941c237c721a0cdf36d5?exp=1795124664&sig=f59bc5b2cd965e8a797752336e110270e44255c2edd7c3ce58ce112ec6b23089",
         "via": "Globerada",
         "producto_tienda": "VTech - KidiSecrets Locker Taquilla Secreta, Caja Fuerte con código Secreto, Joyero niños, Personalizable, Pantalla LCD,",
         "imagen": "https://m.media-amazon.com/images/I/412rbssSeuL._SL500_.jpg"
@@ -174,9 +196,14 @@
     "dreamon-heladeria": {
       "https://www.amazon.es/dp/B0CF1TN1WV": {
         "tienda": "Amazon",
-        "historial": [],
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 21.82,
+            "disponible": true
+          }
+        ],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "bloqueado: la tienda respondió 503",
         "titulo": "Dreamon Heladeria Juguete - 38 Piezas Juguetes Montessori Niños 3 4 Años - Comida de Juguete Madera - Juegos Infantiles Juguetes Niñas 3 4 años - Comida Juguete Cocinita",
         "imagen": "https://m.media-amazon.com/images/I/71eg+A0nE6L._AC_SL1500_.jpg",
         "valoracion": {
@@ -213,8 +240,7 @@
           "maximo": 5
         },
         "opiniones_url": "https://www.amazon.es/product-reviews/B0D353J66T",
-        "url": "https://www.amazon.es/dp/B0D353J66T",
-        "ultimo_error": "bloqueado: Amazon pidió un captcha"
+        "url": "https://www.amazon.es/dp/B0D353J66T"
       },
       "buscar:www.toyplanet.com:Playmobil abuelos bebé": {
         "tienda": "Toy Planet",
@@ -228,7 +254,8 @@
         "ultima_comprobacion": "2026-11-19",
         "titulo": "Playmobil Abuelos y bebé",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPPLY071613_1.png?v=1757435599",
-        "url": "https://www.toyplanet.com/products/playmobil-abuelos-y-bebe"
+        "url": "https://www.toyplanet.com/products/playmobil-abuelos-y-bebe",
+        "ultimo_error": "bloqueado: la tienda respondió 429"
       },
       "comparador:Playmobil 71613#Amazon Marketplace (Imosver)": {
         "tienda": "Amazon Marketplace (Imosver)",
@@ -240,7 +267,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/141dc29e761a8e766a5cad5c9fbe6129?exp=1795124289&sig=8e8e56687ddfc314a1cdcbc223a952755a3ebe039aee4a72fbdf8a37be5c5569",
+        "url": "https://www.globerada.com/out/141dc29e761a8e766a5cad5c9fbe6129?exp=1795124687&sig=ea6d45d969c43b1a894c3521a03cbc993ca07ed1bf331a3b082745ad6d62d96c",
         "via": "Globerada",
         "producto_tienda": "PLAYMOBIL My Life Abuelos y Bebé",
         "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
@@ -255,7 +282,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/600bc82e6e1a1495ceed45a4ebf54157?exp=1795124289&sig=d4e62fea76b405c5e371a2e7a3e4669f2885a2130c1a1e835d2027bc260cbd4a",
+        "url": "https://www.globerada.com/out/600bc82e6e1a1495ceed45a4ebf54157?exp=1795124687&sig=12b3f5c53eeab2c4042ffbf025960691c21cc4440533026e7ad8f4f16787d778",
         "via": "Globerada",
         "producto_tienda": "Abuelos Con Bebe Playmobil",
         "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
@@ -270,7 +297,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/6558a24bd0e08f86c3b57c01affb94e5?exp=1795124289&sig=4f8c0f6ce3d505326376c0eb01a0944b6136cbadfaeb2d64308023c7a76c5824",
+        "url": "https://www.globerada.com/out/6558a24bd0e08f86c3b57c01affb94e5?exp=1795124687&sig=28ba77cc2d8de55b4f89b6ee870d55101cbb9c3bf16f09d59018d52706cec9d9",
         "via": "Globerada",
         "producto_tienda": "Playmobil - Abuelos y bebé Playmobil Life. (71613)",
         "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
@@ -285,7 +312,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/14746e780216615350bf37965ffd978e?exp=1795124289&sig=da901b4d17ec72a72b25ef24cffeee17b9e5e4603dcec0f52a99f18fdfec82ce",
+        "url": "https://www.globerada.com/out/14746e780216615350bf37965ffd978e?exp=1795124687&sig=8c229449928135022f6156afa783161057c992c3243a3e9770b41c613da6e8cd",
         "via": "Globerada",
         "producto_tienda": "Playmobil 71613 - Abuelos con bebé - Nuevo",
         "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
@@ -300,7 +327,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/c1ae99f0be4391559d84dcd625d704e4?exp=1795124289&sig=c2ffd3cc0574d7ed3866926911f3bebcc308168f645706def5d4b1b593f78e15",
+        "url": "https://www.globerada.com/out/c1ae99f0be4391559d84dcd625d704e4?exp=1795124687&sig=25e15b6c00e5a1ed7492c27033086f3a40ecd1bec36b127c6fca35f3a41c912c",
         "via": "Globerada",
         "producto_tienda": "PLAYMOBIL Abuelos con beb",
         "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
@@ -309,7 +336,13 @@
     "carro-limpieza": {
       "https://www.amazon.es/dp/B00IL35W2Y": {
         "tienda": "Amazon",
-        "historial": [],
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 29.66,
+            "disponible": true
+          }
+        ],
         "ultima_comprobacion": "2026-11-19",
         "titulo": "Theo Klein Vileda Carrito de limpieza, juguete de rol a partir de 3 años",
         "imagen": "https://m.media-amazon.com/images/I/71F6QASe9-L._AC_SL1500_.jpg",
@@ -319,7 +352,6 @@
           "maximo": 5
         },
         "opiniones_url": "https://www.amazon.es/product-reviews/B00IL35W2Y",
-        "ultimo_error": "bloqueado: la tienda respondió 503",
         "url": "https://www.amazon.es/dp/B00IL35W2Y"
       },
       "buscar:www.toyplanet.com:carrito limpieza Vileda": {
@@ -338,7 +370,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/1e246bbc9f4b303e91ec221ca0b15713?exp=1795124296&sig=a768ed499ae01d36691452955991885ca12715b12cda60521e05d715abb17e84",
+        "url": "https://www.globerada.com/out/1e246bbc9f4b303e91ec221ca0b15713?exp=1795124698&sig=cce5930bfa9b2a230b27dbdda7146f9dee86977013d4f62bf907a065064c520c",
         "via": "Globerada",
         "producto_tienda": "Carrito de limpieza Klein Vileda",
         "imagen": "https://m.media-amazon.com/images/I/41BMonsynGL._SL500_.jpg"
@@ -385,7 +417,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/3ff30398d115db623eef07622c3a8873?exp=1795124296&sig=13b8f1ba0d14927be4be21597e06054690e221591be1e1b907166b41c9734a7e",
+        "url": "https://www.globerada.com/out/3ff30398d115db623eef07622c3a8873?exp=1795124698&sig=b461d16c5a1e1fb13ea1777b4013fec3783459c01c3a1c92bb8143fb417146ac",
         "via": "Globerada",
         "producto_tienda": "Theo Klein Vileda Carrito de limpieza, juguete de rol a partir de 3 años | Con fregona, cubo, escoba, juego de barrido, ",
         "imagen": "https://m.media-amazon.com/images/I/41BMonsynGL._SL500_.jpg"
@@ -416,7 +448,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/836e445f5672690742a3b9b86ec72dd4?exp=1795124296&sig=1355bf71f2d8ac8aa8af378905f33e2abf6a681aa8f567d1b0e3ca0654ba1e01",
+        "url": "https://www.globerada.com/out/836e445f5672690742a3b9b86ec72dd4?exp=1795124698&sig=0e5be6c8934b8c648e76d20ee8499076e3cb2b42fb33f1797467b9f5e84f4ce8",
         "via": "Globerada",
         "producto_tienda": "Carrito de limpieza",
         "imagen": "https://m.media-amazon.com/images/I/41BMonsynGL._SL500_.jpg"
@@ -431,7 +463,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/037758d9c8355ca356deb3545f1b4597?exp=1795124296&sig=49a869ea761019f07967e3315a2ac01023ba56cd0904825f3130c8ce3e68060b",
+        "url": "https://www.globerada.com/out/037758d9c8355ca356deb3545f1b4597?exp=1795124698&sig=aee450debb6bd9ffa2c5c05c8368d37bbe6d52c17567ba3ea4b812988dcca149",
         "via": "Globerada",
         "producto_tienda": "Carro Limpieza Vileda",
         "imagen": "https://m.media-amazon.com/images/I/41BMonsynGL._SL500_.jpg"
@@ -440,9 +472,14 @@
     "barbie-boda-chelsea": {
       "https://www.amazon.es/dp/B01FKUVX64": {
         "tienda": "Amazon",
-        "historial": [],
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 63.03,
+            "disponible": true
+          }
+        ],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "bloqueado: la tienda respondió 503",
         "titulo": "Barbie Conjunto de Boda con muñecos Novios, Stacie, Chelsea y Accesorios (Mattel DRJ88)",
         "imagen": "https://m.media-amazon.com/images/I/716f62ZXY2L._AC_SL1001_.jpg",
         "valoracion": {
@@ -466,7 +503,7 @@
         "historial": [
           {
             "fecha": "2026-11-19",
-            "precio": 23.88,
+            "precio": 28.9,
             "disponible": true
           }
         ],
@@ -479,8 +516,7 @@
           "maximo": 5
         },
         "opiniones_url": "https://www.amazon.es/product-reviews/B0B4KQMTVM",
-        "url": "https://www.amazon.es/dp/B0B4KQMTVM",
-        "ultimo_error": "bloqueado: la tienda respondió 503"
+        "url": "https://www.amazon.es/dp/B0B4KQMTVM"
       },
       "buscar:www.toyplanet.com:Crazy Chic Nail Art Studio": {
         "tienda": "Toy Planet",
@@ -494,7 +530,8 @@
         "ultima_comprobacion": "2026-11-19",
         "titulo": "Crazy Chic Nail Art Studio Clementoni",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPCLE018429_1.png?v=1776388341",
-        "url": "https://www.toyplanet.com/products/crazy-chic-nail-art-studio-clementoni"
+        "url": "https://www.toyplanet.com/products/crazy-chic-nail-art-studio-clementoni",
+        "ultimo_error": "bloqueado: la tienda respondió 429"
       },
       "comparador:Clementoni Nail Art Studio#Abacus": {
         "tienda": "Abacus",
@@ -506,7 +543,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/6f7c2550321ab6eb0dc80fc754dab52c?exp=1795124318&sig=4e8b458f9bc77cf6b5c75c6dcd21ebc39771ed8fd4bd9f4b004ce98aa5e8222d",
+        "url": "https://www.globerada.com/out/6f7c2550321ab6eb0dc80fc754dab52c?exp=1795124740&sig=f1949350b94ac559ab467fb3a5178b68ba927286e7f0c57a3a7ba50908063175",
         "via": "Globerada",
         "producto_tienda": "Crazy Chic Diseña tus uñas",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -521,7 +558,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/ac21c5be643bf8dea90fb74a15c0e679?exp=1795124318&sig=6f34d88cad91db600556e552e70c521d67ed24a7f025ad538de0e516dd9824f0",
+        "url": "https://www.globerada.com/out/ac21c5be643bf8dea90fb74a15c0e679?exp=1795124740&sig=bc7fc0ed420cd1f2374e230a2b6cdaef4a122f8f681dcc876d47d19e7659cbcb",
         "via": "Globerada",
         "producto_tienda": "Clementoni - 18730 - Crazy Chic - Nail Art Studio - Set De Manicura Infantil, con Purpurina Y Secador, A Partir De 6 Año",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -536,7 +573,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/08e7836724f5236c2ede671da6f4fe6b?exp=1795124318&sig=bc4816d8d5723fe5a330563f3466c81a46ad8995ad322ac612387e4181b02daf",
+        "url": "https://www.globerada.com/out/08e7836724f5236c2ede671da6f4fe6b?exp=1795124740&sig=a44fde928c92cf9aa68cf978258b0716620c049c2997d7c44715403554a366d0",
         "via": "Globerada",
         "producto_tienda": "Crazy Chic Beauty Diseña Tus uñas de Luxe",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -551,7 +588,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/c2b167f6e4d4896cb57c534382749e82?exp=1795124318&sig=bf30b6154b7f5d68d02e02228b128042ddbf0c509008d28584d3224d993741b1",
+        "url": "https://www.globerada.com/out/c2b167f6e4d4896cb57c534382749e82?exp=1795124740&sig=29b2719f32928d718f879e89297dfeb3df4d0452ce5bdf20705a7019fe1c56e4",
         "via": "Globerada",
         "producto_tienda": "Nail Art Studio",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -566,7 +603,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/0c7b44d2873d9e9bea8d5ec1b9b99a29?exp=1795124318&sig=744b9c6b63da82509c63a339239c905e2ef38082324cebaa432d1c5dc6005452",
+        "url": "https://www.globerada.com/out/0c7b44d2873d9e9bea8d5ec1b9b99a29?exp=1795124740&sig=90ad0f98961cbcae9d378b08ee0da4df96594f206b7e0d70d5f99e679d7ef076",
         "via": "Globerada",
         "producto_tienda": "Diseña tus Uñas de Luxe",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -599,7 +636,8 @@
         "ultima_comprobacion": "2026-11-19",
         "titulo": "Cherry Pets Confetti Tree Koala Twins Playset con 2 Figuras Exclusivas",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAB94IN10_1.png?v=1784705409",
-        "url": "https://www.toyplanet.com/products/cherry-pets-confetti-tree-koala-twins-playset-con-2-figuras-exclusivas"
+        "url": "https://www.toyplanet.com/products/cherry-pets-confetti-tree-koala-twins-playset-con-2-figuras-exclusivas",
+        "ultimo_error": "bloqueado: la tienda respondió 429"
       },
       "comparador:Cherry Pets Confetti Tree#Juguettos": {
         "tienda": "Juguettos",
@@ -611,18 +649,29 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/9120d37703eb7f73acfc084c249c77f8?exp=1795124329&sig=91596e9cdcb053bf134dbef4fed0e340a1c7fe04c59fb0194e4f2996413455fd",
+        "url": "https://www.globerada.com/out/9120d37703eb7f73acfc084c249c77f8?exp=1795124750&sig=bc53cf23c5fac68eb1bc4ec3dce07e8211cb910240026f211e940ef623e613c2",
         "via": "Globerada",
         "producto_tienda": "Cherry Pets Confetti Tree Koala Twin - ",
         "imagen": "https://juguettos.com/3699672/0000-00-00.jpg"
+      },
+      "amazon:Cherry Pets Confetti Tree": {
+        "tienda": "Amazon",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       }
     },
     "educa-magnetics-61": {
       "https://www.amazon.es/dp/B0CSPQ6MSQ": {
         "tienda": "Amazon",
-        "historial": [],
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 34.99,
+            "disponible": true
+          }
+        ],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "bloqueado: la tienda respondió 503",
         "titulo": "Educa - Magnetics | Juego Educativo de construcción 3D magnético con 61 Piezas para niños, construye Figuras geométricas desarrollando la Creatividad e imaginación. A Partir de 3 años (20024)",
         "imagen": "https://m.media-amazon.com/images/I/8116GFpyQML._AC_SL1500_.jpg",
         "valoracion": {
@@ -645,7 +694,8 @@
         "ultima_comprobacion": "2026-11-19",
         "titulo": "Educa Juguete de Aprendizaje  Educa Magnetics 61 Piezas",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPEDU020024_1_ee7bb6ae-f1bd-4812-9993-57574a13ab72.png?v=1749129940",
-        "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1"
+        "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1",
+        "ultimo_error": "bloqueado: la tienda respondió 429"
       },
       "comparador:Educa Magnetics 61#Amazon": {
         "tienda": "Amazon",
@@ -657,7 +707,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/9417b93a071105b5d1f63c5843ef2e72?exp=1795124337&sig=583c86b335e09ba982d4f5109526629fc2dbf72d944dca39dfba70653e1baa92",
+        "url": "https://www.globerada.com/out/9417b93a071105b5d1f63c5843ef2e72?exp=1795124767&sig=a85d91c0376e0f00e8e7b5dffd1b0881305a48d42f60fab21847066112e1cbc9",
         "via": "Globerada",
         "producto_tienda": "Educa - Magnetics | Juego Educativo de construcción 3D magnético con 61 Piezas para niños, construye Figuras geométricas",
         "imagen": "https://m.media-amazon.com/images/I/51NjYiaHQiL._SL500_.jpg"
@@ -672,7 +722,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/9658f343b170742b5720df9885df8af0?exp=1795124337&sig=5b56e012dc8bd752e1dc7c9b1f725b68373f8bb7ae3939271121a27627653678",
+        "url": "https://www.globerada.com/out/9658f343b170742b5720df9885df8af0?exp=1795124767&sig=838017a50f83dd902e3970de75f8c74ecdbe3d550c0a0ac204fb96b0864fedd0",
         "via": "Globerada",
         "producto_tienda": "Juego 61 Piezas Educa Magnetics",
         "imagen": "https://m.media-amazon.com/images/I/51NjYiaHQiL._SL500_.jpg"
@@ -681,9 +731,14 @@
     "barbie-deluxe-style-15": {
       "https://www.amazon.es/dp/B0G43VCRD4": {
         "tienda": "Amazon",
-        "historial": [],
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 14.65,
+            "disponible": true
+          }
+        ],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "bloqueado: la tienda respondió 503",
         "titulo": "Barbie Muñeca Deluxe Style n.º 15 con vestido Barbiecore rosa",
         "imagen": "https://m.media-amazon.com/images/I/71J8rV813eL._AC_SL1500_.jpg",
         "valoracion": {
@@ -700,7 +755,7 @@
         "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "bloqueado: la tienda respondió 503",
+        "ultimo_error": "no se encontró el precio en la página",
         "titulo": "MONDO Motors - Mattel Barbie City Car 2.4 GHz - Coche radiocontrol 2 plazas - Detalles realistas - Color Fucsia - 63698",
         "imagen": "https://m.media-amazon.com/images/I/61rPONQqxcL._AC_SL1500_.jpg",
         "valoracion": {
@@ -715,9 +770,14 @@
     "barbie-cascanueces-trineo": {
       "https://www.amazon.es/dp/B0G42LDBDW": {
         "tienda": "Amazon",
-        "historial": [],
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 37.94,
+            "disponible": true
+          }
+        ],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "bloqueado: Amazon pidió un captcha",
         "titulo": "Barbie en Cascanueces Mundo de Dulces Caballo y Trineo",
         "imagen": "https://m.media-amazon.com/images/I/71WWnzLoD9L._AC_SL1500_.jpg",
         "valoracion": {
@@ -730,9 +790,15 @@
       },
       "https://www.toysrus.es/Barbie-El-Cascanueces-Caballo-y-Trineo-del-Reino-de-los-Dulces/p/K1105772": {
         "tienda": "Toys R Us",
-        "historial": [],
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 49.99,
+            "disponible": true
+          }
+        ],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons"
+        "url": "https://www.toysrus.es/Barbie-El-Cascanueces-Caballo-y-Trineo-del-Reino-de-los-Dulces/p/K1105772"
       },
       "buscar:www.toyplanet.com:Cascanueces caballo trineo": {
         "tienda": "Toy Planet",
@@ -750,7 +816,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/1df81f2e4b61248578b528aa987f8b95?exp=1795124351&sig=6eca0b8d2de0da021885b667e8b03cdaa73d67fbc1da86c74c0f434d7e73ae02",
+        "url": "https://www.globerada.com/out/1df81f2e4b61248578b528aa987f8b95?exp=1795124796&sig=830639acdcd3a55927977c4426c70cf31f7dc4dc72c04aa92b02f1595180cdf0",
         "via": "Globerada",
         "producto_tienda": "Barbie en Cascanueces Mundo de Dulces Caballo y Trineo | Cabello colorido con aroma, peine y accesorios con fragancia a ",
         "imagen": "https://m.media-amazon.com/images/I/71WWnzLoD9L.jpg"
@@ -761,7 +827,7 @@
         "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "bloqueado: la tienda respondió 503",
+        "ultimo_error": "no se encontró el precio en la página",
         "titulo": "Lexibook, Stitch, Walkie-talkies de vídeo, Pantalla a color, Rosa, TWV15D",
         "imagen": "https://m.media-amazon.com/images/I/71mHpVGJQRL._AC_SL1200_.jpg",
         "opiniones_url": "https://www.amazon.es/product-reviews/B0HKRX9BZ1",
@@ -779,7 +845,8 @@
         "ultima_comprobacion": "2026-11-19",
         "titulo": "Lexibook Stitch y Angel Walkie Talkies con Vídeo Recargables",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPVLV0WV15D_1.png?v=1787879630",
-        "url": "https://www.toyplanet.com/products/lexibook-stitch-y-angel-walkie-talkies-con-video-recargables"
+        "url": "https://www.toyplanet.com/products/lexibook-stitch-y-angel-walkie-talkies-con-video-recargables",
+        "ultimo_error": "bloqueado: la tienda respondió 429"
       }
     },
     "mirrormi-fashion": {
@@ -788,7 +855,7 @@
         "historial": [
           {
             "fecha": "2026-11-19",
-            "precio": 28.5,
+            "precio": 34.49,
             "disponible": true
           }
         ],
@@ -801,15 +868,14 @@
           "maximo": 5
         },
         "opiniones_url": "https://www.amazon.es/product-reviews/B0GKND16BN",
-        "url": "https://www.amazon.es/dp/B0GKND16BN",
-        "ultimo_error": "bloqueado: la tienda respondió 503"
+        "url": "https://www.amazon.es/dp/B0GKND16BN"
       },
       "https://www.amazon.es/dp/B0GKNCH9X9": {
         "tienda": "Amazon (Suki)",
         "historial": [
           {
             "fecha": "2026-11-19",
-            "precio": 28.92,
+            "precio": 34.99,
             "disponible": true
           }
         ],
@@ -822,8 +888,7 @@
           "maximo": 5
         },
         "opiniones_url": "https://www.amazon.es/product-reviews/B0GKNCH9X9",
-        "url": "https://www.amazon.es/dp/B0GKNCH9X9",
-        "ultimo_error": "bloqueado: la tienda respondió 503"
+        "url": "https://www.amazon.es/dp/B0GKNCH9X9"
       },
       "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm": {
         "tienda": "Toy Planet (Suki)",
@@ -837,7 +902,8 @@
         "ultima_comprobacion": "2026-11-19",
         "titulo": "MirrorMi Academy Muñeca Fashion Suki Goldpetal Fragile de 26,5 cm",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMGV055253_9_Copy.webp?v=1788339955",
-        "url": "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm"
+        "url": "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm",
+        "ultimo_error": "bloqueado: la tienda respondió 429"
       },
       "comparador:Mirrormi#Amazon": {
         "tienda": "Amazon",
@@ -849,7 +915,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/4d3267f71cfdfb1e43258e5acfc0face?exp=1795124310&sig=0f0121d430afeca8101f7dd0c2a21e5da9db5463fd9a33c57ab8ab9d9df4c057",
+        "url": "https://www.globerada.com/out/4d3267f71cfdfb1e43258e5acfc0face?exp=1795124727&sig=ec53420368984c159cfb49cb4b3bee68f3e50448beb4ef09b67a483cacdce3c6",
         "via": "Globerada",
         "producto_tienda": "Mirror Mi Shai Meadows Fashion Doll - Muñeca de Moda Soft n Sweet, con más de 15 Puntos articulados",
         "imagen": "https://m.media-amazon.com/images/I/81EPa981fhL.jpg"
@@ -858,9 +924,15 @@
     "barbie-cascanueces-bailarina": {
       "https://www.toysrus.es/Barbie-en-el-Cascanueces-Clara-con-tut%C3%BA/p/K1105770": {
         "tienda": "Toys R Us",
-        "historial": [],
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 34.99,
+            "disponible": true
+          }
+        ],
         "ultima_comprobacion": "2026-11-19",
-        "ultimo_error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons"
+        "url": "https://www.toysrus.es/Barbie-en-el-Cascanueces-Clara-con-tut%C3%BA/p/K1105770"
       },
       "buscar:www.toyplanet.com:Cascanueces Clara tutú transformable": {
         "tienda": "Toy Planet",
@@ -874,7 +946,8 @@
         "ultima_comprobacion": "2026-11-19",
         "titulo": "Barbie El Cascanueces Clara muñeca bailarina con tutú transformable 3 años",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JLW53_1.png?v=1784077812",
-        "url": "https://www.toyplanet.com/products/barbie-el-cascanueces-clara-muneca-bailarina-con-tutu-transformable-3-anos"
+        "url": "https://www.toyplanet.com/products/barbie-el-cascanueces-clara-muneca-bailarina-con-tutu-transformable-3-anos",
+        "ultimo_error": "bloqueado: la tienda respondió 429"
       },
       "comparador:Barbie Cascanueces Clara#Amazon": {
         "tienda": "Amazon",
@@ -886,7 +959,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/a28caf81e61c60d0a35355c68ecc43f9?exp=1795124364&sig=b185c16083f23761ee948efcc8b9d24667e1caa07f81ff6e7112001029f027c6",
+        "url": "https://www.globerada.com/out/a28caf81e61c60d0a35355c68ecc43f9?exp=1795124821&sig=27908a82e8d9a0020d0699472fcf696c3cb979bc8169f6c2641fa2499157cd52",
         "via": "Globerada",
         "producto_tienda": "Barbien El Cascanueces Muñeca Clara | Función sorpresa de tutú, tutú ombré, collar relicario de corazón y caja de regalo",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -901,7 +974,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/11d08f1ab7f6537a57f759aa6d4fb947?exp=1795124364&sig=bc46a318914d5760debc7dd6966105fefc42aabe4af67fd7c8ab8b34930503ef",
+        "url": "https://www.globerada.com/out/11d08f1ab7f6537a57f759aa6d4fb947?exp=1795124821&sig=06d0135acae7813e8976e379e7b92cb8867bb762ffb6dcc6c8c592102b144e3c",
         "via": "Globerada",
         "producto_tienda": "Mattel Barbie Cascanueces bailarina Clara con falda tutu cambiante",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -916,7 +989,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/3c2615c7cd676996d97c1a747f389e9c?exp=1795124364&sig=38f75818acbcbd97c76cc05387f568fb969e4f728bd118829a0aae112b003f78",
+        "url": "https://www.globerada.com/out/3c2615c7cd676996d97c1a747f389e9c?exp=1795124821&sig=f09bd4f7b89c23199648a015b11a31d6dcf0adf0dc985a134677c89a6debfdae",
         "via": "Globerada",
         "producto_tienda": "Barbie en el Cascanueces Muñeca con Tutú - ",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -931,7 +1004,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/83ee14e578072e351838face3b8b803e?exp=1795124364&sig=a1e11e203e137f832db758519b010c893d10714e5b5055cf33d3f6772a27aa56",
+        "url": "https://www.globerada.com/out/83ee14e578072e351838face3b8b803e?exp=1795124821&sig=2622a2df2052d6ec18122526e9146ab06306ec681094397d49f516b728e1b633",
         "via": "Globerada",
         "producto_tienda": "Muñeca Clara Barbie In The Nutcracker",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -946,15 +1019,27 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/9758a34b57fd9dc77e0cf0f94212bd19?exp=1795124364&sig=be4c1d6aac11dff7d20e952b8e96861b175659b365f2f0dfc70207c0b801bfb8",
+        "url": "https://www.globerada.com/out/9758a34b57fd9dc77e0cf0f94212bd19?exp=1795124821&sig=1c30d0f87b536731886f2894425fb149834ed8ad90c70c664e6e70e1f7194d94",
         "via": "Globerada",
         "producto_tienda": "Barbie Muñeca Clara Barbie en El Cascanueces - con tutú transformable - Nuevo",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
+      },
+      "amazon:Barbie Cascanueces Clara tutú": {
+        "tienda": "Amazon",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       }
     },
     "bolso-peluche-hello-kitty": {
       "buscar:www.toyplanet.com:Hello Kitty bolso peluche": {
         "tienda": "Toy Planet",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
+      },
+      "amazon:Hello Kitty bolso peluche reversible": {
+        "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "LookupError: no está en el catálogo de la tienda"
@@ -966,6 +1051,26 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "LookupError: no está en el catálogo de la tienda"
+      },
+      "amazon:Dreamon zapatos princesa": {
+        "tienda": "Amazon",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 30.67,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Dreamon Zapatos Princesa Niñas, Disfraz Princesa Niña Tacones 3 4 5 6 Años Regalos Carnaval Halloween Navidad Fiesta de Cosplay",
+        "imagen": "https://m.media-amazon.com/images/I/817gdcoV7-L._AC_SL1500_.jpg",
+        "valoracion": {
+          "media": 4.4,
+          "total": 291,
+          "maximo": 5
+        },
+        "opiniones_url": "https://www.amazon.es/product-reviews/B0DSZN5N34",
+        "url": "https://www.amazon.es/dp/B0DSZN5N34"
       }
     },
     "holawatch-k-fun": {
@@ -985,7 +1090,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/e408f38ce674576c2e1879058e65a4ae?exp=1795124374&sig=f40602e09cae0f45e65b8a9840dfbd2a849eedb36edd23f651c36a19ae5ae633",
+        "url": "https://www.globerada.com/out/e408f38ce674576c2e1879058e65a4ae?exp=1795124834&sig=a903714ee50b1f20a0073eee2ec64a57094f8661e20daacec85bc50a2aacaf65",
         "via": "Globerada",
         "producto_tienda": "Cefa - Reloj Inteligente Holawatch K-Fun Negro pantalla táctil 4\", llamada SOS, bloqueo de llamadas, despertador, modo e",
         "imagen": "https://img3.slatic.net/g/fb/kf/Ecab5dc6101d441558dfa68ff1db21c28y.png"
@@ -1000,7 +1105,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/69f9b9e848eb1155ed30d7e05c7a6110?exp=1795124374&sig=bcfe3c5207feaca39e4f100ba1fd90584b17333fc926da2c4d45b3443603588e",
+        "url": "https://www.globerada.com/out/69f9b9e848eb1155ed30d7e05c7a6110?exp=1795124834&sig=23ab94ebcc48cea882c3d746d767f10227be371df3c74bbdf91aae6b2021ea2d",
         "via": "Globerada",
         "producto_tienda": "Hola Watch K-Fun (+3 años) Negro / Smartwatch para niños 1.4\"",
         "imagen": "https://img3.slatic.net/g/fb/kf/Ecab5dc6101d441558dfa68ff1db21c28y.png"
@@ -1015,7 +1120,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/b4745b3c7ebf904b01ac6c82458a94e6?exp=1795124374&sig=61ca026911e6a682a403f6014c2c61f81102df023a0c5775a57d62286257eee5",
+        "url": "https://www.globerada.com/out/b4745b3c7ebf904b01ac6c82458a94e6?exp=1795124834&sig=49efff4ba20886e968b56715fe24638b4c582c4919a7d62b8d8b5fb0b8773cd3",
         "via": "Globerada",
         "producto_tienda": "Cefa Toys Reloj Inteligente HolaWatch K-Fun Negro con Localización LBS",
         "imagen": "https://img3.slatic.net/g/fb/kf/Ecab5dc6101d441558dfa68ff1db21c28y.png"
@@ -1030,10 +1135,16 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/b70b8558d9db24689bb74bceb491e45d?exp=1795124374&sig=27fbb7d1953f752dc15c6882aa12d1adfa21b84e8e972196113e9c8700d67fc9",
+        "url": "https://www.globerada.com/out/b70b8558d9db24689bb74bceb491e45d?exp=1795124834&sig=a943c8d8f6f30f68960cbc4f62fd8aeaa4f783aeec17d61e5c394fdaa0e6ac89",
         "via": "Globerada",
         "producto_tienda": "Hola watch Cefa Toys Reloj Inteligente HolaWatch K-Fun Negro con Localización LBS",
         "imagen": "https://img3.slatic.net/g/fb/kf/Ecab5dc6101d441558dfa68ff1db21c28y.png"
+      },
+      "amazon:Holawatch K-Fun": {
+        "tienda": "Amazon",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       }
     },
     "monster-high-cleo": {
@@ -1049,7 +1160,8 @@
         "ultima_comprobacion": "2026-11-19",
         "titulo": "Monster High Dawn of the Dance Cleo de Nile Creeproduction",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JKM47_1.png?v=1790903533",
-        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-cleo-de-nile-creeproduction"
+        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-cleo-de-nile-creeproduction",
+        "ultimo_error": "bloqueado: la tienda respondió 429"
       },
       "comparador:Monster High Cleo#Amazon Marketplace (NEA PRIME)": {
         "tienda": "Amazon Marketplace (NEA PRIME)",
@@ -1061,10 +1173,30 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/6d4a82adac67e10cf045e7f9f6b37358?exp=1795124380&sig=a42afa6ab96cf32279a0ffa4ca23afdfe544be7fba8297c302af3ba0b89e97ab",
+        "url": "https://www.globerada.com/out/6d4a82adac67e10cf045e7f9f6b37358?exp=1795124843&sig=06c3d6db151fe1b6bff624f89f21f73645605d29950e08b00828b6836f87ad94",
         "via": "Globerada",
         "producto_tienda": "Monster High Cleo De Nile Muñeca con Ropa Dorada | Momia con blusa corta y falda, incluye cobra Hissette, mochila, merie",
         "imagen": "https://m.media-amazon.com/images/I/41K3YaRqIxL._SL500_.jpg"
+      },
+      "amazon:Monster High Cleo De Nile": {
+        "tienda": "Amazon",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 32.0,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Monster High Cleo De Nile Muñeca con Ropa Dorada",
+        "imagen": "https://m.media-amazon.com/images/I/71oQZIIKpxL._AC_SL1500_.jpg",
+        "valoracion": {
+          "media": 4.8,
+          "total": 2310,
+          "maximo": 5
+        },
+        "opiniones_url": "https://www.amazon.es/product-reviews/B0CMGXG262",
+        "url": "https://www.amazon.es/dp/B0CMGXG262"
       }
     },
     "monster-high-frankie": {
@@ -1080,7 +1212,8 @@
         "ultima_comprobacion": "2026-11-19",
         "titulo": "Monster High Dawn of the Dance Frankie Stein",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JKM46_1.png?v=1790903521",
-        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-frankie-stein"
+        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-frankie-stein",
+        "ultimo_error": "bloqueado: la tienda respondió 429"
       },
       "comparador:Monster High Doll With Pet Frankie#Amazon": {
         "tienda": "Amazon",
@@ -1092,7 +1225,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/f1fdadfa67ef734eb58f6ffd22cb42d3?exp=1795124386&sig=ebb1ce7fd4cc03a3858d45c7cde864d3edd91ee8e81fe37b214108c46d1e74d7",
+        "url": "https://www.globerada.com/out/f1fdadfa67ef734eb58f6ffd22cb42d3?exp=1795124855&sig=9ecb586c432785fa5698889df2ef149ab161ee3a260dfb11a787209ca247a88f",
         "via": "Globerada",
         "producto_tienda": "Monster High Frankie Stein Muñeca con Perro | Frankenmonster con suéter y falda negra, mascota Watzie y 7 accesorios: au",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
@@ -1107,7 +1240,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/74f7751e47c2a4cdf70f18c27cbdf1a1?exp=1795124386&sig=c3c1a1fd9625283bd7558c9c80ed7925af2f0232237062f83769d0585f15ab76",
+        "url": "https://www.globerada.com/out/74f7751e47c2a4cdf70f18c27cbdf1a1?exp=1795124855&sig=26ae3f52ea2a3dca9d56ca7ea5dc8b14af4a7fc4e703d094b2a1e7b38be83bb5",
         "via": "Globerada",
         "producto_tienda": "Mattel Monster High Frankie Stein Muñeca con Perro",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
@@ -1122,7 +1255,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/ba331f7560cfc810fb112545dfe08ab8?exp=1795124386&sig=7ab23e2926cfe1482724c3c141c58cfe1b9f1666f7193b0d7209f25886cc2f06",
+        "url": "https://www.globerada.com/out/ba331f7560cfc810fb112545dfe08ab8?exp=1795124855&sig=7bb7d3f0c547ec8d04b23492bce0dd09723dfd0f060a50f402639fbbfa1241c7",
         "via": "Globerada",
         "producto_tienda": "Monster High Muñeca Frankie Stein con Mascota Watzie y 7 Accesorios - ",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
@@ -1137,7 +1270,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/4cdd40de5d2102e553bd0f26cc5a4473?exp=1795124386&sig=67d113fca3b8cb6128df544b18f9c8284f372a1780421c8f72f745579009e8cb",
+        "url": "https://www.globerada.com/out/4cdd40de5d2102e553bd0f26cc5a4473?exp=1795124855&sig=3874dfa72d449aebb0c89fcc108d48282c48894afedf841218fdfdb9ebeead08",
         "via": "Globerada",
         "producto_tienda": "Muñeca Articulada Monster High Frankie Stein con Mascota y 7 Accesorios",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
@@ -1152,15 +1285,41 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/af3effbd687f1633a1cbf3033bafea0a?exp=1795124386&sig=be7b12357dcbf881de9afb94df8684b4495135c37c1cf0c61b280f06ba7a2a8b",
+        "url": "https://www.globerada.com/out/af3effbd687f1633a1cbf3033bafea0a?exp=1795124855&sig=87317f794e53e4c686af5887398759effb8d0bbc453ccefb46c97867fcacbfb2",
         "via": "Globerada",
         "producto_tienda": "Mattel Monster High muñeca monstruo, FRANKIE, JHK31",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
+      },
+      "amazon:Monster High Frankie Stein": {
+        "tienda": "Amazon",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 5.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Playmobil x Monster High Frankie Stein™",
+        "imagen": "https://m.media-amazon.com/images/I/61hZGOl6sYL._AC_SL1232_.jpg",
+        "valoracion": {
+          "media": 4.7,
+          "total": 133,
+          "maximo": 5
+        },
+        "opiniones_url": "https://www.amazon.es/product-reviews/B0FJ8NBM4T",
+        "url": "https://www.amazon.es/dp/B0FJ8NBM4T"
       }
     },
     "juego-rol-restaurante-agustin": {
       "buscar:www.toyplanet.com:restaurante Agustín": {
         "tienda": "Toy Planet",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
+      },
+      "amazon:restaurante Agustín juego": {
+        "tienda": "Amazon",
         "historial": [],
         "ultima_comprobacion": "2026-11-19",
         "ultimo_error": "LookupError: no está en el catálogo de la tienda"
@@ -1178,7 +1337,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/9fe3dc78f991aea3453e90dfcb7de11c?exp=1795124390&sig=e6ac92ebb2def3764ed629b1e590ede8cce48b6ad12fae0baac0f32db0f7feb2",
+        "url": "https://www.globerada.com/out/9fe3dc78f991aea3453e90dfcb7de11c?exp=1795124866&sig=c9431624343ab837b2f4b94afde641bb38d9aeafe5888078c7f3797732a7a241",
         "via": "Globerada",
         "producto_tienda": "Escuela de Monstruos - El libro de colorear megamonstruoso",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw89bf88e0/images/large/1546768.50.jpg"
@@ -1193,10 +1352,30 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/c16c4cf18f8f4a442fac1322a29c7a60?exp=1795124390&sig=1c4c6ed337d4e79e4002f5b0482eab3d86f1dcf7dc065af0575976c3db1d911b",
+        "url": "https://www.globerada.com/out/c16c4cf18f8f4a442fac1322a29c7a60?exp=1795124866&sig=1a2327c551a705d4c3bf3deadf73eaaf27b5cb906c80d70155f3f28b5cc32f29",
         "via": "Globerada",
         "producto_tienda": "Escuela De Monstruos - El Libro De Colorear Megamonstruoso - Rippin, Sally",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw89bf88e0/images/large/1546768.50.jpg"
+      },
+      "amazon:Escuela de Monstruos libro": {
+        "tienda": "Amazon",
+        "historial": [
+          {
+            "fecha": "2026-11-19",
+            "precio": 9.45,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-19",
+        "titulo": "Escuela de Monstruos. Cuaderno de actividades - El libro de colorear megamonstruoso: Cuaderno para colorear para niños de 3 a 5 años",
+        "imagen": "https://m.media-amazon.com/images/I/81LkWiyLQiL._SL1500_.jpg",
+        "valoracion": {
+          "media": 5.0,
+          "total": 3,
+          "maximo": 5
+        },
+        "opiniones_url": "https://www.amazon.es/product-reviews/8410396262",
+        "url": "https://www.amazon.es/dp/8410396262"
       }
     },
     "camiseta-betis": {
@@ -1210,7 +1389,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/5319c49729d4488484b30111b93222cb?exp=1795124393&sig=968bcadf3e402d40688eceec70f26cc9d353453a164f093c21fc41715c10a719",
+        "url": "https://www.globerada.com/out/5319c49729d4488484b30111b93222cb?exp=1795124877&sig=8d337ddc354a427fcab2af54bb5be62473f006f400ee38d4ddf21a6ff728869c",
         "via": "Globerada",
         "producto_tienda": "Hummel Real Betis Tercera Equipación 2026-2027 Azul oscuro / Negro L",
         "imagen": "https://www.futbolemotion.com/imagesarticulos/366317/750/camiseta-hummel-real-betis-tercera-equipacion-2026-2027-true-blue-0.jpg"
@@ -1225,10 +1404,16 @@
           }
         ],
         "ultima_comprobacion": "2026-11-19",
-        "url": "https://www.globerada.com/out/7bb7b213692f748bc2f8dc9c1b2fad19?exp=1795124393&sig=df1cbb98494c9ed47787af72f221e3a4143c7f661e3b7d6158e63228405a3a8b",
+        "url": "https://www.globerada.com/out/7bb7b213692f748bc2f8dc9c1b2fad19?exp=1795124877&sig=07fae2156f47ea16a13a60088dab289514a1c6914ebd05b44b386031b41723fd",
         "via": "Globerada",
         "producto_tienda": "hummel Camiseta De Manga Corta Tercera Equipación Real Betis Balompie 26/27 L",
         "imagen": "https://www.futbolemotion.com/imagesarticulos/366317/750/camiseta-hummel-real-betis-tercera-equipacion-2026-2027-true-blue-0.jpg"
+      },
+      "amazon:camiseta Betis niña": {
+        "tienda": "Amazon",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-19",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       }
     }
   }
