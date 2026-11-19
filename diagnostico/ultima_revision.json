@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-19T20:31:56+00:00",
+  "fecha": "2026-11-19T20:39:59+00:00",
   "leidos": 56,
-  "fallos": 25,
+  "fallos": 12,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -94,15 +94,6 @@
     },
     {
       "producto": "vtech-kidisecrets-locker",
-      "tienda": "Amazon",
-      "url": "https://www.amazon.es/dp/B0CWVNM2RD",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
-    },
-    {
-      "producto": "vtech-kidisecrets-locker",
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/vtech-kidisecrets-locker-taquilla-secreta-morada",
       "precio": 44.99,
@@ -124,15 +115,6 @@
     },
     {
       "producto": "dreamon-heladeria",
-      "tienda": "Amazon",
-      "url": "https://www.amazon.es/dp/B0CF1TN1WV",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
-    },
-    {
-      "producto": "dreamon-heladeria",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:Dreamon heladería",
       "precio": null,
@@ -145,15 +127,6 @@
       "tienda": "Globerada",
       "url": "comparador:Dreamon heladería",
       "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "playmobil-71613-abuelos",
-      "tienda": "Amazon",
-      "url": "https://www.amazon.es/dp/B0D353J66T",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: Amazon pidió un captcha",
-      "pistas": {}
     },
     {
       "producto": "playmobil-71613-abuelos",
@@ -194,15 +167,6 @@
     },
     {
       "producto": "carro-limpieza",
-      "tienda": "Amazon",
-      "url": "https://www.amazon.es/dp/B00IL35W2Y",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
-    },
-    {
-      "producto": "carro-limpieza",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:carrito limpieza Vileda",
       "precio": null,
@@ -237,15 +201,6 @@
     },
     {
       "producto": "barbie-boda-chelsea",
-      "tienda": "Amazon",
-      "url": "https://www.amazon.es/dp/B01FKUVX64",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
-    },
-    {
-      "producto": "barbie-boda-chelsea",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:Barbie boda",
       "precio": null,
@@ -258,24 +213,6 @@
       "tienda": "Globerada",
       "url": "comparador:Barbie boda Chelsea",
       "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "mirrormi-fashion",
-      "tienda": "Amazon (Shai)",
-      "url": "https://www.amazon.es/dp/B0GKND16BN",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
-    },
-    {
-      "producto": "mirrormi-fashion",
-      "tienda": "Amazon (Suki)",
-      "url": "https://www.amazon.es/dp/B0GKNCH9X9",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
     },
     {
       "producto": "mirrormi-fashion",
@@ -297,15 +234,6 @@
           "precio": 34.49
         }
       ]
-    },
-    {
-      "producto": "clementoni-nail-art",
-      "tienda": "Amazon",
-      "url": "https://www.amazon.es/dp/B0B4KQMTVM",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
     },
     {
       "producto": "clementoni-nail-art",
@@ -375,15 +303,6 @@
     },
     {
       "producto": "educa-magnetics-61",
-      "tienda": "Amazon",
-      "url": "https://www.amazon.es/dp/B0CSPQ6MSQ",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
-    },
-    {
-      "producto": "educa-magnetics-61",
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1",
       "precio": 42.99,
@@ -408,37 +327,10 @@
       ]
     },
     {
-      "producto": "barbie-deluxe-style-15",
-      "tienda": "Amazon",
-      "url": "https://www.amazon.es/dp/B0G43VCRD4",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
-    },
-    {
-      "producto": "barbie-coche-radiocontrol",
-      "tienda": "Amazon",
-      "url": "https://www.amazon.es/dp/B0BJLD278H",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
-    },
-    {
       "producto": "barbie-coche-radiocontrol",
       "tienda": "Globerada",
       "url": "comparador:Mondo Barbie City Car",
       "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "barbie-cascanueces-trineo",
-      "tienda": "Amazon",
-      "url": "https://www.amazon.es/dp/B0G42LDBDW",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: Amazon pidió un captcha",
-      "pistas": {}
     },
     {
       "producto": "barbie-cascanueces-trineo",
@@ -470,15 +362,6 @@
           "precio": 49.74
         }
       ]
-    },
-    {
-      "producto": "stitch-walkie-talkies",
-      "tienda": "Amazon",
-      "url": "https://www.amazon.es/dp/B0HKRX9BZ1",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
     },
     {
       "producto": "stitch-walkie-talkies",
