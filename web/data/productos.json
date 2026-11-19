@@ -23,8 +23,22 @@
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Monster High Moonspell Magic muñeca",
       "enlaces": [
-        {"tienda": "El Corte Inglés (Willow)", "url": "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/"},
-        {"tienda": "El Corte Inglés (Layla)", "url": "https://www.elcorteingles.es/juguetes/A200825479-muneca-moonspell-magic-layla-crystal-monster-high-mattel/"}
+        {
+          "tienda": "El Corte Inglés (Willow)",
+          "url": "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/"
+        },
+        {
+          "tienda": "El Corte Inglés (Layla)",
+          "url": "https://www.elcorteingles.es/juguetes/A200825479-muneca-moonspell-magic-layla-crystal-monster-high-mattel/"
+        },
+        {
+          "tienda": "Toy Planet (Claire)",
+          "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-claire-de-luna"
+        },
+        {
+          "tienda": "Toy Planet (Rae)",
+          "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina"
+        }
       ]
     },
     {
@@ -81,7 +95,10 @@
       "tienda_lista": "Amazon",
       "busqueda": "VTech KidiSecrets Locker taquilla secreta",
       "enlaces": [
-        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0CWVNM2RD"}
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B0CWVNM2RD"
+        }
       ]
     },
     {
@@ -94,7 +111,10 @@
       "tienda_lista": "Amazon",
       "busqueda": "Dreamon heladeria carrito de helados",
       "enlaces": [
-        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0CF1TN1WV"}
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B0CF1TN1WV"
+        }
       ]
     },
     {
@@ -107,12 +127,15 @@
       "tienda_lista": "Amazon",
       "busqueda": "Playmobil 71613 abuelos con bebé",
       "enlaces": [
-        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0D353J66T"}
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B0D353J66T"
+        }
       ]
     },
     {
       "id": "carro-limpieza",
-      "nombre": "Carro de limpieza de juguete",
+      "nombre": "Theo Klein 6741 Carro de limpieza Vileda",
       "para": "Alba",
       "estado": "pendiente",
       "nota": "",
@@ -120,7 +143,10 @@
       "tienda_lista": "Amazon",
       "busqueda": "carro de limpieza juguete Vileda Theo Klein",
       "enlaces": [
-        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B00IL3SW2Y"}
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B00IL35W2Y"
+        }
       ]
     },
     {
@@ -129,11 +155,14 @@
       "para": "Alba",
       "estado": "pendiente",
       "nota": "",
-      "precio_lista": 61.90,
+      "precio_lista": 61.9,
       "tienda_lista": "Amazon",
       "busqueda": "Barbie conjunto de boda Chelsea Stacie DRJ88",
       "enlaces": [
-        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B01FKUVX64"}
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B01FKUVX64"
+        }
       ]
     },
     {
@@ -201,7 +230,20 @@
       "precio_lista": 34.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Mirrormi Fashion muñeca",
-      "enlaces": []
+      "enlaces": [
+        {
+          "tienda": "Amazon (Shai)",
+          "url": "https://www.amazon.es/dp/B0GKND16BN"
+        },
+        {
+          "tienda": "Amazon (Suki)",
+          "url": "https://www.amazon.es/dp/B0GKNCH9X9"
+        },
+        {
+          "tienda": "Toy Planet (Suki)",
+          "url": "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm"
+        }
+      ]
     },
     {
       "id": "peluche-maiz",
@@ -224,7 +266,10 @@
       "tienda_lista": "Amazon",
       "busqueda": "Clementoni Crazy Chic Nail Art Studio 18730",
       "enlaces": [
-        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0B4KQMTVM"}
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B0B4KQMTVM"
+        }
       ]
     },
     {
@@ -237,7 +282,10 @@
       "tienda_lista": "Amazon",
       "busqueda": "Cherry Pets Confetti Tree",
       "enlaces": [
-        {"tienda": "Carrefour", "url": "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p"}
+        {
+          "tienda": "Carrefour",
+          "url": "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p"
+        }
       ]
     },
     {
@@ -250,7 +298,10 @@
       "tienda_lista": "Amazon",
       "busqueda": "Educa Magnetics 61 piezas 20024",
       "enlaces": [
-        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0CSPQ6MSQ"}
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B0CSPQ6MSQ"
+        }
       ]
     },
     {
@@ -274,7 +325,10 @@
       "tienda_lista": "Amazon",
       "busqueda": "Barbie Deluxe Style 15 JJN73",
       "enlaces": [
-        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0G43VCRD4"}
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B0G43VCRD4"
+        }
       ]
     },
     {
@@ -287,7 +341,10 @@
       "tienda_lista": "Amazon",
       "busqueda": "Mondo Motors Barbie coche radiocontrol 63698",
       "enlaces": [
-        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B08JLD278H"}
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B0BJLD278H"
+        }
       ]
     },
     {
@@ -300,7 +357,14 @@
       "tienda_lista": "Amazon",
       "busqueda": "Barbie Cascanueces caballo trineo JRF15",
       "enlaces": [
-        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0G42LDBDW"}
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B0G42LDBDW"
+        },
+        {
+          "tienda": "Toys R Us",
+          "url": "https://www.toysrus.es/Barbie-El-Cascanueces-Caballo-y-Trineo-del-Reino-de-los-Dulces/p/K1105772"
+        }
       ]
     },
     {
@@ -314,7 +378,10 @@
       "tienda_lista": "Amazon",
       "busqueda": "Lexibook Stitch despertador 3D luz sonidos",
       "enlaces": [
-        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0H4MK9TFD"}
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B0H4MK9TFD"
+        }
       ]
     },
     {
@@ -327,19 +394,27 @@
       "tienda_lista": "Amazon",
       "busqueda": "Lexibook Stitch walkie talkies video",
       "enlaces": [
-        {"tienda": "Amazon", "url": "https://www.amazon.es/dp/B0HKRX9BZ1"}
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B0HKRX9BZ1"
+        }
       ]
     },
     {
       "id": "barbie-cascanueces-bailarina",
-      "nombre": "Barbie en El Cascanueces – Muñeca bailarina con tutú sorpresa",
+      "nombre": "Barbie en El Cascanueces – Clara con tutú sorpresa",
       "para": "Las dos",
       "estado": "pendiente",
       "nota": "",
       "precio_lista": 27.29,
       "tienda_lista": "Amazon",
       "busqueda": "Barbie Cascanueces muñeca tutú sorpresa JLW53",
-      "enlaces": []
+      "enlaces": [
+        {
+          "tienda": "Toys R Us",
+          "url": "https://www.toysrus.es/Barbie-en-el-Cascanueces-Clara-con-tut%C3%BA/p/K1105770"
+        }
+      ]
     },
     {
       "id": "holawatch-k-fun",
@@ -403,7 +478,7 @@
       "estado": "pendiente",
       "fuera_de_carta": true,
       "nota": "Fuera de carta",
-      "precio_lista": 24.90,
+      "precio_lista": 24.9,
       "busqueda": "El pequeño restaurante de Agustín juego de rol",
       "enlaces": []
     },

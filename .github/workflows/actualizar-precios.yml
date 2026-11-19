@@ -5,6 +5,11 @@ on:
     # 07:00 y 19:00 UTC (08:00 y 20:00 en Sevilla en invierno)
     - cron: "0 7,19 * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "web/data/productos.json"
+      - "scripts/**"
 
 permissions:
   contents: write
@@ -35,7 +40,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add web/data/precios.json
+          git add web/data/precios.json diagnostico/
           if git diff --cached --quiet; then
             echo "No hay cambios que guardar."
           else

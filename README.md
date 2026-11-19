@@ -8,7 +8,15 @@ Página para seguir los precios de la lista de Reyes de Alba y Lucía (y, más a
   - `web/data/productos.json`: la lista de productos, para quién son, si ya están comprados y los enlaces de cada tienda.
   - `web/data/precios.json`: el historial de precios. Lo escribe el robot, no hace falta tocarlo.
 - **El robot** (`scripts/actualizar_precios.py`) se ejecuta solo con GitHub Actions a las 08:00 y a las 20:00 (hora de Sevilla). Visita cada enlace, lee el precio y lo guarda. Render vuelve a publicar la web en cuanto cambia el historial.
-- También se puede lanzar a mano desde la pestaña **Actions** del repositorio → *Actualizar precios de Mi Mercado* → *Run workflow*.
+- También se lanza solo cada vez que se cambia `productos.json`, y se puede lanzar a mano desde la pestaña **Actions** del repositorio → *Actualizar precios de Mi Mercado* → *Run workflow*.
+
+## Qué muestra cada juguete
+
+- La foto del producto (sacada de la tienda).
+- El mejor precio entre todas las tiendas y la diferencia con el precio de la lista.
+- Una pestaña por tienda con su precio, si está bajando o subiendo, una gráfica del historial y la puntuación de las opiniones (estrellas y número de opiniones; en Amazon, también su resumen de lo que opinan los clientes).
+
+Si una tienda no deja leer el precio, `diagnostico/ultima_revision.json` explica qué pasó en cada enlace.
 
 ## Añadir o cambiar un producto
 

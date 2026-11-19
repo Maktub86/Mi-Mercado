@@ -52,24 +52,31 @@
 
   <template id="plantilla-tarjeta">
     <article class="tarjeta">
-      <div class="tarjeta-cabeza">
-        <span class="persona"></span>
-        <span class="etiqueta-fuera" hidden>Fuera de carta</span>
-      </div>
-      <h2 class="nombre"></h2>
-      <p class="nota"></p>
-      <div class="precio-bloque">
-        <div>
-          <p class="precio"></p>
-          <p class="precio-detalle"></p>
+      <div class="foto">
+        <img alt="" loading="lazy" referrerpolicy="no-referrer" hidden>
+        <span class="foto-vacia" aria-hidden="true">🎁</span>
+        <div class="foto-etiquetas">
+          <span class="persona"></span>
+          <span class="etiqueta-fuera" hidden>Fuera de carta</span>
         </div>
-        <span class="variacion" hidden></span>
       </div>
-      <svg class="grafica" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true" hidden></svg>
-      <ul class="tiendas"></ul>
-      <div class="acciones">
-        <a class="boton buscar-amazon" target="_blank" rel="noopener">Buscar en Amazon</a>
-        <a class="boton comparar" target="_blank" rel="noopener">Comparar tiendas</a>
+      <div class="cuerpo">
+        <h2 class="nombre"></h2>
+        <p class="nota"></p>
+        <div class="precio-bloque">
+          <div>
+            <p class="precio-titulo">Mejor precio</p>
+            <p class="precio"></p>
+            <p class="precio-detalle"></p>
+          </div>
+          <span class="variacion" hidden></span>
+        </div>
+        <div class="pestanas" role="tablist" aria-label="Tiendas"></div>
+        <div class="panel" role="tabpanel"></div>
+        <div class="acciones">
+          <a class="boton buscar-amazon" target="_blank" rel="noopener">Buscar en Amazon</a>
+          <a class="boton comparar" target="_blank" rel="noopener">Comparar tiendas</a>
+        </div>
       </div>
     </article>
   </template>

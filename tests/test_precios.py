@@ -83,5 +83,60 @@ class HistorialTest(unittest.TestCase):
         self.assertEqual(datos["ultima_comprobacion"], "2026-11-20")
 
 
+class FichaTest(unittest.TestCase):
+    def test_ficha_amazon(self):
+        pagina = """<span id="productTitle" class="a-size-large">  Mondo Motors Barbie City Car  </span>
+        <img id="landingImage" data-old-hires="https://m.media-amazon.com/images/I/abc._AC_SL1500_.jpg" src="x">
+        <div id="averageCustomerReviews"><span id="acrPopover" title="4,5 de 5 estrellas"></span>
+        <span id="acrCustomerReviewText" class="a-size-base">1.234 valoraciones</span></div>
+        <div id="product-summary"><h3>Opiniones</h3><p><span>Los clientes opinan que el coche es bonito y fácil de manejar para niñas pequeñas.</span></p>
+        <span>Generado por IA a partir de las reseñas</span></div>"""
+        ficha = ap.ficha_amazon("https://www.amazon.es/dp/B0BJLD278H", pagina)
+        self.assertEqual(ficha["titulo"], "Mondo Motors Barbie City Car")
+        self.assertTrue(ficha["imagen"].endswith("_SL1500_.jpg"))
+        self.assertEqual(ficha["valoracion"], {"media": 4.5, "total": 1234, "maximo": 5})
+        self.assertTrue(ficha["resumen_opiniones"].startswith("Los clientes opinan"))
+        self.assertNotIn("Generado", ficha["resumen_opiniones"])
+        self.assertEqual(ficha["opiniones_url"], "https://www.amazon.es/product-reviews/B0BJLD278H")
+
+    def test_amazon_precio_oculto(self):
+        pagina = '<input type="hidden" name="items[0.base][customerVisiblePrice][amount]" value="23.88">'
+        self.assertEqual(ap.leer_precio("https://www.amazon.es/dp/X", pagina), 23.88)
+
+    def test_ficha_generica(self):
+        pagina = """<meta property="og:image" content="https://tienda.es/foto.jpg">
+        <script type="application/ld+json">{"@type":"Product","name":"Trineo",
+        "image":["https://tienda.es/trineo.jpg"],
+        "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"12"},
+        "offers":{"@type":"Offer","price":39.49}}</script>"""
+        ficha = ap.ficha_generica(pagina)
+        self.assertEqual(ficha["imagen"], "https://tienda.es/trineo.jpg")
+        self.assertEqual(ficha["valoracion"]["media"], 4.8)
+        self.assertEqual(ficha["valoracion"]["total"], 12)
+
+    def test_shopify(self):
+        original = ap.descargar
+        pedidas = []
+        def falso(url, timeout=25, extra=None):
+            pedidas.append(url)
+            return '{"title":"Claire","available":false,"featured_image":"//cdn.shopify.com/a.jpg","variants":[{"price":3499},{"price":2899}]}'
+        ap.descargar = falso
+        try:
+            r = ap.leer_shopify("https://www.toyplanet.com/en/products/monster-high-claire?x=1")
+        finally:
+            ap.descargar = original
+        self.assertEqual(pedidas, ["https://www.toyplanet.com/products/monster-high-claire.js"])
+        self.assertEqual(r["precio"], 28.99)
+        self.assertFalse(r["disponible"])
+        self.assertEqual(r["ficha"]["imagen"], "https://cdn.shopify.com/a.jpg")
+
+    def test_registrar_guarda_ficha(self):
+        hist = {}
+        enlace = {"tienda": "Amazon", "url": "u"}
+        ap.registrar(hist, "p", enlace, "2026-11-19", None, None, "bloqueado", {"imagen": "i.jpg"})
+        self.assertEqual(hist["p"]["u"]["imagen"], "i.jpg")
+        self.assertEqual(hist["p"]["u"]["historial"], [])
+
+
 if __name__ == "__main__":
     unittest.main()

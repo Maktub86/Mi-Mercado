@@ -38,6 +38,19 @@ async function cargar(ruta) {
   return resp.json();
 }
 
+/** Compara la última lectura con el último precio distinto de esa tienda. */
+function tendenciaDe(serie) {
+  if (serie.length < 2) return null;
+  const ultimo = serie[serie.length - 1];
+  for (let i = serie.length - 2; i >= 0; i -= 1) {
+    const diferencia = ultimo.precio - serie[i].precio;
+    if (Math.abs(diferencia) >= 0.01) {
+      return { tipo: diferencia < 0 ? "baja" : "sube", diferencia, desde: serie[i] };
+    }
+  }
+  return { tipo: "igual", desde: serie[0] };
+}
+
 /** Junta la lista con el historial de precios y calcula lo que se muestra. */
 function preparar(lista, precios) {
   const historial = precios.productos || {};
@@ -51,8 +64,13 @@ function preparar(lista, precios) {
         ...enlace,
         serie,
         ultimo,
+        tendencia: tendenciaDe(serie),
         error: info.ultimo_error || null,
         comprobado: info.ultima_comprobacion || null,
+        imagen: info.imagen || null,
+        valoracion: info.valoracion || null,
+        resumen: info.resumen_opiniones || null,
+        opinionesUrl: info.opiniones_url || enlace.url,
       };
     });
 
@@ -74,7 +92,10 @@ function preparar(lista, precios) {
     const referencia = actual ?? p.precio_lista;
     const variacion = actual != null && p.precio_lista != null ? actual - p.precio_lista : null;
 
-    return { ...p, indice, tiendas, mejor, actual, referencia, variacion, serie, minimo };
+    const conFoto = tiendas.find((t) => t.imagen && /amazon/i.test(t.tienda)) || tiendas.find((t) => t.imagen);
+    const imagen = p.imagen || (conFoto ? conFoto.imagen : null);
+
+    return { ...p, indice, tiendas, mejor, actual, referencia, variacion, serie, minimo, imagen };
   });
 }
 
@@ -106,9 +127,8 @@ function pintarChips() {
   }).join("");
 }
 
-function grafica(svg, serie) {
-  if (serie.length < 2) return;
-  const valores = serie.map(([, v]) => v);
+function grafica(svg, valores) {
+  if (valores.length < 2) return;
   const min = Math.min(...valores);
   const max = Math.max(...valores);
   if (max - min < 0.01) return; // precio plano: la gráfica no aporta nada
@@ -131,12 +151,89 @@ function grafica(svg, serie) {
   svg.hidden = false;
 }
 
+function estrellas(valoracion) {
+  const maximo = valoracion.maximo || 5;
+  const porcentaje = Math.max(0, Math.min(100, (valoracion.media / maximo) * 100));
+  return `<span class="estrellas" role="img" aria-label="${valoracion.media} de ${maximo} estrellas">
+    <span style="width:${porcentaje}%"></span></span>`;
+}
+
+function escapar(texto) {
+  return String(texto).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function textoTendencia(t) {
+  if (!t.tendencia) return t.ultimo ? { clase: "igual", texto: "primera lectura" } : null;
+  const { tipo, diferencia, desde } = t.tendencia;
+  const cuando = fechaCorta.format(leerFecha(desde.fecha));
+  if (tipo === "baja") return { clase: "baja", texto: `▼ bajando ${euros.format(-diferencia)}`, detalle: `antes ${euros.format(desde.precio)} (${cuando})` };
+  if (tipo === "sube") return { clase: "sube", texto: `▲ subiendo ${euros.format(diferencia)}`, detalle: `antes ${euros.format(desde.precio)} (${cuando})` };
+  return { clase: "igual", texto: "= estable", detalle: `sin cambios desde el ${cuando}` };
+}
+
+function pintarPanel(panel, p, t) {
+  const partes = [];
+  if (t.ultimo) {
+    const tend = textoTendencia(t);
+    const precios = t.serie.map((e) => e.precio);
+    const min = Math.min(...precios);
+    const max = Math.max(...precios);
+    const lineas = [`leído el ${fechaCorta.format(leerFecha(t.ultimo.fecha))}`];
+    if (tend && tend.detalle) lineas.push(tend.detalle);
+    if (t.serie.length > 1 && max - min >= 0.01) lineas.push(`mín. ${euros.format(min)} · máx. ${euros.format(max)}`);
+    if (t.ultimo.disponible === false) lineas.unshift("agotado");
+    partes.push(`<div class="panel-fila">
+        <span class="panel-precio">${euros.format(t.ultimo.precio)}</span>
+        ${tend ? `<span class="tendencia ${tend.clase}">${tend.texto}</span>` : ""}
+      </div>
+      <p class="panel-detalle">${lineas.join(" · ")}</p>
+      <svg class="grafica" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true" hidden></svg>`);
+    if (t.error) partes.push(`<p class="panel-aviso">Hoy no se pudo leer (${escapar(motivo(t.error))}); se muestra la última lectura.</p>`);
+  } else if (t.error) {
+    partes.push(`<p class="panel-aviso">${escapar(motivo(t.error))}. Pulsa “Ir a la tienda” para ver el precio.</p>`);
+  } else {
+    partes.push(`<p class="panel-aviso">Pendiente de la próxima revisión.</p>`);
+  }
+
+  if (t.valoracion || t.resumen) {
+    const v = t.valoracion;
+    partes.push(`<div class="opiniones">
+      ${v ? `<div class="estrellas-fila">${estrellas(v)} <strong>${v.media.toLocaleString("es-ES")}</strong>
+        ${v.total ? `<span class="total">(${v.total.toLocaleString("es-ES")} opiniones)</span>` : ""}</div>` : ""}
+      ${t.resumen ? `<p class="resumen-opiniones"><em>Resumen de ${escapar(t.tienda.replace(/\s*\(.*\)/, ""))}:</em> ${escapar(t.resumen)}</p>` : ""}
+    </div>`);
+  }
+
+  partes.push(`<div class="panel-fila">
+      <a class="enlace-suave" href="${escapar(t.opinionesUrl)}" target="_blank" rel="noopener">Leer opiniones ↗</a>
+      <a class="boton principal" href="${escapar(t.url)}" target="_blank" rel="noopener">Ir a la tienda</a>
+    </div>`);
+
+  panel.innerHTML = partes.join("");
+  const svg = panel.querySelector(".grafica");
+  if (svg) grafica(svg, t.serie.map((e) => e.precio));
+}
+
+function motivo(error) {
+  if (error.startsWith("bloqueado")) return "la tienda no deja leer el precio automáticamente";
+  if (/404/.test(error)) return "el enlace ya no existe";
+  return "no se encontró el precio en la página";
+}
+
 function tarjeta(p) {
   const nodo = $("#plantilla-tarjeta").content.firstElementChild.cloneNode(true);
   const persona = nodo.querySelector(".persona");
   persona.textContent = p.para;
   persona.classList.add(claseDe(p.para));
   if (p.fuera_de_carta) nodo.querySelector(".etiqueta-fuera").hidden = false;
+
+  const img = nodo.querySelector(".foto img");
+  if (p.imagen) {
+    img.src = p.imagen;
+    img.alt = p.nombre;
+    img.hidden = false;
+    img.addEventListener("error", () => { img.hidden = true; });
+  }
 
   nodo.querySelector(".nombre").textContent = p.nombre;
   const nota = nodo.querySelector(".nota");
@@ -146,17 +243,19 @@ function tarjeta(p) {
 
   const precio = nodo.querySelector(".precio");
   const detalle = nodo.querySelector(".precio-detalle");
+  const titulo = nodo.querySelector(".precio-titulo");
   if (p.actual != null) {
     precio.textContent = euros.format(p.actual);
-    const partes = [`en ${p.mejor.tienda}, ${fechaCorta.format(leerFecha(p.mejor.ultimo.fecha))}`];
+    const partes = [`en ${p.mejor.tienda}`];
     if (p.precio_lista != null) partes.push(`lista: ${euros.format(p.precio_lista)}`);
-    if (p.minimo != null && p.minimo < p.actual) partes.push(`mínimo: ${euros.format(p.minimo)}`);
-    if (p.mejor.ultimo.disponible === false) partes.unshift("agotado");
+    if (p.minimo != null && p.minimo < p.actual) partes.push(`mínimo visto: ${euros.format(p.minimo)}`);
     detalle.textContent = partes.join(" · ");
   } else if (p.precio_lista != null) {
+    titulo.textContent = "Precio de la lista";
     precio.textContent = euros.format(p.precio_lista);
-    detalle.textContent = `precio de la lista${p.tienda_lista ? ` (${p.tienda_lista})` : ""}`;
+    detalle.textContent = p.tienda_lista ? `visto en ${p.tienda_lista}` : "";
   } else {
+    titulo.textContent = "Precio";
     precio.textContent = "Sin precio todavía";
     precio.classList.add("sin-dato");
     detalle.textContent = "busca y añade un enlace para seguirlo";
@@ -165,40 +264,40 @@ function tarjeta(p) {
   if (p.variacion != null) {
     const v = nodo.querySelector(".variacion");
     const centimos = Math.round(p.variacion * 100);
-    if (centimos < 0) { v.textContent = `▼ ${euros.format(-p.variacion)}`; v.classList.add("baja"); }
-    else if (centimos > 0) { v.textContent = `▲ ${euros.format(p.variacion)}`; v.classList.add("sube"); }
-    else { v.textContent = "igual que en la lista"; v.classList.add("igual"); }
+    if (centimos < 0) { v.textContent = `▼ ${euros.format(-p.variacion)} vs lista`; v.classList.add("baja"); }
+    else if (centimos > 0) { v.textContent = `▲ ${euros.format(p.variacion)} vs lista`; v.classList.add("sube"); }
+    else { v.textContent = "igual que la lista"; v.classList.add("igual"); }
     v.hidden = false;
   }
 
-  grafica(nodo.querySelector(".grafica"), p.serie);
-
-  const ul = nodo.querySelector(".tiendas");
-  p.tiendas.forEach((t) => {
-    const li = document.createElement("li");
-    const enlace = document.createElement("a");
-    enlace.href = t.url;
-    enlace.target = "_blank";
-    enlace.rel = "noopener";
-    enlace.textContent = `${t.tienda} ↗`;
-    const valor = document.createElement("span");
-    valor.className = "valor";
-    if (t.ultimo) {
-      valor.textContent = euros.format(t.ultimo.precio);
-      if (t === p.mejor && p.tiendas.length > 1) valor.classList.add("mejor");
-      if (t.error) valor.title = `Última lectura correcta: ${t.ultimo.fecha}. Hoy: ${t.error}`;
-    } else if (t.error) {
-      valor.textContent = t.error.startsWith("bloqueado") ? "la tienda no deja leerlo" : "no se pudo leer";
-      valor.classList.add("fallo");
-      valor.title = t.error;
-    } else {
-      valor.textContent = "pendiente de revisar";
-      valor.classList.add("fallo");
-    }
-    li.append(enlace, valor);
-    ul.append(li);
-  });
-  if (!p.tiendas.length) ul.remove();
+  const pestanas = nodo.querySelector(".pestanas");
+  const panel = nodo.querySelector(".panel");
+  if (p.tiendas.length) {
+    const inicial = p.mejor || p.tiendas[0];
+    p.tiendas.forEach((t, i) => {
+      const boton = document.createElement("button");
+      boton.type = "button";
+      boton.className = "pestana";
+      boton.setAttribute("role", "tab");
+      boton.setAttribute("aria-selected", String(t === inicial));
+      const valor = t.ultimo ? euros.format(t.ultimo.precio) : "—";
+      const tipo = t.tendencia && t.tendencia.tipo;
+      const marca = tipo === "baja" ? ' <span class="flecha-baja">▼</span>' : tipo === "sube" ? ' <span class="flecha-sube">▲</span>' : "";
+      const esMejor = t === p.mejor && p.tiendas.filter((x) => x.ultimo).length > 1;
+      boton.innerHTML = `${escapar(t.tienda)}<small class="${esMejor ? "mejor" : ""}">${valor}${marca}</small>`;
+      boton.addEventListener("click", () => {
+        pestanas.querySelectorAll(".pestana").forEach((b) => b.setAttribute("aria-selected", "false"));
+        boton.setAttribute("aria-selected", "true");
+        pintarPanel(panel, p, t);
+      });
+      boton.dataset.indice = i;
+      pestanas.append(boton);
+    });
+    pintarPanel(panel, p, inicial);
+  } else {
+    pestanas.remove();
+    panel.innerHTML = '<p class="panel-aviso">Todavía no hay tiendas para este juguete. Usa los botones de abajo para buscarlo.</p>';
+  }
 
   const consulta = encodeURIComponent(p.busqueda || p.nombre);
   nodo.querySelector(".buscar-amazon").href = `https://www.amazon.es/s?k=${consulta}`;
