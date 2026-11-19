@@ -6,12 +6,30 @@
       "id": "tocador-princesas-disney",
       "nombre": "Tocador Princesas Disney",
       "para": "Alba",
-      "estado": "comprado",
-      "nota": "Tachado en la lista",
+      "estado": "pendiente",
+      "nota": "",
       "precio_lista": 64.99,
       "tienda_lista": "El Corte Inglés",
       "busqueda": "Tocador Princesas Disney con taburete",
-      "enlaces": [],
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Tocador Princesas Disney"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Tocador Princesas Disney"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Tocador Princesas Disney"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Tocador Princesas Disney"
+        }
+      ],
       "categoria": "reyes"
     },
     {
@@ -731,31 +749,31 @@
       ]
     },
     {
-      "id": "poquer-de-bichos",
-      "nombre": "Juego de cartas Póquer de Bichos (Devir)",
+      "id": "haba-bichos",
+      "nombre": "HABA Bichos – juego de memoria y sumas hasta 10 (2013336004)",
       "para": "Lucía",
       "estado": "pendiente",
       "categoria": "reyes",
-      "nota": "Juego de cartas de bichos",
+      "nota": "Juego de mesa infantil, +6 años",
       "precio_lista": null,
-      "busqueda": "Póquer de bichos Devir juego de cartas",
+      "busqueda": "HABA Bichos juego memoria sumas",
       "enlaces": [
         {
           "tienda": "Amazon",
-          "amazon_buscar": "Póquer de bichos"
+          "amazon_buscar": "HABA Bichos"
         },
         {
           "tienda": "Globerada",
-          "comparador_buscar": "Póquer de Bichos"
+          "comparador_buscar": "HABA Bichos"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "HABA Bichos"
         },
         {
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
-          "buscar": "Póquer de Bichos"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "Póquer de Bichos"
+          "buscar": "HABA Bichos"
         }
       ]
     },
