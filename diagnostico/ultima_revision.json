@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-19T23:00:15+00:00",
+  "fecha": "2026-11-20T08:20:39+00:00",
   "leidos": 91,
   "fallos": 21,
   "enlaces": [
@@ -363,7 +363,7 @@
         },
         {
           "tienda": "Carrefour",
-          "precio": 52.52
+          "precio": 52.39
         }
       ]
     },
@@ -744,7 +744,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 637342,
+        "bytes": 638125,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
