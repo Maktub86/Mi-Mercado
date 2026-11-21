@@ -226,27 +226,22 @@
       "nombre": "Dreamon Heladería – Carrito de helados",
       "para": "Alba",
       "estado": "pendiente",
-      "nota": "También lo pide mucho. Elegir el modelo \"Carrito de helados\"",
+      "nota": "También lo pide mucho. El carrito de helados de madera (48 piezas)",
       "precio_lista": 39.99,
       "tienda_lista": "Amazon",
-      "busqueda": "Dreamon heladeria carrito de helados",
+      "busqueda": "Dreamon helados madera 48 piezas carrito",
       "enlaces": [
         {
           "tienda": "Amazon",
-          "url": "https://www.amazon.es/dp/B0CF1TN1WV"
-        },
-        {
-          "tienda": "Toy Planet",
-          "dominio": "www.toyplanet.com",
-          "buscar": "Dreamon heladería"
+          "url": "https://www.amazon.es/dp/B0DB1TBK7N"
         },
         {
           "tienda": "Globerada",
-          "comparador_buscar": "Dreamon heladería"
+          "comparador_buscar": "Dreamon helados madera"
         },
         {
           "tienda": "Idealo",
-          "comparador_buscar": "Dreamon heladería"
+          "comparador_buscar": "Dreamon helados madera"
         }
       ],
       "categoria": "reyes"
@@ -700,12 +695,20 @@
           "url": "https://www.amazon.es/dp/B0BJLD278H"
         },
         {
+          "tienda": "Amazon",
+          "amazon_buscar": "Mondo Barbie City Car 63698"
+        },
+        {
           "tienda": "Globerada",
-          "comparador_buscar": "Mondo Barbie City Car"
+          "comparador_buscar": "8001011636983"
         },
         {
           "tienda": "Idealo",
-          "comparador_buscar": "Mondo Barbie City Car"
+          "comparador_buscar": "Mondo Barbie City Car 63698"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "8001011636983"
         }
       ],
       "categoria": "reyes"
