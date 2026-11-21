@@ -205,7 +205,7 @@ def github(metodo: str, cuerpo: dict | None = None, crudo: bool = False):
     if metodo == "GET":
         url += f"?ref={RAMA}"
     req = urllib.request.Request(url, method=metodo, data=json.dumps(cuerpo).encode() if cuerpo else None, headers={
-        "Authorization": f"Bearer {os.environ.get('GITHUB_TOKEN', '')}",
+        "Authorization": f"Bearer {os.environ.get('GITHUB_TOKEN', '').strip()}",
         "Accept": "application/vnd.github.raw" if crudo else "application/vnd.github+json",
         "X-GitHub-Api-Version": "2022-11-28",
         "User-Agent": "mi-mercado-api",
@@ -333,7 +333,9 @@ class Manejador(BaseHTTPRequestHandler):
         except LookupError as err:
             self._responder(404, {"error": str(err)})
         except urllib.error.HTTPError as err:
-            mensaje = "GitHub no acepta la clave (revisa GITHUB_TOKEN)" if err.code in (401, 403) else f"GitHub respondió {err.code}"
+            mensaje = {401: "GitHub no reconoce la clave: GITHUB_TOKEN está mal copiada o ha caducado",
+                       403: "La clave de GitHub no tiene permiso para escribir: dale 'Contents: Read and write' en Mi-Mercado",
+                       404: "La clave de GitHub no tiene acceso al repositorio Mi-Mercado"}.get(err.code, f"GitHub respondió {err.code}")
             self._responder(502, {"error": mensaje})
         except Exception as err:  # noqa: BLE001
             self._responder(500, {"error": f"Error inesperado: {type(err).__name__}"})
