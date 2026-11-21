@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-20T19:59:02+00:00",
-  "leidos": 87,
+  "fecha": "2026-11-21T00:22:29+00:00",
+  "leidos": 88,
   "fallos": 21,
   "enlaces": [
     {
@@ -93,7 +93,7 @@
       "ofertas": [
         {
           "tienda": "Amazon Marketplace (Funidelia España)",
-          "precio": 22.39
+          "precio": 22.59
         }
       ]
     },
@@ -173,17 +173,8 @@
     },
     {
       "producto": "dreamon-heladeria",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Dreamon heladería",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "dreamon-heladeria",
       "tienda": "Globerada",
-      "url": "comparador:Dreamon heladería",
+      "url": "comparador:Dreamon helados madera",
       "error": "no encontrado en el comparador"
     },
     {
@@ -202,11 +193,11 @@
       "pagina": "https://www.globerada.com/precios/playmobil-my-life-abuelos-y-bebe-71613.html",
       "ofertas": [
         {
-          "tienda": "Imosver",
+          "tienda": "Amazon Marketplace (Imosver)",
           "precio": 11.23
         },
         {
-          "tienda": "Amazon Marketplace (Imosver)",
+          "tienda": "Imosver",
           "precio": 11.23
         },
         {
@@ -355,7 +346,7 @@
         },
         {
           "tienda": "Carrefour",
-          "precio": 52.28
+          "precio": 52.22
         }
       ]
     },
@@ -378,13 +369,17 @@
     {
       "producto": "mirrormi-fashion",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/minimi-mirrormi-muneca-de-moda-shai-meadows-sheepish.html",
+      "url": "https://www.globerada.com/precios/mga-entertainment-mirrormi-suki-goldpetal-muneca-de-moda-15-articulaciones-255253.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/minimi-mirrormi-muneca-de-moda-shai-meadows-sheepish.html",
+      "pagina": "https://www.globerada.com/precios/mga-entertainment-mirrormi-suki-goldpetal-muneca-de-moda-15-articulaciones-255253.html",
       "ofertas": [
         {
+          "tienda": "Electropolis",
+          "precio": 33.63
+        },
+        {
           "tienda": "Amazon",
-          "precio": 34.49
+          "precio": 34.99
         }
       ]
     },
@@ -433,9 +428,10 @@
       "producto": "cherry-pets-confetti-tree",
       "tienda": "Carrefour",
       "url": "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p",
-      "precio": 24.99,
-      "metodo": "generico",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 403",
+      "pistas": {}
     },
     {
       "producto": "cherry-pets-confetti-tree",
@@ -459,6 +455,10 @@
         {
           "tienda": "Juguettos",
           "precio": 24.99
+        },
+        {
+          "tienda": "Electropolis",
+          "precio": 29.75
         }
       ]
     },
@@ -523,7 +523,7 @@
     {
       "producto": "barbie-coche-radiocontrol",
       "tienda": "Globerada",
-      "url": "comparador:Mondo Barbie City Car",
+      "url": "comparador:8001011636983",
       "error": "no encontrado en el comparador"
     },
     {
@@ -659,11 +659,11 @@
           "precio": 39.64
         },
         {
-          "tienda": "Amazon Marketplace (ielectro)",
+          "tienda": "Miravia (ielectro)",
           "precio": 39.95
         },
         {
-          "tienda": "Miravia (ielectro)",
+          "tienda": "Amazon Marketplace (ielectro)",
           "precio": 39.95
         },
         {
@@ -698,16 +698,16 @@
       "pagina": "https://www.globerada.com/precios/haba-2013336004-bichos-juego-infantil-de-mesa-de-memoria-y-calculo-mental-sumas-hasta-10.-mas-6-anos.html",
       "ofertas": [
         {
-          "tienda": "Abacus",
-          "precio": 7.19
-        },
-        {
           "tienda": "Ferretería Ibermadrid",
           "precio": 7.19
         },
         {
+          "tienda": "Abacus",
+          "precio": 7.19
+        },
+        {
           "tienda": "Amazon",
-          "precio": 7.49
+          "precio": 7.99
         },
         {
           "tienda": "Juegos de la Mesa Redonda",
@@ -732,7 +732,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 637517,
+        "bytes": 638127,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
