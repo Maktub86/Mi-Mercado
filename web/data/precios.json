@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-21T00:57:41+00:00",
+  "actualizado": "2026-11-21T01:27:04+00:00",
   "productos": {
     "monster-high-moonspell": {
       "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/": {
@@ -82,7 +82,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/b7265b5f7fa7b4d61f611a4fcfb5d4ee?exp=1795225951&sig=87bb4d92db21a857908c3ed719592a81a6d643f204277a8f4069ba53a237da77",
+        "url": "https://www.globerada.com/out/b7265b5f7fa7b4d61f611a4fcfb5d4ee?exp=1795227719&sig=b438153b7f441b2a7fe3b58ad135b823cea2facbc976247d62574e8b80f3ca2e",
         "via": "Globerada",
         "producto_tienda": "Muñeca Monster High Moonspell Magic Claire",
         "imagen": "https://m.media-amazon.com/images/I/810bti5zX0L.jpg"
@@ -107,7 +107,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/a41b906fd8bd3782e0705805f5141fe2?exp=1795225951&sig=c50a90377ce574c56bbc368be0271c00d8079212ceb4c67a5abd50dd79a73d68",
+        "url": "https://www.globerada.com/out/a41b906fd8bd3782e0705805f5141fe2?exp=1795227719&sig=58d12f708afbc4d215f53ed4d377df21fbc011c8f3fb435ae4256ba4c0d24a60",
         "via": "Globerada",
         "producto_tienda": "Monster High Moonspell Magic, Claire de Luna Muñeca Colección | Bruja clarividente con ropa azul, caldero sorpresa y acc",
         "imagen": "https://m.media-amazon.com/images/I/810bti5zX0L.jpg"
@@ -132,7 +132,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/cb6130f11d9df21144d0605b7fdcc462?exp=1795225951&sig=7b33892cb90d56fb5a49e50e5627df4f3e5ae83258eedecc0385504e5819e481",
+        "url": "https://www.globerada.com/out/cb6130f11d9df21144d0605b7fdcc462?exp=1795227719&sig=dc01e0a47bc3292b7b20ce92b30fcc1695dca7f20418a17dbc96457ffafe57a7",
         "via": "Globerada",
         "producto_tienda": "Monster High Moonspell Magic Muñeca Claire de Luna - ",
         "imagen": "https://m.media-amazon.com/images/I/810bti5zX0L.jpg"
@@ -157,7 +157,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/aaa9cd11ee7945fd2322141f133434bd?exp=1795225951&sig=f8b6a85d815120161a9a1f4a24322a9c0ffc133501b4e1e764e636c2aa82418e",
+        "url": "https://www.globerada.com/out/aaa9cd11ee7945fd2322141f133434bd?exp=1795227719&sig=55fae91812104b8b57d697a8fb18c2ec4254acadf221363ab56fc643dbc365f4",
         "via": "Globerada",
         "producto_tienda": "Muñeca Claire Clairvoyant Moonspell Magic Monster High",
         "imagen": "https://m.media-amazon.com/images/I/810bti5zX0L.jpg"
@@ -264,7 +264,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/fa3178c7bbf0941c237c721a0cdf36d5?exp=1795225981&sig=270aee22c32396e640b50ad484cb802a0b8c7081d95f3694caefa6ba2259b21b",
+        "url": "https://www.globerada.com/out/fa3178c7bbf0941c237c721a0cdf36d5?exp=1795227750&sig=7ca4d204846e1da76e1f222e9db04674cbf73cc84e190b999dfe374c97ba5627",
         "via": "Globerada",
         "producto_tienda": "VTech - KidiSecrets Locker Taquilla Secreta, Caja Fuerte con código Secreto, Joyero niños, Personalizable, Pantalla LCD,",
         "imagen": "https://m.media-amazon.com/images/I/412rbssSeuL._SL500_.jpg"
@@ -339,7 +339,8 @@
         "url": "https://www.globerada.com/out/141dc29e761a8e766a5cad5c9fbe6129?exp=1795225992&sig=9c057d3d6d43e667dfded53f9e174f362e20761473326e6fbb37507fd88dab85",
         "via": "Globerada",
         "producto_tienda": "PLAYMOBIL My Life Abuelos y Bebé",
-        "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
+        "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg",
+        "ultimo_error": "ya no aparece en el comparador"
       },
       "comparador:Playmobil 71613#Imosver": {
         "tienda": "Imosver",
@@ -364,7 +365,8 @@
         "url": "https://www.globerada.com/out/600bc82e6e1a1495ceed45a4ebf54157?exp=1795225992&sig=bfe9f9605874520b424da3d22baabb360b33dd91ee6d5577cb52c7921fc1eb91",
         "via": "Globerada",
         "producto_tienda": "Abuelos Con Bebe Playmobil",
-        "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
+        "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg",
+        "ultimo_error": "ya no aparece en el comparador"
       },
       "comparador:Playmobil 71613#Miravia (The Box of Toys)": {
         "tienda": "Miravia (The Box of Toys)",
@@ -378,14 +380,18 @@
             "fecha": "2026-11-20",
             "precio": 13.71,
             "disponible": true
+          },
+          {
+            "fecha": "2026-11-21",
+            "precio": 13.71,
+            "disponible": true
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/6558a24bd0e08f86c3b57c01affb94e5?exp=1795166167&sig=632c532cfd9593e84130f1fb01dc5b43a7e20fa8b543aebb9032a185f4717394",
+        "url": "https://www.globerada.com/out/6558a24bd0e08f86c3b57c01affb94e5?exp=1795227764&sig=8974e79cd3aa202ba09b318d0c4ab170976ffa97bbcc6eff5a44ed4f7d2c4f2f",
         "via": "Globerada",
         "producto_tienda": "Playmobil - Abuelos y bebé Playmobil Life. (71613)",
-        "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg",
-        "ultimo_error": "ya no aparece en el comparador"
+        "imagen": "https://img3.slatic.net/g/fb/kf/E5078751dfdaf42b6bb551444961e55eex.png"
       },
       "comparador:Playmobil 71613#Pixmania": {
         "tienda": "Pixmania",
@@ -410,7 +416,8 @@
         "url": "https://www.globerada.com/out/14746e780216615350bf37965ffd978e?exp=1795225992&sig=fc476738057e882bacff98778c40bae940d8d37aaf31da047d355da75fc69265",
         "via": "Globerada",
         "producto_tienda": "Playmobil 71613 - Abuelos con bebé - Nuevo",
-        "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
+        "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg",
+        "ultimo_error": "ya no aparece en el comparador"
       },
       "comparador:Playmobil 71613#OnBuy (AMI VENTURES INC.)": {
         "tienda": "OnBuy (AMI VENTURES INC.)",
@@ -435,7 +442,8 @@
         "url": "https://www.globerada.com/out/c1ae99f0be4391559d84dcd625d704e4?exp=1795225992&sig=f97c0edc0be1a3f9641a0c42dea5c596f5884988cc290bb4ff85c7b53d295f44",
         "via": "Globerada",
         "producto_tienda": "PLAYMOBIL Abuelos con beb",
-        "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
+        "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg",
+        "ultimo_error": "ya no aparece en el comparador"
       }
     },
     "carro-limpieza": {
@@ -485,7 +493,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/1e246bbc9f4b303e91ec221ca0b15713?exp=1795225999&sig=40493686d3052125341c0c69908a0f82ad493e7be2ce4308d6f000dba72fad19",
+        "url": "https://www.globerada.com/out/1e246bbc9f4b303e91ec221ca0b15713?exp=1795227773&sig=cd01d63180c5014bfad26d0c4927dc11977ebe88091b6f9f0d9b6691adae7805",
         "via": "Globerada",
         "producto_tienda": "Carrito de limpieza Klein Vileda",
         "imagen": "https://m.media-amazon.com/images/I/41BMonsynGL._SL500_.jpg"
@@ -542,7 +550,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/3ff30398d115db623eef07622c3a8873?exp=1795225999&sig=90f7aece104f68da33e7644503f1edf5fd93a7550e6c63bdc2ed19ef5c409c8b",
+        "url": "https://www.globerada.com/out/3ff30398d115db623eef07622c3a8873?exp=1795227773&sig=bcb4e6e2f966ef716b511aa28415bdb37521afefe0fb3d48563667f19cd7b7ed",
         "via": "Globerada",
         "producto_tienda": "Theo Klein Vileda Carrito de limpieza, juguete de rol a partir de 3 años | Con fregona, cubo, escoba, juego de barrido, ",
         "imagen": "https://m.media-amazon.com/images/I/41BMonsynGL._SL500_.jpg"
@@ -583,7 +591,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/836e445f5672690742a3b9b86ec72dd4?exp=1795225999&sig=9a40acaeb0a8449b94f710d4d36c5a99e31fbf88ec13b2a34e779b6adf73ed97",
+        "url": "https://www.globerada.com/out/836e445f5672690742a3b9b86ec72dd4?exp=1795227773&sig=fbb2e958b1b7f5dbe90b5d77b2c9b1e14863360d27b83c9bad047f5f66563706",
         "via": "Globerada",
         "producto_tienda": "Carrito de limpieza",
         "imagen": "https://m.media-amazon.com/images/I/41BMonsynGL._SL500_.jpg"
@@ -608,7 +616,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/037758d9c8355ca356deb3545f1b4597?exp=1795225999&sig=ae8c7831f672b2f85be80eaa2d161084f878e2ee7057dfadec7509836007acaa",
+        "url": "https://www.globerada.com/out/037758d9c8355ca356deb3545f1b4597?exp=1795227773&sig=4a29c67ca67f6cb6762c70c901d722fba17271d895f94b09db8df2bc106e6a87",
         "via": "Globerada",
         "producto_tienda": "Carro Limpieza Vileda",
         "imagen": "https://m.media-amazon.com/images/I/41BMonsynGL._SL500_.jpg"
@@ -649,7 +657,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/128c4d2376add07ff850f19409919e58?exp=1795225999&sig=86cb6ce1350eb68fc5ac80be6c911a22a0c4b3cff2a440ff341f909c56050c5f",
+        "url": "https://www.globerada.com/out/128c4d2376add07ff850f19409919e58?exp=1795227773&sig=7dd6462e8e79247932d8bfdce2bfefdb2bbd1cbf4826100dc57ea1bc3185a083",
         "via": "Globerada",
         "producto_tienda": "Carro de limpieza infantil Klein Vileda con accesorios y cubo escurridor 60 cm",
         "imagen": "https://m.media-amazon.com/images/I/41BMonsynGL._SL500_.jpg"
@@ -748,7 +756,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/6f7c2550321ab6eb0dc80fc754dab52c?exp=1795226049&sig=e745fdb8df6f8eaf6ad48acd7d1bb2de9a860964de2ff39767b9e3890cb69392",
+        "url": "https://www.globerada.com/out/6f7c2550321ab6eb0dc80fc754dab52c?exp=1795227827&sig=e8e01e663500eeec69ae76286421e1bd43aa67ad2d6baeeff2d06540623eddfe",
         "via": "Globerada",
         "producto_tienda": "Crazy Chic Diseña tus uñas",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -773,7 +781,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/ac21c5be643bf8dea90fb74a15c0e679?exp=1795226049&sig=73e9cff28c15fe422828f18935d40a9d5fa818998b8483319e907849d5ac1275",
+        "url": "https://www.globerada.com/out/ac21c5be643bf8dea90fb74a15c0e679?exp=1795227827&sig=8df9bc5146ddf93d5ce0c6b4d201acf41daf5021e92bd4d1f9c0b3ed18dacfc6",
         "via": "Globerada",
         "producto_tienda": "Clementoni - 18730 - Crazy Chic - Nail Art Studio - Set De Manicura Infantil, con Purpurina Y Secador, A Partir De 6 Año",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -798,7 +806,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/08e7836724f5236c2ede671da6f4fe6b?exp=1795226049&sig=3bd5dd587766fa60334fe6274683b78b60014103dc73b87ed9a8c7e8c540f0d4",
+        "url": "https://www.globerada.com/out/08e7836724f5236c2ede671da6f4fe6b?exp=1795227827&sig=e1d791ecd8428c7f0ad16227343a4fa652ce3c3995f0cb36579f231214d7484b",
         "via": "Globerada",
         "producto_tienda": "Crazy Chic Beauty Diseña Tus uñas de Luxe",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -823,7 +831,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/c2b167f6e4d4896cb57c534382749e82?exp=1795226049&sig=35afeee69b6712e031d69c2980eb61d580232edf6465ca7fcf743f1fbfaa678c",
+        "url": "https://www.globerada.com/out/c2b167f6e4d4896cb57c534382749e82?exp=1795227827&sig=869fed4b60ee420ffd21190be29381a1a1f7a1be2a9d5c6a255be98af34144ce",
         "via": "Globerada",
         "producto_tienda": "Nail Art Studio",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -848,7 +856,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/0c7b44d2873d9e9bea8d5ec1b9b99a29?exp=1795226049&sig=8f13d10c3cb0f9e843e0fbfa4a2d6881ccbb7a1e67f54513bbbb2e0bcc870e1b",
+        "url": "https://www.globerada.com/out/0c7b44d2873d9e9bea8d5ec1b9b99a29?exp=1795227827&sig=bde706469ef1b3ef47e7942b12ab64c7ff12c0f83cfbbf4c19c285757728c640",
         "via": "Globerada",
         "producto_tienda": "Diseña tus Uñas de Luxe",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -873,7 +881,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/b5bcac48197d3d4be592357441c964ec?exp=1795226049&sig=f65a4cd15fcbe537b9fb85d04747b03842a452ae47dddc512f19be332438c888",
+        "url": "https://www.globerada.com/out/b5bcac48197d3d4be592357441c964ec?exp=1795227827&sig=91e02ab7514e249079c4b5ebdecb95c50d706bb91258a60a2f8a5c6582e57459",
         "via": "Globerada",
         "producto_tienda": "Nail art studio 18730 CLEMENTONI",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -948,7 +956,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/9120d37703eb7f73acfc084c249c77f8?exp=1795226060&sig=ecca56ea4830dcf4270fd770c6859ea84543fd543e2a3073d71c0c4e201d342b",
+        "url": "https://www.globerada.com/out/9120d37703eb7f73acfc084c249c77f8?exp=1795227837&sig=2e20c685a4b7b6252e8b8a758b56be8dddc28d1bb470662561e3c07a535358a4",
         "via": "Globerada",
         "producto_tienda": "Cherry Pets Confetti Tree Koala Twin - ",
         "imagen": "https://m.media-amazon.com/images/I/71axs5oBh4L.jpg"
@@ -979,7 +987,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/bcb09cdab8abab5774c8dbee0799493e?exp=1795226060&sig=8a33af2e305d77f0c1447c25988813bdacacb57f92ea22d481ad114e11721221",
+        "url": "https://www.globerada.com/out/bcb09cdab8abab5774c8dbee0799493e?exp=1795227837&sig=8c3e51a80409424fae997768f085d1e909c13b500a7c0c4dccc31dd60e7a7819",
         "via": "Globerada",
         "producto_tienda": "Cherry Pets Confetti Tree Casa Árbol Juguete con Confeti y Figuras Gemelas Perladas, Playset con Tobogán, Columpio y Acc",
         "imagen": "https://m.media-amazon.com/images/I/71axs5oBh4L.jpg"
@@ -994,7 +1002,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/7865c5caaaf9c2fb8141afe655866a07?exp=1795226060&sig=6854ca272a3ab108da1725015fec0c1eb0b926ee0a09174f577513acc72b9937",
+        "url": "https://www.globerada.com/out/7865c5caaaf9c2fb8141afe655866a07?exp=1795227837&sig=1c3ae694400c8822df75b30cad1e2439e0c7bb79383b8a4459fbb1e526ba69b4",
         "via": "Globerada",
         "producto_tienda": "Magicbox Cherry Pets Confetti Tree Casa Árbol Juguete con Confeti y Figuras Gemelas Perladas, Playset con Tobogán, Colum",
         "imagen": "https://m.media-amazon.com/images/I/71axs5oBh4L.jpg"
@@ -1065,7 +1073,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/9417b93a071105b5d1f63c5843ef2e72?exp=1795226067&sig=9dafbe968c2b709740162b583767f99f3bbb59e3104b24292c203130d582b5cc",
+        "url": "https://www.globerada.com/out/9417b93a071105b5d1f63c5843ef2e72?exp=1795227845&sig=70ac390736f1215775b26f0d603f4d820a8d38fe02f9cbcebb1c64d9403dccee",
         "via": "Globerada",
         "producto_tienda": "Educa - Magnetics | Juego Educativo de construcción 3D magnético con 61 Piezas para niños, construye Figuras geométricas",
         "imagen": "https://m.media-amazon.com/images/I/51NjYiaHQiL._SL500_.jpg"
@@ -1090,7 +1098,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/9658f343b170742b5720df9885df8af0?exp=1795226067&sig=37ae2ee2e443e3ff558dbe8d8a83f7e0ff9d88daffa82817d9ceb35ef597f336",
+        "url": "https://www.globerada.com/out/9658f343b170742b5720df9885df8af0?exp=1795227845&sig=38b9cb6790841db72b61801dad1bab062dbf3f3b42777d4c2209ad499ed9cb81",
         "via": "Globerada",
         "producto_tienda": "Juego 61 Piezas Educa Magnetics",
         "imagen": "https://m.media-amazon.com/images/I/51NjYiaHQiL._SL500_.jpg"
@@ -1206,7 +1214,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/1df81f2e4b61248578b528aa987f8b95?exp=1795226088&sig=f8aa6f382452dd3d54d73792e63f81e2dd2b41543cb18090aef24d30ea5270e6",
+        "url": "https://www.globerada.com/out/1df81f2e4b61248578b528aa987f8b95?exp=1795227865&sig=581b85af1399d2381bfc99f1d0c631dcf4b841238f19b98036881435826666f0",
         "via": "Globerada",
         "producto_tienda": "Barbie en Cascanueces Mundo de Dulces Caballo y Trineo | Cabello colorido con aroma, peine y accesorios con fragancia a ",
         "imagen": "https://m.media-amazon.com/images/I/71WWnzLoD9L.jpg"
@@ -1333,7 +1341,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/b44c9647b10ffac4e8bfb5c476e070a1?exp=1795226040&sig=727037a1428001a63a62f14e488c5e97b2135bb914c6bb543418a7d0ddf80f82",
+        "url": "https://www.globerada.com/out/b44c9647b10ffac4e8bfb5c476e070a1?exp=1795227819&sig=6cd430246759bc607846ca623bd2b2bb93c65f7419364e006c7ebaae32b4de56",
         "via": "Globerada",
         "producto_tienda": "Mirror Mi Suki Goldpetal Fashion Doll - Muñeca de Moda Headphones On, con más de 15 Puntos articulados",
         "imagen": "https://www.electropolis.es/media/catalog/product/i/m/img475853fddfbc632934b6d0d04b5260188bad191.jpg"
@@ -1348,7 +1356,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/2cea82c4f4d06c26de4edfdb6e4f4794?exp=1795226040&sig=cd70dd0f7747b3e2cbd24bb765a7b2fc881c9bb0f36467d0174a061e95a9b569",
+        "url": "https://www.globerada.com/out/2cea82c4f4d06c26de4edfdb6e4f4794?exp=1795227819&sig=cc59a986387de3b52b2771debf7d98a51e92d397b229d935de85a9b062066ebd",
         "via": "Globerada",
         "producto_tienda": "Mirror Mi Suki Goldpetal Fashion Doll - Muñeca de Moda Headphones On, con más de 15 Puntos articulados",
         "imagen": "https://www.electropolis.es/media/catalog/product/i/m/img475853fddfbc632934b6d0d04b5260188bad191.jpg"
@@ -1412,7 +1420,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/a28caf81e61c60d0a35355c68ecc43f9?exp=1795226115&sig=fe06ba9f775701da51692799ac6d655c9bdf6d6734323617f5a8b8853d7e4bda",
+        "url": "https://www.globerada.com/out/a28caf81e61c60d0a35355c68ecc43f9?exp=1795227891&sig=90c04596f96bc27bed12813abfcb9083f22a53508fdf2b051a45b1c8b8245e13",
         "via": "Globerada",
         "producto_tienda": "Barbien El Cascanueces Muñeca Clara | Función sorpresa de tutú, tutú ombré, collar relicario de corazón y caja de regalo",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -1437,7 +1445,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/11d08f1ab7f6537a57f759aa6d4fb947?exp=1795226115&sig=cb3154100f10c924a762ceab4f35ee3952d7bed13a33aeea2720701a8394a43a",
+        "url": "https://www.globerada.com/out/11d08f1ab7f6537a57f759aa6d4fb947?exp=1795227891&sig=6bffe6abef2f75cff1b39dc2f9032a99b446edc471c84a0138df37d4dc629197",
         "via": "Globerada",
         "producto_tienda": "Mattel Barbie Cascanueces bailarina Clara con falda tutu cambiante",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -1462,7 +1470,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/3c2615c7cd676996d97c1a747f389e9c?exp=1795226115&sig=579352c6971082f31960897dca91e7f924557831a6725023fa19145ba7d1c65d",
+        "url": "https://www.globerada.com/out/3c2615c7cd676996d97c1a747f389e9c?exp=1795227891&sig=9679eb00b8a0c75a2b258d73c1460238f691d45e49f151676ae185adfd7f5f0e",
         "via": "Globerada",
         "producto_tienda": "Barbie en el Cascanueces Muñeca con Tutú - ",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -1487,7 +1495,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/83ee14e578072e351838face3b8b803e?exp=1795226115&sig=75c1f45c88a5a5c8d50e2a35857ffde61cb66c5f610a2f4aef110eb632dc12b0",
+        "url": "https://www.globerada.com/out/83ee14e578072e351838face3b8b803e?exp=1795227891&sig=db1237707cbc2a32f4744c7dcd04b72b209a929e72e4a8fd0021631a9619a9cb",
         "via": "Globerada",
         "producto_tienda": "Muñeca Clara Barbie In The Nutcracker",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -1512,7 +1520,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/9758a34b57fd9dc77e0cf0f94212bd19?exp=1795226115&sig=d64d1075895e5402baca24bd78d51238b09e65dacd91e56c07afc9a3a38b6699",
+        "url": "https://www.globerada.com/out/9758a34b57fd9dc77e0cf0f94212bd19?exp=1795227891&sig=9c9f73510988cbf6476ef3432734d17dddc89846ae7756acae917ea1e449a70f",
         "via": "Globerada",
         "producto_tienda": "Barbie Muñeca Clara Barbie en El Cascanueces - con tutú transformable - Nuevo",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -1593,7 +1601,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/e408f38ce674576c2e1879058e65a4ae?exp=1795226123&sig=8a3289b2e6bf6928d2af51be0f524071f22ceff541121cc07271b31cc75a68f5",
+        "url": "https://www.globerada.com/out/e408f38ce674576c2e1879058e65a4ae?exp=1795227902&sig=059849f4754c40dfdd04f54e70716006c858f71e19be7e9f93b5e6e8dce0327a",
         "via": "Globerada",
         "producto_tienda": "Cefa - Reloj Inteligente Holawatch K-Fun Negro pantalla táctil 4\", llamada SOS, bloqueo de llamadas, despertador, modo e",
         "imagen": "https://img3.slatic.net/g/fb/kf/Ecab5dc6101d441558dfa68ff1db21c28y.png"
@@ -1618,7 +1626,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/69f9b9e848eb1155ed30d7e05c7a6110?exp=1795226123&sig=f515d906b1939f012e628fc2e6d1600b8de7c80b5d00a1c4009206d7f5cb6466",
+        "url": "https://www.globerada.com/out/69f9b9e848eb1155ed30d7e05c7a6110?exp=1795227902&sig=5c2f9018b1847b76ca52ac928e4f5d7bf1a4e268dbe9c758a80925359a624524",
         "via": "Globerada",
         "producto_tienda": "Hola Watch K-Fun (+3 años) Negro / Smartwatch para niños 1.4\"",
         "imagen": "https://img3.slatic.net/g/fb/kf/Ecab5dc6101d441558dfa68ff1db21c28y.png"
@@ -1643,7 +1651,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/b4745b3c7ebf904b01ac6c82458a94e6?exp=1795226123&sig=23a53a6316ec357deb6c71fb61904759f09eb07f1f5988f00e9f3837d61cb010",
+        "url": "https://www.globerada.com/out/b4745b3c7ebf904b01ac6c82458a94e6?exp=1795227902&sig=0bac567fa5fee474b52256e524901d0a3d7782b54949732b2e5e22265a867f29",
         "via": "Globerada",
         "producto_tienda": "Cefa Toys Reloj Inteligente HolaWatch K-Fun Negro con Localización LBS",
         "imagen": "https://img3.slatic.net/g/fb/kf/Ecab5dc6101d441558dfa68ff1db21c28y.png"
@@ -1668,7 +1676,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/b70b8558d9db24689bb74bceb491e45d?exp=1795226123&sig=9cb9d5ef920927efa0e19735d4d784947ef114a4d462cf0489460cb949cc7e38",
+        "url": "https://www.globerada.com/out/b70b8558d9db24689bb74bceb491e45d?exp=1795227902&sig=a37af45f6d2eadef5508da30104d18f3f0f256a68a402be0fd7cf3e57a62df8c",
         "via": "Globerada",
         "producto_tienda": "Hola watch Cefa Toys Reloj Inteligente HolaWatch K-Fun Negro con Localización LBS",
         "imagen": "https://img3.slatic.net/g/fb/kf/Ecab5dc6101d441558dfa68ff1db21c28y.png"
@@ -1761,7 +1769,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/29a94c04cb797cdcef757d0bd1efc3db?exp=1795226226&sig=f450d061adc062f9b970b4bd27b2aeaa4c551188f2ab6367aaeeca600a77fa8b",
+        "url": "https://www.globerada.com/out/29a94c04cb797cdcef757d0bd1efc3db?exp=1795227992&sig=1b61afce8370347c5305ce6fe2005d67635eb3438a07de42144098c7b8fd4ca0",
         "via": "Globerada",
         "producto_tienda": "Monster High Dawn of the Dance Cleo De Nile Muñeca Creeproducción | Boo-riginal Creeproduction Cleo De Nile con vestido ",
         "imagen": "https://m.media-amazon.com/images/I/71jDTn3vmYL.jpg"
@@ -1812,7 +1820,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/f1fdadfa67ef734eb58f6ffd22cb42d3?exp=1795226235&sig=3c2500ce6dbf239cae5f38482c34afc9818f3f3e61a158d0e8f74e8b3a3c49c4",
+        "url": "https://www.globerada.com/out/f1fdadfa67ef734eb58f6ffd22cb42d3?exp=1795228002&sig=7073908a52c1c1490b1d7f9686548f1d62ca989027a951aec068eafcac02e892",
         "via": "Globerada",
         "producto_tienda": "Monster High Frankie Stein Muñeca con Perro | Frankenmonster con suéter y falda negra, mascota Watzie y 7 accesorios: au",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
@@ -1858,7 +1866,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/ba331f7560cfc810fb112545dfe08ab8?exp=1795226235&sig=923d9c561ab0b19824a6b98a1e5e76a3a2238a2ccc1b49dc610c4d2f48061bda",
+        "url": "https://www.globerada.com/out/ba331f7560cfc810fb112545dfe08ab8?exp=1795228002&sig=b70bdc9389f38eb903b6698562b03da9a8e5785d89d3cf711801538fd575d8bd",
         "via": "Globerada",
         "producto_tienda": "Monster High Muñeca Frankie Stein con Mascota Watzie y 7 Accesorios - ",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
@@ -1883,7 +1891,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/4cdd40de5d2102e553bd0f26cc5a4473?exp=1795226235&sig=29273fed99e2c56953d0b745d8f467aca5ad36469e60858dd8e3fbde8ed49dee",
+        "url": "https://www.globerada.com/out/4cdd40de5d2102e553bd0f26cc5a4473?exp=1795228002&sig=bfe165c209568fd7ad3c1fb850369515f0b8440e226dcee3616f66d585e138a6",
         "via": "Globerada",
         "producto_tienda": "Muñeca Articulada Monster High Frankie Stein con Mascota y 7 Accesorios",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
@@ -1908,7 +1916,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/af3effbd687f1633a1cbf3033bafea0a?exp=1795226235&sig=fe052b54fa071e15463e3c4396cd8c870960c1d6bbc2799dc1f381b8c02a3ea2",
+        "url": "https://www.globerada.com/out/af3effbd687f1633a1cbf3033bafea0a?exp=1795228002&sig=9b82a76ca0e733d64bb2162069c3ca9c3208f4d9dfb0ffda51485437cd203d4a",
         "via": "Globerada",
         "producto_tienda": "Mattel Monster High muñeca monstruo, FRANKIE, JHK31",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
@@ -1967,7 +1975,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/9fe3dc78f991aea3453e90dfcb7de11c?exp=1795226240&sig=39c9d897debde25ffe7111457127631cbb535947c66c7069372391294d6e3341",
+        "url": "https://www.globerada.com/out/9fe3dc78f991aea3453e90dfcb7de11c?exp=1795228007&sig=6db6913f10e334b604f01deb0becf8d2cc84e73f2349cdb87664671a714b9584",
         "via": "Globerada",
         "producto_tienda": "Escuela de Monstruos - El libro de colorear megamonstruoso",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw89bf88e0/images/large/1546768.50.jpg"
@@ -1992,7 +2000,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/c16c4cf18f8f4a442fac1322a29c7a60?exp=1795226240&sig=3754e85b7f7e76fe823cd8dd4274afb3feb551cc88ae89574a7e3425438ef07d",
+        "url": "https://www.globerada.com/out/c16c4cf18f8f4a442fac1322a29c7a60?exp=1795228007&sig=9cf93dca2faabb0ad343e0ad3581d6e2e990d6e4bced575ac253f1c582069c8d",
         "via": "Globerada",
         "producto_tienda": "Escuela De Monstruos - El Libro De Colorear Megamonstruoso - Rippin, Sally",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw89bf88e0/images/large/1546768.50.jpg"
@@ -2039,7 +2047,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/5319c49729d4488484b30111b93222cb?exp=1795226247&sig=71a0f0704aec7a6cc3ebd4762c2f02f7d769e45febfa07a75f617675e1e51bfd",
+        "url": "https://www.globerada.com/out/5319c49729d4488484b30111b93222cb?exp=1795228010&sig=93801ab3a37d725291c81b9ef6906573c923d2f8c2d4ad98f5aaa9f5c3cc0623",
         "via": "Globerada",
         "producto_tienda": "Hummel Real Betis Tercera Equipación 2026-2027 Azul oscuro / Negro L",
         "imagen": "https://www.futbolemotion.com/imagesarticulos/366317/750/camiseta-hummel-real-betis-tercera-equipacion-2026-2027-true-blue-0.jpg"
@@ -2064,7 +2072,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/7bb7b213692f748bc2f8dc9c1b2fad19?exp=1795226247&sig=5dff75b0901a7fe6bd8a1592fe508d12067dca6e92be6c2b78cc7fb8040a3226",
+        "url": "https://www.globerada.com/out/7bb7b213692f748bc2f8dc9c1b2fad19?exp=1795228010&sig=9d9bd59ca5366e77a7f5e32e751e2b6c120fa98e8a8646396e0cd1712a338fc1",
         "via": "Globerada",
         "producto_tienda": "hummel Camiseta De Manga Corta Tercera Equipación Real Betis Balompie 26/27 L",
         "imagen": "https://www.futbolemotion.com/imagesarticulos/366317/750/camiseta-hummel-real-betis-tercera-equipacion-2026-2027-true-blue-0.jpg"
@@ -2109,7 +2117,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/069a8db397958b1d0f380bb2512776a2?exp=1795226148&sig=a10888944480577fd81a79a861f69a2692f7b9651da53ae41687f83488a21962",
+        "url": "https://www.globerada.com/out/069a8db397958b1d0f380bb2512776a2?exp=1795227920&sig=aab3d1a058d9e647f5bca49391a4a8d40b320a2f65d25e38879bf728e832bd9b",
         "via": "Globerada",
         "producto_tienda": "Cómo consolar a una ardilla",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dwd5e099aa/images/large/1127471.29.jpg"
@@ -2134,7 +2142,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/5c07a09661cd9a2dd3ed643ee2e46f85?exp=1795226148&sig=3427d5969a4bf77187868770b59124f212752a057aa2af08807f7e5790b358eb",
+        "url": "https://www.globerada.com/out/5c07a09661cd9a2dd3ed643ee2e46f85?exp=1795227920&sig=9ad6a38a52a37795b4ccec5f25c424785f355cf177a30da5d27b4c34f92cbc45",
         "via": "Globerada",
         "producto_tienda": "Como Consolar A Una Ardilla",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dwd5e099aa/images/large/1127471.29.jpg"
@@ -2161,7 +2169,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/dca30afb73867b5fc552a414eeb0c2c9?exp=1795225929&sig=6f3e0be219979fdcaf24fc3af0568bddd84e737ab0c4a43db5647359d928ddbf",
+        "url": "https://www.globerada.com/out/dca30afb73867b5fc552a414eeb0c2c9?exp=1795227700&sig=3f11458e9c9daba77593dd6b41392f4d7c16a5bbc276eb13b32d7cc75799cf7b",
         "via": "Globerada",
         "producto_tienda": "Smoby Tocador Princesas Disney con Taburete hasta 50 kg Espejo y 10 Accesorios incluidos Juguete Infantil para Juegos de",
         "imagen": "https://m.media-amazon.com/images/I/31o+p7LvLsL._SL500_.jpg"
@@ -2210,7 +2218,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/fe95b2bffa9788bb5f3e3e69a64ccb84?exp=1795226134&sig=b52fcf7a09b4b71cef36c3d5a32401a4cc2a73dab7666d6da28e59d5714ee2f8",
+        "url": "https://www.globerada.com/out/fe95b2bffa9788bb5f3e3e69a64ccb84?exp=1795227907&sig=2a71f9f86ff80f4eca4ab24f56e7dabf3865aa22da329fb23c2ae2009f98cda5",
         "via": "Globerada",
         "producto_tienda": "Bichos Haba",
         "imagen": "https://ferreteriaibermadrid.es/405815/bichos-haba.jpg"
@@ -2235,7 +2243,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/d03441068aa3e3877a7016b535420bc2?exp=1795226134&sig=469954dc9d197081fbd1994d1e70b4fb6265dd5d6175273194e7129564d9c3a8",
+        "url": "https://www.globerada.com/out/d03441068aa3e3877a7016b535420bc2?exp=1795227907&sig=10231950e94f8a654358bfa60fa776be1202e25f684ee02e75959c82bb9391d9",
         "via": "Globerada",
         "producto_tienda": "Bichos",
         "imagen": "https://ferreteriaibermadrid.es/405815/bichos-haba.jpg"
@@ -2260,7 +2268,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/164acba6f8f876ddc63eb80f2e1a618c?exp=1795226134&sig=40d2ca0e49e5f3cd096d2c3bae31d23fe22113c4ba5cf9fb4d15a94144a7e76d",
+        "url": "https://www.globerada.com/out/164acba6f8f876ddc63eb80f2e1a618c?exp=1795227907&sig=7d61a9247725bc6e02756792783af9ab6856bf2251f87b950957029210b3f587",
         "via": "Globerada",
         "producto_tienda": "HABA 2013336004 - Bichos, Juego Infantil de Mesa de Memoria y cálculo Mental (Sumas hasta 10). Más 6 años",
         "imagen": "https://ferreteriaibermadrid.es/405815/bichos-haba.jpg"
@@ -2285,7 +2293,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/6ce93f64191ace74bc02aee1f75fc4a8?exp=1795226134&sig=d6ead7324d66dd9b3f9c451c40ec82a81e1ec9b9d515eddd46e774088f6a43bf",
+        "url": "https://www.globerada.com/out/6ce93f64191ace74bc02aee1f75fc4a8?exp=1795227907&sig=0bb396a068bf2497901c1fa714e55d00e4b9eaaefee4fb059b168f07805dddc8",
         "via": "Globerada",
         "producto_tienda": "Bichos",
         "imagen": "https://ferreteriaibermadrid.es/405815/bichos-haba.jpg"
@@ -2318,7 +2326,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/be65f444f20541ed28ec2dbbdf6f4dc2?exp=1795226153&sig=3f0e13d0edff2e1e1c9bca1ac56d16e98599a5ac496ca5c6a1784df2032b7fb2",
+        "url": "https://www.globerada.com/out/be65f444f20541ed28ec2dbbdf6f4dc2?exp=1795227925&sig=df820d477dbf97238294376281dfaf7a080f088b3f0cdc6e131b0c88f65f0b83",
         "via": "Globerada",
         "producto_tienda": "Frozen 2. Gran libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw503bed77/images/large/1309073.11.jpg"
@@ -2343,7 +2351,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/be65f444f20541ed28ec2dbbdf6f4dc2?exp=1795226159&sig=494bc0dbb9564724f6760b5a4e3ad4bb1ccc74e75c02eb1ac40f168ae7309b69",
+        "url": "https://www.globerada.com/out/be65f444f20541ed28ec2dbbdf6f4dc2?exp=1795227928&sig=0b91006a8c9cf4d15ce4f7e8fc4fce1bf444b6d8c35aadd3c13423eb69b9ef51",
         "via": "Globerada",
         "producto_tienda": "Frozen 2. Gran libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw503bed77/images/large/1309073.11.jpg"
@@ -2368,7 +2376,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/75f5473ce98fb47b30fa36e53df206f8?exp=1795226195&sig=39a35021a8b570e9323c7efd1e8d46b43a158602d2e01c92c9349a27ac9f9c17",
+        "url": "https://www.globerada.com/out/75f5473ce98fb47b30fa36e53df206f8?exp=1795227963&sig=a68876d0a7d723f17c20619f3b632a2126154f0665f91415b9721f23eff65701",
         "via": "Globerada",
         "producto_tienda": "Elemental. Gran Libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw3ed88c1b/images/large/1445469.94.jpg"
@@ -2393,7 +2401,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/9ab4f044cab57e4c52e29cd0d987489f?exp=1795226200&sig=b39a6fcc4be22645bd51fda81eba0938325e9ceae24f2bb58712a80c47b86daf",
+        "url": "https://www.globerada.com/out/9ab4f044cab57e4c52e29cd0d987489f?exp=1795227967&sig=b0df269383798bdea3dbdbf66978d81dff98064897542142f9a0c2191ccb7403",
         "via": "Globerada",
         "producto_tienda": "Elio. Gran libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw3d06f7a3/images/large/1544549.16.jpg"
@@ -2418,7 +2426,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/d750a6d6f06adc19f11050841d0ef3a3?exp=1795226206&sig=238d243776417d69c3288935cc0e3061c2e84da3cb05bd94b1fd149983851072",
+        "url": "https://www.globerada.com/out/d750a6d6f06adc19f11050841d0ef3a3?exp=1795227972&sig=1cd565105bd8af4bb05dbd9863db5a59dada8c13c872c8e9d6ea4bf1d45e57a0",
         "via": "Globerada",
         "producto_tienda": "Red. Gran Libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw9179b598/images/large/1390274.07.jpg"
@@ -2443,7 +2451,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/4c82de318a14fedb6e7c77b97a111ae3?exp=1795226211&sig=d51b597e70c1440aa2cf0ba1c7ff97a55d232936e92111602f0e15bc750e6d91",
+        "url": "https://www.globerada.com/out/4c82de318a14fedb6e7c77b97a111ae3?exp=1795227976&sig=51622ae5a068f65e4646fa82a8cd75f2b1ba638a996d4913481005d8dab07bb4",
         "via": "Globerada",
         "producto_tienda": "Zootrópolis 2. Gran Libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw69dd8796/images/large/1563950.30.jpg"
@@ -2468,7 +2476,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/f426353a4442a94c01c5210652a1d0e3?exp=1795226215&sig=19431151b0b04129312628ddaca4e617e9e6f230dca4ca1910d50c17deb4a1b9",
+        "url": "https://www.globerada.com/out/f426353a4442a94c01c5210652a1d0e3?exp=1795227981&sig=9517bbc752056ca833950cc20c7023b70fc920cbc29cf502545bfb401d81df6e",
         "via": "Globerada",
         "producto_tienda": "Los Increíbles 2. Gran libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dwc521380e/images/large/1240071.94.jpg"
@@ -2495,7 +2503,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/18ad4867d07bc90101a630777c470b76?exp=1795225955&sig=fade816576bae33a328aaa6fcfb2a4837047b62f0a688c12511fe7e3e9d3f3e1",
+        "url": "https://www.globerada.com/out/18ad4867d07bc90101a630777c470b76?exp=1795227724&sig=9f40bcf1745515500cf2fc365ff42387ca30c6f34307a776bbdc60fca4fe3cbf",
         "via": "Globerada",
         "producto_tienda": "Disfraz para Niños Princesses Disney Cenicienta",
         "imagen": "https://m.media-amazon.com/images/I/41SoJrDEQfL._SL500_.jpg"
@@ -2562,7 +2570,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/c996f31a12ad192e36e33d1885155be0?exp=1795226013&sig=707bf8997244051c3d8b1ae63de5beb2b8993ce6a572e0d03ab86f8c78b0bcf7",
+        "url": "https://www.globerada.com/out/c996f31a12ad192e36e33d1885155be0?exp=1795227788&sig=78c42323ffd44b16d12ec4984dfe8ef6ea28b14c258175a3b054e528081e51f3",
         "via": "Globerada",
         "producto_tienda": "L.O.L. Surprise! Music Festival OMG Hermana Mayor",
         "imagen": "https://m.media-amazon.com/images/I/814wHKyDyBL.jpg"
@@ -2587,7 +2595,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/6eb84bc2746d7fd2654b35137fa60e5f?exp=1795226013&sig=5dbde2f74ebc5d37d333116f1fcdb37d0ca67bcf3a4fe9ea8d94dc8a0b96f006",
+        "url": "https://www.globerada.com/out/6eb84bc2746d7fd2654b35137fa60e5f?exp=1795227788&sig=864dba93f2a30e4b1a6327eb05496ba4a8453c0f466add861aa12bcd95ddf30e",
         "via": "Globerada",
         "producto_tienda": "L.O.L. Surprise! OMG Music Festival - Muñeca de Moda Coleccionable, Jennie",
         "imagen": "https://m.media-amazon.com/images/I/814wHKyDyBL.jpg"
@@ -2675,7 +2683,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/da8d7c667188b3dffe7afdaffb0f320e?exp=1795226028&sig=55d3d511f5793c463aa3ba66282c0feccc22a1aaeb39ceca9ea95dc20489404e",
+        "url": "https://www.globerada.com/out/da8d7c667188b3dffe7afdaffb0f320e?exp=1795227805&sig=26c5ec4355e16554b4995eff1409b3bc780627e042b263ed256235edea5b1830",
         "via": "Globerada",
         "producto_tienda": "Pets Alive Mommy Elephant con Bebés Elefante Sorpresa - ",
         "imagen": "https://juguettos.com/3699605/0000-00-00.jpg"
@@ -2700,7 +2708,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/4cc1e72745e8fcbbead02901844b5178?exp=1795226028&sig=445f3c5100c1bbb353271d18d752f1bb6e2712b96705d717792334eeeff4221a",
+        "url": "https://www.globerada.com/out/4cc1e72745e8fcbbead02901844b5178?exp=1795227805&sig=a025df7a26700fa31674fb8048a0ecc9d087c8cf8346911f7a95fec563597b83",
         "via": "Globerada",
         "producto_tienda": "Mamá Elefante Y Sus Bebés Pets Alive, ¡a Pasear!, Descubre Cuándos Bebes Tiene, Con Sonidos Reales 22x34x27cm",
         "imagen": "https://juguettos.com/3699605/0000-00-00.jpg"
@@ -2772,7 +2780,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/4daec8d1fa05d33e4aee769021b1869e?exp=1795226072&sig=2e6059fb9a68fbd41c167a00539b00bfbf30b41abe714e2c0208f9e5ae0e0e87",
+        "url": "https://www.globerada.com/out/4daec8d1fa05d33e4aee769021b1869e?exp=1795227850&sig=077d8c95b5693fb67d5f861b207195f876091c8e3828e77b857ee4006f7a1323",
         "via": "Globerada",
         "producto_tienda": "SPIN MASTER - Peekimo Azul Boo - Tu amigo para llevar contigo",
         "imagen": "https://ae01.alicdn.com/kf/E0ebc02714b5a4427bda50162f1a682c1Z.jpg"
@@ -2797,7 +2805,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/57f12fdeb408711cc80cb81e37de5cd4?exp=1795226072&sig=af1210d85b932262b84c38d26ea4a232b60e1504813dc442244785000ad388b0",
+        "url": "https://www.globerada.com/out/57f12fdeb408711cc80cb81e37de5cd4?exp=1795227850&sig=ccd082a4c9358489d351e7cadbeca959b486a852ca8530c0f2e41de50c2ab5fe",
         "via": "Globerada",
         "producto_tienda": "Peekimo - Penny Rosa | Mascota Interactiva, Juguete Niña 5 Años +100 Reac | Penny es una mascota interactiva con +100 re",
         "imagen": "https://ae01.alicdn.com/kf/E0ebc02714b5a4427bda50162f1a682c1Z.jpg"
@@ -2822,7 +2830,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/f8a721c3072aca9af0235297f1c4cca1?exp=1795226072&sig=ac2ae56a70b9de85fac89f03de7cab3cae32634b0acad6145208ec31747ebfdb",
+        "url": "https://www.globerada.com/out/f8a721c3072aca9af0235297f1c4cca1?exp=1795227850&sig=ca386ba901ebec778865cea8dd135c626f2d4ef7fdafa7af1d0746ed89f2b810",
         "via": "Globerada",
         "producto_tienda": "Peekimo Tu Amigo para LLevar Macota Interactiva Lulu Morado - ",
         "imagen": "https://ae01.alicdn.com/kf/E0ebc02714b5a4427bda50162f1a682c1Z.jpg"
@@ -2847,7 +2855,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/481ce7ae69ca100002deed836bf4d76f?exp=1795226072&sig=32dd8d1e98576ebb51990935d3599ae9f51f30000984206da19ba72aabfe6f11",
+        "url": "https://www.globerada.com/out/481ce7ae69ca100002deed836bf4d76f?exp=1795227850&sig=8dbd971b0d7064d134365f36dd0c773d31f1a4addf42f5b644fbb273bd11e08a",
         "via": "Globerada",
         "producto_tienda": "Spin Master Lulu Morada Mascota Interactiva | Juguetes Niña 5 Años O Más | Juguetes 5 Años con Más De 100 Reacciones Y S",
         "imagen": "https://ae01.alicdn.com/kf/E0ebc02714b5a4427bda50162f1a682c1Z.jpg"
@@ -2898,7 +2906,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-21",
-        "url": "https://www.globerada.com/out/fbcd3b761779e8e6b75b4c703380a2e8?exp=1795226092&sig=51b75fed50849625d5ea423fb88273fb10baadeb16337d483d84898f34345e50",
+        "url": "https://www.globerada.com/out/fbcd3b761779e8e6b75b4c703380a2e8?exp=1795227871&sig=be2169fcd050bdeab802b3445eab0e7702d605111c5227d183e6c8fd9e276694",
         "via": "Globerada",
         "producto_tienda": "DESPERTADOR DIGITAL STITCH 3D",
         "imagen": "https://img3.slatic.net/g/fb/kf/E890f6d546b8d4afe8d3272175592ccddu.jpg"
