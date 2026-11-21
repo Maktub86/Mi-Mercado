@@ -931,40 +931,6 @@
       "categoria": "reyes"
     },
     {
-      "id": "holawatch-k-fun",
-      "nombre": "Reloj inteligente HolaWatch K-Fun",
-      "para": "Las dos",
-      "estado": "pendiente",
-      "nota": "Negro o blanco y rosa",
-      "precio_lista": 39.99,
-      "tienda_lista": "El Corte Inglés",
-      "busqueda": "HolaWatch K-Fun reloj niños",
-      "enlaces": [
-        {
-          "tienda": "Toy Planet",
-          "dominio": "www.toyplanet.com",
-          "buscar": "HolaWatch K-Fun"
-        },
-        {
-          "tienda": "Globerada",
-          "comparador_buscar": "HolaWatch K-Fun"
-        },
-        {
-          "tienda": "Amazon",
-          "amazon_buscar": "Holawatch K-Fun"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "HolaWatch K-Fun"
-        },
-        {
-          "tienda": "El Corte Inglés",
-          "eci_buscar": "Holawatch fun"
-        }
-      ],
-      "categoria": "reyes"
-    },
-    {
       "estado": "pendiente",
       "categoria": "reyes",
       "precio_lista": null,
