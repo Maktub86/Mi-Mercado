@@ -120,21 +120,45 @@ def descargar_navegador(url: str, espera_ms: int = 9000) -> str:
     navegador = buscar_navegador()
     if not navegador:
         raise Bloqueado("no hay navegador instalado para abrir la tienda")
-    with tempfile.TemporaryDirectory(prefix="mi-mercado-") as perfil:
+    # La página se escribe en un archivo y no en una tubería: en Windows los procesos hijos de
+    # Edge pueden dejar la tubería abierta y el robot se quedaría esperando para siempre.
+    perfil = tempfile.mkdtemp(prefix="mi-mercado-")
+    salida = Path(perfil) / "pagina.html"
+    try:
         orden = [navegador, "--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check",
                  "--disable-blink-features=AutomationControlled", "--lang=es-ES", "--window-size=1366,900",
+                 "--disable-extensions", "--disable-background-networking", "--disable-crash-reporter",
                  f"--user-agent={CABECERAS['User-Agent']}", f"--user-data-dir={perfil}",
                  f"--virtual-time-budget={espera_ms}", "--dump-dom", url]
-        try:
-            hecho = subprocess.run(orden, capture_output=True, timeout=90,
-                                   creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
-        except subprocess.TimeoutExpired as err:
-            raise Bloqueado("el navegador tardó demasiado") from err
-    pagina = hecho.stdout.decode("utf-8", errors="replace")
+        with open(salida, "wb") as destino:
+            proceso = subprocess.Popen(orden, stdout=destino, stderr=subprocess.DEVNULL, stdin=subprocess.DEVNULL,
+                                       creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+            try:
+                proceso.wait(timeout=60)
+            except subprocess.TimeoutExpired as err:
+                cerrar_navegador(proceso)
+                raise Bloqueado("el navegador tardó demasiado") from err
+        cerrar_navegador(proceso)
+        pagina = salida.read_bytes().decode("utf-8", errors="replace")
+    finally:
+        shutil.rmtree(perfil, ignore_errors=True)
     if len(pagina) < 2000 or re.search(r"Access Denied|Acceso denegado|captcha", pagina[:5000], re.I):
         guardar_muestra(f"navegador-{urllib.parse.urlsplit(url).netloc}", pagina)
         raise Bloqueado("la tienda también bloqueó al navegador")
     return pagina
+
+
+def cerrar_navegador(proceso) -> None:
+    """Cierra el navegador y todos sus procesos hijos, por si alguno se quedó abierto."""
+    if os.name == "nt":
+        subprocess.run(["taskkill", "/PID", str(proceso.pid), "/T", "/F"], capture_output=True,
+                       creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+    elif proceso.poll() is None:
+        proceso.kill()
+    try:
+        proceso.wait(timeout=10)
+    except subprocess.TimeoutExpired:
+        pass
 
 
 TIENDAS_CON_NAVEGADOR = re.compile(r"elcorteingles\.es|sfera\.com")
@@ -794,7 +818,7 @@ def revisar_comparador(historial: dict, producto: dict, enlace: dict, hoy: str) 
 def main() -> int:
     for flujo in (sys.stdout, sys.stderr):
         try:
-            flujo.reconfigure(encoding="utf-8", errors="replace")
+            flujo.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
         except (AttributeError, ValueError):
             pass
     productos = cargar_json(PRODUCTOS, {"productos": []})["productos"]

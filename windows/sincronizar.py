@@ -92,7 +92,7 @@ def fusionar(remoto: dict, local: dict) -> dict:
 def main() -> int:
     for flujo in (sys.stdout, sys.stderr):
         try:
-            flujo.reconfigure(encoding="utf-8", errors="replace")
+            flujo.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
         except (AttributeError, ValueError):
             pass
     print(f"Mi Mercado - revisión desde casa ({datetime.now():%d/%m/%Y %H:%M})")
