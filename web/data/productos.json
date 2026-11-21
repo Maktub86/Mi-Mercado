@@ -1522,6 +1522,39 @@
           "eci_buscar": "Peluche pikachu"
         }
       ]
+    },
+    {
+      "id": "dreamon-heladeria-juguete",
+      "nombre": "Dreamon Heladeria Juguete",
+      "para": "Alba",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "",
+      "precio_lista": 39.99,
+      "busqueda": "Dreamon Heladeria Juguete",
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B0DB1TBK7N"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Dreamon Heladeria Juguete"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Dreamon Heladeria Juguete"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Dreamon Heladeria Juguete"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Dreamon Heladeria Juguete"
+        }
+      ]
     }
   ],
   "categorias": [
