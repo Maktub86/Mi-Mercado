@@ -1485,6 +1485,43 @@
           "buscar": "MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026"
         }
       ]
+    },
+    {
+      "id": "peluche-pikachu",
+      "nombre": "Peluche pikachu",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "",
+      "precio_lista": 24.01,
+      "busqueda": "Peluche pikachu",
+      "enlaces": [
+        {
+          "tienda": "Mediamarkt",
+          "url": "https://www.mediamarkt.es/es/product/_peluche-pokemon-pikachu-amarillo-134742668.html"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Peluche pikachu"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Peluche pikachu"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Peluche pikachu"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Peluche pikachu"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Peluche pikachu"
+        }
+      ]
     }
   ],
   "categorias": [
