@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-21T00:22:29+00:00",
-  "leidos": 88,
-  "fallos": 21,
+  "fecha": "2026-11-21T00:57:41+00:00",
+  "leidos": 89,
+  "fallos": 20,
   "enlaces": [
     {
       "producto": "tocador-princesas-disney",
@@ -31,7 +31,7 @@
       "url": "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: la tienda respondió 403",
+      "error": "bloqueado: no hay navegador instalado para abrir la tienda",
       "pistas": {}
     },
     {
@@ -40,7 +40,7 @@
       "url": "https://www.elcorteingles.es/juguetes/A200825479-muneca-moonspell-magic-layla-crystal-monster-high-mattel/",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: la tienda respondió 403",
+      "error": "bloqueado: no hay navegador instalado para abrir la tienda",
       "pistas": {}
     },
     {
@@ -428,10 +428,9 @@
       "producto": "cherry-pets-confetti-tree",
       "tienda": "Carrefour",
       "url": "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 403",
-      "pistas": {}
+      "precio": 24.99,
+      "metodo": "generico",
+      "error": null
     },
     {
       "producto": "cherry-pets-confetti-tree",
@@ -678,7 +677,7 @@
       "url": "https://www.sfera.com/es/ninos/A200976329-250-nude-pr-bota-agua-carita/",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: la tienda respondió 403",
+      "error": "bloqueado: no hay navegador instalado para abrir la tienda",
       "pistas": {}
     },
     {
@@ -687,7 +686,7 @@
       "url": "https://www.sfera.com/es/ninos/A200976328-burdeos-pr-bota-agua/",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: la tienda respondió 403",
+      "error": "bloqueado: no hay navegador instalado para abrir la tienda",
       "pistas": {}
     },
     {
