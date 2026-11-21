@@ -1452,6 +1452,39 @@
       "busqueda": "puzzle infantil",
       "enlaces": [],
       "categoria": "reyes"
+    },
+    {
+      "id": "megapack-archivador-cartas-hello-kitty-2026",
+      "nombre": "MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026",
+      "para": "Las dos",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "",
+      "precio_lista": 10.0,
+      "busqueda": "MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026",
+      "enlaces": [
+        {
+          "tienda": "El Corte Inglés",
+          "url": "https://www.elcorteingles.es/juguetes/A200276918-megapack-archivador-cartas-hello-kitty-2026/"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026"
+        }
+      ]
     }
   ],
   "categorias": [
