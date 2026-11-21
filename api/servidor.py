@@ -79,7 +79,7 @@ def enlace_desde_url(url: str) -> dict:
 
 def enlaces_para(nombre: str, busqueda: str, urls: list[str]) -> list[dict]:
     """Los enlaces que da quien añade el producto, más búsquedas automáticas
-    en Amazon, Globerada, Idealo y Toy Planet para encontrar muchas tiendas."""
+    en Amazon, Globerada, Idealo, Toy Planet y El Corte Inglés para encontrar muchas tiendas."""
     enlaces = []
     for url in urls:
         if url.strip():
@@ -95,6 +95,8 @@ def enlaces_para(nombre: str, busqueda: str, urls: list[str]) -> list[dict]:
     enlaces.append({"tienda": "Idealo", "comparador_buscar": consulta})
     if "Toy Planet" not in tiendas:
         enlaces.append({"tienda": "Toy Planet", "dominio": "www.toyplanet.com", "buscar": consulta})
+    if not any(t.startswith("El Corte Inglés") for t in tiendas):
+        enlaces.append({"tienda": "El Corte Inglés", "eci_buscar": consulta})
     return enlaces
 
 

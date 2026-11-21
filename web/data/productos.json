@@ -28,6 +28,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Tocador Princesas Disney"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "url": "https://www.elcorteingles.es/juguetes/A200049243-tocador-con-taburete-princesas-disney-smoby/"
         }
       ],
       "categoria": "reyes"
@@ -98,6 +102,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Disfraz Cenicienta niña"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Disfraz Cenicienta"
         }
       ],
       "categoria": "reyes"
@@ -128,6 +136,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Hello Kitty bolso reversible"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Hello Kitty bolso"
         }
       ],
       "categoria": "reyes"
@@ -158,6 +170,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Playmobil bolso concha sirena"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "bolso concha sirena"
         }
       ],
       "categoria": "reyes"
@@ -188,6 +204,14 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Dreamon zapatos"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Dreamon zapatos"
+        },
+        {
+          "tienda": "El Corte Inglés (similar: caja 4 pares Disney)",
+          "eci_buscar": "caja zapatos princesas"
         }
       ],
       "categoria": "reyes"
@@ -217,6 +241,14 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "VTech KidiSecrets Locker taquilla secreta"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "url": "https://www.elcorteingles.es/juguetes/A200036594-taquilla-secreta-kidisecrets-vtech/"
+        },
+        {
+          "tienda": "El Corte Inglés (rosa)",
+          "url": "https://www.elcorteingles.es/juguetes/A52632999-taquilla-secreta-rosa-kidisecrets-locker/"
         }
       ],
       "categoria": "reyes"
@@ -242,6 +274,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Dreamon helados madera"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Dreamon helados"
         }
       ],
       "categoria": "reyes"
@@ -272,6 +308,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Playmobil 71613"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "abuelos bebe Playmobil"
         }
       ],
       "categoria": "reyes"
@@ -302,6 +342,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "carro de limpieza juguete Vileda Theo Klein"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "carro limpieza Vileda"
         }
       ],
       "categoria": "reyes"
@@ -332,6 +376,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Barbie boda Chelsea"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Barbie boda"
         }
       ],
       "categoria": "reyes"
@@ -362,6 +410,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Tiny Beauty maleta"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Tiny Beauty maleta"
         }
       ],
       "categoria": "reyes"
@@ -392,6 +444,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "OMG Music Festival"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "OMG Music Festival"
         }
       ],
       "categoria": "reyes"
@@ -422,6 +478,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Tiny Beauty pulseras"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Tiny Beauty pulseras"
         }
       ],
       "categoria": "reyes"
@@ -452,6 +512,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Tiny Beauty charm"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Tiny Beauty charm"
         }
       ],
       "categoria": "reyes"
@@ -482,6 +546,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Pets Alive elefante"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Pets Alive elefante"
         }
       ],
       "categoria": "reyes"
@@ -515,6 +583,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Mirrormi"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Mirrormi"
         }
       ],
       "categoria": "reyes"
@@ -532,6 +604,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "peluche maíz El Corte Inglés"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "peluche maiz"
         }
       ],
       "categoria": "reyes"
@@ -562,6 +638,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Clementoni Nail Art Studio"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Nail Art Studio"
         }
       ],
       "categoria": "reyes"
@@ -596,6 +676,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Cherry Pets Confetti Tree"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Cherry Pets Confetti"
         }
       ],
       "categoria": "reyes"
@@ -625,6 +709,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Educa Magnetics 61"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Educa Magnetics 61"
         }
       ],
       "categoria": "reyes"
@@ -655,6 +743,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Peekimo"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Peekimo"
         }
       ],
       "categoria": "reyes"
@@ -676,6 +768,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Barbie Deluxe Style 15 JJN73"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Barbie Deluxe Style"
         }
       ],
       "categoria": "reyes"
@@ -749,6 +845,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Barbie Cascanueces trineo"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Cascanueces trineo"
         }
       ],
       "categoria": "reyes"
@@ -779,6 +879,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "Lexibook Stitch despertador"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Stitch despertador"
         }
       ],
       "categoria": "reyes"
@@ -809,6 +913,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Stitch walkie vídeo"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Stitch walkie"
         }
       ],
       "categoria": "reyes"
@@ -843,6 +951,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Barbie Cascanueces Clara"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Cascanueces Clara"
         }
       ],
       "categoria": "reyes"
@@ -873,6 +985,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "HolaWatch K-Fun"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Holawatch fun"
         }
       ],
       "categoria": "reyes"
@@ -937,6 +1053,10 @@
           "tienda": "Toy Planet",
           "dominio": "www.toyplanet.com",
           "buscar": "HABA Bichos"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "HABA Bichos"
         }
       ]
     },
@@ -969,6 +1089,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "consolar ardilla"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "consolar ardilla"
         }
       ]
     },
@@ -1089,6 +1213,54 @@
           "tienda": "Globerada",
           "etiqueta": "Big Hero 6",
           "comparador_buscar": "Big Hero 6 Gran libro de la película"
+        },
+        {
+          "tienda": "Frozen · El Corte Inglés",
+          "eci_buscar": "Frozen Gran libro de la película"
+        },
+        {
+          "tienda": "Frozen 2 · El Corte Inglés",
+          "eci_buscar": "Frozen 2 Gran libro de la película"
+        },
+        {
+          "tienda": "Encanto · El Corte Inglés",
+          "eci_buscar": "Encanto Gran libro de la película"
+        },
+        {
+          "tienda": "Elemental · El Corte Inglés",
+          "eci_buscar": "Elemental Gran libro de la película"
+        },
+        {
+          "tienda": "Elio · El Corte Inglés",
+          "eci_buscar": "Elio Gran libro de la película"
+        },
+        {
+          "tienda": "Coco · El Corte Inglés",
+          "eci_buscar": "Coco Gran libro de la película"
+        },
+        {
+          "tienda": "Red · El Corte Inglés",
+          "eci_buscar": "Red Gran libro de la película"
+        },
+        {
+          "tienda": "Toy Story 4 · El Corte Inglés",
+          "eci_buscar": "Toy Story 4 Gran libro de la película"
+        },
+        {
+          "tienda": "Zootrópolis 2 · El Corte Inglés",
+          "eci_buscar": "Zootrópolis 2 Gran libro de la película"
+        },
+        {
+          "tienda": "Los Increíbles 2 · El Corte Inglés",
+          "eci_buscar": "Los Increíbles 2 Gran libro de la película"
+        },
+        {
+          "tienda": "Buscando a Dory · El Corte Inglés",
+          "eci_buscar": "Buscando a Dory Gran libro de la película"
+        },
+        {
+          "tienda": "Big Hero 6 · El Corte Inglés",
+          "eci_buscar": "Big Hero 6 Gran libro de la película"
         }
       ]
     },
@@ -1118,6 +1290,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Monster High Cleo"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Monster High Cleo"
         }
       ],
       "categoria": "reyes"
@@ -1148,6 +1324,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Monster High Doll With Pet Frankie"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Monster High Frankie"
         }
       ],
       "categoria": "reyes"
@@ -1173,6 +1353,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Escuela de Monstruos libro"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Escuela de Monstruos"
         }
       ],
       "categoria": "reyes"
@@ -1198,6 +1382,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "camiseta Betis"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "camiseta Betis"
         }
       ],
       "categoria": "reyes"
@@ -1232,6 +1420,10 @@
         {
           "tienda": "Idealo",
           "comparador_buscar": "Djeco 05524"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "restaurante Agustin"
         }
       ],
       "imagen": "https://multimedia.dideco.es/img/juego/EAN_3070900055247-5.jpg",

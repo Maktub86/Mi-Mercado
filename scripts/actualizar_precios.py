@@ -503,6 +503,66 @@ def buscar_shopify(dominio: str, consulta: str) -> str | None:
     return None
 
 
+# ---------------------------------------------------------------- El Corte Inglés (búsqueda)
+
+BUSCADORES_ECI = (
+    "https://www.elcorteingles.es/search-nwx/1/?s={q}&stype=text_box",
+    "https://www.elcorteingles.es/search/?s={q}",
+)
+FICHA_ECI = re.compile(
+    r"""href=['"]((?:https://www\.elcorteingles\.es)?/[a-z0-9-]+(?:/[a-z0-9-]+)*/(A\d{6,10})-([a-z0-9-]+)/?)(?:\?[^'"]*)?['"]""")
+
+
+def descargar_eci(url: str) -> str:
+    """El Corte Inglés casi siempre rechaza a los programas normales: probamos y, si bloquea,
+    usamos el navegador del ordenador."""
+    try:
+        return descargar(url)
+    except Bloqueado:
+        return descargar_navegador(url)
+
+
+def fichas_eci(pagina: str) -> list[tuple[str, str]]:
+    """(dirección, texto) de cada producto que aparece en una página de El Corte Inglés.
+    El texto junta las palabras de la dirección (que llevan el nombre del producto)
+    y el texto del enlace."""
+    vistas: dict[str, list] = {}
+    for encontrado in FICHA_ECI.finditer(pagina):
+        ruta, referencia, nombre = encontrado.groups()
+        url = ruta if ruta.startswith("http") else "https://www.elcorteingles.es" + ruta
+        url = url if url.endswith("/") else url + "/"
+        # Solo el texto del propio enlace: lo que viene después puede ser ya otro producto.
+        fin = pagina.find("</a>", encontrado.end())
+        cerca = texto_plano(pagina[encontrado.end():fin if 0 < fin - encontrado.end() < 3000 else encontrado.end()])
+        ficha = vistas.setdefault(referencia, [url, ""])
+        ficha[1] += f" {nombre.replace('-', ' ')} {cerca}"
+    return [(url, texto) for url, texto in vistas.values()]
+
+
+def buscar_eci(consulta: str) -> str | None:
+    """Busca en El Corte Inglés y devuelve la ficha del primer producto que contiene
+    todas las palabras de la consulta (o None si no hay ninguno claro)."""
+    buscadas = _palabras(consulta)
+    ultima = ""
+    for patron in BUSCADORES_ECI:
+        try:
+            pagina = descargar_eci(patron.format(q=urllib.parse.quote_plus(consulta)))
+        except Bloqueado:
+            raise
+        except Exception as err:  # noqa: BLE001 - probamos la otra forma de buscar
+            ultima = f"{patron}\n{err}"
+            continue
+        fichas = fichas_eci(pagina)
+        for url, texto in fichas:
+            if buscadas <= _palabras(texto):
+                return url
+        if fichas:
+            return None  # la búsqueda funcionó pero no hay ese producto
+        ultima = pagina
+    guardar_muestra(f"eci-busqueda-{consulta}", ultima)
+    return None
+
+
 # ---------------------------------------------------------------- comparadores (Globerada)
 
 PRECIO_EUROS = re.compile(r"(\d{1,4}(?:\.\d{3})*,\d{2})\s*€")
@@ -644,6 +704,8 @@ def clave_enlace(enlace: dict) -> str:
         return f"{prefijo}:{enlace['comparador_buscar']}"
     if enlace.get("amazon_buscar"):
         return f"amazon:{enlace['amazon_buscar']}"
+    if enlace.get("eci_buscar"):
+        return f"eci:{enlace['eci_buscar']}"
     return f"buscar:{enlace['dominio']}:{enlace['buscar']}"
 
 
@@ -878,6 +940,11 @@ def main() -> int:
             if es_amazon and os.environ.get("GITHUB_ACTIONS") == "true":
                 # Desde los servidores de GitHub Amazon siempre pide captcha; lo lee el ordenador de casa.
                 continue
+            es_eci = enlace.get("eci_buscar") or TIENDAS_CON_NAVEGADOR.search(url or "")
+            if es_eci and os.environ.get("GITHUB_ACTIONS") == "true":
+                # El Corte Inglés y Sfera solo se dejan leer con el navegador del ordenador de casa.
+                # Si lo intentáramos aquí, el fallo taparía el precio que dejó el ordenador.
+                continue
             resultado: dict = {}
             error = None
             try:
@@ -887,6 +954,8 @@ def main() -> int:
                         url = anterior
                     elif enlace.get("amazon_buscar"):
                         url = buscar_amazon(enlace["amazon_buscar"])
+                    elif enlace.get("eci_buscar"):
+                        url = buscar_eci(enlace["eci_buscar"])
                     else:
                         url = buscar_shopify(enlace["dominio"], enlace["buscar"])
                     if not url:
@@ -899,7 +968,7 @@ def main() -> int:
             except Exception as err:  # noqa: BLE001 - seguimos con el resto
                 error = f"{type(err).__name__}: {err}"
             precio = resultado.get("precio")
-            if precio and (enlace.get("amazon_buscar") or enlace.get("buscar")) and \
+            if precio and (enlace.get("amazon_buscar") or enlace.get("buscar") or enlace.get("eci_buscar")) and \
                     precio_dudoso(precio, referencia_producto(producto, historial, clave)):
                 error = f"precio dudoso ({precio:.2f} €): posible producto equivocado"
                 precio = None

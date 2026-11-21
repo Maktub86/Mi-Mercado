@@ -45,6 +45,7 @@ Edita `web/data/productos.json` desde GitHub (botón del lápiz). Cada producto 
 - `para`: `Alba`, `Lucía` o `Las dos` (puede ser cualquier otro nombre).
 - `estado`: `pendiente` o `comprado` (los comprados dejan de revisarse). Opcional: `"comprado_por": "Abuela Mari Luz"`.
 - `enlaces`: la página de producto de cada tienda. Cuantas más tiendas, mejor comparación.
+- Si no tienes la página de El Corte Inglés, pon `{"tienda": "El Corte Inglés", "eci_buscar": "palabras del producto"}`: el ordenador de casa lo busca en la tienda (con el navegador) y se queda con el primer producto que tenga todas esas palabras. Lo mismo con `amazon_buscar` para Amazon.
 
 ## Limitaciones
 

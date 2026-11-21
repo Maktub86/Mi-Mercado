@@ -36,7 +36,7 @@ class ReglasTest(unittest.TestCase):
         self.assertEqual(producto["id"], "tren-de-madera")
         self.assertEqual(producto["enlaces"][0], {"tienda": "Juguettos", "url": "https://www.juguettos.com/tren-madera"})
         tiendas = [e["tienda"] for e in producto["enlaces"]]
-        self.assertEqual(tiendas, ["Juguettos", "Amazon", "Globerada", "Idealo", "Toy Planet"])
+        self.assertEqual(tiendas, ["Juguettos", "Amazon", "Globerada", "Idealo", "Toy Planet", "El Corte Inglés"])
         self.assertEqual(datos["productos"][-1], producto)
 
     def test_anadir_id_repetido_y_validaciones(self):

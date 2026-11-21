@@ -154,6 +154,31 @@ class BusquedaTest(unittest.TestCase):
         finally:
             ap.descargar = original
 
+    def test_buscar_eci(self):
+        pagina = """<ul>
+          <li><a href="/juguetes/A200049243-tocador-con-taburete-princesas-disney-smoby/?parentCategoryId=1"
+                 class="product"><img alt="Imagen 0 de Tocador con taburete Princesas Disney Smoby"></a>
+              <a href="/juguetes/A200049243-tocador-con-taburete-princesas-disney-smoby/">Tocador</a></li>
+          <li><a href="https://www.elcorteingles.es/juguetes/A52632999-taquilla-secreta-rosa-kidisecrets-locker">
+                Taquilla secreta rosa KidiSecrets Locker</a></li>
+          <li><a href="/libros/A41234567-como-consolar-a-una-ardilla/">Cómo consolar a una ardilla</a>
+              <span>Bolso de concha</span></li>
+        </ul>""" + " " * 3000
+        original = ap.descargar_eci
+        ap.descargar_eci = lambda url: pagina
+        try:
+            self.assertEqual(ap.buscar_eci("Tocador Princesas Disney"),
+                             "https://www.elcorteingles.es/juguetes/A200049243-tocador-con-taburete-princesas-disney-smoby/")
+            self.assertEqual(ap.buscar_eci("KidiSecrets Locker"),
+                             "https://www.elcorteingles.es/juguetes/A52632999-taquilla-secreta-rosa-kidisecrets-locker/")
+            self.assertEqual(ap.buscar_eci("consolar ardilla"),
+                             "https://www.elcorteingles.es/libros/A41234567-como-consolar-a-una-ardilla/")
+            # El texto que viene después de un enlace no cuenta para ese producto.
+            self.assertIsNone(ap.buscar_eci("ardilla bolso concha"))
+        finally:
+            ap.descargar_eci = original
+        self.assertEqual(ap.clave_enlace({"tienda": "El Corte Inglés", "eci_buscar": "x"}), "eci:x")
+
     def test_clave_enlace(self):
         self.assertEqual(ap.clave_enlace({"url": "https://a"}), "https://a")
         self.assertEqual(ap.clave_enlace({"dominio": "t.com", "buscar": "x y"}), "buscar:t.com:x y")

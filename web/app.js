@@ -86,11 +86,14 @@ function preparar(lista, precios) {
           .forEach(([k, info]) => todas.push(aTienda({ tienda: info.tienda || k.split("#")[1] }, info, info.url || enlace.comparador, k)));
         return;
       }
-      const clave = enlace.url || (enlace.amazon_buscar ? `amazon:${enlace.amazon_buscar}` : `buscar:${enlace.dominio}:${enlace.buscar}`);
+      const clave = enlace.url || (enlace.amazon_buscar ? `amazon:${enlace.amazon_buscar}`
+        : enlace.eci_buscar ? `eci:${enlace.eci_buscar}` : `buscar:${enlace.dominio}:${enlace.buscar}`);
       const info = datos[clave] || {};
       const url = enlace.url || info.url || (enlace.amazon_buscar
         ? `https://www.amazon.es/s?k=${encodeURIComponent(enlace.amazon_buscar)}`
-        : `https://${enlace.dominio}/search?q=${encodeURIComponent(enlace.buscar)}`);
+        : enlace.eci_buscar
+          ? `https://www.elcorteingles.es/search-nwx/1/?s=${encodeURIComponent(enlace.eci_buscar)}&stype=text_box`
+          : `https://${enlace.dominio}/search?q=${encodeURIComponent(enlace.buscar)}`);
       todas.push(aTienda(enlace, info, url, clave));
     });
 
