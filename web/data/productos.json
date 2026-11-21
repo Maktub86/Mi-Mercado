@@ -695,6 +695,12 @@
           "url": "https://www.amazon.es/dp/B0BJLD278H"
         },
         {
+          "tienda": "El Corte Inglés",
+          "url": "https://www.elcorteingles.es/marcas/mondo/juguetes/",
+          "precio_manual": 44.99,
+          "fecha_manual": "2026-11-21"
+        },
+        {
           "tienda": "Amazon",
           "amazon_buscar": "Mondo Barbie City Car 63698"
         },

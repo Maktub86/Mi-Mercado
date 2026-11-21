@@ -759,6 +759,11 @@ def main() -> int:
         if producto.get("estado") == "comprado":
             continue
         for enlace in producto.get("enlaces", []):
+            if enlace.get("precio_manual") is not None:
+                # Tiendas que no dejan leer la página (El Corte Inglés...): precio apuntado a mano.
+                registrar(historial, producto["id"], {**enlace, "url": clave_enlace(enlace)},
+                          enlace.get("fecha_manual") or hoy, float(enlace["precio_manual"]), True, None)
+                continue
             if enlace.get("tienda") == "Idealo" and os.environ.get("GITHUB_ACTIONS") == "true":
                 continue  # Idealo bloquea a los servidores de GitHub (403); lo lee el ordenador de casa
             if enlace.get("comparador_buscar") and not enlace.get("comparador"):

@@ -958,6 +958,17 @@
         },
         "opiniones_url": "https://www.amazon.es/product-reviews/B0BJLD278H",
         "url": "https://www.amazon.es/dp/B0BJLD278H"
+      },
+      "https://www.elcorteingles.es/marcas/mondo/juguetes/": {
+        "tienda": "El Corte Inglés",
+        "historial": [
+          {
+            "fecha": "2026-11-21",
+            "precio": 44.99,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-21"
       }
     },
     "barbie-cascanueces-trineo": {

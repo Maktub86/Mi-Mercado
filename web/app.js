@@ -250,6 +250,7 @@ function hojaComparar(p) {
     const info = [];
     if (t.ultimo.disponible === false) info.push("<b>agotado</b>");
     if (tend && tend.clase !== "igual") info.push(`<span class="flecha-${tend.clase}">${tend.texto}</span>`);
+    if (t.precio_manual != null) info.push("apuntado a mano");
     if (t.valoracion) info.push(`★ ${t.valoracion.media.toLocaleString("es-ES")}`);
     info.push(fechaCorta.format(leerFecha(t.ultimo.fecha)));
     return `<li class="fila-tienda${i === 0 ? " ganadora" : ""}">
