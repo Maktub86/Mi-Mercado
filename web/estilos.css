@@ -110,6 +110,58 @@ h1 {
 }
 .chip[aria-selected="true"] { background: var(--tinta); border-color: var(--tinta); color: #fff; }
 .chip .cuenta { opacity: .6; margin-left: 4px; font-variant-numeric: tabular-nums; }
+.chip .suma {
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 1px solid var(--linea);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.chip[aria-selected="true"] .suma { border-left-color: rgba(255, 255, 255, .35); }
+
+/* ---------- suma de la pestaña */
+.resumen {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px 32px;
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+.resumen[hidden] { display: none; }
+.resumen p { margin: 0; }
+.resumen-titulo { font-size: 13px; color: var(--tinta-suave); }
+.resumen-total {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+.resumen-detalle { font-size: 13px; color: var(--tinta-suave); }
+.resumen-detalle .baja { color: var(--baja); font-weight: 600; }
+.resumen-detalle .sube { color: var(--sube); font-weight: 600; }
+.reparto { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.reparto li {
+  display: flex;
+  flex-direction: column;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: var(--dos-fondo);
+  color: var(--dos);
+  font-size: 13px;
+}
+.reparto li strong { font-size: 16px; font-variant-numeric: tabular-nums; }
+.reparto li.alba { background: var(--alba-fondo); color: var(--alba); }
+.reparto li.lucia { background: var(--lucia-fondo); color: var(--lucia); }
+.reparto li.alejandro { background: var(--baja-fondo); color: #2f7d55; }
+.reparto li.rocio { background: var(--sube-fondo); color: #b4442f; }
+.resumen-comprado { font-size: 14px; flex-basis: 100%; }
+.resumen-nota { font-size: 12px; color: var(--tinta-suave); flex-basis: 100%; }
 
 .controles { display: flex; gap: 8px; flex-wrap: wrap; }
 .controles input, .controles select {

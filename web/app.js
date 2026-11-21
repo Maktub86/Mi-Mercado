@@ -177,10 +177,64 @@ function pintarChips() {
   const pendientes = deCategoria().filter((p) => p.estado !== "comprado");
   const opciones = [{ id: "todas", nombre: "Todos" }, ...categoria.personas.map((n) => ({ id: n, nombre: n }))];
   $("#chips-persona").innerHTML = opciones.map((p) => {
-    const n = p.id === "todas" ? pendientes.length : pendientes.filter((x) => x.para === p.id).length;
+    const suyos = p.id === "todas" ? pendientes : pendientes.filter((x) => x.para === p.id);
+    const { total } = sumar(suyos);
     return `<button class="chip ${CLASES[p.id] || ""}" role="tab" data-persona="${escapar(p.id)}" aria-selected="${estado.persona === p.id}">
-      ${escapar(p.nombre)}<span class="cuenta">${n}</span></button>`;
+      ${escapar(p.nombre)}<span class="cuenta">${suyos.length}</span>${suyos.length ? `<span class="suma">${eurosRedondos.format(total)}</span>` : ""}</button>`;
   }).join("");
+  pintarResumen(categoria);
+}
+
+const eurosRedondos = new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
+
+/** Suma de una lista de regalos: al mejor precio de hoy (o el de la lista si no hay) y al precio de la lista. */
+function sumar(lista) {
+  const total = lista.reduce((s, p) => s + (p.referencia || 0), 0);
+  const conLista = lista.filter((p) => p.precio_lista != null && p.actual != null);
+  const ahorro = conLista.reduce((s, p) => s + (p.precio_lista - p.actual), 0);
+  const sinPrecio = lista.filter((p) => p.referencia == null).length;
+  return { total, ahorro, sinPrecio, conLista: conLista.length };
+}
+
+/** Resumen de la pestaña elegida: lo que falta por comprar, el reparto por persona y lo ya comprado. */
+function pintarResumen(categoria) {
+  const todos = deCategoria();
+  const deQuien = (p) => estado.persona === "todas" || p.para === estado.persona;
+  const pendientes = todos.filter((p) => p.estado !== "comprado" && deQuien(p));
+  const comprados = todos.filter((p) => p.estado === "comprado" && deQuien(p));
+  const caja = $("#resumen");
+  if (!pendientes.length && !comprados.length) { caja.hidden = true; return; }
+  caja.hidden = false;
+
+  const s = sumar(pendientes);
+  const c = sumar(comprados);
+  const quien = estado.persona === "todas" ? "todos" : estado.persona;
+  const detalles = [`${pendientes.length} ${pendientes.length === 1 ? "regalo" : "regalos"}`];
+  if (s.sinPrecio) detalles.push(`${s.sinPrecio} sin precio todavía`);
+  if (s.conLista && Math.abs(s.ahorro) >= 0.5) {
+    detalles.push(s.ahorro > 0 ? `<span class="baja">${euros.format(s.ahorro)} menos que en la lista</span>`
+      : `<span class="sube">${euros.format(-s.ahorro)} más que en la lista</span>`);
+  }
+
+  let reparto = "";
+  if (estado.persona === "todas") {
+    const personas = [...new Set([...categoria.personas, ...pendientes.map((p) => p.para)])];
+    const filas = personas.map((n) => {
+      const suyos = pendientes.filter((p) => p.para === n);
+      return suyos.length ? `<li class="${CLASES[n] || "dos"}"><span>${escapar(n)}</span><strong>${euros.format(sumar(suyos).total)}</strong></li>` : "";
+    }).join("");
+    if (filas) reparto = `<ul class="reparto">${filas}</ul>`;
+  }
+
+  caja.innerHTML = `
+    <div class="resumen-principal">
+      <p class="resumen-titulo">Falta por comprar (${escapar(quien)})</p>
+      <p class="resumen-total">${euros.format(s.total)}</p>
+      <p class="resumen-detalle">${detalles.join(" · ")}</p>
+    </div>
+    ${reparto}
+    ${comprados.length ? `<p class="resumen-comprado">Ya comprado: <strong>${euros.format(c.total)}</strong> en ${comprados.length} ${comprados.length === 1 ? "regalo" : "regalos"}${c.sinPrecio ? ` (${c.sinPrecio} sin precio)` : ""}</p>` : ""}
+    <p class="resumen-nota">Suma del mejor precio de hoy de cada regalo; si aún no hay precio de tienda, el de la lista.</p>`;
 }
 
 function grafica(svg, valores) {
