@@ -220,3 +220,21 @@ class ComparadorTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PruebaNavegador(unittest.TestCase):
+    def test_tienda_bloqueada_se_abre_con_navegador(self):
+        import actualizar_precios as a
+        pagina = ('<script type="application/ld+json">{"@type":"Product","offers":{"@type":"Offer","price":"44.99"}}'
+                  '</script>' + "x" * 3000)
+        original_d, original_n = a.descargar, a.descargar_navegador
+        def bloquea(*_a, **_k):
+            raise a.Bloqueado("403")
+        try:
+            a.descargar, a.descargar_navegador = bloquea, lambda url: pagina
+            r = a.analizar("https://www.elcorteingles.es/juguetes/A1-coche/")
+            self.assertEqual((r["precio"], r["metodo"]), (44.99, "navegador"))
+            with self.assertRaises(a.Bloqueado):
+                a.analizar("https://www.otra-tienda.es/coche")
+        finally:
+            a.descargar, a.descargar_navegador = original_d, original_n

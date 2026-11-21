@@ -21,6 +21,9 @@ import zlib
 from datetime import datetime, timezone
 from pathlib import Path
 import os
+import shutil
+import subprocess
+import tempfile
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 RAIZ = Path(os.environ.get("MI_MERCADO_RAIZ") or Path(__file__).resolve().parent.parent)
@@ -87,6 +90,54 @@ def descargar(url: str, timeout: int = 25, extra: dict | None = None, reintentos
     elif codificacion == "deflate":
         datos = zlib.decompress(datos)
     return datos.decode(juego, errors="replace")
+
+
+def buscar_navegador() -> str | None:
+    """Edge o Chrome instalados en el ordenador (Windows trae Edge siempre)."""
+    propio = os.environ.get("MI_MERCADO_NAVEGADOR")
+    if propio and Path(propio).exists():
+        return propio
+    candidatos = []
+    for base in (os.environ.get("PROGRAMFILES(X86)"), os.environ.get("PROGRAMFILES"), os.environ.get("LOCALAPPDATA")):
+        if base:
+            candidatos += [Path(base) / "Microsoft/Edge/Application/msedge.exe",
+                           Path(base) / "Google/Chrome/Application/chrome.exe"]
+    for ruta in candidatos:
+        if ruta.exists():
+            return str(ruta)
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        return None  # desde GitHub no sirve: la tienda bloquea igual a sus servidores
+    for nombre in ("msedge", "google-chrome", "chromium", "chrome"):
+        encontrado = shutil.which(nombre)
+        if encontrado:
+            return encontrado
+    return None
+
+
+def descargar_navegador(url: str, espera_ms: int = 9000) -> str:
+    """Abre la página con el navegador real, sin ventana, y devuelve el HTML ya cargado.
+    Sirve para tiendas (El Corte Inglés, Sfera) que rechazan a los programas normales."""
+    navegador = buscar_navegador()
+    if not navegador:
+        raise Bloqueado("no hay navegador instalado para abrir la tienda")
+    with tempfile.TemporaryDirectory(prefix="mi-mercado-") as perfil:
+        orden = [navegador, "--headless=new", "--disable-gpu", "--no-first-run", "--no-default-browser-check",
+                 "--disable-blink-features=AutomationControlled", "--lang=es-ES", "--window-size=1366,900",
+                 f"--user-agent={CABECERAS['User-Agent']}", f"--user-data-dir={perfil}",
+                 f"--virtual-time-budget={espera_ms}", "--dump-dom", url]
+        try:
+            hecho = subprocess.run(orden, capture_output=True, timeout=90,
+                                   creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+        except subprocess.TimeoutExpired as err:
+            raise Bloqueado("el navegador tardó demasiado") from err
+    pagina = hecho.stdout.decode("utf-8", errors="replace")
+    if len(pagina) < 2000 or re.search(r"Access Denied|Acceso denegado|captcha", pagina[:5000], re.I):
+        guardar_muestra(f"navegador-{urllib.parse.urlsplit(url).netloc}", pagina)
+        raise Bloqueado("la tienda también bloqueó al navegador")
+    return pagina
+
+
+TIENDAS_CON_NAVEGADOR = re.compile(r"elcorteingles\.es|sfera\.com")
 
 
 # ---------------------------------------------------------------- utilidades
@@ -599,7 +650,14 @@ def analizar(url: str) -> dict:
         return {"precio": precio, "disponible": en_stock, "ficha": ficha, "metodo": metodo,
                 "_pagina": pagina}
 
-    pagina = descargar(url)
+    metodo = "generico"
+    try:
+        pagina = descargar(url)
+    except Bloqueado:
+        if not TIENDAS_CON_NAVEGADOR.search(url):
+            raise
+        pagina = descargar_navegador(url)
+        metodo = "navegador"
     ficha = ficha_generica(pagina)
     precio = precio_json_ld(pagina) or precio_meta(pagina)
     if not precio and re.search(r"elcorteingles\.es|sfera\.com", url):
@@ -613,7 +671,7 @@ def analizar(url: str) -> dict:
     if not precio:
         guardar_muestra(f"sin-precio-{urllib.parse.urlsplit(url).netloc}", pagina)
     return {"precio": precio,
-            "disponible": disponible_generico(pagina), "ficha": ficha, "metodo": "generico",
+            "disponible": disponible_generico(pagina), "ficha": ficha, "metodo": metodo,
             "_pagina": pagina}
 
 
