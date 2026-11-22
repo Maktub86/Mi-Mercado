@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-22T20:44:58+00:00",
-  "leidos": 91,
-  "fallos": 19,
+  "fecha": "2026-11-22T22:46:40+00:00",
+  "leidos": 95,
+  "fallos": 20,
   "enlaces": [
     {
       "producto": "tocador-princesas-disney",
@@ -71,7 +71,7 @@
       "ofertas": [
         {
           "tienda": "Amazon Marketplace (Funidelia España)",
-          "precio": 22.77
+          "precio": 23.0
         }
       ]
     },
@@ -282,12 +282,12 @@
           "precio": 49.99
         },
         {
-          "tienda": "Amazon Marketplace (Juguetilandia)",
+          "tienda": "Amazon Marketplace (DRIM)",
           "precio": 49.99
         },
         {
           "tienda": "Carrefour",
-          "precio": 51.86
+          "precio": 51.79
         }
       ]
     },
@@ -310,13 +310,17 @@
     {
       "producto": "mirrormi-fashion",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/mga-entertainment-mirrormi-fashion-doll-luna-skye-dreamy-253495-euc.html",
+      "url": "https://www.globerada.com/precios/minimi-mirrormi-muneca-de-moda-shai-meadows-sheepish.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/mga-entertainment-mirrormi-fashion-doll-luna-skye-dreamy-253495-euc.html",
+      "pagina": "https://www.globerada.com/precios/minimi-mirrormi-muneca-de-moda-shai-meadows-sheepish.html",
       "ofertas": [
         {
           "tienda": "Amazon",
-          "precio": 34.99
+          "precio": 34.49
+        },
+        {
+          "tienda": "Temu",
+          "precio": 38.98
         }
       ]
     },
@@ -350,6 +354,10 @@
         {
           "tienda": "Miravia (Juguetería Express)",
           "precio": 31.95
+        },
+        {
+          "tienda": "Sport is good",
+          "precio": 34.0
         },
         {
           "tienda": "Miravia (Juguetes Abracadabra)",
@@ -387,10 +395,6 @@
         {
           "tienda": "Amazon Marketplace (dinydon)",
           "precio": 18.71
-        },
-        {
-          "tienda": "Amazon",
-          "precio": 24.99
         },
         {
           "tienda": "Juguettos",
@@ -561,16 +565,16 @@
       "pagina": "https://www.globerada.com/precios/haba-2013336004-bichos-juego-infantil-de-mesa-de-memoria-y-calculo-mental-sumas-hasta-10.-mas-6-anos.html",
       "ofertas": [
         {
+          "tienda": "Amazon",
+          "precio": 6.99
+        },
+        {
           "tienda": "Abacus",
           "precio": 7.19
         },
         {
           "tienda": "Ferretería Ibermadrid",
           "precio": 7.19
-        },
-        {
-          "tienda": "Amazon",
-          "precio": 7.49
         },
         {
           "tienda": "Juegos de la Mesa Redonda",
@@ -753,13 +757,13 @@
     {
       "producto": "monster-high-cleo",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-cleo-de-nile-hxh74.html",
+      "url": "https://www.globerada.com/precios/monster-high-dawn-of-the-dance-cleo-muneca-143116216.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-cleo-de-nile-hxh74.html",
+      "pagina": "https://www.globerada.com/precios/monster-high-dawn-of-the-dance-cleo-muneca-143116216.html",
       "ofertas": [
         {
-          "tienda": "Amazon Marketplace (guerraksc)",
-          "precio": 33.7
+          "tienda": "Amazon",
+          "precio": 33.99
         }
       ]
     },
@@ -804,11 +808,11 @@
       "pagina": "https://www.globerada.com/precios/escuela-de-monstruos-el-libro-de-colorear-megamonstruoso-rippin-sally.html",
       "ofertas": [
         {
-          "tienda": "Abacus",
+          "tienda": "Imosver",
           "precio": 9.45
         },
         {
-          "tienda": "Imosver",
+          "tienda": "Abacus",
           "precio": 9.45
         }
       ]
@@ -925,19 +929,19 @@
           "precio": 39.99
         },
         {
-          "tienda": "Amazon",
-          "precio": 48.96
-        },
-        {
           "tienda": "Amazon Marketplace (You Get - Innovation & Technology)",
           "precio": 48.96
         },
         {
-          "tienda": "Juguettos",
+          "tienda": "Amazon",
           "precio": 49.99
         },
         {
           "tienda": "Miravia (Canal Toys)",
+          "precio": 49.99
+        },
+        {
+          "tienda": "Juguettos",
           "precio": 49.99
         },
         {
@@ -991,6 +995,50 @@
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/party-co-disney-juego-de-mesa-familiar-de-pruebas-disney-con-mimica-dibujo-y-memoria-3-a-15-ju",
       "precio": 29.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
+      "producto": "puzzle-pepco",
+      "tienda": "Pepco",
+      "url": "https://pepco.es/products/puzle-de-120-piezas-344478",
+      "precio": 4.0,
+      "metodo": "generico",
+      "error": null
+    },
+    {
+      "producto": "puzzle-pepco",
+      "tienda": "Globerada",
+      "url": "comparador:Puzzle Pepco",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "puzzle-pepco",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Puzzle Pepco",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "bisuteria",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/jsthhtt-joyas-de-mujer-set-de-40-piezas-brazalete-dorado-cadena-y-collar-oro-gargantilla-y-choker-dorado-bisuteria-joyeria-y-colgante-para-mujeres-oro.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/jsthhtt-joyas-de-mujer-set-de-40-piezas-brazalete-dorado-cadena-y-collar-oro-gargantilla-y-choker-dorado-bisuteria-joyeria-y-colgante-para-mujeres-oro.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon Marketplace (JSTHHTT)",
+          "precio": 13.69
+        }
+      ]
+    },
+    {
+      "producto": "bisuteria",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/bisuter-a-caja-con-collar-el-anillo-nico-el-se-or-de-los-anillos",
+      "precio": 12.99,
       "metodo": "shopify",
       "error": null
     }
