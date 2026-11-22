@@ -1579,6 +1579,43 @@
           "eci_buscar": "Party & Co. Disney, Juego de Mesa"
         }
       ]
+    },
+    {
+      "id": "puzzle-pepco",
+      "nombre": "Puzzle Pepco",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "",
+      "precio_lista": 4.0,
+      "busqueda": "Puzzle Pepco",
+      "enlaces": [
+        {
+          "tienda": "Pepco",
+          "url": "https://pepco.es/products/puzle-de-120-piezas-344478"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Puzzle Pepco"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Puzzle Pepco"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Puzzle Pepco"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Puzzle Pepco"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Puzzle Pepco"
+        }
+      ]
     }
   ],
   "categorias": [
