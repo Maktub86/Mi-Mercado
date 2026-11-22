@@ -94,7 +94,8 @@ function preparar(lista, precios) {
         : enlace.eci_buscar
           ? `https://www.elcorteingles.es/search-nwx/1/?s=${encodeURIComponent(enlace.eci_buscar)}&stype=text_box`
           : `https://${enlace.dominio}/search?q=${encodeURIComponent(enlace.buscar)}`);
-      todas.push(aTienda(enlace, info, url, clave));
+      // "propio": enlace que ha puesto alguien a mano (no una búsqueda automática).
+      todas.push(aTienda({ ...enlace, propio: Boolean(enlace.url) }, info, url, clave));
     });
 
     // Si una tienda aparece por dos caminos (p. ej. Amazon directo y vía comparador), nos quedamos
@@ -108,10 +109,10 @@ function preparar(lista, precios) {
       if (mejorQue(t, previa)) porNombre.set(nombre, previa && !t.imagen ? { ...t, imagen: previa.imagen, valoracion: t.valoracion || previa.valoracion, resumen: t.resumen || previa.resumen } : t);
     });
     const conImagen = todas.filter((t) => t.imagen);
-    // Solo se enseñan las tiendas de las que se ha podido leer el precio.
+    // Se enseñan las tiendas con precio leído y, aunque aún no tengan precio, los enlaces puestos a mano.
     const descartadas = new Set(p.descartadas || []);
     const tiendas = [...porNombre.values()]
-      .filter((t) => t.url && t.ultimo && !descartadas.has(t.clave))
+      .filter((t) => t.url && (t.ultimo || t.propio) && !descartadas.has(t.clave))
       .sort((a, b) => (a.ultimo ? a.ultimo.precio : Infinity) - (b.ultimo ? b.ultimo.precio : Infinity));
     const conPrecio = tiendas.filter((t) => t.ultimo);
     const mejor = conPrecio.length
@@ -295,13 +296,27 @@ function hojaComparar(p) {
   if (!top.length) {
     return '<p class="hoja-vacia">Todavía no hay precios de tiendas para este juguete. El robot lo sigue buscando en cada revisión.</p>';
   }
-  const mejor = top[0];
-  const peor = p.tiendas[p.tiendas.length - 1];
-  const ahorro = peor.ultimo.precio - mejor.ultimo.precio;
-  const cabecera = p.tiendas.length > 1
-    ? `Top ${top.length} de ${p.tiendas.length} ${p.tiendas.length === 1 ? "tienda" : "tiendas"}${ahorro >= 0.01 ? ` · ahorras hasta <strong>${euros.format(ahorro)}</strong>` : ""}`
-    : "1 tienda con precio";
+  const conPrecio = p.tiendas.filter((t) => t.ultimo);
+  const mejor = conPrecio[0];
+  const peor = conPrecio[conPrecio.length - 1];
+  const ahorro = mejor ? peor.ultimo.precio - mejor.ultimo.precio : 0;
+  const cabecera = !conPrecio.length
+    ? "Todavía no se ha leído el precio. El robot lo intentará en la próxima revisión."
+    : p.tiendas.length > 1
+      ? `Top ${top.length} de ${p.tiendas.length} ${p.tiendas.length === 1 ? "tienda" : "tiendas"}${ahorro >= 0.01 ? ` · ahorras hasta <strong>${euros.format(ahorro)}</strong>` : ""}`
+      : "1 tienda con precio";
   const filas = top.map((t, i) => {
+    if (!t.ultimo) {
+      return `<li class="fila-tienda">
+      <span class="puesto">–</span>
+      <span class="fila-texto"><span class="fila-nombre">${escapar(t.tienda)}</span>
+        <span class="fila-info">${escapar(t.error || "precio pendiente de leer")}</span></span>
+      <span class="fila-precio">—</span>
+      <a class="fila-ir" href="${escapar(t.url)}" target="_blank" rel="noopener" aria-label="Ir a ${escapar(t.tienda)}">Ir ↗</a>
+      <button type="button" class="fila-quitar solo-edicion" data-descartar="${escapar(t.clave)}" data-tienda="${escapar(t.tienda)}"
+        title="No es este producto: quitar esta tienda" aria-label="Quitar ${escapar(t.tienda)}">✕</button>
+    </li>`;
+    }
     const dif = t.ultimo.precio - mejor.ultimo.precio;
     const tend = textoTendencia(t);
     const info = [];
