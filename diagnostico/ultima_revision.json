@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-22T22:46:40+00:00",
-  "leidos": 95,
+  "fecha": "2026-11-22T22:57:19+00:00",
+  "leidos": 92,
   "fallos": 20,
   "enlaces": [
     {
@@ -100,21 +100,6 @@
       "error": "no encontrado en el comparador"
     },
     {
-      "producto": "dreamon-zapatos-princesa",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Dreamon zapatos",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "dreamon-zapatos-princesa",
-      "tienda": "Globerada",
-      "url": "comparador:Dreamon zapatos",
-      "error": "no encontrado en el comparador"
-    },
-    {
       "producto": "vtech-kidisecrets-locker",
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/vtech-kidisecrets-locker-taquilla-secreta-morada",
@@ -169,44 +154,6 @@
         {
           "tienda": "OnBuy (AMI VENTURES INC.)",
           "precio": 66.77
-        }
-      ]
-    },
-    {
-      "producto": "carro-limpieza",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:carrito limpieza Vileda",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "carro-limpieza",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html",
-      "ofertas": [
-        {
-          "tienda": "Abacus",
-          "precio": 23.99
-        },
-        {
-          "tienda": "Raijuguetes",
-          "precio": 25.96
-        },
-        {
-          "tienda": "Amazon",
-          "precio": 29.66
-        },
-        {
-          "tienda": "Fnac (Electro MGD)",
-          "precio": 39.43
-        },
-        {
-          "tienda": "PcComponentes (BLANsrl)",
-          "precio": 43.11
         }
       ]
     },
@@ -370,39 +317,6 @@
       ]
     },
     {
-      "producto": "cherry-pets-confetti-tree",
-      "tienda": "Carrefour",
-      "url": "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p",
-      "precio": 24.99,
-      "metodo": "generico",
-      "error": null
-    },
-    {
-      "producto": "cherry-pets-confetti-tree",
-      "tienda": "Toy Planet",
-      "url": "https://www.toyplanet.com/products/cherry-pets-confetti-tree-koala-twins-playset-con-2-figuras-exclusivas",
-      "precio": 24.99,
-      "metodo": "shopify",
-      "error": null
-    },
-    {
-      "producto": "cherry-pets-confetti-tree",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/cherry-pets-confetti-tree-casa-arbol-juguete-con-confeti-y-figuras-gemelas-perladas-playset-con-tobogan-columpio-y-accesorios-snack-time.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/cherry-pets-confetti-tree-casa-arbol-juguete-con-confeti-y-figuras-gemelas-perladas-playset-con-tobogan-columpio-y-accesorios-snack-time.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon Marketplace (dinydon)",
-          "precio": 18.71
-        },
-        {
-          "tienda": "Juguettos",
-          "precio": 24.99
-        }
-      ]
-    },
-    {
       "producto": "educa-magnetics-61",
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1",
@@ -496,20 +410,6 @@
           "precio": 37.94
         }
       ]
-    },
-    {
-      "producto": "stitch-walkie-talkies",
-      "tienda": "Toy Planet",
-      "url": "https://www.toyplanet.com/products/lexibook-stitch-y-angel-walkie-talkies-con-video-recargables",
-      "precio": 39.99,
-      "metodo": "shopify",
-      "error": null
-    },
-    {
-      "producto": "stitch-walkie-talkies",
-      "tienda": "Globerada",
-      "url": "comparador:Stitch walkie vídeo",
-      "error": "no encontrado en el comparador"
     },
     {
       "producto": "barbie-cascanueces-bailarina",
@@ -801,40 +701,6 @@
       ]
     },
     {
-      "producto": "libros-escuela-monstruos",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/escuela-de-monstruos-el-libro-de-colorear-megamonstruoso-rippin-sally.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/escuela-de-monstruos-el-libro-de-colorear-megamonstruoso-rippin-sally.html",
-      "ofertas": [
-        {
-          "tienda": "Imosver",
-          "precio": 9.45
-        },
-        {
-          "tienda": "Abacus",
-          "precio": 9.45
-        }
-      ]
-    },
-    {
-      "producto": "camiseta-betis",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/hummel-camiseta-de-manga-corta-tercera-equipacion-real-betis-balompie-2627-l.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/hummel-camiseta-de-manga-corta-tercera-equipacion-real-betis-balompie-2627-l.html",
-      "ofertas": [
-        {
-          "tienda": "Futbol Emotion",
-          "precio": 84.95
-        },
-        {
-          "tienda": "Amazon Marketplace (DEPORTE79 (solo productos originales))",
-          "precio": 92.17
-        }
-      ]
-    },
-    {
       "producto": "juego-rol-restaurante-agustin",
       "tienda": "Dideco",
       "url": "https://www.dideco.es/juguetes/juego-de-rol-el-pequeno-restaurante-de-agustin-3070900055247",
@@ -1041,6 +907,96 @@
       "precio": 12.99,
       "metodo": "shopify",
       "error": null
+    },
+    {
+      "producto": "marvin-s-magic-30-boligrafos-magicos",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/marvins-magic-30-boligrafos-magicos-cambio-de-color-ninos-5-boligrafos-magicos-cambia-color-dibujo-3d-sin-manchas-puntas-borrables-marca-de-magia-reconocida.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/marvins-magic-30-boligrafos-magicos-cambio-de-color-ninos-5-boligrafos-magicos-cambia-color-dibujo-3d-sin-manchas-puntas-borrables-marca-de-magia-reconocida.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon Marketplace (Marvin's Magic)",
+          "precio": 19.51
+        }
+      ]
+    },
+    {
+      "producto": "marvin-s-magic-30-boligrafos-magicos",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Marvin's Magic 30 Bolígrafos Mágicos",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "lego-classic-amigos-nutritivos-creativos-11039",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/lego-classic-amigos-nutritivos-creativos-11039.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/lego-classic-amigos-nutritivos-creativos-11039.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon",
+          "precio": 8.99
+        },
+        {
+          "tienda": "Lego",
+          "precio": 9.99
+        },
+        {
+          "tienda": "Juguettos",
+          "precio": 11.99
+        },
+        {
+          "tienda": "Miravia (Juguetilandia)",
+          "precio": 13.93
+        },
+        {
+          "tienda": "Sport is good",
+          "precio": 14.0
+        },
+        {
+          "tienda": "Miravia (JUGUETES FANCY)",
+          "precio": 17.4
+        },
+        {
+          "tienda": "PcComponentes (ASD ES)",
+          "precio": 20.04
+        },
+        {
+          "tienda": "Miravia (Playmycenter)",
+          "precio": 20.8
+        },
+        {
+          "tienda": "Miravia (Marana Tribu)",
+          "precio": 28.99
+        }
+      ]
+    },
+    {
+      "producto": "lego-classic-amigos-nutritivos-creativos-11039",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/lego-classic-amigos-nutritivos-creativos-juguete-11039",
+      "precio": 11.99,
+      "metodo": "shopify",
+      "error": null
+    },
+    {
+      "producto": "como-dibujar-kawaii-101-dibujos",
+      "tienda": "Globerada",
+      "url": "comparador:Cómo Dibujar Kawaii: 101 Dibujos",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "como-dibujar-kawaii-101-dibujos",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Cómo Dibujar Kawaii: 101 Dibujos",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
     }
   ]
 }
