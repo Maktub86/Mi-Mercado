@@ -250,40 +250,6 @@
       "categoria": "reyes"
     },
     {
-      "id": "carro-limpieza",
-      "nombre": "Theo Klein 6741 Carro de limpieza Vileda",
-      "para": "Alba",
-      "estado": "pendiente",
-      "nota": "",
-      "precio_lista": 27.29,
-      "tienda_lista": "Amazon",
-      "busqueda": "carro de limpieza juguete Vileda Theo Klein",
-      "enlaces": [
-        {
-          "tienda": "Amazon",
-          "url": "https://www.amazon.es/dp/B00IL35W2Y"
-        },
-        {
-          "tienda": "Toy Planet",
-          "dominio": "www.toyplanet.com",
-          "buscar": "carrito limpieza Vileda"
-        },
-        {
-          "tienda": "Globerada",
-          "comparador": "https://www.globerada.com/precios/klein-toys-vileda-carrito-de-limpieza-6741.html"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "carro de limpieza juguete Vileda Theo Klein"
-        },
-        {
-          "tienda": "El Corte Inglés",
-          "eci_buscar": "carro limpieza Vileda"
-        }
-      ],
-      "categoria": "reyes"
-    },
-    {
       "id": "barbie-boda-chelsea",
       "nombre": "Barbie Conjunto de Boda con Ken, Stacie y Chelsea",
       "para": "Alba",
