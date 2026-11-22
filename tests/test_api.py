@@ -80,7 +80,16 @@ class ServidorTest(unittest.TestCase):
         os.environ["GITHUB_TOKEN"] = "falso"
         cls.repo = {"contenido": json.dumps(LISTA), "sha": "1", "puts": 0}
 
-        def falso(metodo, cuerpo=None, crudo=False):
+        cls.otros = {}
+
+        def falso(metodo, cuerpo=None, crudo=False, ruta=sv.RUTA_PRODUCTOS):
+            if ruta != sv.RUTA_PRODUCTOS:
+                if metodo == "GET":
+                    if ruta not in cls.otros:
+                        raise urllib.error.HTTPError("x", 404, "no", {}, None)
+                    return cls.otros[ruta].encode() if crudo else {"sha": "c"}
+                cls.otros[ruta] = base64.b64decode(cuerpo["content"]).decode()
+                return {}
             if metodo == "GET":
                 return cls.repo["contenido"].encode() if crudo else {"sha": cls.repo["sha"]}
             assert cuerpo["sha"] == cls.repo["sha"]
@@ -109,6 +118,25 @@ class ServidorTest(unittest.TestCase):
                 return resp.status, json.loads(resp.read()), resp.headers
         except urllib.error.HTTPError as err:
             return err.code, json.loads(err.read()), err.headers
+
+    def test_cestas_compartidas(self):
+        codigo, datos, _ = self.pedir("GET", "/calcular")
+        self.assertEqual((codigo, datos["calcular"]), (200, {}))
+        estado = {"elegidos": ["vtech", ""], "grupo": {"vtech": "Reyes Lucía"}, "precio": {"vtech": "39.5"},
+                  "extras": [{"id": "extra-1", "nombre": "Pijama", "grupo": "Papá Noel", "precio": 12}],
+                  "grupos": ["Reyes Niñas", "Reyes Niñas", "Cumpleaños Alba"]}
+        codigo, _, _ = self.pedir("POST", "/calcular", {"calcular": estado}, clave="mala")
+        self.assertEqual(codigo, 401)
+        codigo, datos, _ = self.pedir("POST", "/calcular", {"calcular": estado})
+        self.assertEqual(codigo, 200)
+        codigo, datos, _ = self.pedir("GET", "/calcular")
+        guardado = datos["calcular"]
+        self.assertEqual(guardado["elegidos"], ["vtech"])
+        self.assertEqual(guardado["precio"], {"vtech": 39.5})
+        self.assertEqual(guardado["grupos"], ["Reyes Niñas", "Cumpleaños Alba"])
+        self.assertEqual(guardado["extras"][0]["grupo"], "Papá Noel")
+        codigo, _, _ = self.pedir("POST", "/calcular", {"calcular": {"precio": {"x": -3}}})
+        self.assertEqual(codigo, 400)
 
     def test_flujo_completo(self):
         codigo, cuerpo, cabeceras = self.pedir("GET", "/salud")
@@ -142,3 +170,4 @@ class ServidorTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

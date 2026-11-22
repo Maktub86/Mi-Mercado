@@ -30,6 +30,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 REPO = os.environ.get("REPO", "Maktub86/Mi-Mercado")
 RAMA = os.environ.get("RAMA", "main")
 RUTA_PRODUCTOS = "web/data/productos.json"
+RUTA_CALCULAR = "web/data/calcular.json"
 ORIGENES = {o.strip().rstrip("/") for o in os.environ.get("ORIGEN_WEB", "").split(",") if o.strip()}
 BLOQUEO = threading.Lock()
 
@@ -200,8 +201,8 @@ def editar(datos: dict, producto_id: str, peticion: dict) -> tuple[dict, str]:
 
 # ---------------------------------------------------------------- GitHub
 
-def github(metodo: str, cuerpo: dict | None = None, crudo: bool = False):
-    url = f"https://api.github.com/repos/{REPO}/contents/{RUTA_PRODUCTOS}"
+def github(metodo: str, cuerpo: dict | None = None, crudo: bool = False, ruta: str = RUTA_PRODUCTOS):
+    url = f"https://api.github.com/repos/{REPO}/contents/{ruta}"
     if metodo == "GET":
         url += f"?ref={RAMA}"
     req = urllib.request.Request(url, method=metodo, data=json.dumps(cuerpo).encode() if cuerpo else None, headers={
@@ -231,6 +232,77 @@ def guardar_lista(cambio) -> dict:
                 github("PUT", {"message": f"{mensaje} (desde la web)", "branch": RAMA, "sha": sha,
                                "content": base64.b64encode(contenido).decode()})
                 return resultado
+            except urllib.error.HTTPError as err:
+                if err.code in (409, 422) and intento < 3:
+                    time.sleep(1.5)
+                    continue
+                raise
+    raise RuntimeError("No se pudo guardar")
+
+
+# ---------------------------------------------------------------- cestas de Calcular (compartidas)
+
+def _texto(valor, largo: int = 120) -> str:
+    return str(valor or "").strip()[:largo]
+
+
+def _precio(valor):
+    if valor is None or valor == "":
+        return None
+    numero = float(valor)
+    if not (0 <= numero < 100_000):
+        raise ValueError("Precio no válido")
+    return round(numero, 2)
+
+
+def limpiar_calcular(estado: dict) -> dict:
+    """Comprueba y ordena lo que manda la web para las cestas."""
+    if not isinstance(estado, dict):
+        raise ValueError("Cestas no válidas")
+    elegidos = [_texto(x, 80) for x in (estado.get("elegidos") or [])[:400] if _texto(x, 80)]
+    grupos = []
+    for g in (estado.get("grupos") or [])[:40]:
+        g = _texto(g, 40)
+        if g and g not in grupos:
+            grupos.append(g)
+    grupo = {_texto(k, 80): _texto(v, 40) for k, v in list((estado.get("grupo") or {}).items())[:400] if _texto(v, 40)}
+    precio = {}
+    for k, v in list((estado.get("precio") or {}).items())[:400]:
+        p = _precio(v)
+        if p is not None:
+            precio[_texto(k, 80)] = p
+    extras = []
+    for x in (estado.get("extras") or [])[:200]:
+        if isinstance(x, dict) and _texto(x.get("nombre")):
+            extras.append({"id": _texto(x.get("id"), 40) or f"extra-{len(extras)}", "nombre": _texto(x.get("nombre")),
+                           "grupo": _texto(x.get("grupo"), 40) or "Cesta", "precio": _precio(x.get("precio"))})
+    return {"elegidos": elegidos, "grupo": grupo, "precio": precio, "extras": extras, "grupos": grupos,
+            "actualizado": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+
+
+def leer_calcular() -> tuple[dict, str | None]:
+    try:
+        sha = github("GET", ruta=RUTA_CALCULAR)["sha"]
+    except urllib.error.HTTPError as err:
+        if err.code == 404:
+            return {}, None
+        raise
+    return json.loads(github("GET", crudo=True, ruta=RUTA_CALCULAR)), sha
+
+
+def guardar_calcular(estado: dict) -> dict:
+    limpio = limpiar_calcular(estado)
+    contenido = (json.dumps(limpio, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+    with BLOQUEO:
+        for intento in range(4):
+            _, sha = leer_calcular()
+            cuerpo = {"message": "Cestas de Calcular (desde la web)", "branch": RAMA,
+                      "content": base64.b64encode(contenido).decode()}
+            if sha:
+                cuerpo["sha"] = sha
+            try:
+                github("PUT", cuerpo, ruta=RUTA_CALCULAR)
+                return limpio
             except urllib.error.HTTPError as err:
                 if err.code in (409, 422) and intento < 3:
                     time.sleep(1.5)
@@ -278,6 +350,12 @@ class Manejador(BaseHTTPRequestHandler):
         if self.path.rstrip("/") in ("", "/salud"):
             self._responder(200, {"ok": True, "configurado": bool(os.environ.get("GITHUB_TOKEN")
                                                                    and os.environ.get("CLAVE_EDICION"))})
+        elif urllib.parse.urlsplit(self.path).path.rstrip("/") == "/calcular":
+            try:
+                estado, _ = leer_calcular()
+                self._responder(200, {"ok": True, "calcular": estado})
+            except Exception as err:  # noqa: BLE001
+                self._responder(502, {"error": f"No se pudieron leer las cestas ({type(err).__name__})"})
         else:
             self._responder(404, {"error": "No encontrado"})
 
@@ -291,7 +369,7 @@ class Manejador(BaseHTTPRequestHandler):
 
     def _cuerpo(self) -> dict:
         largo = int(self.headers.get("Content-Length") or 0)
-        if largo > 20_000:
+        if largo > 200_000:
             raise ValueError("Petición demasiado grande")
         datos = json.loads(self.rfile.read(largo) or b"{}") if largo else {}
         if not isinstance(datos, dict):
@@ -307,6 +385,9 @@ class Manejador(BaseHTTPRequestHandler):
             cuerpo = self._cuerpo() if metodo == "POST" else {}
             if metodo == "POST" and ruta == "/comprobar":
                 self._responder(200, {"ok": True})
+                return
+            if metodo == "POST" and ruta == "/calcular":
+                self._responder(200, {"ok": True, "calcular": guardar_calcular(cuerpo.get("calcular") or {})})
                 return
             if metodo == "POST" and ruta == "/productos":
                 producto = guardar_lista(lambda d: anadir(d, cuerpo))

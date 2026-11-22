@@ -14,13 +14,14 @@ const estado = { categoria: null, persona: "todas", texto: "", orden: "lista", s
 const CLAVE_ELEGIDOS = "mi-mercado-elegidos";
 let elegidos = new Set();
 try { elegidos = new Set(JSON.parse(localStorage.getItem(CLAVE_ELEGIDOS) || "[]")); } catch (e) { /* sin almacenamiento */ }
-function guardarElegidos() {
+function guardarElegidos(local) {
   try { localStorage.setItem(CLAVE_ELEGIDOS, JSON.stringify([...elegidos])); } catch (e) { /* sin almacenamiento */ }
+  if (!local) programarSubida();
 }
 let productos = [];
 
 // Pestaña Calcular: a quién va cada regalo, precio cambiado a mano y cosas que no están en la lista.
-// Se guarda solo en este dispositivo.
+// Se guarda en este dispositivo y se comparte con los demás a través del servidor (web/data/calcular.json).
 const CLAVE_CALCULAR = "mi-mercado-calcular";
 const GRUPOS_BASE = ["Reyes Niñas", "Reyes Lucía", "Reyes Alba", "Cumpleaños Lucía", "Papá Noel"];
 const CESTA = "Cesta";
@@ -28,8 +29,71 @@ let calc = { grupo: {}, precio: {}, extras: [], grupos: [] };
 try { calc = { ...calc, ...JSON.parse(localStorage.getItem(CLAVE_CALCULAR) || "{}") }; } catch (e) { /* sin almacenamiento */ }
 calc.grupo = calc.grupo || {};
 calc.grupos = [...new Set([...GRUPOS_BASE, ...(calc.grupos || [])])];
-function guardarCalc() {
+function guardarCalc(local) {
   try { localStorage.setItem(CLAVE_CALCULAR, JSON.stringify(calc)); } catch (e) { /* sin almacenamiento */ }
+  if (!local) programarSubida();
+}
+
+// ---- compartir las cestas entre móviles
+let compartir = { listo: false, pendiente: false, temporizador: null, sinClave: false, ultimoError: "" };
+
+function estadoCestas() {
+  return { elegidos: [...elegidos], grupo: calc.grupo, precio: calc.precio, extras: calc.extras, grupos: calc.grupos };
+}
+
+function hayCestas() {
+  return elegidos.size > 0 || calc.extras.length > 0;
+}
+
+function programarSubida() {
+  compartir.pendiente = true;
+  if (!API || !compartir.listo || compartir.sinClave) return;
+  clearTimeout(compartir.temporizador);
+  compartir.temporizador = setTimeout(subirCestas, 2500);
+}
+
+async function subirCestas() {
+  if (!compartir.pendiente) return;
+  try {
+    await llamar("POST", "/calcular", { calcular: estadoCestas() });
+    compartir.pendiente = false;
+    compartir.ultimoError = "";
+  } catch (err) {
+    if (!leerContrasena()) {
+      compartir.sinClave = true;
+      aviso("Las cestas se guardan solo en este móvil. Para compartirlas, pon la contraseña en ✎ Editar.", "error");
+    } else if (compartir.ultimoError !== err.message) {
+      compartir.ultimoError = err.message;
+      aviso(`No se pudieron compartir las cestas: ${err.message}`, "error");
+    }
+  }
+}
+
+async function bajarCestas() {
+  if (!API) return;
+  try {
+    const resp = await fetch(`${API}/calcular`, { cache: "no-store" });
+    const datos = await resp.json();
+    if (!resp.ok) throw new Error(datos.error || resp.status);
+    const remoto = datos.calcular || {};
+    if (compartir.pendiente && compartir.listo) return; // hay cambios nuestros sin subir: mandan ellos
+    if (remoto.actualizado) {
+      const ids = new Set(productos.map((p) => p.id));
+      elegidos = new Set((remoto.elegidos || []).filter((id) => ids.has(id)));
+      calc = { grupo: remoto.grupo || {}, precio: remoto.precio || {}, extras: remoto.extras || [],
+        grupos: [...new Set([...GRUPOS_BASE, ...(remoto.grupos || [])])] };
+      guardarElegidos(true); guardarCalc(true);
+      compartir.pendiente = false;
+      mostrarVista();
+    } else {
+      compartir.pendiente = hayCestas(); // aún no hay nada compartido: sube lo de este móvil
+    }
+  } catch (e) {
+    /* sin conexión con el servidor: se sigue con lo de este dispositivo */
+  } finally {
+    compartir.listo = true;
+    if (compartir.pendiente) programarSubida();
+  }
 }
 
 const $ = (sel) => document.querySelector(sel);
@@ -652,7 +716,7 @@ function pintarCalcular() {
         <select id="calc-nuevo-grupo" aria-label="Colocar en">${opciones(CESTA)}</select>
         <button type="submit" class="boton-accion">Añadir</button>
       </div>
-      <p class="ayuda">Lo que hagas aquí solo se guarda en este dispositivo y no cambia la lista.</p>
+      <p class="ayuda">Las cestas se comparten entre todos los móviles que tengan puesta la contraseña. No cambian la lista de regalos.</p>
     </form>`;
 }
 
@@ -965,7 +1029,7 @@ function enlazarEventos() {
   $("#quitar-eleccion").addEventListener("click", () => {
     if (!window.confirm("¿Quitar todo de Calcular?")) return;
     elegidos.clear(); guardarElegidos();
-    calc = { para: {}, precio: {}, extras: [] }; guardarCalc();
+    calc = { grupo: {}, precio: {}, extras: [], grupos: calc.grupos }; guardarCalc();
     estado.soloElegidos = false;
     pintarEleccion(); pintarLista(); pintarCategorias();
   });
@@ -996,6 +1060,11 @@ async function iniciar() {
     pintarChips();
     pintarEleccion();
     pintarLista();
+    compartir.pendiente = false;
+    bajarCestas();
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible" && !compartir.pendiente) bajarCestas();
+    });
   } catch (err) {
     $("#actualizado").textContent = `No se pudo cargar la lista (${err.message}).`;
   }
