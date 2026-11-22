@@ -533,10 +533,22 @@ function leerPrecio(texto) {
   return Number.isFinite(n) && n >= 0 ? Math.round(n * 100) / 100 : undefined;
 }
 
+/** Nombre del grupo en Calcular: "Reyes Niñas", "Reyes Lucía", "Reyes Alba"... */
+function nombreGrupo(persona) {
+  const cat = categorias.find((c) => (c.personas || []).includes(persona));
+  const prefijo = cat ? cat.nombre.replace(/\s*\d{4}$/, "") : "";
+  const quien = persona === "Las dos" ? "Niñas" : persona;
+  return prefijo ? `${prefijo} ${quien}` : quien;
+}
+
+const ORDEN_GRUPOS = ["Las dos", "Lucía", "Alba"];
+
 function todasLasPersonas() {
   const nombres = categorias.flatMap((c) => c.personas || []);
   itemsCalcSinOrden().forEach((x) => nombres.push(x.para));
-  return [...new Set(nombres.filter(Boolean))];
+  const unicos = [...new Set(nombres.filter(Boolean))];
+  const puesto = (n) => (ORDEN_GRUPOS.includes(n) ? ORDEN_GRUPOS.indexOf(n) : ORDEN_GRUPOS.length + unicos.indexOf(n));
+  return unicos.sort((x, y) => puesto(x) - puesto(y));
 }
 
 function itemsCalcSinOrden() {
@@ -582,7 +594,7 @@ function pintarCalcular() {
   const items = itemsCalc();
   const personas = todasLasPersonas();
   const opciones = (actual) => personas.map((n) =>
-    `<option value="${escapar(n)}"${n === actual ? " selected" : ""}>${escapar(n)}</option>`).join("");
+    `<option value="${escapar(n)}"${n === actual ? " selected" : ""}>${escapar(nombreGrupo(n))}</option>`).join("");
   const total = items.reduce((s, x) => s + (x.precio || 0), 0);
   const sinPrecio = items.filter((x) => x.precio == null).length;
 
@@ -592,7 +604,7 @@ function pintarCalcular() {
 
   const reparto = grupos.map((g) => {
     const suma = g.items.reduce((s, x) => s + (x.precio || 0), 0);
-    return `<li class="${claseDe(g.nombre)}"><span>${escapar(g.nombre)}</span><strong>${euros.format(suma)}</strong></li>`;
+    return `<li class="${claseDe(g.nombre)}"><span>${escapar(nombreGrupo(g.nombre))}</span><strong>${euros.format(suma)}</strong></li>`;
   }).join("");
 
   const fila = (x) => `
@@ -601,7 +613,7 @@ function pintarCalcular() {
         <strong>${escapar(x.nombre)}</strong>
         <small>${x.url ? `<a href="${escapar(x.url)}" target="_blank" rel="noopener">${escapar(x.donde)} ↗</a>` : escapar(x.donde)}${x.cambiado && x.original != null ? ` · antes ${euros.format(x.original)}` : ""}</small>
       </div>
-      <label class="calc-campo"><span>Para</span>
+      <label class="calc-campo"><span>Grupo</span>
         <select data-calc-para>${opciones(x.para)}</select></label>
       <label class="calc-campo calc-precio"><span>Precio</span>
         <input data-calc-precio inputmode="decimal" value="${x.precio != null ? x.precio.toFixed(2).replace(".", ",") : ""}" placeholder="—" aria-label="Precio de ${escapar(x.nombre)}"></label>
@@ -611,7 +623,7 @@ function pintarCalcular() {
   const listas = grupos.map((g) => {
     const suma = g.items.reduce((s, x) => s + (x.precio || 0), 0);
     return `<section class="calc-grupo ${claseDe(g.nombre)}">
-      <header class="calc-grupo-cabeza"><h2>${escapar(g.nombre)}</h2>
+      <header class="calc-grupo-cabeza"><h2>${escapar(nombreGrupo(g.nombre))}</h2>
         <span>${g.items.length} ${g.items.length === 1 ? "regalo" : "regalos"} · <strong>${euros.format(suma)}</strong></span></header>
       <ul class="calc-lista">${g.items.map(fila).join("")}</ul>
     </section>`;
@@ -629,7 +641,7 @@ function pintarCalcular() {
         <button type="button" class="boton-accion suave" id="calc-copiar">Copiar resumen</button>
         <button type="button" class="boton-accion suave" id="calc-vaciar">Vaciar</button></div>` : ""}
     </div>
-    ${items.length ? listas : `<p class="calc-vacio">Toca el <b>✓</b> de cualquier regalo de la lista para mandarlo aquí. Aquí puedes cambiar para quién va y su precio, y ver cuánto sale en total y por persona.</p>`}
+    ${items.length ? listas : `<p class="calc-vacio">Toca el <b>🧮</b> de cualquier regalo de la lista para mandarlo aquí. Aquí puedes cambiar para quién va y su precio, y ver cuánto sale en total y por persona.</p>`}
     <form class="calc-anadir" id="calc-anadir">
       <h2>Añadir algo que no está en la lista</h2>
       <div class="calc-anadir-campos">
@@ -649,7 +661,7 @@ function textoResumenCalc() {
     const suyos = items.filter((x) => x.para === n).sort((a, b) => (b.precio ?? -1) - (a.precio ?? -1));
     if (!suyos.length) return;
     const suma = suyos.reduce((s, x) => s + (x.precio || 0), 0);
-    lineas.push(`${n}: ${euros.format(suma)}`);
+    lineas.push(`${nombreGrupo(n)}: ${euros.format(suma)}`);
     suyos.forEach((x) => lineas.push(`  - ${x.nombre}: ${x.precio != null ? euros.format(x.precio) : "sin precio"}`));
   });
   lineas.push(`TOTAL: ${euros.format(items.reduce((s, x) => s + (x.precio || 0), 0))}`);

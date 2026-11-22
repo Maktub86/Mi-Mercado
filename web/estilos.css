@@ -515,12 +515,15 @@ button.boton { font: inherit; font-size: 13px; font-weight: 600; color: var(--ti
   box-shadow: 0 1px 4px rgba(31, 42, 68, .15);
   transition: background .15s, border-color .15s, transform .1s;
 }
-.elegir span { font-size: 17px; font-weight: 700; color: transparent; line-height: 1; }
+.elegir { width: 40px; height: 40px; }
+.elegir span { line-height: 1; }
+.elegir .icono-calc { font-size: 20px; }
+.elegir .icono-ok { display: none; font-size: 19px; font-weight: 700; color: #fff; }
 .elegir:hover { border-color: var(--baja); }
-.elegir:hover span { color: #b9d9c7; }
 .elegir:active { transform: scale(.92); }
 .elegir[aria-pressed="true"] { background: var(--baja); border-color: var(--baja); }
-.elegir[aria-pressed="true"] span { color: #fff; }
+.elegir[aria-pressed="true"] .icono-calc { display: none; }
+.elegir[aria-pressed="true"] .icono-ok { display: block; }
 .tarjeta.elegida { border-color: var(--baja); box-shadow: 0 0 0 2px var(--baja), var(--sombra); }
 
 /* ---------- barra con el total elegido */
