@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-22T19:49:13+00:00",
-  "leidos": 88,
-  "fallos": 20,
+  "fecha": "2026-11-22T20:44:58+00:00",
+  "leidos": 91,
+  "fallos": 19,
   "enlaces": [
     {
       "producto": "tocador-princesas-disney",
@@ -365,10 +365,9 @@
       "producto": "cherry-pets-confetti-tree",
       "tienda": "Carrefour",
       "url": "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 403",
-      "pistas": {}
+      "precio": 24.99,
+      "metodo": "generico",
+      "error": null
     },
     {
       "producto": "cherry-pets-confetti-tree",
@@ -973,6 +972,27 @@
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
+    },
+    {
+      "producto": "party-co-disney-juego-de-mesa",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/jumbo-party-co.-disney-100-anniversary-juego-de-mesa-juego-familiar-para-todas-las-edades-version-holandesa.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/jumbo-party-co.-disney-100-anniversary-juego-de-mesa-juego-familiar-para-todas-las-edades-version-holandesa.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon",
+          "precio": 29.28
+        }
+      ]
+    },
+    {
+      "producto": "party-co-disney-juego-de-mesa",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/party-co-disney-juego-de-mesa-familiar-de-pruebas-disney-con-mimica-dibujo-y-memoria-3-a-15-ju",
+      "precio": 29.99,
+      "metodo": "shopify",
+      "error": null
     }
   ]
 }
