@@ -1126,35 +1126,6 @@
       "categoria": "reyes"
     },
     {
-      "id": "libros-escuela-monstruos",
-      "nombre": "Libros de Escuela de Monstruos",
-      "para": "Lucía",
-      "estado": "pendiente",
-      "fuera_de_carta": true,
-      "nota": "Fuera de carta",
-      "precio_lista": null,
-      "busqueda": "libros Escuela de Monstruos",
-      "enlaces": [
-        {
-          "tienda": "Globerada",
-          "comparador_buscar": "Escuela de Monstruos libro"
-        },
-        {
-          "tienda": "Amazon",
-          "amazon_buscar": "Escuela de Monstruos libro"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "Escuela de Monstruos libro"
-        },
-        {
-          "tienda": "El Corte Inglés",
-          "eci_buscar": "Escuela de Monstruos"
-        }
-      ],
-      "categoria": "reyes"
-    },
-    {
       "id": "juego-rol-restaurante-agustin",
       "nombre": "Djeco – Juego de rol El pequeño restaurante de Agustín",
       "para": "Las dos",
