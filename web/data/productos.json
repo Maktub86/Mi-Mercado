@@ -179,44 +179,6 @@
       "categoria": "reyes"
     },
     {
-      "id": "dreamon-zapatos-princesa",
-      "nombre": "Zapatos de princesa y abalorios (Dreamon o similar)",
-      "para": "Alba",
-      "estado": "pendiente",
-      "nota": "Es un ejemplo: vale cualquier set de tacones y abalorios",
-      "precio_lista": 39.99,
-      "tienda_lista": "Amazon",
-      "busqueda": "Dreamon zapatos princesa niñas tacones",
-      "enlaces": [
-        {
-          "tienda": "Toy Planet",
-          "dominio": "www.toyplanet.com",
-          "buscar": "Dreamon zapatos"
-        },
-        {
-          "tienda": "Globerada",
-          "comparador_buscar": "Dreamon zapatos"
-        },
-        {
-          "tienda": "Amazon",
-          "amazon_buscar": "Dreamon zapatos princesa"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "Dreamon zapatos"
-        },
-        {
-          "tienda": "El Corte Inglés",
-          "eci_buscar": "Dreamon zapatos"
-        },
-        {
-          "tienda": "El Corte Inglés (similar: caja 4 pares Disney)",
-          "eci_buscar": "caja zapatos princesas"
-        }
-      ],
-      "categoria": "reyes"
-    },
-    {
       "id": "vtech-kidisecrets-locker",
       "nombre": "VTech KidiSecrets Locker (morado)",
       "para": "Alba",
