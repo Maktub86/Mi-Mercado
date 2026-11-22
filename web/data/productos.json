@@ -546,44 +546,6 @@
       "categoria": "reyes"
     },
     {
-      "id": "cherry-pets-confetti-tree",
-      "nombre": "Cherry Pets Confetti Tree",
-      "para": "Lucía",
-      "estado": "pendiente",
-      "nota": "",
-      "precio_lista": 19.49,
-      "tienda_lista": "Amazon",
-      "busqueda": "Cherry Pets Confetti Tree",
-      "enlaces": [
-        {
-          "tienda": "Carrefour",
-          "url": "https://www.carrefour.es/cherry-pets-confetti-tree-koala-twins-3-anos/VC4A-34158673/p"
-        },
-        {
-          "tienda": "Toy Planet",
-          "dominio": "www.toyplanet.com",
-          "buscar": "Cherry Pets Confetti Tree"
-        },
-        {
-          "tienda": "Globerada",
-          "comparador_buscar": "Cherry Pets Confetti Tree"
-        },
-        {
-          "tienda": "Amazon",
-          "amazon_buscar": "Cherry Pets Confetti Tree"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "Cherry Pets Confetti Tree"
-        },
-        {
-          "tienda": "El Corte Inglés",
-          "eci_buscar": "Cherry Pets Confetti"
-        }
-      ],
-      "categoria": "reyes"
-    },
-    {
       "id": "educa-magnetics-61",
       "nombre": "Educa Magnetics 61 piezas",
       "para": "Lucía",
