@@ -1607,6 +1607,39 @@
           "eci_buscar": "Marvin's Magic 30 Bolígrafos Mágicos"
         }
       ]
+    },
+    {
+      "id": "lego-classic-amigos-nutritivos-creativos-11039",
+      "nombre": "LEGO Classic Amigos Nutritivos Creativos 11039",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "",
+      "precio_lista": 8.99,
+      "busqueda": "LEGO Classic Amigos Nutritivos Creativos 11039",
+      "enlaces": [
+        {
+          "tienda": "Amazon",
+          "url": "https://www.amazon.es/dp/B01MSZQ1WI"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "LEGO Classic Amigos Nutritivos Creativos 11039"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "LEGO Classic Amigos Nutritivos Creativos 11039"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "LEGO Classic Amigos Nutritivos Creativos 11039"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "LEGO Classic Amigos Nutritivos Creativos 11039"
+        }
+      ]
     }
   ],
   "categorias": [
