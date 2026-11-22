@@ -1304,18 +1304,6 @@
       "categoria": "reyes"
     },
     {
-      "id": "boligrafos-magicos",
-      "nombre": "Bolígrafos mágicos",
-      "para": "Las dos",
-      "estado": "pendiente",
-      "fuera_de_carta": true,
-      "nota": "Fuera de carta",
-      "precio_lista": null,
-      "busqueda": "bolígrafos mágicos niños",
-      "enlaces": [],
-      "categoria": "reyes"
-    },
-    {
       "id": "megapack-archivador-cartas-hello-kitty-2026",
       "nombre": "MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026",
       "para": "Las dos",
