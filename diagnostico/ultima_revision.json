@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-22T22:57:19+00:00",
+  "fecha": "2026-11-22T23:10:02+00:00",
   "leidos": 92,
-  "fallos": 20,
+  "fallos": 21,
   "enlaces": [
     {
       "producto": "tocador-princesas-disney",
@@ -993,6 +993,21 @@
       "producto": "como-dibujar-kawaii-101-dibujos",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:Cómo Dibujar Kawaii: 101 Dibujos",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "poperfun-16-pulgadas-pizarra-led-ninos-recargable",
+      "tienda": "Globerada",
+      "url": "comparador:POPERFUN 16 Pulgadas Pizarra LED Niños Recargable",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "poperfun-16-pulgadas-pizarra-led-ninos-recargable",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:POPERFUN 16 Pulgadas Pizarra LED Niños Recargable",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
