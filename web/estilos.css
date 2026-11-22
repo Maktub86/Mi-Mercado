@@ -687,3 +687,9 @@ body.con-barra .aviso { bottom: 96px; }
   .calc-anadir-campos { grid-template-columns: 1fr 1fr; }
   .calc-anadir-campos input:first-child { grid-column: 1 / -1; }
 }
+
+/* ---------- cestas de Calcular */
+.calc-grupo.cesta { border-left-color: #c9a227; border-style: dashed; border-left-style: solid; background: #fffbea; }
+.calc-grupo.otro { border-left-color: var(--tinta-suave); }
+.reparto li.cesta { background: #fbf1cf; color: #8a6d10; }
+.reparto li.otro { background: #eceff4; color: var(--tinta); }

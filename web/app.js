@@ -22,8 +22,12 @@ let productos = [];
 // Pestaña Calcular: a quién va cada regalo, precio cambiado a mano y cosas que no están en la lista.
 // Se guarda solo en este dispositivo.
 const CLAVE_CALCULAR = "mi-mercado-calcular";
-let calc = { para: {}, precio: {}, extras: [] };
+const GRUPOS_BASE = ["Reyes Niñas", "Reyes Lucía", "Reyes Alba", "Cumpleaños Lucía", "Papá Noel"];
+const CESTA = "Cesta";
+let calc = { grupo: {}, precio: {}, extras: [], grupos: [] };
 try { calc = { ...calc, ...JSON.parse(localStorage.getItem(CLAVE_CALCULAR) || "{}") }; } catch (e) { /* sin almacenamiento */ }
+calc.grupo = calc.grupo || {};
+calc.grupos = [...new Set([...GRUPOS_BASE, ...(calc.grupos || [])])];
 function guardarCalc() {
   try { localStorage.setItem(CLAVE_CALCULAR, JSON.stringify(calc)); } catch (e) { /* sin almacenamiento */ }
 }
@@ -533,29 +537,26 @@ function leerPrecio(texto) {
   return Number.isFinite(n) && n >= 0 ? Math.round(n * 100) / 100 : undefined;
 }
 
-/** Nombre del grupo en Calcular: "Reyes Niñas", "Reyes Lucía", "Reyes Alba"... */
-function nombreGrupo(persona) {
-  const cat = categorias.find((c) => (c.personas || []).includes(persona));
-  const prefijo = cat ? cat.nombre.replace(/\s*\d{4}$/, "") : "";
-  const quien = persona === "Las dos" ? "Niñas" : persona;
-  return prefijo ? `${prefijo} ${quien}` : quien;
+/** Color de cada cesta según para quién es. */
+function claseGrupo(g) {
+  if (g === CESTA) return "cesta";
+  if (/niñas|las dos/i.test(g)) return "dos";
+  if (/lucía|lucia/i.test(g)) return "lucia";
+  if (/alba/i.test(g)) return "alba";
+  if (/alejandro/i.test(g)) return "alejandro";
+  if (/roc[ií]o|noel/i.test(g)) return "rocio";
+  return "otro";
 }
 
-const ORDEN_GRUPOS = ["Las dos", "Lucía", "Alba"];
-
-function todasLasPersonas() {
-  const nombres = categorias.flatMap((c) => c.personas || []);
-  itemsCalcSinOrden().forEach((x) => nombres.push(x.para));
-  const unicos = [...new Set(nombres.filter(Boolean))];
-  const puesto = (n) => (ORDEN_GRUPOS.includes(n) ? ORDEN_GRUPOS.indexOf(n) : ORDEN_GRUPOS.length + unicos.indexOf(n));
-  return unicos.sort((x, y) => puesto(x) - puesto(y));
+function nombreVisible(g) {
+  return g === CESTA ? "🧺 Cesta (sin colocar)" : g;
 }
 
 function itemsCalcSinOrden() {
   const deLista = productos.filter((p) => elegidos.has(p.id)).map((p) => ({
     id: p.id,
     nombre: p.nombre,
-    para: calc.para[p.id] || p.para,
+    grupo: calc.grupo[p.id] || CESTA,
     precio: calc.precio[p.id] ?? p.referencia ?? null,
     original: p.referencia ?? null,
     cambiado: calc.precio[p.id] != null,
@@ -563,7 +564,7 @@ function itemsCalcSinOrden() {
     url: p.mejor ? p.mejor.url : null,
     extra: false,
   }));
-  const extras = calc.extras.map((x) => ({ ...x, original: null, cambiado: false, donde: "añadido a mano", url: null, extra: true }));
+  const extras = calc.extras.map((x) => ({ ...x, grupo: x.grupo || CESTA, original: null, cambiado: false, donde: "añadido a mano", url: null, extra: true }));
   return [...deLista, ...extras];
 }
 
@@ -592,19 +593,20 @@ function mostrarVista() {
 function pintarCalcular() {
   const caja = $("#vista-calcular");
   const items = itemsCalc();
-  const personas = todasLasPersonas();
-  const opciones = (actual) => personas.map((n) =>
-    `<option value="${escapar(n)}"${n === actual ? " selected" : ""}>${escapar(nombreGrupo(n))}</option>`).join("");
+  const orden = [CESTA, ...calc.grupos];
+  const opciones = (actual) => orden.map((g) =>
+    `<option value="${escapar(g)}"${g === actual ? " selected" : ""}>${escapar(nombreVisible(g))}</option>`).join("")
+    + `<option value="__nuevo">＋ Nueva cesta…</option>`;
   const total = items.reduce((s, x) => s + (x.precio || 0), 0);
   const sinPrecio = items.filter((x) => x.precio == null).length;
 
-  const grupos = personas.map((n) => ({ nombre: n, items: items.filter((x) => x.para === n) }))
+  const grupos = orden.map((g) => ({ nombre: g, items: items.filter((x) => x.grupo === g) }))
     .filter((g) => g.items.length);
   grupos.forEach((g) => g.items.sort((a, b) => (b.precio ?? -1) - (a.precio ?? -1)));
 
   const reparto = grupos.map((g) => {
     const suma = g.items.reduce((s, x) => s + (x.precio || 0), 0);
-    return `<li class="${claseDe(g.nombre)}"><span>${escapar(nombreGrupo(g.nombre))}</span><strong>${euros.format(suma)}</strong></li>`;
+    return `<li class="${claseGrupo(g.nombre)}"><span>${escapar(g.nombre === CESTA ? "Sin colocar" : g.nombre)}</span><strong>${euros.format(suma)}</strong></li>`;
   }).join("");
 
   const fila = (x) => `
@@ -613,8 +615,8 @@ function pintarCalcular() {
         <strong>${escapar(x.nombre)}</strong>
         <small>${x.url ? `<a href="${escapar(x.url)}" target="_blank" rel="noopener">${escapar(x.donde)} ↗</a>` : escapar(x.donde)}${x.cambiado && x.original != null ? ` · antes ${euros.format(x.original)}` : ""}</small>
       </div>
-      <label class="calc-campo"><span>Grupo</span>
-        <select data-calc-para>${opciones(x.para)}</select></label>
+      <label class="calc-campo"><span>Colocar en</span>
+        <select data-calc-grupo>${opciones(x.grupo)}</select></label>
       <label class="calc-campo calc-precio"><span>Precio</span>
         <input data-calc-precio inputmode="decimal" value="${x.precio != null ? x.precio.toFixed(2).replace(".", ",") : ""}" placeholder="—" aria-label="Precio de ${escapar(x.nombre)}"></label>
       <button type="button" class="calc-quitar" data-calc-quitar title="Quitar de Calcular" aria-label="Quitar ${escapar(x.nombre)}">✕</button>
@@ -622,8 +624,8 @@ function pintarCalcular() {
 
   const listas = grupos.map((g) => {
     const suma = g.items.reduce((s, x) => s + (x.precio || 0), 0);
-    return `<section class="calc-grupo ${claseDe(g.nombre)}">
-      <header class="calc-grupo-cabeza"><h2>${escapar(nombreGrupo(g.nombre))}</h2>
+    return `<section class="calc-grupo ${claseGrupo(g.nombre)}">
+      <header class="calc-grupo-cabeza"><h2>${escapar(nombreVisible(g.nombre))}</h2>
         <span>${g.items.length} ${g.items.length === 1 ? "regalo" : "regalos"} · <strong>${euros.format(suma)}</strong></span></header>
       <ul class="calc-lista">${g.items.map(fila).join("")}</ul>
     </section>`;
@@ -641,13 +643,13 @@ function pintarCalcular() {
         <button type="button" class="boton-accion suave" id="calc-copiar">Copiar resumen</button>
         <button type="button" class="boton-accion suave" id="calc-vaciar">Vaciar</button></div>` : ""}
     </div>
-    ${items.length ? listas : `<p class="calc-vacio">Toca el <b>🧮</b> de cualquier regalo de la lista para mandarlo aquí. Aquí puedes cambiar para quién va y su precio, y ver cuánto sale en total y por persona.</p>`}
+    ${items.length ? listas : `<p class="calc-vacio">Toca el <b>🧮</b> de cualquier regalo de la lista para mandarlo a la cesta. Desde aquí lo colocas en Reyes Niñas, Reyes Lucía, Reyes Alba, Cumpleaños Lucía, Papá Noel o una cesta nueva, y ves cuánto sale cada una.</p>`}
     <form class="calc-anadir" id="calc-anadir">
       <h2>Añadir algo que no está en la lista</h2>
       <div class="calc-anadir-campos">
         <input id="calc-nuevo-nombre" required maxlength="120" placeholder="Qué es" aria-label="Qué es">
         <input id="calc-nuevo-precio" inputmode="decimal" placeholder="Precio" aria-label="Precio">
-        <select id="calc-nuevo-para" aria-label="Para">${opciones(estado.persona !== "todas" ? estado.persona : personas[0])}</select>
+        <select id="calc-nuevo-grupo" aria-label="Colocar en">${opciones(CESTA)}</select>
         <button type="submit" class="boton-accion">Añadir</button>
       </div>
       <p class="ayuda">Lo que hagas aquí solo se guarda en este dispositivo y no cambia la lista.</p>
@@ -657,11 +659,11 @@ function pintarCalcular() {
 function textoResumenCalc() {
   const items = itemsCalc();
   const lineas = [];
-  todasLasPersonas().forEach((n) => {
-    const suyos = items.filter((x) => x.para === n).sort((a, b) => (b.precio ?? -1) - (a.precio ?? -1));
+  [CESTA, ...calc.grupos].forEach((g) => {
+    const suyos = items.filter((x) => x.grupo === g).sort((a, b) => (b.precio ?? -1) - (a.precio ?? -1));
     if (!suyos.length) return;
     const suma = suyos.reduce((s, x) => s + (x.precio || 0), 0);
-    lineas.push(`${nombreGrupo(n)}: ${euros.format(suma)}`);
+    lineas.push(`${g === CESTA ? "Sin colocar" : g}: ${euros.format(suma)}`);
     suyos.forEach((x) => lineas.push(`  - ${x.nombre}: ${x.precio != null ? euros.format(x.precio) : "sin precio"}`));
   });
   lineas.push(`TOTAL: ${euros.format(items.reduce((s, x) => s + (x.precio || 0), 0))}`);
@@ -675,8 +677,14 @@ function enlazarCalcular() {
     if (!fila) return;
     const id = fila.dataset.item;
     const extra = calc.extras.find((x) => x.id === id);
-    if (e.target.matches("[data-calc-para]")) {
-      if (extra) extra.para = e.target.value; else calc.para[id] = e.target.value;
+    if (e.target.matches("[data-calc-grupo]")) {
+      let destino = e.target.value;
+      if (destino === "__nuevo") {
+        destino = (window.prompt("Nombre de la cesta nueva (por ejemplo: Cumpleaños Alba)") || "").trim().slice(0, 40);
+        if (!destino) { pintarCalcular(); return; }
+        if (!calc.grupos.includes(destino) && destino !== CESTA) calc.grupos.push(destino);
+      }
+      if (extra) extra.grupo = destino; else if (destino === CESTA) delete calc.grupo[id]; else calc.grupo[id] = destino;
     } else if (e.target.matches("[data-calc-precio]")) {
       const valor = leerPrecio(e.target.value);
       if (valor === undefined) { aviso("Ese precio no se entiende. Escribe por ejemplo 24,99.", "error"); return; }
@@ -698,13 +706,13 @@ function enlazarCalcular() {
       const id = quitar.closest("[data-item]").dataset.item;
       calc.extras = calc.extras.filter((x) => x.id !== id);
       elegidos.delete(id); guardarElegidos();
-      delete calc.para[id]; delete calc.precio[id];
+      delete calc.grupo[id]; delete calc.precio[id];
       guardarCalc();
       pintarCalcular(); pintarCategorias();
     } else if (e.target.id === "calc-vaciar") {
       if (!window.confirm("¿Quitar todo de Calcular?")) return;
       elegidos.clear(); guardarElegidos();
-      calc = { para: {}, precio: {}, extras: [] }; guardarCalc();
+      calc = { grupo: {}, precio: {}, extras: [], grupos: calc.grupos }; guardarCalc();
       pintarCalcular(); pintarCategorias();
     } else if (e.target.id === "calc-copiar") {
       const texto = textoResumenCalc();
@@ -720,7 +728,12 @@ function enlazarCalcular() {
     const precio = leerPrecio($("#calc-nuevo-precio").value);
     if (!nombre) return;
     if (precio === undefined) { aviso("Ese precio no se entiende. Escribe por ejemplo 24,99.", "error"); return; }
-    calc.extras.push({ id: `extra-${Date.now()}`, nombre, para: $("#calc-nuevo-para").value, precio });
+    let grupo = $("#calc-nuevo-grupo").value;
+    if (grupo === "__nuevo") {
+      grupo = (window.prompt("Nombre de la cesta nueva") || "").trim().slice(0, 40) || CESTA;
+      if (grupo !== CESTA && !calc.grupos.includes(grupo)) calc.grupos.push(grupo);
+    }
+    calc.extras.push({ id: `extra-${Date.now()}`, nombre, grupo, precio });
     guardarCalc();
     pintarCalcular(); pintarCategorias();
     $("#calc-nuevo-nombre").focus();
