@@ -46,9 +46,11 @@
       <ul id="lista-comprados"></ul>
     </details>
 
+    <section id="vista-calcular" class="calcular" aria-label="Calcular" hidden></section>
+
     <footer class="pie">
       <p id="actualizado">Cargando precios…</p>
-      <p>Los precios se revisan solos dos veces al día en Amazon, Toy Planet, Carrefour y todas las tiendas del comparador Globerada (Abacus, Juguettos, Fnac, Miravia, Raijuguetes…). Solo se muestran las tiendas de las que se ha podido leer el precio.</p>
+      <p>Los precios se revisan solos dos veces al día en Amazon, Toy Planet, Carrefour y todas las tiendas del comparador Globerada (Abacus, Juguettos, Fnac, Miravia, Raijuguetes…). Se muestran las tiendas con precio leído y los enlaces que hayas puesto tú. Toca el ✓ de un regalo para mandarlo a 🧮 Calcular.</p>
     </footer>
   </main>
 
@@ -103,10 +105,10 @@
     <div class="contenedor barra-dentro">
       <div class="barra-texto">
         <strong id="eleccion-total">0,00 €</strong>
-        <span id="eleccion-detalle">0 regalos elegidos</span>
+        <span id="eleccion-detalle">0 regalos en Calcular</span>
       </div>
       <div class="barra-acciones">
-        <button type="button" class="boton-barra" id="ver-elegidos">Ver solo elegidos</button>
+        <button type="button" class="boton-barra" id="ver-elegidos">Ir a Calcular →</button>
         <button type="button" class="boton-barra suave" id="quitar-eleccion">Quitar todo</button>
       </div>
     </div>
@@ -115,7 +117,7 @@
   <template id="plantilla-tarjeta">
     <article class="tarjeta">
       <div class="foto">
-        <button type="button" class="elegir" aria-pressed="false" title="Elegir este regalo"><span aria-hidden="true">✓</span></button>
+        <button type="button" class="elegir" aria-pressed="false" title="Mandar a Calcular"><span aria-hidden="true">✓</span></button>
         <img alt="" loading="lazy" referrerpolicy="no-referrer" hidden>
         <span class="foto-vacia" aria-hidden="true">🎁</span>
         <div class="foto-etiquetas">

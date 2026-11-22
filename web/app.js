@@ -10,7 +10,7 @@ const fechaLarga = new Intl.DateTimeFormat("es-ES", {
   weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit",
 });
 
-const estado = { categoria: null, persona: "todas", texto: "", orden: "lista", soloElegidos: false };
+const estado = { categoria: null, persona: "todas", texto: "", orden: "lista", soloElegidos: false, vista: "lista" };
 const CLAVE_ELEGIDOS = "mi-mercado-elegidos";
 let elegidos = new Set();
 try { elegidos = new Set(JSON.parse(localStorage.getItem(CLAVE_ELEGIDOS) || "[]")); } catch (e) { /* sin almacenamiento */ }
@@ -18,6 +18,15 @@ function guardarElegidos() {
   try { localStorage.setItem(CLAVE_ELEGIDOS, JSON.stringify([...elegidos])); } catch (e) { /* sin almacenamiento */ }
 }
 let productos = [];
+
+// Pestaña Calcular: a quién va cada regalo, precio cambiado a mano y cosas que no están en la lista.
+// Se guarda solo en este dispositivo.
+const CLAVE_CALCULAR = "mi-mercado-calcular";
+let calc = { para: {}, precio: {}, extras: [] };
+try { calc = { ...calc, ...JSON.parse(localStorage.getItem(CLAVE_CALCULAR) || "{}") }; } catch (e) { /* sin almacenamiento */ }
+function guardarCalc() {
+  try { localStorage.setItem(CLAVE_CALCULAR, JSON.stringify(calc)); } catch (e) { /* sin almacenamiento */ }
+}
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -152,25 +161,25 @@ function deCategoria() {
 }
 
 function pintarCategorias() {
+  const enCalc = elegidos.size + calc.extras.length;
   $("#categorias").innerHTML = categorias.map((c) =>
-    `<button type="button" class="categoria" data-categoria="${c.id}" aria-pressed="${c.id === estado.categoria}">${escapar(c.nombre)}</button>`).join("");
+    `<button type="button" class="categoria" data-categoria="${c.id}" aria-pressed="${estado.vista === "lista" && c.id === estado.categoria}">${escapar(c.nombre)}</button>`).join("")
+    + `<button type="button" class="categoria pestana-calcular" data-vista="calcular" aria-pressed="${estado.vista === "calcular"}">🧮 Calcular${enCalc ? ` <span class="cuenta-calc">${enCalc}</span>` : ""}</button>`;
 }
 
 function pintarEleccion() {
-  const lista = productos.filter((p) => elegidos.has(p.id));
+  const lista = itemsCalc();
   const barra = $("#barra-eleccion");
-  barra.hidden = lista.length === 0;
-  document.body.classList.toggle("con-barra", lista.length > 0);
+  const visible = lista.length > 0 && estado.vista !== "calcular";
+  barra.hidden = !visible;
+  document.body.classList.toggle("con-barra", visible);
   if (!lista.length) { estado.soloElegidos = false; return; }
-  const total = lista.reduce((s, p) => s + (p.referencia || 0), 0);
-  const sinPrecio = lista.filter((p) => p.referencia == null).length;
-  const porPersona = {};
-  lista.forEach((p) => { porPersona[p.para] = (porPersona[p.para] || 0) + (p.referencia || 0); });
+  const total = lista.reduce((s, x) => s + (x.precio || 0), 0);
+  const sinPrecio = lista.filter((x) => x.precio == null).length;
   $("#eleccion-total").textContent = euros.format(total);
-  $("#eleccion-detalle").textContent = `${lista.length} ${lista.length === 1 ? "regalo elegido" : "regalos elegidos"}`
-    + (Object.keys(porPersona).length > 1 ? " · " + Object.entries(porPersona).map(([n, v]) => `${n} ${euros.format(v)}`).join(" · ") : "")
+  $("#eleccion-detalle").textContent = `${lista.length} ${lista.length === 1 ? "regalo" : "regalos"} en Calcular`
     + (sinPrecio ? ` · ${sinPrecio} sin precio` : "");
-  $("#ver-elegidos").textContent = estado.soloElegidos ? "Ver todos" : "Ver solo elegidos";
+  $("#ver-elegidos").textContent = "Ir a Calcular →";
 }
 
 function pintarChips() {
@@ -400,7 +409,7 @@ function tarjeta(p) {
   const marcar = () => {
     const si = elegidos.has(p.id);
     elegir.setAttribute("aria-pressed", String(si));
-    elegir.title = si ? "Quitar de elegidos" : "Elegir este regalo";
+    elegir.title = si ? "Quitar de Calcular" : "Mandar a Calcular";
     nodo.classList.toggle("elegida", si);
   };
   elegir.addEventListener("click", () => {
@@ -408,6 +417,7 @@ function tarjeta(p) {
     guardarElegidos();
     marcar();
     pintarEleccion();
+    pintarCategorias();
     if (estado.soloElegidos) pintarLista();
   });
   marcar();
@@ -514,6 +524,197 @@ function pintarLista() {
       <button type="button" class="enlace-boton solo-edicion" data-pendiente="${p.id}">Volver a la lista</button></span></li>`).join("");
 }
 
+// ---------------------------------------------------------------- calcular
+
+function leerPrecio(texto) {
+  const limpio = String(texto).replace(/[€\s]/g, "").replace(/\.(?=\d{3}(\D|$))/g, "").replace(",", ".");
+  if (limpio === "") return null;
+  const n = Number(limpio);
+  return Number.isFinite(n) && n >= 0 ? Math.round(n * 100) / 100 : undefined;
+}
+
+function todasLasPersonas() {
+  const nombres = categorias.flatMap((c) => c.personas || []);
+  itemsCalcSinOrden().forEach((x) => nombres.push(x.para));
+  return [...new Set(nombres.filter(Boolean))];
+}
+
+function itemsCalcSinOrden() {
+  const deLista = productos.filter((p) => elegidos.has(p.id)).map((p) => ({
+    id: p.id,
+    nombre: p.nombre,
+    para: calc.para[p.id] || p.para,
+    precio: calc.precio[p.id] ?? p.referencia ?? null,
+    original: p.referencia ?? null,
+    cambiado: calc.precio[p.id] != null,
+    donde: p.mejor ? p.mejor.tienda : p.precio_lista != null ? "precio de la lista" : "",
+    url: p.mejor ? p.mejor.url : null,
+    extra: false,
+  }));
+  const extras = calc.extras.map((x) => ({ ...x, original: null, cambiado: false, donde: "añadido a mano", url: null, extra: true }));
+  return [...deLista, ...extras];
+}
+
+function itemsCalc() {
+  return itemsCalcSinOrden();
+}
+
+function mostrarVista() {
+  const enCalc = estado.vista === "calcular";
+  document.querySelector(".filtros").hidden = enCalc;
+  $("#pendientes").hidden = enCalc;
+  $("#vista-calcular").hidden = !enCalc;
+  if (enCalc) {
+    $("#resumen").hidden = true;
+    $("#vacio").hidden = true;
+    $("#bloque-comprados").hidden = true;
+    pintarCalcular();
+  } else {
+    pintarChips();
+    pintarLista();
+  }
+  pintarCategorias();
+  pintarEleccion();
+}
+
+function pintarCalcular() {
+  const caja = $("#vista-calcular");
+  const items = itemsCalc();
+  const personas = todasLasPersonas();
+  const opciones = (actual) => personas.map((n) =>
+    `<option value="${escapar(n)}"${n === actual ? " selected" : ""}>${escapar(n)}</option>`).join("");
+  const total = items.reduce((s, x) => s + (x.precio || 0), 0);
+  const sinPrecio = items.filter((x) => x.precio == null).length;
+
+  const grupos = personas.map((n) => ({ nombre: n, items: items.filter((x) => x.para === n) }))
+    .filter((g) => g.items.length);
+  grupos.forEach((g) => g.items.sort((a, b) => (b.precio ?? -1) - (a.precio ?? -1)));
+
+  const reparto = grupos.map((g) => {
+    const suma = g.items.reduce((s, x) => s + (x.precio || 0), 0);
+    return `<li class="${claseDe(g.nombre)}"><span>${escapar(g.nombre)}</span><strong>${euros.format(suma)}</strong></li>`;
+  }).join("");
+
+  const fila = (x) => `
+    <li class="calc-fila" data-item="${escapar(x.id)}">
+      <div class="calc-nombre">
+        <strong>${escapar(x.nombre)}</strong>
+        <small>${x.url ? `<a href="${escapar(x.url)}" target="_blank" rel="noopener">${escapar(x.donde)} ↗</a>` : escapar(x.donde)}${x.cambiado && x.original != null ? ` · antes ${euros.format(x.original)}` : ""}</small>
+      </div>
+      <label class="calc-campo"><span>Para</span>
+        <select data-calc-para>${opciones(x.para)}</select></label>
+      <label class="calc-campo calc-precio"><span>Precio</span>
+        <input data-calc-precio inputmode="decimal" value="${x.precio != null ? x.precio.toFixed(2).replace(".", ",") : ""}" placeholder="—" aria-label="Precio de ${escapar(x.nombre)}"></label>
+      <button type="button" class="calc-quitar" data-calc-quitar title="Quitar de Calcular" aria-label="Quitar ${escapar(x.nombre)}">✕</button>
+    </li>`;
+
+  const listas = grupos.map((g) => {
+    const suma = g.items.reduce((s, x) => s + (x.precio || 0), 0);
+    return `<section class="calc-grupo ${claseDe(g.nombre)}">
+      <header class="calc-grupo-cabeza"><h2>${escapar(g.nombre)}</h2>
+        <span>${g.items.length} ${g.items.length === 1 ? "regalo" : "regalos"} · <strong>${euros.format(suma)}</strong></span></header>
+      <ul class="calc-lista">${g.items.map(fila).join("")}</ul>
+    </section>`;
+  }).join("");
+
+  caja.innerHTML = `
+    <div class="resumen calc-resumen">
+      <div class="resumen-principal">
+        <p class="resumen-titulo">Total</p>
+        <p class="resumen-total">${euros.format(total)}</p>
+        <p class="resumen-detalle">${items.length} ${items.length === 1 ? "regalo" : "regalos"}${sinPrecio ? ` · ${sinPrecio} sin precio` : ""}</p>
+      </div>
+      ${reparto ? `<ul class="reparto">${reparto}</ul>` : ""}
+      ${items.length ? `<div class="calc-acciones">
+        <button type="button" class="boton-accion suave" id="calc-copiar">Copiar resumen</button>
+        <button type="button" class="boton-accion suave" id="calc-vaciar">Vaciar</button></div>` : ""}
+    </div>
+    ${items.length ? listas : `<p class="calc-vacio">Toca el <b>✓</b> de cualquier regalo de la lista para mandarlo aquí. Aquí puedes cambiar para quién va y su precio, y ver cuánto sale en total y por persona.</p>`}
+    <form class="calc-anadir" id="calc-anadir">
+      <h2>Añadir algo que no está en la lista</h2>
+      <div class="calc-anadir-campos">
+        <input id="calc-nuevo-nombre" required maxlength="120" placeholder="Qué es" aria-label="Qué es">
+        <input id="calc-nuevo-precio" inputmode="decimal" placeholder="Precio" aria-label="Precio">
+        <select id="calc-nuevo-para" aria-label="Para">${opciones(estado.persona !== "todas" ? estado.persona : personas[0])}</select>
+        <button type="submit" class="boton-accion">Añadir</button>
+      </div>
+      <p class="ayuda">Lo que hagas aquí solo se guarda en este dispositivo y no cambia la lista.</p>
+    </form>`;
+}
+
+function textoResumenCalc() {
+  const items = itemsCalc();
+  const lineas = [];
+  todasLasPersonas().forEach((n) => {
+    const suyos = items.filter((x) => x.para === n).sort((a, b) => (b.precio ?? -1) - (a.precio ?? -1));
+    if (!suyos.length) return;
+    const suma = suyos.reduce((s, x) => s + (x.precio || 0), 0);
+    lineas.push(`${n}: ${euros.format(suma)}`);
+    suyos.forEach((x) => lineas.push(`  - ${x.nombre}: ${x.precio != null ? euros.format(x.precio) : "sin precio"}`));
+  });
+  lineas.push(`TOTAL: ${euros.format(items.reduce((s, x) => s + (x.precio || 0), 0))}`);
+  return lineas.join("\n");
+}
+
+function enlazarCalcular() {
+  const caja = $("#vista-calcular");
+  caja.addEventListener("change", (e) => {
+    const fila = e.target.closest("[data-item]");
+    if (!fila) return;
+    const id = fila.dataset.item;
+    const extra = calc.extras.find((x) => x.id === id);
+    if (e.target.matches("[data-calc-para]")) {
+      if (extra) extra.para = e.target.value; else calc.para[id] = e.target.value;
+    } else if (e.target.matches("[data-calc-precio]")) {
+      const valor = leerPrecio(e.target.value);
+      if (valor === undefined) { aviso("Ese precio no se entiende. Escribe por ejemplo 24,99.", "error"); return; }
+      if (extra) extra.precio = valor;
+      else {
+        const p = productos.find((x) => x.id === id);
+        if (valor == null || (p && valor === p.referencia)) delete calc.precio[id]; else calc.precio[id] = valor;
+      }
+    } else return;
+    guardarCalc();
+    pintarCalcular();
+  });
+  caja.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && e.target.matches("[data-calc-precio]")) { e.preventDefault(); e.target.blur(); }
+  });
+  caja.addEventListener("click", (e) => {
+    const quitar = e.target.closest("[data-calc-quitar]");
+    if (quitar) {
+      const id = quitar.closest("[data-item]").dataset.item;
+      calc.extras = calc.extras.filter((x) => x.id !== id);
+      elegidos.delete(id); guardarElegidos();
+      delete calc.para[id]; delete calc.precio[id];
+      guardarCalc();
+      pintarCalcular(); pintarCategorias();
+    } else if (e.target.id === "calc-vaciar") {
+      if (!window.confirm("¿Quitar todo de Calcular?")) return;
+      elegidos.clear(); guardarElegidos();
+      calc = { para: {}, precio: {}, extras: [] }; guardarCalc();
+      pintarCalcular(); pintarCategorias();
+    } else if (e.target.id === "calc-copiar") {
+      const texto = textoResumenCalc();
+      (navigator.clipboard ? navigator.clipboard.writeText(texto) : Promise.reject())
+        .then(() => aviso("Resumen copiado. Puedes pegarlo en WhatsApp.", "ok"))
+        .catch(() => window.prompt("Copia el resumen:", texto));
+    }
+  });
+  caja.addEventListener("submit", (e) => {
+    if (e.target.id !== "calc-anadir") return;
+    e.preventDefault();
+    const nombre = $("#calc-nuevo-nombre").value.trim();
+    const precio = leerPrecio($("#calc-nuevo-precio").value);
+    if (!nombre) return;
+    if (precio === undefined) { aviso("Ese precio no se entiende. Escribe por ejemplo 24,99.", "error"); return; }
+    calc.extras.push({ id: `extra-${Date.now()}`, nombre, para: $("#calc-nuevo-para").value, precio });
+    guardarCalc();
+    pintarCalcular(); pintarCategorias();
+    $("#calc-nuevo-nombre").focus();
+  });
+}
+
 // ---------------------------------------------------------------- edición
 
 let API = "";
@@ -601,9 +802,11 @@ function aplicarCambio(producto, borrar = false) {
   else if (i === -1) lista.push(producto);
   else lista[i] = producto;
   productos = preparar(datosLista, datosPrecios);
+  if (estado.vista === "calcular") { mostrarVista(); return; }
   pintarChips();
   pintarEleccion();
   pintarLista();
+  pintarCategorias();
 }
 
 async function accion(texto, fn) {
@@ -717,22 +920,31 @@ function enlazarEventos() {
     pintarLista();
   });
   $("#categorias").addEventListener("click", (e) => {
+    if (e.target.closest("[data-vista]")) {
+      estado.vista = "calcular";
+      mostrarVista();
+      return;
+    }
     const boton = e.target.closest("[data-categoria]");
     if (!boton) return;
     estado.categoria = boton.dataset.categoria;
     estado.persona = "todas";
-    pintarCategorias(); pintarChips(); pintarLista();
+    estado.vista = "lista";
+    mostrarVista();
   });
   $("#ver-elegidos").addEventListener("click", () => {
-    estado.soloElegidos = !estado.soloElegidos;
-    pintarEleccion(); pintarLista();
+    estado.vista = "calcular";
+    mostrarVista();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
   $("#quitar-eleccion").addEventListener("click", () => {
+    if (!window.confirm("¿Quitar todo de Calcular?")) return;
     elegidos.clear(); guardarElegidos();
+    calc = { para: {}, precio: {}, extras: [] }; guardarCalc();
     estado.soloElegidos = false;
-    pintarEleccion(); pintarLista();
+    pintarEleccion(); pintarLista(); pintarCategorias();
   });
+  enlazarCalcular();
   $("#buscar").addEventListener("input", (e) => { estado.texto = e.target.value; pintarLista(); });
   $("#orden").addEventListener("change", (e) => { estado.orden = e.target.value; pintarLista(); });
 }
