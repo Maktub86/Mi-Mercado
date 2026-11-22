@@ -1434,6 +1434,9 @@
           "tienda": "El Corte Inglés",
           "eci_buscar": "Bisuteria"
         }
+      ],
+      "descartadas": [
+        "buscar:www.toyplanet.com:Bisuteria"
       ]
     },
     {
