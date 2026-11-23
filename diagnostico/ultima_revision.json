@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-22T23:10:02+00:00",
-  "leidos": 92,
-  "fallos": 21,
+  "fecha": "2026-11-23T08:33:24+00:00",
+  "leidos": 90,
+  "fallos": 22,
   "enlaces": [
     {
       "producto": "tocador-princesas-disney",
@@ -234,7 +234,7 @@
         },
         {
           "tienda": "Carrefour",
-          "precio": 51.79
+          "precio": 51.68
         }
       ]
     },
@@ -499,7 +499,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 637088,
+        "bytes": 636804,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
@@ -696,7 +696,7 @@
         },
         {
           "tienda": "PcComponentes (La Frikilería)",
-          "precio": 44.1
+          "precio": 40.69
         }
       ]
     },
@@ -888,27 +888,6 @@
       "pistas": {}
     },
     {
-      "producto": "bisuteria",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/jsthhtt-joyas-de-mujer-set-de-40-piezas-brazalete-dorado-cadena-y-collar-oro-gargantilla-y-choker-dorado-bisuteria-joyeria-y-colgante-para-mujeres-oro.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/jsthhtt-joyas-de-mujer-set-de-40-piezas-brazalete-dorado-cadena-y-collar-oro-gargantilla-y-choker-dorado-bisuteria-joyeria-y-colgante-para-mujeres-oro.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon Marketplace (JSTHHTT)",
-          "precio": 13.69
-        }
-      ]
-    },
-    {
-      "producto": "bisuteria",
-      "tienda": "Toy Planet",
-      "url": "https://www.toyplanet.com/products/bisuter-a-caja-con-collar-el-anillo-nico-el-se-or-de-los-anillos",
-      "precio": 12.99,
-      "metodo": "shopify",
-      "error": null
-    },
-    {
       "producto": "marvin-s-magic-30-boligrafos-magicos",
       "tienda": "Globerada",
       "url": "https://www.globerada.com/precios/marvins-magic-30-boligrafos-magicos-cambio-de-color-ninos-5-boligrafos-magicos-cambia-color-dibujo-3d-sin-manchas-puntas-borrables-marca-de-magia-reconocida.html",
@@ -963,7 +942,7 @@
         },
         {
           "tienda": "PcComponentes (ASD ES)",
-          "precio": 20.04
+          "precio": 18.41
         },
         {
           "tienda": "Miravia (Playmycenter)",
@@ -1008,6 +987,21 @@
       "producto": "poperfun-16-pulgadas-pizarra-led-ninos-recargable",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:POPERFUN 16 Pulgadas Pizarra LED Niños Recargable",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "30-piezas-collar-pulseras-nina",
+      "tienda": "Globerada",
+      "url": "comparador:30 Piezas Collar Pulseras Niña",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "30-piezas-collar-pulseras-nina",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:30 Piezas Collar Pulseras Niña",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
