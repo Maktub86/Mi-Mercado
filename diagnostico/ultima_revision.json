@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-23T20:02:16+00:00",
-  "leidos": 88,
+  "fecha": "2026-11-24T08:30:02+00:00",
+  "leidos": 87,
   "fallos": 21,
   "enlaces": [
     {
@@ -234,7 +234,7 @@
         },
         {
           "tienda": "Carrefour",
-          "precio": 51.62
+          "precio": 51.49
         }
       ]
     },
@@ -465,10 +465,6 @@
           "precio": 6.99
         },
         {
-          "tienda": "Abacus",
-          "precio": 7.19
-        },
-        {
           "tienda": "Ferretería Ibermadrid",
           "precio": 7.19
         },
@@ -495,7 +491,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 637088,
+        "bytes": 636957,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
@@ -910,12 +906,12 @@
           "precio": 15.0
         },
         {
-          "tienda": "PcComponentes (ASD ES)",
-          "precio": 16.73
-        },
-        {
           "tienda": "Miravia (JUGUETES FANCY)",
           "precio": 17.4
+        },
+        {
+          "tienda": "PcComponentes (ASD ES)",
+          "precio": 19.42
         },
         {
           "tienda": "Miravia (Playmycenter)",
