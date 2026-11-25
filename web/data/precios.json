@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-25T22:02:50+00:00",
+  "actualizado": "2026-11-25T22:42:32+00:00",
   "productos": {
     "monster-high-moonspell": {
       "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/": {
@@ -86,8 +86,7 @@
         "ultima_comprobacion": "2026-11-25",
         "titulo": "Monster High Moonspell Magic Claire De Luna",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JMB89_1.png?v=1782436555",
-        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-claire-de-luna",
-        "ultimo_error": "URLError: <urlopen error [WinError 10060] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder>"
+        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-claire-de-luna"
       },
       "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina": {
         "tienda": "Toy Planet (Rae)",
@@ -131,8 +130,7 @@
         "ultima_comprobacion": "2026-11-25",
         "titulo": "Monster High Moonspell Magic Rae Lumina",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JMB91_1.png?v=1782436548",
-        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina",
-        "ultimo_error": "URLError: <urlopen error [WinError 10060] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder>"
+        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina"
       },
       "comparador:Monster High Moonspell#Abacus": {
         "tienda": "Abacus",
@@ -174,7 +172,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/b7265b5f7fa7b4d61f611a4fcfb5d4ee?exp=1795644151&sig=c2d6a8474152194b795cee45720c8a292ef109f0ec68bad458c111224bc3fcc2",
+        "url": "https://www.globerada.com/out/b7265b5f7fa7b4d61f611a4fcfb5d4ee?exp=1795649866&sig=1f20025e17ccca506a549b2c47f098f747650fbef836ffc5cba79af5d0bf3935",
         "via": "Globerada",
         "producto_tienda": "Muñeca Monster High Moonspell Magic Claire",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw357184ea/images/large/1611190.94.jpg"
@@ -245,7 +243,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/cb6130f11d9df21144d0605b7fdcc462?exp=1795644151&sig=78948ef3e28fa167fa204ec3635572b5bcd34718a6eedf48d16bed0c2b8b6acd",
+        "url": "https://www.globerada.com/out/cb6130f11d9df21144d0605b7fdcc462?exp=1795649866&sig=cbcb8350377959d6d8c209aece548dae556fb8a2687b0fc85abafd51f4de10fb",
         "via": "Globerada",
         "producto_tienda": "Monster High Moonspell Magic Muñeca Claire de Luna - ",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw357184ea/images/large/1611190.94.jpg"
@@ -290,7 +288,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/aaa9cd11ee7945fd2322141f133434bd?exp=1795644151&sig=e500169461562284cd1dbb464a5b5e6832b75c05d1d36cd6b6341b355b071ecc",
+        "url": "https://www.globerada.com/out/aaa9cd11ee7945fd2322141f133434bd?exp=1795649866&sig=de79419cc438acd8eb70348c543eed5e8e2f268732af4f2cd5235effc1a7d3a3",
         "via": "Globerada",
         "producto_tienda": "Muñeca Claire Clairvoyant Moonspell Magic Monster High",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw357184ea/images/large/1611190.94.jpg"
@@ -433,7 +431,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/141dc29e761a8e766a5cad5c9fbe6129?exp=1795644311&sig=c4ffc5c1449f0b2fb9c48ee00f094c994b8d4ce7a81daa1b5540ea4c8092d183",
+        "url": "https://www.globerada.com/out/141dc29e761a8e766a5cad5c9fbe6129?exp=1795649876&sig=f748b45c4d5db1ec5d6ba1bda00b062f5da0e97f29718a06224e3115c599cd5c",
         "via": "Globerada",
         "producto_tienda": "PLAYMOBIL My Life Abuelos y Bebé",
         "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
@@ -478,7 +476,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/600bc82e6e1a1495ceed45a4ebf54157?exp=1795644311&sig=66536c4b155d2992b0367b3e832663cef982e64b4470f2f871505ebde51174e9",
+        "url": "https://www.globerada.com/out/600bc82e6e1a1495ceed45a4ebf54157?exp=1795649876&sig=bfd388d671b01b5a76c5da63d79f2ead3b1347eac81f73a0f58afe661dd6322e",
         "via": "Globerada",
         "producto_tienda": "Abuelos Con Bebe Playmobil",
         "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
@@ -523,7 +521,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/6558a24bd0e08f86c3b57c01affb94e5?exp=1795644311&sig=7982c249049fa72fbbabfbe074cf7af4f5df924a3e9d3b364da89f323420b6f5",
+        "url": "https://www.globerada.com/out/6558a24bd0e08f86c3b57c01affb94e5?exp=1795649876&sig=5368e1ee29e5025672b0c1903c989347975fb75a762c953e6ce7d6051c4a7e5b",
         "via": "Globerada",
         "producto_tienda": "Playmobil - Abuelos y bebé Playmobil Life. (71613)",
         "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
@@ -568,7 +566,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/14746e780216615350bf37965ffd978e?exp=1795644311&sig=2f9c31f24f058cf30f114f8aef0f560242512d021a04771e027ce8f61c8ebe5b",
+        "url": "https://www.globerada.com/out/14746e780216615350bf37965ffd978e?exp=1795649876&sig=dc5d9cd335c0418ae81566b1b41f6e62d1058babd14f3db15f729e4b75115ba1",
         "via": "Globerada",
         "producto_tienda": "Playmobil 71613 - Abuelos con bebé - Nuevo",
         "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
@@ -613,7 +611,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/c1ae99f0be4391559d84dcd625d704e4?exp=1795644311&sig=7ee0eb071936ca19539c6f857976f2d702f55e7ca07d1521fcf648d45bd88a14",
+        "url": "https://www.globerada.com/out/c1ae99f0be4391559d84dcd625d704e4?exp=1795649876&sig=6940462139eefefcc5612ffab63eb6b9cebb52beabfd000205e54ae3b81d6b5a",
         "via": "Globerada",
         "producto_tienda": "PLAYMOBIL Abuelos con beb",
         "imagen": "https://m.media-amazon.com/images/I/410hggpsVtL._SL500_.jpg"
@@ -747,8 +745,7 @@
         "ultima_comprobacion": "2026-11-25",
         "titulo": "Crazy Chic Nail Art Studio Clementoni",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPCLE018429_1.png?v=1776388341",
-        "url": "https://www.toyplanet.com/products/crazy-chic-nail-art-studio-clementoni",
-        "ultimo_error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>"
+        "url": "https://www.toyplanet.com/products/crazy-chic-nail-art-studio-clementoni"
       },
       "comparador:Clementoni Nail Art Studio#Abacus": {
         "tienda": "Abacus",
@@ -790,7 +787,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/6f7c2550321ab6eb0dc80fc754dab52c?exp=1795644720&sig=9a903d1815d5a0313b5caf7b7dec19d0fb50c96ea77c156decc5dc88ea16bae8",
+        "url": "https://www.globerada.com/out/6f7c2550321ab6eb0dc80fc754dab52c?exp=1795649907&sig=fc93de527ee588b419093269adbd65d60beb6c39ed272a464532b84d4589e09a",
         "via": "Globerada",
         "producto_tienda": "Crazy Chic Diseña tus uñas",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -830,12 +827,12 @@
           },
           {
             "fecha": "2026-11-25",
-            "precio": 28.9,
+            "precio": 27.64,
             "disponible": true
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/ac21c5be643bf8dea90fb74a15c0e679?exp=1795644720&sig=6254983268cbc11d49b70fa9bf9d069841c717aba11e7e7750b31d25ed1a3321",
+        "url": "https://www.globerada.com/out/ac21c5be643bf8dea90fb74a15c0e679?exp=1795649907&sig=68213aa4bb64621890939cbaa563e9ad1e3742bb559e64132cef6fa459ff09b2",
         "via": "Globerada",
         "producto_tienda": "Clementoni - 18730 - Crazy Chic - Nail Art Studio - Set De Manicura Infantil, con Purpurina Y Secador, A Partir De 6 Año",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -880,7 +877,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/08e7836724f5236c2ede671da6f4fe6b?exp=1795644720&sig=03439016cec44fa9ffc040789cad7ae4456620196da512c3a81998816c7b8ec0",
+        "url": "https://www.globerada.com/out/08e7836724f5236c2ede671da6f4fe6b?exp=1795649907&sig=dbb19e17af7dde47d4337f6911022f6047a02f2b9dab4fcfb5bd80c3c064a6a2",
         "via": "Globerada",
         "producto_tienda": "Crazy Chic Beauty Diseña Tus uñas de Luxe",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -925,7 +922,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/c2b167f6e4d4896cb57c534382749e82?exp=1795644720&sig=900ecdf5d86661b3c482ea4cadb3e0a7f3f777a1853d4eeed873a5248734b57e",
+        "url": "https://www.globerada.com/out/c2b167f6e4d4896cb57c534382749e82?exp=1795649907&sig=7519e5d0b030ffe8d2f5be926c36d1c5017d60c617cd6bcc310e375906a5947d",
         "via": "Globerada",
         "producto_tienda": "Nail Art Studio",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -970,7 +967,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/0c7b44d2873d9e9bea8d5ec1b9b99a29?exp=1795644720&sig=972dada954c4b6f3e831d54aead806ba5d6a2dbe5639f8ae1dc0d6ce781c70b5",
+        "url": "https://www.globerada.com/out/0c7b44d2873d9e9bea8d5ec1b9b99a29?exp=1795649907&sig=17c9dc7c9047437fa681c4aa68511339ba1c4c9ef98bed422673acce7b9fc013",
         "via": "Globerada",
         "producto_tienda": "Diseña tus Uñas de Luxe",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -1015,7 +1012,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/b5bcac48197d3d4be592357441c964ec?exp=1795644720&sig=9ad93b402eccb2f6d131dd9a947933c4a64ea2e0a6ae221eec74abfff518d4ca",
+        "url": "https://www.globerada.com/out/b5bcac48197d3d4be592357441c964ec?exp=1795649907&sig=c73f4c97b3510a6f58b9f4497a93f50f48b98308a9d269a2fa9ae8d8ccd73f16",
         "via": "Globerada",
         "producto_tienda": "Nail art studio 18730 CLEMENTONI",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg"
@@ -1135,8 +1132,7 @@
         "ultima_comprobacion": "2026-11-25",
         "titulo": "Educa Juguete de Aprendizaje  Educa Magnetics 61 Piezas",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPEDU020024_1_ee7bb6ae-f1bd-4812-9993-57574a13ab72.png?v=1749129940",
-        "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1",
-        "ultimo_error": "RemoteDisconnected: Remote end closed connection without response"
+        "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1"
       },
       "comparador:Educa Magnetics 61#Amazon": {
         "tienda": "Amazon",
@@ -1178,7 +1174,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/9417b93a071105b5d1f63c5843ef2e72?exp=1795644793&sig=6db74b7a0ff1b78d32f6d575b6e4c28546564c97eea3eedd490d42b33181b421",
+        "url": "https://www.globerada.com/out/9417b93a071105b5d1f63c5843ef2e72?exp=1795649914&sig=bfabe5fe9605da5aca5ec5f84b852edcc824aa1282f14b461e75669f22c1e42a",
         "via": "Globerada",
         "producto_tienda": "Educa - Magnetics | Juego Educativo de construcción 3D magnético con 61 Piezas para niños, construye Figuras geométricas",
         "imagen": "https://m.media-amazon.com/images/I/51NjYiaHQiL._SL500_.jpg"
@@ -1223,7 +1219,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/9658f343b170742b5720df9885df8af0?exp=1795644793&sig=215f0d5092cf5ec9be142aa1a40bc762bdef47e10a4fdbf287939e67eef91d43",
+        "url": "https://www.globerada.com/out/9658f343b170742b5720df9885df8af0?exp=1795649914&sig=c720c1dd790bfec4b4686e6ecf36bf3cbeae2b82adbfdadfc5ad6648518a9eaf",
         "via": "Globerada",
         "producto_tienda": "Juego 61 Piezas Educa Magnetics",
         "imagen": "https://m.media-amazon.com/images/I/51NjYiaHQiL._SL500_.jpg"
@@ -1262,7 +1258,8 @@
         "url": "https://www.globerada.com/out/54f69de7751b2c896978fc4bad86a6ea?exp=1795644793&sig=3a10744f3d6c64706c169d8de5efdb3734deaa08ab4f8a7c78326671fe3bba50",
         "via": "Globerada",
         "producto_tienda": "Educa - Magnetics | Juego Educativo de construcción 3D magnético con 61 Piezas para niños, construye Figuras geométricas",
-        "imagen": "https://m.media-amazon.com/images/I/51NjYiaHQiL._SL500_.jpg"
+        "imagen": "https://m.media-amazon.com/images/I/51NjYiaHQiL._SL500_.jpg",
+        "ultimo_error": "ya no aparece en el comparador"
       },
       "comparador:Educa Magnetics 61#Fnac": {
         "tienda": "Fnac",
@@ -1274,11 +1271,10 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/56d84cef29ad1b998c40cf8eb0e634bf?exp=1795641121&sig=a5a682bcf8b187c2298e26fc310c92037d81afee9b5e964f710a4e92d5133b5d",
+        "url": "https://www.globerada.com/out/56d84cef29ad1b998c40cf8eb0e634bf?exp=1795649914&sig=2b6d8ed61bfc2e9b0b65d194f87db996c4606600d9912432823ad0d3b6a5de76",
         "via": "Globerada",
         "producto_tienda": "Juego de mesa Educa Magnetics 61 piezas",
-        "imagen": "https://static.fnac-static.com/multimedia/Images/ES/NR/33/a8/90/9480243/1504-1.jpg",
-        "ultimo_error": "ya no aparece en el comparador"
+        "imagen": "https://m.media-amazon.com/images/I/51NjYiaHQiL._SL500_.jpg"
       }
     },
     "barbie-deluxe-style-15": {
@@ -1428,13 +1424,14 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.toysrus.es/Barbie-El-Cascanueces-Caballo-y-Trineo-del-Reino-de-los-Dulces/p/K1105772"
+        "url": "https://www.toysrus.es/Barbie-El-Cascanueces-Caballo-y-Trineo-del-Reino-de-los-Dulces/p/K1105772",
+        "ultimo_error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons"
       },
       "buscar:www.toyplanet.com:Cascanueces caballo trineo": {
         "tienda": "Toy Planet",
         "historial": [],
         "ultima_comprobacion": "2026-11-25",
-        "ultimo_error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>"
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       },
       "comparador:Barbie Cascanueces trineo#Amazon": {
         "tienda": "Amazon",
@@ -1476,7 +1473,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/1df81f2e4b61248578b528aa987f8b95?exp=1795644986&sig=53247808beec88ba0b69a431c97268ce36359adac73c12f6707d65315bc4b1d2",
+        "url": "https://www.globerada.com/out/1df81f2e4b61248578b528aa987f8b95?exp=1795649934&sig=b2b97add8f291f2066bea8dc5a94196c94c96b1ecbba82d4480f3ad4fdfecd52",
         "via": "Globerada",
         "producto_tienda": "Barbie en Cascanueces Mundo de Dulces Caballo y Trineo | Cabello colorido con aroma, peine y accesorios con fragancia a ",
         "imagen": "https://m.media-amazon.com/images/I/71WWnzLoD9L.jpg"
@@ -1588,8 +1585,7 @@
         "ultima_comprobacion": "2026-11-25",
         "titulo": "MirrorMi Academy Muñeca Fashion Suki Goldpetal Fragile de 26,5 cm",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMGV055253_9_Copy.webp?v=1788339955",
-        "url": "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm",
-        "ultimo_error": "URLError: <urlopen error [WinError 10060] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder>"
+        "url": "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm"
       },
       "comparador:Mirrormi#Amazon": {
         "tienda": "Amazon",
@@ -1626,15 +1622,15 @@
           },
           {
             "fecha": "2026-11-25",
-            "precio": 34.49,
+            "precio": 27.64,
             "disponible": true
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/4d3267f71cfdfb1e43258e5acfc0face?exp=1795644481&sig=d4610e553287976281a99d7670be1608f61871b002a5c09cdb0517951cab73a4",
+        "url": "https://www.globerada.com/out/a3e09e8abdb66da22a170d26c71ec681?exp=1795649900&sig=485bee74f5545e8520f5616eda5aebd2377c53026bbef55055200d3aa33828ae",
         "via": "Globerada",
-        "producto_tienda": "Mirror Mi Shai Meadows Fashion Doll - Muñeca de Moda Soft n Sweet, con más de 15 Puntos articulados",
-        "imagen": "https://m.media-amazon.com/images/I/81EPa981fhL.jpg"
+        "producto_tienda": "Mirror Mi Luna Skye Fashion Doll - Muñeca de Moda Dreamy Emotion, con más de 15 Puntos articulados",
+        "imagen": "https://m.media-amazon.com/images/I/81qVDQ2sMML.jpg"
       },
       "comparador:Mirrormi#Electropolis": {
         "tienda": "Electropolis",
@@ -1643,14 +1639,18 @@
             "fecha": "2026-11-21",
             "precio": 33.63,
             "disponible": true
+          },
+          {
+            "fecha": "2026-11-25",
+            "precio": 39.1,
+            "disponible": true
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/2cea82c4f4d06c26de4edfdb6e4f4794?exp=1795299613&sig=30e12bc6a4613e2d4c2364f543ee0b9c51fa18bf654850ede1b6ca6f671a8c82",
+        "url": "https://www.globerada.com/out/f221880d3b19d8f78241b232f135e5a2?exp=1795649900&sig=30a44987cb1a35f781770fb27a09a96d1f2c2766675fba7b358712877e5f727b",
         "via": "Globerada",
-        "producto_tienda": "Mirror Mi Suki Goldpetal Fashion Doll - Muñeca de Moda Headphones On, con más de 15 Puntos articulados",
-        "imagen": "https://www.electropolis.es/media/catalog/product/i/m/img475853fddfbc632934b6d0d04b5260188bad191.jpg",
-        "ultimo_error": "ya no aparece en el comparador"
+        "producto_tienda": "MGA Entertainment Mirror Mi Luna Skye",
+        "imagen": "https://m.media-amazon.com/images/I/81qVDQ2sMML.jpg"
       },
       "eci:Mirrormi": {
         "tienda": "El Corte Inglés",
@@ -1686,7 +1686,8 @@
         "url": "https://www.globerada.com/out/88eeefde3ba824b314131304183c9139?exp=1795644481&sig=cadc835dce985432309ad19fb52c72127c2c1c86af63de21f206f76f87dcd636",
         "via": "Globerada",
         "producto_tienda": "Mirror Mi Muñeca Shai ()",
-        "imagen": "https://m.media-amazon.com/images/I/81EPa981fhL.jpg"
+        "imagen": "https://m.media-amazon.com/images/I/81EPa981fhL.jpg",
+        "ultimo_error": "ya no aparece en el comparador"
       }
     },
     "barbie-cascanueces-bailarina": {
@@ -1715,7 +1716,8 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.toysrus.es/Barbie-en-el-Cascanueces-Clara-con-tut%C3%BA/p/K1105770"
+        "url": "https://www.toysrus.es/Barbie-en-el-Cascanueces-Clara-con-tut%C3%BA/p/K1105770",
+        "ultimo_error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons"
       },
       "buscar:www.toyplanet.com:Cascanueces Clara tutú transformable": {
         "tienda": "Toy Planet",
@@ -1759,8 +1761,7 @@
         "ultima_comprobacion": "2026-11-25",
         "titulo": "Barbie El Cascanueces Clara muñeca bailarina con tutú transformable 3 años",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JLW53_1.png?v=1784077812",
-        "url": "https://www.toyplanet.com/products/barbie-el-cascanueces-clara-muneca-bailarina-con-tutu-transformable-3-anos",
-        "ultimo_error": "RemoteDisconnected: Remote end closed connection without response"
+        "url": "https://www.toyplanet.com/products/barbie-el-cascanueces-clara-muneca-bailarina-con-tutu-transformable-3-anos"
       },
       "comparador:Barbie Cascanueces Clara#Amazon": {
         "tienda": "Amazon",
@@ -1802,7 +1803,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/a28caf81e61c60d0a35355c68ecc43f9?exp=1795645111&sig=98ce0e2274f1655f25380a1bc2a05622ed6d53e4eed785b6a2cc973d27998b1f",
+        "url": "https://www.globerada.com/out/a28caf81e61c60d0a35355c68ecc43f9?exp=1795649945&sig=a03e54f19fbabc8a9aa6e00a0ebecfde5a8e17455cbd3ed6df37ae6cead4b6e1",
         "via": "Globerada",
         "producto_tienda": "Barbien El Cascanueces Muñeca Clara | Función sorpresa de tutú, tutú ombré, collar relicario de corazón y caja de regalo",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -1847,7 +1848,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/11d08f1ab7f6537a57f759aa6d4fb947?exp=1795645111&sig=2ef62d69eec1c35e3d8e6309c565defb30d464cd382e89658fed44c53a6236a0",
+        "url": "https://www.globerada.com/out/11d08f1ab7f6537a57f759aa6d4fb947?exp=1795649945&sig=b39ded25782e71750b78b11ff9a70a40586fb0087718829511a4341f5ff11880",
         "via": "Globerada",
         "producto_tienda": "Mattel Barbie Cascanueces bailarina Clara con falda tutu cambiante",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -1892,7 +1893,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/3c2615c7cd676996d97c1a747f389e9c?exp=1795645111&sig=7e1aa4c7ef0cb28a8d9def909e8686d17304d2e0e7e28d7cb671f6024da40aa8",
+        "url": "https://www.globerada.com/out/3c2615c7cd676996d97c1a747f389e9c?exp=1795649945&sig=676db8002e06890e2e41046c0a83b0caa3832d6514925954e813056571871d2d",
         "via": "Globerada",
         "producto_tienda": "Barbie en el Cascanueces Muñeca con Tutú - ",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -1937,7 +1938,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/83ee14e578072e351838face3b8b803e?exp=1795645111&sig=639afa2ad4776e3e5c60ca455f30673b589d68a0109cb3d0649c9af0d179b0d9",
+        "url": "https://www.globerada.com/out/83ee14e578072e351838face3b8b803e?exp=1795649945&sig=9348ee753709b1727ed0b4dee046452617b5c45d8c2545fdafdb7eaa55b0a452",
         "via": "Globerada",
         "producto_tienda": "Muñeca Clara Barbie In The Nutcracker",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -1982,7 +1983,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/9758a34b57fd9dc77e0cf0f94212bd19?exp=1795645111&sig=bace3583a5a902188f05fcc7a01dd43c2bfc30c18523dd6b7e4260ee2c1666d8",
+        "url": "https://www.globerada.com/out/9758a34b57fd9dc77e0cf0f94212bd19?exp=1795649945&sig=fdb4096d8a22ac50d9407ae69b026bf29b5a468c686d662c1d6cbedb18dabcef",
         "via": "Globerada",
         "producto_tienda": "Barbie Muñeca Clara Barbie en El Cascanueces - con tutú transformable - Nuevo",
         "imagen": "https://m.media-amazon.com/images/I/61k2qACnhZL.jpg"
@@ -2023,7 +2024,7 @@
         "tienda": "Toy Planet",
         "historial": [],
         "ultima_comprobacion": "2026-11-25",
-        "ultimo_error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1144)>"
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       },
       "amazon:Hello Kitty bolso peluche reversible": {
         "tienda": "Amazon",
@@ -2099,8 +2100,7 @@
         "ultima_comprobacion": "2026-11-25",
         "titulo": "Monster High Dawn of the Dance Cleo de Nile Creeproduction",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JKM47_1.png?v=1790903533",
-        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-cleo-de-nile-creeproduction",
-        "ultimo_error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>"
+        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-cleo-de-nile-creeproduction"
       },
       "comparador:Monster High Cleo#Amazon Marketplace (NEA PRIME)": {
         "tienda": "Amazon Marketplace (NEA PRIME)",
@@ -2187,7 +2187,8 @@
         "url": "https://www.globerada.com/out/29a94c04cb797cdcef757d0bd1efc3db?exp=1795646138&sig=2b4221a581acb8be260e5342ef1c77e84f548fd9502e15f08e42a01ec8c2e19d",
         "via": "Globerada",
         "producto_tienda": "Monster High Dawn of the Dance Cleo De Nile Muñeca Creeproducción | Boo-riginal Creeproduction Cleo De Nile con vestido ",
-        "imagen": "https://m.media-amazon.com/images/I/71jDTn3vmYL.jpg"
+        "imagen": "https://m.media-amazon.com/images/I/71jDTn3vmYL.jpg",
+        "ultimo_error": "ya no aparece en el comparador"
       },
       "comparador:Monster High Cleo#Amazon Marketplace (guerraksc)": {
         "tienda": "Amazon Marketplace (guerraksc)",
@@ -2233,6 +2234,21 @@
         "titulo": "Monster High Muñeca Cleo de Nile con accesorios",
         "imagen": "https://dam.elcorteingles.es/producto/www-001008339223169-00.jpg",
         "url": "https://www.elcorteingles.es/juguetes/A200276899-monster-high-muneca-cleo-de-nile-con-accesorios/"
+      },
+      "comparador:Monster High Cleo#Amazon Marketplace (Juguetes Abracadabra)": {
+        "tienda": "Amazon Marketplace (Juguetes Abracadabra)",
+        "historial": [
+          {
+            "fecha": "2026-11-25",
+            "precio": 32.95,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-25",
+        "url": "https://www.globerada.com/out/6d4a82adac67e10cf045e7f9f6b37358?exp=1795650008&sig=cf094c9c6d1f1a564161b190eaefb259d8a9c7ac8ee9dd5ef3c4753a5e122ff7",
+        "via": "Globerada",
+        "producto_tienda": "Monster High Cleo De Nile Muñeca con Ropa Dorada | Momia con blusa corta y falda, incluye cobra Hissette, mochila, merie",
+        "imagen": "https://m.media-amazon.com/images/I/41K3YaRqIxL._SL500_.jpg"
       }
     },
     "monster-high-frankie": {
@@ -2278,8 +2294,7 @@
         "ultima_comprobacion": "2026-11-25",
         "titulo": "Monster High Dawn of the Dance Frankie Stein",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JKM46_1.png?v=1790903521",
-        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-frankie-stein",
-        "ultimo_error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>"
+        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-frankie-stein"
       },
       "comparador:Monster High Doll With Pet Frankie#Amazon": {
         "tienda": "Amazon",
@@ -2321,7 +2336,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/f1fdadfa67ef734eb58f6ffd22cb42d3?exp=1795646287&sig=f24994d5331e0a8e6474786db9ca6df01b295b39c7052f002732946b99f14624",
+        "url": "https://www.globerada.com/out/f1fdadfa67ef734eb58f6ffd22cb42d3?exp=1795650015&sig=dbe143253debe8f3fa692dae4e61ffc058424c9772e18f53dc108e995aa9ca97",
         "via": "Globerada",
         "producto_tienda": "Monster High Frankie Stein Muñeca con Perro | Frankenmonster con suéter y falda negra, mascota Watzie y 7 accesorios: au",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
@@ -2387,7 +2402,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/ba331f7560cfc810fb112545dfe08ab8?exp=1795646287&sig=188ee0481afbae13c1cce82c7044d3bfe7db121a14d512d996da63f35000b733",
+        "url": "https://www.globerada.com/out/ba331f7560cfc810fb112545dfe08ab8?exp=1795650015&sig=7b53c6faeaa3287918d48a18a2293c686adacd400d6dbb182dd627230dd1db0b",
         "via": "Globerada",
         "producto_tienda": "Monster High Muñeca Frankie Stein con Mascota Watzie y 7 Accesorios - ",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
@@ -2432,7 +2447,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/4cdd40de5d2102e553bd0f26cc5a4473?exp=1795646287&sig=e72d4e12d22cebcbb2a9e00cac4366357ed75647016a668fe3995f9b14ee70b5",
+        "url": "https://www.globerada.com/out/4cdd40de5d2102e553bd0f26cc5a4473?exp=1795650015&sig=6e27856951d55f927bbb17e34e87e1fbd08807bf3439e784225406a7382affb6",
         "via": "Globerada",
         "producto_tienda": "Muñeca Articulada Monster High Frankie Stein con Mascota y 7 Accesorios",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
@@ -2477,7 +2492,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/af3effbd687f1633a1cbf3033bafea0a?exp=1795646287&sig=52c23da1e13d3a11fe0443e0a498f8d4d567f09a36543bd9644c41d18999919c",
+        "url": "https://www.globerada.com/out/af3effbd687f1633a1cbf3033bafea0a?exp=1795650015&sig=83a10e7d0975b1cea4f575931c85547ef5c4b1c15d861370ff6640276c762688",
         "via": "Globerada",
         "producto_tienda": "Mattel Monster High muñeca monstruo, FRANKIE, JHK31",
         "imagen": "https://m.media-amazon.com/images/I/41vQ4y0UCiL._SL500_.jpg"
@@ -2576,7 +2591,7 @@
         "tienda": "Toy Planet",
         "historial": [],
         "ultima_comprobacion": "2026-11-25",
-        "ultimo_error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>"
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       },
       "amazon:Djeco restaurante Agustín": {
         "tienda": "Amazon",
@@ -2666,7 +2681,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/069a8db397958b1d0f380bb2512776a2?exp=1795645287&sig=5cc011bd555cc27c5827a4fb792834a4674cf3ace0bcea0f3eb82635515e0491",
+        "url": "https://www.globerada.com/out/069a8db397958b1d0f380bb2512776a2?exp=1795649959&sig=e71872a28527ea21f149f478af0945281dbdf85e88a83aad1ab33da9ec317f63",
         "via": "Globerada",
         "producto_tienda": "Cómo consolar a una ardilla",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dwd5e099aa/images/large/1127471.29.jpg"
@@ -2711,7 +2726,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/5c07a09661cd9a2dd3ed643ee2e46f85?exp=1795645287&sig=09e5d6672fec4eb4ecb3ff44d960f137fade92f50aca4534ff0f83415cf5f1f7",
+        "url": "https://www.globerada.com/out/5c07a09661cd9a2dd3ed643ee2e46f85?exp=1795649959&sig=42219aa93377a16564c968930c362797bd1c9cbdc97ea795816ad84027202256",
         "via": "Globerada",
         "producto_tienda": "Como Consolar A Una Ardilla",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dwd5e099aa/images/large/1127471.29.jpg"
@@ -2868,7 +2883,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/fe95b2bffa9788bb5f3e3e69a64ccb84?exp=1795645212&sig=488a9c75c1dbfb8b266f1c09627a0da841476a81cfd92b8021ea51aef0938522",
+        "url": "https://www.globerada.com/out/fe95b2bffa9788bb5f3e3e69a64ccb84?exp=1795649948&sig=89a1d25ec1f4cef34b32269df5ad29f8b6693b1dfade3aa646eb74c82be4cb26",
         "via": "Globerada",
         "producto_tienda": "Bichos Haba",
         "imagen": "https://m.media-amazon.com/images/I/71484Bb4UbL.jpg"
@@ -2949,7 +2964,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/164acba6f8f876ddc63eb80f2e1a618c?exp=1795645212&sig=53c6a0b2551afa64ef80bcdcab3b660a4044da8812e05650cf118b30fc8bd2ec",
+        "url": "https://www.globerada.com/out/164acba6f8f876ddc63eb80f2e1a618c?exp=1795649948&sig=3a48f9be31fde39e0a770ef75a42020c1253e08e861432922e0ad53c71792b13",
         "via": "Globerada",
         "producto_tienda": "HABA 2013336004 - Bichos, Juego Infantil de Mesa de Memoria y cálculo Mental (Sumas hasta 10). Más 6 años",
         "imagen": "https://m.media-amazon.com/images/I/71484Bb4UbL.jpg"
@@ -2994,7 +3009,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/6ce93f64191ace74bc02aee1f75fc4a8?exp=1795645212&sig=f9fc910412392f4604a6a294731f893d4f6d16af97cae37804e690d33f84bb7e",
+        "url": "https://www.globerada.com/out/6ce93f64191ace74bc02aee1f75fc4a8?exp=1795649948&sig=8d59abde629fe2d2721daaa4fe47207ace65f780666659ecb30997aa64a730c7",
         "via": "Globerada",
         "producto_tienda": "Bichos",
         "imagen": "https://m.media-amazon.com/images/I/71484Bb4UbL.jpg"
@@ -3074,7 +3089,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/be65f444f20541ed28ec2dbbdf6f4dc2?exp=1795645358&sig=82512dc238a189f0835535bf7b98a1f726dd2898569d87dd9fbeccd679f44275",
+        "url": "https://www.globerada.com/out/be65f444f20541ed28ec2dbbdf6f4dc2?exp=1795649964&sig=7743be6206ca02628eb7652f08f06ecb42d669dca539177112a4f762b978a033",
         "via": "Globerada",
         "producto_tienda": "Frozen 2. Gran libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw503bed77/images/large/1309073.11.jpg"
@@ -3119,7 +3134,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/be65f444f20541ed28ec2dbbdf6f4dc2?exp=1795645365&sig=0552599c94495445d745cfd98003a18c61b22506ed63b2e24abb8d9abcb73ef2",
+        "url": "https://www.globerada.com/out/be65f444f20541ed28ec2dbbdf6f4dc2?exp=1795649970&sig=36d73c8970f71c04de3586ef9e2a6ff17bea3c8015c809b84931174879b06c49",
         "via": "Globerada",
         "producto_tienda": "Frozen 2. Gran libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw503bed77/images/large/1309073.11.jpg"
@@ -3164,7 +3179,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/75f5473ce98fb47b30fa36e53df206f8?exp=1795645379&sig=14bc5edb319850c9b9bc477b3ff2efc935770e8f852ffcc84b4e74481b908da7",
+        "url": "https://www.globerada.com/out/75f5473ce98fb47b30fa36e53df206f8?exp=1795649975&sig=3df903747d156593fe71236452216eb17bc1a8385221df16c76e7b752a0ad7ad",
         "via": "Globerada",
         "producto_tienda": "Elemental. Gran Libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw3ed88c1b/images/large/1445469.94.jpg"
@@ -3209,7 +3224,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/9ab4f044cab57e4c52e29cd0d987489f?exp=1795645387&sig=f38e102317c5ea9c4a4389605e9c5341d58cd9f66831dba4a95720a04fc9de12",
+        "url": "https://www.globerada.com/out/9ab4f044cab57e4c52e29cd0d987489f?exp=1795649979&sig=3db58d656405d2da75f94b190a193405518d1bbc60dbf3ac6143379e83584c2d",
         "via": "Globerada",
         "producto_tienda": "Elio. Gran libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw3d06f7a3/images/large/1544549.16.jpg"
@@ -3254,7 +3269,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/d750a6d6f06adc19f11050841d0ef3a3?exp=1795645400&sig=06c9e90f72fa5b8e081cc73b6581922123d4772e6ebcb7a578b498f61328c8ca",
+        "url": "https://www.globerada.com/out/d750a6d6f06adc19f11050841d0ef3a3?exp=1795649985&sig=22430fa2f17dc9d60a59f104c377b1f825dc90fec811d09ddd6d0a6ae00ac33b",
         "via": "Globerada",
         "producto_tienda": "Red. Gran Libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw9179b598/images/large/1390274.07.jpg"
@@ -3299,7 +3314,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/4c82de318a14fedb6e7c77b97a111ae3?exp=1795645415&sig=eb837b2cb21b610a10daf173f65c195dad05049490bfe0806a2224c2dd5ca3fa",
+        "url": "https://www.globerada.com/out/4c82de318a14fedb6e7c77b97a111ae3?exp=1795649992&sig=a97681257ea96daea99f7dc2a1c89ab609df9ac8c65458fb32bb45e095edac68",
         "via": "Globerada",
         "producto_tienda": "Zootrópolis 2. Gran Libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dw69dd8796/images/large/1563950.30.jpg"
@@ -3344,7 +3359,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/f426353a4442a94c01c5210652a1d0e3?exp=1795645424&sig=d4e1a3997b6e994e8f332670a73481e7a53abe60a01f5e4de2ce328606d297be",
+        "url": "https://www.globerada.com/out/f426353a4442a94c01c5210652a1d0e3?exp=1795649998&sig=19874d091bf0cb16485add9f4753f5730a0c57d75a0b5f4eebad16ab47cc1404",
         "via": "Globerada",
         "producto_tienda": "Los Increíbles 2. Gran libro de la película",
         "imagen": "https://www.abacus.coop/on/demandware.static/-/Sites-AbacusMaster/default/dwc521380e/images/large/1240071.94.jpg"
@@ -3891,7 +3906,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/da8d7c667188b3dffe7afdaffb0f320e?exp=1795644391&sig=ab41404c8d31777d83c1ee35c06d800c75b9edd8b404cc23aee87def2cdcca43",
+        "url": "https://www.globerada.com/out/da8d7c667188b3dffe7afdaffb0f320e?exp=1795649884&sig=5c70fd46f322d6eb3847b05903dd556ea86907bac4ab67476ece2a70e41f234e",
         "via": "Globerada",
         "producto_tienda": "Pets Alive Mommy Elephant con Bebés Elefante Sorpresa - ",
         "imagen": "https://juguettos.com/3699605/0000-00-00.jpg"
@@ -3936,7 +3951,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/4cc1e72745e8fcbbead02901844b5178?exp=1795644391&sig=8775d4090e3b6869203fe6b859fbd46918beb16299dadb1e3c14fdb82ecdb67d",
+        "url": "https://www.globerada.com/out/4cc1e72745e8fcbbead02901844b5178?exp=1795649884&sig=ad1005a4875612e877627fea3d2d164e5c783c5e8a9ff5485213c4c94261864f",
         "via": "Globerada",
         "producto_tienda": "Mamá Elefante Y Sus Bebés Pets Alive, ¡a Pasear!, Descubre Cuándos Bebes Tiene, Con Sonidos Reales 22x34x27cm",
         "imagen": "https://juguettos.com/3699605/0000-00-00.jpg"
@@ -3983,8 +3998,7 @@
         "ultima_comprobacion": "2026-11-25",
         "titulo": "Pets Alive Mommy Elephant con Bebés Elefante Sorpresa",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPZRU009570_1.png?v=1784769222",
-        "url": "https://www.toyplanet.com/products/pets-alive-mommy-elephant-con-bebes-elefante-sorpresa",
-        "ultimo_error": "RemoteDisconnected: Remote end closed connection without response"
+        "url": "https://www.toyplanet.com/products/pets-alive-mommy-elephant-con-bebes-elefante-sorpresa"
       },
       "amazon:Pets Alive elefante": {
         "tienda": "Amazon",
@@ -4057,7 +4071,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/7d331ea8da9a97d4d1d716b1b3a1adb2?exp=1795644391&sig=9610d42b5c7a566a893da91c17b327caf02cf1c9bab39fa6c76c043683281032",
+        "url": "https://www.globerada.com/out/7d331ea8da9a97d4d1d716b1b3a1adb2?exp=1795649884&sig=5000cb6f3a9f66cdc1a5c18b8f366fff9436e0a74f80aaef1ae377282fc89e51",
         "via": "Globerada",
         "producto_tienda": "Pets Alive Mamá Elefante",
         "imagen": "https://juguettos.com/3699605/0000-00-00.jpg"
@@ -4125,7 +4139,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/fd192cddc077eae643c955309a71786a?exp=1795644832&sig=8a8ff753975d7e9fefe83dacd49ab3988f4c113c796c1e3c2ca43283af3a0fd7",
+        "url": "https://www.globerada.com/out/fd192cddc077eae643c955309a71786a?exp=1795649919&sig=99a4b181a178ec3cc4019fb7f8cbb244de37f995e9a12c43bab63759e40a2f92",
         "via": "Globerada",
         "producto_tienda": "SPIN MASTER - Peekimo Rosa Penny - Tu amigo para llevar contigo",
         "imagen": "https://ae01.alicdn.com/kf/E8bf69a6985844c859723d4c1b23d6e47I.jpg"
@@ -4170,7 +4184,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/57f12fdeb408711cc80cb81e37de5cd4?exp=1795644832&sig=a62fddab67911a31a30146084b795e1681e2f4f8cef86dfe84bed9bca82e27a6",
+        "url": "https://www.globerada.com/out/57f12fdeb408711cc80cb81e37de5cd4?exp=1795649919&sig=cba4a593106b900895b520edbe77f30ba5bc9dfd38bc0bddd7f7434728c3fac5",
         "via": "Globerada",
         "producto_tienda": "Peekimo - Penny Rosa | Mascota Interactiva, Juguete Niña 5 Años +100 Reac | Penny es una mascota interactiva con +100 re",
         "imagen": "https://ae01.alicdn.com/kf/E8bf69a6985844c859723d4c1b23d6e47I.jpg"
@@ -4215,7 +4229,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/c3c7f4476bb4881a1df4226233afd32e?exp=1795644832&sig=0b30b1c7876ac5c6c03dea2c2956616b2bf0f8f953fc0fb1d574ba1b18eeb059",
+        "url": "https://www.globerada.com/out/c3c7f4476bb4881a1df4226233afd32e?exp=1795649919&sig=3d64a6447a9b03ada6ce816c1892032209ec526d93ff28328ef030ce78d7393c",
         "via": "Globerada",
         "producto_tienda": "Peekimo Tu Amigo para LLevar Macota Interactiva Penny Rosa - ",
         "imagen": "https://ae01.alicdn.com/kf/E8bf69a6985844c859723d4c1b23d6e47I.jpg"
@@ -4288,8 +4302,7 @@
         "ultima_comprobacion": "2026-11-25",
         "titulo": "Peekimo Mascota Interactiva con Más de 100 Sonidos",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPSMT076648_1.png?v=1781140460",
-        "url": "https://www.toyplanet.com/products/peekimo-mascota-interactiva-con-mas-de-100-sonidos",
-        "ultimo_error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1144)>"
+        "url": "https://www.toyplanet.com/products/peekimo-mascota-interactiva-con-mas-de-100-sonidos"
       },
       "amazon:Peekimo": {
         "tienda": "Amazon",
@@ -4410,7 +4423,7 @@
         "tienda": "Toy Planet",
         "historial": [],
         "ultima_comprobacion": "2026-11-25",
-        "ultimo_error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>"
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       },
       "https://www.elcorteingles.es/juguetes/A200276918-megapack-archivador-cartas-hello-kitty-2026/": {
         "tienda": "El Corte Inglés",
@@ -4464,7 +4477,8 @@
           "media": 3.7,
           "total": 3,
           "maximo": 5
-        }
+        },
+        "ultimo_error": "bloqueado: la tienda respondió 403"
       },
       "comparador:Peluche pikachu#Amazon": {
         "tienda": "Amazon",
@@ -4491,7 +4505,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/035bd19216293756a4e129d7b9751566?exp=1795646559&sig=b97252e17a0de60cefbe824b9c8e6d4d0a141a430e15d30a66b6c2323cb60960",
+        "url": "https://www.globerada.com/out/035bd19216293756a4e129d7b9751566?exp=1795650069&sig=0543dd9cefae404870f7ffef29fe58337f88d7157583516f133afc89729c23a0",
         "via": "Globerada",
         "producto_tienda": "Pokémon Peluche de Pikachu - Peluche Suave de 20 cm con Detalles auténticos",
         "imagen": "https://m.media-amazon.com/images/I/310WRUwDqAL._SL500_.jpg"
@@ -4523,8 +4537,7 @@
         "ultima_comprobacion": "2026-11-25",
         "titulo": "Cuaderno Premium Pokémon Pikachu Forrado Peluche A5",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPABY0OT158_2.png?v=1771590298",
-        "url": "https://www.toyplanet.com/products/cuaderno-premium-pokemon-pikachu-forrado-peluche-a5",
-        "ultimo_error": "RemoteDisconnected: Remote end closed connection without response"
+        "url": "https://www.toyplanet.com/products/cuaderno-premium-pokemon-pikachu-forrado-peluche-a5"
       },
       "amazon:Peluche pikachu": {
         "tienda": "Amazon",
@@ -4578,7 +4591,7 @@
         "tienda": "Toy Planet",
         "historial": [],
         "ultima_comprobacion": "2026-11-25",
-        "ultimo_error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1144)>"
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       },
       "https://www.amazon.es/dp/B0GF1NKYVP": {
         "tienda": "Amazon",
@@ -4637,7 +4650,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/98e313d2011564c343206718bb153cc0?exp=1795646943&sig=d4a8e440b4481ae23323f821b4805f3516d2d014182a093a6c0c57e956be3b82",
+        "url": "https://www.globerada.com/out/98e313d2011564c343206718bb153cc0?exp=1795650089&sig=31895893db96d5132b854e10b26f8b908c833bfab77c62c762c4986d17478865",
         "via": "Globerada",
         "producto_tienda": "Jumbo - Party & Co. - Disney 100 Anniversary - Juego de mesa - Juego familiar - para todas las edades, versión holandesa",
         "imagen": "https://m.media-amazon.com/images/I/613uEIF7HEL.jpg"
@@ -4669,8 +4682,7 @@
         "ultima_comprobacion": "2026-11-25",
         "titulo": "Party & Co Disney – Juego de mesa familiar de pruebas Disney con mímica, dibujo y memoria (3 a 15 ju",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPDIS000285_1.png?v=1773713454",
-        "url": "https://www.toyplanet.com/products/party-co-disney-juego-de-mesa-familiar-de-pruebas-disney-con-mimica-dibujo-y-memoria-3-a-15-ju",
-        "ultimo_error": "URLError: <urlopen error [WinError 10060] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder>"
+        "url": "https://www.toyplanet.com/products/party-co-disney-juego-de-mesa-familiar-de-pruebas-disney-con-mimica-dibujo-y-memoria-3-a-15-ju"
       },
       "https://www.amazon.es/dp/B0D5RMQW64": {
         "tienda": "Amazon",
@@ -4764,7 +4776,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/1989e514d212327bb09dae8b81a0ca41?exp=1795647096&sig=87e67d2b5485ca75b8cc13b142e25d87e7fbb4df7a62728688921386542a2ce7",
+        "url": "https://www.globerada.com/out/1989e514d212327bb09dae8b81a0ca41?exp=1795650097&sig=b0f5e6790bce4cc95d9a17cbfe3e80d2fd86caa3f7e936ed99afe16fc0698f16",
         "via": "Globerada",
         "producto_tienda": "Marvin",
         "imagen": "https://m.media-amazon.com/images/I/81IGwCJwUoL.jpg"
@@ -4828,7 +4840,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/5366670f48fef74971e9114a76580d43?exp=1795647154&sig=d22ec696fb335f4b3572f6bbd2009c85d99219b5e62f0f747cb9fa53bf92beb1",
+        "url": "https://www.globerada.com/out/5366670f48fef74971e9114a76580d43?exp=1795650105&sig=d002327960f5696e46505f27fe064e2398a22207e411b5a8ba57632fe74b70e8",
         "via": "Globerada",
         "producto_tienda": "LEGO Classic Amigos Nutritivos Creativos 11039 | Juguetes para niños de 4+ años, ladrillos de colores para crear comida,",
         "imagen": "https://m.media-amazon.com/images/I/51KmfViukYL._SL500_.jpg"
@@ -4858,7 +4870,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/d53f99cd993f29867b8cb81317796e35?exp=1795647154&sig=cbf8a851e43cf9b09400a4f6acfca6f22cdc0e863ada4f29046697f8e0cf2f58",
+        "url": "https://www.globerada.com/out/d53f99cd993f29867b8cb81317796e35?exp=1795650105&sig=ec8f5d3e084b24551e4a7d9f014296a61a69f4a9a798ca9636f0f1cf4a189455",
         "via": "Globerada",
         "producto_tienda": "LEGO Amigos Nutritivos Creativos",
         "imagen": "https://m.media-amazon.com/images/I/51KmfViukYL._SL500_.jpg"
@@ -4888,7 +4900,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/c84d073efcf1c164d95a2af87e0bd937?exp=1795647154&sig=72a623fedcb4d99c65f7d5ad629811b7a7794423741b1601f79ae72246ab8e08",
+        "url": "https://www.globerada.com/out/c84d073efcf1c164d95a2af87e0bd937?exp=1795650105&sig=2abe6b92501077fb720c992e0e47ecb8cf8dcb92f70870299d49f3f726bf3891",
         "via": "Globerada",
         "producto_tienda": "LEGO Classic Amigos Nutritivos Creativos - 11039 - ",
         "imagen": "https://m.media-amazon.com/images/I/51KmfViukYL._SL500_.jpg"
@@ -4918,7 +4930,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/ec1108803ecde95ff0610299501bdc59?exp=1795647154&sig=a2b539efcfd8437c1f9e687da916dd840d9cd4be9e6229cbfd55322f6b387ce1",
+        "url": "https://www.globerada.com/out/ec1108803ecde95ff0610299501bdc59?exp=1795650105&sig=c5bf8004b4435db9bb8886c0fc79c816e467f49be0442bbbfc8a0eb8f7062f62",
         "via": "Globerada",
         "producto_tienda": "Lego Classic Amigos Nutritivos Creativos Lego classic LEGO",
         "imagen": "https://m.media-amazon.com/images/I/51KmfViukYL._SL500_.jpg"
@@ -4948,7 +4960,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/065f017d98f15a746771e1d69d30be4c?exp=1795647154&sig=869de332aef97ebe220417fa3299506e0b636e7060ab00aec1464c2b70f65715",
+        "url": "https://www.globerada.com/out/065f017d98f15a746771e1d69d30be4c?exp=1795650105&sig=106e34a2d7c96f54b296cbb61e2717f20cc008fa0840255ed4e1e72a585ffb40",
         "via": "Globerada",
         "producto_tienda": "Juguete de construcción de alimentos clásico Lego Verde 15,7x14,1x6,1 cm",
         "imagen": "https://m.media-amazon.com/images/I/51KmfViukYL._SL500_.jpg"
@@ -4978,7 +4990,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/14487495b429aaa575fbbbbee107dd04?exp=1795647154&sig=836e8861950b09589f7cf1e1b26cc227f90d11e70af07f4f1a2c42b20c9943bd",
+        "url": "https://www.globerada.com/out/14487495b429aaa575fbbbbee107dd04?exp=1795650105&sig=0b36c13b9d560ee131fd79b389a0cfcd487648206b162f5831b87459154a0059",
         "via": "Globerada",
         "producto_tienda": "Lego 11039 Amigos Nutritivos Creativos Lego Classic",
         "imagen": "https://m.media-amazon.com/images/I/51KmfViukYL._SL500_.jpg"
@@ -5008,7 +5020,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/0c1cb427d3d5fb3231b031cb21ec53f2?exp=1795647154&sig=696a9447a51284f35b1b5e2cac7af90f5c0d181a650b3647ebecfb2c2e05c9c7",
+        "url": "https://www.globerada.com/out/0c1cb427d3d5fb3231b031cb21ec53f2?exp=1795650105&sig=90ff0dda0c5af1fed3c4f719da6b4c86440e3a0eaa4f933d7e1643e1771ca7e3",
         "via": "Globerada",
         "producto_tienda": "LEGO Classic Amigos Creativos de la Comida 11039 150 piezas",
         "imagen": "https://m.media-amazon.com/images/I/51KmfViukYL._SL500_.jpg"
@@ -5038,7 +5050,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/0c602f6c06681bceca82bffeec184d64?exp=1795647154&sig=86135ee51e1d6f2649c21b286b135aa62a299cac2eed3258a9f3aa3fced0938a",
+        "url": "https://www.globerada.com/out/0c602f6c06681bceca82bffeec184d64?exp=1795650105&sig=ebbce2420a5fc7377c9a5f520fb99b29b220b6dcd89fc424e3e95b0491058de1",
         "via": "Globerada",
         "producto_tienda": "LEGO CLASSIC - AMIGOS NUTRITIVOS CREATIVOS, 11039, TIENDA CON LICENCIA OFICIAL, PRODUCTO CON LICENCIA OFICIAL, ENVIO 24-",
         "imagen": "https://m.media-amazon.com/images/I/51KmfViukYL._SL500_.jpg"
@@ -5068,7 +5080,7 @@
           }
         ],
         "ultima_comprobacion": "2026-11-25",
-        "url": "https://www.globerada.com/out/984fa9218f97ebf41d358279216ad4c2?exp=1795647154&sig=98b6015409d44bc91e8d1ae379a0c2e04a9f735fd9c324eaffb12a3ee3dc6e45",
+        "url": "https://www.globerada.com/out/984fa9218f97ebf41d358279216ad4c2?exp=1795650105&sig=d559c0f476d21fbfa20d6ced24b980e71cf16aff398ced278874cb20dc675449",
         "via": "Globerada",
         "producto_tienda": "LEGO - Classic amigos nutritivos creativos comida de Juguete para niños y niñas - Ladrillos de Colores para Construir un",
         "imagen": "https://m.media-amazon.com/images/I/51KmfViukYL._SL500_.jpg"
@@ -5100,8 +5112,7 @@
         "ultima_comprobacion": "2026-11-25",
         "titulo": "LEGO Classic Amigos Nutritivos Creativos Juguete 11039",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPLEG011039_1_40785f9e-5ab7-4e57-9196-cdc55538aae2.png?v=1749134894",
-        "url": "https://www.toyplanet.com/products/lego-classic-amigos-nutritivos-creativos-juguete-11039",
-        "ultimo_error": "RemoteDisconnected: Remote end closed connection without response"
+        "url": "https://www.toyplanet.com/products/lego-classic-amigos-nutritivos-creativos-juguete-11039"
       },
       "https://www.amazon.es/dp/B01MSZQ1WI": {
         "tienda": "Amazon",
@@ -5135,7 +5146,7 @@
         "tienda": "Toy Planet",
         "historial": [],
         "ultima_comprobacion": "2026-11-25",
-        "ultimo_error": "RemoteDisconnected: Remote end closed connection without response"
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       },
       "https://www.amazon.es/dp/B0HDP26NCN": {
         "tienda": "Amazon",
@@ -5176,14 +5187,13 @@
         ],
         "ultima_comprobacion": "2026-11-25",
         "titulo": "MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY",
-        "imagen": "https://www.tiendasmgi.es/105752-large_default/moose-bluey-juego-del-globo-keepy-uppy.jpg",
-        "ultimo_error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>"
+        "imagen": "https://www.tiendasmgi.es/105752-large_default/moose-bluey-juego-del-globo-keepy-uppy.jpg"
       },
       "buscar:www.toyplanet.com:MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY": {
         "tienda": "Toy Planet",
         "historial": [],
         "ultima_comprobacion": "2026-11-25",
-        "ultimo_error": "URLError: <urlopen error [WinError 10060] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder>"
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       },
       "amazon:MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY": {
         "tienda": "Amazon",
@@ -5210,8 +5220,7 @@
         ],
         "ultima_comprobacion": "2026-11-25",
         "titulo": "PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD DE DIBUJO 10\"",
-        "imagen": "https://www.tiendasmgi.es/109024-large_default/play-toyz-tasller-de-kawaii-con-tableta-lcd-de-dibujo-10.jpg",
-        "ultimo_error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1144)>"
+        "imagen": "https://www.tiendasmgi.es/109024-large_default/play-toyz-tasller-de-kawaii-con-tableta-lcd-de-dibujo-10.jpg"
       },
       "buscar:www.toyplanet.com:PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD": {
         "tienda": "Toy Planet",
@@ -5244,14 +5253,13 @@
         ],
         "ultima_comprobacion": "2026-11-25",
         "titulo": "PLAY TOYZ MI PRIMERA TAQUILLA",
-        "imagen": "https://www.tiendasmgi.es/108819-large_default/play-toyz-mi-primera-taquilla.jpg",
-        "ultimo_error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1144)>"
+        "imagen": "https://www.tiendasmgi.es/108819-large_default/play-toyz-mi-primera-taquilla.jpg"
       },
       "buscar:www.toyplanet.com:PLAY TOYZ MI PRIMERA TAQUILLA": {
         "tienda": "Toy Planet",
         "historial": [],
         "ultima_comprobacion": "2026-11-25",
-        "ultimo_error": "URLError: <urlopen error _ssl.c:1126: The handshake operation timed out>"
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       },
       "amazon:PLAY TOYZ MI PRIMERA TAQUILLA": {
         "tienda": "Amazon",

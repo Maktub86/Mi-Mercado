@@ -1,30 +1,8 @@
 {
-  "fecha": "2026-11-25T20:26:46+00:00",
-  "leidos": 89,
-  "fallos": 21,
+  "fecha": "2026-11-25T22:42:32+00:00",
+  "leidos": 78,
+  "fallos": 17,
   "enlaces": [
-    {
-      "producto": "tocador-princesas-disney",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/smoby-tocador-princesas-disney-con-taburete-hasta-50-kg-espejo-y-10-accesorios-incluidos-juguete-infantil-para-juegos-de-imitacion-creativos-7600320251.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/smoby-tocador-princesas-disney-con-taburete-hasta-50-kg-espejo-y-10-accesorios-incluidos-juguete-infantil-para-juegos-de-imitacion-creativos-7600320251.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon Marketplace (TradeINN)",
-          "precio": 63.99
-        }
-      ]
-    },
-    {
-      "producto": "tocador-princesas-disney",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Tocador Princesas Disney",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
     {
       "producto": "monster-high-moonspell",
       "tienda": "Toy Planet (Claire)",
@@ -63,28 +41,6 @@
       ]
     },
     {
-      "producto": "disfraz-cenicienta",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/disguise-classic-cinderella-128-cm-140499k.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/disguise-classic-cinderella-128-cm-140499k.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon Marketplace (Funidelia España)",
-          "precio": 23.0
-        }
-      ]
-    },
-    {
-      "producto": "disfraz-cenicienta",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Disfraz Cenicienta niña",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
       "producto": "bolso-peluche-hello-kitty",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:Hello Kitty bolso peluche",
@@ -115,11 +71,11 @@
       "pagina": "https://www.globerada.com/precios/playmobil-my-life-abuelos-y-bebe-71613.html",
       "ofertas": [
         {
-          "tienda": "Imosver",
+          "tienda": "Amazon Marketplace (Imosver)",
           "precio": 11.23
         },
         {
-          "tienda": "Amazon Marketplace (Imosver)",
+          "tienda": "Imosver",
           "precio": 11.23
         },
         {
@@ -154,9 +110,9 @@
     {
       "producto": "mami-elefante-pets-alive",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/pets-alive-mama-elefante.html",
+      "url": "https://www.globerada.com/precios/zuru-pets-alive-mama-elefante-y-bebes-sorpresa.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/pets-alive-mama-elefante.html",
+      "pagina": "https://www.globerada.com/precios/zuru-pets-alive-mama-elefante-y-bebes-sorpresa.html",
       "ofertas": [
         {
           "tienda": "Juguettos",
@@ -191,17 +147,17 @@
     {
       "producto": "mirrormi-fashion",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/minimi-mirrormi-muneca-de-moda-shai-meadows-sheepish.html",
+      "url": "https://www.globerada.com/precios/mga-entertainment-mirrormi-fashion-doll-luna-skye-dreamy-253495-euc.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/minimi-mirrormi-muneca-de-moda-shai-meadows-sheepish.html",
+      "pagina": "https://www.globerada.com/precios/mga-entertainment-mirrormi-fashion-doll-luna-skye-dreamy-253495-euc.html",
       "ofertas": [
         {
           "tienda": "Amazon",
-          "precio": 34.49
+          "precio": 27.64
         },
         {
-          "tienda": "Temu",
-          "precio": 38.98
+          "tienda": "Electropolis",
+          "precio": 39.1
         }
       ]
     },
@@ -230,7 +186,7 @@
         },
         {
           "tienda": "Amazon",
-          "precio": 28.9
+          "precio": 27.64
         },
         {
           "tienda": "Miravia (Juguetería Express)",
@@ -262,16 +218,16 @@
       "pagina": "https://www.globerada.com/precios/educa-borras-magnetics-3d-61-pcs..html",
       "ofertas": [
         {
-          "tienda": "Amazon Marketplace (dinydon)",
-          "precio": 32.4
-        },
-        {
           "tienda": "Amazon",
           "precio": 34.99
         },
         {
           "tienda": "Imosver",
           "precio": 39.89
+        },
+        {
+          "tienda": "Fnac",
+          "precio": 42.99
         }
       ]
     },
@@ -583,13 +539,13 @@
     {
       "producto": "monster-high-cleo",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/monster-high-dawn-of-the-dance-cleo-muneca-143116216.html",
+      "url": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-cleo-de-nile-hxh74.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/monster-high-dawn-of-the-dance-cleo-muneca-143116216.html",
+      "pagina": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-cleo-de-nile-hxh74.html",
       "ofertas": [
         {
-          "tienda": "Amazon",
-          "precio": 33.99
+          "tienda": "Amazon Marketplace (Juguetes Abracadabra)",
+          "precio": 32.95
         }
       ]
     },
@@ -710,51 +666,6 @@
       "pistas": {}
     },
     {
-      "producto": "video-walkie-talkies",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/canal-toys-video-walkie-talkies.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/canal-toys-video-walkie-talkies.html",
-      "ofertas": [
-        {
-          "tienda": "Abacus",
-          "precio": 39.99
-        },
-        {
-          "tienda": "Amazon Marketplace (You Get - Innovation & Technology)",
-          "precio": 48.96
-        },
-        {
-          "tienda": "Amazon",
-          "precio": 49.99
-        },
-        {
-          "tienda": "Miravia (Canal Toys)",
-          "precio": 49.99
-        },
-        {
-          "tienda": "Juguettos",
-          "precio": 49.99
-        },
-        {
-          "tienda": "PcComponentes (JUGUETES TODAY)",
-          "precio": 54.99
-        },
-        {
-          "tienda": "Miravia (JUGUETES FANCY)",
-          "precio": 74.4
-        }
-      ]
-    },
-    {
-      "producto": "video-walkie-talkies",
-      "tienda": "Toy Planet",
-      "url": "https://www.toyplanet.com/products/lexibook-stitch-y-angel-walkie-talkies-con-video-recargables",
-      "precio": 39.99,
-      "metodo": "shopify",
-      "error": null
-    },
-    {
       "producto": "ikidiki-walkie-talkie",
       "tienda": "Globerada",
       "url": "comparador:iKidiki Walkie Talkie",
@@ -866,21 +777,6 @@
       "error": null
     },
     {
-      "producto": "como-dibujar-kawaii-101-dibujos",
-      "tienda": "Globerada",
-      "url": "comparador:Cómo Dibujar Kawaii: 101 Dibujos",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "como-dibujar-kawaii-101-dibujos",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Cómo Dibujar Kawaii: 101 Dibujos",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
       "producto": "poperfun-16-pulgadas-pizarra-led-ninos-recargable",
       "tienda": "Globerada",
       "url": "comparador:POPERFUN 16 Pulgadas Pizarra LED Niños Recargable",
@@ -959,29 +855,6 @@
       "producto": "play-toyz-mi-primera-taquilla",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:PLAY TOYZ MI PRIMERA TAQUILLA",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "set-crea-tu-estilo-4-en-1",
-      "tienda": "Tiendasmgi",
-      "url": "https://www.tiendasmgi.es/set-crea-tu-estilo-4-en-1-",
-      "precio": 10.0,
-      "metodo": "generico",
-      "error": null
-    },
-    {
-      "producto": "set-crea-tu-estilo-4-en-1",
-      "tienda": "Globerada",
-      "url": "comparador:SET CREA TU ESTILO 4 EN 1",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "set-crea-tu-estilo-4-en-1",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:SET CREA TU ESTILO 4 EN 1",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
