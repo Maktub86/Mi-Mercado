@@ -1506,6 +1506,43 @@
           "eci_buscar": "PLAY TOYZ MI PRIMERA TAQUILLA"
         }
       ]
+    },
+    {
+      "id": "set-crea-tu-estilo-4-en-1",
+      "nombre": "SET CREA TU ESTILO 4 EN 1",
+      "para": "Alba",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "",
+      "precio_lista": 10.0,
+      "busqueda": "SET CREA TU ESTILO 4 EN 1",
+      "enlaces": [
+        {
+          "tienda": "Tiendasmgi",
+          "url": "https://www.tiendasmgi.es/set-crea-tu-estilo-4-en-1-"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "SET CREA TU ESTILO 4 EN 1"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "SET CREA TU ESTILO 4 EN 1"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "SET CREA TU ESTILO 4 EN 1"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "SET CREA TU ESTILO 4 EN 1"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "SET CREA TU ESTILO 4 EN 1"
+        }
+      ]
     }
   ],
   "categorias": [
