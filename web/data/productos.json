@@ -1567,6 +1567,43 @@
           "eci_buscar": "30 Piezas Collar Pulseras Niña"
         }
       ]
+    },
+    {
+      "id": "moose-bluey-juego-del-globo-keepy-uppy",
+      "nombre": "MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY",
+      "para": "Las dos",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "",
+      "precio_lista": 10.0,
+      "busqueda": "MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY",
+      "enlaces": [
+        {
+          "tienda": "Tiendasmgi",
+          "url": "https://www.tiendasmgi.es/moose-bluey-juego-del-globo-keepy-uppy-8056379177517"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY"
+        }
+      ]
     }
   ],
   "categorias": [
