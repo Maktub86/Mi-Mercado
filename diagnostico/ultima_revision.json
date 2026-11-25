@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-25T17:54:52+00:00",
-  "leidos": 87,
-  "fallos": 21,
+  "fecha": "2026-11-25T20:15:40+00:00",
+  "leidos": 86,
+  "fallos": 22,
   "enlaces": [
     {
       "producto": "tocador-princesas-disney",
@@ -149,7 +149,7 @@
         },
         {
           "tienda": "Pixmania",
-          "precio": 14.3
+          "precio": 17.15
         },
         {
           "tienda": "OnBuy (AMI VENTURES INC.)",
@@ -234,7 +234,7 @@
         },
         {
           "tienda": "Carrefour",
-          "precio": 51.2
+          "precio": 51.19
         }
       ]
     },
@@ -323,21 +323,13 @@
     {
       "producto": "educa-magnetics-61",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/educa-borras-magnetics-3d-61-pcs..html",
+      "url": "https://www.globerada.com/precios/juego-de-mesa-educa-magnetics-61-piezas.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/educa-borras-magnetics-3d-61-pcs..html",
+      "pagina": "https://www.globerada.com/precios/juego-de-mesa-educa-magnetics-61-piezas.html",
       "ofertas": [
         {
-          "tienda": "Amazon Marketplace (dinydon)",
-          "precio": 32.4
-        },
-        {
-          "tienda": "Amazon",
-          "precio": 34.99
-        },
-        {
-          "tienda": "Imosver",
-          "precio": 39.89
+          "tienda": "Fnac",
+          "precio": 42.99
         }
       ]
     },
@@ -449,7 +441,7 @@
         },
         {
           "tienda": "Pixmania",
-          "precio": 39.35
+          "precio": 39.05
         }
       ]
     },
@@ -688,7 +680,7 @@
         },
         {
           "tienda": "PcComponentes (La Frikilería)",
-          "precio": 44.01
+          "precio": 42.7
         }
       ]
     },
@@ -911,7 +903,7 @@
         },
         {
           "tienda": "PcComponentes (ASD ES)",
-          "precio": 20.64
+          "precio": 19.6
         },
         {
           "tienda": "Miravia (Playmycenter)",
@@ -971,6 +963,29 @@
       "producto": "30-piezas-collar-pulseras-nina",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:30 Piezas Collar Pulseras Niña",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "moose-bluey-juego-del-globo-keepy-uppy",
+      "tienda": "Tiendasmgi",
+      "url": "https://www.tiendasmgi.es/moose-bluey-juego-del-globo-keepy-uppy-8056379177517",
+      "precio": 10.0,
+      "metodo": "generico",
+      "error": null
+    },
+    {
+      "producto": "moose-bluey-juego-del-globo-keepy-uppy",
+      "tienda": "Globerada",
+      "url": "comparador:MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "moose-bluey-juego-del-globo-keepy-uppy",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
