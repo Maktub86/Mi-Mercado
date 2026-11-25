@@ -284,40 +284,6 @@
       "categoria": "reyes"
     },
     {
-      "id": "maleta-portamaquillaje",
-      "nombre": "Maleta portamaquillaje Tiny Beauty",
-      "para": "Lucía",
-      "estado": "pendiente",
-      "nota": "",
-      "precio_lista": 48.99,
-      "tienda_lista": "El Corte Inglés",
-      "busqueda": "Tiny Beauty maleta portamaquillaje",
-      "enlaces": [
-        {
-          "tienda": "Amazon",
-          "amazon_buscar": "Tiny Beauty maleta"
-        },
-        {
-          "tienda": "Globerada",
-          "comparador_buscar": "Tiny Beauty maleta"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "Tiny Beauty maleta"
-        },
-        {
-          "tienda": "Toy Planet",
-          "dominio": "www.toyplanet.com",
-          "buscar": "Tiny Beauty maleta"
-        },
-        {
-          "tienda": "El Corte Inglés",
-          "eci_buscar": "Tiny Beauty maleta"
-        }
-      ],
-      "categoria": "reyes"
-    },
-    {
       "id": "omg-music-festival",
       "nombre": "L.O.L. O.M.G. Music Festival (Jennie, Rosalía o Tayla)",
       "para": "Lucía",
