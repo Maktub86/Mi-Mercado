@@ -352,40 +352,6 @@
       "categoria": "reyes"
     },
     {
-      "id": "pulseras-tiny-beauty",
-      "nombre": "Pulseras Tiny Beauty",
-      "para": "Lucía",
-      "estado": "pendiente",
-      "nota": "",
-      "precio_lista": 14.99,
-      "tienda_lista": "El Corte Inglés",
-      "busqueda": "Tiny Beauty pulseras",
-      "enlaces": [
-        {
-          "tienda": "Amazon",
-          "amazon_buscar": "Tiny Beauty pulseras"
-        },
-        {
-          "tienda": "Globerada",
-          "comparador_buscar": "Tiny Beauty pulseras"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "Tiny Beauty pulseras"
-        },
-        {
-          "tienda": "Toy Planet",
-          "dominio": "www.toyplanet.com",
-          "buscar": "Tiny Beauty pulseras"
-        },
-        {
-          "tienda": "El Corte Inglés",
-          "eci_buscar": "Tiny Beauty pulseras"
-        }
-      ],
-      "categoria": "reyes"
-    },
-    {
       "id": "mami-elefante-pets-alive",
       "nombre": "Pets Alive Mami Elefante y bebés",
       "para": "Lucía",
