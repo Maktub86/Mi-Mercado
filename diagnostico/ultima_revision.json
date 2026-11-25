@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-25T20:15:40+00:00",
-  "leidos": 86,
-  "fallos": 22,
+  "fecha": "2026-11-25T20:26:46+00:00",
+  "leidos": 89,
+  "fallos": 21,
   "enlaces": [
     {
       "producto": "tocador-princesas-disney",
@@ -100,27 +100,6 @@
       "error": "no encontrado en el comparador"
     },
     {
-      "producto": "vtech-kidisecrets-locker",
-      "tienda": "Toy Planet",
-      "url": "https://www.toyplanet.com/products/vtech-kidisecrets-locker-taquilla-secreta-morada",
-      "precio": 44.99,
-      "metodo": "shopify",
-      "error": null
-    },
-    {
-      "producto": "vtech-kidisecrets-locker",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/vtech-kidisecrets-locker-taquilla-secreta.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/vtech-kidisecrets-locker-taquilla-secreta.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 44.99
-        }
-      ]
-    },
-    {
       "producto": "playmobil-71613-abuelos",
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/playmobil-abuelos-y-bebe",
@@ -171,51 +150,6 @@
       "tienda": "Globerada",
       "url": "comparador:Barbie boda Chelsea",
       "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "maleta-portamaquillaje",
-      "tienda": "Globerada",
-      "url": "comparador:Tiny Beauty maleta",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "maleta-portamaquillaje",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Tiny Beauty maleta",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "pulseras-tiny-beauty",
-      "tienda": "Globerada",
-      "url": "comparador:Tiny Beauty pulseras",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "pulseras-tiny-beauty",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Tiny Beauty pulseras",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "charm-tiny-beauty",
-      "tienda": "Globerada",
-      "url": "comparador:Tiny Beauty charm",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "charm-tiny-beauty",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Tiny Beauty charm",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
     },
     {
       "producto": "mami-elefante-pets-alive",
@@ -323,13 +257,21 @@
     {
       "producto": "educa-magnetics-61",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/juego-de-mesa-educa-magnetics-61-piezas.html",
+      "url": "https://www.globerada.com/precios/educa-borras-magnetics-3d-61-pcs..html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/juego-de-mesa-educa-magnetics-61-piezas.html",
+      "pagina": "https://www.globerada.com/precios/educa-borras-magnetics-3d-61-pcs..html",
       "ofertas": [
         {
-          "tienda": "Fnac",
-          "precio": 42.99
+          "tienda": "Amazon Marketplace (dinydon)",
+          "precio": 32.4
+        },
+        {
+          "tienda": "Amazon",
+          "precio": 34.99
+        },
+        {
+          "tienda": "Imosver",
+          "precio": 39.89
         }
       ]
     },
@@ -483,7 +425,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 628216,
+        "bytes": 627608,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
@@ -954,21 +896,6 @@
       "pistas": {}
     },
     {
-      "producto": "30-piezas-collar-pulseras-nina",
-      "tienda": "Globerada",
-      "url": "comparador:30 Piezas Collar Pulseras Niña",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "30-piezas-collar-pulseras-nina",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:30 Piezas Collar Pulseras Niña",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
       "producto": "moose-bluey-juego-del-globo-keepy-uppy",
       "tienda": "Tiendasmgi",
       "url": "https://www.tiendasmgi.es/moose-bluey-juego-del-globo-keepy-uppy-8056379177517",
@@ -986,6 +913,75 @@
       "producto": "moose-bluey-juego-del-globo-keepy-uppy",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "play-toyz-taller-de-kawaii-con-tableta-lcd",
+      "tienda": "Tiendasmgi",
+      "url": "https://www.tiendasmgi.es/play-toyz-tasller-de-kawaii-con-tableta-lcd-de-dibujo-10-",
+      "precio": 10.0,
+      "metodo": "generico",
+      "error": null
+    },
+    {
+      "producto": "play-toyz-taller-de-kawaii-con-tableta-lcd",
+      "tienda": "Globerada",
+      "url": "comparador:PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "play-toyz-taller-de-kawaii-con-tableta-lcd",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "play-toyz-mi-primera-taquilla",
+      "tienda": "Tiendasmgi",
+      "url": "https://www.tiendasmgi.es/play-toyz-mi-primera-taquilla-8432748774950",
+      "precio": 20.0,
+      "metodo": "generico",
+      "error": null
+    },
+    {
+      "producto": "play-toyz-mi-primera-taquilla",
+      "tienda": "Globerada",
+      "url": "comparador:PLAY TOYZ MI PRIMERA TAQUILLA",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "play-toyz-mi-primera-taquilla",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:PLAY TOYZ MI PRIMERA TAQUILLA",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "set-crea-tu-estilo-4-en-1",
+      "tienda": "Tiendasmgi",
+      "url": "https://www.tiendasmgi.es/set-crea-tu-estilo-4-en-1-",
+      "precio": 10.0,
+      "metodo": "generico",
+      "error": null
+    },
+    {
+      "producto": "set-crea-tu-estilo-4-en-1",
+      "tienda": "Globerada",
+      "url": "comparador:SET CREA TU ESTILO 4 EN 1",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "set-crea-tu-estilo-4-en-1",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:SET CREA TU ESTILO 4 EN 1",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
