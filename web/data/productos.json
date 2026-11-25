@@ -78,39 +78,6 @@
       "categoria": "reyes"
     },
     {
-      "id": "disfraz-cenicienta",
-      "nombre": "Disfraz de Cenicienta con tiara",
-      "para": "Alba",
-      "estado": "pendiente",
-      "nota": "",
-      "precio_lista": null,
-      "busqueda": "Disfraz Cenicienta niña Disney",
-      "enlaces": [
-        {
-          "tienda": "Amazon",
-          "amazon_buscar": "Disfraz Cenicienta niña"
-        },
-        {
-          "tienda": "Globerada",
-          "comparador_buscar": "Disfraz Cenicienta niña"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "Disfraz Cenicienta niña"
-        },
-        {
-          "tienda": "Toy Planet",
-          "dominio": "www.toyplanet.com",
-          "buscar": "Disfraz Cenicienta niña"
-        },
-        {
-          "tienda": "El Corte Inglés",
-          "eci_buscar": "Disfraz Cenicienta"
-        }
-      ],
-      "categoria": "reyes"
-    },
-    {
       "id": "bolso-peluche-hello-kitty",
       "nombre": "Bolso de peluche Hello Kitty reversible con muñeca",
       "para": "Alba",
