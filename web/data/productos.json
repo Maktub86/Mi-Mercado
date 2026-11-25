@@ -3,40 +3,6 @@
   "fecha_lista": "2026-11-12",
   "productos": [
     {
-      "id": "tocador-princesas-disney",
-      "nombre": "Tocador Princesas Disney",
-      "para": "Alba",
-      "estado": "pendiente",
-      "nota": "",
-      "precio_lista": 64.99,
-      "tienda_lista": "El Corte Inglés",
-      "busqueda": "Tocador Princesas Disney con taburete",
-      "enlaces": [
-        {
-          "tienda": "Amazon",
-          "amazon_buscar": "Tocador Princesas Disney"
-        },
-        {
-          "tienda": "Globerada",
-          "comparador_buscar": "Tocador Princesas Disney"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "Tocador Princesas Disney"
-        },
-        {
-          "tienda": "Toy Planet",
-          "dominio": "www.toyplanet.com",
-          "buscar": "Tocador Princesas Disney"
-        },
-        {
-          "tienda": "El Corte Inglés",
-          "url": "https://www.elcorteingles.es/juguetes/A200049243-tocador-con-taburete-princesas-disney-smoby/"
-        }
-      ],
-      "categoria": "reyes"
-    },
-    {
       "id": "monster-high-moonspell",
       "nombre": "Muñeca Monster High Moonspell Magic",
       "para": "Alba",
