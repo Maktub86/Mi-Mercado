@@ -386,40 +386,6 @@
       "categoria": "reyes"
     },
     {
-      "id": "charm-tiny-beauty",
-      "nombre": "Charm Tiny Beauty",
-      "para": "Lucía",
-      "estado": "pendiente",
-      "nota": "",
-      "precio_lista": 10.99,
-      "tienda_lista": "El Corte Inglés",
-      "busqueda": "Tiny Beauty charm",
-      "enlaces": [
-        {
-          "tienda": "Amazon",
-          "amazon_buscar": "Tiny Beauty charm"
-        },
-        {
-          "tienda": "Globerada",
-          "comparador_buscar": "Tiny Beauty charm"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "Tiny Beauty charm"
-        },
-        {
-          "tienda": "Toy Planet",
-          "dominio": "www.toyplanet.com",
-          "buscar": "Tiny Beauty charm"
-        },
-        {
-          "tienda": "El Corte Inglés",
-          "eci_buscar": "Tiny Beauty charm"
-        }
-      ],
-      "categoria": "reyes"
-    },
-    {
       "id": "mami-elefante-pets-alive",
       "nombre": "Pets Alive Mami Elefante y bebés",
       "para": "Lucía",
