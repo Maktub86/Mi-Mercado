@@ -1641,6 +1641,43 @@
           "eci_buscar": "PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD"
         }
       ]
+    },
+    {
+      "id": "play-toyz-mi-primera-taquilla",
+      "nombre": "PLAY TOYZ MI PRIMERA TAQUILLA",
+      "para": "Las dos",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "",
+      "precio_lista": 20.0,
+      "busqueda": "PLAY TOYZ MI PRIMERA TAQUILLA",
+      "enlaces": [
+        {
+          "tienda": "Tiendasmgi",
+          "url": "https://www.tiendasmgi.es/play-toyz-mi-primera-taquilla-8432748774950"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "PLAY TOYZ MI PRIMERA TAQUILLA"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "PLAY TOYZ MI PRIMERA TAQUILLA"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "PLAY TOYZ MI PRIMERA TAQUILLA"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "PLAY TOYZ MI PRIMERA TAQUILLA"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "PLAY TOYZ MI PRIMERA TAQUILLA"
+        }
+      ]
     }
   ],
   "categorias": [
