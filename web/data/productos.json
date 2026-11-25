@@ -1231,39 +1231,6 @@
       ]
     },
     {
-      "id": "como-dibujar-kawaii-101-dibujos",
-      "nombre": "Cómo Dibujar Kawaii: 101 Dibujos",
-      "para": "Lucía",
-      "estado": "pendiente",
-      "categoria": "reyes",
-      "nota": "",
-      "precio_lista": 10.9,
-      "busqueda": "Cómo Dibujar Kawaii: 101 Dibujos",
-      "enlaces": [
-        {
-          "tienda": "Amazon",
-          "url": "https://www.amazon.es/dp/B0C2SMKNBD"
-        },
-        {
-          "tienda": "Globerada",
-          "comparador_buscar": "Cómo Dibujar Kawaii: 101 Dibujos"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "Cómo Dibujar Kawaii: 101 Dibujos"
-        },
-        {
-          "tienda": "Toy Planet",
-          "dominio": "www.toyplanet.com",
-          "buscar": "Cómo Dibujar Kawaii: 101 Dibujos"
-        },
-        {
-          "tienda": "El Corte Inglés",
-          "eci_buscar": "Cómo Dibujar Kawaii: 101 Dibujos"
-        }
-      ]
-    },
-    {
       "id": "poperfun-16-pulgadas-pizarra-led-ninos-recargable",
       "nombre": "POPERFUN 16 Pulgadas Pizarra LED Niños Recargable",
       "para": "Las dos",
