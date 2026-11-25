@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-24T20:02:22+00:00",
-  "leidos": 88,
-  "fallos": 20,
+  "fecha": "2026-11-25T17:54:52+00:00",
+  "leidos": 87,
+  "fallos": 21,
   "enlaces": [
     {
       "producto": "tocador-princesas-disney",
@@ -149,11 +149,11 @@
         },
         {
           "tienda": "Pixmania",
-          "precio": 14.35
+          "precio": 14.3
         },
         {
           "tienda": "OnBuy (AMI VENTURES INC.)",
-          "precio": 66.74
+          "precio": 67.18
         }
       ]
     },
@@ -234,7 +234,7 @@
         },
         {
           "tienda": "Carrefour",
-          "precio": 51.43
+          "precio": 51.2
         }
       ]
     },
@@ -308,7 +308,7 @@
         },
         {
           "tienda": "Aliexpress ES (Shop1104124762 Store)",
-          "precio": 39.99
+          "precio": 35.99
         }
       ]
     },
@@ -449,7 +449,7 @@
         },
         {
           "tienda": "Pixmania",
-          "precio": 39.87
+          "precio": 39.35
         }
       ]
     },
@@ -491,7 +491,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 640473,
+        "bytes": 628216,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
@@ -683,12 +683,12 @@
           "precio": 29.99
         },
         {
-          "tienda": "PcComponentes (La Frikilería)",
-          "precio": 38.23
-        },
-        {
           "tienda": "Raijuguetes",
           "precio": 39.33
+        },
+        {
+          "tienda": "PcComponentes (La Frikilería)",
+          "precio": 44.01
         }
       ]
     },
@@ -734,9 +734,10 @@
       "producto": "peluche-pikachu",
       "tienda": "Mediamarkt",
       "url": "https://www.mediamarkt.es/es/product/_peluche-pokemon-pikachu-amarillo-134742668.html",
-      "precio": 25.83,
-      "metodo": "generico",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 403",
+      "pistas": {}
     },
     {
       "producto": "peluche-pikachu",
@@ -909,12 +910,12 @@
           "precio": 17.4
         },
         {
-          "tienda": "Miravia (Playmycenter)",
-          "precio": 20.8
+          "tienda": "PcComponentes (ASD ES)",
+          "precio": 20.64
         },
         {
-          "tienda": "PcComponentes (ASD ES)",
-          "precio": 22.34
+          "tienda": "Miravia (Playmycenter)",
+          "precio": 20.8
         },
         {
           "tienda": "Miravia (Marana Tribu)",
