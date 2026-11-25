@@ -1604,6 +1604,43 @@
           "eci_buscar": "MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY"
         }
       ]
+    },
+    {
+      "id": "play-toyz-taller-de-kawaii-con-tableta-lcd",
+      "nombre": "PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "",
+      "precio_lista": 10.0,
+      "busqueda": "PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD",
+      "enlaces": [
+        {
+          "tienda": "Tiendasmgi",
+          "url": "https://www.tiendasmgi.es/play-toyz-tasller-de-kawaii-con-tableta-lcd-de-dibujo-10-"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD"
+        }
+      ]
     }
   ],
   "categorias": [
