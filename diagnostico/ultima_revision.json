@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-26T20:08:54+00:00",
+  "fecha": "2026-11-26T20:20:06+00:00",
   "leidos": 77,
-  "fallos": 15,
+  "fallos": 16,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -377,7 +377,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 628216,
+        "bytes": 627657,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
@@ -828,6 +828,21 @@
       "precio": 28.99,
       "metodo": "shopify",
       "error": null
+    },
+    {
+      "producto": "botas-de-agua",
+      "tienda": "Globerada",
+      "url": "comparador:Botas de agua",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "botas-de-agua",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Botas de agua",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
     }
   ]
 }
