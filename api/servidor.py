@@ -276,13 +276,16 @@ def limpiar_calcular(estado: dict) -> dict:
         if isinstance(x, dict) and _texto(x.get("nombre")):
             extras.append({"id": _texto(x.get("id"), 40) or f"extra-{len(extras)}", "nombre": _texto(x.get("nombre")),
                            "grupo": _texto(x.get("grupo"), 40) or "Cesta", "precio": _precio(x.get("precio"))})
-    orden = []
-    for x in (estado.get("orden") or [])[:600]:
-        x = _texto(x, 80)
-        if x and x not in orden:
-            orden.append(x)
+    carta = {}
+    for k, v in list((estado.get("carta") or {}).items())[:400]:
+        try:
+            x, y = (min(100.0, max(0.0, round(float(n), 1))) for n in v)
+        except (TypeError, ValueError):
+            continue
+        if _texto(k, 80):
+            carta[_texto(k, 80)] = [x, y]
     return {"elegidos": elegidos, "grupo": grupo, "precio": precio, "extras": extras, "grupos": grupos,
-            "orden": orden, "actualizado": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+            "carta": carta, "actualizado": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
 
 
 def leer_calcular() -> tuple[dict, str | None]:

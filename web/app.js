@@ -25,10 +25,10 @@ let productos = [];
 const CLAVE_CALCULAR = "mi-mercado-calcular";
 const GRUPOS_BASE = ["Reyes Niñas", "Reyes Lucía", "Reyes Alba", "Cumpleaños Lucía", "Papá Noel"];
 const CESTA = "Cesta";
-let calc = { grupo: {}, precio: {}, extras: [], grupos: [], orden: [] };
+let calc = { grupo: {}, precio: {}, extras: [], grupos: [], carta: {} };
 try { calc = { ...calc, ...JSON.parse(localStorage.getItem(CLAVE_CALCULAR) || "{}") }; } catch (e) { /* sin almacenamiento */ }
 calc.grupo = calc.grupo || {};
-calc.orden = calc.orden || [];
+calc.carta = calc.carta || {};
 calc.grupos = [...new Set([...GRUPOS_BASE, ...(calc.grupos || [])])];
 function guardarCalc(local) {
   try { localStorage.setItem(CLAVE_CALCULAR, JSON.stringify(calc)); } catch (e) { /* sin almacenamiento */ }
@@ -39,11 +39,11 @@ function guardarCalc(local) {
 let compartir = { listo: false, pendiente: false, temporizador: null, sinClave: false, ultimoError: "" };
 
 function estadoCestas() {
-  return { elegidos: [...elegidos], grupo: calc.grupo, precio: calc.precio, extras: calc.extras, grupos: calc.grupos, orden: calc.orden };
+  return { elegidos: [...elegidos], grupo: calc.grupo, precio: calc.precio, extras: calc.extras, grupos: calc.grupos, carta: calc.carta };
 }
 
 function hayCestas() {
-  return elegidos.size > 0 || calc.extras.length > 0;
+  return elegidos.size > 0 || calc.extras.length > 0 || Object.keys(calc.carta).length > 0;
 }
 
 function programarSubida() {
@@ -82,7 +82,7 @@ async function bajarCestas() {
       const ids = new Set(productos.map((p) => p.id));
       elegidos = new Set((remoto.elegidos || []).filter((id) => ids.has(id)));
       calc = { grupo: remoto.grupo || {}, precio: remoto.precio || {}, extras: remoto.extras || [],
-        grupos: [...new Set([...GRUPOS_BASE, ...(remoto.grupos || [])])], orden: remoto.orden || [] };
+        grupos: [...new Set([...GRUPOS_BASE, ...(remoto.grupos || [])])], carta: remoto.carta || {} };
       guardarElegidos(true); guardarCalc(true);
       compartir.pendiente = false;
       if (!arrastre.activo) mostrarVista();
@@ -782,7 +782,7 @@ function enlazarCalcular() {
     } else if (e.target.id === "calc-vaciar") {
       if (!window.confirm("¿Quitar todo de Calcular?")) return;
       elegidos.clear(); guardarElegidos();
-      calc = { grupo: {}, precio: {}, extras: [], grupos: calc.grupos, orden: [] }; guardarCalc();
+      calc = { grupo: {}, precio: {}, extras: [], grupos: calc.grupos, carta: calc.carta }; guardarCalc();
       pintarCalcular(); pintarCategorias();
     } else if (e.target.id === "calc-copiar") {
       const texto = textoResumenCalc();
@@ -865,7 +865,7 @@ function bloqueCoupert(items) {
 
 // ---------------------------------------------------------------- carta
 
-/** Pone un regalo (de la lista o añadido a mano) en una cesta. */
+/** Pone un regalo (de la lista o añadido a mano) en una cesta de Calcular. */
 function colocar(id, destino) {
   const extra = calc.extras.find((x) => x.id === id);
   if (extra) extra.grupo = destino;
@@ -873,52 +873,83 @@ function colocar(id, destino) {
   else calc.grupo[id] = destino;
 }
 
-function ordenCarta(items) {
-  const pos = new Map(calc.orden.map((id, i) => [id, i]));
-  return items.slice().sort((a, b) => (pos.has(a.id) ? pos.get(a.id) : 1e9) - (pos.has(b.id) ? pos.get(b.id) : 1e9));
+// La Carta es una hoja de cuaderno en medio y, a los dos lados, todos los regalos de la lista por persona.
+// Lo que se arrastra a la hoja se queda donde lo sueltes (calc.carta[id] = [x, y] en % de la hoja).
+function precioCarta(p) {
+  return calc.precio[p.id] ?? p.referencia ?? null;
+}
+
+function fotoCarta(p, clase) {
+  const [foto, ...resto] = p.fotos || [];
+  const precio = precioCarta(p);
+  return `<div class="${clase}" data-item="${escapar(p.id)}" title="${escapar(`${p.nombre} · ${p.para}`)}">
+      <div class="carta-foto">${foto
+        ? `<img src="${escapar(foto)}" data-resto="${escapar(resto.map(encodeURI).join(" "))}" alt="${escapar(p.nombre)}" draggable="false" loading="lazy" referrerpolicy="no-referrer">`
+        : '<span aria-hidden="true">🎁</span>'}</div>
+      <p class="carta-precio${precio == null ? " sin-dato" : ""}">${precio != null ? euros.format(precio) : "—"}</p>
+    </div>`;
 }
 
 function pintarCarta() {
   const caja = $("#vista-carta");
-  const items = ordenCarta(itemsCalc());
-  const total = items.reduce((s, x) => s + (x.precio || 0), 0);
-  const sinPrecio = items.filter((x) => x.precio == null).length;
-  const sinColocar = items.some((x) => x.grupo === CESTA);
-  const grupos = [...(sinColocar ? [CESTA] : []), ...calc.grupos];
+  const categoria = categorias.find((c) => c.id === estado.categoria) || categorias[0] || { personas: [] };
+  const enHoja = productos.filter((p) => calc.carta[p.id]);
+  const fuera = deCategoria().filter((p) => p.estado !== "comprado" && !calc.carta[p.id]);
 
-  const ficha = (x) => {
-    const [foto, ...resto] = x.fotos;
-    return `<li class="carta-item" data-item="${escapar(x.id)}" title="${escapar(x.nombre)}">
-      <div class="carta-foto">${foto
-        ? `<img src="${escapar(foto)}" data-resto="${escapar(resto.map(encodeURI).join(" "))}" alt="${escapar(x.nombre)}" draggable="false" loading="lazy" referrerpolicy="no-referrer">`
-        : '<span aria-hidden="true">🎁</span>'}</div>
-      <p class="carta-nombre">${escapar(x.nombre)}</p>
-      <p class="carta-precio${x.precio == null ? " sin-dato" : ""}">${x.precio != null ? euros.format(x.precio) : "sin precio"}</p>
-    </li>`.replace(/>\s+</g, "><");
-  };
+  // Cada persona en un lado, intentando que los dos lados queden igual de llenos.
+  const personas = [...new Set([...categoria.personas, ...fuera.map((p) => p.para)])]
+    .map((n) => ({ nombre: n, regalos: fuera.filter((p) => p.para === n) }))
+    .filter((g) => g.regalos.length || enHoja.some((p) => p.para === g.nombre));
+  const lados = [[], []];
+  const cuenta = [0, 0];
+  personas.forEach((g) => {
+    const i = cuenta[0] <= cuenta[1] ? 0 : 1;
+    lados[i].push(g);
+    cuenta[i] += g.regalos.length + 1;
+  });
+  const lado = (grupos, cual) => `<aside class="carta-lado carta-${cual}" data-lado="${cual}">${grupos.map((g) => `
+      <section class="carta-persona ${claseDe(g.nombre)}">
+        <h3>${escapar(g.nombre)} <span>${g.regalos.length}</span></h3>
+        <div class="carta-fotos">${g.regalos.map((p) => fotoCarta(p, "carta-item")).join("")
+          || '<p class="carta-nada">Todo en la carta ✓</p>'}</div>
+      </section>`).join("")}</aside>`;
 
-  const secciones = grupos.map((g) => {
-    const suyos = items.filter((x) => x.grupo === g);
-    const suma = suyos.reduce((s, x) => s + (x.precio || 0), 0);
-    return `<section class="carta-grupo ${claseGrupo(g)}" data-grupo="${escapar(g)}">
-      <header class="carta-grupo-cabeza"><h2>${escapar(nombreVisible(g))}</h2>
-        <span>${suyos.length} ${suyos.length === 1 ? "regalo" : "regalos"}</span></header>
-      <ul class="carta-items" data-grupo="${escapar(g)}">${suyos.map(ficha).join("")}</ul>
-      <p class="carta-subtotal">Total: <strong>${euros.format(suma)}</strong></p>
-    </section>`;
+  const total = enHoja.reduce((s, p) => s + (precioCarta(p) || 0), 0);
+  const sinPrecio = enHoja.filter((p) => precioCarta(p) == null).length;
+  const reparto = [...new Set(enHoja.map((p) => p.para))].map((n) => {
+    const suyos = enHoja.filter((p) => p.para === n);
+    return `<li class="${claseDe(n)}"><span>${escapar(n)}</span><strong>${euros.format(suyos.reduce((s, p) => s + (precioCarta(p) || 0), 0))}</strong></li>`;
   }).join("");
 
-  caja.innerHTML = items.length ? `
-    <p class="carta-ayuda">Arrastra cada regalo (en el móvil, mantenlo pulsado un momento) para pasarlo a otra carta o cambiarlo de sitio. Se guarda igual que en 🧮 Calcular.</p>
-    ${secciones}
-    <div class="carta-total">
-      <div><p class="resumen-titulo">Total de todo</p>
-        <p class="resumen-detalle">${items.length} ${items.length === 1 ? "regalo" : "regalos"}${sinPrecio ? ` · ${sinPrecio} sin precio` : ""}</p></div>
-      <strong>${euros.format(total)}</strong>
-    </div>
-    <button type="button" class="boton-accion suave" id="carta-nueva">＋ Nueva carta</button>
-    ${bloqueCoupert(items)}`
-    : `<p class="calc-vacio">Todavía no hay nada elegido. Toca el <b>🧮</b> de los regalos de la lista y aparecerán aquí, repartidos en Reyes Niñas, Reyes Lucía, Reyes Alba, Cumpleaños Lucía, Papá Noel…</p>`;
+  const pegados = enHoja.map((p) => {
+    const [x, y] = calc.carta[p.id];
+    return fotoCarta(p, "carta-item en-hoja").replace('class="carta-item en-hoja"',
+      `class="carta-item en-hoja${p.estado === "comprado" ? " comprado" : ""}" style="left:${x}%;top:${y}%"`);
+  }).join("");
+
+  caja.innerHTML = `
+    <p class="carta-ayuda">Arrastra los regalos de los lados a la hoja y déjalos donde quieras (en el móvil, mantenlos pulsados un momento). Para quitar uno, arrástralo fuera de la hoja.</p>
+    <div class="carta-mesa">
+      ${lado(lados[0], "izquierda")}
+      <div class="carta-centro">
+        <div class="carta-hoja" id="carta-hoja">
+          <p class="carta-titulo">Queridos Reyes Magos:</p>
+          ${pegados}
+          ${enHoja.length ? "" : '<p class="carta-vacia">Arrastra aquí los regalos</p>'}
+        </div>
+      </div>
+      ${lado(lados[1], "derecha")}
+      <div class="carta-pie">
+        <div class="carta-total">
+          <div><p class="resumen-titulo">Total de la carta</p>
+            <p class="resumen-detalle">${enHoja.length} ${enHoja.length === 1 ? "regalo" : "regalos"}${sinPrecio ? ` · ${sinPrecio} sin precio` : ""}</p></div>
+          <strong>${euros.format(total)}</strong>
+        </div>
+        ${reparto ? `<ul class="reparto carta-reparto">${reparto}</ul>` : ""}
+        ${enHoja.length ? '<button type="button" class="boton-accion suave" id="carta-vaciar">Vaciar la hoja</button>' : ""}
+        ${bloqueCoupert(enHoja.map((p) => ({ url: p.mejor ? p.mejor.url : null, tienda: p.mejor ? p.mejor.tienda : "", donde: "", precio: precioCarta(p) })))}
+      </div>
+    </div>`;
 }
 
 const arrastre = { activo: null, pendiente: null, rueda: null };
@@ -935,21 +966,27 @@ function enlazarCarta() {
     else img.replaceWith(Object.assign(document.createElement("span"), { textContent: "🎁" }));
   }, true);
 
+  const hojaDebajo = (x, y) => {
+    const debajo = document.elementFromPoint(x, y);
+    return debajo && debajo.closest("#carta-hoja");
+  };
+
   const empezar = (item, x, y) => {
     const r = item.getBoundingClientRect();
     const fantasma = item.cloneNode(true);
     fantasma.classList.add("carta-fantasma");
-    fantasma.style.width = `${r.width}px`;
+    fantasma.classList.remove("en-hoja");
+    fantasma.style.cssText = `width:${r.width}px`;
     document.body.append(fantasma);
-    arrastre.activo = { item, fantasma, dx: x - r.left, dy: y - r.top, x, y };
+    arrastre.activo = { item, fantasma, dx: x - r.left, dy: y - r.top, ancho: r.width, alto: r.height, x, y };
     item.classList.add("arrastrando");
     document.body.classList.add("arrastrando-carta");
     if (navigator.vibrate) navigator.vibrate(12);
-    // Si el dedo está cerca del borde de la pantalla, la página se desplaza sola.
+    // Cerca del borde de la pantalla, la página se desplaza sola.
     arrastre.rueda = setInterval(() => {
       const a = arrastre.activo;
       if (!a) return;
-      const margen = 70;
+      const margen = 60;
       const paso = a.y < margen ? -14 : a.y > window.innerHeight - margen ? 14 : 0;
       if (paso) { window.scrollBy(0, paso); mover(a.x, a.y); }
     }, 16);
@@ -959,19 +996,10 @@ function enlazarCarta() {
   const mover = (x, y) => {
     const a = arrastre.activo;
     a.x = x; a.y = y;
-    a.fantasma.style.transform = `translate(${x - a.dx}px, ${y - a.dy}px) rotate(-2deg)`;
-    const debajo = document.elementFromPoint(x, y);
-    const grupo = debajo && debajo.closest(".carta-grupo");
-    caja.querySelectorAll(".carta-grupo.sobre").forEach((g) => g !== grupo && g.classList.remove("sobre"));
-    if (!grupo) return;
-    grupo.classList.add("sobre");
-    const lista = grupo.querySelector(".carta-items");
-    const antes = [...lista.querySelectorAll(".carta-item:not(.arrastrando)")].find((h) => {
-      const r = h.getBoundingClientRect();
-      return y < r.top || (y <= r.bottom && x < r.left + r.width / 2);
-    });
-    if (antes) { if (antes.previousElementSibling !== a.item) lista.insertBefore(a.item, antes); }
-    else if (lista.lastElementChild !== a.item) lista.append(a.item);
+    a.fantasma.style.transform = `translate(${x - a.dx}px, ${y - a.dy}px) rotate(-3deg)`;
+    const hoja = $("#carta-hoja");
+    if (hoja) hoja.classList.toggle("sobre", Boolean(hojaDebajo(x, y)));
+    a.fantasma.classList.toggle("quitando", a.item.classList.contains("en-hoja") && !hojaDebajo(x, y));
   };
 
   const terminar = () => {
@@ -984,14 +1012,21 @@ function enlazarCarta() {
     a.item.classList.remove("arrastrando");
     document.body.classList.remove("arrastrando-carta");
     arrastre.activo = null;
-    const orden = [];
-    caja.querySelectorAll(".carta-items").forEach((ul) => {
-      ul.querySelectorAll(".carta-item").forEach((li) => {
-        orden.push(li.dataset.item);
-        colocar(li.dataset.item, ul.dataset.grupo);
-      });
-    });
-    calc.orden = orden;
+    const id = a.item.dataset.item;
+    const hoja = hojaDebajo(a.x, a.y);
+    if (hoja) {
+      // Se guarda el centro de la foto, en % de la hoja, para que quede igual en el móvil y en el ordenador.
+      const r = hoja.getBoundingClientRect();
+      const cx = a.x - a.dx + a.ancho / 2;
+      const cy = a.y - a.dy + a.alto / 2;
+      const limitar = (v) => Math.round(Math.min(96, Math.max(4, v)) * 10) / 10;
+      calc.carta[id] = [limitar(((cx - r.left) / r.width) * 100), limitar(((cy - r.top) / r.height) * 100)];
+    } else if (calc.carta[id]) {
+      delete calc.carta[id];
+    } else {
+      pintarCarta();
+      return;
+    }
     guardarCalc();
     pintarCarta();
   };
@@ -1018,7 +1053,7 @@ function enlazarCarta() {
     arrastre.pendiente = { item, x, y, temporizador: setTimeout(() => {
       const p = arrastre.pendiente;
       if (p) { arrastre.pendiente = null; empezar(p.item, p.x, p.y); }
-    }, 300) };
+    }, 280) };
   }, { passive: true });
   document.addEventListener("touchmove", (e) => {
     const t = e.touches[0];
@@ -1035,10 +1070,9 @@ function enlazarCarta() {
   caja.addEventListener("dragstart", (e) => e.preventDefault());
 
   caja.addEventListener("click", (e) => {
-    if (e.target.id !== "carta-nueva") return;
-    const nombre = (window.prompt("Nombre de la carta nueva (por ejemplo: Cumpleaños Alba)") || "").trim().slice(0, 40);
-    if (!nombre || nombre === CESTA) return;
-    if (!calc.grupos.includes(nombre)) calc.grupos.push(nombre);
+    if (e.target.id !== "carta-vaciar") return;
+    if (!window.confirm("¿Quitar todos los regalos de la hoja?")) return;
+    calc.carta = {};
     guardarCalc();
     pintarCarta();
   });
@@ -1270,7 +1304,7 @@ function enlazarEventos() {
   $("#quitar-eleccion").addEventListener("click", () => {
     if (!window.confirm("¿Quitar todo de Calcular?")) return;
     elegidos.clear(); guardarElegidos();
-    calc = { grupo: {}, precio: {}, extras: [], grupos: calc.grupos, orden: [] }; guardarCalc();
+    calc = { grupo: {}, precio: {}, extras: [], grupos: calc.grupos, carta: calc.carta }; guardarCalc();
     estado.soloElegidos = false;
     pintarEleccion(); pintarLista(); pintarCategorias();
   });
