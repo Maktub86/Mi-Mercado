@@ -229,18 +229,64 @@ class ComparadorTest(unittest.TestCase):
         self.assertTrue(all(not o["tienda"].startswith("Marketplace") for o in ofertas))
 
     def test_revisar_comparador_guarda_cada_tienda(self):
-        original = ap.descargar
+        original, resolver = ap.descargar, ap.resolver_salida
         ap.descargar = lambda url, timeout=25, extra=None: self.PAGINA
+        ap.resolver_salida = lambda url: "https://www.abacus.coop/es/carrito" if "aaa" in url else None
         hist = {}
         try:
             fila = ap.revisar_comparador(hist, {"id": "p"}, {"tienda": "Globerada",
                                          "comparador": "https://www.globerada.com/precios/x.html"}, "2026-11-19")
         finally:
-            ap.descargar = original
+            ap.descargar, ap.resolver_salida = original, resolver
         self.assertEqual(len(fila["ofertas"]), 4)
         clave = "https://www.globerada.com/precios/x.html#Abacus"
         self.assertEqual(hist["p"][clave]["historial"][-1]["precio"], 23.99)
         self.assertEqual(hist["p"][clave]["via"], "Globerada")
+        # El enlace que caduca se cambia por el de la tienda; si no se puede, por la página del comparador.
+        self.assertEqual(hist["p"][clave]["url"], "https://www.abacus.coop/es/carrito")
+        self.assertEqual(hist["p"]["https://www.globerada.com/precios/x.html#Amazon"]["url"],
+                         "https://www.globerada.com/precios/x.html")
+
+
+class EnlacesDeSalidaTest(unittest.TestCase):
+    def setUp(self):
+        self.original = ap._abrir_un_salto
+        ap._resueltos_en_esta_vuelta = 0
+
+    def tearDown(self):
+        ap._abrir_un_salto = self.original
+
+    def test_sigue_redirecciones_hasta_la_tienda(self):
+        saltos = {
+            "https://www.globerada.com/out/abc?exp=1&sig=2": (302, "https://www.awin1.com/cread.php?awinmid=1&clickref=x", ""),
+            "https://www.awin1.com/cread.php?awinmid=1&clickref=x": (302, "https://www.juguettos.com/muneca.html?utm_source=awin&id=7", ""),
+        }
+        ap._abrir_un_salto = lambda url: saltos[url]
+        self.assertEqual(ap.resolver_salida("https://www.globerada.com/out/abc?exp=1&sig=2"),
+                         "https://www.juguettos.com/muneca.html?id=7")
+
+    def test_destino_dentro_del_enlace(self):
+        ap._abrir_un_salto = lambda url: (302, "https://www.awin1.com/cread.php?awinmid=1&ued=https%3A%2F%2Fwww.fnac.es%2Fa123", "")
+        self.assertEqual(ap.resolver_salida("https://www.globerada.com/out/x"), "https://www.fnac.es/a123")
+
+    def test_redireccion_en_la_pagina(self):
+        ap._abrir_un_salto = lambda url: (200, None, "<html><script>window.location.href = 'https://www.abacus.coop/es/p/1';</script>")
+        self.assertEqual(ap.resolver_salida("https://www.globerada.com/out/x"), "https://www.abacus.coop/es/p/1")
+        ap._abrir_un_salto = lambda url: (200, None, '<meta http-equiv="refresh" content="0; url=https://www.toyplanet.com/x">')
+        self.assertEqual(ap.resolver_salida("https://www.globerada.com/out/y"), "https://www.toyplanet.com/x")
+
+    def test_enlace_caducado_no_se_guarda(self):
+        ap._abrir_un_salto = lambda url: (410, None, "")
+        destino = ap.enlace_tienda({}, {"url": "https://www.globerada.com/out/x", "producto": "a"},
+                                   "https://www.globerada.com/precios/p.html", "2026-11-26")
+        self.assertEqual(destino, {"url": "https://www.globerada.com/precios/p.html"})
+
+    def test_reaprovecha_el_enlace_ya_resuelto(self):
+        ap._abrir_un_salto = lambda url: self.fail("no debería volver a resolverlo")
+        anterior = {"url_tienda": "https://www.fnac.es/a1", "url_tienda_fecha": "2026-11-20", "producto_tienda": "a"}
+        destino = ap.enlace_tienda(anterior, {"url": "https://www.globerada.com/out/z", "producto": "a"},
+                                   "https://www.globerada.com/precios/p.html", "2026-11-26")
+        self.assertEqual(destino, {"url": "https://www.fnac.es/a1"})
 
 
 if __name__ == "__main__":

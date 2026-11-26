@@ -615,6 +615,135 @@ def ofertas_comparador(url: str, pagina: str) -> list[dict]:
     return sorted(ofertas.values(), key=lambda o: o["precio"])
 
 
+# ---------------------------------------------------------------- enlaces de salida de los comparadores
+
+# Los enlaces de Globerada ("/out/...?exp=...&sig=...") caducan a las pocas horas, así que no sirven para la
+# web. Se siguen las redirecciones (Globerada, redes de afiliados...) hasta llegar a la tienda y se guarda esa.
+INTERMEDIARIOS = re.compile(
+    r"(^|\.)(globerada\.com|idealo\.(es|com|de)|awin1\.com|awin\.com|tradedoubler\.com|tradetracker\.net"
+    r"|webgains\.com|doubleclick\.net|effiliation\.com|zanox\.com|prf\.hn|linkwi\.se|linksynergy\.com"
+    r"|anrdoezrs\.net|dpbolvw\.net|jdoqocy\.com|kqzyfj\.com|tkqlhce\.com|emjcd\.com|pntra\.com"
+    r"|shareasale\.com|sjv\.io|admitad\.com|lt45\.net|partnerize\.com|viglink\.com|skimresources\.com"
+    r"|s\.click\.aliexpress\.com|clickserve\.dartsearch\.net|pvn\.mediamarkt\.es|tradeinn\.com/aff"
+    r"|bit\.ly|tidd\.ly)$", re.I)
+PARAMETROS_DESTINO = ("ued", "url", "murl", "u", "dest", "destination", "dl", "r", "redirect", "redirect_url",
+                      "target", "p", "deeplink", "deep_link", "link", "to", "goto", "lp")
+MAX_RESOLVER_POR_VUELTA = 160
+DIAS_ENLACE_TIENDA = 14
+_resueltos_en_esta_vuelta = 0
+
+
+def es_intermediario(url: str) -> bool:
+    host = (urllib.parse.urlsplit(url).hostname or "").lower()
+    return bool(INTERMEDIARIOS.search(host))
+
+
+def limpiar_url(url: str) -> str:
+    """Quita los parámetros de seguimiento (utm_...) para que el enlace quede limpio."""
+    partes = urllib.parse.urlsplit(url)
+    consulta = [(k, v) for k, v in urllib.parse.parse_qsl(partes.query, keep_blank_values=True)
+                if not k.lower().startswith("utm_")]
+    return urllib.parse.urlunsplit((partes.scheme, partes.netloc, partes.path,
+                                    urllib.parse.urlencode(consulta), ""))
+
+
+def destino_incrustado(url: str) -> str | None:
+    """Muchas redes de afiliados llevan la dirección de la tienda dentro del enlace (?ued=..., ?url=...)."""
+    for clave, valor in urllib.parse.parse_qsl(urllib.parse.urlsplit(url).query):
+        if clave.lower() not in PARAMETROS_DESTINO and not valor.lower().startswith("http"):
+            continue
+        for _ in range(3):
+            if valor.lower().startswith("http"):
+                break
+            valor = urllib.parse.unquote(valor)
+        if valor.lower().startswith("http") and not es_intermediario(valor):
+            return valor
+    return None
+
+
+def destino_en_pagina(pagina: str) -> str | None:
+    """Algunas salidas no redirigen con el servidor sino con la propia página (meta refresh o JavaScript)."""
+    patrones = (
+        r"""<meta[^>]+http-equiv=['"]?refresh['"]?[^>]+content=['"][^'"]*?url=([^'"]+)['"]""",
+        r"""<meta[^>]+content=['"][^'"]*?url=([^'"]+)['"][^>]+http-equiv=['"]?refresh""",
+        r"""location\.(?:replace|assign)\(\s*['"]([^'"]+)['"]""",
+        r"""(?:window\.|document\.)?location(?:\.href)?\s*=\s*['"]([^'"]+)['"]""",
+    )
+    for patron in patrones:
+        encontrado = re.search(patron, pagina, flags=re.I)
+        if encontrado:
+            return html_lib.unescape(encontrado.group(1).strip()).replace("\\/", "/")
+    return None
+
+
+class _SinRedireccion(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, *args, **kwargs):  # noqa: D401
+        return None
+
+
+def _abrir_un_salto(url: str) -> tuple[int, str | None, str]:
+    """Pide una dirección sin seguir la redirección. Devuelve (código, Location, trozo de página)."""
+    abridor = urllib.request.build_opener(_SinRedireccion)
+    peticion = urllib.request.Request(url, headers=CABECERAS)
+    try:
+        with abridor.open(peticion, timeout=15) as resp:
+            datos = resp.read(300_000)
+            codificacion = resp.headers.get("Content-Encoding", "")
+            if codificacion == "gzip":
+                try:
+                    datos = gzip.decompress(datos)
+                except (OSError, EOFError):
+                    pass
+            return resp.status, None, datos.decode(resp.headers.get_content_charset() or "utf-8", errors="replace")
+    except urllib.error.HTTPError as err:
+        return err.code, err.headers.get("Location"), ""
+
+
+def resolver_salida(url: str, saltos: int = 8) -> str | None:
+    """Sigue un enlace de salida del comparador hasta la tienda. None si no se consigue."""
+    actual = url
+    for _ in range(saltos):
+        if not es_intermediario(actual):
+            return limpiar_url(actual)
+        incrustado = destino_incrustado(actual)
+        if incrustado:
+            return limpiar_url(incrustado)
+        try:
+            codigo, location, pagina = _abrir_un_salto(actual)
+        except Exception:  # noqa: BLE001
+            return None
+        siguiente = location if 300 <= codigo < 400 else destino_en_pagina(pagina) if codigo == 200 else None
+        if not siguiente:
+            return None
+        actual = urllib.parse.urljoin(actual, siguiente)
+    return None
+
+
+def enlace_tienda(anterior: dict, oferta: dict, pagina_comparador: str, hoy: str) -> dict:
+    """Dirección de la tienda para una oferta: la ya resuelta si sigue valiendo, o la resuelve ahora.
+    Si no se puede, se enlaza a la página del comparador (que no caduca), nunca al enlace que caduca."""
+    global _resueltos_en_esta_vuelta
+    url = oferta["url"]
+    if not es_intermediario(url):
+        return {"url": url, "url_tienda": url, "url_tienda_fecha": hoy}
+    previa = anterior.get("url_tienda")
+    fecha = anterior.get("url_tienda_fecha") or ""
+    reciente = False
+    try:
+        reciente = (datetime.fromisoformat(hoy) - datetime.fromisoformat(fecha)).days < DIAS_ENLACE_TIENDA
+    except ValueError:
+        pass
+    if previa and reciente and anterior.get("producto_tienda", "") == oferta.get("producto", ""):
+        return {"url": previa}
+    if _resueltos_en_esta_vuelta < MAX_RESOLVER_POR_VUELTA:
+        _resueltos_en_esta_vuelta += 1
+        tienda = resolver_salida(url)
+        time.sleep(random.uniform(0.3, 1.0))
+        if tienda:
+            return {"url": tienda, "url_tienda": tienda, "url_tienda_fecha": hoy}
+    return {"url": previa or pagina_comparador}
+
+
 def normalizar_tienda(nombre: str) -> str:
     return re.sub(r"[^a-z0-9]", "", nombre.lower().replace(".es", ""))
 
@@ -863,9 +992,10 @@ def revisar_comparador(historial: dict, producto: dict, enlace: dict, hoy: str) 
     for oferta in ofertas:
         clave = f"{base_clave}#{oferta['tienda']}"
         vistas.add(clave)
+        destino = enlace_tienda(prod.get(clave, {}), oferta, url, hoy)
         registrar(historial, producto["id"], {"tienda": oferta["tienda"], "url": clave}, hoy,
                   oferta["precio"], True, None,
-                  {"url": oferta["url"], "via": enlace["tienda"], "producto_tienda": oferta["producto"],
+                  {**destino, "via": enlace["tienda"], "producto_tienda": oferta["producto"],
                    "imagen": ficha.get("imagen") if ficha.get("imagen") else None})
     if not fila.get("error"):
         for clave, datos in prod.items():
