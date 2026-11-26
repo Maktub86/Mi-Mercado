@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-26T20:20:06+00:00",
-  "leidos": 77,
+  "fecha": "2026-11-26T22:25:13+00:00",
+  "leidos": 75,
   "fallos": 16,
   "enlaces": [
     {
@@ -71,8 +71,8 @@
       "pagina": "https://www.globerada.com/precios/playmobil-my-life-abuelos-y-bebe-71613.html",
       "ofertas": [
         {
-          "tienda": "Amazon Marketplace (Imosver)",
-          "precio": 11.23
+          "tienda": "Amazon Marketplace (dinydon)",
+          "precio": 10.95
         },
         {
           "tienda": "Imosver",
@@ -119,10 +119,6 @@
           "precio": 49.99
         },
         {
-          "tienda": "Amazon Marketplace (DRIM)",
-          "precio": 49.99
-        },
-        {
           "tienda": "Carrefour",
           "precio": 53.98
         }
@@ -147,9 +143,9 @@
     {
       "producto": "mirrormi-fashion",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/mga-entertainment-mirrormi-fashion-doll-luna-skye-dreamy-253495-euc.html",
+      "url": "https://www.globerada.com/precios/mga-entertainment-mirrormi-fashion-doll-blaze-maxx-electric-253471-euc.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/mga-entertainment-mirrormi-fashion-doll-luna-skye-dreamy-253495-euc.html",
+      "pagina": "https://www.globerada.com/precios/mga-entertainment-mirrormi-fashion-doll-blaze-maxx-electric-253471-euc.html",
       "ofertas": [
         {
           "tienda": "Amazon",
@@ -185,8 +181,16 @@
           "precio": 27.64
         },
         {
+          "tienda": "Amazon Marketplace (PALUTA TOY MARKET (Envío 24/48h Lab.))",
+          "precio": 29.9
+        },
+        {
           "tienda": "Miravia (Juguetería Express)",
           "precio": 31.95
+        },
+        {
+          "tienda": "Sport is good",
+          "precio": 34.0
         },
         {
           "tienda": "Miravia (Juguetes Abracadabra)",
@@ -235,12 +239,12 @@
       "pagina": "https://www.globerada.com/precios/spin-master-peekimo-pink.html",
       "ofertas": [
         {
-          "tienda": "Aliexpress ES (Shop1104118748 Store)",
-          "precio": 27.99
+          "tienda": "Amazon",
+          "precio": 23.69
         },
         {
-          "tienda": "Amazon",
-          "precio": 29.99
+          "tienda": "Aliexpress ES (Shop1104118748 Store)",
+          "precio": 27.99
         },
         {
           "tienda": "Juguettos",
@@ -335,7 +339,7 @@
         },
         {
           "tienda": "Pixmania",
-          "precio": 38.59
+          "precio": 38.28
         }
       ]
     },
@@ -349,6 +353,10 @@
         {
           "tienda": "Amazon",
           "precio": 6.99
+        },
+        {
+          "tienda": "Abacus",
+          "precio": 7.19
         },
         {
           "tienda": "Ferretería Ibermadrid",
@@ -784,52 +792,6 @@
       "pistas": {}
     },
     {
-      "producto": "coche-barbie",
-      "tienda": "Juguettos",
-      "url": "https://juguettos.com/barbie-casas-y-vehiculos/93932-0000-00-00-194735260157.html",
-      "precio": null,
-      "metodo": "generico",
-      "error": null,
-      "pistas": {
-        "bytes": 121960,
-        "titulo": "Hot Wheels Descapotable Teledirigido de Barbie - Juguettos",
-        "captcha": false,
-        "json_ld": 1,
-        "marcas": [
-          "availability"
-        ]
-      }
-    },
-    {
-      "producto": "coche-barbie",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/barbie-coche-descapotable-hbt92.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/barbie-coche-descapotable-hbt92.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 13.99
-        },
-        {
-          "tienda": "Pixmania",
-          "precio": 24.28
-        },
-        {
-          "tienda": "Raijuguetes",
-          "precio": 24.58
-        }
-      ]
-    },
-    {
-      "producto": "coche-barbie",
-      "tienda": "Toy Planet",
-      "url": "https://www.toyplanet.com/products/barbie-y-su-descapotable-muneca-con-coche-de-juguete-3-anos",
-      "precio": 28.99,
-      "metodo": "shopify",
-      "error": null
-    },
-    {
       "producto": "botas-de-agua",
       "tienda": "Globerada",
       "url": "comparador:Botas de agua",
@@ -837,6 +799,21 @@
     },
     {
       "producto": "botas-de-agua",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Botas de agua",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "botas-de-agua-2",
+      "tienda": "Globerada",
+      "url": "comparador:Botas de agua",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "botas-de-agua-2",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:Botas de agua",
       "precio": null,
