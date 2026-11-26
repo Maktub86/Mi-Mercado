@@ -1484,6 +1484,43 @@
           "eci_buscar": "Botas de agua"
         }
       ]
+    },
+    {
+      "id": "botas-de-agua-2",
+      "nombre": "Botas de agua",
+      "para": "Lucía",
+      "estado": "pendiente",
+      "categoria": "reyes",
+      "nota": "",
+      "precio_lista": 15.35,
+      "busqueda": "Botas de agua",
+      "enlaces": [
+        {
+          "tienda": "Sfera",
+          "url": "https://www.sfera.com/es/ninos/A200976328-burdeos-pr-bota-agua/"
+        },
+        {
+          "tienda": "Amazon",
+          "amazon_buscar": "Botas de agua"
+        },
+        {
+          "tienda": "Globerada",
+          "comparador_buscar": "Botas de agua"
+        },
+        {
+          "tienda": "Idealo",
+          "comparador_buscar": "Botas de agua"
+        },
+        {
+          "tienda": "Toy Planet",
+          "dominio": "www.toyplanet.com",
+          "buscar": "Botas de agua"
+        },
+        {
+          "tienda": "El Corte Inglés",
+          "eci_buscar": "Botas de agua"
+        }
+      ]
     }
   ],
   "categorias": [
