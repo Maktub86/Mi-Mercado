@@ -25,9 +25,10 @@ let productos = [];
 const CLAVE_CALCULAR = "mi-mercado-calcular";
 const GRUPOS_BASE = ["Reyes Niñas", "Reyes Lucía", "Reyes Alba", "Cumpleaños Lucía", "Papá Noel"];
 const CESTA = "Cesta";
-let calc = { grupo: {}, precio: {}, extras: [], grupos: [] };
+let calc = { grupo: {}, precio: {}, extras: [], grupos: [], orden: [] };
 try { calc = { ...calc, ...JSON.parse(localStorage.getItem(CLAVE_CALCULAR) || "{}") }; } catch (e) { /* sin almacenamiento */ }
 calc.grupo = calc.grupo || {};
+calc.orden = calc.orden || [];
 calc.grupos = [...new Set([...GRUPOS_BASE, ...(calc.grupos || [])])];
 function guardarCalc(local) {
   try { localStorage.setItem(CLAVE_CALCULAR, JSON.stringify(calc)); } catch (e) { /* sin almacenamiento */ }
@@ -38,7 +39,7 @@ function guardarCalc(local) {
 let compartir = { listo: false, pendiente: false, temporizador: null, sinClave: false, ultimoError: "" };
 
 function estadoCestas() {
-  return { elegidos: [...elegidos], grupo: calc.grupo, precio: calc.precio, extras: calc.extras, grupos: calc.grupos };
+  return { elegidos: [...elegidos], grupo: calc.grupo, precio: calc.precio, extras: calc.extras, grupos: calc.grupos, orden: calc.orden };
 }
 
 function hayCestas() {
@@ -81,10 +82,10 @@ async function bajarCestas() {
       const ids = new Set(productos.map((p) => p.id));
       elegidos = new Set((remoto.elegidos || []).filter((id) => ids.has(id)));
       calc = { grupo: remoto.grupo || {}, precio: remoto.precio || {}, extras: remoto.extras || [],
-        grupos: [...new Set([...GRUPOS_BASE, ...(remoto.grupos || [])])] };
+        grupos: [...new Set([...GRUPOS_BASE, ...(remoto.grupos || [])])], orden: remoto.orden || [] };
       guardarElegidos(true); guardarCalc(true);
       compartir.pendiente = false;
-      mostrarVista();
+      if (!arrastre.activo) mostrarVista();
     } else {
       compartir.pendiente = hayCestas(); // aún no hay nada compartido: sube lo de este móvil
     }
@@ -232,13 +233,14 @@ function pintarCategorias() {
   const enCalc = elegidos.size + calc.extras.length;
   $("#categorias").innerHTML = categorias.map((c) =>
     `<button type="button" class="categoria" data-categoria="${c.id}" aria-pressed="${estado.vista === "lista" && c.id === estado.categoria}">${escapar(c.nombre)}</button>`).join("")
+    + `<button type="button" class="categoria pestana-carta" data-vista="carta" aria-pressed="${estado.vista === "carta"}">✉️ Carta</button>`
     + `<button type="button" class="categoria pestana-calcular" data-vista="calcular" aria-pressed="${estado.vista === "calcular"}">🧮 Calcular${enCalc ? ` <span class="cuenta-calc">${enCalc}</span>` : ""}</button>`;
 }
 
 function pintarEleccion() {
   const lista = itemsCalc();
   const barra = $("#barra-eleccion");
-  const visible = lista.length > 0 && estado.vista !== "calcular";
+  const visible = lista.length > 0 && estado.vista === "lista";
   barra.hidden = !visible;
   document.body.classList.toggle("con-barra", visible);
   if (!lista.length) { estado.soloElegidos = false; return; }
@@ -626,9 +628,11 @@ function itemsCalcSinOrden() {
     cambiado: calc.precio[p.id] != null,
     donde: p.mejor ? p.mejor.tienda : p.precio_lista != null ? "precio de la lista" : "",
     url: p.mejor ? p.mejor.url : null,
+    tienda: p.mejor ? p.mejor.tienda : "",
+    fotos: p.fotos || [],
     extra: false,
   }));
-  const extras = calc.extras.map((x) => ({ ...x, grupo: x.grupo || CESTA, original: null, cambiado: false, donde: "añadido a mano", url: null, extra: true }));
+  const extras = calc.extras.map((x) => ({ ...x, grupo: x.grupo || CESTA, original: null, cambiado: false, donde: "añadido a mano", url: null, tienda: "", fotos: [], extra: true }));
   return [...deLista, ...extras];
 }
 
@@ -637,15 +641,16 @@ function itemsCalc() {
 }
 
 function mostrarVista() {
-  const enCalc = estado.vista === "calcular";
-  document.querySelector(".filtros").hidden = enCalc;
-  $("#pendientes").hidden = enCalc;
-  $("#vista-calcular").hidden = !enCalc;
-  if (enCalc) {
+  const enLista = estado.vista === "lista";
+  document.querySelector(".filtros").hidden = !enLista;
+  $("#pendientes").hidden = !enLista;
+  $("#vista-calcular").hidden = estado.vista !== "calcular";
+  $("#vista-carta").hidden = estado.vista !== "carta";
+  if (!enLista) {
     $("#resumen").hidden = true;
     $("#vacio").hidden = true;
     $("#bloque-comprados").hidden = true;
-    pintarCalcular();
+    if (estado.vista === "carta") pintarCarta(); else pintarCalcular();
   } else {
     pintarChips();
     pintarLista();
@@ -677,7 +682,7 @@ function pintarCalcular() {
     <li class="calc-fila" data-item="${escapar(x.id)}">
       <div class="calc-nombre">
         <strong>${escapar(x.nombre)}</strong>
-        <small>${x.url ? `<a href="${escapar(x.url)}" target="_blank" rel="noopener">${escapar(x.donde)} ↗</a>` : escapar(x.donde)}${x.cambiado && x.original != null ? ` · antes ${euros.format(x.original)}` : ""}</small>
+        <small>${x.url ? `<a href="${escapar(x.url)}" target="_blank" rel="noopener">${escapar(x.donde)} ↗</a>` : escapar(x.donde)}${x.cambiado && x.original != null ? ` · antes ${euros.format(x.original)}` : ""}${enlaceCoupert(x) ? ` · <a class="enlace-coupert" href="${escapar(enlaceCoupert(x))}" target="_blank" rel="noopener">🏷️ Cupones Coupert</a>` : ""}</small>
       </div>
       <label class="calc-campo"><span>Colocar en</span>
         <select data-calc-grupo>${opciones(x.grupo)}</select></label>
@@ -717,7 +722,8 @@ function pintarCalcular() {
         <button type="submit" class="boton-accion">Añadir</button>
       </div>
       <p class="ayuda">Las cestas se comparten entre todos los móviles que tengan puesta la contraseña. No cambian la lista de regalos.</p>
-    </form>`;
+    </form>
+    ${bloqueCoupert(items)}`;
 }
 
 function textoResumenCalc() {
@@ -748,7 +754,7 @@ function enlazarCalcular() {
         if (!destino) { pintarCalcular(); return; }
         if (!calc.grupos.includes(destino) && destino !== CESTA) calc.grupos.push(destino);
       }
-      if (extra) extra.grupo = destino; else if (destino === CESTA) delete calc.grupo[id]; else calc.grupo[id] = destino;
+      colocar(id, destino);
     } else if (e.target.matches("[data-calc-precio]")) {
       const valor = leerPrecio(e.target.value);
       if (valor === undefined) { aviso("Ese precio no se entiende. Escribe por ejemplo 24,99.", "error"); return; }
@@ -776,7 +782,7 @@ function enlazarCalcular() {
     } else if (e.target.id === "calc-vaciar") {
       if (!window.confirm("¿Quitar todo de Calcular?")) return;
       elegidos.clear(); guardarElegidos();
-      calc = { grupo: {}, precio: {}, extras: [], grupos: calc.grupos }; guardarCalc();
+      calc = { grupo: {}, precio: {}, extras: [], grupos: calc.grupos, orden: [] }; guardarCalc();
       pintarCalcular(); pintarCategorias();
     } else if (e.target.id === "calc-copiar") {
       const texto = textoResumenCalc();
@@ -801,6 +807,240 @@ function enlazarCalcular() {
     guardarCalc();
     pintarCalcular(); pintarCategorias();
     $("#calc-nuevo-nombre").focus();
+  });
+}
+
+// ---------------------------------------------------------------- coupert
+
+// Coupert (cupones y reembolso) tiene una página por tienda: https://www.coupert.com/store/<dominio>.
+// Los enlaces que vienen de un comparador (Globerada, Idealo) llevan a ese comparador, así que
+// en esos casos el dominio se saca del nombre de la tienda.
+const DOMINIOS_TIENDA = [
+  [/amazon/i, "amazon.es"], [/corte ingl/i, "elcorteingles.es"], [/toy planet/i, "toyplanet.com"],
+  [/juguettos/i, "juguettos.com"], [/abacus/i, "abacus.coop"], [/fnac/i, "fnac.es"], [/miravia/i, "miravia.es"],
+  [/temu/i, "temu.com"], [/aliexpress/i, "aliexpress.com"], [/pccomponentes/i, "pccomponentes.com"],
+  [/toys ?"?r"? ?us/i, "toysrus.es"], [/carrefour/i, "carrefour.es"], [/pixmania/i, "pixmania.com"],
+  [/raijuguetes/i, "raijuguetes.com"], [/electropolis/i, "electropolis.es"], [/onbuy/i, "onbuy.com"],
+  [/sfera/i, "sfera.com"], [/casa del libro/i, "casadellibro.com"], [/dideco/i, "dideco.es"],
+  [/ebay/i, "ebay.es"], [/shein/i, "shein.com"], [/lego/i, "lego.com"], [/decathlon/i, "decathlon.es"],
+];
+const COMPARADORES = /(^|\.)(globerada\.com|idealo\.es|idealo\.com)$/i;
+
+function dominioTienda(x) {
+  let host = "";
+  try { host = new URL(x.url).hostname.replace(/^www\./, ""); } catch (e) { /* sin enlace */ }
+  if (host && !COMPARADORES.test(host)) return host;
+  const conocido = DOMINIOS_TIENDA.find(([re]) => re.test(x.tienda || x.donde || ""));
+  return conocido ? conocido[1] : null;
+}
+
+function enlaceCoupert(x) {
+  const dominio = x.url ? dominioTienda(x) : null;
+  return dominio ? `https://www.coupert.com/store/${dominio}` : null;
+}
+
+/** Tiendas donde está lo elegido, con su enlace a los cupones de Coupert. */
+function bloqueCoupert(items) {
+  const tiendas = new Map();
+  items.forEach((x) => {
+    const dominio = x.url ? dominioTienda(x) : null;
+    if (!dominio) return;
+    const t = tiendas.get(dominio) || { dominio, nombre: (x.tienda || x.donde || dominio).replace(/\s*\(.*\)$/, ""), regalos: 0, suma: 0 };
+    t.regalos += 1;
+    t.suma += x.precio || 0;
+    tiendas.set(dominio, t);
+  });
+  if (!tiendas.size) return "";
+  const filas = [...tiendas.values()].sort((a, b) => b.suma - a.suma).map((t) => `
+    <li><a href="https://www.coupert.com/store/${escapar(t.dominio)}" target="_blank" rel="noopener">
+      <strong>${escapar(t.nombre)}</strong> <span>${escapar(t.dominio)}</span></a>
+      <small>${t.regalos} ${t.regalos === 1 ? "regalo" : "regalos"} · ${euros.format(t.suma)}</small></li>`).join("");
+  return `<section class="coupert" aria-label="Cupones Coupert">
+    <h2>🏷️ Cupones y reembolso con Coupert</h2>
+    <p>Antes de pagar, mira si hay cupón en la tienda donde está más barato cada regalo de lo que tenéis elegido. Si tenéis la extensión o la app de Coupert, al pagar prueba los cupones sola.</p>
+    <ul class="coupert-lista">${filas}</ul>
+    <p class="ayuda">Coupert está pensado sobre todo para tiendas de EE. UU.: algunas tiendas españolas pueden no tener cupones o abrir la página de la tienda de otro país.</p>
+  </section>`;
+}
+
+// ---------------------------------------------------------------- carta
+
+/** Pone un regalo (de la lista o añadido a mano) en una cesta. */
+function colocar(id, destino) {
+  const extra = calc.extras.find((x) => x.id === id);
+  if (extra) extra.grupo = destino;
+  else if (destino === CESTA) delete calc.grupo[id];
+  else calc.grupo[id] = destino;
+}
+
+function ordenCarta(items) {
+  const pos = new Map(calc.orden.map((id, i) => [id, i]));
+  return items.slice().sort((a, b) => (pos.has(a.id) ? pos.get(a.id) : 1e9) - (pos.has(b.id) ? pos.get(b.id) : 1e9));
+}
+
+function pintarCarta() {
+  const caja = $("#vista-carta");
+  const items = ordenCarta(itemsCalc());
+  const total = items.reduce((s, x) => s + (x.precio || 0), 0);
+  const sinPrecio = items.filter((x) => x.precio == null).length;
+  const sinColocar = items.some((x) => x.grupo === CESTA);
+  const grupos = [...(sinColocar ? [CESTA] : []), ...calc.grupos];
+
+  const ficha = (x) => {
+    const [foto, ...resto] = x.fotos;
+    return `<li class="carta-item" data-item="${escapar(x.id)}" title="${escapar(x.nombre)}">
+      <div class="carta-foto">${foto
+        ? `<img src="${escapar(foto)}" data-resto="${escapar(resto.map(encodeURI).join(" "))}" alt="${escapar(x.nombre)}" draggable="false" loading="lazy" referrerpolicy="no-referrer">`
+        : '<span aria-hidden="true">🎁</span>'}</div>
+      <p class="carta-nombre">${escapar(x.nombre)}</p>
+      <p class="carta-precio${x.precio == null ? " sin-dato" : ""}">${x.precio != null ? euros.format(x.precio) : "sin precio"}</p>
+    </li>`.replace(/>\s+</g, "><");
+  };
+
+  const secciones = grupos.map((g) => {
+    const suyos = items.filter((x) => x.grupo === g);
+    const suma = suyos.reduce((s, x) => s + (x.precio || 0), 0);
+    return `<section class="carta-grupo ${claseGrupo(g)}" data-grupo="${escapar(g)}">
+      <header class="carta-grupo-cabeza"><h2>${escapar(nombreVisible(g))}</h2>
+        <span>${suyos.length} ${suyos.length === 1 ? "regalo" : "regalos"}</span></header>
+      <ul class="carta-items" data-grupo="${escapar(g)}">${suyos.map(ficha).join("")}</ul>
+      <p class="carta-subtotal">Total: <strong>${euros.format(suma)}</strong></p>
+    </section>`;
+  }).join("");
+
+  caja.innerHTML = items.length ? `
+    <p class="carta-ayuda">Arrastra cada regalo (en el móvil, mantenlo pulsado un momento) para pasarlo a otra carta o cambiarlo de sitio. Se guarda igual que en 🧮 Calcular.</p>
+    ${secciones}
+    <div class="carta-total">
+      <div><p class="resumen-titulo">Total de todo</p>
+        <p class="resumen-detalle">${items.length} ${items.length === 1 ? "regalo" : "regalos"}${sinPrecio ? ` · ${sinPrecio} sin precio` : ""}</p></div>
+      <strong>${euros.format(total)}</strong>
+    </div>
+    <button type="button" class="boton-accion suave" id="carta-nueva">＋ Nueva carta</button>
+    ${bloqueCoupert(items)}`
+    : `<p class="calc-vacio">Todavía no hay nada elegido. Toca el <b>🧮</b> de los regalos de la lista y aparecerán aquí, repartidos en Reyes Niñas, Reyes Lucía, Reyes Alba, Cumpleaños Lucía, Papá Noel…</p>`;
+}
+
+const arrastre = { activo: null, pendiente: null, rueda: null };
+
+function enlazarCarta() {
+  const caja = $("#vista-carta");
+
+  // Si una foto no carga, se prueba la siguiente; si no queda ninguna, el paquete de regalo.
+  caja.addEventListener("error", (e) => {
+    const img = e.target;
+    if (!(img instanceof HTMLImageElement)) return;
+    const resto = (img.dataset.resto || "").split(" ").filter(Boolean);
+    if (resto.length) { img.src = decodeURI(resto.shift()); img.dataset.resto = resto.join(" "); }
+    else img.replaceWith(Object.assign(document.createElement("span"), { textContent: "🎁" }));
+  }, true);
+
+  const empezar = (item, x, y) => {
+    const r = item.getBoundingClientRect();
+    const fantasma = item.cloneNode(true);
+    fantasma.classList.add("carta-fantasma");
+    fantasma.style.width = `${r.width}px`;
+    document.body.append(fantasma);
+    arrastre.activo = { item, fantasma, dx: x - r.left, dy: y - r.top, x, y };
+    item.classList.add("arrastrando");
+    document.body.classList.add("arrastrando-carta");
+    if (navigator.vibrate) navigator.vibrate(12);
+    // Si el dedo está cerca del borde de la pantalla, la página se desplaza sola.
+    arrastre.rueda = setInterval(() => {
+      const a = arrastre.activo;
+      if (!a) return;
+      const margen = 70;
+      const paso = a.y < margen ? -14 : a.y > window.innerHeight - margen ? 14 : 0;
+      if (paso) { window.scrollBy(0, paso); mover(a.x, a.y); }
+    }, 16);
+    mover(x, y);
+  };
+
+  const mover = (x, y) => {
+    const a = arrastre.activo;
+    a.x = x; a.y = y;
+    a.fantasma.style.transform = `translate(${x - a.dx}px, ${y - a.dy}px) rotate(-2deg)`;
+    const debajo = document.elementFromPoint(x, y);
+    const grupo = debajo && debajo.closest(".carta-grupo");
+    caja.querySelectorAll(".carta-grupo.sobre").forEach((g) => g !== grupo && g.classList.remove("sobre"));
+    if (!grupo) return;
+    grupo.classList.add("sobre");
+    const lista = grupo.querySelector(".carta-items");
+    const antes = [...lista.querySelectorAll(".carta-item:not(.arrastrando)")].find((h) => {
+      const r = h.getBoundingClientRect();
+      return y < r.top || (y <= r.bottom && x < r.left + r.width / 2);
+    });
+    if (antes) { if (antes.previousElementSibling !== a.item) lista.insertBefore(a.item, antes); }
+    else if (lista.lastElementChild !== a.item) lista.append(a.item);
+  };
+
+  const terminar = () => {
+    const a = arrastre.activo;
+    clearTimeout(arrastre.pendiente && arrastre.pendiente.temporizador);
+    arrastre.pendiente = null;
+    if (!a) return;
+    clearInterval(arrastre.rueda);
+    a.fantasma.remove();
+    a.item.classList.remove("arrastrando");
+    document.body.classList.remove("arrastrando-carta");
+    arrastre.activo = null;
+    const orden = [];
+    caja.querySelectorAll(".carta-items").forEach((ul) => {
+      ul.querySelectorAll(".carta-item").forEach((li) => {
+        orden.push(li.dataset.item);
+        colocar(li.dataset.item, ul.dataset.grupo);
+      });
+    });
+    calc.orden = orden;
+    guardarCalc();
+    pintarCarta();
+  };
+
+  // Ratón: se arrastra en cuanto se mueve un poco.
+  caja.addEventListener("mousedown", (e) => {
+    const item = e.button === 0 && e.target.closest(".carta-item");
+    if (!item) return;
+    e.preventDefault();
+    arrastre.pendiente = { item, x: e.clientX, y: e.clientY };
+  });
+  document.addEventListener("mousemove", (e) => {
+    if (arrastre.activo) { mover(e.clientX, e.clientY); return; }
+    const p = arrastre.pendiente;
+    if (p && Math.hypot(e.clientX - p.x, e.clientY - p.y) > 5) { arrastre.pendiente = null; empezar(p.item, e.clientX, e.clientY); }
+  });
+  document.addEventListener("mouseup", terminar);
+
+  // Táctil: hay que mantener pulsado un momento, para que deslizar el dedo siga moviendo la página.
+  caja.addEventListener("touchstart", (e) => {
+    const item = e.touches.length === 1 && e.target.closest(".carta-item");
+    if (!item) return;
+    const { clientX: x, clientY: y } = e.touches[0];
+    arrastre.pendiente = { item, x, y, temporizador: setTimeout(() => {
+      const p = arrastre.pendiente;
+      if (p) { arrastre.pendiente = null; empezar(p.item, p.x, p.y); }
+    }, 300) };
+  }, { passive: true });
+  document.addEventListener("touchmove", (e) => {
+    const t = e.touches[0];
+    if (arrastre.activo) { e.preventDefault(); mover(t.clientX, t.clientY); return; }
+    const p = arrastre.pendiente;
+    if (p) {
+      if (Math.hypot(t.clientX - p.x, t.clientY - p.y) > 10) { clearTimeout(p.temporizador); arrastre.pendiente = null; }
+      else { p.x = t.clientX; p.y = t.clientY; }
+    }
+  }, { passive: false });
+  document.addEventListener("touchend", terminar);
+  document.addEventListener("touchcancel", terminar);
+  caja.addEventListener("contextmenu", (e) => { if (e.target.closest(".carta-item")) e.preventDefault(); });
+  caja.addEventListener("dragstart", (e) => e.preventDefault());
+
+  caja.addEventListener("click", (e) => {
+    if (e.target.id !== "carta-nueva") return;
+    const nombre = (window.prompt("Nombre de la carta nueva (por ejemplo: Cumpleaños Alba)") || "").trim().slice(0, 40);
+    if (!nombre || nombre === CESTA) return;
+    if (!calc.grupos.includes(nombre)) calc.grupos.push(nombre);
+    guardarCalc();
+    pintarCarta();
   });
 }
 
@@ -891,7 +1131,7 @@ function aplicarCambio(producto, borrar = false) {
   else if (i === -1) lista.push(producto);
   else lista[i] = producto;
   productos = preparar(datosLista, datosPrecios);
-  if (estado.vista === "calcular") { mostrarVista(); return; }
+  if (estado.vista !== "lista") { mostrarVista(); return; }
   pintarChips();
   pintarEleccion();
   pintarLista();
@@ -1009,8 +1249,9 @@ function enlazarEventos() {
     pintarLista();
   });
   $("#categorias").addEventListener("click", (e) => {
-    if (e.target.closest("[data-vista]")) {
-      estado.vista = "calcular";
+    const pestana = e.target.closest("[data-vista]");
+    if (pestana) {
+      estado.vista = pestana.dataset.vista;
       mostrarVista();
       return;
     }
@@ -1029,11 +1270,12 @@ function enlazarEventos() {
   $("#quitar-eleccion").addEventListener("click", () => {
     if (!window.confirm("¿Quitar todo de Calcular?")) return;
     elegidos.clear(); guardarElegidos();
-    calc = { grupo: {}, precio: {}, extras: [], grupos: calc.grupos }; guardarCalc();
+    calc = { grupo: {}, precio: {}, extras: [], grupos: calc.grupos, orden: [] }; guardarCalc();
     estado.soloElegidos = false;
     pintarEleccion(); pintarLista(); pintarCategorias();
   });
   enlazarCalcular();
+  enlazarCarta();
   $("#buscar").addEventListener("input", (e) => { estado.texto = e.target.value; pintarLista(); });
   $("#orden").addEventListener("change", (e) => { estado.orden = e.target.value; pintarLista(); });
 }

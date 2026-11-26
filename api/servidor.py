@@ -276,8 +276,13 @@ def limpiar_calcular(estado: dict) -> dict:
         if isinstance(x, dict) and _texto(x.get("nombre")):
             extras.append({"id": _texto(x.get("id"), 40) or f"extra-{len(extras)}", "nombre": _texto(x.get("nombre")),
                            "grupo": _texto(x.get("grupo"), 40) or "Cesta", "precio": _precio(x.get("precio"))})
+    orden = []
+    for x in (estado.get("orden") or [])[:600]:
+        x = _texto(x, 80)
+        if x and x not in orden:
+            orden.append(x)
     return {"elegidos": elegidos, "grupo": grupo, "precio": precio, "extras": extras, "grupos": grupos,
-            "actualizado": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+            "orden": orden, "actualizado": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
 
 
 def leer_calcular() -> tuple[dict, str | None]:
