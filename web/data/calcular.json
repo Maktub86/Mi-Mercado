@@ -78,6 +78,10 @@
     "botas-de-agua": [
       19.3,
       41.4
+    ],
+    "botas-de-agua-2": [
+      20.3,
+      39.2
     ]
   },
   "sin_dinero": [
@@ -85,5 +89,5 @@
     "playmobil-bolso-concha",
     "stitch-despertador-3d"
   ],
-  "actualizado": "2026-11-26T20:15:45Z"
+  "actualizado": "2026-11-26T20:16:31Z"
 }
