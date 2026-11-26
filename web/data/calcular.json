@@ -10,7 +10,12 @@
     "Cumpleaños Lucía",
     "Papá Noel"
   ],
-  "carta": {},
+  "carta": {
+    "coche-barbie": [
+      33.7,
+      28.5
+    ]
+  },
   "sin_dinero": [],
-  "actualizado": "2026-11-26T19:59:52Z"
+  "actualizado": "2026-11-26T20:04:40Z"
 }
