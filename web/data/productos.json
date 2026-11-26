@@ -598,23 +598,6 @@
       ]
     },
     {
-      "estado": "pendiente",
-      "categoria": "reyes",
-      "precio_lista": null,
-      "id": "botas-agua-sfera-lucia",
-      "nombre": "Sfera – Bota de agua (burdeos)",
-      "para": "Lucía",
-      "nota": "",
-      "busqueda": "Sfera bota agua burdeos niña",
-      "imagen": "https://dam.elcorteingles.es/producto/www-001032089811015-00.jpg",
-      "enlaces": [
-        {
-          "tienda": "Sfera",
-          "url": "https://www.sfera.com/es/ninos/A200976328-burdeos-pr-bota-agua/"
-        }
-      ]
-    },
-    {
       "id": "haba-bichos",
       "nombre": "HABA Bichos – juego de memoria y sumas hasta 10 (2013336004)",
       "para": "Lucía",
