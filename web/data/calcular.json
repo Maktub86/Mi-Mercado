@@ -70,11 +70,24 @@
     "playmobil-71613-abuelos": [
       46.5,
       43.3
+    ],
+    "stitch-despertador-3d": [
+      29.1,
+      19.6
+    ],
+    "play-toyz-mi-primera-taquilla": [
+      53.0,
+      19.8
+    ],
+    "moose-bluey-juego-del-globo-keepy-uppy": [
+      78.3,
+      21.3
     ]
   },
   "sin_dinero": [
     "omg-music-festival",
-    "playmobil-bolso-concha"
+    "playmobil-bolso-concha",
+    "stitch-despertador-3d"
   ],
-  "actualizado": "2026-11-26T19:09:35Z"
+  "actualizado": "2026-11-26T19:09:53Z"
 }
