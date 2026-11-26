@@ -132,6 +132,16 @@ function tendenciaDe(serie) {
 }
 
 /** Junta la lista con el historial de precios y calcula lo que se muestra. */
+/** Los enlaces de salida de los comparadores (".../out/...?exp=...") caducan: en su lugar se abre la tienda
+ *  (si el robot ya la ha encontrado) o la búsqueda del regalo en el comparador. */
+function enlaceComparador(url, enlace) {
+  if (url && !/\/out\//.test(url)) return url;
+  if (enlace.comparador) return enlace.comparador;
+  const consulta = encodeURIComponent(enlace.comparador_buscar || "");
+  return enlace.tienda === "Idealo" ? `https://www.idealo.es/precios/MainSearchProductCategory.html?q=${consulta}`
+    : `https://www.globerada.com/search.php?q=${consulta}`;
+}
+
 function preparar(lista, precios) {
   const historial = precios.productos || {};
   return lista.productos.map((p, indice) => {
@@ -161,7 +171,7 @@ function preparar(lista, precios) {
         const clave = enlace.comparador || `${enlace.tienda === "Idealo" ? "idealo" : "comparador"}:${enlace.comparador_buscar}`;
         Object.entries(datos)
           .filter(([k, info]) => k.startsWith(`${clave}#`) && info.ultimo_error !== "ya no aparece en el comparador")
-          .forEach(([k, info]) => todas.push(aTienda({ tienda: info.tienda || k.split("#")[1] }, info, info.url || enlace.comparador, k)));
+          .forEach(([k, info]) => todas.push(aTienda({ tienda: info.tienda || k.split("#")[1] }, info, enlaceComparador(info.url, enlace), k)));
         return;
       }
       const clave = enlace.url || (enlace.amazon_buscar ? `amazon:${enlace.amazon_buscar}`
