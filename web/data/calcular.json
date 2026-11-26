@@ -34,11 +34,16 @@
     "playmobil-bolso-concha": [
       43.6,
       16.8
+    ],
+    "stitch-despertador-3d": [
+      17.6,
+      19.4
     ]
   },
   "sin_dinero": [
     "omg-music-festival",
-    "playmobil-bolso-concha"
+    "playmobil-bolso-concha",
+    "stitch-despertador-3d"
   ],
-  "actualizado": "2026-11-26T20:06:17Z"
+  "actualizado": "2026-11-26T20:06:25Z"
 }
