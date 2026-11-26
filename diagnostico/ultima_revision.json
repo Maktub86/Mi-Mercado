@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-26T18:23:03+00:00",
-  "leidos": 73,
-  "fallos": 14,
+  "fecha": "2026-11-26T20:08:54+00:00",
+  "leidos": 77,
+  "fallos": 15,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -782,6 +782,52 @@
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
+    },
+    {
+      "producto": "coche-barbie",
+      "tienda": "Juguettos",
+      "url": "https://juguettos.com/barbie-casas-y-vehiculos/93932-0000-00-00-194735260157.html",
+      "precio": null,
+      "metodo": "generico",
+      "error": null,
+      "pistas": {
+        "bytes": 121960,
+        "titulo": "Hot Wheels Descapotable Teledirigido de Barbie - Juguettos",
+        "captcha": false,
+        "json_ld": 1,
+        "marcas": [
+          "availability"
+        ]
+      }
+    },
+    {
+      "producto": "coche-barbie",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/barbie-coche-descapotable-hbt92.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/barbie-coche-descapotable-hbt92.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon",
+          "precio": 13.99
+        },
+        {
+          "tienda": "Pixmania",
+          "precio": 24.28
+        },
+        {
+          "tienda": "Raijuguetes",
+          "precio": 24.58
+        }
+      ]
+    },
+    {
+      "producto": "coche-barbie",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/barbie-y-su-descapotable-muneca-con-coche-de-juguete-3-anos",
+      "precio": 28.99,
+      "metodo": "shopify",
+      "error": null
     }
   ]
 }
