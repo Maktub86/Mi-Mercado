@@ -10,7 +10,7 @@ const fechaLarga = new Intl.DateTimeFormat("es-ES", {
   weekday: "long", day: "numeric", month: "long", hour: "2-digit", minute: "2-digit",
 });
 
-const estado = { categoria: null, persona: "todas", texto: "", orden: "lista", soloElegidos: false, vista: "lista" };
+const estado = { categoria: null, persona: "todas", texto: "", orden: "lista", vista: "lista", cartaPersona: null };
 const CLAVE_ELEGIDOS = "mi-mercado-elegidos";
 let elegidos = new Set();
 try { elegidos = new Set(JSON.parse(localStorage.getItem(CLAVE_ELEGIDOS) || "[]")); } catch (e) { /* sin almacenamiento */ }
@@ -24,11 +24,11 @@ let productos = [];
 // Se guarda en este dispositivo y se comparte con los demás a través del servidor (web/data/calcular.json).
 const CLAVE_CALCULAR = "mi-mercado-calcular";
 const GRUPOS_BASE = ["Reyes Niñas", "Reyes Lucía", "Reyes Alba", "Cumpleaños Lucía", "Papá Noel"];
-const CESTA = "Cesta";
-let calc = { grupo: {}, precio: {}, extras: [], grupos: [], carta: {} };
+let calc = { grupo: {}, precio: {}, extras: [], grupos: [], carta: {}, sinDinero: [] };
 try { calc = { ...calc, ...JSON.parse(localStorage.getItem(CLAVE_CALCULAR) || "{}") }; } catch (e) { /* sin almacenamiento */ }
 calc.grupo = calc.grupo || {};
 calc.carta = calc.carta || {};
+calc.sinDinero = calc.sinDinero || [];
 calc.grupos = [...new Set([...GRUPOS_BASE, ...(calc.grupos || [])])];
 function guardarCalc(local) {
   try { localStorage.setItem(CLAVE_CALCULAR, JSON.stringify(calc)); } catch (e) { /* sin almacenamiento */ }
@@ -39,7 +39,7 @@ function guardarCalc(local) {
 let compartir = { listo: false, pendiente: false, temporizador: null, sinClave: false, ultimoError: "" };
 
 function estadoCestas() {
-  return { elegidos: [...elegidos], grupo: calc.grupo, precio: calc.precio, extras: calc.extras, grupos: calc.grupos, carta: calc.carta };
+  return { elegidos: [...elegidos], grupo: calc.grupo, precio: calc.precio, extras: calc.extras, grupos: calc.grupos, carta: calc.carta, sin_dinero: calc.sinDinero };
 }
 
 function hayCestas() {
@@ -82,7 +82,7 @@ async function bajarCestas() {
       const ids = new Set(productos.map((p) => p.id));
       elegidos = new Set((remoto.elegidos || []).filter((id) => ids.has(id)));
       calc = { grupo: remoto.grupo || {}, precio: remoto.precio || {}, extras: remoto.extras || [],
-        grupos: [...new Set([...GRUPOS_BASE, ...(remoto.grupos || [])])], carta: remoto.carta || {} };
+        grupos: [...new Set([...GRUPOS_BASE, ...(remoto.grupos || [])])], carta: remoto.carta || {}, sinDinero: remoto.sin_dinero || [] };
       guardarElegidos(true); guardarCalc(true);
       compartir.pendiente = false;
       if (!arrastre.activo) mostrarVista();
@@ -230,26 +230,9 @@ function deCategoria() {
 }
 
 function pintarCategorias() {
-  const enCalc = elegidos.size + calc.extras.length;
   $("#categorias").innerHTML = categorias.map((c) =>
     `<button type="button" class="categoria" data-categoria="${c.id}" aria-pressed="${estado.vista === "lista" && c.id === estado.categoria}">${escapar(c.nombre)}</button>`).join("")
-    + `<button type="button" class="categoria pestana-carta" data-vista="carta" aria-pressed="${estado.vista === "carta"}">✉️ Carta</button>`
-    + `<button type="button" class="categoria pestana-calcular" data-vista="calcular" aria-pressed="${estado.vista === "calcular"}">🧮 Calcular${enCalc ? ` <span class="cuenta-calc">${enCalc}</span>` : ""}</button>`;
-}
-
-function pintarEleccion() {
-  const lista = itemsCalc();
-  const barra = $("#barra-eleccion");
-  const visible = lista.length > 0 && estado.vista === "lista";
-  barra.hidden = !visible;
-  document.body.classList.toggle("con-barra", visible);
-  if (!lista.length) { estado.soloElegidos = false; return; }
-  const total = lista.reduce((s, x) => s + (x.precio || 0), 0);
-  const sinPrecio = lista.filter((x) => x.precio == null).length;
-  $("#eleccion-total").textContent = euros.format(total);
-  $("#eleccion-detalle").textContent = `${lista.length} ${lista.length === 1 ? "regalo" : "regalos"} en Calcular`
-    + (sinPrecio ? ` · ${sinPrecio} sin precio` : "");
-  $("#ver-elegidos").textContent = "Ir a Calcular →";
+    + `<button type="button" class="categoria pestana-carta" data-vista="carta" aria-pressed="${estado.vista === "carta"}">✉️ Carta</button>`;
 }
 
 function pintarChips() {
@@ -475,23 +458,6 @@ function tarjeta(p) {
   persona.classList.add(claseDe(p.para));
   if (p.fuera_de_carta) nodo.querySelector(".etiqueta-fuera").hidden = false;
 
-  const elegir = nodo.querySelector(".elegir");
-  const marcar = () => {
-    const si = elegidos.has(p.id);
-    elegir.setAttribute("aria-pressed", String(si));
-    elegir.title = si ? "Quitar de Calcular" : "Mandar a Calcular";
-    nodo.classList.toggle("elegida", si);
-  };
-  elegir.addEventListener("click", () => {
-    if (elegidos.has(p.id)) elegidos.delete(p.id); else elegidos.add(p.id);
-    guardarElegidos();
-    marcar();
-    pintarEleccion();
-    pintarCategorias();
-    if (estado.soloElegidos) pintarLista();
-  });
-  marcar();
-
   const img = nodo.querySelector(".foto img");
   const fotos = p.fotos.slice();
   const siguienteFoto = () => {
@@ -564,7 +530,6 @@ function tarjeta(p) {
 function pintarLista() {
   const texto = normalizar(estado.texto.trim());
   let lista = deCategoria().filter((p) => p.estado !== "comprado")
-    .filter((p) => !estado.soloElegidos || elegidos.has(p.id))
     .filter((p) => estado.persona === "todas" || p.para === estado.persona)
     .filter((p) => !texto || normalizar(`${p.nombre} ${p.nota || ""}`).includes(texto));
 
@@ -580,8 +545,7 @@ function pintarLista() {
   const contenedor = $("#pendientes");
   contenedor.replaceChildren(...lista.map(tarjeta));
   $("#vacio").hidden = lista.length > 0;
-  $("#vacio").textContent = estado.soloElegidos ? "No hay regalos elegidos aquí."
-    : estado.texto ? "No hay nada que coincida con la búsqueda."
+  $("#vacio").textContent = estado.texto ? "No hay nada que coincida con la búsqueda."
     : estado.persona !== "todas" ? `Todavía no hay regalos para ${estado.persona}.` : "Todavía no hay regalos en esta categoría.";
 
   const comprados = deCategoria().filter((p) => p.estado === "comprado")
@@ -594,220 +558,23 @@ function pintarLista() {
       <button type="button" class="enlace-boton solo-edicion" data-pendiente="${p.id}">Volver a la lista</button></span></li>`).join("");
 }
 
-// ---------------------------------------------------------------- calcular
-
-function leerPrecio(texto) {
-  const limpio = String(texto).replace(/[€\s]/g, "").replace(/\.(?=\d{3}(\D|$))/g, "").replace(",", ".");
-  if (limpio === "") return null;
-  const n = Number(limpio);
-  return Number.isFinite(n) && n >= 0 ? Math.round(n * 100) / 100 : undefined;
-}
-
-/** Color de cada cesta según para quién es. */
-function claseGrupo(g) {
-  if (g === CESTA) return "cesta";
-  if (/niñas|las dos/i.test(g)) return "dos";
-  if (/lucía|lucia/i.test(g)) return "lucia";
-  if (/alba/i.test(g)) return "alba";
-  if (/alejandro/i.test(g)) return "alejandro";
-  if (/roc[ií]o|noel/i.test(g)) return "rocio";
-  return "otro";
-}
-
-function nombreVisible(g) {
-  return g === CESTA ? "🧺 Cesta (sin colocar)" : g;
-}
-
-function itemsCalcSinOrden() {
-  const deLista = productos.filter((p) => elegidos.has(p.id)).map((p) => ({
-    id: p.id,
-    nombre: p.nombre,
-    grupo: calc.grupo[p.id] || CESTA,
-    precio: calc.precio[p.id] ?? p.referencia ?? null,
-    original: p.referencia ?? null,
-    cambiado: calc.precio[p.id] != null,
-    donde: p.mejor ? p.mejor.tienda : p.precio_lista != null ? "precio de la lista" : "",
-    url: p.mejor ? p.mejor.url : null,
-    tienda: p.mejor ? p.mejor.tienda : "",
-    fotos: p.fotos || [],
-    extra: false,
-  }));
-  const extras = calc.extras.map((x) => ({ ...x, grupo: x.grupo || CESTA, original: null, cambiado: false, donde: "añadido a mano", url: null, tienda: "", fotos: [], extra: true }));
-  return [...deLista, ...extras];
-}
-
-function itemsCalc() {
-  return itemsCalcSinOrden();
-}
+// ---------------------------------------------------------------- vistas
 
 function mostrarVista() {
   const enLista = estado.vista === "lista";
   document.querySelector(".filtros").hidden = !enLista;
   $("#pendientes").hidden = !enLista;
-  $("#vista-calcular").hidden = estado.vista !== "calcular";
-  $("#vista-carta").hidden = estado.vista !== "carta";
+  $("#vista-carta").hidden = enLista;
   if (!enLista) {
     $("#resumen").hidden = true;
     $("#vacio").hidden = true;
     $("#bloque-comprados").hidden = true;
-    if (estado.vista === "carta") pintarCarta(); else pintarCalcular();
+    pintarCarta();
   } else {
     pintarChips();
     pintarLista();
   }
   pintarCategorias();
-  pintarEleccion();
-}
-
-function pintarCalcular() {
-  const caja = $("#vista-calcular");
-  const items = itemsCalc();
-  const orden = [CESTA, ...calc.grupos];
-  const opciones = (actual) => orden.map((g) =>
-    `<option value="${escapar(g)}"${g === actual ? " selected" : ""}>${escapar(nombreVisible(g))}</option>`).join("")
-    + `<option value="__nuevo">＋ Nueva cesta…</option>`;
-  const total = items.reduce((s, x) => s + (x.precio || 0), 0);
-  const sinPrecio = items.filter((x) => x.precio == null).length;
-
-  const grupos = orden.map((g) => ({ nombre: g, items: items.filter((x) => x.grupo === g) }))
-    .filter((g) => g.items.length);
-  grupos.forEach((g) => g.items.sort((a, b) => (b.precio ?? -1) - (a.precio ?? -1)));
-
-  const reparto = grupos.map((g) => {
-    const suma = g.items.reduce((s, x) => s + (x.precio || 0), 0);
-    return `<li class="${claseGrupo(g.nombre)}"><span>${escapar(g.nombre === CESTA ? "Sin colocar" : g.nombre)}</span><strong>${euros.format(suma)}</strong></li>`;
-  }).join("");
-
-  const fila = (x) => `
-    <li class="calc-fila" data-item="${escapar(x.id)}">
-      <div class="calc-nombre">
-        <strong>${escapar(x.nombre)}</strong>
-        <small>${x.url ? `<a href="${escapar(x.url)}" target="_blank" rel="noopener">${escapar(x.donde)} ↗</a>` : escapar(x.donde)}${x.cambiado && x.original != null ? ` · antes ${euros.format(x.original)}` : ""}${enlaceCoupert(x) ? ` · <a class="enlace-coupert" href="${escapar(enlaceCoupert(x))}" target="_blank" rel="noopener">🏷️ Cupones Coupert</a>` : ""}</small>
-      </div>
-      <label class="calc-campo"><span>Colocar en</span>
-        <select data-calc-grupo>${opciones(x.grupo)}</select></label>
-      <label class="calc-campo calc-precio"><span>Precio</span>
-        <input data-calc-precio inputmode="decimal" value="${x.precio != null ? x.precio.toFixed(2).replace(".", ",") : ""}" placeholder="—" aria-label="Precio de ${escapar(x.nombre)}"></label>
-      <button type="button" class="calc-quitar" data-calc-quitar title="Quitar de Calcular" aria-label="Quitar ${escapar(x.nombre)}">✕</button>
-    </li>`;
-
-  const listas = grupos.map((g) => {
-    const suma = g.items.reduce((s, x) => s + (x.precio || 0), 0);
-    return `<section class="calc-grupo ${claseGrupo(g.nombre)}">
-      <header class="calc-grupo-cabeza"><h2>${escapar(nombreVisible(g.nombre))}</h2>
-        <span>${g.items.length} ${g.items.length === 1 ? "regalo" : "regalos"} · <strong>${euros.format(suma)}</strong></span></header>
-      <ul class="calc-lista">${g.items.map(fila).join("")}</ul>
-    </section>`;
-  }).join("");
-
-  caja.innerHTML = `
-    <div class="resumen calc-resumen">
-      <div class="resumen-principal">
-        <p class="resumen-titulo">Total</p>
-        <p class="resumen-total">${euros.format(total)}</p>
-        <p class="resumen-detalle">${items.length} ${items.length === 1 ? "regalo" : "regalos"}${sinPrecio ? ` · ${sinPrecio} sin precio` : ""}</p>
-      </div>
-      ${reparto ? `<ul class="reparto">${reparto}</ul>` : ""}
-      ${items.length ? `<div class="calc-acciones">
-        <button type="button" class="boton-accion suave" id="calc-copiar">Copiar resumen</button>
-        <button type="button" class="boton-accion suave" id="calc-vaciar">Vaciar</button></div>` : ""}
-    </div>
-    ${items.length ? listas : `<p class="calc-vacio">Toca el <b>🧮</b> de cualquier regalo de la lista para mandarlo a la cesta. Desde aquí lo colocas en Reyes Niñas, Reyes Lucía, Reyes Alba, Cumpleaños Lucía, Papá Noel o una cesta nueva, y ves cuánto sale cada una.</p>`}
-    <form class="calc-anadir" id="calc-anadir">
-      <h2>Añadir algo que no está en la lista</h2>
-      <div class="calc-anadir-campos">
-        <input id="calc-nuevo-nombre" required maxlength="120" placeholder="Qué es" aria-label="Qué es">
-        <input id="calc-nuevo-precio" inputmode="decimal" placeholder="Precio" aria-label="Precio">
-        <select id="calc-nuevo-grupo" aria-label="Colocar en">${opciones(CESTA)}</select>
-        <button type="submit" class="boton-accion">Añadir</button>
-      </div>
-      <p class="ayuda">Las cestas se comparten entre todos los móviles que tengan puesta la contraseña. No cambian la lista de regalos.</p>
-    </form>
-    ${bloqueCoupert(items)}`;
-}
-
-function textoResumenCalc() {
-  const items = itemsCalc();
-  const lineas = [];
-  [CESTA, ...calc.grupos].forEach((g) => {
-    const suyos = items.filter((x) => x.grupo === g).sort((a, b) => (b.precio ?? -1) - (a.precio ?? -1));
-    if (!suyos.length) return;
-    const suma = suyos.reduce((s, x) => s + (x.precio || 0), 0);
-    lineas.push(`${g === CESTA ? "Sin colocar" : g}: ${euros.format(suma)}`);
-    suyos.forEach((x) => lineas.push(`  - ${x.nombre}: ${x.precio != null ? euros.format(x.precio) : "sin precio"}`));
-  });
-  lineas.push(`TOTAL: ${euros.format(items.reduce((s, x) => s + (x.precio || 0), 0))}`);
-  return lineas.join("\n");
-}
-
-function enlazarCalcular() {
-  const caja = $("#vista-calcular");
-  caja.addEventListener("change", (e) => {
-    const fila = e.target.closest("[data-item]");
-    if (!fila) return;
-    const id = fila.dataset.item;
-    const extra = calc.extras.find((x) => x.id === id);
-    if (e.target.matches("[data-calc-grupo]")) {
-      let destino = e.target.value;
-      if (destino === "__nuevo") {
-        destino = (window.prompt("Nombre de la cesta nueva (por ejemplo: Cumpleaños Alba)") || "").trim().slice(0, 40);
-        if (!destino) { pintarCalcular(); return; }
-        if (!calc.grupos.includes(destino) && destino !== CESTA) calc.grupos.push(destino);
-      }
-      colocar(id, destino);
-    } else if (e.target.matches("[data-calc-precio]")) {
-      const valor = leerPrecio(e.target.value);
-      if (valor === undefined) { aviso("Ese precio no se entiende. Escribe por ejemplo 24,99.", "error"); return; }
-      if (extra) extra.precio = valor;
-      else {
-        const p = productos.find((x) => x.id === id);
-        if (valor == null || (p && valor === p.referencia)) delete calc.precio[id]; else calc.precio[id] = valor;
-      }
-    } else return;
-    guardarCalc();
-    pintarCalcular();
-  });
-  caja.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" && e.target.matches("[data-calc-precio]")) { e.preventDefault(); e.target.blur(); }
-  });
-  caja.addEventListener("click", (e) => {
-    const quitar = e.target.closest("[data-calc-quitar]");
-    if (quitar) {
-      const id = quitar.closest("[data-item]").dataset.item;
-      calc.extras = calc.extras.filter((x) => x.id !== id);
-      elegidos.delete(id); guardarElegidos();
-      delete calc.grupo[id]; delete calc.precio[id];
-      guardarCalc();
-      pintarCalcular(); pintarCategorias();
-    } else if (e.target.id === "calc-vaciar") {
-      if (!window.confirm("¿Quitar todo de Calcular?")) return;
-      elegidos.clear(); guardarElegidos();
-      calc = { grupo: {}, precio: {}, extras: [], grupos: calc.grupos, carta: calc.carta }; guardarCalc();
-      pintarCalcular(); pintarCategorias();
-    } else if (e.target.id === "calc-copiar") {
-      const texto = textoResumenCalc();
-      (navigator.clipboard ? navigator.clipboard.writeText(texto) : Promise.reject())
-        .then(() => aviso("Resumen copiado. Puedes pegarlo en WhatsApp.", "ok"))
-        .catch(() => window.prompt("Copia el resumen:", texto));
-    }
-  });
-  caja.addEventListener("submit", (e) => {
-    if (e.target.id !== "calc-anadir") return;
-    e.preventDefault();
-    const nombre = $("#calc-nuevo-nombre").value.trim();
-    const precio = leerPrecio($("#calc-nuevo-precio").value);
-    if (!nombre) return;
-    if (precio === undefined) { aviso("Ese precio no se entiende. Escribe por ejemplo 24,99.", "error"); return; }
-    let grupo = $("#calc-nuevo-grupo").value;
-    if (grupo === "__nuevo") {
-      grupo = (window.prompt("Nombre de la cesta nueva") || "").trim().slice(0, 40) || CESTA;
-      if (grupo !== CESTA && !calc.grupos.includes(grupo)) calc.grupos.push(grupo);
-    }
-    calc.extras.push({ id: `extra-${Date.now()}`, nombre, grupo, precio });
-    guardarCalc();
-    pintarCalcular(); pintarCategorias();
-    $("#calc-nuevo-nombre").focus();
-  });
 }
 
 // ---------------------------------------------------------------- coupert
@@ -865,89 +632,122 @@ function bloqueCoupert(items) {
 
 // ---------------------------------------------------------------- carta
 
-/** Pone un regalo (de la lista o añadido a mano) en una cesta de Calcular. */
-function colocar(id, destino) {
-  const extra = calc.extras.find((x) => x.id === id);
-  if (extra) extra.grupo = destino;
-  else if (destino === CESTA) delete calc.grupo[id];
-  else calc.grupo[id] = destino;
+// La Carta tiene una pestaña por persona. En cada una hay una hoja de cuaderno en medio y, a los lados,
+// sus regalos por comprar (izquierda) y los ya comprados (derecha). Lo que se arrastra a la hoja se queda
+// donde lo sueltes (calc.carta[id] = [x, y] en % de la hoja). En los comprados se puede ocultar el precio,
+// y entonces no suma (calc.sinDinero).
+const ORDEN_CARTAS = ["Lucía", "Alba", "Las dos", "Alejandro", "Rocío"];
+
+function precioOculto(p) {
+  return calc.sinDinero.includes(p.id);
 }
 
-// La Carta es una hoja de cuaderno en medio y, a los dos lados, todos los regalos de la lista por persona.
-// Lo que se arrastra a la hoja se queda donde lo sueltes (calc.carta[id] = [x, y] en % de la hoja).
 function precioCarta(p) {
-  return calc.precio[p.id] ?? p.referencia ?? null;
+  return p.referencia ?? null;
 }
 
-function fotoCarta(p, clase) {
+/** Lo que suma un regalo en la carta: nada si su precio está oculto. */
+function sumaCarta(lista) {
+  return lista.reduce((s, p) => s + (precioOculto(p) ? 0 : precioCarta(p) || 0), 0);
+}
+
+function personasCarta() {
+  const categoria = categorias.find((c) => c.id === estado.categoria) || categorias[0] || { personas: [] };
+  const todas = [...new Set([...categoria.personas, ...deCategoria().map((p) => p.para)])];
+  const pos = (n) => (ORDEN_CARTAS.includes(n) ? ORDEN_CARTAS.indexOf(n) : 99);
+  return todas.sort((a, b) => pos(a) - pos(b));
+}
+
+function fotoCarta(p, enHoja) {
   const [foto, ...resto] = p.fotos || [];
   const precio = precioCarta(p);
-  return `<div class="${clase}" data-item="${escapar(p.id)}" title="${escapar(`${p.nombre} · ${p.para}`)}">
+  const comprado = p.estado === "comprado";
+  const oculto = precioOculto(p);
+  let clase = "carta-item";
+  let estilo = "";
+  if (enHoja) {
+    const [x, y] = calc.carta[p.id];
+    clase += " en-hoja";
+    estilo = ` style="left:${x}%;top:${y}%"`;
+  }
+  if (comprado) clase += " comprado";
+  if (oculto) clase += " oculto";
+  const textoPrecio = oculto ? "oculto" : precio != null ? euros.format(precio) : "—";
+  // En la hoja, los comprados llevan un botón en el precio para ocultarlo (y que no sume).
+  const botonPrecio = enHoja && comprado
+    ? `<button type="button" class="carta-ocultar" data-ocultar="${escapar(p.id)}" title="${oculto ? "Mostrar el precio y sumarlo" : "Ocultar el precio y no sumarlo"}" aria-label="${oculto ? "Mostrar precio" : "Ocultar precio"}">${oculto ? "👁️" : "🙈"}</button>`
+    : "";
+  return `<div class="${clase}" data-item="${escapar(p.id)}"${estilo} title="${escapar(`${p.nombre}${comprado ? " · ya comprado" : ""}`)}">
       <div class="carta-foto">${foto
         ? `<img src="${escapar(foto)}" data-resto="${escapar(resto.map(encodeURI).join(" "))}" alt="${escapar(p.nombre)}" draggable="false" loading="lazy" referrerpolicy="no-referrer">`
-        : '<span aria-hidden="true">🎁</span>'}</div>
-      <p class="carta-precio${precio == null ? " sin-dato" : ""}">${precio != null ? euros.format(precio) : "—"}</p>
+        : '<span aria-hidden="true">🎁</span>'}${comprado ? '<span class="sello-comprado" aria-label="Ya comprado">✅</span>' : ""}</div>
+      <p class="carta-precio${precio == null || oculto ? " sin-dato" : ""}">${textoPrecio}${botonPrecio}</p>
     </div>`;
 }
 
 function pintarCarta() {
   const caja = $("#vista-carta");
-  const categoria = categorias.find((c) => c.id === estado.categoria) || categorias[0] || { personas: [] };
-  const enHoja = productos.filter((p) => calc.carta[p.id]);
-  const fuera = deCategoria().filter((p) => p.estado !== "comprado" && !calc.carta[p.id]);
+  const personas = personasCarta();
+  if (!personas.includes(estado.cartaPersona)) estado.cartaPersona = personas[0];
+  const persona = estado.cartaPersona;
+  const deCarta = (n) => deCategoria().filter((p) => p.para === n && calc.carta[p.id]);
+  const suyos = deCategoria().filter((p) => p.para === persona);
+  const enHoja = suyos.filter((p) => calc.carta[p.id]);
+  const porComprar = suyos.filter((p) => p.estado !== "comprado" && !calc.carta[p.id]);
+  const comprados = suyos.filter((p) => p.estado === "comprado" && !calc.carta[p.id]);
 
-  // Cada persona en un lado, intentando que los dos lados queden igual de llenos.
-  const personas = [...new Set([...categoria.personas, ...fuera.map((p) => p.para)])]
-    .map((n) => ({ nombre: n, regalos: fuera.filter((p) => p.para === n) }))
-    .filter((g) => g.regalos.length || enHoja.some((p) => p.para === g.nombre));
-  const lados = [[], []];
-  const cuenta = [0, 0];
-  personas.forEach((g) => {
-    const i = cuenta[0] <= cuenta[1] ? 0 : 1;
-    lados[i].push(g);
-    cuenta[i] += g.regalos.length + 1;
-  });
-  const lado = (grupos, cual) => `<aside class="carta-lado carta-${cual}" data-lado="${cual}">${grupos.map((g) => `
-      <section class="carta-persona ${claseDe(g.nombre)}">
-        <h3>${escapar(g.nombre)} <span>${g.regalos.length}</span></h3>
-        <div class="carta-fotos">${g.regalos.map((p) => fotoCarta(p, "carta-item")).join("")
-          || '<p class="carta-nada">Todo en la carta ✓</p>'}</div>
-      </section>`).join("")}</aside>`;
-
-  const total = enHoja.reduce((s, p) => s + (precioCarta(p) || 0), 0);
-  const sinPrecio = enHoja.filter((p) => precioCarta(p) == null).length;
-  const reparto = [...new Set(enHoja.map((p) => p.para))].map((n) => {
-    const suyos = enHoja.filter((p) => p.para === n);
-    return `<li class="${claseDe(n)}"><span>${escapar(n)}</span><strong>${euros.format(suyos.reduce((s, p) => s + (precioCarta(p) || 0), 0))}</strong></li>`;
+  const pestanas = personas.map((n) => {
+    const lista = deCarta(n);
+    return `<button type="button" class="carta-pestana ${claseDe(n)}" data-carta="${escapar(n)}" aria-pressed="${n === persona}">
+      ${escapar(n)}<span>${lista.length ? euros.format(sumaCarta(lista)) : "—"}</span></button>`;
   }).join("");
 
-  const pegados = enHoja.map((p) => {
-    const [x, y] = calc.carta[p.id];
-    return fotoCarta(p, "carta-item en-hoja").replace('class="carta-item en-hoja"',
-      `class="carta-item en-hoja${p.estado === "comprado" ? " comprado" : ""}" style="left:${x}%;top:${y}%"`);
+  const lado = (titulo, lista, cual, vacio) => `<aside class="carta-lado carta-${cual}">
+      <section class="carta-persona ${claseDe(persona)}${cual === "derecha" ? " de-comprados" : ""}">
+        <h3>${titulo} <span>${lista.length}</span></h3>
+        <div class="carta-fotos">${lista.map((p) => fotoCarta(p, false)).join("") || `<p class="carta-nada">${vacio}</p>`}</div>
+      </section></aside>`;
+
+  const total = sumaCarta(enHoja);
+  const ocultos = enHoja.filter(precioOculto).length;
+  const sinPrecio = enHoja.filter((p) => !precioOculto(p) && precioCarta(p) == null).length;
+  const todasEnHoja = personas.flatMap(deCarta);
+  const reparto = personas.map((n) => {
+    const lista = deCarta(n);
+    return lista.length ? `<li class="${claseDe(n)}"><span>${escapar(n)}</span><strong>${euros.format(sumaCarta(lista))}</strong></li>` : "";
   }).join("");
+  const detalle = [`${enHoja.length} ${enHoja.length === 1 ? "regalo" : "regalos"}`];
+  if (ocultos) detalle.push(`${ocultos} con el precio oculto`);
+  if (sinPrecio) detalle.push(`${sinPrecio} sin precio`);
 
   caja.innerHTML = `
-    <p class="carta-ayuda">Arrastra los regalos de los lados a la hoja y déjalos donde quieras (en el móvil, mantenlos pulsados un momento). Para quitar uno, arrástralo fuera de la hoja.</p>
+    <nav class="carta-pestanas" aria-label="Cartas">${pestanas}</nav>
+    <p class="carta-ayuda">Arrastra los regalos a la hoja y déjalos donde quieras (en el móvil, mantenlos pulsados un momento). Los ya comprados llevan ✅; en la hoja, toca 🙈 en su precio para ocultarlo y que no sume. Para quitar uno, arrástralo fuera de la hoja.</p>
     <div class="carta-mesa">
-      ${lado(lados[0], "izquierda")}
+      ${lado("Por comprar", porComprar, "izquierda", "Nada pendiente")}
       <div class="carta-centro">
         <div class="carta-hoja" id="carta-hoja">
           <p class="carta-titulo">Queridos Reyes Magos:</p>
-          ${pegados}
+          <p class="carta-firma">Carta de ${escapar(persona)}</p>
+          ${enHoja.map((p) => fotoCarta(p, true)).join("")}
           ${enHoja.length ? "" : '<p class="carta-vacia">Arrastra aquí los regalos</p>'}
         </div>
       </div>
-      ${lado(lados[1], "derecha")}
+      ${lado("Ya comprados", comprados, "derecha", "Ninguno comprado")}
       <div class="carta-pie">
-        <div class="carta-total">
-          <div><p class="resumen-titulo">Total de la carta</p>
-            <p class="resumen-detalle">${enHoja.length} ${enHoja.length === 1 ? "regalo" : "regalos"}${sinPrecio ? ` · ${sinPrecio} sin precio` : ""}</p></div>
+        <div class="carta-total carta-total-persona">
+          <div><p class="resumen-titulo">Carta de ${escapar(persona)}</p>
+            <p class="resumen-detalle">${detalle.join(" · ")}</p></div>
           <strong>${euros.format(total)}</strong>
         </div>
+        <div class="carta-total">
+          <div><p class="resumen-titulo">Total de todas las cartas</p>
+            <p class="resumen-detalle">${todasEnHoja.length} ${todasEnHoja.length === 1 ? "regalo" : "regalos"}</p></div>
+          <strong>${euros.format(sumaCarta(todasEnHoja))}</strong>
+        </div>
         ${reparto ? `<ul class="reparto carta-reparto">${reparto}</ul>` : ""}
-        ${enHoja.length ? '<button type="button" class="boton-accion suave" id="carta-vaciar">Vaciar la hoja</button>' : ""}
-        ${bloqueCoupert(enHoja.map((p) => ({ url: p.mejor ? p.mejor.url : null, tienda: p.mejor ? p.mejor.tienda : "", donde: "", precio: precioCarta(p) })))}
+        ${enHoja.length ? `<button type="button" class="boton-accion suave" id="carta-vaciar">Vaciar la carta de ${escapar(persona)}</button>` : ""}
+        ${bloqueCoupert(todasEnHoja.filter((p) => p.estado !== "comprado").map((p) => ({ url: p.mejor ? p.mejor.url : null, tienda: p.mejor ? p.mejor.tienda : "", donde: "", precio: precioCarta(p) })))}
       </div>
     </div>`;
 }
@@ -1023,6 +823,7 @@ function enlazarCarta() {
       calc.carta[id] = [limitar(((cx - r.left) / r.width) * 100), limitar(((cy - r.top) / r.height) * 100)];
     } else if (calc.carta[id]) {
       delete calc.carta[id];
+      calc.sinDinero = calc.sinDinero.filter((x) => x !== id);
     } else {
       pintarCarta();
       return;
@@ -1033,7 +834,7 @@ function enlazarCarta() {
 
   // Ratón: se arrastra en cuanto se mueve un poco.
   caja.addEventListener("mousedown", (e) => {
-    const item = e.button === 0 && e.target.closest(".carta-item");
+    const item = e.button === 0 && !e.target.closest("button") && e.target.closest(".carta-item");
     if (!item) return;
     e.preventDefault();
     arrastre.pendiente = { item, x: e.clientX, y: e.clientY };
@@ -1047,7 +848,7 @@ function enlazarCarta() {
 
   // Táctil: hay que mantener pulsado un momento, para que deslizar el dedo siga moviendo la página.
   caja.addEventListener("touchstart", (e) => {
-    const item = e.touches.length === 1 && e.target.closest(".carta-item");
+    const item = e.touches.length === 1 && !e.target.closest("button") && e.target.closest(".carta-item");
     if (!item) return;
     const { clientX: x, clientY: y } = e.touches[0];
     arrastre.pendiente = { item, x, y, temporizador: setTimeout(() => {
@@ -1070,11 +871,26 @@ function enlazarCarta() {
   caja.addEventListener("dragstart", (e) => e.preventDefault());
 
   caja.addEventListener("click", (e) => {
-    if (e.target.id !== "carta-vaciar") return;
-    if (!window.confirm("¿Quitar todos los regalos de la hoja?")) return;
-    calc.carta = {};
-    guardarCalc();
-    pintarCarta();
+    const pestana = e.target.closest("[data-carta]");
+    const ocultar = e.target.closest("[data-ocultar]");
+    if (pestana) {
+      estado.cartaPersona = pestana.dataset.carta;
+      pintarCarta();
+    } else if (ocultar) {
+      const id = ocultar.dataset.ocultar;
+      calc.sinDinero = calc.sinDinero.includes(id) ? calc.sinDinero.filter((x) => x !== id) : [...calc.sinDinero, id];
+      guardarCalc();
+      pintarCarta();
+    } else if (e.target.id === "carta-vaciar") {
+      const persona = estado.cartaPersona;
+      if (!window.confirm(`¿Quitar todos los regalos de la carta de ${persona}?`)) return;
+      deCategoria().filter((p) => p.para === persona).forEach((p) => {
+        delete calc.carta[p.id];
+        calc.sinDinero = calc.sinDinero.filter((x) => x !== p.id);
+      });
+      guardarCalc();
+      pintarCarta();
+    }
   });
 }
 
@@ -1167,7 +983,6 @@ function aplicarCambio(producto, borrar = false) {
   productos = preparar(datosLista, datosPrecios);
   if (estado.vista !== "lista") { mostrarVista(); return; }
   pintarChips();
-  pintarEleccion();
   pintarLista();
   pintarCategorias();
 }
@@ -1296,19 +1111,6 @@ function enlazarEventos() {
     estado.vista = "lista";
     mostrarVista();
   });
-  $("#ver-elegidos").addEventListener("click", () => {
-    estado.vista = "calcular";
-    mostrarVista();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-  $("#quitar-eleccion").addEventListener("click", () => {
-    if (!window.confirm("¿Quitar todo de Calcular?")) return;
-    elegidos.clear(); guardarElegidos();
-    calc = { grupo: {}, precio: {}, extras: [], grupos: calc.grupos, carta: calc.carta }; guardarCalc();
-    estado.soloElegidos = false;
-    pintarEleccion(); pintarLista(); pintarCategorias();
-  });
-  enlazarCalcular();
   enlazarCarta();
   $("#buscar").addEventListener("input", (e) => { estado.texto = e.target.value; pintarLista(); });
   $("#orden").addEventListener("change", (e) => { estado.orden = e.target.value; pintarLista(); });
@@ -1334,7 +1136,6 @@ async function iniciar() {
     pintarActualizado(precios.actualizado);
     pintarCategorias();
     pintarChips();
-    pintarEleccion();
     pintarLista();
     compartir.pendiente = false;
     bajarCestas();

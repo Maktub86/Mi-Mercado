@@ -46,12 +46,11 @@
       <ul id="lista-comprados"></ul>
     </details>
 
-    <section id="vista-calcular" class="calcular" aria-label="Calcular" hidden></section>
     <section id="vista-carta" class="carta" aria-label="Carta" hidden></section>
 
     <footer class="pie">
       <p id="actualizado">Cargando precios…</p>
-      <p>Los precios se revisan solos dos veces al día en Amazon, Toy Planet, Carrefour y todas las tiendas del comparador Globerada (Abacus, Juguettos, Fnac, Miravia, Raijuguetes…). Se muestran las tiendas con precio leído y los enlaces que hayas puesto tú. Toca el ✓ de un regalo para mandarlo a 🧮 Calcular.</p>
+      <p>Los precios se revisan solos dos veces al día en Amazon, Toy Planet, Carrefour y todas las tiendas del comparador Globerada (Abacus, Juguettos, Fnac, Miravia, Raijuguetes…). Se muestran las tiendas con precio leído y los enlaces que hayas puesto tú. En ✉️ Carta puedes montar la carta de cada uno arrastrando los regalos.</p>
     </footer>
   </main>
 
@@ -102,23 +101,9 @@
     </form>
   </dialog>
 
-  <div class="barra-eleccion" id="barra-eleccion" hidden>
-    <div class="contenedor barra-dentro">
-      <div class="barra-texto">
-        <strong id="eleccion-total">0,00 €</strong>
-        <span id="eleccion-detalle">0 regalos en Calcular</span>
-      </div>
-      <div class="barra-acciones">
-        <button type="button" class="boton-barra" id="ver-elegidos">Ir a Calcular →</button>
-        <button type="button" class="boton-barra suave" id="quitar-eleccion">Quitar todo</button>
-      </div>
-    </div>
-  </div>
-
   <template id="plantilla-tarjeta">
     <article class="tarjeta">
       <div class="foto">
-        <button type="button" class="elegir" aria-pressed="false" title="Mandar a Calcular"><span class="icono-calc" aria-hidden="true">🧮</span><span class="icono-ok" aria-hidden="true">✓</span></button>
         <img alt="" loading="lazy" referrerpolicy="no-referrer" hidden>
         <span class="foto-vacia" aria-hidden="true">🎁</span>
         <div class="foto-etiquetas">

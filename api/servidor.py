@@ -284,8 +284,13 @@ def limpiar_calcular(estado: dict) -> dict:
             continue
         if _texto(k, 80):
             carta[_texto(k, 80)] = [x, y]
+    sin_dinero = []
+    for x in (estado.get("sin_dinero") or [])[:400]:
+        x = _texto(x, 80)
+        if x and x not in sin_dinero:
+            sin_dinero.append(x)
     return {"elegidos": elegidos, "grupo": grupo, "precio": precio, "extras": extras, "grupos": grupos,
-            "carta": carta, "actualizado": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+            "carta": carta, "sin_dinero": sin_dinero, "actualizado": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
 
 
 def leer_calcular() -> tuple[dict, str | None]:
