@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-25T22:42:32+00:00",
-  "leidos": 78,
-  "fallos": 17,
+  "fecha": "2026-11-26T02:07:14+00:00",
+  "leidos": 74,
+  "fallos": 14,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -124,7 +124,7 @@
         },
         {
           "tienda": "Carrefour",
-          "precio": 51.19
+          "precio": 53.98
         }
       ]
     },
@@ -381,7 +381,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 627608,
+        "bytes": 628218,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
@@ -735,10 +735,6 @@
           "precio": 8.99
         },
         {
-          "tienda": "Lego",
-          "precio": 9.99
-        },
-        {
           "tienda": "Juguettos",
           "precio": 11.99
         },
@@ -786,75 +782,6 @@
       "producto": "poperfun-16-pulgadas-pizarra-led-ninos-recargable",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:POPERFUN 16 Pulgadas Pizarra LED Niños Recargable",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "moose-bluey-juego-del-globo-keepy-uppy",
-      "tienda": "Tiendasmgi",
-      "url": "https://www.tiendasmgi.es/moose-bluey-juego-del-globo-keepy-uppy-8056379177517",
-      "precio": 10.0,
-      "metodo": "generico",
-      "error": null
-    },
-    {
-      "producto": "moose-bluey-juego-del-globo-keepy-uppy",
-      "tienda": "Globerada",
-      "url": "comparador:MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "moose-bluey-juego-del-globo-keepy-uppy",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "play-toyz-taller-de-kawaii-con-tableta-lcd",
-      "tienda": "Tiendasmgi",
-      "url": "https://www.tiendasmgi.es/play-toyz-tasller-de-kawaii-con-tableta-lcd-de-dibujo-10-",
-      "precio": 10.0,
-      "metodo": "generico",
-      "error": null
-    },
-    {
-      "producto": "play-toyz-taller-de-kawaii-con-tableta-lcd",
-      "tienda": "Globerada",
-      "url": "comparador:PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "play-toyz-taller-de-kawaii-con-tableta-lcd",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "play-toyz-mi-primera-taquilla",
-      "tienda": "Tiendasmgi",
-      "url": "https://www.tiendasmgi.es/play-toyz-mi-primera-taquilla-8432748774950",
-      "precio": 20.0,
-      "metodo": "generico",
-      "error": null
-    },
-    {
-      "producto": "play-toyz-mi-primera-taquilla",
-      "tienda": "Globerada",
-      "url": "comparador:PLAY TOYZ MI PRIMERA TAQUILLA",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "play-toyz-mi-primera-taquilla",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:PLAY TOYZ MI PRIMERA TAQUILLA",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
