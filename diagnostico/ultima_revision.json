@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-26T22:25:13+00:00",
+  "fecha": "2026-11-26T22:35:27+00:00",
   "leidos": 75,
   "fallos": 16,
   "enlaces": [
@@ -385,7 +385,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 627657,
+        "bytes": 628216,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
