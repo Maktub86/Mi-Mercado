@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-25T22:02:50+00:00",
-  "leidos": 86,
-  "fallos": 101,
+  "fecha": "2026-11-26T22:02:15+00:00",
+  "leidos": 92,
+  "fallos": 92,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -15,10 +15,9 @@
       "producto": "monster-high-moonspell",
       "tienda": "El Corte Inglés (Layla)",
       "url": "https://www.elcorteingles.es/juguetes/A200825479-muneca-moonspell-magic-layla-crystal-monster-high-mattel/",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: el navegador tardó demasiado",
-      "pistas": {}
+      "precio": 28.95,
+      "metodo": "navegador",
+      "error": null
     },
     {
       "producto": "monster-high-moonspell",
@@ -26,7 +25,7 @@
       "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-claire-de-luna",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [WinError 10060] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder>",
+      "error": "bloqueado: la tienda respondió 429",
       "pistas": {}
     },
     {
@@ -35,7 +34,7 @@
       "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [WinError 10060] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder>",
+      "error": "bloqueado: la tienda respondió 429",
       "pistas": {}
     },
     {
@@ -80,7 +79,7 @@
       "url": "buscar:www.toyplanet.com:Hello Kitty bolso peluche",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1144)>",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
@@ -125,9 +124,10 @@
       "producto": "playmobil-71613-abuelos",
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/playmobil-abuelos-y-bebe",
-      "precio": 9.99,
-      "metodo": "shopify",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
     },
     {
       "producto": "playmobil-71613-abuelos",
@@ -137,11 +137,11 @@
       "pagina": "https://www.globerada.com/precios/playmobil-my-life-abuelos-y-bebe-71613.html",
       "ofertas": [
         {
-          "tienda": "Imosver",
+          "tienda": "Amazon Marketplace (Imosver)",
           "precio": 11.23
         },
         {
-          "tienda": "Amazon Marketplace (Imosver)",
+          "tienda": "Imosver",
           "precio": 11.23
         },
         {
@@ -150,11 +150,11 @@
         },
         {
           "tienda": "Pixmania",
-          "precio": 17.15
+          "precio": 17.4
         },
         {
           "tienda": "OnBuy (AMI VENTURES INC.)",
-          "precio": 67.18
+          "precio": 66.84
         }
       ]
     },
@@ -223,9 +223,9 @@
     {
       "producto": "mami-elefante-pets-alive",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/pets-alive-mama-elefante.html",
+      "url": "https://www.globerada.com/precios/zuru-pets-alive-mama-elefante-y-bebes-sorpresa.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/pets-alive-mama-elefante.html",
+      "pagina": "https://www.globerada.com/precios/zuru-pets-alive-mama-elefante-y-bebes-sorpresa.html",
       "ofertas": [
         {
           "tienda": "Juguettos",
@@ -237,7 +237,7 @@
         },
         {
           "tienda": "Carrefour",
-          "precio": 51.19
+          "precio": 53.98
         }
       ]
     },
@@ -253,16 +253,17 @@
       "url": "https://www.toyplanet.com/products/pets-alive-mommy-elephant-con-bebes-elefante-sorpresa",
       "precio": null,
       "metodo": null,
-      "error": "RemoteDisconnected: Remote end closed connection without response",
+      "error": "bloqueado: la tienda respondió 429",
       "pistas": {}
     },
     {
       "producto": "mami-elefante-pets-alive",
       "tienda": "El Corte Inglés",
       "url": "https://www.elcorteingles.es/juguetes/A201380731-peluche-electronico-mami-elefante-y-sus-bebes-de-pets-alive/",
-      "precio": 49.99,
-      "metodo": "navegador",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: el navegador tardó demasiado",
+      "pistas": {}
     },
     {
       "producto": "mirrormi-fashion",
@@ -288,23 +289,19 @@
       "url": "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [WinError 10060] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder>",
+      "error": "bloqueado: la tienda respondió 429",
       "pistas": {}
     },
     {
       "producto": "mirrormi-fashion",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/minimi-mirrormi-muneca-de-moda-shai-meadows-sheepish.html",
+      "url": "https://www.globerada.com/precios/mga-entertainment-mirrormi-fashion-doll-luna-skye-dreamy-253495-euc.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/minimi-mirrormi-muneca-de-moda-shai-meadows-sheepish.html",
+      "pagina": "https://www.globerada.com/precios/mga-entertainment-mirrormi-fashion-doll-luna-skye-dreamy-253495-euc.html",
       "ofertas": [
         {
           "tienda": "Amazon",
-          "precio": 34.49
-        },
-        {
-          "tienda": "Temu",
-          "precio": 38.98
+          "precio": 27.64
         }
       ]
     },
@@ -333,10 +330,9 @@
       "producto": "peluche-maiz",
       "tienda": "El Corte Inglés",
       "url": "https://www.elcorteingles.es/juguetes/A200518694-peluche-maiz-18-cm-el-corte-ingles/",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: el navegador tardó demasiado",
-      "pistas": {}
+      "precio": 9.95,
+      "metodo": "navegador",
+      "error": null
     },
     {
       "producto": "clementoni-nail-art",
@@ -353,7 +349,7 @@
       "url": "https://www.toyplanet.com/products/crazy-chic-nail-art-studio-clementoni",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>",
+      "error": "bloqueado: la tienda respondió 429",
       "pistas": {}
     },
     {
@@ -373,7 +369,7 @@
         },
         {
           "tienda": "Amazon",
-          "precio": 28.9
+          "precio": 27.64
         },
         {
           "tienda": "Miravia (Juguetería Express)",
@@ -418,7 +414,7 @@
       "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1",
       "precio": null,
       "metodo": null,
-      "error": "RemoteDisconnected: Remote end closed connection without response",
+      "error": "bloqueado: la tienda respondió 429",
       "pistas": {}
     },
     {
@@ -429,16 +425,16 @@
       "pagina": "https://www.globerada.com/precios/educa-borras-magnetics-3d-61-pcs..html",
       "ofertas": [
         {
-          "tienda": "Amazon Marketplace (dinydon)",
-          "precio": 32.4
-        },
-        {
           "tienda": "Amazon",
           "precio": 34.99
         },
         {
           "tienda": "Imosver",
           "precio": 39.89
+        },
+        {
+          "tienda": "Fnac",
+          "precio": 42.99
         }
       ]
     },
@@ -499,17 +495,16 @@
       "url": "https://www.toyplanet.com/products/peekimo-mascota-interactiva-con-mas-de-100-sonidos",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1144)>",
+      "error": "bloqueado: la tienda respondió 429",
       "pistas": {}
     },
     {
       "producto": "peekimo",
       "tienda": "El Corte Inglés",
       "url": "https://www.elcorteingles.es/juguetes/A201020093-mascota-electronica-peekimo-rosa-penny-con-pila-y-accesorios-incluidos-spin-master/",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: el navegador tardó demasiado",
-      "pistas": {}
+      "precio": 29.99,
+      "metodo": "navegador",
+      "error": null
     },
     {
       "producto": "barbie-deluxe-style-15",
@@ -593,7 +588,7 @@
       "url": "buscar:www.toyplanet.com:Cascanueces caballo trineo",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
@@ -638,7 +633,7 @@
       "url": "https://www.toyplanet.com/products/barbie-el-cascanueces-clara-muneca-bailarina-con-tutu-transformable-3-anos",
       "precio": null,
       "metodo": null,
-      "error": "RemoteDisconnected: Remote end closed connection without response",
+      "error": "bloqueado: la tienda respondió 429",
       "pistas": {}
     },
     {
@@ -666,7 +661,7 @@
         },
         {
           "tienda": "Pixmania",
-          "precio": 39.05
+          "precio": 38.28
         }
       ]
     },
@@ -825,10 +820,9 @@
       "producto": "libro-consolar-ardilla",
       "tienda": "El Corte Inglés",
       "url": "https://www.elcorteingles.es/libros/A26291833-como-consolar-a-una-ardilla-lectura-facil-tapa-blanda/",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: el navegador tardó demasiado",
-      "pistas": {}
+      "precio": 9.02,
+      "metodo": "navegador",
+      "error": null
     },
     {
       "producto": "libro-disney-gran-libro",
@@ -914,10 +908,10 @@
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Elio · Amazon",
-      "url": "amazon:Elio Gran libro de la película",
+      "url": "https://www.amazon.es/dp/B0DYK4WDVK",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
+      "error": "bloqueado: Amazon pidió un captcha",
       "pistas": {}
     },
     {
@@ -936,10 +930,10 @@
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Coco · Amazon",
-      "url": "https://www.amazon.es/dp/8416913870",
+      "url": "amazon:Coco Gran libro de la película",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: Amazon pidió un captcha",
+      "error": "bloqueado: la tienda respondió 503",
       "pistas": {}
     },
     {
@@ -988,10 +982,10 @@
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Zootrópolis 2 · Amazon",
-      "url": "amazon:Zootrópolis 2 Gran libro de la película",
+      "url": "https://www.amazon.es/dp/B0FP9XJDB6",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
+      "error": "bloqueado: Amazon pidió un captcha",
       "pistas": {}
     },
     {
@@ -1063,10 +1057,9 @@
       "producto": "libro-disney-gran-libro",
       "tienda": "Frozen · El Corte Inglés",
       "url": "https://www.elcorteingles.es/libros/A40340199-frozen-gran-libro-de-la-pelicula/",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: el navegador tardó demasiado",
-      "pistas": {}
+      "precio": 11.35,
+      "metodo": "navegador",
+      "error": null
     },
     {
       "producto": "libro-disney-gran-libro",
@@ -1112,19 +1105,11 @@
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Red · El Corte Inglés",
-      "url": "https://www.elcorteingles.es/libros/A41986921-red-gran-libro-de-la-pelicula-tapa-dura/",
+      "url": "eci:Red Gran libro de la película",
       "precio": null,
-      "metodo": "navegador",
-      "error": "precio dudoso (2.37 €): posible producto equivocado",
-      "pistas": {
-        "bytes": 809593,
-        "titulo": "Red. Gran Libro de la película (Tapa dura) · DISNEY (PLANETA) · El Corte Inglés",
-        "captcha": false,
-        "json_ld": 2,
-        "marcas": [
-          "availability"
-        ]
-      }
+      "metodo": null,
+      "error": "bloqueado: el navegador tardó demasiado",
+      "pistas": {}
     },
     {
       "producto": "libro-disney-gran-libro",
@@ -1132,7 +1117,7 @@
       "url": "eci:Toy Story 4 Gran libro de la película",
       "precio": null,
       "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
+      "error": "bloqueado: el navegador tardó demasiado",
       "pistas": {}
     },
     {
@@ -1175,19 +1160,19 @@
       "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-cleo-de-nile-creeproduction",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>",
+      "error": "bloqueado: la tienda respondió 429",
       "pistas": {}
     },
     {
       "producto": "monster-high-cleo",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/monster-high-dawn-of-the-dance-cleo-muneca-143116216.html",
+      "url": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-cleo-de-nile-hxh74.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/monster-high-dawn-of-the-dance-cleo-muneca-143116216.html",
+      "pagina": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-cleo-de-nile-hxh74.html",
       "ofertas": [
         {
-          "tienda": "Amazon",
-          "precio": 33.99
+          "tienda": "Amazon Marketplace (Juguetes Abracadabra)",
+          "precio": 32.95
         }
       ]
     },
@@ -1220,7 +1205,7 @@
       "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-frankie-stein",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>",
+      "error": "bloqueado: la tienda respondió 429",
       "pistas": {}
     },
     {
@@ -1239,12 +1224,12 @@
           "precio": 29.99
         },
         {
-          "tienda": "Raijuguetes",
-          "precio": 39.33
+          "tienda": "PcComponentes (La Frikilería)",
+          "precio": 38.17
         },
         {
-          "tienda": "PcComponentes (La Frikilería)",
-          "precio": 42.7
+          "tienda": "Raijuguetes",
+          "precio": 39.33
         }
       ]
     },
@@ -1252,9 +1237,10 @@
       "producto": "monster-high-frankie",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0FDH2BVXH",
-      "precio": 19.04,
-      "metodo": "amazon-pagina",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
     },
     {
       "producto": "monster-high-frankie",
@@ -1266,10 +1252,9 @@
       "producto": "monster-high-frankie",
       "tienda": "El Corte Inglés",
       "url": "https://www.elcorteingles.es/juguetes/A200276911-monster-high-frankie-stein-busto-de-muneca-para-peinar/",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: el navegador tardó demasiado",
-      "pistas": {}
+      "precio": 50.99,
+      "metodo": "navegador",
+      "error": null
     },
     {
       "producto": "juego-rol-restaurante-agustin",
@@ -1285,7 +1270,7 @@
       "url": "buscar:www.toyplanet.com:Djeco restaurante Agustín",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
@@ -1300,7 +1285,7 @@
       "url": "amazon:Djeco restaurante Agustín",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
@@ -1315,7 +1300,7 @@
       "url": "eci:restaurante Agustin",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: el navegador tardó demasiado",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
@@ -1353,14 +1338,14 @@
       "url": "buscar:www.toyplanet.com:MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
       "producto": "peluche-pikachu",
       "tienda": "Mediamarkt",
       "url": "https://www.mediamarkt.es/es/product/_peluche-pokemon-pikachu-amarillo-134742668.html",
-      "precio": 24.01,
+      "precio": 23.77,
       "metodo": "generico",
       "error": null
     },
@@ -1370,7 +1355,7 @@
       "url": "amazon:Peluche pikachu",
       "precio": null,
       "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
+      "error": "bloqueado: la tienda respondió 503",
       "pistas": {}
     },
     {
@@ -1396,19 +1381,26 @@
       "producto": "peluche-pikachu",
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/cuaderno-premium-pokemon-pikachu-forrado-peluche-a5",
-      "precio": null,
-      "metodo": null,
-      "error": "RemoteDisconnected: Remote end closed connection without response",
-      "pistas": {}
+      "precio": 17.99,
+      "metodo": "shopify",
+      "error": null
     },
     {
       "producto": "peluche-pikachu",
       "tienda": "El Corte Inglés",
       "url": "https://www.elcorteingles.es/juguetes/A200447952-peluche-interactivo-puppetronic-real-fx-pikachu-pokemon-famosa/",
       "precio": null,
-      "metodo": null,
-      "error": "bloqueado: el navegador tardó demasiado",
-      "pistas": {}
+      "metodo": "navegador",
+      "error": "precio dudoso (129.95 €): posible producto equivocado",
+      "pistas": {
+        "bytes": 829962,
+        "titulo": "Peluche interactivo Puppetronic Real FX Pikachu Pokémon Famosa · Famosa · El Corte Inglés",
+        "captcha": false,
+        "json_ld": 2,
+        "marcas": [
+          "availability"
+        ]
+      }
     },
     {
       "producto": "dreamon-heladeria-juguete",
@@ -1453,9 +1445,10 @@
       "producto": "ikidiki-walkie-talkie",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0GF1NKYVP",
-      "precio": 25.26,
-      "metodo": "amazon-pagina",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: Amazon pidió un captcha",
+      "pistas": {}
     },
     {
       "producto": "ikidiki-walkie-talkie",
@@ -1475,7 +1468,7 @@
       "url": "buscar:www.toyplanet.com:iKidiki Walkie Talkie",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1144)>",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
@@ -1521,7 +1514,7 @@
       "url": "https://www.toyplanet.com/products/party-co-disney-juego-de-mesa-familiar-de-pruebas-disney-con-mimica-dibujo-y-memoria-3-a-15-ju",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [WinError 10060] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder>",
+      "error": "bloqueado: la tienda respondió 429",
       "pistas": {}
     },
     {
@@ -1599,10 +1592,6 @@
           "precio": 8.99
         },
         {
-          "tienda": "Lego",
-          "precio": 9.99
-        },
-        {
           "tienda": "Juguettos",
           "precio": 11.99
         },
@@ -1619,12 +1608,12 @@
           "precio": 17.4
         },
         {
-          "tienda": "PcComponentes (ASD ES)",
-          "precio": 19.6
-        },
-        {
           "tienda": "Miravia (Playmycenter)",
           "precio": 20.8
+        },
+        {
+          "tienda": "PcComponentes (ASD ES)",
+          "precio": 22.34
         },
         {
           "tienda": "Miravia (Marana Tribu)",
@@ -1644,7 +1633,7 @@
       "url": "https://www.toyplanet.com/products/lego-classic-amigos-nutritivos-creativos-juguete-11039",
       "precio": null,
       "metodo": null,
-      "error": "RemoteDisconnected: Remote end closed connection without response",
+      "error": "bloqueado: la tienda respondió 429",
       "pistas": {}
     },
     {
@@ -1683,7 +1672,7 @@
       "url": "buscar:www.toyplanet.com:POPERFUN 16 Pulgadas Pizarra LED Niños Recargable",
       "precio": null,
       "metodo": null,
-      "error": "RemoteDisconnected: Remote end closed connection without response",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
@@ -1696,191 +1685,164 @@
       "pistas": {}
     },
     {
-      "producto": "moose-bluey-juego-del-globo-keepy-uppy",
-      "tienda": "Tiendasmgi",
-      "url": "https://www.tiendasmgi.es/moose-bluey-juego-del-globo-keepy-uppy-8056379177517",
+      "producto": "coche-barbie",
+      "tienda": "Juguettos",
+      "url": "https://juguettos.com/barbie-casas-y-vehiculos/93932-0000-00-00-194735260157.html",
+      "precio": null,
+      "metodo": "generico",
+      "error": null,
+      "pistas": {
+        "bytes": 121960,
+        "titulo": "Hot Wheels Descapotable Teledirigido de Barbie - Juguettos",
+        "captcha": false,
+        "json_ld": 1,
+        "marcas": [
+          "availability"
+        ]
+      }
+    },
+    {
+      "producto": "coche-barbie",
+      "tienda": "Amazon",
+      "url": "https://www.amazon.es/dp/B09BW44GBG",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>",
+      "error": "bloqueado: Amazon pidió un captcha",
       "pistas": {}
     },
     {
-      "producto": "moose-bluey-juego-del-globo-keepy-uppy",
+      "producto": "coche-barbie",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/barbie-coche-descapotable-hbt92.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/barbie-coche-descapotable-hbt92.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon",
+          "precio": 13.99
+        },
+        {
+          "tienda": "Pixmania",
+          "precio": 24.28
+        },
+        {
+          "tienda": "Raijuguetes",
+          "precio": 24.58
+        }
+      ]
+    },
+    {
+      "producto": "coche-barbie",
+      "tienda": "Idealo",
+      "url": "idealo:Coche Barbie",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "coche-barbie",
+      "tienda": "Toy Planet",
+      "url": "https://www.toyplanet.com/products/barbie-y-su-descapotable-muneca-con-coche-de-juguete-3-anos",
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
+    },
+    {
+      "producto": "coche-barbie",
+      "tienda": "El Corte Inglés",
+      "url": "https://www.elcorteingles.es/juguetes/A200045102-coche-radiocontrol-110-barbie-city-car-mondo/",
+      "precio": 44.99,
+      "metodo": "navegador",
+      "error": null
+    },
+    {
+      "producto": "botas-de-agua",
+      "tienda": "Sfera",
+      "url": "https://www.sfera.com/es/ninos/A200976328-burdeos-pr-bota-agua/",
+      "precio": 21.99,
+      "metodo": "navegador",
+      "error": null
+    },
+    {
+      "producto": "botas-de-agua",
       "tienda": "Amazon",
-      "url": "amazon:MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY",
+      "url": "amazon:Botas de agua",
       "precio": null,
       "metodo": null,
       "error": "bloqueado: la tienda respondió 503",
       "pistas": {}
     },
     {
-      "producto": "moose-bluey-juego-del-globo-keepy-uppy",
+      "producto": "botas-de-agua",
       "tienda": "Globerada",
-      "url": "comparador:MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY",
+      "url": "comparador:Botas de agua",
       "error": "no encontrado en el comparador"
     },
     {
-      "producto": "moose-bluey-juego-del-globo-keepy-uppy",
+      "producto": "botas-de-agua",
       "tienda": "Idealo",
-      "url": "idealo:MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY",
+      "url": "idealo:Botas de agua",
       "error": "no encontrado en el comparador"
     },
     {
-      "producto": "moose-bluey-juego-del-globo-keepy-uppy",
+      "producto": "botas-de-agua",
       "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY",
+      "url": "buscar:www.toyplanet.com:Botas de agua",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [WinError 10060] Se produjo un error durante el intento de conexión ya que la parte conectada no respondió adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexión establecida ya que el host conectado no ha podido responder>",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
-      "producto": "moose-bluey-juego-del-globo-keepy-uppy",
+      "producto": "botas-de-agua",
       "tienda": "El Corte Inglés",
-      "url": "eci:MOOSE BLUEY JUEGO DEL GLOBO KEEPY UPPY",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "play-toyz-taller-de-kawaii-con-tableta-lcd",
-      "tienda": "Tiendasmgi",
-      "url": "https://www.tiendasmgi.es/play-toyz-tasller-de-kawaii-con-tableta-lcd-de-dibujo-10-",
-      "precio": null,
-      "metodo": null,
-      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1144)>",
-      "pistas": {}
-    },
-    {
-      "producto": "play-toyz-taller-de-kawaii-con-tableta-lcd",
-      "tienda": "Amazon",
-      "url": "amazon:PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "play-toyz-taller-de-kawaii-con-tableta-lcd",
-      "tienda": "Globerada",
-      "url": "comparador:PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "play-toyz-taller-de-kawaii-con-tableta-lcd",
-      "tienda": "Idealo",
-      "url": "idealo:PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "play-toyz-taller-de-kawaii-con-tableta-lcd",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "play-toyz-taller-de-kawaii-con-tableta-lcd",
-      "tienda": "El Corte Inglés",
-      "url": "eci:PLAY TOYZ TALLER DE KAWAII CON TABLETA LCD",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "play-toyz-mi-primera-taquilla",
-      "tienda": "Tiendasmgi",
-      "url": "https://www.tiendasmgi.es/play-toyz-mi-primera-taquilla-8432748774950",
-      "precio": null,
-      "metodo": null,
-      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1144)>",
-      "pistas": {}
-    },
-    {
-      "producto": "play-toyz-mi-primera-taquilla",
-      "tienda": "Amazon",
-      "url": "amazon:PLAY TOYZ MI PRIMERA TAQUILLA",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "play-toyz-mi-primera-taquilla",
-      "tienda": "Globerada",
-      "url": "comparador:PLAY TOYZ MI PRIMERA TAQUILLA",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "play-toyz-mi-primera-taquilla",
-      "tienda": "Idealo",
-      "url": "idealo:PLAY TOYZ MI PRIMERA TAQUILLA",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "play-toyz-mi-primera-taquilla",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:PLAY TOYZ MI PRIMERA TAQUILLA",
-      "precio": null,
-      "metodo": null,
-      "error": "URLError: <urlopen error _ssl.c:1126: The handshake operation timed out>",
-      "pistas": {}
-    },
-    {
-      "producto": "play-toyz-mi-primera-taquilla",
-      "tienda": "El Corte Inglés",
-      "url": "eci:PLAY TOYZ MI PRIMERA TAQUILLA",
+      "url": "eci:Botas de agua",
       "precio": null,
       "metodo": null,
       "error": "bloqueado: el navegador tardó demasiado",
       "pistas": {}
     },
     {
-      "producto": "set-crea-tu-estilo-4-en-1",
-      "tienda": "Tiendasmgi",
-      "url": "https://www.tiendasmgi.es/set-crea-tu-estilo-4-en-1-",
-      "precio": 10.0,
-      "metodo": "generico",
+      "producto": "botas-de-agua-2",
+      "tienda": "Sfera",
+      "url": "https://www.sfera.com/es/ninos/A200976328-burdeos-pr-bota-agua/",
+      "precio": 21.99,
+      "metodo": "navegador",
       "error": null
     },
     {
-      "producto": "set-crea-tu-estilo-4-en-1",
+      "producto": "botas-de-agua-2",
       "tienda": "Amazon",
-      "url": "amazon:SET CREA TU ESTILO 4 EN 1",
+      "url": "amazon:Botas de agua",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
-      "producto": "set-crea-tu-estilo-4-en-1",
+      "producto": "botas-de-agua-2",
       "tienda": "Globerada",
-      "url": "comparador:SET CREA TU ESTILO 4 EN 1",
+      "url": "comparador:Botas de agua",
       "error": "no encontrado en el comparador"
     },
     {
-      "producto": "set-crea-tu-estilo-4-en-1",
+      "producto": "botas-de-agua-2",
       "tienda": "Idealo",
-      "url": "idealo:SET CREA TU ESTILO 4 EN 1",
+      "url": "idealo:Botas de agua",
       "error": "no encontrado en el comparador"
     },
     {
-      "producto": "set-crea-tu-estilo-4-en-1",
+      "producto": "botas-de-agua-2",
       "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:SET CREA TU ESTILO 4 EN 1",
+      "url": "buscar:www.toyplanet.com:Botas de agua",
       "precio": null,
       "metodo": null,
-      "error": "URLError: <urlopen error [WinError 10054] Se ha forzado la interrupción de una conexión existente por el host remoto>",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
-      "producto": "set-crea-tu-estilo-4-en-1",
+      "producto": "botas-de-agua-2",
       "tienda": "El Corte Inglés",
-      "url": "eci:SET CREA TU ESTILO 4 EN 1",
+      "url": "https://www.elcorteingles.es/moda-mujer/A43550434-negro-pr-botas-de-agua-original-tall-de-mujer/",
       "precio": null,
       "metodo": null,
       "error": "bloqueado: el navegador tardó demasiado",
