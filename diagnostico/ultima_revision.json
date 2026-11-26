@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-26T22:35:27+00:00",
-  "leidos": 75,
-  "fallos": 16,
+  "fecha": "2026-11-26T22:47:09+00:00",
+  "leidos": 76,
+  "fallos": 17,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -816,6 +816,28 @@
       "producto": "botas-de-agua-2",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:Botas de agua",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "bolso-nina-con-accesorios",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/bolso-de-mano-para-nina-con-juego-de-maquillaje-juguete-creativo-para-ninas-de-3-a-6-anos-con-bolsa-accesorios-y-kit-de-maquillaje.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/bolso-de-mano-para-nina-con-juego-de-maquillaje-juguete-creativo-para-ninas-de-3-a-6-anos-con-bolsa-accesorios-y-kit-de-maquillaje.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon Marketplace (Amazon)",
+          "precio": 28.12
+        }
+      ]
+    },
+    {
+      "producto": "bolso-nina-con-accesorios",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Bolso Niña con Accesorios",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",

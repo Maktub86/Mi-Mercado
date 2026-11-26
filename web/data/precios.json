@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-26T22:35:27+00:00",
+  "actualizado": "2026-11-26T22:47:09+00:00",
   "productos": {
     "monster-high-moonspell": {
       "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/": {
@@ -5970,6 +5970,31 @@
         "historial": [],
         "ultima_comprobacion": "2026-11-26",
         "ultimo_error": "bloqueado: el navegador tardó demasiado"
+      }
+    },
+    "bolso-nina-con-accesorios": {
+      "comparador:Bolso Niña con Accesorios#Amazon Marketplace (Amazon)": {
+        "tienda": "Amazon Marketplace (Amazon)",
+        "historial": [
+          {
+            "fecha": "2026-11-26",
+            "precio": 28.12,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-26",
+        "url": "https://www.amazon.es/dp/B0FG85SPNB/ref=asc_df_B0FG85SPNB1795622400000?tag=glober-21&linkCode=df0&smid=A13P6277X44WWB&ascsubtag=globerada-o-6b08b6e7a5146",
+        "url_tienda": "https://www.amazon.es/dp/B0FG85SPNB/ref=asc_df_B0FG85SPNB1795622400000?tag=glober-21&linkCode=df0&smid=A13P6277X44WWB&ascsubtag=globerada-o-6b08b6e7a5146",
+        "url_tienda_fecha": "2026-11-26",
+        "via": "Globerada",
+        "producto_tienda": "Bolso de Mano para niña con Juego de Maquillaje, Juguete Creativo para niñas de 3 a 6 años, con Bolsa, Accesorios y Kit ",
+        "imagen": "https://m.media-amazon.com/images/I/71G-8SaqstL.jpg"
+      },
+      "buscar:www.toyplanet.com:Bolso Niña con Accesorios": {
+        "tienda": "Toy Planet",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-26",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
       }
     }
   }
