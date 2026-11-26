@@ -10,50 +10,7 @@
     "Cumpleaños Lucía",
     "Papá Noel"
   ],
-  "carta": {
-    "omg-music-festival": [
-      17.1,
-      22.0
-    ],
-    "puzzle-pepco": [
-      39.8,
-      18.9
-    ],
-    "play-toyz-taller-de-kawaii-con-tableta-lcd": [
-      63.3,
-      20.2
-    ],
-    "peekimo": [
-      15.8,
-      42.2
-    ],
-    "barbie-coche-radiocontrol": [
-      38.9,
-      45.4
-    ],
-    "haba-bichos": [
-      62.2,
-      41.3
-    ],
-    "libro-consolar-ardilla": [
-      85.8,
-      41.0
-    ],
-    "clementoni-nail-art": [
-      84.3,
-      17.3
-    ],
-    "monster-high-frankie": [
-      19.4,
-      62.1
-    ],
-    "peluche-maiz": [
-      50.1,
-      60.6
-    ]
-  },
-  "sin_dinero": [
-    "omg-music-festival"
-  ],
-  "actualizado": "2026-11-26T19:58:33Z"
+  "carta": {},
+  "sin_dinero": [],
+  "actualizado": "2026-11-26T19:58:43Z"
 }
