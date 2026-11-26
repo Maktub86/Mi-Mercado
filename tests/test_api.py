@@ -124,7 +124,7 @@ class ServidorTest(unittest.TestCase):
         self.assertEqual((codigo, datos["calcular"]), (200, {}))
         estado = {"elegidos": ["vtech", ""], "grupo": {"vtech": "Reyes Lucía"}, "precio": {"vtech": "39.5"},
                   "extras": [{"id": "extra-1", "nombre": "Pijama", "grupo": "Papá Noel", "precio": 12}],
-                  "grupos": ["Reyes Niñas", "Reyes Niñas", "Cumpleaños Alba"]}
+                  "grupos": ["Reyes Niñas", "Reyes Niñas", "Cumpleaños Alba"], "orden": ["extra-1", "vtech", "vtech", ""]}
         codigo, _, _ = self.pedir("POST", "/calcular", {"calcular": estado}, clave="mala")
         self.assertEqual(codigo, 401)
         codigo, datos, _ = self.pedir("POST", "/calcular", {"calcular": estado})
@@ -135,6 +135,7 @@ class ServidorTest(unittest.TestCase):
         self.assertEqual(guardado["precio"], {"vtech": 39.5})
         self.assertEqual(guardado["grupos"], ["Reyes Niñas", "Cumpleaños Alba"])
         self.assertEqual(guardado["extras"][0]["grupo"], "Papá Noel")
+        self.assertEqual(guardado["orden"], ["extra-1", "vtech"])
         codigo, _, _ = self.pedir("POST", "/calcular", {"calcular": {"precio": {"x": -3}}})
         self.assertEqual(codigo, 400)
 
