@@ -1412,43 +1412,6 @@
       ]
     },
     {
-      "id": "coche-barbie",
-      "nombre": "Coche Barbie",
-      "para": "Lucía",
-      "estado": "pendiente",
-      "categoria": "reyes",
-      "nota": "",
-      "precio_lista": 32.99,
-      "busqueda": "Coche Barbie",
-      "enlaces": [
-        {
-          "tienda": "Juguettos",
-          "url": "https://juguettos.com/barbie-casas-y-vehiculos/93932-0000-00-00-194735260157.html"
-        },
-        {
-          "tienda": "Amazon",
-          "amazon_buscar": "Coche Barbie"
-        },
-        {
-          "tienda": "Globerada",
-          "comparador_buscar": "Coche Barbie"
-        },
-        {
-          "tienda": "Idealo",
-          "comparador_buscar": "Coche Barbie"
-        },
-        {
-          "tienda": "Toy Planet",
-          "dominio": "www.toyplanet.com",
-          "buscar": "Coche Barbie"
-        },
-        {
-          "tienda": "El Corte Inglés",
-          "eci_buscar": "Coche Barbie"
-        }
-      ]
-    },
-    {
       "id": "botas-de-agua",
       "nombre": "Botas de agua",
       "para": "Alba",
