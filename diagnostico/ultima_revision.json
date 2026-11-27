@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-27T17:12:24+00:00",
+  "fecha": "2026-11-27T17:21:29+00:00",
   "leidos": 76,
-  "fallos": 16,
+  "fallos": 12,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -39,21 +39,6 @@
           "precio": 34.15
         }
       ]
-    },
-    {
-      "producto": "bolso-peluche-hello-kitty",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Hello Kitty bolso peluche",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "bolso-peluche-hello-kitty",
-      "tienda": "Globerada",
-      "url": "comparador:Hello Kitty bolso reversible",
-      "error": "no encontrado en el comparador"
     },
     {
       "producto": "playmobil-71613-abuelos",
@@ -381,7 +366,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 627657,
+        "bytes": 628216,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
@@ -606,21 +591,6 @@
       "error": "no encontrado en el comparador"
     },
     {
-      "producto": "megapack-archivador-cartas-hello-kitty-2026",
-      "tienda": "Globerada",
-      "url": "comparador:MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "megapack-archivador-cartas-hello-kitty-2026",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
       "producto": "peluche-pikachu",
       "tienda": "Mediamarkt",
       "url": "https://www.mediamarkt.es/es/product/_peluche-pokemon-pikachu-amarillo-134742668.html",
@@ -781,36 +751,6 @@
       "producto": "poperfun-16-pulgadas-pizarra-led-ninos-recargable",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:POPERFUN 16 Pulgadas Pizarra LED Niños Recargable",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "botas-de-agua",
-      "tienda": "Globerada",
-      "url": "comparador:Botas de agua",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "botas-de-agua",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Botas de agua",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "botas-de-agua-2",
-      "tienda": "Globerada",
-      "url": "comparador:Botas de agua",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "botas-de-agua-2",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Botas de agua",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
