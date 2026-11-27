@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-27T22:05:57+00:00",
-  "leidos": 76,
-  "fallos": 16,
+  "fecha": "2026-11-27T22:31:55+00:00",
+  "leidos": 77,
+  "fallos": 17,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -829,6 +829,28 @@
       "producto": "carioca-magicos-caja-20-rotuladores-magic-markers",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:CARIOCA Mágicos - Caja 20 Rotuladores Magic Markers",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "portabebes-para-munecas",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/imc-bebes-llorones-portabebes.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/imc-bebes-llorones-portabebes.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon",
+          "precio": 10.79
+        }
+      ]
+    },
+    {
+      "producto": "portabebes-para-munecas",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Portabebés para Muñecas",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",

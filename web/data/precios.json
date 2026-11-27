@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-27T22:10:44+00:00",
+  "actualizado": "2026-11-27T22:31:55+00:00",
   "productos": {
     "monster-high-moonspell": {
       "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/": {
@@ -115,8 +115,7 @@
         "ultima_comprobacion": "2026-11-27",
         "titulo": "Monster High Moonspell Magic Claire De Luna",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JMB89_1.png?v=1782436555",
-        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-claire-de-luna",
-        "ultimo_error": "bloqueado: la tienda respondió 429"
+        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-claire-de-luna"
       },
       "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina": {
         "tienda": "Toy Planet (Rae)",
@@ -170,8 +169,7 @@
         "ultima_comprobacion": "2026-11-27",
         "titulo": "Monster High Moonspell Magic Rae Lumina",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JMB91_1.png?v=1782436548",
-        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina",
-        "ultimo_error": "bloqueado: la tienda respondió 429"
+        "url": "https://www.toyplanet.com/products/monster-high-moonspell-magic-rae-lumina"
       },
       "comparador:Monster High Moonspell#Abacus": {
         "tienda": "Abacus",
@@ -924,8 +922,7 @@
         "ultima_comprobacion": "2026-11-27",
         "titulo": "Crazy Chic Nail Art Studio Clementoni",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPCLE018429_1.png?v=1776388341",
-        "url": "https://www.toyplanet.com/products/crazy-chic-nail-art-studio-clementoni",
-        "ultimo_error": "bloqueado: la tienda respondió 429"
+        "url": "https://www.toyplanet.com/products/crazy-chic-nail-art-studio-clementoni"
       },
       "comparador:Clementoni Nail Art Studio#Abacus": {
         "tienda": "Abacus",
@@ -1333,7 +1330,8 @@
         "producto_tienda": "Juegos de mesa Clementoni Crazy Chic Nail Art Sdio game Multicolore 45x31x7 cm",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg",
         "url_tienda": "https://sportisgood.es/8005125187300-juegos-de-mesa-clementoni-crazy-chic-nail-art-studio-game-multicolor-45x31x7-cm?variant=15322112",
-        "url_tienda_fecha": "2026-11-26"
+        "url_tienda_fecha": "2026-11-26",
+        "ultimo_error": "ya no aparece en el comparador"
       },
       "comparador:Clementoni Nail Art Studio#Amazon Marketplace (PALUTA TOY MARKET (Envío 24/48h Lab.))": {
         "tienda": "Amazon Marketplace (PALUTA TOY MARKET (Envío 24/48h Lab.))",
@@ -1455,8 +1453,7 @@
         "ultima_comprobacion": "2026-11-27",
         "titulo": "Educa Juguete de Aprendizaje  Educa Magnetics 61 Piezas",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPEDU020024_1_ee7bb6ae-f1bd-4812-9993-57574a13ab72.png?v=1749129940",
-        "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1",
-        "ultimo_error": "bloqueado: la tienda respondió 429"
+        "url": "https://www.toyplanet.com/products/educa-juguete-de-aprendizaje-educa-magnetics-61-piezas-1"
       },
       "comparador:Educa Magnetics 61#Amazon": {
         "tienda": "Amazon",
@@ -1800,7 +1797,8 @@
           }
         ],
         "ultima_comprobacion": "2026-11-27",
-        "url": "https://www.toysrus.es/Barbie-El-Cascanueces-Caballo-y-Trineo-del-Reino-de-los-Dulces/p/K1105772"
+        "url": "https://www.toysrus.es/Barbie-El-Cascanueces-Caballo-y-Trineo-del-Reino-de-los-Dulces/p/K1105772",
+        "ultimo_error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons"
       },
       "buscar:www.toyplanet.com:Cascanueces caballo trineo": {
         "tienda": "Toy Planet",
@@ -1986,8 +1984,7 @@
         "ultima_comprobacion": "2026-11-27",
         "titulo": "MirrorMi Academy Muñeca Fashion Suki Goldpetal Fragile de 26,5 cm",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMGV055253_9_Copy.webp?v=1788339955",
-        "url": "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm",
-        "ultimo_error": "bloqueado: la tienda respondió 429"
+        "url": "https://www.toyplanet.com/products/mirrormi-academy-muneca-fashion-suki-goldpetal-fragile-de-26-5-cm"
       },
       "comparador:Mirrormi#Amazon": {
         "tienda": "Amazon",
@@ -2146,7 +2143,8 @@
           }
         ],
         "ultima_comprobacion": "2026-11-27",
-        "url": "https://www.toysrus.es/Barbie-en-el-Cascanueces-Clara-con-tut%C3%BA/p/K1105770"
+        "url": "https://www.toysrus.es/Barbie-en-el-Cascanueces-Clara-con-tut%C3%BA/p/K1105770",
+        "ultimo_error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons"
       },
       "buscar:www.toyplanet.com:Cascanueces Clara tutú transformable": {
         "tienda": "Toy Planet",
@@ -2624,8 +2622,7 @@
         "ultima_comprobacion": "2026-11-27",
         "titulo": "Monster High Dawn of the Dance Cleo de Nile Creeproduction",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JKM47_1.png?v=1790903533",
-        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-cleo-de-nile-creeproduction",
-        "ultimo_error": "bloqueado: la tienda respondió 429"
+        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-cleo-de-nile-creeproduction"
       },
       "comparador:Monster High Cleo#Amazon Marketplace (NEA PRIME)": {
         "tienda": "Amazon Marketplace (NEA PRIME)",
@@ -2851,8 +2848,7 @@
         "ultima_comprobacion": "2026-11-27",
         "titulo": "Monster High Dawn of the Dance Frankie Stein",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPMAT0JKM46_1.png?v=1790903521",
-        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-frankie-stein",
-        "ultimo_error": "bloqueado: la tienda respondió 429"
+        "url": "https://www.toyplanet.com/products/monster-high-dawn-of-the-dance-frankie-stein"
       },
       "comparador:Monster High Doll With Pet Frankie#Amazon": {
         "tienda": "Amazon",
@@ -3034,7 +3030,7 @@
           },
           {
             "fecha": "2026-11-27",
-            "precio": 38.17,
+            "precio": 44.38,
             "disponible": true
           }
         ],
@@ -4845,8 +4841,7 @@
         "ultima_comprobacion": "2026-11-27",
         "titulo": "Pets Alive Mommy Elephant con Bebés Elefante Sorpresa",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPZRU009570_1.png?v=1784769222",
-        "url": "https://www.toyplanet.com/products/pets-alive-mommy-elephant-con-bebes-elefante-sorpresa",
-        "ultimo_error": "bloqueado: la tienda respondió 429"
+        "url": "https://www.toyplanet.com/products/pets-alive-mommy-elephant-con-bebes-elefante-sorpresa"
       },
       "amazon:Pets Alive elefante": {
         "tienda": "Amazon",
@@ -5406,7 +5401,8 @@
           "media": 3.7,
           "total": 3,
           "maximo": 5
-        }
+        },
+        "ultimo_error": "bloqueado: la tienda respondió 403"
       },
       "comparador:Peluche pikachu#Amazon": {
         "tienda": "Amazon",
@@ -5487,8 +5483,7 @@
         "ultima_comprobacion": "2026-11-27",
         "titulo": "Cuaderno Premium Pokémon Pikachu Forrado Peluche A5",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPABY0OT158_2.png?v=1771590298",
-        "url": "https://www.toyplanet.com/products/cuaderno-premium-pokemon-pikachu-forrado-peluche-a5",
-        "ultimo_error": "bloqueado: la tienda respondió 429"
+        "url": "https://www.toyplanet.com/products/cuaderno-premium-pokemon-pikachu-forrado-peluche-a5"
       },
       "amazon:Peluche pikachu": {
         "tienda": "Amazon",
@@ -5660,8 +5655,7 @@
         "ultima_comprobacion": "2026-11-27",
         "titulo": "Party & Co Disney – Juego de mesa familiar de pruebas Disney con mímica, dibujo y memoria (3 a 15 ju",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPDIS000285_1.png?v=1773713454",
-        "url": "https://www.toyplanet.com/products/party-co-disney-juego-de-mesa-familiar-de-pruebas-disney-con-mimica-dibujo-y-memoria-3-a-15-ju",
-        "ultimo_error": "bloqueado: la tienda respondió 429"
+        "url": "https://www.toyplanet.com/products/party-co-disney-juego-de-mesa-familiar-de-pruebas-disney-con-mimica-dibujo-y-memoria-3-a-15-ju"
       },
       "https://www.amazon.es/dp/B0D5RMQW64": {
         "tienda": "Amazon",
@@ -6220,8 +6214,7 @@
         "ultima_comprobacion": "2026-11-27",
         "titulo": "LEGO Classic Amigos Nutritivos Creativos Juguete 11039",
         "imagen": "https://cdn.shopify.com/s/files/1/0900/8241/0819/files/TPLEG011039_1_40785f9e-5ab7-4e57-9196-cdc55538aae2.png?v=1749134894",
-        "url": "https://www.toyplanet.com/products/lego-classic-amigos-nutritivos-creativos-juguete-11039",
-        "ultimo_error": "bloqueado: la tienda respondió 429"
+        "url": "https://www.toyplanet.com/products/lego-classic-amigos-nutritivos-creativos-juguete-11039"
       },
       "https://www.amazon.es/dp/B01MSZQ1WI": {
         "tienda": "Amazon",
@@ -6576,6 +6569,31 @@
     },
     "carioca-magicos-caja-20-rotuladores-magic-markers": {
       "buscar:www.toyplanet.com:CARIOCA Mágicos - Caja 20 Rotuladores Magic Markers": {
+        "tienda": "Toy Planet",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-27",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
+      }
+    },
+    "portabebes-para-munecas": {
+      "comparador:Portabebés para Muñecas#Amazon": {
+        "tienda": "Amazon",
+        "historial": [
+          {
+            "fecha": "2026-11-27",
+            "precio": 10.79,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-27",
+        "url": "https://www.amazon.es/dp/B07NGTQ3R9/ref=asc_df_B07NGTQ3R91795708800000?tag=glober-21&linkCode=df0&smid=A1AT7YVPFBWXBL&ascsubtag=globerada-o-6b0a04d33f698",
+        "url_tienda": "https://www.amazon.es/dp/B07NGTQ3R9/ref=asc_df_B07NGTQ3R91795708800000?tag=glober-21&linkCode=df0&smid=A1AT7YVPFBWXBL&ascsubtag=globerada-o-6b0a04d33f698",
+        "url_tienda_fecha": "2026-11-27",
+        "via": "Globerada",
+        "producto_tienda": "BEBÉS LLORONES Portabebés | Accesorio muñeca para llevar a tu bebé llorón preferido",
+        "imagen": "https://m.media-amazon.com/images/I/31K0kuxSL9L._SL500_.jpg"
+      },
+      "buscar:www.toyplanet.com:Portabebés para Muñecas": {
         "tienda": "Toy Planet",
         "historial": [],
         "ultima_comprobacion": "2026-11-27",
