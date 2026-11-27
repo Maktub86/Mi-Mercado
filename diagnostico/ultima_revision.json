@@ -1,5 +1,5 @@
 {
-  "fecha": "2026-11-27T17:30:23+00:00",
+  "fecha": "2026-11-27T17:39:23+00:00",
   "leidos": 75,
   "fallos": 13,
   "enlaces": [
@@ -61,7 +61,7 @@
         },
         {
           "tienda": "Miravia (The Box of Toys)",
-          "precio": 13.71
+          "precio": 14.08
         },
         {
           "tienda": "Pixmania",
@@ -366,7 +366,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 628171,
+        "bytes": 640473,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
