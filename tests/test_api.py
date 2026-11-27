@@ -65,6 +65,20 @@ class ReglasTest(unittest.TestCase):
         self.assertEqual(datos["productos"][0]["descartadas"], ["comparador:x#Abacus"])
         sv.descartar(datos, "tren", {"tienda": "comparador:x#Abacus", "recuperar": True})
         self.assertNotIn("descartadas", datos["productos"][0])
+        sv.editar(datos, "tren", {"precio_propio": "12,5", "cantidad": 2})
+        self.assertEqual(datos["productos"][0]["precio_propio"], 12.5)
+        self.assertEqual(datos["productos"][0]["cantidad"], 2)
+        sv.editar(datos, "tren", {"usar_precio": "tienda"})
+        self.assertEqual(datos["productos"][0]["usar_precio"], "tienda")
+        sv.editar(datos, "tren", {"usar_precio": "propio"})
+        self.assertNotIn("usar_precio", datos["productos"][0])
+        sv.editar(datos, "tren", {"precio_propio": None, "cantidad": 1})
+        self.assertNotIn("precio_propio", datos["productos"][0])
+        self.assertNotIn("cantidad", datos["productos"][0])
+        with self.assertRaises(ValueError):
+            sv.editar(datos, "tren", {"cantidad": 0})
+        with self.assertRaises(ValueError):
+            sv.editar(datos, "tren", {"usar_precio": "propio"})
         sv.eliminar(datos, "tren")
         self.assertEqual(datos["productos"], [])
         with self.assertRaises(LookupError):

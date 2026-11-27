@@ -787,24 +787,6 @@ body.arrastrando-carta { cursor: grabbing; user-select: none; -webkit-user-selec
   .carta-hoja { background-size: 100% 100%, 18px 18px, 18px 18px; }
 }
 
-/* ---------- Coupert */
-.coupert {
-  background: var(--papel); border: 1px solid var(--linea); border-radius: var(--radio);
-  padding: 16px 18px; margin: 20px 0;
-}
-.coupert h2 { margin: 0 0 6px; font-size: 16px; }
-.coupert > p { margin: 0 0 10px; color: var(--tinta-suave); font-size: 14px; }
-.coupert-lista { list-style: none; margin: 0 0 8px; padding: 0; display: grid; gap: 6px; }
-.coupert-lista li {
-  display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
-  border: 1px solid var(--linea); border-radius: 10px; padding: 8px 12px; background: #fff;
-}
-.coupert-lista a { text-decoration: none; }
-.coupert-lista a span { color: var(--tinta-suave); font-size: 12.5px; }
-.coupert-lista a:hover strong { text-decoration: underline; }
-.coupert-lista small { color: var(--tinta-suave); }
-.enlace-coupert { white-space: nowrap; }
-
 /* ---------- Carta: una pestaña por persona, comprados y precio oculto */
 .carta-pestanas { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 0 12px; padding-bottom: 2px; }
 .carta-pestana {
@@ -843,3 +825,28 @@ body.arrastrando-carta { cursor: grabbing; user-select: none; -webkit-user-selec
 .carta-total-persona .resumen-titulo { color: var(--oro); }
 .carta-total-persona .resumen-detalle { color: var(--tinta-suave); }
 .carta-precio { flex-wrap: wrap; }
+
+/* ---------- Precio y cantidad (mi precio frente al historial) */
+.boton-mini.neutro { border-color: var(--linea); background: var(--papel); color: var(--tinta); }
+.acciones-edicion { flex-wrap: wrap; }
+.elegir-precio { border: 1px solid var(--linea); border-radius: 10px; padding: 8px 12px 10px; margin: 0; }
+.elegir-precio legend { font-size: 13.5px; font-weight: 600; padding: 0 4px; }
+.dialogo .elegir-precio .opcion { flex-direction: row; align-items: center; gap: 8px; font-weight: 500; font-size: 14.5px; padding: 4px 0; }
+.dialogo .elegir-precio input[type="radio"] { width: auto; margin: 0; accent-color: var(--tinta); }
+.elegir-precio .opcion:has(input:disabled) { opacity: .5; }
+.precio-total { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; }
+.comprados .precio-comprado { display: block; color: var(--tinta-suave); font-size: 12.5px; margin-top: 2px; }
+.comprados .precio-comprado strong { color: var(--tinta); }
+.comprados .unidades { color: var(--tinta); }
+.comprados .quien { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: baseline; gap: 2px 0; }
+.carta-unidades {
+  position: absolute; left: 2px; top: 2px; font: 700 11px Inter, sans-serif; line-height: 1;
+  padding: 3px 5px; border-radius: 8px; background: var(--tinta); color: #fff;
+}
+.carta-fuente {
+  display: block; margin: 3px auto 0; font: 600 10.5px Inter, sans-serif; line-height: 1.2; white-space: nowrap;
+  padding: 2px 6px; border-radius: 8px; cursor: pointer; border: 1px solid var(--linea);
+  background: var(--papel); color: var(--tinta-suave);
+}
+.carta-fuente.propio { border-color: var(--oro); background: var(--oro-suave); color: var(--tinta); }
+.carta-fuente:hover { border-color: var(--oro); }
