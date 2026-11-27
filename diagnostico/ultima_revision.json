@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-27T21:48:50+00:00",
-  "leidos": 75,
-  "fallos": 14,
+  "fecha": "2026-11-27T21:59:52+00:00",
+  "leidos": 70,
+  "fallos": 16,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -145,37 +145,13 @@
     {
       "producto": "clementoni-nail-art",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/clementoni-nail-art-studio.html",
+      "url": "https://www.globerada.com/precios/juegos-de-mesa-clementoni-crazy-chic-nail-art-studio-game-multicolore-45x31x7-cm.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/clementoni-nail-art-studio.html",
+      "pagina": "https://www.globerada.com/precios/juegos-de-mesa-clementoni-crazy-chic-nail-art-studio-game-multicolore-45x31x7-cm.html",
       "ofertas": [
         {
-          "tienda": "Fnac",
-          "precio": 23.99
-        },
-        {
-          "tienda": "Abacus",
-          "precio": 24.74
-        },
-        {
-          "tienda": "Amazon",
-          "precio": 27.64
-        },
-        {
-          "tienda": "Amazon Marketplace (PALUTA TOY MARKET (Envío 24/48h Lab.))",
-          "precio": 29.9
-        },
-        {
-          "tienda": "Miravia (Juguetería Express)",
-          "precio": 31.95
-        },
-        {
-          "tienda": "Miravia (Juguetes Abracadabra)",
-          "precio": 34.94
-        },
-        {
-          "tienda": "Aliexpress ES (Shop1104124762 Store)",
-          "precio": 35.99
+          "tienda": "Sneakin",
+          "precio": 34.0
         }
       ]
     },
@@ -362,7 +338,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 628171,
+        "bytes": 627657,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
@@ -792,6 +768,43 @@
       "producto": "diswoe-reloj-inteligente",
       "tienda": "Toy Planet",
       "url": "buscar:www.toyplanet.com:Diswoe Reloj Inteligente",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "diswoe-reloj-inteligente-2",
+      "tienda": "Globerada",
+      "url": "https://www.globerada.com/precios/diswoe-reloj-inteligente-ninos-smartwatch-nina-3-4-5-6-7-8-9-10-11-12-anos-regalo-nina-con-14-juegos-camara-giratoria-de-90%C2%B0-despertador-y-hd-pantalla-tactil-regalos-para-ninos-y-ninas.html",
+      "metodo": "comparador",
+      "pagina": "https://www.globerada.com/precios/diswoe-reloj-inteligente-ninos-smartwatch-nina-3-4-5-6-7-8-9-10-11-12-anos-regalo-nina-con-14-juegos-camara-giratoria-de-90%C2%B0-despertador-y-hd-pantalla-tactil-regalos-para-ninos-y-ninas.html",
+      "ofertas": [
+        {
+          "tienda": "Amazon Marketplace (SimonY Shop)",
+          "precio": 17.75
+        }
+      ]
+    },
+    {
+      "producto": "diswoe-reloj-inteligente-2",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:Diswoe Reloj Inteligente",
+      "precio": null,
+      "metodo": null,
+      "error": "LookupError: no está en el catálogo de la tienda",
+      "pistas": {}
+    },
+    {
+      "producto": "carioca-magicos-caja-20-rotuladores-magic-markers",
+      "tienda": "Globerada",
+      "url": "comparador:CARIOCA Mágicos - Caja 20 Rotuladores Magic Markers",
+      "error": "no encontrado en el comparador"
+    },
+    {
+      "producto": "carioca-magicos-caja-20-rotuladores-magic-markers",
+      "tienda": "Toy Planet",
+      "url": "buscar:www.toyplanet.com:CARIOCA Mágicos - Caja 20 Rotuladores Magic Markers",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
