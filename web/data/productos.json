@@ -75,7 +75,8 @@
           "eci_buscar": "Hello Kitty bolso"
         }
       ],
-      "categoria": "reyes"
+      "categoria": "reyes",
+      "precio_propio": 21.0
     },
     {
       "id": "playmobil-bolso-concha",
