@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-26T22:47:09+00:00",
-  "leidos": 76,
+  "fecha": "2026-11-27T02:07:04+00:00",
+  "leidos": 75,
   "fallos": 17,
   "enlaces": [
     {
@@ -73,10 +73,6 @@
         {
           "tienda": "Amazon Marketplace (dinydon)",
           "precio": 10.95
-        },
-        {
-          "tienda": "Imosver",
-          "precio": 11.23
         },
         {
           "tienda": "Miravia (The Box of Toys)",
@@ -385,7 +381,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 628216,
+        "bytes": 640473,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
