@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-26T22:02:15+00:00",
-  "leidos": 92,
-  "fallos": 92,
+  "fecha": "2026-11-27T22:10:44+00:00",
+  "leidos": 27,
+  "fallos": 78,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -40,23 +40,8 @@
     {
       "producto": "monster-high-moonspell",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/monster-high-claire-de-luna-moonspell-magic-muneca-con-sorpresa-en-caldero-y-accesorios-jmb89.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/monster-high-claire-de-luna-moonspell-magic-muneca-con-sorpresa-en-caldero-y-accesorios-jmb89.html",
-      "ofertas": [
-        {
-          "tienda": "Abacus",
-          "precio": 27.99
-        },
-        {
-          "tienda": "Juguettos",
-          "precio": 29.99
-        },
-        {
-          "tienda": "Ferretería Ibermadrid",
-          "precio": 34.15
-        }
-      ]
+      "url": "comparador:Monster High Moonspell",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "monster-high-moonspell",
@@ -74,44 +59,6 @@
       "error": "no encontrado en el comparador"
     },
     {
-      "producto": "bolso-peluche-hello-kitty",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Hello Kitty bolso peluche",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "bolso-peluche-hello-kitty",
-      "tienda": "Globerada",
-      "url": "comparador:Hello Kitty bolso reversible",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "bolso-peluche-hello-kitty",
-      "tienda": "Amazon",
-      "url": "amazon:Hello Kitty bolso peluche reversible",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
-    },
-    {
-      "producto": "bolso-peluche-hello-kitty",
-      "tienda": "Idealo",
-      "url": "idealo:Hello Kitty bolso reversible",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "bolso-peluche-hello-kitty",
-      "tienda": "El Corte Inglés",
-      "url": "https://www.elcorteingles.es/juguetes/A201456907-bolso-peluche-hello-kitty-lol-surprise-reversible-con-muneca-incluida-mga/",
-      "precio": 34.99,
-      "metodo": "navegador",
-      "error": null
-    },
-    {
       "producto": "playmobil-71613-abuelos",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0D353J66T",
@@ -124,39 +71,15 @@
       "producto": "playmobil-71613-abuelos",
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/playmobil-abuelos-y-bebe",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 429",
-      "pistas": {}
+      "precio": 9.99,
+      "metodo": "shopify",
+      "error": null
     },
     {
       "producto": "playmobil-71613-abuelos",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/playmobil-my-life-abuelos-y-bebe-71613.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/playmobil-my-life-abuelos-y-bebe-71613.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon Marketplace (Imosver)",
-          "precio": 11.23
-        },
-        {
-          "tienda": "Imosver",
-          "precio": 11.23
-        },
-        {
-          "tienda": "Miravia (The Box of Toys)",
-          "precio": 13.71
-        },
-        {
-          "tienda": "Pixmania",
-          "precio": 17.4
-        },
-        {
-          "tienda": "OnBuy (AMI VENTURES INC.)",
-          "precio": 66.84
-        }
-      ]
+      "url": "comparador:Playmobil 71613",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "playmobil-71613-abuelos",
@@ -223,23 +146,8 @@
     {
       "producto": "mami-elefante-pets-alive",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/zuru-pets-alive-mama-elefante-y-bebes-sorpresa.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/zuru-pets-alive-mama-elefante-y-bebes-sorpresa.html",
-      "ofertas": [
-        {
-          "tienda": "Juguettos",
-          "precio": 49.99
-        },
-        {
-          "tienda": "Amazon Marketplace (DRIM)",
-          "precio": 49.99
-        },
-        {
-          "tienda": "Carrefour",
-          "precio": 53.98
-        }
-      ]
+      "url": "comparador:Pets Alive elefante",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "mami-elefante-pets-alive",
@@ -260,10 +168,9 @@
       "producto": "mami-elefante-pets-alive",
       "tienda": "El Corte Inglés",
       "url": "https://www.elcorteingles.es/juguetes/A201380731-peluche-electronico-mami-elefante-y-sus-bebes-de-pets-alive/",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: el navegador tardó demasiado",
-      "pistas": {}
+      "precio": 49.99,
+      "metodo": "navegador",
+      "error": null
     },
     {
       "producto": "mirrormi-fashion",
@@ -278,10 +185,9 @@
       "producto": "mirrormi-fashion",
       "tienda": "Amazon (Suki)",
       "url": "https://www.amazon.es/dp/B0GKNCH9X9",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: Amazon pidió un captcha",
-      "pistas": {}
+      "precio": 34.99,
+      "metodo": "amazon-pagina",
+      "error": null
     },
     {
       "producto": "mirrormi-fashion",
@@ -295,15 +201,8 @@
     {
       "producto": "mirrormi-fashion",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/mga-entertainment-mirrormi-fashion-doll-luna-skye-dreamy-253495-euc.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/mga-entertainment-mirrormi-fashion-doll-luna-skye-dreamy-253495-euc.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 27.64
-        }
-      ]
+      "url": "comparador:Mirrormi",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "mirrormi-fashion",
@@ -319,20 +218,6 @@
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
-    },
-    {
-      "producto": "peluche-maiz",
-      "tienda": "Idealo",
-      "url": "idealo:peluche maíz El Corte Inglés",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "peluche-maiz",
-      "tienda": "El Corte Inglés",
-      "url": "https://www.elcorteingles.es/juguetes/A200518694-peluche-maiz-18-cm-el-corte-ingles/",
-      "precio": 9.95,
-      "metodo": "navegador",
-      "error": null
     },
     {
       "producto": "clementoni-nail-art",
@@ -355,35 +240,8 @@
     {
       "producto": "clementoni-nail-art",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/clementoni-nail-art-studio.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/clementoni-nail-art-studio.html",
-      "ofertas": [
-        {
-          "tienda": "Fnac",
-          "precio": 23.99
-        },
-        {
-          "tienda": "Abacus",
-          "precio": 24.74
-        },
-        {
-          "tienda": "Amazon",
-          "precio": 27.64
-        },
-        {
-          "tienda": "Miravia (Juguetería Express)",
-          "precio": 31.95
-        },
-        {
-          "tienda": "Miravia (Juguetes Abracadabra)",
-          "precio": 34.94
-        },
-        {
-          "tienda": "Aliexpress ES (Shop1104124762 Store)",
-          "precio": 35.99
-        }
-      ]
+      "url": "comparador:Clementoni Nail Art Studio",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "clementoni-nail-art",
@@ -420,23 +278,8 @@
     {
       "producto": "educa-magnetics-61",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/educa-borras-magnetics-3d-61-pcs..html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/educa-borras-magnetics-3d-61-pcs..html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 34.99
-        },
-        {
-          "tienda": "Imosver",
-          "precio": 39.89
-        },
-        {
-          "tienda": "Fnac",
-          "precio": 42.99
-        }
-      ]
+      "url": "comparador:Educa Magnetics 61",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "educa-magnetics-61",
@@ -450,7 +293,7 @@
       "url": "eci:Educa Magnetics 61",
       "precio": null,
       "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
+      "error": "bloqueado: el navegador tardó demasiado",
       "pistas": {}
     },
     {
@@ -465,23 +308,8 @@
     {
       "producto": "peekimo",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/spin-master-peekimo-pink.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/spin-master-peekimo-pink.html",
-      "ofertas": [
-        {
-          "tienda": "Aliexpress ES (Shop1104118748 Store)",
-          "precio": 27.99
-        },
-        {
-          "tienda": "Amazon",
-          "precio": 29.99
-        },
-        {
-          "tienda": "Juguettos",
-          "precio": 29.99
-        }
-      ]
+      "url": "comparador:Peekimo",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "peekimo",
@@ -493,10 +321,9 @@
       "producto": "peekimo",
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/peekimo-mascota-interactiva-con-mas-de-100-sonidos",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 429",
-      "pistas": {}
+      "precio": 29.99,
+      "metodo": "shopify",
+      "error": null
     },
     {
       "producto": "peekimo",
@@ -525,9 +352,10 @@
       "producto": "barbie-deluxe-style-15",
       "tienda": "El Corte Inglés",
       "url": "https://www.elcorteingles.es/juguetes/A201417930-barbie-deluxe-style-vestido-look-barbiecore-rosa-intenso-con-accesorios-plateados-y-detalles-de-moda/",
-      "precio": 19.95,
-      "metodo": "navegador",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: el navegador tardó demasiado",
+      "pistas": {}
     },
     {
       "producto": "barbie-coche-radiocontrol",
@@ -594,15 +422,8 @@
     {
       "producto": "barbie-cascanueces-trineo",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/barbie-cascanueces-reino-de-los-dulces-caballo-y-trineo-jrf15.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/barbie-cascanueces-reino-de-los-dulces-caballo-y-trineo-jrf15.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 37.94
-        }
-      ]
+      "url": "comparador:Barbie Cascanueces trineo",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "barbie-cascanueces-trineo",
@@ -616,7 +437,7 @@
       "url": "eci:Cascanueces trineo",
       "precio": null,
       "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
+      "error": "bloqueado: el navegador tardó demasiado",
       "pistas": {}
     },
     {
@@ -631,39 +452,15 @@
       "producto": "barbie-cascanueces-bailarina",
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/barbie-el-cascanueces-clara-muneca-bailarina-con-tutu-transformable-3-anos",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 429",
-      "pistas": {}
+      "precio": 28.99,
+      "metodo": "shopify",
+      "error": null
     },
     {
       "producto": "barbie-cascanueces-bailarina",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/barbie-clara-en-el-cascanueces-muneca-con-efecto-cambio-de-tutu-y-medallon-corazon-jlw53.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/barbie-clara-en-el-cascanueces-muneca-con-efecto-cambio-de-tutu-y-medallon-corazon-jlw53.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 23.43
-        },
-        {
-          "tienda": "Raijuguetes",
-          "precio": 29.5
-        },
-        {
-          "tienda": "Juguettos",
-          "precio": 29.99
-        },
-        {
-          "tienda": "Ferretería Ibermadrid",
-          "precio": 34.15
-        },
-        {
-          "tienda": "Pixmania",
-          "precio": 38.28
-        }
-      ]
+      "url": "comparador:Barbie Cascanueces Clara",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "barbie-cascanueces-bailarina",
@@ -689,22 +486,6 @@
       "error": null
     },
     {
-      "producto": "botas-agua-sfera-alba",
-      "tienda": "Sfera",
-      "url": "https://www.sfera.com/es/ninos/A200976329-250-nude-pr-bota-agua-carita/",
-      "precio": 21.99,
-      "metodo": "navegador",
-      "error": null
-    },
-    {
-      "producto": "botas-agua-sfera-lucia",
-      "tienda": "Sfera",
-      "url": "https://www.sfera.com/es/ninos/A200976328-burdeos-pr-bota-agua/",
-      "precio": 21.99,
-      "metodo": "navegador",
-      "error": null
-    },
-    {
       "producto": "haba-bichos",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0GQHJW4PR",
@@ -716,23 +497,8 @@
     {
       "producto": "haba-bichos",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/haba-2013336004-bichos-juego-infantil-de-mesa-de-memoria-y-calculo-mental-sumas-hasta-10.-mas-6-anos.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/haba-2013336004-bichos-juego-infantil-de-mesa-de-memoria-y-calculo-mental-sumas-hasta-10.-mas-6-anos.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 6.99
-        },
-        {
-          "tienda": "Ferretería Ibermadrid",
-          "precio": 7.19
-        },
-        {
-          "tienda": "Juegos de la Mesa Redonda",
-          "precio": 8.09
-        }
-      ]
+      "url": "comparador:HABA Bichos",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "haba-bichos",
@@ -796,19 +562,8 @@
     {
       "producto": "libro-consolar-ardilla",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/como-consolar-a-una-ardilla.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/como-consolar-a-una-ardilla.html",
-      "ofertas": [
-        {
-          "tienda": "Abacus",
-          "precio": 9.02
-        },
-        {
-          "tienda": "Imosver",
-          "precio": 9.03
-        }
-      ]
+      "url": "comparador:consolar ardilla",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "libro-consolar-ardilla",
@@ -836,15 +591,8 @@
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/frozen-2.-gran-libro-de-la-pelicula.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/frozen-2.-gran-libro-de-la-pelicula.html",
-      "ofertas": [
-        {
-          "tienda": "Frozen · Abacus",
-          "precio": 5.65
-        }
-      ]
+      "url": "comparador:Frozen Gran libro de la película",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "libro-disney-gran-libro",
@@ -858,15 +606,8 @@
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/frozen-2.-gran-libro-de-la-pelicula.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/frozen-2.-gran-libro-de-la-pelicula.html",
-      "ofertas": [
-        {
-          "tienda": "Frozen 2 · Abacus",
-          "precio": 5.65
-        }
-      ]
+      "url": "comparador:Frozen 2 Gran libro de la película",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "libro-disney-gran-libro",
@@ -895,45 +636,31 @@
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/elemental.-gran-libro-de-la-pelicula.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/elemental.-gran-libro-de-la-pelicula.html",
-      "ofertas": [
-        {
-          "tienda": "Elemental · Abacus",
-          "precio": 5.65
-        }
-      ]
+      "url": "comparador:Elemental Gran libro de la película",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Elio · Amazon",
-      "url": "https://www.amazon.es/dp/B0DYK4WDVK",
+      "url": "amazon:Elio Gran libro de la película",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: Amazon pidió un captcha",
+      "error": "bloqueado: la tienda respondió 503",
       "pistas": {}
     },
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/elio.-gran-libro-de-la-pelicula.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/elio.-gran-libro-de-la-pelicula.html",
-      "ofertas": [
-        {
-          "tienda": "Elio · Abacus",
-          "precio": 12.3
-        }
-      ]
+      "url": "comparador:Elio Gran libro de la película",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Coco · Amazon",
-      "url": "amazon:Coco Gran libro de la película",
+      "url": "https://www.amazon.es/dp/8416913870",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
+      "error": "bloqueado: Amazon pidió un captcha",
       "pistas": {}
     },
     {
@@ -954,15 +681,8 @@
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/red.-gran-libro-de-la-pelicula.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/red.-gran-libro-de-la-pelicula.html",
-      "ofertas": [
-        {
-          "tienda": "Red · Abacus",
-          "precio": 2.37
-        }
-      ]
+      "url": "comparador:Red Gran libro de la película",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "libro-disney-gran-libro",
@@ -970,7 +690,7 @@
       "url": "amazon:Toy Story 4 Gran libro de la película",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
@@ -982,24 +702,17 @@
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Zootrópolis 2 · Amazon",
-      "url": "https://www.amazon.es/dp/B0FP9XJDB6",
+      "url": "amazon:Zootrópolis 2 Gran libro de la película",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: Amazon pidió un captcha",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/zootropolis-2.-gran-libro-de-la-pelicula.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/zootropolis-2.-gran-libro-de-la-pelicula.html",
-      "ofertas": [
-        {
-          "tienda": "Zootrópolis 2 · Abacus",
-          "precio": 12.3
-        }
-      ]
+      "url": "comparador:Zootrópolis 2 Gran libro de la película",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "libro-disney-gran-libro",
@@ -1013,15 +726,8 @@
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/los-increibles-2.-gran-libro-de-la-pelicula.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/los-increibles-2.-gran-libro-de-la-pelicula.html",
-      "ofertas": [
-        {
-          "tienda": "Los Increíbles 2 · Abacus",
-          "precio": 11.95
-        }
-      ]
+      "url": "comparador:Los Increíbles 2 Gran libro de la película",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "libro-disney-gran-libro",
@@ -1105,11 +811,19 @@
     {
       "producto": "libro-disney-gran-libro",
       "tienda": "Red · El Corte Inglés",
-      "url": "eci:Red Gran libro de la película",
+      "url": "https://www.elcorteingles.es/libros/A41986921-red-gran-libro-de-la-pelicula-tapa-dura/",
       "precio": null,
-      "metodo": null,
-      "error": "bloqueado: el navegador tardó demasiado",
-      "pistas": {}
+      "metodo": "navegador",
+      "error": "precio dudoso (2.37 €): posible producto equivocado",
+      "pistas": {
+        "bytes": 795107,
+        "titulo": "Red. Gran Libro de la película (Tapa dura) · DISNEY (PLANETA) · El Corte Inglés",
+        "captcha": false,
+        "json_ld": 2,
+        "marcas": [
+          "availability"
+        ]
+      }
     },
     {
       "producto": "libro-disney-gran-libro",
@@ -1117,7 +831,7 @@
       "url": "eci:Toy Story 4 Gran libro de la película",
       "precio": null,
       "metodo": null,
-      "error": "bloqueado: el navegador tardó demasiado",
+      "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
@@ -1166,15 +880,8 @@
     {
       "producto": "monster-high-cleo",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-cleo-de-nile-hxh74.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-cleo-de-nile-hxh74.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon Marketplace (Juguetes Abracadabra)",
-          "precio": 32.95
-        }
-      ]
+      "url": "comparador:Monster High Cleo",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "monster-high-cleo",
@@ -1211,27 +918,8 @@
     {
       "producto": "monster-high-frankie",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-frankie-stein-watzie-jhk31.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/mattel-monster-high-doll-with-pet-frankie-stein-watzie-jhk31.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 19.04
-        },
-        {
-          "tienda": "Juguettos",
-          "precio": 29.99
-        },
-        {
-          "tienda": "PcComponentes (La Frikilería)",
-          "precio": 38.17
-        },
-        {
-          "tienda": "Raijuguetes",
-          "precio": 39.33
-        }
-      ]
+      "url": "comparador:Monster High Doll With Pet Frankie",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "monster-high-frankie",
@@ -1285,7 +973,7 @@
       "url": "amazon:Djeco restaurante Agustín",
       "precio": null,
       "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
+      "error": "bloqueado: la tienda respondió 503",
       "pistas": {}
     },
     {
@@ -1304,48 +992,10 @@
       "pistas": {}
     },
     {
-      "producto": "megapack-archivador-cartas-hello-kitty-2026",
-      "tienda": "El Corte Inglés",
-      "url": "https://www.elcorteingles.es/juguetes/A200276918-megapack-archivador-cartas-hello-kitty-2026/",
-      "precio": 10.0,
-      "metodo": "navegador",
-      "error": null
-    },
-    {
-      "producto": "megapack-archivador-cartas-hello-kitty-2026",
-      "tienda": "Amazon",
-      "url": "amazon:MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
-    },
-    {
-      "producto": "megapack-archivador-cartas-hello-kitty-2026",
-      "tienda": "Globerada",
-      "url": "comparador:MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "megapack-archivador-cartas-hello-kitty-2026",
-      "tienda": "Idealo",
-      "url": "idealo:MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "megapack-archivador-cartas-hello-kitty-2026",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:MEGAPACK (ARCHIVADOR+ CARTAS) HELLO KITTY 2026",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
       "producto": "peluche-pikachu",
       "tienda": "Mediamarkt",
       "url": "https://www.mediamarkt.es/es/product/_peluche-pokemon-pikachu-amarillo-134742668.html",
-      "precio": 23.77,
+      "precio": 23.46,
       "metodo": "generico",
       "error": null
     },
@@ -1361,15 +1011,8 @@
     {
       "producto": "peluche-pikachu",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/jazwares-pikachu-1-20cm.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/jazwares-pikachu-1-20cm.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 19.99
-        }
-      ]
+      "url": "comparador:Peluche pikachu",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "peluche-pikachu",
@@ -1381,9 +1024,10 @@
       "producto": "peluche-pikachu",
       "tienda": "Toy Planet",
       "url": "https://www.toyplanet.com/products/cuaderno-premium-pokemon-pikachu-forrado-peluche-a5",
-      "precio": 17.99,
-      "metodo": "shopify",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 429",
+      "pistas": {}
     },
     {
       "producto": "peluche-pikachu",
@@ -1393,7 +1037,7 @@
       "metodo": "navegador",
       "error": "precio dudoso (129.95 €): posible producto equivocado",
       "pistas": {
-        "bytes": 829962,
+        "bytes": 815342,
         "titulo": "Peluche interactivo Puppetronic Real FX Pikachu Pokémon Famosa · Famosa · El Corte Inglés",
         "captcha": false,
         "json_ld": 2,
@@ -1406,10 +1050,9 @@
       "producto": "dreamon-heladeria-juguete",
       "tienda": "Amazon",
       "url": "https://www.amazon.es/dp/B0DB1TBK7N",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: Amazon pidió un captcha",
-      "pistas": {}
+      "precio": 39.99,
+      "metodo": "amazon-pagina",
+      "error": null
     },
     {
       "producto": "dreamon-heladeria-juguete",
@@ -1492,15 +1135,8 @@
     {
       "producto": "party-co-disney-juego-de-mesa",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/jumbo-party-co.-disney-100-anniversary-juego-de-mesa-juego-familiar-para-todas-las-edades-version-holandesa.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/jumbo-party-co.-disney-100-anniversary-juego-de-mesa-juego-familiar-para-todas-las-edades-version-holandesa.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 29.28
-        }
-      ]
+      "url": "comparador:Party & Co. Disney, Juego de Mesa",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "party-co-disney-juego-de-mesa",
@@ -1537,15 +1173,8 @@
     {
       "producto": "marvin-s-magic-30-boligrafos-magicos",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/marvins-magic-30-boligrafos-magicos-cambio-de-color-ninos-5-boligrafos-magicos-cambia-color-dibujo-3d-sin-manchas-puntas-borrables-marca-de-magia-reconocida.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/marvins-magic-30-boligrafos-magicos-cambio-de-color-ninos-5-boligrafos-magicos-cambia-color-dibujo-3d-sin-manchas-puntas-borrables-marca-de-magia-reconocida.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon Marketplace (Marvin's Magic)",
-          "precio": 19.51
-        }
-      ]
+      "url": "comparador:Marvin's Magic 30 Bolígrafos Mágicos",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "marvin-s-magic-30-boligrafos-magicos",
@@ -1583,43 +1212,8 @@
     {
       "producto": "lego-classic-amigos-nutritivos-creativos-11039",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/lego-classic-amigos-nutritivos-creativos-11039.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/lego-classic-amigos-nutritivos-creativos-11039.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 8.99
-        },
-        {
-          "tienda": "Juguettos",
-          "precio": 11.99
-        },
-        {
-          "tienda": "Miravia (Juguetilandia)",
-          "precio": 13.93
-        },
-        {
-          "tienda": "Sport is good",
-          "precio": 15.0
-        },
-        {
-          "tienda": "Miravia (JUGUETES FANCY)",
-          "precio": 17.4
-        },
-        {
-          "tienda": "Miravia (Playmycenter)",
-          "precio": 20.8
-        },
-        {
-          "tienda": "PcComponentes (ASD ES)",
-          "precio": 22.34
-        },
-        {
-          "tienda": "Miravia (Marana Tribu)",
-          "precio": 28.99
-        }
-      ]
+      "url": "comparador:LEGO Classic Amigos Nutritivos Creativos 11039",
+      "error": "no encontrado en el comparador"
     },
     {
       "producto": "lego-classic-amigos-nutritivos-creativos-11039",
@@ -1685,167 +1279,42 @@
       "pistas": {}
     },
     {
-      "producto": "coche-barbie",
-      "tienda": "Juguettos",
-      "url": "https://juguettos.com/barbie-casas-y-vehiculos/93932-0000-00-00-194735260157.html",
-      "precio": null,
-      "metodo": "generico",
-      "error": null,
-      "pistas": {
-        "bytes": 121960,
-        "titulo": "Hot Wheels Descapotable Teledirigido de Barbie - Juguettos",
-        "captcha": false,
-        "json_ld": 1,
-        "marcas": [
-          "availability"
-        ]
-      }
-    },
-    {
-      "producto": "coche-barbie",
+      "producto": "bolso-nina-con-accesorios",
       "tienda": "Amazon",
-      "url": "https://www.amazon.es/dp/B09BW44GBG",
+      "url": "https://www.amazon.es/dp/B0H4KJ85YY",
       "precio": null,
       "metodo": null,
       "error": "bloqueado: Amazon pidió un captcha",
       "pistas": {}
     },
     {
-      "producto": "coche-barbie",
+      "producto": "bolso-nina-con-accesorios",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/barbie-coche-descapotable-hbt92.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/barbie-coche-descapotable-hbt92.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 13.99
-        },
-        {
-          "tienda": "Pixmania",
-          "precio": 24.28
-        },
-        {
-          "tienda": "Raijuguetes",
-          "precio": 24.58
-        }
-      ]
+      "url": "comparador:Bolso Niña con Accesorios",
+      "error": "no encontrado en el comparador"
     },
     {
-      "producto": "coche-barbie",
+      "producto": "bolso-nina-con-accesorios",
       "tienda": "Idealo",
-      "url": "idealo:Coche Barbie",
+      "url": "idealo:Bolso Niña con Accesorios",
       "error": "no encontrado en el comparador"
     },
     {
-      "producto": "coche-barbie",
+      "producto": "bolso-nina-con-accesorios",
       "tienda": "Toy Planet",
-      "url": "https://www.toyplanet.com/products/barbie-y-su-descapotable-muneca-con-coche-de-juguete-3-anos",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 429",
-      "pistas": {}
-    },
-    {
-      "producto": "coche-barbie",
-      "tienda": "El Corte Inglés",
-      "url": "https://www.elcorteingles.es/juguetes/A200045102-coche-radiocontrol-110-barbie-city-car-mondo/",
-      "precio": 44.99,
-      "metodo": "navegador",
-      "error": null
-    },
-    {
-      "producto": "botas-de-agua",
-      "tienda": "Sfera",
-      "url": "https://www.sfera.com/es/ninos/A200976328-burdeos-pr-bota-agua/",
-      "precio": 21.99,
-      "metodo": "navegador",
-      "error": null
-    },
-    {
-      "producto": "botas-de-agua",
-      "tienda": "Amazon",
-      "url": "amazon:Botas de agua",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 503",
-      "pistas": {}
-    },
-    {
-      "producto": "botas-de-agua",
-      "tienda": "Globerada",
-      "url": "comparador:Botas de agua",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "botas-de-agua",
-      "tienda": "Idealo",
-      "url": "idealo:Botas de agua",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "botas-de-agua",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Botas de agua",
+      "url": "buscar:www.toyplanet.com:Bolso Niña con Accesorios",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
       "pistas": {}
     },
     {
-      "producto": "botas-de-agua",
+      "producto": "bolso-nina-con-accesorios",
       "tienda": "El Corte Inglés",
-      "url": "eci:Botas de agua",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: el navegador tardó demasiado",
-      "pistas": {}
-    },
-    {
-      "producto": "botas-de-agua-2",
-      "tienda": "Sfera",
-      "url": "https://www.sfera.com/es/ninos/A200976328-burdeos-pr-bota-agua/",
-      "precio": 21.99,
-      "metodo": "navegador",
-      "error": null
-    },
-    {
-      "producto": "botas-de-agua-2",
-      "tienda": "Amazon",
-      "url": "amazon:Botas de agua",
+      "url": "eci:Bolso Niña con Accesorios",
       "precio": null,
       "metodo": null,
       "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "botas-de-agua-2",
-      "tienda": "Globerada",
-      "url": "comparador:Botas de agua",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "botas-de-agua-2",
-      "tienda": "Idealo",
-      "url": "idealo:Botas de agua",
-      "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "botas-de-agua-2",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Botas de agua",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "botas-de-agua-2",
-      "tienda": "El Corte Inglés",
-      "url": "https://www.elcorteingles.es/moda-mujer/A43550434-negro-pr-botas-de-agua-original-tall-de-mujer/",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: el navegador tardó demasiado",
       "pistas": {}
     }
   ]
