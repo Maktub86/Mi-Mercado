@@ -541,7 +541,6 @@ function tarjeta(p) {
   const acciones = document.createElement("div");
   acciones.className = "acciones-edicion solo-edicion";
   acciones.innerHTML = `<button type="button" class="boton-mini" data-comprado="${p.id}">✓ Ya está comprado</button>
-    <button type="button" class="boton-mini neutro" data-precio="${p.id}">€ Precio y cantidad</button>
     <button type="button" class="boton-mini peligro" data-eliminar="${p.id}">Eliminar</button>`;
   nodo.querySelector(".cuerpo").append(acciones);
   hoja.addEventListener("click", (e) => {
@@ -581,7 +580,7 @@ function pintarLista() {
       ? `<span class="precio-comprado">${p.cantidad > 1 ? `${p.cantidad} × ${euros.format(p.unidad)} = ` : ""}<strong>${euros.format(p.referencia)}</strong>${p.usaPropio ? " (mi precio)" : ""}</span>`
       : "";
     return `
-    <li><span><span class="tachado">${escapar(p.nombre)}</span> · ${escapar(p.para)}${p.cantidad > 1 ? ` <b class="unidades">×${p.cantidad}</b>` : ""}${precio}</span>
+    <li><span><span class="tachado">${escapar(p.nombre)}</span> · ${escapar(p.para)}${p.cantidad > 1 ? ` <b class="unidades">x${p.cantidad}</b>` : ""}${precio}</span>
     <span class="quien">${p.comprado_por ? `por ${escapar(p.comprado_por)}` : "comprado"}
       <button type="button" class="enlace-boton solo-edicion" data-precio="${p.id}">€ Precio y cantidad</button>
       <button type="button" class="enlace-boton solo-edicion" data-pendiente="${p.id}">Volver a la lista</button></span></li>`;
@@ -659,12 +658,12 @@ function fotoCarta(p, enHoja) {
     ? `<button type="button" class="carta-fuente${p.usaPropio ? " propio" : ""}" data-fuente="${escapar(p.id)}"
         title="${p.usaPropio ? `Se suma tu precio. Toca para usar el del historial (${euros.format(p.precioTienda)})` : `Se suma el precio del historial. Toca para usar el tuyo (${euros.format(p.propio)})`}">${p.usaPropio ? "mi precio" : "historial"} ⇄</button>`
     : "";
-  const unidades = p.cantidad > 1 ? `<span class="carta-unidades" title="${p.cantidad} unidades">×${p.cantidad}</span>` : "";
+  const unidades = p.cantidad > 1 ? `<p class="carta-unidades" title="${p.cantidad} unidades de ${euros.format(p.unidad)}">x${p.cantidad}</p>` : "";
   return `<div class="${clase}" data-item="${escapar(p.id)}"${estilo} title="${escapar(`${p.nombre}${comprado ? " · ya comprado" : ""}`)}">
       <div class="carta-foto">${foto
         ? `<img src="${escapar(foto)}" data-resto="${escapar(resto.map(encodeURI).join(" "))}" alt="${escapar(p.nombre)}" draggable="false" loading="lazy" referrerpolicy="no-referrer">`
-        : '<span aria-hidden="true">🎁</span>'}${comprado ? '<span class="sello-comprado" aria-label="Ya comprado">✅</span>' : ""}${unidades}</div>
-      <p class="carta-precio${precio == null || oculto ? " sin-dato" : ""}">${textoPrecio}${botonPrecio}</p>${botonFuente}
+        : '<span aria-hidden="true">🎁</span>'}${comprado ? '<span class="sello-comprado" aria-label="Ya comprado">✅</span>' : ""}</div>
+      <p class="carta-precio${precio == null || oculto ? " sin-dato" : ""}">${textoPrecio}${botonPrecio}</p>${unidades}${botonFuente}
     </div>`;
 }
 
@@ -1136,7 +1135,7 @@ function enlazarEdicion() {
     const activo = document.body.classList.toggle("editando");
     $("#boton-editar").setAttribute("aria-pressed", String(activo));
     $("#boton-editar").textContent = activo ? "Terminar de editar" : "✎ Editar";
-    if (activo) aviso("Modo edición: marca comprados, cambia precio y cantidad (también en los comprados), elimina regalos o quita tiendas que no son el producto (✕).");
+    if (activo) aviso("Modo edición: marca comprados, cambia precio y cantidad en los ya comprados, elimina regalos o quita tiendas que no son el producto (✕).");
   });
   document.addEventListener("click", (e) => {
     const comprado = e.target.closest("[data-comprado]");

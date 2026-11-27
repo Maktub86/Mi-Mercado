@@ -20,7 +20,7 @@ Si una tienda no deja leer el precio, `diagnostico/ultima_revision.json` explica
 
 ## Editar desde la web
 
-Botón **＋ Añadir** (nombre, para quién, enlaces opcionales) y botón **✎ Editar** (marcar comprado, eliminar, quitar una tienda que no es el producto, devolver a la lista y **€ Precio y cantidad**, también en los ya comprados). En *Precio y cantidad* se apunta mi precio por unidad, cuántas unidades hay y qué precio se suma: el mío o el del historial de tiendas. En la ✉️ Carta, el botón ⇄ de cada regalo cambia entre los dos. Los cambios los guarda el servidor `api/servidor.py` (servicio `mi-mercado-api` en Render) en `web/data/productos.json`, con una contraseña (`CLAVE_EDICION`) y una clave de GitHub (`GITHUB_TOKEN`) configuradas en Render. La dirección del servidor está en `web/data/config.json`.
+Botón **＋ Añadir** (nombre, para quién, enlaces opcionales) y botón **✎ Editar** (marcar comprado, eliminar, quitar una tienda que no es el producto, devolver a la lista y, en los ya comprados, **€ Precio y cantidad**). En *Precio y cantidad* se apunta mi precio por unidad, cuántas unidades hay y qué precio se suma: el mío o el del historial de tiendas. En la ✉️ Carta, debajo del precio sale x2, x3… si hay varias unidades, y el botón ⇄ cambia entre los dos precios. Los cambios los guarda el servidor `api/servidor.py` (servicio `mi-mercado-api` en Render) en `web/data/productos.json`, con una contraseña (`CLAVE_EDICION`) y una clave de GitHub (`GITHUB_TOKEN`) configuradas en Render. La dirección del servidor está en `web/data/config.json`.
 
 ## Añadir o cambiar un producto a mano
 
