@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-27T17:39:23+00:00",
+  "actualizado": "2026-11-27T21:48:50+00:00",
   "productos": {
     "monster-high-moonspell": {
       "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/": {
@@ -1310,7 +1310,8 @@
         "producto_tienda": "Juegos de mesa Clementoni Crazy Chic Nail Art Sdio game Multicolore 45x31x7 cm",
         "imagen": "https://m.media-amazon.com/images/I/51MsEc0YqHL._SL500_.jpg",
         "url_tienda": "https://sportisgood.es/8005125187300-juegos-de-mesa-clementoni-crazy-chic-nail-art-studio-game-multicolor-45x31x7-cm?variant=15322112",
-        "url_tienda_fecha": "2026-11-26"
+        "url_tienda_fecha": "2026-11-26",
+        "ultimo_error": "ya no aparece en el comparador"
       },
       "comparador:Clementoni Nail Art Studio#Amazon Marketplace (PALUTA TOY MARKET (Envío 24/48h Lab.))": {
         "tienda": "Amazon Marketplace (PALUTA TOY MARKET (Envío 24/48h Lab.))",
@@ -2966,7 +2967,7 @@
           },
           {
             "fecha": "2026-11-27",
-            "precio": 38.17,
+            "precio": 44.38,
             "disponible": true
           }
         ],
@@ -6372,6 +6373,31 @@
         "imagen": "https://m.media-amazon.com/images/I/71G-8SaqstL.jpg"
       },
       "buscar:www.toyplanet.com:Bolso Niña con Accesorios": {
+        "tienda": "Toy Planet",
+        "historial": [],
+        "ultima_comprobacion": "2026-11-27",
+        "ultimo_error": "LookupError: no está en el catálogo de la tienda"
+      }
+    },
+    "diswoe-reloj-inteligente": {
+      "comparador:Diswoe Reloj Inteligente#Amazon Marketplace (SimonY Shop)": {
+        "tienda": "Amazon Marketplace (SimonY Shop)",
+        "historial": [
+          {
+            "fecha": "2026-11-27",
+            "precio": 17.75,
+            "disponible": true
+          }
+        ],
+        "ultima_comprobacion": "2026-11-27",
+        "url": "https://www.amazon.es/dp/B0C6FGNLWN/ref=asc_df_B0C6FGNLWN1795622400000?tag=glober-21&linkCode=df0&smid=A2I7UMVE49UUDR&ascsubtag=globerada-o-6b09fabc185e8",
+        "url_tienda": "https://www.amazon.es/dp/B0C6FGNLWN/ref=asc_df_B0C6FGNLWN1795622400000?tag=glober-21&linkCode=df0&smid=A2I7UMVE49UUDR&ascsubtag=globerada-o-6b09fabc185e8",
+        "url_tienda_fecha": "2026-11-27",
+        "via": "Globerada",
+        "producto_tienda": "Diswoe Reloj Inteligente Niños, Smartwatch Niña 3 4 5 6 7 8 9 10 11 12 años, Regalo Niña con 14 Juegos, Cámara Giratoria",
+        "imagen": "https://m.media-amazon.com/images/I/713ocSrJUpL.jpg"
+      },
+      "buscar:www.toyplanet.com:Diswoe Reloj Inteligente": {
         "tienda": "Toy Planet",
         "historial": [],
         "ultima_comprobacion": "2026-11-27",
