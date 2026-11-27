@@ -508,7 +508,8 @@
           "eci_buscar": "Cascanueces trineo"
         }
       ],
-      "categoria": "reyes"
+      "categoria": "reyes",
+      "precio_propio": 41.95
     },
     {
       "id": "stitch-despertador-3d",
