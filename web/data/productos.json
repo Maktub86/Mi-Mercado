@@ -1454,7 +1454,8 @@
           "tienda": "El Corte Inglés",
           "eci_buscar": "Botas de agua"
         }
-      ]
+      ],
+      "precio_propio": 15.35
     },
     {
       "id": "bolso-nina-con-accesorios",
