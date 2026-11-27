@@ -25,7 +25,7 @@
       <div class="chips" id="chips-persona" role="tablist"></div>
       <div class="controles">
         <button type="button" class="boton-accion" id="boton-anadir">＋ Añadir</button>
-        <button type="button" class="boton-accion suave" id="boton-editar" aria-pressed="false">✎ Editar</button>
+        <button type="button" class="boton-accion boton-editar" id="boton-editar" aria-pressed="false">✎ Editar</button>
         <input type="search" id="buscar" placeholder="Buscar…" aria-label="Buscar">
         <select id="orden" aria-label="Ordenar">
           <option value="lista">Orden de la lista</option>
@@ -111,6 +111,24 @@
       <div class="botones-dialogo">
         <button type="button" class="boton-accion suave" id="cancelar-precio">Cancelar</button>
         <button type="submit" class="boton-accion" id="guardar-precio">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="dialogo-mover" class="dialogo pequeno" aria-labelledby="titulo-mover">
+    <form id="form-mover" method="dialog">
+      <h2 id="titulo-mover">Cambiar categoría</h2>
+      <p class="ayuda" id="mover-nombre"></p>
+      <label id="mover-campo-categoria"><span class="etiqueta">Categoría</span>
+        <select id="mover-categoria"></select>
+      </label>
+      <label><span class="etiqueta">Para</span>
+        <select id="mover-para"></select>
+      </label>
+      <p class="error-form" id="error-mover" role="alert"></p>
+      <div class="botones-dialogo">
+        <button type="button" class="boton-accion suave" id="cancelar-mover">Cancelar</button>
+        <button type="submit" class="boton-accion" id="guardar-mover">Guardar</button>
       </div>
     </form>
   </dialog>

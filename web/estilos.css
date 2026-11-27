@@ -846,3 +846,12 @@ body.arrastrando-carta { cursor: grabbing; user-select: none; -webkit-user-selec
 }
 .carta-fuente.propio { border-color: var(--oro); background: var(--oro-suave); color: var(--tinta); }
 .carta-fuente:hover { border-color: var(--oro); }
+
+.boton-mini.neutro { border-color: var(--linea); background: var(--papel); color: var(--tinta); }
+.dialogo label[hidden] { display: none; }
+
+/* ---------- Botón Editar: color propio para que se vea bien */
+.boton-accion.boton-editar { background: var(--sube); border-color: var(--sube); color: #fff; }
+.boton-accion.boton-editar:hover { background: #9a3826; border-color: #9a3826; }
+.boton-accion.boton-editar[aria-pressed="true"] { background: var(--baja); border-color: var(--baja); color: #fff; }
+.boton-accion.boton-editar[aria-pressed="true"]:hover { background: #266947; }

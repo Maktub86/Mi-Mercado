@@ -188,6 +188,12 @@ def editar(datos: dict, producto_id: str, peticion: dict) -> tuple[dict, str]:
         if not 2 <= len(nombre) <= 120:
             raise ValueError("Nombre no válido")
         producto["nombre"] = nombre
+    if peticion.get("categoria"):
+        categoria = str(peticion["categoria"])
+        personas = personas_de(datos, categoria)  # da error si no existe
+        if peticion.get("para", producto["para"]) not in personas:
+            raise ValueError("Elige para quién es en esa categoría")
+        producto["categoria"] = categoria
     if "para" in peticion:
         if peticion["para"] not in personas_de(datos, producto.get("categoria", "reyes")):
             raise ValueError("Persona no válida")

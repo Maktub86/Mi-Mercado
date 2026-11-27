@@ -541,6 +541,7 @@ function tarjeta(p) {
   const acciones = document.createElement("div");
   acciones.className = "acciones-edicion solo-edicion";
   acciones.innerHTML = `<button type="button" class="boton-mini" data-comprado="${p.id}">✓ Ya está comprado</button>
+    <button type="button" class="boton-mini neutro" data-mover="${p.id}">↔ Cambiar categoría</button>
     <button type="button" class="boton-mini peligro" data-eliminar="${p.id}">Eliminar</button>`;
   nodo.querySelector(".cuerpo").append(acciones);
   hoja.addEventListener("click", (e) => {
@@ -583,6 +584,7 @@ function pintarLista() {
     <li><span><span class="tachado">${escapar(p.nombre)}</span> · ${escapar(p.para)}${p.cantidad > 1 ? ` <b class="unidades">x${p.cantidad}</b>` : ""}${precio}</span>
     <span class="quien">${p.comprado_por ? `por ${escapar(p.comprado_por)}` : "comprado"}
       <button type="button" class="enlace-boton solo-edicion" data-precio="${p.id}">€ Precio y cantidad</button>
+      <button type="button" class="enlace-boton solo-edicion" data-mover="${p.id}">↔ Cambiar categoría</button>
       <button type="button" class="enlace-boton solo-edicion" data-pendiente="${p.id}">Volver a la lista</button></span></li>`;
   }).join("");
 }
@@ -996,6 +998,54 @@ function cambiarFuente(id) {
   });
 }
 
+// ---- cambiar de categoría (pestaña de categoría y para quién es)
+let moviendo = null;
+
+function rellenarPersonasMover(elegida) {
+  const categoria = categorias.find((c) => c.id === $("#mover-categoria").value) || categorias[0];
+  const selector = $("#mover-para");
+  selector.innerHTML = categoria.personas.map((n) => `<option value="${escapar(n)}">${escapar(n)}</option>`).join("");
+  if (categoria.personas.includes(elegida)) selector.value = elegida;
+}
+
+function abrirMover(id) {
+  const p = productos.find((x) => x.id === id);
+  if (!p) return;
+  moviendo = p;
+  $("#mover-nombre").textContent = `${p.nombre}${p.estado === "comprado" ? " · ya comprado" : ""}`;
+  $("#mover-categoria").innerHTML = categorias.map((c) => `<option value="${escapar(c.id)}">${escapar(c.nombre)}</option>`).join("");
+  $("#mover-categoria").value = p.categoria || "reyes";
+  $("#mover-campo-categoria").hidden = categorias.length < 2;
+  rellenarPersonasMover(p.para);
+  $("#error-mover").textContent = "";
+  $("#dialogo-mover").showModal();
+  $("#mover-para").focus();
+}
+
+async function guardarMover(e) {
+  e.preventDefault();
+  const p = moviendo;
+  const categoria = $("#mover-categoria").value;
+  const para = $("#mover-para").value;
+  if (categoria === (p.categoria || "reyes") && para === p.para) { $("#dialogo-mover").close(); return; }
+  const boton = $("#guardar-mover");
+  boton.disabled = true;
+  $("#error-mover").textContent = "";
+  try {
+    aviso("Guardando…", "esperando");
+    const { producto } = await llamar("POST", `/productos/${p.id}/editar`, { categoria, para });
+    $("#dialogo-mover").close();
+    aplicarCambio(producto);
+    const nombreCat = (categorias.find((c) => c.id === categoria) || {}).nombre || categoria;
+    aviso(`“${producto.nombre}” ahora es para ${para}${categorias.length > 1 ? ` (${nombreCat})` : ""}.`, "ok");
+  } catch (err) {
+    $("#error-mover").textContent = err.message;
+    $("#aviso").className = "aviso";
+  } finally {
+    boton.disabled = false;
+  }
+}
+
 // ---- precio y cantidad
 let editandoPrecio = null;
 
@@ -1128,6 +1178,9 @@ function enlazarEdicion() {
   $("#form-anadir").addEventListener("submit", guardarNuevo);
   $("#cancelar-anadir").addEventListener("click", () => $("#dialogo-anadir").close());
   $("#form-precio").addEventListener("submit", guardarPrecio);
+  $("#form-mover").addEventListener("submit", guardarMover);
+  $("#cancelar-mover").addEventListener("click", () => $("#dialogo-mover").close());
+  $("#mover-categoria").addEventListener("change", () => rellenarPersonasMover($("#mover-para").value));
   $("#cancelar-precio").addEventListener("click", () => $("#dialogo-precio").close());
   $("#form-precio").addEventListener("input", actualizarOpcionesPrecio);
   $("#form-precio").addEventListener("change", actualizarOpcionesPrecio);
@@ -1135,14 +1188,17 @@ function enlazarEdicion() {
     const activo = document.body.classList.toggle("editando");
     $("#boton-editar").setAttribute("aria-pressed", String(activo));
     $("#boton-editar").textContent = activo ? "Terminar de editar" : "✎ Editar";
-    if (activo) aviso("Modo edición: marca comprados, cambia precio y cantidad en los ya comprados, elimina regalos o quita tiendas que no son el producto (✕).");
+    if (activo) aviso("Modo edición: marca comprados, cambia de categoría, cambia precio y cantidad en los ya comprados, elimina regalos o quita tiendas que no son el producto (✕).");
   });
   document.addEventListener("click", (e) => {
     const comprado = e.target.closest("[data-comprado]");
     const eliminar = e.target.closest("[data-eliminar]");
     const pendiente = e.target.closest("[data-pendiente]");
     const precio = e.target.closest("[data-precio]");
-    if (precio) {
+    const mover = e.target.closest("[data-mover]");
+    if (mover) {
+      abrirMover(mover.dataset.mover);
+    } else if (precio) {
       abrirPrecio(precio.dataset.precio);
     } else if (comprado) {
       const p = productos.find((x) => x.id === comprado.dataset.comprado);

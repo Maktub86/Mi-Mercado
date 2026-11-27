@@ -79,6 +79,13 @@ class ReglasTest(unittest.TestCase):
             sv.editar(datos, "tren", {"cantidad": 0})
         with self.assertRaises(ValueError):
             sv.editar(datos, "tren", {"usar_precio": "propio"})
+        datos["categorias"].append({"id": "cumple", "nombre": "Cumpleaños", "personas": ["Lucía"]})
+        with self.assertRaises(ValueError):
+            sv.editar(datos, "tren", {"categoria": "cumple"})  # Alba no está en Cumpleaños
+        sv.editar(datos, "tren", {"categoria": "cumple", "para": "Lucía"})
+        self.assertEqual((datos["productos"][0]["categoria"], datos["productos"][0]["para"]), ("cumple", "Lucía"))
+        with self.assertRaises(ValueError):
+            sv.editar(datos, "tren", {"categoria": "no-existe"})
         sv.eliminar(datos, "tren")
         self.assertEqual(datos["productos"], [])
         with self.assertRaises(LookupError):
