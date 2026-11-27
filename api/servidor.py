@@ -196,6 +196,36 @@ def editar(datos: dict, producto_id: str, peticion: dict) -> tuple[dict, str]:
         nuevo = enlace_desde_url(str(peticion["enlace"]))
         if nuevo not in producto["enlaces"]:
             producto["enlaces"].insert(0, nuevo)
+    # Precio que he pagado o apuntado yo (por unidad), cuántas unidades y qué precio se usa al sumar.
+    if "precio_propio" in peticion:
+        valor = peticion["precio_propio"]
+        precio = _precio(str(valor).replace(",", ".")) if valor not in (None, "") else None
+        if precio is None:
+            producto.pop("precio_propio", None)
+            producto.pop("usar_precio", None)
+        else:
+            producto["precio_propio"] = precio
+    if "cantidad" in peticion:
+        try:
+            cantidad = 1 if peticion["cantidad"] in (None, "") else int(peticion["cantidad"])
+        except (TypeError, ValueError):
+            raise ValueError("Cantidad no válida") from None
+        if not 1 <= cantidad <= 99:
+            raise ValueError("La cantidad tiene que estar entre 1 y 99")
+        if cantidad == 1:
+            producto.pop("cantidad", None)
+        else:
+            producto["cantidad"] = cantidad
+    if "usar_precio" in peticion:
+        usar = peticion["usar_precio"]
+        if usar not in ("propio", "tienda"):
+            raise ValueError("Elige mi precio o el del historial")
+        if usar == "propio" and producto.get("precio_propio") is None:
+            raise ValueError("Primero escribe tu precio")
+        if usar == "propio":
+            producto.pop("usar_precio", None)  # con precio propio, por defecto se usa el propio
+        else:
+            producto["usar_precio"] = "tienda"
     return producto, f"Editar {producto['nombre']}"
 
 

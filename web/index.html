@@ -88,6 +88,33 @@
     </form>
   </dialog>
 
+  <dialog id="dialogo-precio" class="dialogo pequeno" aria-labelledby="titulo-precio">
+    <form id="form-precio" method="dialog">
+      <h2 id="titulo-precio">Precio y cantidad</h2>
+      <p class="ayuda" id="precio-nombre"></p>
+      <div class="dos-columnas">
+        <label><span class="etiqueta">Mi precio <span class="opcional">(por unidad)</span></span>
+          <input id="precio-propio" inputmode="decimal" placeholder="Ej.: 24,99" autocomplete="off">
+        </label>
+        <label><span class="etiqueta">Cantidad</span>
+          <input id="precio-cantidad" type="number" min="1" max="99" step="1" value="1" inputmode="numeric">
+        </label>
+      </div>
+      <fieldset class="elegir-precio">
+        <legend>Qué precio se suma</legend>
+        <label class="opcion"><input type="radio" name="usar-precio" value="propio"> Mi precio</label>
+        <label class="opcion"><input type="radio" name="usar-precio" value="tienda"> Historial de tiendas <span class="opcional" id="precio-historial"></span></label>
+      </fieldset>
+      <p class="precio-total" id="precio-total"></p>
+      <p class="ayuda">Si tu precio no cuadra con el del historial, quédate con el que quieras sumar. En la Carta también se puede cambiar con el botón ⇄ de cada regalo. Deja “Mi precio” vacío para usar solo el historial.</p>
+      <p class="error-form" id="error-precio" role="alert"></p>
+      <div class="botones-dialogo">
+        <button type="button" class="boton-accion suave" id="cancelar-precio">Cancelar</button>
+        <button type="submit" class="boton-accion" id="guardar-precio">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
   <dialog id="dialogo-clave" class="dialogo pequeno" aria-labelledby="titulo-clave">
     <form id="form-clave" method="dialog">
       <h2 id="titulo-clave">Contraseña para editar</h2>

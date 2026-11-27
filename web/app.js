@@ -218,14 +218,21 @@ function preparar(lista, precios) {
     const minimo = lecturas.length ? Math.min(...lecturas) : null;
 
     const actual = mejor ? mejor.ultimo.precio : null;
-    const referencia = actual ?? p.precio_lista;
-    const variacion = actual != null && p.precio_lista != null ? actual - p.precio_lista : null;
+    // Precio del historial (mejor tienda de hoy o, si no hay, el de la lista) frente a "mi precio",
+    // el que se ha apuntado a mano. Si hay precio propio se usa ese, salvo que se elija el del historial.
+    const precioTienda = actual ?? p.precio_lista ?? null;
+    const propio = p.precio_propio ?? null;
+    const usaPropio = propio != null && p.usar_precio !== "tienda";
+    const cantidad = Math.max(1, Math.round(p.cantidad || 1));
+    const unidad = usaPropio ? propio : precioTienda;
+    const referencia = unidad != null ? Math.round(unidad * cantidad * 100) / 100 : null;
+    const variacion = !usaPropio && actual != null && p.precio_lista != null ? actual - p.precio_lista : null;
 
     const conFoto = conImagen.find((t) => /amazon/i.test(t.tienda)) || conImagen.find((t) => /toy planet/i.test(t.tienda)) || conImagen[0];
     const imagen = p.imagen || (conFoto ? conFoto.imagen : null);
     const fotos = [...new Set([p.imagen, conFoto && conFoto.imagen, ...conImagen.map((t) => t.imagen)].filter(Boolean))];
 
-    return { ...p, indice, tiendas, mejor, actual, referencia, variacion, serie, minimo, imagen, fotos, _fechaLista: lista.fecha_lista };
+    return { ...p, indice, tiendas, mejor, actual, precioTienda, propio, usaPropio, cantidad, unidad, referencia, variacion, serie, minimo, imagen, fotos, _fechaLista: lista.fecha_lista };
   });
 }
 
@@ -263,8 +270,8 @@ const eurosRedondos = new Intl.NumberFormat("es-ES", { style: "currency", curren
 /** Suma de una lista de regalos: al mejor precio de hoy (o el de la lista si no hay) y al precio de la lista. */
 function sumar(lista) {
   const total = lista.reduce((s, p) => s + (p.referencia || 0), 0);
-  const conLista = lista.filter((p) => p.precio_lista != null && p.actual != null);
-  const ahorro = conLista.reduce((s, p) => s + (p.precio_lista - p.actual), 0);
+  const conLista = lista.filter((p) => p.precio_lista != null && p.actual != null && !p.usaPropio);
+  const ahorro = conLista.reduce((s, p) => s + (p.precio_lista - p.actual) * p.cantidad, 0);
   const sinPrecio = lista.filter((p) => p.referencia == null).length;
   return { total, ahorro, sinPrecio, conLista: conLista.length };
 }
@@ -485,13 +492,19 @@ function tarjeta(p) {
   const precio = nodo.querySelector(".precio");
   const detalle = nodo.querySelector(".precio-detalle");
   const titulo = nodo.querySelector(".precio-titulo");
-  if (p.actual != null) {
-    precio.textContent = euros.format(p.actual);
-    detalle.textContent = `en ${p.mejor.tienda}`;
+  const porUnidades = p.cantidad > 1 ? `${p.cantidad} × ${euros.format(p.unidad)}` : "";
+  if (p.usaPropio) {
+    titulo.textContent = p.estado === "comprado" ? "Lo que he pagado" : "Mi precio";
+    precio.textContent = euros.format(p.referencia);
+    detalle.textContent = [porUnidades, p.precioTienda != null ? `historial: ${euros.format(p.precioTienda)}${p.mejor ? ` en ${p.mejor.tienda}` : ""}` : ""]
+      .filter(Boolean).join(" · ");
+  } else if (p.actual != null) {
+    precio.textContent = euros.format(p.referencia);
+    detalle.textContent = [porUnidades, `en ${p.mejor.tienda}`, p.propio != null ? `mi precio: ${euros.format(p.propio)}` : ""].filter(Boolean).join(" · ");
   } else if (p.precio_lista != null) {
     titulo.textContent = "Precio de la lista";
-    precio.textContent = euros.format(p.precio_lista);
-    detalle.textContent = p.tienda_lista ? `visto en ${p.tienda_lista}` : "";
+    precio.textContent = euros.format(p.referencia);
+    detalle.textContent = [porUnidades, p.tienda_lista ? `visto en ${p.tienda_lista}` : "", p.propio != null ? `mi precio: ${euros.format(p.propio)}` : ""].filter(Boolean).join(" · ");
   } else {
     titulo.textContent = "Precio";
     precio.textContent = "Buscando tiendas…";
@@ -528,6 +541,7 @@ function tarjeta(p) {
   const acciones = document.createElement("div");
   acciones.className = "acciones-edicion solo-edicion";
   acciones.innerHTML = `<button type="button" class="boton-mini" data-comprado="${p.id}">✓ Ya está comprado</button>
+    <button type="button" class="boton-mini neutro" data-precio="${p.id}">€ Precio y cantidad</button>
     <button type="button" class="boton-mini peligro" data-eliminar="${p.id}">Eliminar</button>`;
   nodo.querySelector(".cuerpo").append(acciones);
   hoja.addEventListener("click", (e) => {
@@ -562,10 +576,16 @@ function pintarLista() {
     .filter((p) => estado.persona === "todas" || p.para === estado.persona);
   $("#titulo-comprados").textContent = `Ya comprados (${comprados.length})`;
   $("#bloque-comprados").hidden = comprados.length === 0;
-  $("#lista-comprados").innerHTML = comprados.map((p) => `
-    <li><span><span class="tachado">${escapar(p.nombre)}</span> · ${escapar(p.para)}</span>
+  $("#lista-comprados").innerHTML = comprados.map((p) => {
+    const precio = p.referencia != null
+      ? `<span class="precio-comprado">${p.cantidad > 1 ? `${p.cantidad} × ${euros.format(p.unidad)} = ` : ""}<strong>${euros.format(p.referencia)}</strong>${p.usaPropio ? " (mi precio)" : ""}</span>`
+      : "";
+    return `
+    <li><span><span class="tachado">${escapar(p.nombre)}</span> · ${escapar(p.para)}${p.cantidad > 1 ? ` <b class="unidades">×${p.cantidad}</b>` : ""}${precio}</span>
     <span class="quien">${p.comprado_por ? `por ${escapar(p.comprado_por)}` : "comprado"}
-      <button type="button" class="enlace-boton solo-edicion" data-pendiente="${p.id}">Volver a la lista</button></span></li>`).join("");
+      <button type="button" class="enlace-boton solo-edicion" data-precio="${p.id}">€ Precio y cantidad</button>
+      <button type="button" class="enlace-boton solo-edicion" data-pendiente="${p.id}">Volver a la lista</button></span></li>`;
+  }).join("");
 }
 
 // ---------------------------------------------------------------- vistas
@@ -585,59 +605,6 @@ function mostrarVista() {
     pintarLista();
   }
   pintarCategorias();
-}
-
-// ---------------------------------------------------------------- coupert
-
-// Coupert (cupones y reembolso) tiene una página por tienda: https://www.coupert.com/store/<dominio>.
-// Los enlaces que vienen de un comparador (Globerada, Idealo) llevan a ese comparador, así que
-// en esos casos el dominio se saca del nombre de la tienda.
-const DOMINIOS_TIENDA = [
-  [/amazon/i, "amazon.es"], [/corte ingl/i, "elcorteingles.es"], [/toy planet/i, "toyplanet.com"],
-  [/juguettos/i, "juguettos.com"], [/abacus/i, "abacus.coop"], [/fnac/i, "fnac.es"], [/miravia/i, "miravia.es"],
-  [/temu/i, "temu.com"], [/aliexpress/i, "aliexpress.com"], [/pccomponentes/i, "pccomponentes.com"],
-  [/toys ?"?r"? ?us/i, "toysrus.es"], [/carrefour/i, "carrefour.es"], [/pixmania/i, "pixmania.com"],
-  [/raijuguetes/i, "raijuguetes.com"], [/electropolis/i, "electropolis.es"], [/onbuy/i, "onbuy.com"],
-  [/sfera/i, "sfera.com"], [/casa del libro/i, "casadellibro.com"], [/dideco/i, "dideco.es"],
-  [/ebay/i, "ebay.es"], [/shein/i, "shein.com"], [/lego/i, "lego.com"], [/decathlon/i, "decathlon.es"],
-];
-const COMPARADORES = /(^|\.)(globerada\.com|idealo\.es|idealo\.com)$/i;
-
-function dominioTienda(x) {
-  let host = "";
-  try { host = new URL(x.url).hostname.replace(/^www\./, ""); } catch (e) { /* sin enlace */ }
-  if (host && !COMPARADORES.test(host)) return host;
-  const conocido = DOMINIOS_TIENDA.find(([re]) => re.test(x.tienda || x.donde || ""));
-  return conocido ? conocido[1] : null;
-}
-
-function enlaceCoupert(x) {
-  const dominio = x.url ? dominioTienda(x) : null;
-  return dominio ? `https://www.coupert.com/store/${dominio}` : null;
-}
-
-/** Tiendas donde está lo elegido, con su enlace a los cupones de Coupert. */
-function bloqueCoupert(items) {
-  const tiendas = new Map();
-  items.forEach((x) => {
-    const dominio = x.url ? dominioTienda(x) : null;
-    if (!dominio) return;
-    const t = tiendas.get(dominio) || { dominio, nombre: (x.tienda || x.donde || dominio).replace(/\s*\(.*\)$/, ""), regalos: 0, suma: 0 };
-    t.regalos += 1;
-    t.suma += x.precio || 0;
-    tiendas.set(dominio, t);
-  });
-  if (!tiendas.size) return "";
-  const filas = [...tiendas.values()].sort((a, b) => b.suma - a.suma).map((t) => `
-    <li><a href="https://www.coupert.com/store/${escapar(t.dominio)}" target="_blank" rel="noopener">
-      <strong>${escapar(t.nombre)}</strong> <span>${escapar(t.dominio)}</span></a>
-      <small>${t.regalos} ${t.regalos === 1 ? "regalo" : "regalos"} · ${euros.format(t.suma)}</small></li>`).join("");
-  return `<section class="coupert" aria-label="Cupones Coupert">
-    <h2>🏷️ Cupones y reembolso con Coupert</h2>
-    <p>Antes de pagar, mira si hay cupón en la tienda donde está más barato cada regalo de lo que tenéis elegido. Si tenéis la extensión o la app de Coupert, al pagar prueba los cupones sola.</p>
-    <ul class="coupert-lista">${filas}</ul>
-    <p class="ayuda">Coupert está pensado sobre todo para tiendas de EE. UU.: algunas tiendas españolas pueden no tener cupones o abrir la página de la tienda de otro país.</p>
-  </section>`;
 }
 
 // ---------------------------------------------------------------- carta
@@ -687,11 +654,17 @@ function fotoCarta(p, enHoja) {
   const botonPrecio = enHoja && comprado
     ? `<button type="button" class="carta-ocultar" data-ocultar="${escapar(p.id)}" title="${oculto ? "Mostrar el precio y sumarlo" : "Ocultar el precio y no sumarlo"}" aria-label="${oculto ? "Mostrar precio" : "Ocultar precio"}">${oculto ? "👁️" : "🙈"}</button>`
     : "";
+  // Si hay "mi precio" y precio del historial, en la hoja se elige cuál se suma.
+  const botonFuente = enHoja && !oculto && p.propio != null && p.precioTienda != null
+    ? `<button type="button" class="carta-fuente${p.usaPropio ? " propio" : ""}" data-fuente="${escapar(p.id)}"
+        title="${p.usaPropio ? `Se suma tu precio. Toca para usar el del historial (${euros.format(p.precioTienda)})` : `Se suma el precio del historial. Toca para usar el tuyo (${euros.format(p.propio)})`}">${p.usaPropio ? "mi precio" : "historial"} ⇄</button>`
+    : "";
+  const unidades = p.cantidad > 1 ? `<span class="carta-unidades" title="${p.cantidad} unidades">×${p.cantidad}</span>` : "";
   return `<div class="${clase}" data-item="${escapar(p.id)}"${estilo} title="${escapar(`${p.nombre}${comprado ? " · ya comprado" : ""}`)}">
       <div class="carta-foto">${foto
         ? `<img src="${escapar(foto)}" data-resto="${escapar(resto.map(encodeURI).join(" "))}" alt="${escapar(p.nombre)}" draggable="false" loading="lazy" referrerpolicy="no-referrer">`
-        : '<span aria-hidden="true">🎁</span>'}${comprado ? '<span class="sello-comprado" aria-label="Ya comprado">✅</span>' : ""}</div>
-      <p class="carta-precio${precio == null || oculto ? " sin-dato" : ""}">${textoPrecio}${botonPrecio}</p>
+        : '<span aria-hidden="true">🎁</span>'}${comprado ? '<span class="sello-comprado" aria-label="Ya comprado">✅</span>' : ""}${unidades}</div>
+      <p class="carta-precio${precio == null || oculto ? " sin-dato" : ""}">${textoPrecio}${botonPrecio}</p>${botonFuente}
     </div>`;
 }
 
@@ -757,7 +730,6 @@ function pintarCarta() {
         </div>
         ${reparto ? `<ul class="reparto carta-reparto">${reparto}</ul>` : ""}
         ${enHoja.length ? `<button type="button" class="boton-accion suave" id="carta-vaciar">Vaciar la carta de ${escapar(persona)}</button>` : ""}
-        ${bloqueCoupert(todasEnHoja.filter((p) => p.estado !== "comprado").map((p) => ({ url: p.mejor ? p.mejor.url : null, tienda: p.mejor ? p.mejor.tienda : "", donde: "", precio: precioCarta(p) })))}
       </div>
     </div>`;
 }
@@ -883,7 +855,10 @@ function enlazarCarta() {
   caja.addEventListener("click", (e) => {
     const pestana = e.target.closest("[data-carta]");
     const ocultar = e.target.closest("[data-ocultar]");
-    if (pestana) {
+    const fuente = e.target.closest("[data-fuente]");
+    if (fuente) {
+      cambiarFuente(fuente.dataset.fuente);
+    } else if (pestana) {
       estado.cartaPersona = pestana.dataset.carta;
       pintarCarta();
     } else if (ocultar) {
@@ -990,11 +965,104 @@ function aplicarCambio(producto, borrar = false) {
   if (borrar) { if (i !== -1) lista.splice(i, 1); }
   else if (i === -1) lista.push(producto);
   else lista[i] = producto;
+  repintar();
+}
+
+function repintar() {
   productos = preparar(datosLista, datosPrecios);
   if (estado.vista !== "lista") { mostrarVista(); return; }
   pintarChips();
   pintarLista();
   pintarCategorias();
+}
+
+/** Cambia el precio que se suma (mi precio ⇄ historial). Se ve al momento y se guarda después. */
+function cambiarFuente(id) {
+  const original = datosLista.productos.find((x) => x.id === id);
+  if (!original || original.precio_propio == null) return;
+  const antes = original.usar_precio;
+  const usar = antes === "tienda" ? "propio" : "tienda";
+  if (usar === "tienda") original.usar_precio = "tienda"; else delete original.usar_precio;
+  repintar();
+  accion("Guardando…", async () => {
+    try {
+      const { producto } = await llamar("POST", `/productos/${id}/editar`, { usar_precio: usar });
+      aplicarCambio(producto);
+      return usar === "propio" ? `“${producto.nombre}”: se suma tu precio.` : `“${producto.nombre}”: se suma el precio del historial.`;
+    } catch (err) {
+      if (antes) original.usar_precio = antes; else delete original.usar_precio;
+      repintar();
+      throw err;
+    }
+  });
+}
+
+// ---- precio y cantidad
+let editandoPrecio = null;
+
+function leerNumero(texto) {
+  let limpio = String(texto || "").trim().replace(/[€\s]/g, "");
+  if (limpio.includes(",")) limpio = limpio.replace(/\./g, "").replace(",", "."); // 1.234,50 -> 1234.50
+  if (!limpio) return null;
+  const n = Number(limpio);
+  return Number.isFinite(n) && n >= 0 ? Math.round(n * 100) / 100 : NaN;
+}
+
+function actualizarOpcionesPrecio() {
+  const propio = leerNumero($("#precio-propio").value);
+  const hayPropio = propio != null && !Number.isNaN(propio);
+  const radioPropio = document.querySelector('input[name="usar-precio"][value="propio"]');
+  const radioTienda = document.querySelector('input[name="usar-precio"][value="tienda"]');
+  radioPropio.disabled = !hayPropio;
+  if (!hayPropio) radioTienda.checked = true;
+  const p = editandoPrecio;
+  const cantidad = Math.max(1, Math.round(Number($("#precio-cantidad").value) || 1));
+  const unidad = radioPropio.checked && hayPropio ? propio : p && p.precioTienda;
+  $("#precio-total").textContent = unidad != null
+    ? `Se sumará: ${cantidad > 1 ? `${cantidad} × ${euros.format(unidad)} = ` : ""}${euros.format(unidad * cantidad)}`
+    : "Todavía no hay precio que sumar.";
+}
+
+function abrirPrecio(id) {
+  const p = productos.find((x) => x.id === id);
+  if (!p) return;
+  editandoPrecio = p;
+  $("#precio-nombre").textContent = `${p.nombre} · ${p.para}${p.estado === "comprado" ? " · ya comprado" : ""}`;
+  $("#precio-propio").value = p.propio != null ? String(p.propio).replace(".", ",") : "";
+  $("#precio-cantidad").value = p.cantidad;
+  $("#precio-historial").textContent = p.precioTienda != null
+    ? `(${euros.format(p.precioTienda)}${p.mejor ? ` en ${p.mejor.tienda}` : " de la lista"})` : "(aún sin precio)";
+  document.querySelector(`input[name="usar-precio"][value="${p.usaPropio || p.propio == null ? "propio" : "tienda"}"]`).checked = true;
+  $("#error-precio").textContent = "";
+  actualizarOpcionesPrecio();
+  $("#dialogo-precio").showModal();
+  $("#precio-propio").focus();
+}
+
+async function guardarPrecio(e) {
+  e.preventDefault();
+  const p = editandoPrecio;
+  const propio = leerNumero($("#precio-propio").value);
+  const cantidad = Number($("#precio-cantidad").value || 1);
+  if (Number.isNaN(propio)) { $("#error-precio").textContent = "Escribe el precio con números, por ejemplo 24,99."; return; }
+  if (!Number.isInteger(cantidad) || cantidad < 1 || cantidad > 99) { $("#error-precio").textContent = "La cantidad tiene que estar entre 1 y 99."; return; }
+  const cuerpo = { precio_propio: propio, cantidad };
+  if (propio != null) cuerpo.usar_precio = document.querySelector('input[name="usar-precio"]:checked').value;
+  const boton = $("#guardar-precio");
+  boton.disabled = true;
+  $("#error-precio").textContent = "";
+  try {
+    aviso("Guardando…", "esperando");
+    const { producto } = await llamar("POST", `/productos/${p.id}/editar`, cuerpo);
+    $("#dialogo-precio").close();
+    aplicarCambio(producto);
+    aviso(`“${producto.nombre}” actualizado.`, "ok");
+  } catch (err) {
+    $("#error-precio").textContent = err.message;
+    $("#aviso").className = "aviso";
+  } finally {
+    boton.disabled = false;
+  }
 }
 
 async function accion(texto, fn) {
@@ -1060,17 +1128,24 @@ function enlazarEdicion() {
   $("#boton-anadir").addEventListener("click", abrirAnadir);
   $("#form-anadir").addEventListener("submit", guardarNuevo);
   $("#cancelar-anadir").addEventListener("click", () => $("#dialogo-anadir").close());
+  $("#form-precio").addEventListener("submit", guardarPrecio);
+  $("#cancelar-precio").addEventListener("click", () => $("#dialogo-precio").close());
+  $("#form-precio").addEventListener("input", actualizarOpcionesPrecio);
+  $("#form-precio").addEventListener("change", actualizarOpcionesPrecio);
   $("#boton-editar").addEventListener("click", () => {
     const activo = document.body.classList.toggle("editando");
     $("#boton-editar").setAttribute("aria-pressed", String(activo));
     $("#boton-editar").textContent = activo ? "Terminar de editar" : "✎ Editar";
-    if (activo) aviso("Modo edición: marca comprados, elimina regalos o quita tiendas que no son el producto (✕).");
+    if (activo) aviso("Modo edición: marca comprados, cambia precio y cantidad (también en los comprados), elimina regalos o quita tiendas que no son el producto (✕).");
   });
   document.addEventListener("click", (e) => {
     const comprado = e.target.closest("[data-comprado]");
     const eliminar = e.target.closest("[data-eliminar]");
     const pendiente = e.target.closest("[data-pendiente]");
-    if (comprado) {
+    const precio = e.target.closest("[data-precio]");
+    if (precio) {
+      abrirPrecio(precio.dataset.precio);
+    } else if (comprado) {
       const p = productos.find((x) => x.id === comprado.dataset.comprado);
       accion("Guardando…", async () => {
         const { producto } = await llamar("POST", `/productos/${p.id}/estado`, { estado: "comprado" });

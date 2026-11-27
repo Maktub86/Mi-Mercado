@@ -20,7 +20,7 @@ Si una tienda no deja leer el precio, `diagnostico/ultima_revision.json` explica
 
 ## Editar desde la web
 
-Botón **＋ Añadir** (nombre, para quién, enlaces opcionales) y botón **✎ Editar** (marcar comprado, eliminar, quitar una tienda que no es el producto, devolver a la lista). Los cambios los guarda el servidor `api/servidor.py` (servicio `mi-mercado-api` en Render) en `web/data/productos.json`, con una contraseña (`CLAVE_EDICION`) y una clave de GitHub (`GITHUB_TOKEN`) configuradas en Render. La dirección del servidor está en `web/data/config.json`.
+Botón **＋ Añadir** (nombre, para quién, enlaces opcionales) y botón **✎ Editar** (marcar comprado, eliminar, quitar una tienda que no es el producto, devolver a la lista y **€ Precio y cantidad**, también en los ya comprados). En *Precio y cantidad* se apunta mi precio por unidad, cuántas unidades hay y qué precio se suma: el mío o el del historial de tiendas. En la ✉️ Carta, el botón ⇄ de cada regalo cambia entre los dos. Los cambios los guarda el servidor `api/servidor.py` (servicio `mi-mercado-api` en Render) en `web/data/productos.json`, con una contraseña (`CLAVE_EDICION`) y una clave de GitHub (`GITHUB_TOKEN`) configuradas en Render. La dirección del servidor está en `web/data/config.json`.
 
 ## Añadir o cambiar un producto a mano
 
@@ -44,6 +44,7 @@ Edita `web/data/productos.json` desde GitHub (botón del lápiz). Cada producto 
 
 - `para`: `Alba`, `Lucía` o `Las dos` (puede ser cualquier otro nombre).
 - `estado`: `pendiente` o `comprado` (los comprados dejan de revisarse). Opcional: `"comprado_por": "Abuela Mari Luz"`.
+- Opcionales: `"precio_propio": 24.99` (mi precio por unidad), `"cantidad": 2` y `"usar_precio": "tienda"` (sumar el precio del historial aunque haya precio propio; si no se pone, con precio propio se suma el propio).
 - `enlaces`: la página de producto de cada tienda. Cuantas más tiendas, mejor comparación.
 - Si no tienes la página de El Corte Inglés, pon `{"tienda": "El Corte Inglés", "eci_buscar": "palabras del producto"}`: el ordenador de casa lo busca en la tienda (con el navegador) y se queda con el primer producto que tenga todas esas palabras. Lo mismo con `amazon_buscar` para Amazon.
 
