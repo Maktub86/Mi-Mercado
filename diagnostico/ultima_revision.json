@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-27T17:21:29+00:00",
-  "leidos": 76,
-  "fallos": 12,
+  "fecha": "2026-11-27T17:30:23+00:00",
+  "leidos": 75,
+  "fallos": 13,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -366,7 +366,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 628216,
+        "bytes": 628171,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
@@ -594,9 +594,10 @@
       "producto": "peluche-pikachu",
       "tienda": "Mediamarkt",
       "url": "https://www.mediamarkt.es/es/product/_peluche-pokemon-pikachu-amarillo-134742668.html",
-      "precio": 23.52,
-      "metodo": "generico",
-      "error": null
+      "precio": null,
+      "metodo": null,
+      "error": "bloqueado: la tienda respondió 403",
+      "pistas": {}
     },
     {
       "producto": "peluche-pikachu",
