@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-27T22:31:55+00:00",
-  "leidos": 77,
+  "fecha": "2026-11-27T22:47:02+00:00",
+  "leidos": 69,
   "fallos": 17,
   "enlaces": [
     {
@@ -131,51 +131,6 @@
         {
           "tienda": "Amazon",
           "precio": 27.64
-        }
-      ]
-    },
-    {
-      "producto": "clementoni-nail-art",
-      "tienda": "Toy Planet",
-      "url": "https://www.toyplanet.com/products/crazy-chic-nail-art-studio-clementoni",
-      "precio": 29.99,
-      "metodo": "shopify",
-      "error": null
-    },
-    {
-      "producto": "clementoni-nail-art",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/clementoni-nail-art-studio.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/clementoni-nail-art-studio.html",
-      "ofertas": [
-        {
-          "tienda": "Fnac",
-          "precio": 23.99
-        },
-        {
-          "tienda": "Abacus",
-          "precio": 24.74
-        },
-        {
-          "tienda": "Amazon",
-          "precio": 27.64
-        },
-        {
-          "tienda": "Amazon Marketplace (PALUTA TOY MARKET (Envío 24/48h Lab.))",
-          "precio": 29.9
-        },
-        {
-          "tienda": "Miravia (Juguetería Express)",
-          "precio": 31.95
-        },
-        {
-          "tienda": "Miravia (Juguetes Abracadabra)",
-          "precio": 34.94
-        },
-        {
-          "tienda": "Aliexpress ES (Shop1104124762 Store)",
-          "precio": 35.99
         }
       ]
     },
