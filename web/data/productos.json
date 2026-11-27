@@ -1378,7 +1378,8 @@
           "tienda": "El Corte Inglés",
           "eci_buscar": "SET CREA TU ESTILO 4 EN 1"
         }
-      ]
+      ],
+      "precio_propio": 20.0
     },
     {
       "id": "botas-de-agua",
