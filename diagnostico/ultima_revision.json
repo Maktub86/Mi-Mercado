@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-27T21:59:52+00:00",
-  "leidos": 70,
+  "fecha": "2026-11-27T22:05:57+00:00",
+  "leidos": 76,
   "fallos": 16,
   "enlaces": [
     {
@@ -145,13 +145,37 @@
     {
       "producto": "clementoni-nail-art",
       "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/juegos-de-mesa-clementoni-crazy-chic-nail-art-studio-game-multicolore-45x31x7-cm.html",
+      "url": "https://www.globerada.com/precios/clementoni-nail-art-studio.html",
       "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/juegos-de-mesa-clementoni-crazy-chic-nail-art-studio-game-multicolore-45x31x7-cm.html",
+      "pagina": "https://www.globerada.com/precios/clementoni-nail-art-studio.html",
       "ofertas": [
         {
-          "tienda": "Sneakin",
-          "precio": 34.0
+          "tienda": "Fnac",
+          "precio": 23.99
+        },
+        {
+          "tienda": "Abacus",
+          "precio": 24.74
+        },
+        {
+          "tienda": "Amazon",
+          "precio": 27.64
+        },
+        {
+          "tienda": "Amazon Marketplace (PALUTA TOY MARKET (Envío 24/48h Lab.))",
+          "precio": 29.9
+        },
+        {
+          "tienda": "Miravia (Juguetería Express)",
+          "precio": 31.95
+        },
+        {
+          "tienda": "Miravia (Juguetes Abracadabra)",
+          "precio": 34.94
+        },
+        {
+          "tienda": "Aliexpress ES (Shop1104124762 Store)",
+          "precio": 35.99
         }
       ]
     },
@@ -338,7 +362,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 627657,
+        "bytes": 628171,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
