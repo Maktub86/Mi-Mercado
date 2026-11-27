@@ -338,7 +338,8 @@
           "eci_buscar": "Nail Art Studio"
         }
       ],
-      "categoria": "reyes"
+      "categoria": "reyes",
+      "precio_propio": 19.19
     },
     {
       "id": "educa-magnetics-61",
