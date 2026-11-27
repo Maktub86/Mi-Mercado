@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-27T02:07:04+00:00",
-  "leidos": 75,
-  "fallos": 17,
+  "fecha": "2026-11-27T17:12:24+00:00",
+  "leidos": 76,
+  "fallos": 16,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -80,7 +80,7 @@
         },
         {
           "tienda": "Pixmania",
-          "precio": 17.4
+          "precio": 14.49
         },
         {
           "tienda": "OnBuy (AMI VENTURES INC.)",
@@ -330,12 +330,12 @@
           "precio": 29.99
         },
         {
-          "tienda": "Ferretería Ibermadrid",
-          "precio": 34.15
+          "tienda": "Pixmania",
+          "precio": 34.08
         },
         {
-          "tienda": "Pixmania",
-          "precio": 38.28
+          "tienda": "Ferretería Ibermadrid",
+          "precio": 34.15
         }
       ]
     },
@@ -381,7 +381,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 640473,
+        "bytes": 627657,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
@@ -624,10 +624,9 @@
       "producto": "peluche-pikachu",
       "tienda": "Mediamarkt",
       "url": "https://www.mediamarkt.es/es/product/_peluche-pokemon-pikachu-amarillo-134742668.html",
-      "precio": null,
-      "metodo": null,
-      "error": "bloqueado: la tienda respondió 403",
-      "pistas": {}
+      "precio": 23.52,
+      "metodo": "generico",
+      "error": null
     },
     {
       "producto": "peluche-pikachu",
@@ -756,7 +755,7 @@
         },
         {
           "tienda": "PcComponentes (ASD ES)",
-          "precio": 22.34
+          "precio": 22.75
         },
         {
           "tienda": "Miravia (Marana Tribu)",

@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-27T02:07:04+00:00",
+  "actualizado": "2026-11-27T17:12:24+00:00",
   "productos": {
     "monster-high-moonspell": {
       "https://www.elcorteingles.es/juguetes/A200825480-muneca-moonspell-magic-willow-nature-monster-high-mattel/": {
@@ -672,7 +672,7 @@
           },
           {
             "fecha": "2026-11-27",
-            "precio": 17.4,
+            "precio": 14.49,
             "disponible": true
           }
         ],
@@ -2419,7 +2419,7 @@
           },
           {
             "fecha": "2026-11-27",
-            "precio": 38.28,
+            "precio": 34.08,
             "disponible": true
           }
         ],
@@ -5269,6 +5269,11 @@
             "fecha": "2026-11-26",
             "precio": 23.77,
             "disponible": true
+          },
+          {
+            "fecha": "2026-11-27",
+            "precio": 23.52,
+            "disponible": true
           }
         ],
         "ultima_comprobacion": "2026-11-27",
@@ -5278,8 +5283,7 @@
           "media": 3.7,
           "total": 3,
           "maximo": 5
-        },
-        "ultimo_error": "bloqueado: la tienda respondió 403"
+        }
       },
       "comparador:Peluche pikachu#Amazon": {
         "tienda": "Amazon",
@@ -5949,7 +5953,7 @@
           },
           {
             "fecha": "2026-11-27",
-            "precio": 22.34,
+            "precio": 22.75,
             "disponible": true
           }
         ],
