@@ -1,7 +1,7 @@
 {
-  "fecha": "2026-11-27T22:47:02+00:00",
-  "leidos": 69,
-  "fallos": 17,
+  "fecha": "2026-11-28T01:51:31+00:00",
+  "leidos": 68,
+  "fallos": 15,
   "enlaces": [
     {
       "producto": "monster-high-moonspell",
@@ -197,37 +197,6 @@
       "tienda": "Globerada",
       "url": "comparador:8001011636983",
       "error": "no encontrado en el comparador"
-    },
-    {
-      "producto": "barbie-cascanueces-trineo",
-      "tienda": "Toys R Us",
-      "url": "https://www.toysrus.es/Barbie-El-Cascanueces-Caballo-y-Trineo-del-Reino-de-los-Dulces/p/K1105772",
-      "precio": null,
-      "metodo": null,
-      "error": "HTTPError: HTTP Error 451: Unavailable For Legal Reasons",
-      "pistas": {}
-    },
-    {
-      "producto": "barbie-cascanueces-trineo",
-      "tienda": "Toy Planet",
-      "url": "buscar:www.toyplanet.com:Cascanueces caballo trineo",
-      "precio": null,
-      "metodo": null,
-      "error": "LookupError: no está en el catálogo de la tienda",
-      "pistas": {}
-    },
-    {
-      "producto": "barbie-cascanueces-trineo",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/barbie-cascanueces-reino-de-los-dulces-caballo-y-trineo-jrf15.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/barbie-cascanueces-reino-de-los-dulces-caballo-y-trineo-jrf15.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 37.94
-        }
-      ]
     },
     {
       "producto": "barbie-cascanueces-bailarina",
@@ -514,7 +483,7 @@
         },
         {
           "tienda": "PcComponentes (La Frikilería)",
-          "precio": 44.38
+          "precio": 41.78
         }
       ]
     },
