@@ -1,6 +1,6 @@
 {
-  "fecha": "2026-11-28T01:51:31+00:00",
-  "leidos": 68,
+  "fecha": "2026-11-28T09:24:04+00:00",
+  "leidos": 64,
   "fallos": 15,
   "enlaces": [
     {
@@ -164,35 +164,6 @@
       ]
     },
     {
-      "producto": "peekimo",
-      "tienda": "Globerada",
-      "url": "https://www.globerada.com/precios/spin-master-peekimo-pink.html",
-      "metodo": "comparador",
-      "pagina": "https://www.globerada.com/precios/spin-master-peekimo-pink.html",
-      "ofertas": [
-        {
-          "tienda": "Amazon",
-          "precio": 23.69
-        },
-        {
-          "tienda": "Aliexpress ES (Shop1104118748 Store)",
-          "precio": 27.99
-        },
-        {
-          "tienda": "Juguettos",
-          "precio": 29.99
-        }
-      ]
-    },
-    {
-      "producto": "peekimo",
-      "tienda": "Toy Planet",
-      "url": "https://www.toyplanet.com/products/peekimo-mascota-interactiva-con-mas-de-100-sonidos",
-      "precio": 29.99,
-      "metodo": "shopify",
-      "error": null
-    },
-    {
       "producto": "barbie-coche-radiocontrol",
       "tienda": "Globerada",
       "url": "comparador:8001011636983",
@@ -265,7 +236,7 @@
         },
         {
           "tienda": "Juegos de la Mesa Redonda",
-          "precio": 8.09
+          "precio": 7.69
         }
       ]
     },
@@ -286,7 +257,7 @@
       "metodo": "generico",
       "error": null,
       "pistas": {
-        "bytes": 628171,
+        "bytes": 628660,
         "titulo": "La pandilla de la ardilla 3. Cómo consolar a una ardilla | Begoña Oro | Casa del Libro",
         "captcha": false,
         "json_ld": 1,
